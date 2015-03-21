@@ -2,6 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
+    <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CloudMe - Хостинг для вашего сайта</title>
     <link rel="shortcut icon" href="images/icons/favicon.png" />

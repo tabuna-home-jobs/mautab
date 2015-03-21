@@ -18,10 +18,15 @@ Route::get('home', 'HomeController@index');
 
 Route::get('/user', 'UserController@index');
 
+Route::get('/tiket/{id}','TiketsController@giveMeTikets')
+	->where('id','[0-9]+');
+
+
 
 
 Route::controller('/tikets', 'TiketsController');
 
+Route::controller('/pay', 'RobokassaController');
 
 
 Route::controllers([

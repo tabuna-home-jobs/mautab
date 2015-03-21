@@ -51,7 +51,7 @@
 						     	 	Решено
 						     	 @endif
 						     </td>
-						     <td>Просмотреть ветку</td>
+						     <td><a href="/tiket/{{ $Tiket->id }}">Просмотреть ветку</a></td>
 					     </tr>
 					@endforeach
 					</tbody>

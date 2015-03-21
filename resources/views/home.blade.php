@@ -19,9 +19,9 @@
                 <div class="small-12 large-4 large-offset-1 medium-4 medium-offset-1 columns" data-equalizer-watch>
                 
                 <div data-wow-delay="0.3s" class="timeline-content wow fadeInLeft">
-                    <h3>Traditional Email Support</h3>
-                    <p>Vice Helvetica church-key, chambray retro pickled kitsch put a bird on it quinoa art party Neutra ennui meh drinking vinegar Shoreditch. </p>
-                    <a href="" class="small radius email button">SEND A SUPPORT E-MAIL</a>
+                    <h3>Оплата услуг</h3>
+                    <p>Мы любим получать от вас деньги! =)</p>
+                    <a href="/pay" class="small radius email button">Перейти</a>
                   </div> 
 
                 </div>

@@ -7,7 +7,7 @@ class Vesta {
 
 	
 
-	public	$vst_hostname = 'localhost';
+	public	$vst_hostname = '151.80.164.81';
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
 	public	$vst_returncode = 'yes';

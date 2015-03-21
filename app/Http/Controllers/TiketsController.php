@@ -62,10 +62,32 @@ class TiketsController extends Controller {
 
 	}
 
+	public function giveMeTikets($id){
+
+		$Tiket = Tiket::whereRaw('idu = ? AND id = ?',
+									[Auth::user()->id, $id] )->orderBy('id', 'desc')->find($id);
+
+		$subTiket = Tiket::whereRaw('idu = ? AND idt = ?',
+			[Auth::user()->id, $id] )->orderBy('id', 'desc')->simplePaginate(15);
+
+		return view('tikets/viewer',['Tiket' => $Tiket, 'subTiket' => $subTiket]);
+	}
+
 	//Ответ
-	public function postReplay()
+	public function postReply()
 	{
-		return view('tikets/add');
+		$input = Request::all();
+
+		$tikets = new Tiket;
+
+		//Заполнение модели
+		$tikets->idu = Auth::user()->id;
+		$tikets->idt = $input['id'];
+		$tikets->message = $input['reply'];
+		$tikets->save();
+
+		Session::flash('good', 'Вы успешно добавили ответ.');
+		return Redirect::to('/tiket/'.  $input['id'] );
 	}
 
 
