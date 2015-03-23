@@ -35,22 +35,26 @@
                     <thead>
                     <tr>
                         <th>Номер заявки</th>
+                        <th>Товар</th>
                         <th>Сообщение</th>
+                        <th>Сумма</th>
                         <th>Статус</th>
-                        <th>Управление</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($payments as $payment)
                         <tr>
                             <td>{{ $payment->id }}</td>
+                            <td>{{$payment->name}}</td>
                             <td>{{ $payment->descr }}</td>
+                            <td>{{ $payment->price}} руб.</td>
                             <td>@if (!$payment->result)
-                                    Рассматриваеться
+                                    Ожидает
                                 @else
-                                    Решено
+                                    Оплачено
                                 @endif
                             </td>
+
                         </tr>
                     @endforeach
                     </tbody>

@@ -4,6 +4,7 @@
 use Auth;
 use App\Models\Payments;
 use Illuminate\Support\Facades\View;
+use DB;
 
 class RobokassaController extends Controller {
 
@@ -29,7 +30,9 @@ class RobokassaController extends Controller {
 
 	//Главная
 	public function getIndex() {
-		$payments = Payments::whereRaw('iduser = ?',[Auth::user()->id])->simplePaginate(15);
+		$payments = DB::table('payments')
+			->leftJoin('package', 'package.id', '=', 'payments.goods')
+			->simplePaginate(15);
 
 		return view('payments/index',['payments' => $payments]);
 	}
