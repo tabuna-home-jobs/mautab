@@ -1,59 +1,119 @@
-@extends('app')
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.png" />
+  <title>Cloudme</title>
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Reset Password</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/font-awesome.min.css">
+  <link rel="stylesheet" href="/animate.css">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/wow.js"></script>
+  <script>
+    new WOW().init();
+  </script>
 
-					<form class="form-horizontal" role="form" method="POST" action="/password/reset">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<input type="hidden" name="token" value="{{ $token }}">
+</head>
+<body>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+<header class="header-login-bg">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
-							</div>
-						</div>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Меню</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img title="" alt="" src="/img/logo.png">
+        </a>
+      </div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Reset Password
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-@endsection
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+                  @if (Auth::guest())
+            <li><a href="/auth/login">Войти</a></li>
+            <li><a href="/auth/register">Зарегистрироваться</a></li>
+           @else
+          <li><a href="#">{{ Auth::user()->name }} </a></li>
+          @endif
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <div class="container text-center">
+    <h3>Хостинг для вашего сайта</h3>
+
+    <h1>Регистрация</h1>
+  </div>
+
+
+
+
+  <div class="container login-container">
+    <div class="login-form text-center">
+
+
+{!! Form::open(array('routing' => '/password/reset','class' => 'col-xs-12 col-md-6')) !!}
+   
+
+        <div class="form-group">
+          {!! Form::label('email', 'E-Mail Адрес', array('class' => 'control-label')) !!}
+          {!! Form::email('email', @$email, array('size'=> '100','class' => 'form-control'))!!}
+        </div>
+
+
+        <div class="form-group">
+          {!! Form::label('password', 'Пароль', array('class' => 'control-label')) !!}
+          {!! Form::password('password', array('size'=> '100','class' => 'form-control'))!!}
+        </div>
+
+  
+        <div class="form-group">
+          {!! Form::label('password_confirmation', 'Повторите пароль', array('class' => 'control-label')) !!}
+          {!! Form::password('password_confirmation', array('size'=> '100','class' => 'form-control'))!!}
+        </div>
+
+        <input type="hidden" name="token" value="{{ $token }}">
+       {!!  Form::token(); !!}
+        <input type="submit" class="button-full" value="Изменить пароль">
+    {!! Form::close() !!}
+
+
+      <div  class="col-xs-12 col-md-6">
+
+          @if (count($errors) > 0)
+            <div class="alert alert-danger">
+              <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
+              <ul>
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+
+        <img class="img-responsive" alt="" src="/img/email-mockup.png">
+      </div>
+
+
+
+    </div>
+  </div>
+</header>
+
+
+
+@include('footer')
