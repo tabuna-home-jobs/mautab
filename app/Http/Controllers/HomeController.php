@@ -1,6 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use Auth;
+use Vesta;
+use App\Models\Tiket;
+use App\User;
 
 class HomeController extends Controller {
 
@@ -30,10 +33,46 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
+		// Информация о пользователе
+		$UserInfo = Vesta::listUserAccount()[Auth::user()->nickname];
+		$UserInfoLaravel = User::find(Auth::user()->id);
 
-		return view('home');
+
+		//Тикеты 
+		$Tikets = Tiket::whereRaw('idu = ? and idt is null', [Auth::user()->id] )->orderBy('id', 'desc')->simplePaginate(3);
+
+
+		//Бекапы 
+		$Backups= Vesta::listUserBackups();
+
+		return view('home',['UserInfo' => $UserInfo, 'Tikets' => $Tikets, 'Backups' => $Backups,'UserInfoLaravel' => $UserInfoLaravel ]);
 	}
+
+
+
+
+	//Бекап для скачки
+	public function getBackup($backup)
+	{
+		    if (preg_match("/^". Auth::user()->nickname ."/i", $backup)) {
+
+		    	$dir    = '/backup';
+		    	$filesize =  filesize(dir("/backup/")->path . $backup);
+
+				    if (ob_get_level()) {
+				      ob_end_clean();
+				    }
+			    header('Content-type: application/gzip');
+			    header('Content-Length: '. $filesize);
+			    header('Content-Disposition: attachment;  filename='.$backup);
+				readfile( dir("/backup/")->path .$backup);
+		    }
+		    else
+		    	abort(404);
+	}
+
+
 
 }

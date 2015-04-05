@@ -1,24 +1,32 @@
 <?php namespace App\Services;
 
+use Auth;
 
-
-
-class Vesta {
+class Vesta  {
 
 	
 
-	public	$vst_hostname = '151.80.164.81';
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
-	public	$vst_returncode = 'yes';
 
 
-
-
-
+    public function process()
+    {
+        App::bind('Vesta', function()
+		{
+		    return new App\Services\Vesta;
+		});
+    }
 
     public function sendQuery($cmd,$arg1 = null,$arg2 = null,$arg3 = null,$arg4 = null,$arg5 = null,$arg6 = null)
     {
+    		// Проверям, если нам нужен json то выводим его или же код ошибки
+			$argReturnCodeDetector = array($arg1,$arg2,$arg3,$arg4,$arg5,$arg6);
+			if (in_array('json',$argReturnCodeDetector))
+				$this->vst_returncode = 'no';
+			else
+				$this->vst_returncode = 'yes';
+
 
 		    $postvars = array(
 		    	    'user' => $this->vst_username,
@@ -33,19 +41,23 @@ class Vesta {
 				    'arg6' => $arg6
 			);
 
-			$postdata = http_build_query($postvars);
 
-			// Send POST query via cURL
-			$postdata = http_build_query($postvars);
-			$curl = curl_init();
-			curl_setopt($curl, CURLOPT_URL, 'https://' . $this->vst_hostname . ':8083/api/');
-			curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
-			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-			curl_setopt($curl, CURLOPT_POST, true);
-			curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
-			$answer = curl_exec($curl);
-			return $answer;
+			$options = array(
+				    'http' => array(
+				        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+				        'method'  => 'POST',
+				        'content' => http_build_query($postvars),
+				    ),
+			);
+
+
+			$url = 'https://' . Auth::user()->IpServer . ':8083/api/';
+			$context  = stream_context_create($options);
+			return file_get_contents($url, false, $context);
+		
+
+			
+
     }
 
 
@@ -71,5 +83,33 @@ class Vesta {
 			return $Vesta;
 
 	}
+
+	//List User Account
+	public function listUserAccount(){
+		$answer = $this->sendQuery('v-list-user',Auth::user()->nickname,'json');
+		$data = json_decode($answer, true);
+		return $data;
+
+	}
+
+	//List User Backups
+	public function listUserBackups()
+	{
+			$answer = $this->sendQuery('v-list-user-backups',Auth::user()->nickname,'json');
+		$data = json_decode($answer, true);
+		return $data;
+	}
+
+
+
+
+	//List Web Domains
+	public function listWebDomain()
+	{
+		$answer = $this->sendQuery('v-list-web-domains',Auth::user()->nickname,'json');
+		$data = json_decode($answer, true);
+		return $data;
+	}
+
 
 }
