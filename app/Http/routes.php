@@ -13,21 +13,33 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::controller('home', 'HomeController');
 
 
 Route::get('/user', 'UserController@index');
+
+
+
+
+Route::controller('web', 'WebController');
+
+
+
+/* 
+	Тикеты
+*/
+Route::controller('/tikets', 'TiketsController');
 
 Route::get('/tiket/{id}','TiketsController@giveMeTikets')
 	->where('id','[0-9]+');
 
 
-
-
-Route::controller('/tikets', 'TiketsController');
-
+/* 
+	Разное
+*/
 Route::controller('/pay', 'RobokassaController');
 
+Route::controller('/settings', 'SettingsController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

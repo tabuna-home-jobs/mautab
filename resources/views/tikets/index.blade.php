@@ -1,41 +1,36 @@
-@extends('page')
+@extends('app')
 
 @section('content')
 
 
 
-<div class="support-subheader">
-	<div class="row"> 
-		<div class="small-12 columns">
-			<h2>{{Lang::get('tikets.Tickets')}}</h2>
+<div class="container">
+		<div class="col-xs-12">
+			<h2 class="text-center">{{Lang::get('tikets.Tickets')}}</h2>
 
 @if (Session::has('good'))
 
-    <div class="alert alert-success">{{Session::get('good')}}</div>
+    <div class="alert alert-success text-center">{{Session::get('good')}}</div>
 
 @endif
 
-			<p>Stumptown fanny pack ullamco Neutra, Banksy keytar deep v four loko cray proident chillwave. Tote bag Brooklyn Bushwick pour-over. Helvetica shabby chic vegan stumptown. Occaecat yr seitan forage. Typewriter lo-fi sartorial, church-key hella est pickled sustainable master cleanse.</p>
+			<p>Тикеты - внутрисистемные сообщения, которые позволяют вам оперативно общаться со службой поддержки. </p>
 		</div>
-	</div>
-</div>
 
 
 
 
 
 
-<div class="features premium-servers">
 
 
-<div class="row">
-  <div class="small-12 columns">
 
-				<table data-wow-delay="0.3s" class="flat-table flat-table-1 responsive wow fadeInUp tablesaw tablesaw-stack" data-mode="stack">
+  		<div class="col-md-8 table-responsive">
+				<table  class="table table-condensed table-hover table-striped">
 				   <thead>
 					   	<tr>
-						    <th>Номер заявки</th>
-						    <th>Сообщение</th>
+						    <th>Номер</th>
+						    <th>Заголовок</th>
 						    <th>Статус</th>
 						    <th>Управление</th>
 					   </tr>
@@ -45,35 +40,38 @@
 					     <tr>
 						     <td>{{ $Tiket->id }}</td>
 						     <td>{{ $Tiket->title }}</td>
-						     <td>@if (!$Tiket->complete)
-						     		Рассматриваеться
-						     	 @else
-						     	 	Решено
-						     	 @endif
-						     </td>
-						     <td><a href="/tiket/{{ $Tiket->id }}">Просмотреть ветку</a></td>
+                 <td>@if (!$Tiket->complete)
+                    Рассматриваеться
+                   @else
+                    Решено
+                   @endif
+                 </td>
+						     <td><a href="/tiket/{{ $Tiket->id }}">Просмотреть</a></td>
 					     </tr>
 					@endforeach
 					</tbody>
 				</table>
+		</div>
 
 
-
-<div class="spacing-top-50"></div>
-
+			<div class="col-md-4">
+				<h2>Напиши и будет решено</h2>
 				<form action="/tikets/add" method="POST">
-					<h2>Новая проблема? Напиши и всё будет решено</h2>
-					<h3>Заголовок</h3>
-					<input type="text" name="title">
-					<h3>Описание</h3>
-					<textarea name="message" cols="3"></textarea>
+				 	<div class="form-group">
+						<label>Заголовок</label>
+						<input type="text" name="title" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Описание</label>
+						<textarea name="message" cols="5" class="form-control"></textarea>
+					</div>
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<input type="submit" value="Войти">
+					<input type="submit" class="button-full" value="Войти">
 				</form>
+			</div>
 
 
-  </div>
-</div>
+  
           
  </div>
 @endsection

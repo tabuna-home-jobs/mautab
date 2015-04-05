@@ -1,83 +1,131 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CloudMe - Хостинг для вашего сайта</title>
-    <link rel="shortcut icon" href="images/icons/favicon.png" />
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/foundation.css" />
-    <link rel="stylesheet" href="/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/css/animate.min.css" />
-    <link rel="stylesheet" href="/css/morphext.css" />
-    <link rel="stylesheet" href="/css/owl.carousel.css">
-    <link rel="stylesheet" href="/css/owl.theme.css">
-    <link rel="stylesheet" href="/css/owl.transitions.css">
-    <link rel="stylesheet" href="/css/slicknav.css">
-    <link rel="stylesheet" href="/style.css" />
-    <script src="/js/vendor/modernizr.js"></script>
-  </head>
-  <body class="login-page">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.png" />
 
-<!--  HEADER -->    
-<header class="login">
-<div class="top">
-  <div class="row">
-  <div class="small-12 large-3 medium-3 columns">
-   <div class="logo">
-   <a href="index.html" title=""><img src="/images/logo.png" alt="" title=""/></a>
-   </div>
-</div>
+  <title>Cloudme</title>
 
-<div class="small-12 large-9 medium-9 columns">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/animate.css">
+  <link rel="stylesheet" href="/style.css">
+  <script src="wow.js"></script>
+  <script>
+    new WOW().init();
+  </script>
 
-<!--  NAVIGATION MENU AREA -->
-    <nav class="desktop-menu">
-     <ul class="sf-menu">
-         <li class="current-menu-item"><a href="#">Хостинг</a></li>
+</head>
+<body>
 
-          @if (Auth::guest())
-            <li><a href="/auth/login">Войти</a></li>
-            <li><a href="/auth/register">Зарегистрироваться</a></li>
-          @else
-          <li><a href="#">{{ Auth::user()->name }} </a>
-              <ul>
-                 <li><a href="/auth/logout">Выйти</a></li>
-              </ul>
-          </li>
-          @endif
-    </ul>
+
+<header class="header-login-app">
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Меню</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img title="" alt="" src="/img/logo.png">
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">{{ Auth::user()->name }} </a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
-<!--  END OF NAVIGATION MENU AREA --> 
-
-<!--  MOBILE MENU AREA -->
-  <nav class="mobile-menu">
-    <ul>
-  <li>
-         <li><a href="#">Хостинг</a></li>
-
-          @if (Auth::guest())
-            <li><a href="/auth/login">Войти</a></li>
-            <li><a href="/auth/register">Зарегистрироваться</a></li>
-          @else
-          <li><a href="#">{{ Auth::user()->name }} </a>
-              <ul>
-                 <li><a href="/auth/logout">Выйти</a></li>
-              </ul>
-          </li>
-          @endif
-</ul>
-  </nav>
-  <!--  END OF MOBILE MENU AREA -->
 
 
-  </div>
-  </div>
-  </div>
 
-</header>  
-<!--  END OF HEADER --> 
+<menu class="menuapp container text-center">
+
+	<div class="col-md-2 col-sm-3 col-xs-4">
+
+	<a href="/home">
+		<span class="fa fa-user"></span>
+			<h4>Пользователь</h4>
+	</a>
+	<hr>
+		<p class="menu-small"> Диск: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_DISK'] }} мб </p>
+		<p class="menu-small"> Траффик: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_BANDWIDTH'] }} мб </p>
+
+	</div>
+
+	<div class="col-md-2 col-sm-3 col-xs-4">
+	<a href="/web">
+		<span class="fa fa-desktop"></span>
+			<h4>Web</h4>
+		</a>
+		<hr>
+
+		<p class="menu-small"> Домены: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_WEB_DOMAINS'] }} </p>
+		<p class="menu-small"> Алиасы: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_WEB_ALIASES'] }} </p>
+		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_WEB'] }} </p>
+	</div>
+
+
+	<div class="col-md-2 col-sm-3 col-xs-4">
+	<a href="#">
+		<span class="fa fa-sitemap"></span>
+			<h4>DNS</h4>
+		</a>
+		<hr>
+		<p class="menu-small"> Домены: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_DNS_DOMAINS'] }} </p>
+		<p class="menu-small"> Алиасы: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_DNS_RECORDS'] }} </p>
+		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_DNS'] }} </p>
+	</div>
+
+
+	<div class="col-md-2 col-sm-3 col-xs-4">
+		<a href="#">
+		<span class="fa fa-envelope"></span>
+		<h4>Почта</h4>
+		</a>
+<hr>
+		<p class="menu-small"> Домены: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_MAIL_DOMAINS'] }} </p>
+		<p class="menu-small"> Аккаунты: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_MAIL_ACCOUNTS'] }} </p>
+		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_MAIL'] }} </p>
+	</div>
+
+
+	<div class="col-md-2 col-sm-3 col-xs-4">
+		<a href="#">
+		<span class="fa fa-database"></span>
+		<h4>Базы данных</h4>
+				</a>
+				<hr>
+		<p class="menu-small"> Базы данных: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_DATABASES'] }} </p>
+		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_DB'] }}</p>
+	</div>
+
+	<div class="col-md-2 col-sm-3 col-xs-4">
+		<a href="#">
+	<span class="fa fa-tasks"></span>
+		<h4>Задания</h4>
+				</a>
+				<hr>
+		<p class="menu-small"> Задания: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_CRON_JOBS'] }} </p>
+		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_CRON'] }} </p>
+	</div>
+
+
+
+</menu>
+
+
+
+</header>
+
 
 
 
@@ -86,8 +134,3 @@
    
 
 @include('footer')
-
-
-
-
-      

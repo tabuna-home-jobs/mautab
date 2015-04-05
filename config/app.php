@@ -145,6 +145,12 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+		/*
+		 * Я добавил
+		 */
+		'Illuminate\Html\HtmlServiceProvider',
+		'App\Providers\VestaServiceProvider',
+
 	],
 
 	/*
@@ -193,6 +199,13 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
+		/*
+		 * Я добавил
+		 */
+		'Form'=> 'Illuminate\Html\FormFacade',
+		'HTML'=> 'Illuminate\Html\HtmlFacade',
+
+		'Vesta' => 'App\Facades\VestaFacades',
 	],
 
 ];

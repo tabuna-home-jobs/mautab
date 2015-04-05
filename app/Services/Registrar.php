@@ -34,8 +34,6 @@ class Registrar implements RegistrarContract {
 	public function create(array $data)
 	{
 
-		$Vesta = new Vesta();
-		$Vesta->regUser($data['nickname'],$data['password'],$data['email'],'default',$data['name'],$data['lastname']);
 
 		$def_package = array(0  => 'starter',
 							 1  => 'professional',
@@ -47,6 +45,12 @@ class Registrar implements RegistrarContract {
 				$data['package'] = $val;
 			}
 		}
+
+
+		$Vesta = new Vesta();
+		$Vesta->regUser($data['nickname'],$data['password'],$data['email'],'default',$data['name'],$data['lastname']);
+
+		
 		return User::create([
 			'nickname' => $data['nickname'],
 			'name' => $data['name'],
