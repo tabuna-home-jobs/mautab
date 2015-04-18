@@ -23,6 +23,7 @@ Route::get('/user', 'UserController@index');
 
 Route::controller('web', 'WebController');
 
+Route::controller('dns', 'DnsController');
 
 
 /* 

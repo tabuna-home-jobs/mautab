@@ -869,3 +869,21 @@ footer{
 .fa-red{
     color: #c5645b;
 }
+.info-dns div{
+    font-size: 13px;
+}
+.info-dns div span{
+    width: 30%;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+}
+.nameD{
+    vertical-align: middle !important;
+    text-shadow: 1px 1px 1px #ccc;
+    font-weight: bold;
+}
+.nameD div{
+    font-weight: normal;
+    padding-left: 10px;
+}

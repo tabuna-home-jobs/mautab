@@ -76,7 +76,7 @@
 
 
         <div class="col-md-2 col-sm-3 col-xs-4">
-            <a href="#">
+            <a href="/dns">
                 <span class="fa fa-sitemap"></span>
                 <h4>DNS</h4>
             </a>

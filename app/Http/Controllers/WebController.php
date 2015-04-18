@@ -32,14 +32,12 @@ class WebController extends Controller {
 	 *
 	 * @return Response
 	 */
+
 	public function getIndex()
 	{
-
 		$UserDomain = Vesta::listWebDomain();
 		return view('web/index',[ "UserDomain" => $UserDomain ]);
 	}
-
-
 
 
 	//Бекап для скачки
