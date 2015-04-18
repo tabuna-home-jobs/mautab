@@ -48,6 +48,10 @@ class Vesta  {
 				        'method'  => 'POST',
 				        'content' => http_build_query($postvars),
 				    ),
+                    "ssl"=>array(
+                        "verify_peer"=>false,
+                        "verify_peer_name"=>false,
+                    ),
 			);
 
 
