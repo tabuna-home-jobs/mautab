@@ -18,8 +18,6 @@
 
 
 
-
-
   <div class="col-md-6">
 
 
@@ -167,6 +165,7 @@
 <hr>
 
 <div class="row">
+@if(!is_null($Tikets))
   <div class="col-md-6">
 
   <h4 class="pull-left"> <i class="fa fa-ticket fa-red"></i> Мои Тикеты:</h4>
@@ -180,7 +179,7 @@
                </tr>
              </thead>
               <tbody>
-            @foreach ($Tikets as $Tiket)
+            @foreach($Tikets as $Tiket)
                  <tr>
                    <td>{{ $Tiket->id }}</td>
                    <td>{{ $Tiket->title }}</td>
@@ -189,11 +188,11 @@
             @endforeach
             </tbody>
           </table>
-         
+ @endif
 
 
   </div>
-
+@if(!is_null($Backups))
   <div class="col-md-6">
 
   <h4 class="pull-left"><i class="fa fa-cloud-download fa-red"></i> Резервные копии:</h4>
@@ -207,16 +206,17 @@
                </tr>
              </thead>
               <tbody>
-            @foreach ($Backups as $key => $Backup)
-                 <tr>
-                   <td>{{ $Backup['TIME'] }} : {{ $Backup['DATE'] }}</td>
-                   <td>{{ $Backup['SIZE'] }} мб</td>
-                   <td><a href="/home/backup/{{$key}} ">Скачать</a></td>
-                 </tr>
-            @endforeach
+              @foreach($Backups as $key => $Backup)
+                  <tr>
+                      <td>{{ $Backup['TIME'] }} : {{ $Backup['DATE'] }}</td>
+                      <td>{{ $Backup['SIZE'] }} мб</td>
+                      <td><a href="/home/backup/{{$key}} ">Скачать</a></td>
+                  </tr>
+              @endforeach
             </tbody>
           </table>
   </div>
+    @endif
 </div>
 
 

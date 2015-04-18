@@ -267,6 +267,8 @@ header h3 {
 .pricing-table * {
     list-style: none;
     line-height: 1;
+    position: relative;
+    z-index: -1;
 }
 
 .pricing-table .price {

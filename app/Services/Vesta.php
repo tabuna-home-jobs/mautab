@@ -8,15 +8,15 @@ class Vesta  {
 
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
+	public  $userlatavel;
+
+	function __construct()
+	{
+		$this->userLaravel = Auth::user()->nickname;
+	}
 
 
-    public function process()
-    {
-        App::bind('Vesta', function()
-		{
-		    return new App\Services\Vesta;
-		});
-    }
+
 
     public function sendQuery($cmd,$arg1 = null,$arg2 = null,$arg3 = null,$arg4 = null,$arg5 = null,$arg6 = null)
     {
@@ -99,7 +99,7 @@ class Vesta  {
 	//List User Backups
 	public function listUserBackups()
 	{
-			$answer = $this->sendQuery('v-list-user-backups',Auth::user()->nickname,'json');
+			$answer = $this->sendQuery('v-list-user-backups',$this->userLaravel,'json');
 		$data = json_decode($answer, true);
 		return $data;
 	}
@@ -110,10 +110,20 @@ class Vesta  {
 	//List Web Domains
 	public function listWebDomain()
 	{
-		$answer = $this->sendQuery('v-list-web-domains',Auth::user()->nickname,'json');
+		$answer = $this->sendQuery('v-list-web-domains',$this->userLaravel,'json');
 		$data = json_decode($answer, true);
 		return $data;
 	}
+
+
+	//List Dns
+	public function listDNS()
+	{
+		$answer = $this->sendQuery('v-list-dns-domains',$this->userLaravel,'json');
+		$data = json_decode($answer, true);
+		return $data;
+	}
+
 
 
 }

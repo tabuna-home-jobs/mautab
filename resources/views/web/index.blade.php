@@ -5,7 +5,6 @@
     
 <div class="col-xs-12">
 
-
 <div class="table-responsive">
 <table class="table table-striped">
       <thead>
@@ -18,8 +17,8 @@
       </thead>
       <tbody>
 
-
-		@forelse($UserDomain as $key => $Domain)
+      @if(!empty($UserDomain))
+		@foreach($UserDomain as $key => $Domain)
 
 				@if($Domain['SUSPENDED'] == "no")
 					<tr>
@@ -48,9 +47,16 @@
 					<p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
 					</td>
 				</tr>
-		@empty
-		      <p>Не согдано ни одного домена</p>
-		@endforelse
+		@endforeach
+        @else
+            <tr>
+                <td>Нет данных</td>
+                <td>Нет данных</td>
+                <td>Нет данных</td>
+                <td>Нет данных</td>
+            </tr>
+
+          @endif
 
 
       </tbody>
