@@ -47,81 +47,81 @@
 
 
 
-<menu class="menuapp container text-center">
 
-	<div class="col-md-2 col-sm-3 col-xs-4">
+    <menu class="menuapp container text-center">
 
-	<a href="/home">
-		<span class="fa fa-user"></span>
-			<h4>Пользователь</h4>
-	</a>
-	<hr>
-		<p class="menu-small"> Диск: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_DISK'] }} мб </p>
-		<p class="menu-small"> Траффик: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_BANDWIDTH'] }} мб </p>
+        <div class="col-md-2 col-sm-3 col-xs-4">
 
-	</div>
+            <a href="/home">
+                <span class="fa fa-user"></span>
+                <h4>Пользователь</h4>
+            </a>
+            <hr>
+            <p class="menu-small"> Диск: {{ $UserInfo['U_DISK'] }} мб </p>
+            <p class="menu-small"> Траффик: {{$UserInfo['U_BANDWIDTH'] }} мб </p>
 
-	<div class="col-md-2 col-sm-3 col-xs-4">
-	<a href="/web">
-		<span class="fa fa-desktop"></span>
-			<h4>Web</h4>
-		</a>
-		<hr>
+        </div>
 
-		<p class="menu-small"> Домены: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_WEB_DOMAINS'] }} </p>
-		<p class="menu-small"> Алиасы: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_WEB_ALIASES'] }} </p>
-		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_WEB'] }} </p>
-	</div>
+        <div class="col-md-2 col-sm-3 col-xs-4">
+            <a href="/web">
+                <span class="fa fa-desktop"></span>
+                <h4>Web</h4>
+            </a>
+            <hr>
 
-
-	<div class="col-md-2 col-sm-3 col-xs-4">
-	<a href="#">
-		<span class="fa fa-sitemap"></span>
-			<h4>DNS</h4>
-		</a>
-		<hr>
-		<p class="menu-small"> Домены: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_DNS_DOMAINS'] }} </p>
-		<p class="menu-small"> Алиасы: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_DNS_RECORDS'] }} </p>
-		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_DNS'] }} </p>
-	</div>
+            <p class="menu-small"> Домены: {{$UserInfo['U_WEB_DOMAINS'] }} </p>
+            <p class="menu-small"> Алиасы: {{$UserInfo['U_WEB_ALIASES'] }} </p>
+            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_WEB'] }} </p>
+        </div>
 
 
-	<div class="col-md-2 col-sm-3 col-xs-4">
-		<a href="#">
-		<span class="fa fa-envelope"></span>
-		<h4>Почта</h4>
-		</a>
-<hr>
-		<p class="menu-small"> Домены: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_MAIL_DOMAINS'] }} </p>
-		<p class="menu-small"> Аккаунты: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_MAIL_ACCOUNTS'] }} </p>
-		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_MAIL'] }} </p>
-	</div>
+        <div class="col-md-2 col-sm-3 col-xs-4">
+            <a href="#">
+                <span class="fa fa-sitemap"></span>
+                <h4>DNS</h4>
+            </a>
+            <hr>
+            <p class="menu-small"> Домены: {{$UserInfo['U_DNS_DOMAINS'] }} </p>
+            <p class="menu-small"> Алиасы: {{$UserInfo['U_DNS_RECORDS'] }} </p>
+            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_DNS'] }} </p>
+        </div>
 
 
-	<div class="col-md-2 col-sm-3 col-xs-4">
-		<a href="#">
-		<span class="fa fa-database"></span>
-		<h4>Базы данных</h4>
-				</a>
-				<hr>
-		<p class="menu-small"> Базы данных: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_DATABASES'] }} </p>
-		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_DB'] }}</p>
-	</div>
-
-	<div class="col-md-2 col-sm-3 col-xs-4">
-		<a href="#">
-	<span class="fa fa-tasks"></span>
-		<h4>Задания</h4>
-				</a>
-				<hr>
-		<p class="menu-small"> Задания: {{Vesta::listUserAccount()[Auth::user()->nickname]['U_CRON_JOBS'] }} </p>
-		<p class="menu-small"> Заблокированно: {{Vesta::listUserAccount()[Auth::user()->nickname]['SUSPENDED_CRON'] }} </p>
-	</div>
+        <div class="col-md-2 col-sm-3 col-xs-4">
+            <a href="#">
+                <span class="fa fa-envelope"></span>
+                <h4>Почта</h4>
+            </a>
+            <hr>
+            <p class="menu-small"> Домены: {{$UserInfo['U_MAIL_DOMAINS'] }} </p>
+            <p class="menu-small"> Аккаунты: {{$UserInfo['U_MAIL_ACCOUNTS'] }} </p>
+            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_MAIL'] }} </p>
+        </div>
 
 
+        <div class="col-md-2 col-sm-3 col-xs-4">
+            <a href="#">
+                <span class="fa fa-database"></span>
+                <h4>Базы данных</h4>
+            </a>
+            <hr>
+            <p class="menu-small"> Базы данных: {{$UserInfo['U_DATABASES'] }} </p>
+            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_DB'] }}</p>
+        </div>
 
-</menu>
+        <div class="col-md-2 col-sm-3 col-xs-4">
+            <a href="#">
+                <span class="fa fa-tasks"></span>
+                <h4>Задания</h4>
+            </a>
+            <hr>
+            <p class="menu-small"> Задания: {{$UserInfo['U_CRON_JOBS'] }} </p>
+            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_CRON'] }} </p>
+        </div>
 
+
+
+    </menu>
 
 
 </header>

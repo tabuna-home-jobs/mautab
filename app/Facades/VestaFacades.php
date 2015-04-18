@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Facade;
 
 class VestaFacades extends Facade {
 
+
+
 // extends Facade
     /**
      * Получить зарегистрированное имя компонента.

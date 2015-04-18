@@ -36,7 +36,6 @@ class HomeController extends Controller {
 	public function getIndex()
 	{
 		// Информация о пользователе
-		$UserInfo = Vesta::listUserAccount()[Auth::user()->nickname];
 		$UserInfoLaravel = User::find(Auth::user()->id);
 
 
@@ -45,9 +44,9 @@ class HomeController extends Controller {
 
 
 		//Бекапы 
-		$Backups= Vesta::listUserBackups();
+		$Backups = Vesta::listUserBackups();
 
-		return view('home',['UserInfo' => $UserInfo, 'Tikets' => $Tikets, 'Backups' => $Backups,'UserInfoLaravel' => $UserInfoLaravel ]);
+		return view('home',['Tikets' => $Tikets, 'Backups' => $Backups,'UserInfoLaravel' => $UserInfoLaravel ]);
 	}
 
 

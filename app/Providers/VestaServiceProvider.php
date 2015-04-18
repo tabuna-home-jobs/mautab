@@ -2,8 +2,9 @@
 
 use View;
 use Illuminate\Support\ServiceProvider;
-use App\Facades\VestaFacades;
-
+//use App\Services\Vesta;
+use Auth;
+use Vesta;
 
 class VestaServiceProvider extends ServiceProvider {
 
@@ -14,13 +15,11 @@ class VestaServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+
 		View::composer('*', function()
         {
-
-        	//dd(Vesta::listUserAccount(Auth::user()->nickname,'json')[Auth::user()->nickname]);
-
-        	View::share('test', 'хахахах Это я вызвал из провайдера');
+            $UserInfo = Vesta::listUserAccount(Auth::user()->nickname,'json')[Auth::user()->nickname];
+            View::share('UserInfo', $UserInfo);
         });
 
 	}
