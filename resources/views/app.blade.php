@@ -71,7 +71,6 @@
 
             <p class="menu-small"> Домены: {{$UserInfo['U_WEB_DOMAINS'] }} </p>
             <p class="menu-small"> Алиасы: {{$UserInfo['U_WEB_ALIASES'] }} </p>
-            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_WEB'] }} </p>
         </div>
 
 
@@ -83,7 +82,6 @@
             <hr>
             <p class="menu-small"> Домены: {{$UserInfo['U_DNS_DOMAINS'] }} </p>
             <p class="menu-small"> Алиасы: {{$UserInfo['U_DNS_RECORDS'] }} </p>
-            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_DNS'] }} </p>
         </div>
 
 
@@ -95,7 +93,6 @@
             <hr>
             <p class="menu-small"> Домены: {{$UserInfo['U_MAIL_DOMAINS'] }} </p>
             <p class="menu-small"> Аккаунты: {{$UserInfo['U_MAIL_ACCOUNTS'] }} </p>
-            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_MAIL'] }} </p>
         </div>
 
 
@@ -106,7 +103,6 @@
             </a>
             <hr>
             <p class="menu-small"> Базы данных: {{$UserInfo['U_DATABASES'] }} </p>
-            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_DB'] }}</p>
         </div>
 
         <div class="col-md-2 col-sm-3 col-xs-4">
@@ -116,7 +112,6 @@
             </a>
             <hr>
             <p class="menu-small"> Задания: {{$UserInfo['U_CRON_JOBS'] }} </p>
-            <p class="menu-small"> Заблокированно: {{$UserInfo['SUSPENDED_CRON'] }} </p>
         </div>
 
 
