@@ -8,15 +8,15 @@ class Vesta  {
 
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
-	public  $userlatavel;
-
-	function __construct()
-	{
-		$this->userLaravel = Auth::user()->nickname;
-	}
 
 
-
+    public function process()
+    {
+        App::bind('Vesta', function()
+		{
+		    return new App\Services\Vesta;
+		});
+    }
 
     public function sendQuery($cmd,$arg1 = null,$arg2 = null,$arg3 = null,$arg4 = null,$arg5 = null,$arg6 = null)
     {
@@ -99,7 +99,7 @@ class Vesta  {
 	//List User Backups
 	public function listUserBackups()
 	{
-			$answer = $this->sendQuery('v-list-user-backups',$this->userLaravel,'json');
+			$answer = $this->sendQuery('v-list-user-backups',Auth::user()->nickname,'json');
 		$data = json_decode($answer, true);
 		return $data;
 	}
@@ -110,19 +110,74 @@ class Vesta  {
 	//List Web Domains
 	public function listWebDomain()
 	{
-		$answer = $this->sendQuery('v-list-web-domains',$this->userLaravel,'json');
+		$answer = $this->sendQuery('v-list-web-domains',Auth::user()->nickname,'json');
 		$data = json_decode($answer, true);
 		return $data;
 	}
 
 
-	//List Dns
-	public function listDNS()
-	{
-		$answer = $this->sendQuery('v-list-dns-domains',$this->userLaravel,'json');
-		$data = json_decode($answer, true);
-		return $data;
-	}
+
+
+
+    //Add Web Domains Для добовления домена!
+    public function addWebDomain($domain)
+    {
+        $Vesta = $this->sendQuery('v-add-domain',Auth::user()->nickname,$domain);
+        if($Vesta != 0 )
+            return $Vesta;
+    }
+
+    //Add DNS domain Для добовления домена!
+    public function addDNSDomain($domain, $v_ip)
+    {
+        $Vesta = $this->sendQuery('v-add-dns-domain',Auth::user()->nickname,$domain,$v_ip);
+        if($Vesta != 0 )
+            return $Vesta;
+    }
+
+    // Add mail domain
+    public function addMailDomain($domain)
+    {
+        $Vesta = $this->sendQuery('v-add-mail-domain',Auth::user()->nickname,$domain);
+        if($Vesta != 0 )
+            return $Vesta;
+    }
+
+
+    // Add domain aliases
+    public function addWebDomainAlias($domain,$alias)
+    {
+        $Vesta = $this->sendQuery('v-add-web-domain-alias',Auth::user()->nickname,$domain,$alias, 'no');
+        if($Vesta != 0 )
+            return $Vesta;
+    }
+
+    //v-add-dns-on-web-alias
+    public function addWebDNSOnWebAlias($domain,$alias)
+    {
+        $Vesta = $this->sendQuery('v-add-web-domain-alias',Auth::user()->nickname,$domain,$alias, 'no');
+        if($Vesta != 0 )
+            return $Vesta;
+    }
+
+
+    // Delete www. alias if it wasn't found
+    public function deleteWebDomainAlias($domain,$alias)
+    {
+        $Vesta = $this->sendQuery('v-delete-web-domain-alias',Auth::user()->nickname,$domain,$alias, 'no');
+        if($Vesta != 0 )
+            return $Vesta;
+    }
+
+
+    // Add proxy support
+    public function addWebDomainProxy($domain,$alias,$v_proxy_ext)
+    {
+        $Vesta = $this->sendQuery('v-add-web-domain-proxy',Auth::user()->nickname,$domain,$alias,$v_proxy_ext, 'no');
+        if($Vesta != 0 )
+            return $Vesta;
+    }
+
 
 
 
