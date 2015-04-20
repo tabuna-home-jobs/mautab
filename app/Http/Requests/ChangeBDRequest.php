@@ -3,7 +3,7 @@
 use App\Http\Requests\Request;
 use Auth;
 
-class Domain extends Request {
+class ChangeBDRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -23,7 +23,8 @@ class Domain extends Request {
 	public function rules()
 	{
 		return [
-            'v_domain' => 'max:255',
+			'v_database' => 'requred|max:255',
+			'v_dbuser' => 'requred|max:255'
 		];
 	}
 

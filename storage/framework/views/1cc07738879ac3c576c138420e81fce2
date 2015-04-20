@@ -1,0 +1,69 @@
+<?php $__env->startSection('content'); ?>
+    <section class="container">
+
+        <div class="col-xs-12">
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Имя Базы</th>
+                        <th>Информация</th>
+                        <th>Управление</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <?php if(!empty($BdList)): ?>
+                        <?php foreach($BdList as $nameBd => $bd): ?>
+
+                            <?php if($bd['SUSPENDED'] != "no"): ?>
+                                <tr class="danger">
+                            <?php else: ?>
+                                <tr>
+                                    <?php endif; ?>
+                                    <td class="nameD">
+                                        <?php echo e($nameBd); ?>
+
+                                        <div>
+                                            Диск: <?php echo e($bd['U_DISK']); ?> мб
+                                        </div>
+                                        <div><small><?php echo e($bd['DATE']); ?></small></div>
+                                    </td>
+                                    <td class="info-dns">
+                                        <p><div><span>Пользователь:</span><span><?php echo e($bd['DBUSER']); ?></span></div></p>
+                                        <p><div><span>Сервер:</span><span><?php echo e($bd['HOST']); ?></span></div></p>
+                                        <p><div><span>Тип:</span><span><?php echo e($bd['TYPE']); ?></span></div></p>
+                                        <p><div><span>Кодировка:</span><span><?php echo e($bd['CHARSET']); ?></span></div></p>
+                                    </td>
+                                    <td>
+                                        <p><a href="#"><i class="fa fa-line-chart"></i> Веб-аналитика</a></p>
+                                        <p><a href="#"><i class="fa fa-heartbeat"></i> Просмотреть логи</a></p>
+                                        <p><a href="/bd/crud/<?php echo e(Auth::user()->nickname); ?>"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
+                                        <p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td>Нет данных</td>
+                                        <td>Нет данных</td>
+                                        <td>Нет данных</td>
+                                        <td>Нет данных</td>
+                                    </tr>
+                                <?php endif; ?>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

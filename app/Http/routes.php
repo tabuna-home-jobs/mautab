@@ -25,6 +25,8 @@ Route::controller('web', 'WebController');
 
 Route::controller('dns', 'DnsController');
 
+Route::controller('bd', 'BdController');
+
 
 /* 
 	Тикеты

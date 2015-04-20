@@ -148,8 +148,7 @@ return [
 		/*
 		 * Я добавил
 		 */
-		'Illuminate\Html\HtmlServiceProvider',
-		'App\Providers\VestaServiceProvider',
+		'Illuminate\Html\HtmlServiceProvider'
 
 	],
 

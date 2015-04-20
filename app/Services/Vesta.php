@@ -9,7 +9,6 @@ class Vesta  {
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
 
-
     public function process()
     {
         App::bind('Vesta', function()
@@ -88,6 +87,13 @@ class Vesta  {
 
 	}
 
+
+	public function changeDb($database, $dbuser){
+		$Vesta = $this->sendQuery('v-change-database-user',Auth::user()->nickname, $database, $dbuser);
+		if($Vesta != 0 )
+			return $Vesta;
+	}
+
 	//List User Account
 	public function listUserAccount(){
 		$answer = $this->sendQuery('v-list-user',Auth::user()->nickname,'json');
@@ -115,11 +121,22 @@ class Vesta  {
 		return $data;
 	}
 
+	//Список DNS
+	public function listDNS(){
+		$listDns = $this->sendQuery('v-list-dns-domains',Auth::user()->nickname,'json');
+		$data = json_decode($listDns, true);
+		return $data;
+	}
+
+	//Список БД
+	public function listBD($name){
+		$listBd = $this->sendQuery('v-list-databases',$name,'json');
+		$data = json_decode($listBd, true);
+		return $data;
+	}
 
 
-
-
-    //Add Web Domains Для добовления домена!
+	//Add Web Domains Для добовления домена!
     public function addWebDomain($domain)
     {
         $Vesta = $this->sendQuery('v-add-domain',Auth::user()->nickname,$domain);
@@ -177,6 +194,7 @@ class Vesta  {
         if($Vesta != 0 )
             return $Vesta;
     }
+
 
 
 

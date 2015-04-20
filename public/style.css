@@ -1,4 +1,12 @@
 /*Фиксы бутстрапа */
+html{
+    position: relative !important;
+    min-height: 100% !important;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 77px;
+}
 button:active, button:focus {
     outline: none !important;
 }
@@ -652,7 +660,7 @@ ul.domainfeatures li i {
 
 /* Contact ------------------------ */
 .contact-section {
-    padding: 50px 0;
+    padding: 50px 0 77px 0;
 }
 
 .contact-details h4 {
@@ -732,6 +740,11 @@ ul.domainfeatures li i {
 footer {
     padding: 10px 0 15px;
     background: #222D3A;
+
+    position: absolute !important;
+    bottom: 0;
+    width: 100% !important;
+    /* Set the fixed height of the footer here */
 }
 
 p.copyright {
@@ -866,4 +879,18 @@ footer{
 }
 .fa-red{
     color: #c5645b;
+}
+.nameD{
+    vertical-align: middle !important;
+    font-weight: bold;
+}
+.info-dns span:first-child{
+    width: 25%;
+    display: inline-block;
+    text-align: left;
+}
+.info-dns span:last-child{
+    width: 35%;
+    display: inline-block;
+    text-align: left;
 }
