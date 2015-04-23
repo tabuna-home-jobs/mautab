@@ -1,10 +1,11 @@
 <?php namespace App\Http\Controllers;
 
-use Auth;
+use App\Http\Requests\TiketRequest;
 use App\Models\Tiket;
-use Request;
-use Session;
+use Auth;
 use Redirect;
+use Session;
+
 
 class TiketsController extends Controller {
 
@@ -34,7 +35,7 @@ class TiketsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getIndex()
+	public function Index()
 	{
 
         $Tikets = Tiket::whereRaw('idu = ? and idt is null', [Auth::user()->id] )->orderBy('id', 'desc')->simplePaginate(15);
@@ -42,27 +43,28 @@ class TiketsController extends Controller {
 	}
 
 	//Новая заявка
-	public function postAdd()
+	public function store(TiketRequest $request)
 	{
-			//Получение всех пришедших данных
-			$input = Request::all();
+
 
 			$tikets = new Tiket;
 
 			//Заполнение модели
 			$tikets->idu = Auth::user()->id;
-			$tikets->title = $input['title'];
-			$tikets->message = $input['message'];
+		$tikets->title = $request->title;
+		$tikets->message = $request->message;
 			$tikets->complete = 0;
 			$tikets->save();
 
 			//Флеш сообщение
 			Session::flash('good', 'Вы успешно создали тикет!');
-			return Redirect::to('/tikets');
+
+		return redirect()->back();
 
 	}
 
-	public function giveMeTikets($id){
+	public function show($id)
+	{
 
 		$Tiket = Tiket::whereRaw('idu = ? AND id = ?',
 									[Auth::user()->id, $id] )->orderBy('id', 'desc')->find($id);
@@ -74,7 +76,7 @@ class TiketsController extends Controller {
 	}
 
 	//Ответ
-	public function postReply()
+	public function edit()
 	{
 		$input = Request::all();
 
@@ -87,7 +89,8 @@ class TiketsController extends Controller {
 		$tikets->save();
 
 		Session::flash('good', 'Вы успешно добавили ответ.');
-		return Redirect::to('/tiket/'.  $input['id'] );
+
+		return redirect()->back();
 	}
 
 

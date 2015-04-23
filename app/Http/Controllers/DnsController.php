@@ -12,7 +12,8 @@ class DnsController extends Controller{
 
 	}
 
-	public function getIndex(){
+	public function Index()
+	{
 
 		$DnsList = Vesta::listDNS();
 		return view('dns/index',['DnsList' => $DnsList]);

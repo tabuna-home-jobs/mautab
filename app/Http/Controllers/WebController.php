@@ -1,9 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use Auth;
-use Vesta;
-use App\User;
 use Request;
+use Vesta;
 
 class WebController extends Controller {
 
@@ -33,7 +32,7 @@ class WebController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getIndex()
+	public function Index()
 	{
 
 
@@ -54,31 +53,5 @@ class WebController extends Controller {
         dd($test);
         Request::url('/web/domain');
     }
-
-
-
-
-
-	//Бекап для скачки
-	public function getBackup($backup)
-	{
-		    if (preg_match("/^". Auth::user()->nickname ."/i", $backup)) {
-
-		    	$dir    = '/backup';
-		    	$filesize =  filesize(dir("/backup/")->path . $backup);
-
-				    if (ob_get_level()) {
-				      ob_end_clean();
-				    }
-			    header('Content-type: application/gzip');
-			    header('Content-Length: '. $filesize);
-			    header('Content-Disposition: attachment;  filename='.$backup);
-				readfile( dir("/backup/")->path .$backup);
-		    }
-		    else
-		    	abort(404);
-	}
-
-
 
 }

@@ -46,7 +46,7 @@
                     Решено
                    @endif
                  </td>
-						     <td><a href="/tiket/{{ $Tiket->id }}">Просмотреть</a></td>
+                             <td><a href="/tikets/{{ $Tiket->id }}">Просмотреть</a></td>
 					     </tr>
 					@endforeach
 					</tbody>
@@ -56,7 +56,8 @@
 
 			<div class="col-md-4">
 				<h2>Напиши и будет решено</h2>
-				<form action="/tikets/add" method="POST">
+
+                <form action="/tikets" method="POST">
 				 	<div class="form-group">
 						<label>Заголовок</label>
 						<input type="text" name="title" class="form-control">

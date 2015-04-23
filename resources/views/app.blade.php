@@ -84,18 +84,6 @@
             <p class="menu-small"> Алиасы: {{$UserInfo['U_DNS_RECORDS'] }} </p>
         </div>
 
-
-        <div class="col-md-2 col-sm-3 col-xs-4">
-            <a href="#">
-                <span class="fa fa-envelope"></span>
-                <h4>Почта</h4>
-            </a>
-            <hr>
-            <p class="menu-small"> Домены: {{$UserInfo['U_MAIL_DOMAINS'] }} </p>
-            <p class="menu-small"> Аккаунты: {{$UserInfo['U_MAIL_ACCOUNTS'] }} </p>
-        </div>
-
-
         <div class="col-md-2 col-sm-3 col-xs-4">
             <a href="/bd">
                 <span class="fa fa-database"></span>
@@ -107,8 +95,19 @@
 
         <div class="col-md-2 col-sm-3 col-xs-4">
             <a href="#">
-                <span class="fa fa-tasks"></span>
-                <h4>Задания</h4>
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                <h4>Оплата</h4>
+            </a>
+            <hr>
+            <p class="menu-small"> Баланс: {{ Auth::user()->balans }} руб </p>
+
+            <p class="menu-small"> Приостановка: {{Auth::user()->EndOfService }} </p>
+        </div>
+
+        <div class="col-md-2 col-sm-3 col-xs-4">
+            <a href="/tikets">
+                <span class="fa fa-life-ring"></span>
+                <h4>Поддержка</h4>
             </a>
             <hr>
             <p class="menu-small"> Задания: {{$UserInfo['U_CRON_JOBS'] }} </p>

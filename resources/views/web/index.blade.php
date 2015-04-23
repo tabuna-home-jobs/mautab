@@ -10,7 +10,6 @@
       <thead>
         <tr>
           <th>Домен</th>
-          <th>Информация</th>
           <th>Конфигурация</th>
           <th>Управление</th>
         </tr>
@@ -34,15 +33,11 @@
 						<p>Диск - {{ $Domain['U_DISK'] }} мб</p>
 						<p>Трафик - {{ $Domain['U_BANDWIDTH'] }} мб</p>
 						<p>IP - {{ $Domain['IP'] }}  {{ $Domain['IP6'] }}</p>
+
+                        <p>Поддержка Nginx: @if($Domain['PROXY'] == "") Нет @else Да @endif </p>
 					</td>
-					<td>
-					<p>Поддержка Nginx: @if($Domain['PROXY'] == "") Нет @else Да @endif </p>
-					<p>Поддержка SSL: @if($Domain['SSL'] == "no") Нет @else Да @endif </p>
-					<p>Статистика сайта: @if($Domain['STATS'] == "") Нет @else {{ $Domain['STATS'] }} @endif </p>
-					</td>
-					<td>
-					<p><a href="#"><i class="fa fa-line-chart"></i> Веб-аналитика</a></p>
-					<p><a href="#"><i class="fa fa-heartbeat"></i> Просмотреть логи</a></p>
+
+                        <td>
 					<p><a href="#"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
 					<p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
 					</td>

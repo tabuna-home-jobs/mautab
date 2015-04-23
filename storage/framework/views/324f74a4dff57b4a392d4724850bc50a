@@ -16,18 +16,10 @@
 
 
 
-
-
   <div class="col-md-6">
 
 
-  <div class="col-md-4">
-  <img src="/img/gravatar.png" class="img-responsive">
-  </div>
-
-
-
-  <div class="col-md-8">
+  <div class="col-md-12">
     <p><?php echo e($UserInfo['FNAME']); ?> <?php echo e($UserInfo['LNAME']); ?>
 
 
@@ -41,6 +33,7 @@
     </p>  
   <p>Баланс: <?php echo e($UserInfoLaravel->balans); ?> руб </p>
   <p>Дата окончания услуг: <?php echo e($UserInfoLaravel->EndOfService); ?> </p>
+      <p>Тариф: <?php echo e($UserInfo['PACKAGE']); ?>  </p>
 
  </div>
 
@@ -59,38 +52,6 @@
                         <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo e($UserInfo['U_DISK']); ?>" aria-valuemin="0" aria-valuemax="<?php echo e($UserInfo['DISK_QUOTA']); ?>" style="width: <?php echo e($UserInfo['U_DISK'] *  $UserInfo['DISK_QUOTA'] / 100); ?> %; min-width: 2em;">
                         </div>
                       </div>
-
-
-                              <table class="table">
-                                  <tr>
-                                      <td>
-                                          Web : <?php echo e($UserInfo['U_DISK_WEB']); ?> мб
-                                      </td>
-                                      <td>
-                                          Базы данных: <?php echo e($UserInfo['U_DISK_DB']); ?>  мб
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          Почта: <?php echo e($UserInfo['U_DISK_MAIL']); ?> мб
-
-                                      </td>
-                                      <td>
-                                          Папки пользователя : <?php echo e($UserInfo['U_DISK_DIRS']); ?> мб
-                                      </td>
-                                  </tr>
-
-                      <tr>
-                          <td class="counter-name">Электронная почта:</td>
-                          <td class="counter-value"><?php echo e($UserInfo['CONTACT']); ?></td>
-                      </tr>
-                      <tr>
-                          <td class="counter-name">Пакет:</td>
-                          <td class="counter-value"><?php echo e($UserInfo['PACKAGE']); ?></td>
-                      </tr>
-
-                              </table>
-
 </div>
 
 
@@ -104,6 +65,17 @@
 
   <div class="col-md-6">
         <table class="table">
+
+            <tr>
+                <td class="counter-name">Веб:</td>
+                <td class="counter-value"><?php echo e($UserInfo['U_DISK_WEB']); ?> мб</td>
+            </tr>
+
+            <tr>
+                <td class="counter-name">Базы данных::</td>
+                <td class="counter-value"><?php echo e($UserInfo['U_DISK_DB']); ?> мб</td>
+            </tr>
+
           <tr>
               <td class="counter-name">Веб домены:</td>
               <td class="counter-value"><?php echo e($UserInfo['U_WEB_DOMAINS']); ?> / <?php echo e($UserInfo['WEB_DOMAINS']); ?></td>
@@ -113,28 +85,8 @@
               <td class="counter-value"> <?php echo e($UserInfo['U_DNS_DOMAINS']); ?> / <?php echo e($UserInfo['DNS_DOMAINS']); ?></td>
           </tr>
           <tr>
-              <td class="counter-name">Почтовые домены::</td>
-              <td class="counter-value"><?php echo e($UserInfo['U_MAIL_DOMAINS']); ?> / <?php echo e($UserInfo['MAIL_DOMAINS']); ?> </td>
-          </tr>
-          <tr>
               <td class="counter-name">Базы данных:</td>
               <td class="counter-value"><?php echo e($UserInfo['U_DATABASES']); ?> / <?php echo e($UserInfo['DATABASES']); ?></td>
-          </tr>
-          <tr>
-              <td class="counter-name">Cron задания:</td>
-              <td class="counter-value"><?php echo e($UserInfo['U_CRON_JOBS']); ?> / <?php echo e($UserInfo['CRON_JOBS']); ?></td>
-          </tr>
-          <tr>
-              <td class="counter-name">Резервные копии:</td>
-              <td class="counter-value"><?php echo e($UserInfo['U_BACKUPS']); ?> / <?php echo e($UserInfo['BACKUPS']); ?></td>
-          </tr>
-          <tr>
-              <td class="counter-name">SSH Доступ:</td>
-              <td class="counter-value"><?php echo e($UserInfo['SHELL']); ?></td>
-          </tr>
-          <tr>
-              <td class="counter-name">Выделиных IP адресов:</td>
-              <td class="counter-value"><?php echo e($UserInfo['IP_OWNED']); ?></td>
           </tr>
           <tr>
               <td class="counter-name">Сервер имен:</td>
@@ -166,6 +118,7 @@
 <hr>
 
 <div class="row">
+<?php if(!is_null($Tikets)): ?>
   <div class="col-md-6">
 
   <h4 class="pull-left"> <i class="fa fa-ticket fa-red"></i> Мои Тикеты:</h4>
@@ -188,39 +141,12 @@
             <?php endforeach; ?>
             </tbody>
           </table>
-         
+ <?php endif; ?>
 
 
   </div>
 
-  <div class="col-md-6">
-
-  <h4 class="pull-left"><i class="fa fa-cloud-download fa-red"></i> Резервные копии:</h4>
-   <a href="#" class="pull-right">Управление</a>
-          <table  class="table table-condensed table-hover table-striped">
-             <thead>
-                <tr>
-                  <th>Дата</th>
-                  <th>Размер</th>
-                  <th>Скачать</th>
-               </tr>
-             </thead>
-              <tbody>
-            <?php foreach($Backups as $key => $Backup): ?>
-                 <tr>
-                   <td><?php echo e($Backup['TIME']); ?> : <?php echo e($Backup['DATE']); ?></td>
-                   <td><?php echo e($Backup['SIZE']); ?> мб</td>
-                   <td><a href="/home/backup/<?php echo e($key); ?> ">Скачать</a></td>
-                 </tr>
-            <?php endforeach; ?>
-            </tbody>
-          </table>
-  </div>
 </div>
-
-
-
-
 
 </div>
 

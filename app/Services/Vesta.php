@@ -17,8 +17,32 @@ class Vesta  {
 		});
     }
 
+	public function regUser($username, $password, $email, $package, $fist_name, $last_name)
+	{
+
+		//Добовление пользователя в систему
+		$Vesta = $this->sendQuery('v-add-user', $username, $password, $email, $package, $fist_name, $last_name);
+		if ($Vesta != 0)
+			return $Vesta;
+
+		//Локализация панели для пользователя
+		$Vesta = $this->sendQuery('v-change-user-language', $username, 'ru');
+		if ($Vesta != 0)
+			return $Vesta;
+
+		//Блокировка пользователя до момента оплаты
+		$Vesta = $this->sendQuery('v-suspend-user', $username, 'no');
+		if ($Vesta != 0)
+			return $Vesta;
+
+	}
+
+
+	// Регистрация пользователя
+
     public function sendQuery($cmd,$arg1 = null,$arg2 = null,$arg3 = null,$arg4 = null,$arg5 = null,$arg6 = null)
     {
+	    $start = microtime(TRUE);
     		// Проверям, если нам нужен json то выводим его или же код ошибки
 			$argReturnCodeDetector = array($arg1,$arg2,$arg3,$arg4,$arg5,$arg6);
 			if (in_array('json',$argReturnCodeDetector))
@@ -40,53 +64,42 @@ class Vesta  {
 				    'arg6' => $arg6
 			);
 
+	    /*
+				Версия php
+				$options = array(
+						'http' => array(
+							'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+							'method'  => 'POST',
+							'content' => http_build_query($postvars),
+						),
+						"ssl"=>array(
+							"verify_peer"=>false,
+							"verify_peer_name"=>false,
+						),
+				);
 
-			$options = array(
-				    'http' => array(
-				        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-				        'method'  => 'POST',
-				        'content' => http_build_query($postvars),
-				    ),
-                    "ssl"=>array(
-                        "verify_peer"=>false,
-                        "verify_peer_name"=>false,
-                    ),
-			);
+
+				$url = 'https://' . Auth::user()->IpServer . ':8083/api/';
+				$context  = stream_context_create($options);
+				$test = file_get_contents($url, false, $context);
+				//return file_get_contents($url, false, $context);
+
+	*/
 
 
-			$url = 'https://' . Auth::user()->IpServer . ':8083/api/';
-			$context  = stream_context_create($options);
-			return file_get_contents($url, false, $context);
-		
+	    $postdata = http_build_query($postvars);
+	    $curl     = curl_init();
+	    curl_setopt($curl, CURLOPT_URL, 'https://' . Auth::user()->IpServer . ':8083/api/');
+	    curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+	    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+	    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+	    curl_setopt($curl, CURLOPT_POST, TRUE);
+	    curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
 
-			
+	    return curl_exec($curl);
+
 
     }
-
-
-
-
-    // Регистрация пользователя
-	public function regUser($username, $password, $email, $package, $fist_name, $last_name)
-	{
-
-		//Добовление пользователя в систему
-		$Vesta = $this->sendQuery('v-add-user',$username,$password,$email,$package,$fist_name,$last_name);
-		if($Vesta != 0 )
-			return $Vesta;
-
-		//Локализация панели для пользователя
-		$Vesta = $this->sendQuery('v-change-user-language',$username,'ru');
-		if($Vesta != 0 )
-			return $Vesta;
-
-		//Блокировка пользователя до момента оплаты
-		$Vesta = $this->sendQuery('v-suspend-user',$username,'no');
-		if($Vesta != 0 )
-			return $Vesta;
-
-	}
-
 
 	public function changeDb($database, $dbuser){
 		$Vesta = $this->sendQuery('v-change-database-user',Auth::user()->nickname, $database, $dbuser);
