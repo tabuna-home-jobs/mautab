@@ -37,13 +37,7 @@ class HomeController extends Controller {
 	{
 		// Информация о пользователе
 		$UserInfoLaravel = User::find(Auth::user()->id);
-
-
-		//Тикеты 
-		$Tikets = Tiket::whereRaw('idu = ? and idt is null', [Auth::user()->id] )->orderBy('id', 'desc')->simplePaginate(3);
-
-
-		return view('home', ['Tikets' => $Tikets, 'UserInfoLaravel' => $UserInfoLaravel]);
+		return view('home', ['UserInfoLaravel' => $UserInfoLaravel]);
 	}
 
 

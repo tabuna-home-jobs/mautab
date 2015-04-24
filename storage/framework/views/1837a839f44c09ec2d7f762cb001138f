@@ -31,10 +31,11 @@
 						<p>Диск - <?php echo e($Domain['U_DISK']); ?> мб</p>
 						<p>Трафик - <?php echo e($Domain['U_BANDWIDTH']); ?> мб</p>
 						<p>IP - <?php echo e($Domain['IP']); ?>  <?php echo e($Domain['IP6']); ?></p>
+
                         <p>Поддержка Nginx: <?php if($Domain['PROXY'] == ""): ?> Нет <?php else: ?> Да <?php endif; ?> </p>
 					</td>
 
-					<td>
+                        <td>
 					<p><a href="#"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
 					<p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
 					</td>

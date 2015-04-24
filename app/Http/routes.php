@@ -12,13 +12,13 @@
 */
 
 
-	Route::get('/', 'WelcomeController@index');
+    Route::get('/', 'WelcomeController@index');
 
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+    Route::controllers([
+        'auth' => 'Auth\AuthController',
+        'password' => 'Auth\PasswordController',
+    ]);
 
 	Route::group(['middleware' => 'auth'], function () {
 		Route::get('home', 'HomeController@index');

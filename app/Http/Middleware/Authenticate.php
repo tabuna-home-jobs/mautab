@@ -45,14 +45,15 @@ class Authenticate {
 				return redirect()->guest('auth/login');
 			}
 		}
+        else
+        {
+            View::composer('*', function () {
+                $UserInfo = Vesta::listUserAccount($this->auth->user()->nickname, 'json')[$this->auth->user()->nickname];
+                View::share('UserInfo', $UserInfo);
+            });
+        }
 
 
-		if($this->auth->check()){
-			View::composer('*', function () {
-				$UserInfo = Vesta::listUserAccount($this->auth->user()->nickname, 'json')[$this->auth->user()->nickname];
-				View::share('UserInfo', $UserInfo);
-			});
-		}
 
 		return $next($request);
 	}

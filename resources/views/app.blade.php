@@ -46,8 +46,6 @@
   </nav>
 
 
-
-
     <menu class="menuapp container text-center">
 
         <div class="col-md-2 col-sm-3 col-xs-4">

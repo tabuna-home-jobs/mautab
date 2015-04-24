@@ -19,7 +19,7 @@
   <div class="col-md-6">
 
 
-  <div class="col-md-12">
+      <div class="col-md-12">
     <p><?php echo e($UserInfo['FNAME']); ?> <?php echo e($UserInfo['LNAME']); ?>
 
 
@@ -33,9 +33,10 @@
     </p>  
   <p>Баланс: <?php echo e($UserInfoLaravel->balans); ?> руб </p>
   <p>Дата окончания услуг: <?php echo e($UserInfoLaravel->EndOfService); ?> </p>
-      <p>Тариф: <?php echo e($UserInfo['PACKAGE']); ?>  </p>
 
- </div>
+          <p>Тариф: <?php echo e($UserInfo['PACKAGE']); ?>  </p>
+
+      </div>
 
   
 <div class="col-md-12">
@@ -76,7 +77,7 @@
                 <td class="counter-value"><?php echo e($UserInfo['U_DISK_DB']); ?> мб</td>
             </tr>
 
-          <tr>
+            <tr>
               <td class="counter-name">Веб домены:</td>
               <td class="counter-value"><?php echo e($UserInfo['U_WEB_DOMAINS']); ?> / <?php echo e($UserInfo['WEB_DOMAINS']); ?></td>
           </tr>
@@ -117,36 +118,6 @@
 
 <hr>
 
-<div class="row">
-<?php if(!is_null($Tikets)): ?>
-  <div class="col-md-6">
-
-  <h4 class="pull-left"> <i class="fa fa-ticket fa-red"></i> Мои Тикеты:</h4>
-   <a href="/tikets" class="pull-right">Управление</a>
-          <table  class="table table-condensed table-hover table-striped">
-             <thead>
-                <tr>
-                  <th>Номер</th>
-                  <th>Сообщение</th>
-                  <th>Управление</th>
-               </tr>
-             </thead>
-              <tbody>
-            <?php foreach($Tikets as $Tiket): ?>
-                 <tr>
-                   <td><?php echo e($Tiket->id); ?></td>
-                   <td><?php echo e($Tiket->title); ?></td>
-                   <td><a href="/tiket/<?php echo e($Tiket->id); ?>">Просмотреть</a></td>
-                 </tr>
-            <?php endforeach; ?>
-            </tbody>
-          </table>
- <?php endif; ?>
-
-
-  </div>
-
-</div>
 
 </div>
 

@@ -46,8 +46,6 @@
   </nav>
 
 
-
-
     <menu class="menuapp container text-center">
 
         <div class="col-md-2 col-sm-3 col-xs-4">
@@ -100,6 +98,7 @@
             </a>
             <hr>
             <p class="menu-small"> Баланс: <?php echo e(Auth::user()->balans); ?> руб </p>
+
             <p class="menu-small"> Приостановка: <?php echo e(Auth::user()->EndOfService); ?> </p>
         </div>
 

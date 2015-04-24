@@ -9,6 +9,7 @@ class Vesta  {
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
 
+    /*
     public function process()
     {
         App::bind('Vesta', function()
@@ -16,7 +17,7 @@ class Vesta  {
 		    return new App\Services\Vesta;
 		});
     }
-
+*/
 	public function regUser($username, $password, $email, $package, $fist_name, $last_name)
 	{
 
@@ -42,7 +43,6 @@ class Vesta  {
 
     public function sendQuery($cmd,$arg1 = null,$arg2 = null,$arg3 = null,$arg4 = null,$arg5 = null,$arg6 = null)
     {
-	    $start = microtime(TRUE);
     		// Проверям, если нам нужен json то выводим его или же код ошибки
 			$argReturnCodeDetector = array($arg1,$arg2,$arg3,$arg4,$arg5,$arg6);
 			if (in_array('json',$argReturnCodeDetector))
@@ -82,8 +82,7 @@ class Vesta  {
 				$url = 'https://' . Auth::user()->IpServer . ':8083/api/';
 				$context  = stream_context_create($options);
 				$test = file_get_contents($url, false, $context);
-				//return file_get_contents($url, false, $context);
-
+				return file_get_contents($url, false, $context);
 	*/
 
 

@@ -119,36 +119,6 @@
 
 <hr>
 
-<div class="row">
-@if(!is_null($Tikets))
-  <div class="col-md-6">
-
-  <h4 class="pull-left"> <i class="fa fa-ticket fa-red"></i> Мои Тикеты:</h4>
-   <a href="/tikets" class="pull-right">Управление</a>
-          <table  class="table table-condensed table-hover table-striped">
-             <thead>
-                <tr>
-                  <th>Номер</th>
-                  <th>Сообщение</th>
-                  <th>Управление</th>
-               </tr>
-             </thead>
-              <tbody>
-            @foreach($Tikets as $Tiket)
-                 <tr>
-                   <td>{{ $Tiket->id }}</td>
-                   <td>{{ $Tiket->title }}</td>
-                   <td><a href="/tiket/{{ $Tiket->id }}">Просмотреть</a></td>
-                 </tr>
-            @endforeach
-            </tbody>
-          </table>
- @endif
-
-
-  </div>
-
-</div>
 
 </div>
 
