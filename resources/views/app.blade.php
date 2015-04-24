@@ -116,6 +116,17 @@
     </menu>
 
 
+
+
+    @if (Session::has('good'))
+        <div class="container">
+            <div class="alert alert-success text-center">{{Session::get('good')}}</div>
+        </div>
+    @endif
+
+
+
+
 </header>
 
 

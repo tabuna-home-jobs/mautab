@@ -23,8 +23,9 @@ class ChangeBDRequest extends Request {
 	public function rules()
 	{
 		return [
-			'v_database' => 'requred|max:255',
-			'v_dbuser' => 'requred|max:255'
+            'bd' => 'required|max:255',
+			'user_bd' => 'required|max:255',
+			'password_bd' => 'required|min:8',
 		];
 	}
 

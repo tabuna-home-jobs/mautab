@@ -8,12 +8,6 @@
 		<div class="col-xs-12">
 			<h2 class="text-center">{{Lang::get('tikets.Tickets')}}</h2>
 
-@if (Session::has('good'))
-
-    <div class="alert alert-success text-center">{{Session::get('good')}}</div>
-
-@endif
-
 			<p>Тикеты - внутрисистемные сообщения, которые позволяют вам оперативно общаться со службой поддержки. </p>
 		</div>
 

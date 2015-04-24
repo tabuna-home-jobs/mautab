@@ -5,6 +5,8 @@ use App\Http\Requests\Request;
 use Auth;
 use Vesta;
 use App\Http\Requests\ChangeBDRequest;
+use Redirect;
+use Session;
 
 class BdController extends Controller{
 
@@ -14,23 +16,24 @@ class BdController extends Controller{
 
 	}
 
-	public function getIndex(){
-		$name = Auth::user()->nickname;
-		$BdList = Vesta::listBD($name);
-
-		return view('bd/index',['BdList' => $BdList]);
+	public function Index(){
+		return view('bd/index',['BdList' => Vesta::listBD()]);
 	}
 
-	public function getCrud($name){
+	public function show($name){
 
-		$BdList = Vesta::listBD($name);
-		return view('bd/editList',['BdList' => $BdList]);
+		return view('bd/editList',['BdList' =>  Vesta::listOnlyBD($name)]);
 	}
 
 
-	public function postIndex(ChangeBDRequest $request){
+	public function update(ChangeBDRequest $request){
 
-		Vesta::changeDb($request->v_dbuser, $request->v_database);
+        //Обрезаем префикс
+        $request->user_bd =  preg_replace("/^". Auth::user()->nickname ."_/", "", $request->user_bd);
+        Vesta::changeDbUser($request->bd, $request->user_bd);
+        Vesta::changeDbPassword($request->bd, $request->password_bd);
+        Session::flash('good', 'Вы успешно изменили запись.');
+        return redirect()->route('bd.index');
 
 	}
 

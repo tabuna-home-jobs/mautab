@@ -96,15 +96,20 @@ class Vesta  {
 	    curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
 
 	    return curl_exec($curl);
-
-
     }
 
-	public function changeDb($database, $dbuser){
+	public function changeDbUser($database, $dbuser){
 		$Vesta = $this->sendQuery('v-change-database-user',Auth::user()->nickname, $database, $dbuser);
 		if($Vesta != 0 )
 			return $Vesta;
 	}
+
+    public function changeDbPassword($database, $password){
+        $Vesta = $this->sendQuery('v-change-database-password',Auth::user()->nickname, $database, $password);
+        if($Vesta != 0 )
+            return $Vesta;
+    }
+
 
 	//List User Account
 	public function listUserAccount(){
@@ -117,7 +122,7 @@ class Vesta  {
 	//List User Backups
 	public function listUserBackups()
 	{
-			$answer = $this->sendQuery('v-list-user-backups',Auth::user()->nickname,'json');
+		$answer = $this->sendQuery('v-list-user-backups',Auth::user()->nickname,'json');
 		$data = json_decode($answer, true);
 		return $data;
 	}
@@ -141,11 +146,22 @@ class Vesta  {
 	}
 
 	//Список БД
-	public function listBD($name){
-		$listBd = $this->sendQuery('v-list-databases',$name,'json');
+	public function listBD(){
+		$listBd = $this->sendQuery('v-list-databases',Auth::user()->nickname,'json');
 		$data = json_decode($listBd, true);
 		return $data;
 	}
+
+
+    //Список кокретной БД
+    public function listOnlyBD($database){
+        $listBd = $this->sendQuery('v-list-database',Auth::user()->nickname,$database,'json');
+        $data = json_decode($listBd, true);
+        return $data;
+    }
+
+
+
 
 
 	//Add Web Domains Для добовления домена!

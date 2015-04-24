@@ -34,10 +34,7 @@ class WebController extends Controller {
 	 */
 	public function Index()
 	{
-
-
-		$UserDomain = Vesta::listWebDomain();
-		return view('web/index',[ "UserDomain" => $UserDomain ]);
+		return view('web/index',[ "UserDomain" => Vesta::listWebDomain() ]);
 	}
 
 
