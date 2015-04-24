@@ -3,6 +3,10 @@
 use Illuminate\Database\Eloquent\Model;
 
 
+/**
+ * App\Models\Payments
+ *
+ */
 class Payments extends Model {
 
 

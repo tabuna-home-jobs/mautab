@@ -1,12 +1,11 @@
-@extends('app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <section class="container">
 
         <div class="col-xs-12">
 
 
-            @if(!empty($BdList))
+
+            <?php if(!empty($BdList)): ?>
             <div class="table-responsive">
                 <table class="table table-condensed">
                     <thead>
@@ -24,49 +23,45 @@
                     </tr>
                     </tfoot>
                     <tbody>
-                        @foreach($BdList as $nameBd => $bd)
+                        <?php foreach($BdList as $nameBd => $bd): ?>
 
-                            @if($bd['SUSPENDED'] != "no")
+                            <?php if($bd['SUSPENDED'] != "no"): ?>
                                 <tr class="danger">
-                            @else
+                            <?php else: ?>
                                 <tr>
-                                    @endif
+                                    <?php endif; ?>
                                     <td class="nameD">
-                                        {{$nameBd}}
+                                        <?php echo e($nameBd); ?>
+
                                         <div>
-                                            Диск: {{$bd['U_DISK']}} мб
+                                            Диск: <?php echo e($bd['U_DISK']); ?> мб
                                         </div>
-                                        <div><small>{{$bd['DATE']}}</small></div>
+                                        <div><small><?php echo e($bd['DATE']); ?></small></div>
                                     </td>
                                     <td class="info-dns">
-                                        <p><span>Пользователь:</span><span>{{$bd['DBUSER']}}</span></p>
-
-                                        <p><span>Сервер:</span><span>{{$bd['HOST']}}</span></p>
-
-                                        <p><span>Тип:</span><span>{{$bd['TYPE']}}</span></p>
-
-                                        <p><span>Кодировка:</span><span>{{$bd['CHARSET']}}</span></p>
+                                        <p><span>Пользователь:</span><span><?php echo e($bd['DBUSER']); ?></span></p>
+                                        <p><span>Сервер:</span><span><?php echo e($bd['HOST']); ?></span></p>
+                                        <p><span>Тип:</span><span><?php echo e($bd['TYPE']); ?></span></p>
+                                        <p><span>Кодировка:</span><span><?php echo e($bd['CHARSET']); ?></span></p>
                                     </td>
                                     <td>
-                                        <p><a href="http://{{Auth::user()->IpServer}}/phpmyadmin"><i class="fa fa-line-chart"></i> Открыть phpMyAdmin</a></p>
-                                        <p><a href="/bd/{{$nameBd}}"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
+                                        <p><a href="http://<?php echo e(Auth::user()->IpServer); ?>/phpmyadmin"><i class="fa fa-line-chart"></i> Открыть phpMyAdmin</a></p>
+                                        <p><a href="/bd/<?php echo e($nameBd); ?>"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
                                         <p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
                                     </td>
                                 </tr>
-                                @endforeach
+                                <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
 
-            @else
+            <?php else: ?>
                 <div class="jumbotron">
                     <h1>Пусто!</h1>
-
                     <p>Вы ещё не создали ни одной базы данных</p>
-
                     <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
                 </div>
-            @endif
+            <?php endif; ?>
 
 
 
@@ -75,4 +70,6 @@
 
     </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

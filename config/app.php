@@ -148,8 +148,8 @@ return [
 		/*
 		 * Я добавил
 		 */
-		'Illuminate\Html\HtmlServiceProvider'
-
+		'Illuminate\Html\HtmlServiceProvider',
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 	],
 
 	/*

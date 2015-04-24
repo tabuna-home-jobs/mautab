@@ -3,7 +3,6 @@
 use App\Http\Requests\TiketRequest;
 use App\Models\Tiket;
 use Auth;
-use Redirect;
 use Session;
 
 
@@ -35,11 +34,12 @@ class TiketsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function Index()
+	public function index()
 	{
 
         $Tikets = Tiket::whereRaw('idu = ? and idt is null', [Auth::user()->id] )->orderBy('id', 'desc')->simplePaginate(15);
-		return view('tikets/index',['Tikets' => $Tikets]);
+
+		return view('/tikets/index', ['Tikets' => $Tikets]);
 	}
 
 	//Новая заявка

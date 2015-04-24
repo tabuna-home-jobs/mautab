@@ -1,12 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Request;
-use Auth;
-use Vesta;
 use App\Http\Requests\ChangeBDRequest;
-use Redirect;
+use Auth;
 use Session;
+use Vesta;
+
 
 class BdController extends Controller{
 
