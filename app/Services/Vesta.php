@@ -10,29 +10,6 @@ class Vesta  {
 	public	$vst_password = '03af4d';
 
 
-	public function regUser($username, $password, $email, $package, $fist_name, $last_name)
-	{
-
-		//Добовление пользователя в систему
-		$Vesta = $this->sendQuery('v-add-user', $username, $password, $email, $package, $fist_name, $last_name);
-		if ($Vesta != 0)
-			return $Vesta;
-
-		//Локализация панели для пользователя
-		$Vesta = $this->sendQuery('v-change-user-language', $username, 'ru');
-		if ($Vesta != 0)
-			return $Vesta;
-
-		//Блокировка пользователя до момента оплаты
-		$Vesta = $this->sendQuery('v-suspend-user', $username, 'no');
-		if ($Vesta != 0)
-			return $Vesta;
-
-	}
-
-
-	// Регистрация пользователя
-
     public function sendQuery($cmd,$arg1 = null,$arg2 = null,$arg3 = null,$arg4 = null,$arg5 = null,$arg6 = null)
     {
     		// Проверям, если нам нужен json то выводим его или же код ошибки
@@ -89,6 +66,7 @@ class Vesta  {
 
         $query = curl_exec($curl);
 
+
         //Если он должен возвращать ошибку, и она случилось перенаправить на 404 страницу
         if($this->vst_returncode == 'yes' && $query !=0 )
             abort(404);
@@ -96,6 +74,39 @@ class Vesta  {
             return $query;
 
     }
+
+
+
+
+
+    // Регистрация пользователя
+    public function regUser($username, $password, $email, $package, $fist_name, $last_name)
+    {
+
+        //Добовление пользователя в систему
+        $Vesta = $this->sendQuery('v-add-user', $username, $password, $email, $package, $fist_name, $last_name);
+        if ($Vesta != 0)
+            return $Vesta;
+
+        //Локализация панели для пользователя
+        $Vesta = $this->sendQuery('v-change-user-language', $username, 'ru');
+        if ($Vesta != 0)
+            return $Vesta;
+
+        //Блокировка пользователя до момента оплаты
+        $Vesta = $this->sendQuery('v-suspend-user', $username, 'no');
+        if ($Vesta != 0)
+            return $Vesta;
+    }
+
+
+
+
+
+
+
+
+
 
 	public function changeDbUser($database, $dbuser){
         return  $this->sendQuery('v-change-database-user',Auth::user()->nickname, $database, $dbuser);
