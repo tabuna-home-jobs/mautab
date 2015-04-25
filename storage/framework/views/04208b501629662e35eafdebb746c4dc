@@ -4,7 +4,6 @@
         <div class="col-xs-12">
 
 
-
             <?php if(!empty($BdList)): ?>
             <div class="table-responsive">
                 <table class="table table-condensed">
@@ -40,8 +39,11 @@
                                     </td>
                                     <td class="info-dns">
                                         <p><span>Пользователь:</span><span><?php echo e($bd['DBUSER']); ?></span></p>
+
                                         <p><span>Сервер:</span><span><?php echo e($bd['HOST']); ?></span></p>
+
                                         <p><span>Тип:</span><span><?php echo e($bd['TYPE']); ?></span></p>
+
                                         <p><span>Кодировка:</span><span><?php echo e($bd['CHARSET']); ?></span></p>
                                     </td>
                                     <td>
@@ -58,7 +60,9 @@
             <?php else: ?>
                 <div class="jumbotron">
                     <h1>Пусто!</h1>
+
                     <p>Вы ещё не создали ни одной базы данных</p>
+
                     <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
                 </div>
             <?php endif; ?>
