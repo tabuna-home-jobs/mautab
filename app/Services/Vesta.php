@@ -215,8 +215,17 @@ class Vesta  {
         return $this->sendQuery('v-add-web-domain-proxy',Auth::user()->nickname,$domain,$alias,$v_proxy_ext, 'no');
     }
 
+    //Добавить базу данных
+    public  function  addDateBase($v_database,$v_dbuser,$v_password, $v_type = "mysql",  $v_charset)
+    {
+        return $this->sendQuery ('v-add-database',Auth::user()->nickname,$v_database,$v_dbuser,$v_password, $v_type, Auth::user()->IpServer ,$v_charset);
+    }
 
-
+    //Удалить базу данных
+    public  function  deleteDateBase($v_database)
+    {
+        return $this->sendQuery ('v-delete-database',Auth::user()->nickname, $v_database);
+    }
 
 
 }
