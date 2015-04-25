@@ -20,4 +20,5 @@ class DnsController extends Controller{
 
 	}
 
+
 }

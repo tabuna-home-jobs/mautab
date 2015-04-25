@@ -21,6 +21,16 @@
 <!-- Процесс регистрации-->
 <script>
     $(document).ready(function () {
+        $("input[name='user_bd']").blur(function() {
+            var currVal = $(this).val();
+            var needle = "{{Auth::user()->nickname }}" + "_" + currVal;
+            $(this).val(needle);
+        });
+        $("input[name='name_bd']").blur(function() {
+            var currVal = $(this).val();
+            var needle = "{{Auth::user()->nickname }}" + "_" + currVal;
+            $(this).val(needle);
+        });
 
         var navListItems = $('div.setup-panel div a'),
                 allWells = $('.setup-content'),

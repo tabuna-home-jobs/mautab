@@ -49,8 +49,9 @@
                                     </td>
                                     <td>
                                         <p><a href="http://{{Auth::user()->IpServer}}/phpmyadmin"><i class="fa fa-line-chart"></i> Открыть phpMyAdmin</a></p>
-                                        <p><a href="/bd/{{$nameBd}}"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
+                                        <p><a href="{{URL::route('bd.show', $nameBd)}}"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
                                         <p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
+                                        <p><a href="{{URL::route('bd.create')}}">Добавить</a></p>
                                     </td>
                                 </tr>
                                 @endforeach

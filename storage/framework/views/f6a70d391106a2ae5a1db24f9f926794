@@ -39,7 +39,7 @@
                         <td>
                             <p><a href="#"><i class="fa fa-line-chart"></i> Веб-аналитика</a></p>
                             <p><a href="#"><i class="fa fa-heartbeat"></i> Просмотреть логи</a></p>
-                            <p><a href="#"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
+                            <p><a href="/dns/<?php echo e($nameDns); ?>"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
                             <p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
                         </td>
                     </tr>

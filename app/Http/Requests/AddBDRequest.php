@@ -1,7 +1,7 @@
 <?php namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-
+use Auth;
 class AddBDRequest extends Request {
 
 	/**
@@ -23,11 +23,10 @@ class AddBDRequest extends Request {
 	{
 		return [
             'v_database' => 'required|max:255',
-            '$v_dbuser' => 'required|max:255',
+            'v_dbuser' => 'required|max:255',
             'password_bd' => 'required|min:8',
-            '$v_type' => 'max:255',
-            '$v_dbuser' => 'required|max:255',
-            '$v_charset' => 'required',
+            'v_type' => 'max:255',
+            'v_charset' => 'required',
 		];
 	}
 

@@ -69,7 +69,7 @@ class Vesta  {
 
         //Если он должен возвращать ошибку, и она случилось перенаправить на 404 страницу
         if($this->vst_returncode == 'yes' && $query !=0 )
-            abort(404);
+            dd($query);
         else
             return $query;
 
@@ -166,10 +166,6 @@ class Vesta  {
         return $data;
     }
 
-
-
-
-
 	//Add Web Domains Для добовления домена!
     public function addWebDomain($domain)
     {
@@ -218,7 +214,8 @@ class Vesta  {
     //Добавить базу данных
     public  function  addDateBase($v_database,$v_dbuser,$v_password, $v_type = "mysql",  $v_charset)
     {
-        return $this->sendQuery ('v-add-database',Auth::user()->nickname,$v_database,$v_dbuser,$v_password, $v_type, Auth::user()->IpServer ,$v_charset);
+	    //Auth::user()->IpServer
+        return $this->sendQuery ('v-add-database',Auth::user()->nickname,$v_database,$v_dbuser,$v_password, $v_type,'localhost'  ,$v_charset);
     }
 
     //Удалить базу данных
