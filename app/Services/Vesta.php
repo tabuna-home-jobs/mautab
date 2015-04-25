@@ -89,7 +89,7 @@ class Vesta  {
 
         $query = curl_exec($curl);
 
-
+        //Если он должен возвращать ошибку, и она случилось перенаправить на 404 страницу
         if($this->vst_returncode == 'yes' && $query !=0 )
             abort(404);
         else
