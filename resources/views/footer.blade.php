@@ -19,16 +19,20 @@
 
 
 <!-- Процесс регистрации-->
+
 <script>
     $(document).ready(function () {
-        $("input[name='user_bd']").blur(function() {
+        $("#delete-bd").click(function(){
+
+        });
+        $("input[name='v_database']").blur(function() {
             var currVal = $(this).val();
-            var needle = "{{Auth::user()->nickname }}" + "_" + currVal;
+            var needle = "{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}" + "_" + currVal;
             $(this).val(needle);
         });
-        $("input[name='name_bd']").blur(function() {
+        $("input[name='v_dbuser']").blur(function() {
             var currVal = $(this).val();
-            var needle = "{{Auth::user()->nickname }}" + "_" + currVal;
+            var needle = "{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}" + "_" + currVal;
             $(this).val(needle);
         });
 
