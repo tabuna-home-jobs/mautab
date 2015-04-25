@@ -1,6 +1,4 @@
-@extends('app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <section class="container">
 
 <div class="col-xs-12">
@@ -16,41 +14,43 @@
             </thead>
             <tbody>
 
-            @if(!empty($DnsList))
-                @foreach($DnsList as $nameDns => $Dns)
-                    @if($Dns['SUSPENDED'] != "no")
+            <?php if(!empty($DnsList)): ?>
+                <?php foreach($DnsList as $nameDns => $Dns): ?>
+                    <?php if($Dns['SUSPENDED'] != "no"): ?>
                         <tr class="danger">
-                    @else
+                    <?php else: ?>
                         <tr>
-                    @endif
+                    <?php endif; ?>
                         <td class="nameD">
-                            {{$nameDns}}
+                            <?php echo e($nameDns); ?>
+
                             <div>
-                                {{$Dns['IP']}}
+                                <?php echo e($Dns['IP']); ?>
+
                             </div>
-                            <div><small>{{$Dns['DATE']}}</small></div>
+                            <div><small><?php echo e($Dns['DATE']); ?></small></div>
                         </td>
                         <td class="info-dns">
-                            <p><div><span>SOA:</span>{{$Dns['SOA']}}</div></p>
-                            <p><div><span>TTL:</span>{{$Dns['TTL']}}</div></p>
-                            <p><div><span>Регистраци до:</span>{{$Dns['EXP']}}</div></p>
+                            <p><div><span>SOA:</span><?php echo e($Dns['SOA']); ?></div></p>
+                            <p><div><span>TTL:</span><?php echo e($Dns['TTL']); ?></div></p>
+                            <p><div><span>Регистраци до:</span><?php echo e($Dns['EXP']); ?></div></p>
                         </td>
                         <td>
-                            <p><a href="#"><i class="fa fa-line-chart"></i>Показать записи: {{ $Dns{'RECORDS'}  }}</a></p>
+                            <p><a href="#"><i class="fa fa-line-chart"></i>Показать записи: <?php echo e($Dns{'RECORDS'}); ?></a></p>
                             <p><a href="#"><i class="fa fa-plus"></i> Добавить запись</a></p>
                             <p><a href="#"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
                             <p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
                         </td>
                     </tr>
-                @endforeach
-            @else
+                <?php endforeach; ?>
+            <?php else: ?>
                 <tr>
                     <td>Нет данных</td>
                     <td>Нет данных</td>
                     <td>Нет данных</td>
                     <td>Нет данных</td>
                 </tr>
-            @endif
+            <?php endif; ?>
 
 
             </tbody>
@@ -63,4 +63,6 @@
 
 </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
