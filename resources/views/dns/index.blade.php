@@ -33,12 +33,11 @@
                         <td class="info-dns">
                             <p><div><span>SOA:</span>{{$Dns['SOA']}}</div></p>
                             <p><div><span>TTL:</span>{{$Dns['TTL']}}</div></p>
-                            <p><div><span>Шаблон:</span>{{$Dns['TPL']}}</div></p>
                             <p><div><span>Регистраци до:</span>{{$Dns['EXP']}}</div></p>
                         </td>
                         <td>
-                            <p><a href="#"><i class="fa fa-line-chart"></i> Веб-аналитика</a></p>
-                            <p><a href="#"><i class="fa fa-heartbeat"></i> Просмотреть логи</a></p>
+                            <p><a href="#"><i class="fa fa-line-chart"></i>Показать записи: {{ $Dns{'RECORDS'}  }}</a></p>
+                            <p><a href="#"><i class="fa fa-plus"></i> Добавить запись</a></p>
                             <p><a href="#"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
                             <p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
                         </td>

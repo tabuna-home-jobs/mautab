@@ -176,11 +176,7 @@ class Vesta  {
         return $this->sendQuery('v-add-domain',Auth::user()->nickname,$domain);
     }
 
-    //Add DNS domain Для добовления домена!
-    public function addDNSDomain($domain, $v_ip)
-    {
-        return $this->sendQuery('v-add-dns-domain',Auth::user()->nickname,$domain,$v_ip);
-    }
+
 
     // Add mail domain
     public function addMailDomain($domain)
@@ -226,6 +222,46 @@ class Vesta  {
     {
         return $this->sendQuery ('v-delete-database',Auth::user()->nickname, $v_database);
     }
+
+
+    // Удалить днс запись домена
+    public  function  deleteDNDDomain($v_domain)
+    {
+        return $this->sendQuery ('v-delete-dns-domain',Auth::user()->nickname, $v_domain);
+    }
+
+    // Удалить днс запись
+    public  function  deleteDNSRecord($v_domain,$v_record_id)
+    {
+        return $this->sendQuery('v-delete-dns-record',Auth::user()->nickname,$v_domain,$v_record_id);
+    }
+
+
+    //Add DNS domain Для добовления домена!
+    public function addDNSDomain($domain, $v_ip,$v_ns1,$v_ns2,$v_ns3,$v_ns4)
+    {
+        return $this->sendQuery('v-add-dns-domain',Auth::user()->nickname,$domain,$v_ip,$v_ns1,$v_ns2,$v_ns3,$v_ns4, 'no');
+    }
+
+    // Set expiriation date
+    public  function changeDNSDomainExp($v_domain,$v_exp)
+    {
+        return $this->sendQuery('v-change-dns-domain-exp',Auth::user()->nickname,$v_domain,$v_exp,"no");
+    }
+
+    // Set ttl
+    public  function changeDNSDomainTtl($v_domain,$v_ttl)
+    {
+        return $this->sendQuery('v-change-dns-domain-ttl',Auth::user()->nickname,$v_domain,v_ttl,"no");
+    }
+
+
+    // Restart dns server
+    public function  restartDNSServer()
+    {
+        return $this->sendQuery('v-restart-dns');
+    }
+
 
 
 }
