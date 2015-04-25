@@ -9,15 +9,7 @@ class Vesta  {
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
 
-    /*
-    public function process()
-    {
-        App::bind('Vesta', function()
-		{
-		    return new App\Services\Vesta;
-		});
-    }
-*/
+
 	public function regUser($username, $password, $email, $package, $fist_name, $last_name)
 	{
 
@@ -177,14 +169,12 @@ class Vesta  {
     public function addDNSDomain($domain, $v_ip)
     {
         return $this->sendQuery('v-add-dns-domain',Auth::user()->nickname,$domain,$v_ip);
-
     }
 
     // Add mail domain
     public function addMailDomain($domain)
     {
         return $this->sendQuery('v-add-mail-domain',Auth::user()->nickname,$domain);
-
     }
 
 
@@ -192,14 +182,12 @@ class Vesta  {
     public function addWebDomainAlias($domain,$alias)
     {
         return $this->sendQuery('v-add-web-domain-alias',Auth::user()->nickname,$domain,$alias, 'no');
-
     }
 
     //v-add-dns-on-web-alias
     public function addWebDNSOnWebAlias($domain,$alias)
     {
         return $this->sendQuery('v-add-web-domain-alias',Auth::user()->nickname,$domain,$alias, 'no');
-
     }
 
 
@@ -207,7 +195,6 @@ class Vesta  {
     public function deleteWebDomainAlias($domain,$alias)
     {
         return $this->sendQuery('v-delete-web-domain-alias',Auth::user()->nickname,$domain,$alias, 'no');
-
     }
 
 
