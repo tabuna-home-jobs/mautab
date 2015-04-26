@@ -895,3 +895,11 @@ footer{
     text-align: left;
 }
 
+.managerlist li {
+    float: right;
+    padding-left: 0.5%;
+    list-style-type: none;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+

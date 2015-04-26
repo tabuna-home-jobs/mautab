@@ -6,18 +6,6 @@
         <div class="col-xs-12">
 
 
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-
             <div class="table-responsive add-bd">
 
                         <form class="col-md-8" method="post" action="{{URL::route('bd.store')}}">
@@ -39,9 +27,10 @@
                                 <label>Пароль</label>
                                 <input type="text" class="form-control" name="password_bd" required  pattern=".{8,}" title="Пароль должен содержать не менее 8 символов" placeholder="*********" />
                             </div>
+
                             <div class="form-group">
                                 <label>Кодировка</label>
-                                <select name="v_charset" class="vst-list">
+                                <select name="v_charset" class="form-control">
                                     <option value="big5">big5</option>
                                     <option value="dec8">dec8</option>
                                     <option value="cp850">cp850</option>
@@ -93,13 +82,13 @@
                                     <h3 class="panel-title">Информация:</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Общая информация, а тут какой то текст, на сколько важна эта информация!</p>
+                                    <p> MySQL является самой популярной СУБД с открытым исходным кодом в мире. </p>
 
+                                    <p>MySQL может эффективно помочь вам обеспечивают высокую производительность, масштабируемых приложений баз данных.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-
-                    <div>Нет данных</div>
 
             </div>
 

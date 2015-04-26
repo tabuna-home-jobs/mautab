@@ -93,7 +93,7 @@
 
         <div class="col-md-2 col-sm-3 col-xs-4">
             <a href="#">
-                <span class="glyphicon glyphicon-shopping-cart"></span>
+                <span class="fa fa-cart-arrow-down"></span>
                 <h4>Оплата</h4>
             </a>
             <hr>
@@ -122,6 +122,18 @@
         <div class="container">
             <div class="alert alert-success text-center">{{Session::get('good')}}</div>
         </div>
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
     @endif
 
 
