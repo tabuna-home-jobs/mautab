@@ -1,9 +1,7 @@
 <?php namespace App\Http\Controllers;
 
-use App\Models\Tiket;
-use App\User;
+use App\Models\User;
 use Auth;
-use Vesta;
 
 class HomeController extends Controller {
 
@@ -33,14 +31,18 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function Index()
+	public function getIndex()
 	{
 		// Информация о пользователе
 		$UserInfoLaravel = User::find(Auth::user()->id);
-		return view('home', ['UserInfoLaravel' => $UserInfoLaravel]);
+
+		return view('user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
 	}
 
+	public function postIndex()
+	{
 
+	}
 
 
 

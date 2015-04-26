@@ -21,7 +21,7 @@
     ]);
 
 	Route::group(['middleware' => 'auth'], function () {
-		Route::get('home', 'HomeController@index');
+		Route::controller('home', 'HomeController');
 		Route::resource('web', 'WebController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('bd', 'BdController');

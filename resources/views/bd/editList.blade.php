@@ -5,7 +5,6 @@
 
         <div class="col-xs-12">
 
-            <div class="table-responsive">
 
                     @if(!empty($BdList))
                         @foreach($BdList as $nameBd => $bd)
@@ -74,7 +73,6 @@
             </div>
 
 
-        </div>
 
 
     </section>

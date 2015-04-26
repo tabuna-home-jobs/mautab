@@ -1,86 +1,90 @@
 <?php $__env->startSection('content'); ?>
     <section class="container">
 
-            <p class="text-center"><a href="<?php echo e(URL::route('bd.create')); ?>"><i class="fa fa-plus"></i>Добавить</a></p>
+        <p class="text-center"><a href="<?php echo e(URL::route('bd.create')); ?>"><i class="fa fa-plus"></i>Добавить</a></p>
 
             <?php if(!empty($BdList)): ?>
 
-                <?php foreach($BdList as $nameBd => $bd): ?>
+            <?php foreach($BdList as $nameBd => $bd): ?>
 
                 <div class="col-xs-4">
 
 
-
                     <?php if($bd['SUSPENDED'] == 'no'): ?>
                         <div class="panel panel-default ">
-                    <?php else: ?>
-                        <div class="panel panel-danger ">
-                    <?php endif; ?>
+                            <?php else: ?>
+                                <div class="panel panel-danger ">
+                                    <?php endif; ?>
 
-                        <div class="panel-heading">
-                            <h3 class="panel-title"> <?php echo e($nameBd); ?></h3>
-                        </div>
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"> <?php echo e($nameBd); ?></h3>
+                                    </div>
 
-                        <ul class="list-group">
-                            <li class="list-group-item"><span>Диск:</span><span><?php echo e($bd['U_DISK']); ?> мб</span></li>
-                            <li class="list-group-item">Пользователь:</span><span><?php echo e($bd['DBUSER']); ?></span></li>
-                            <li class="list-group-item">Кодировка:</span><span><?php echo e($bd['CHARSET']); ?></span></li>
-                        </ul>
-
-
-                        <div class="panel-footer">
-
-
-                            <div class="container-fluid">
-                                <div class="pull-left"><small><?php echo e($bd['DATE']); ?></small></div>
-
-                                <div class="btn-group pull-right">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        Управление <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="http://<?php echo e(Auth::user()->IpServer); ?>/phpmyadmin" target="_blank"><i class="fa fa-server"></i> Открыть phpMyAdmin</a></li>
-                                        <li><a href="<?php echo e(URL::route('bd.show', $nameBd)); ?>"><i class="fa fa-pencil-square-o"></i> Редактировать</a></li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e($nameBd); ?>"><i class="fa fa-trash"></i> Удалить</a>
-                                        </li>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span>Диск:</span><span><?php echo e($bd['U_DISK']); ?> мб</span></li>
+                                        <li class="list-group-item">Пользователь:</span><span><?php echo e($bd['DBUSER']); ?></span></li>
+                                        <li class="list-group-item">Кодировка:</span><span><?php echo e($bd['CHARSET']); ?></span></li>
                                     </ul>
-                                </div>
-                            </div>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="Modal-<?php echo e($nameBd); ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                <h4 class="modal-title" id="myModalLabel">Удалить <?php echo e($nameBd); ?> ?</h4>
+
+                                    <div class="panel-footer">
+
+
+                                        <div class="container-fluid">
+                                            <div class="pull-left">
+                                                <small><?php echo e($bd['DATE']); ?></small>
                                             </div>
-                                            <div class="modal-body">
-                                                Вы действительно хотите удалить <?php echo e($nameBd); ?> ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <form action="<?php echo e(URL::route('bd.destroy')); ?>" method="post">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
-                                                    <button type="submit" class="btn btn-primary">Да</button>
-                                                    <input type="hidden" name="v_database" value="<?php echo e($nameBd); ?>" />
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
-                                                </form>
+
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                    Управление <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="http://<?php echo e(Auth::user()->IpServer); ?>/phpmyadmin" target="_blank"><i class="fa fa-server"></i> Открыть
+                                                                                                                                                            phpMyAdmin</a>
+                                                    </li>
+                                                    <li><a href="<?php echo e(URL::route('bd.show', $nameBd)); ?>"><i class="fa fa-pencil-square-o"></i> Редактировать</a></li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e($nameBd); ?>"><i class="fa fa-trash"></i> Удалить</a>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="Modal-<?php echo e($nameBd); ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                    aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel">Удалить <?php echo e($nameBd); ?> ?</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Вы действительно хотите удалить <?php echo e($nameBd); ?> ?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <form action="<?php echo e(URL::route('bd.destroy')); ?>" method="post">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                            <button type="submit" class="btn btn-primary">Да</button>
+                                                            <input type="hidden" name="v_database" value="<?php echo e($nameBd); ?>"/>
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                                        </form>
+                                                    </div>
+                                        </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
 
                         </div>
-                    </div>
-
-                    </div>
                                 <?php endforeach; ?>
 
 
-            <?php else: ?>
+                    <?php else: ?>
                 <div class="jumbotron">
                     <h1>Пусто!</h1>
 
