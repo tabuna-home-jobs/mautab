@@ -895,11 +895,27 @@ footer{
     text-align: left;
 }
 
-.managerlist li {
-    float: right;
-    padding-left: 0.5%;
-    list-style-type: none;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
 }
-
+.panel-default>.panel-heading {
+    color: #fff;
+    background-color: #65454c;
+    border-color: #ddd;
+    font-weight: bold;
+}
+.panel-default {
+    border-color: #ddd;
+    box-shadow: 0px 5px 15px #ccc;
+}
+.add-opacity{
+    opacity: 0.5;
+    transition: all 0.5s ease 0s;
+}

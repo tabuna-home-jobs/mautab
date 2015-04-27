@@ -36,6 +36,22 @@
             $(this).val(needle);
         });
 
+        $("#show-add-bd").click(function(){
+            var obj = $("#add-shadow");
+            var attrExpande = $("#show-add-bd").attr("aria-expanded");
+            var heiForm = $("#add-bd");
+
+            if(!heiForm.hasClass('collapsing')){
+                if(attrExpande == 'false'){
+                    $(".btn" ,obj).attr('disabled',true);
+                    obj.addClass('add-opacity');
+                }else{
+                    $(".btn" ,obj).attr('disabled',false);
+                    obj.removeClass('add-opacity');
+                }
+            }
+        });
+
         var navListItems = $('div.setup-panel div a'),
                 allWells = $('.setup-content'),
                 allNextBtn = $('.nextBtn');
