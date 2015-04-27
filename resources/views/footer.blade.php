@@ -22,18 +22,17 @@
 
 <script>
     $(document).ready(function () {
-        $("#delete-bd").click(function(){
 
-        });
+        //Добаваление префикса для БД когда она добаляется
         $("input[name='v_database']").blur(function() {
             var currVal = $(this).val();
             var issetVal = currVal.indexOf("{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}");
-
             if (issetVal == '-1') {
                 var needle = "{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}" + "_" + currVal;
                 $(this).val(needle);
             }
         });
+        //Добаваление префикса для БД когда она добаляется
         $("input[name='v_dbuser']").blur(function() {
             var currVal = $(this).val();
             var issetVal = currVal.indexOf("{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}");
@@ -43,6 +42,7 @@
             }
         });
 
+        //Анимация показа форма добавления БД
         $("#show-add-bd").click(function(){
             var obj = $("#add-shadow");
             var attrExpande = $("#show-add-bd").attr("aria-expanded");

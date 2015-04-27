@@ -919,3 +919,30 @@ footer{
     opacity: 0.5;
     transition: all 0.5s ease 0s;
 }
+
+#myModalLabel, .modal-header {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    color: #fff;
+    background: #65454c;
+}
+
+.modal-body {
+    min-height: 200px;
+    background: url("img/header_alt-4_bg.jpg") top;
+    background-size: 100% 55%;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000;
+    margin-top: -1px;
+}
+
+.modal-footer {
+    background-color: #f5f5f5;
+}
