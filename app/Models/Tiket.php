@@ -22,7 +22,7 @@ class Tiket extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['id', 'idu', 'idt', 'title', 'message','complete'];
+	protected $fillable = ['id', 'user_id', 'tikets_id', 'title', 'message', 'complete'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -30,5 +30,16 @@ class Tiket extends Model {
 	 * @var array
 	 */
 //	protected $hidden = [''];
+
+	public function user()
+	{
+		return $this->belongsTo('App\Models\User');
+	}
+
+	public function tiket()
+	{
+		return $this->hasMany('App\Models\Tiket');
+	}
+
 
 }
