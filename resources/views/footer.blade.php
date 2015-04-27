@@ -27,13 +27,20 @@
         });
         $("input[name='v_database']").blur(function() {
             var currVal = $(this).val();
-            var needle = "{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}" + "_" + currVal;
-            $(this).val(needle);
+            var issetVal = currVal.indexOf("{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}");
+
+            if (issetVal == '-1') {
+                var needle = "{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}" + "_" + currVal;
+                $(this).val(needle);
+            }
         });
         $("input[name='v_dbuser']").blur(function() {
             var currVal = $(this).val();
-            var needle = "{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}" + "_" + currVal;
-            $(this).val(needle);
+            var issetVal = currVal.indexOf("{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}");
+            if (issetVal == '-1') {
+                var needle = "{{(!is_null(Auth::user())) ? Auth::user()->nickname : '' }}" + "_" + currVal;
+                $(this).val(needle);
+            }
         });
 
         $("#show-add-bd").click(function(){
