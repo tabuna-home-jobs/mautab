@@ -1,7 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests\ChangeUserRequest;
 use App\Models\User;
 use Auth;
+use Crypt;
+use Session;
+use Vesta;
 
 class HomeController extends Controller {
 
@@ -39,8 +43,23 @@ class HomeController extends Controller {
 		return view('user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
 	}
 
-	public function postIndex()
+	public function putIndex(ChangeUserRequest $request)
 	{
+
+		dd("Я хуй его знаю почему он сюда не заходит!");
+		//Смена в Vesta
+		Vesta::changeUserPassword($request->password);
+		Vesta::changeUserEmail($request->email);
+
+		//Смена в Laravel
+
+		$thisUser           = User::find(Auth::user()->id);
+		$thisUser->password = Crypt::encrypt($request->password);
+		$thisUser->email    = $request->email;
+		$thisUser->save();
+		Session::flash('good', 'Вы успешно изменили личные данных.');
+
+		return redirect()->route('home.home');
 
 	}
 

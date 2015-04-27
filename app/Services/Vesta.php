@@ -1,10 +1,16 @@
 <?php namespace App\Services;
 
+use App\Services\VestaAPI\VestaBD;
+use App\Services\VestaAPI\VestaDNS;
+use App\Services\VestaAPI\VestaService;
+use App\Services\VestaAPI\VestaUser;
+use App\Services\VestaAPI\VestaWeb;
 use Auth;
 
 class Vesta  {
 
-	
+	use VestaBD, VestaDNS, VestaUser, VestaWeb, VestaService;
+
 
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
@@ -76,188 +82,6 @@ class Vesta  {
     }
 
 
-
-
-
-    // Регистрация пользователя
-    public function regUser($username, $password, $email, $package, $fist_name, $last_name)
-    {
-
-        //Добовление пользователя в систему
-        $Vesta = $this->sendQuery('v-add-user', $username, $password, $email, $package, $fist_name, $last_name);
-        if ($Vesta != 0)
-            return $Vesta;
-
-        //Локализация панели для пользователя
-        $Vesta = $this->sendQuery('v-change-user-language', $username, 'ru');
-        if ($Vesta != 0)
-            return $Vesta;
-
-        //Блокировка пользователя до момента оплаты
-        $Vesta = $this->sendQuery('v-suspend-user', $username, 'no');
-        if ($Vesta != 0)
-            return $Vesta;
-    }
-
-
-
-
-
-
-
-
-
-
-	public function changeDbUser($database, $dbuser){
-        return  $this->sendQuery('v-change-database-user',Auth::user()->nickname, $database, $dbuser);
-	}
-
-    public function changeDbPassword($database, $password){
-        return  $this->sendQuery('v-change-database-password',Auth::user()->nickname, $database, $password);
-    }
-
-
-	//List User Account
-	public function listUserAccount(){
-		$answer = $this->sendQuery('v-list-user',Auth::user()->nickname,'json');
-		$data = json_decode($answer, true);
-		return $data;
-
-	}
-
-	//List User Backups
-	public function listUserBackups()
-	{
-		$answer = $this->sendQuery('v-list-user-backups',Auth::user()->nickname,'json');
-		$data = json_decode($answer, true);
-		return $data;
-	}
-
-
-
-
-	//List Web Domains
-	public function listWebDomain()
-	{
-		$answer = $this->sendQuery('v-list-web-domains',Auth::user()->nickname,'json');
-		$data = json_decode($answer, true);
-		return $data;
-	}
-
-	//Список DNS
-	public function listDNS(){
-		$listDns = $this->sendQuery('v-list-dns-domains',Auth::user()->nickname,'json');
-		$data = json_decode($listDns, true);
-		return $data;
-	}
-
-	//Список БД
-	public function listBD(){
-		$listBd = $this->sendQuery('v-list-databases',Auth::user()->nickname,'json');
-		$data = json_decode($listBd, true);
-		return $data;
-	}
-
-
-    //Список кокретной БД
-    public function listOnlyBD($database){
-        $listBd = $this->sendQuery('v-list-database',Auth::user()->nickname,$database,'json');
-        $data = json_decode($listBd, true);
-        return $data;
-    }
-
-	//Add Web Domains Для добовления домена!
-    public function addWebDomain($domain)
-    {
-        return $this->sendQuery('v-add-domain',Auth::user()->nickname,$domain);
-    }
-
-
-
-    // Add mail domain
-    public function addMailDomain($domain)
-    {
-        return $this->sendQuery('v-add-mail-domain',Auth::user()->nickname,$domain);
-    }
-
-
-    // Add domain aliases
-    public function addWebDomainAlias($domain,$alias)
-    {
-        return $this->sendQuery('v-add-web-domain-alias',Auth::user()->nickname,$domain,$alias, 'no');
-    }
-
-    //v-add-dns-on-web-alias
-    public function addWebDNSOnWebAlias($domain,$alias)
-    {
-        return $this->sendQuery('v-add-web-domain-alias',Auth::user()->nickname,$domain,$alias, 'no');
-    }
-
-
-    // Delete www. alias if it wasn't found
-    public function deleteWebDomainAlias($domain,$alias)
-    {
-        return $this->sendQuery('v-delete-web-domain-alias',Auth::user()->nickname,$domain,$alias, 'no');
-    }
-
-
-    // Add proxy support
-    public function addWebDomainProxy($domain,$alias,$v_proxy_ext)
-    {
-        return $this->sendQuery('v-add-web-domain-proxy',Auth::user()->nickname,$domain,$alias,$v_proxy_ext, 'no');
-    }
-
-    //Добавить базу данных
-    public  function  addDateBase($v_database,$v_dbuser,$v_password, $v_type = "mysql",  $v_charset)
-    {
-	    //Auth::user()->IpServer
-        return $this->sendQuery ('v-add-database',Auth::user()->nickname,$v_database,$v_dbuser,$v_password, $v_type,'localhost'  ,$v_charset);
-    }
-
-    //Удалить базу данных
-    public  function  deleteDateBase($v_database)
-    {
-        return $this->sendQuery ('v-delete-database',Auth::user()->nickname, $v_database);
-    }
-
-
-    // Удалить днс запись домена
-    public  function  deleteDNDDomain($v_domain)
-    {
-        return $this->sendQuery ('v-delete-dns-domain',Auth::user()->nickname, $v_domain);
-    }
-
-    // Удалить днс запись
-    public  function  deleteDNSRecord($v_domain,$v_record_id)
-    {
-        return $this->sendQuery('v-delete-dns-record',Auth::user()->nickname,$v_domain,$v_record_id);
-    }
-
-
-    //Add DNS domain Для добовления домена!
-    public function addDNSDomain($domain, $v_ip,$v_ns1,$v_ns2,$v_ns3,$v_ns4)
-    {
-        return $this->sendQuery('v-add-dns-domain',Auth::user()->nickname,$domain,$v_ip,$v_ns1,$v_ns2,$v_ns3,$v_ns4, 'no');
-    }
-
-    // Set expiriation date
-    public  function changeDNSDomainExp($v_domain,$v_exp)
-    {
-        return $this->sendQuery('v-change-dns-domain-exp',Auth::user()->nickname,$v_domain,$v_exp,"no");
-    }
-
-    // Set ttl
-    public  function changeDNSDomainTtl($v_domain,$v_ttl)
-    {
-        return $this->sendQuery('v-change-dns-domain-ttl',Auth::user()->nickname,$v_domain,v_ttl,"no");
-    }
-
-
-    // Restart dns server
-    public function  restartDNSServer()
-    {
-        return $this->sendQuery('v-restart-dns');
-    }
 
 
 

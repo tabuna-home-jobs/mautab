@@ -14,13 +14,59 @@
 <div class="col-xs-12">
   <h4 class="pull-left"><i class="fa fa-cog fa-red"></i> Настройки:</h4>
     <a data-toggle="collapse" href="#editprofile" aria-expanded="false" aria-controls="collapseExample" class="pull-right">Управление</a>
-
-
 </div>
 
 
+    <div class="col-xs-12 collapse" id="editprofile">
 
-  <div class="col-md-6">
+        <hr>
+
+        <form class="col-md-12" action="/home" method="post">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Аккаунт</label>
+                    <input type="text" class="form-control" disabled value="{{Auth::user()->nickname}} ">
+                </div>
+
+                <div class="form-group">
+                    <label>Имя</label>
+                    <input type="text" class="form-control" disabled value="{{ $UserInfo['FNAME'] }} ">
+                </div>
+
+                <div class="form-group">
+                    <label>Фамилия</label>
+                    <input type="text" class="form-control" disabled value="{{ $UserInfo['LNAME'] }} ">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" name="email" class="form-control" required value="{{ Auth::user()->email }} ">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" class="form-control" id="password" name="name" required pattern=".{8,}" title="Пароль должен содержать не менее 8 символов"
+                           placeholder="Пароль">
+                </div>
+
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="submit" value="Изменить" class="button-full">
+
+            </div>
+
+        </form>
+
+
+        <hr class="col-xs-12">
+
+    </div>
+
+
+    <div class="col-md-6">
 
 
       <div class="col-md-12">
@@ -101,55 +147,7 @@
 </div>
 
 
-    <div class="col-xs-12 collapse" id="editprofile">
 
-        <hr>
-
-        <form>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Аккаунт</label>
-                    <input type="text" class="form-control" disabled value="{{Auth::user()->nickname}} ">
-                </div>
-
-                <div class="form-group">
-                    <label>Имя</label>
-                    <input type="text" class="form-control" disabled value="{{ $UserInfo['FNAME'] }} ">
-                </div>
-
-                <div class="form-group">
-                    <label>Фамилия</label>
-                    <input type="text" class="form-control" disabled value="{{ $UserInfo['LNAME'] }} ">
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="email">Электронная почта</label>
-                    <input type="email" name="email" class="form-control" required value="{{ Auth::user()->email }} ">
-                </div>
-
-
-                <div class="form-group">
-                    <label for="password">Пароль</label>
-                    <input type="password" class="form-control" id="password" required pattern=".{8,}" title="Пароль должен содержать не менее 8 символов"
-                           placeholder="Пароль">
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Повторите пароль</label>
-                    <input type="password" class="form-control" id="password" required pattern=".{8,}" title="Пароль должен содержать не менее 8 символов"
-                           placeholder="Повторите пароль">
-                </div>
-            </div>
-
-
-            <input type="hidden" name="_method" value="PUT">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="submit" value="Отправить" class="button-full">
-        </form>
-
-    </div>
 
 
 <hr>
