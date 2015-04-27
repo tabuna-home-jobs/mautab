@@ -9,7 +9,7 @@
             </a>
         </p>
         <div class="collapse col-xs-12" id="add-bd">
-            <form class="col-md-8" method="post" action="{{URL::route('bd.store')}}">
+            <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('bd.store')}}">
 
                 <div class="alert alert-info" role="alert"> Префикс {{Auth::user()->nickname }}_ будет автоматически добавлен к БД и пользователю БД</div>
                 <div class="form-group input-line">
@@ -71,12 +71,13 @@
                     </select>
                 </div>
 
-                <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <input type="submit" value="Отправить" class="button-full">
-
+                <div class="form-group">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input type="submit" value="Отправить" class="button-full">
+                </div>
             </form>
 
-            <div class="col-md-4">
+            <div class="col-md-4 hidden-sm hidden-xs">
 
 
                 <div class="panel panel-default">
@@ -104,7 +105,7 @@
 
             @foreach($BdList as $nameBd => $bd)
 
-                <div class="col-xs-4">
+                    <div class="col-xs-12 col-md-4">
 
 
                     @if($bd['SUSPENDED'] == 'no')

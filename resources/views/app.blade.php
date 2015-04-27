@@ -48,7 +48,7 @@
 
     <menu class="menuapp container text-center">
 
-        <div class="col-md-2 col-sm-3 col-xs-4">
+        <div class="col-md-2 col-sm-4 col-xs-6">
 
             <a href="/home">
                 <span class="fa fa-user"></span>
@@ -60,7 +60,7 @@
 
         </div>
 
-        <div class="col-md-2 col-sm-3 col-xs-4">
+        <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="/web">
                 <span class="fa fa-desktop"></span>
                 <h4>Web</h4>
@@ -72,7 +72,7 @@
         </div>
 
 
-        <div class="col-md-2 col-sm-3 col-xs-4">
+        <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="/dns">
                 <span class="fa fa-sitemap"></span>
                 <h4>DNS</h4>
@@ -82,7 +82,7 @@
             <p class="menu-small"> Алиасы: {{$UserInfo['U_DNS_RECORDS'] }} </p>
         </div>
 
-        <div class="col-md-2 col-sm-3 col-xs-4">
+        <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="/bd">
                 <span class="fa fa-database"></span>
                 <h4>Базы данных</h4>
@@ -91,7 +91,7 @@
             <p class="menu-small"> Базы данных: {{$UserInfo['U_DATABASES'] }} </p>
         </div>
 
-        <div class="col-md-2 col-sm-3 col-xs-4">
+        <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="#">
                 <span class="fa fa-cart-arrow-down"></span>
                 <h4>Оплата</h4>
@@ -102,7 +102,7 @@
             <p class="menu-small"> Приостановка: {{Auth::user()->EndOfService }} </p>
         </div>
 
-        <div class="col-md-2 col-sm-3 col-xs-4">
+        <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="/tikets">
                 <span class="fa fa-life-ring"></span>
                 <h4>Поддержка</h4>
