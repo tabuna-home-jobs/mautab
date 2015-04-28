@@ -21,7 +21,7 @@
 
         <hr>
 
-        <form class="col-md-12" action="/home" method="post">
+        <form class="col-md-12" action="/home/edit" method="post">
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Аккаунт</label>

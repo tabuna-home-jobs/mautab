@@ -2,9 +2,9 @@
 
 use App\Http\Requests\TiketRequest;
 use App\Models\Tiket;
+use App\Models\User;
 use Auth;
 use Session;
-
 
 class TiketsController extends Controller {
 
@@ -36,9 +36,7 @@ class TiketsController extends Controller {
 	 */
 	public function index()
 	{
-
-        $Tikets = Tiket::whereRaw('idu = ? and idt is null', [Auth::user()->id] )->orderBy('id', 'desc')->simplePaginate(15);
-
+		$Tikets = User::find(Auth::user()->id)->tiket()->where('tikets_id')->orderBy('id', 'desc')->simplePaginate(15);
 		return view('/tikets/index', ['Tikets' => $Tikets]);
 	}
 

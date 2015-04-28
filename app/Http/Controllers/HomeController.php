@@ -43,7 +43,7 @@ class HomeController extends Controller {
 		return view('user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
 	}
 
-	public function putIndex(ChangeUserRequest $request)
+	public function putEdit(ChangeUserRequest $request)
 	{
 
 		dd("Я хуй его знаю почему он сюда не заходит!");

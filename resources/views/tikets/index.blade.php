@@ -7,17 +7,17 @@
     <div class="col-xs-12">
         <h2 class="text-center">{{Lang::get('tikets.Tickets')}}</h2>
 
-        <p>Тикеты - внутрисистемные сообщения, которые позволяют вам оперативно общаться со службой поддержки. </p>
+        <p class="text-center">{{Lang::get('tikets.description')}} </p>
     </div>
 
     <div class="col-md-8 table-responsive">
         <table class="table table-condensed table-hover table-striped">
             <thead>
             <tr>
-                <th>Номер</th>
-                <th>Заголовок</th>
-                <th>Статус</th>
-                <th>Управление</th>
+                <th>{{Lang::get('tikets.numberTable')}}</th>
+                <th>{{Lang::get('tikets.titleTable')}}</th>
+                <th>{{Lang::get('tikets.statusTable')}}</th>
+                <th>{{Lang::get('tikets.managementTable')}}</th>
             </tr>
             </thead>
             <tbody>
@@ -26,16 +26,17 @@
                     <td>{{ $Tiket->id }}</td>
                     <td>{{ $Tiket->title }}</td>
                     <td>@if (!$Tiket->complete)
-                            Рассматриваеться
+                            {{Lang::get('tikets.statusFalse')}}
                         @else
-                            Решено
+                            {{Lang::get('tikets.statusTrue')}}
                         @endif
                     </td>
-                    <td><a href="/tikets/{{ $Tiket->id }}">Просмотреть</a></td>
+                    <td><a href="/tikets/{{ $Tiket->id }}">{{Lang::get('tikets.viewTable')}}</a></td>
                 </tr>
             @endforeach
             </tbody>
         </table>
+        {!! $Tikets->render() !!}
     </div>
 
 
