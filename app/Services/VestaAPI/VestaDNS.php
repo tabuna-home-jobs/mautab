@@ -14,6 +14,17 @@ trait VestaDNS
 		return $data;
 	}
 
+	//Список кокретного DNS
+	public function listOnlyDNS($dns)
+	{
+
+		$listDNS = $this->sendQuery('v-list-dns-domain', Auth::user()->nickname, $dns, 'json');
+
+		$data = json_decode($listDNS, TRUE);
+
+		return $data;
+	}
+
 
 	// Удалить днс запись домена
 	public function  deleteDNDDomain($v_domain)
@@ -37,13 +48,14 @@ trait VestaDNS
 	// Set expiriation date
 	public function changeDNSDomainExp($v_domain, $v_exp)
 	{
+
 		return $this->sendQuery('v-change-dns-domain-exp', Auth::user()->nickname, $v_domain, $v_exp, "no");
 	}
 
 	// Set ttl
 	public function changeDNSDomainTtl($v_domain, $v_ttl)
 	{
-		return $this->sendQuery('v-change-dns-domain-ttl', Auth::user()->nickname, $v_domain, v_ttl, "no");
+		return $this->sendQuery('v-change-dns-domain-ttl', Auth::user()->nickname, $v_domain, $v_ttl, "no");
 	}
 
 

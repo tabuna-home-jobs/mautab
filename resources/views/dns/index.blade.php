@@ -38,7 +38,8 @@
                         <td>
                             <p><a href="#"><i class="fa fa-line-chart"></i>Показать записи: {{ $Dns{'RECORDS'}  }}</a></p>
                             <p><a href="#"><i class="fa fa-plus"></i> Добавить запись</a></p>
-                            <p><a href="#"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
+
+                            <p><a href="{{URL::route('dns.show', $nameDns)}}"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
                             <p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
                         </td>
                     </tr>
