@@ -21,10 +21,10 @@
     ]);
 
 	Route::group(['middleware' => 'auth'], function () {
-		Route::controller('home', 'HomeController', ['getIndex' => 'home.home']);
 		Route::resource('web', 'WebController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('bd', 'BdController');
 		Route::resource('tikets', 'TiketsController');
 		Route::controller('pay', 'RobokassaController');
+		Route::controller('home', 'HomeController', ['getIndex' => 'home.home']);
 	});
