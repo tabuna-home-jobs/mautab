@@ -1,0 +1,129 @@
+<?php $__env->startSection('content'); ?>
+<section class="container">
+    
+
+
+<div class="col-xs-12">
+
+<hr>
+
+<div class="row">
+
+<div class="col-xs-12">
+  <h4 class="pull-left"><i class="fa fa-cog fa-red"></i> Настройки:</h4>
+   <a href="#" class="pull-right">Управление</a>
+</div>
+
+
+
+  <div class="col-md-6">
+
+
+      <div class="col-md-12">
+    <p><?php echo e($UserInfo['FNAME']); ?> <?php echo e($UserInfo['LNAME']); ?>
+
+
+
+    <?php if($UserInfo['SUSPENDED'] == "no"): ?>
+      <span class="label label-success">Активен</span>
+    <?php else: ?>
+      <span class="label label-danger">Не активен</span>
+    <?php endif; ?>
+
+    </p>  
+  <p>Баланс: <?php echo e($UserInfoLaravel->balans); ?> руб </p>
+  <p>Дата окончания услуг: <?php echo e($UserInfoLaravel->EndOfService); ?> </p>
+
+          <p>Тариф: <?php echo e($UserInfo['PACKAGE']); ?>  </p>
+
+      </div>
+
+  
+<div class="col-md-12">
+                    <p  class="text-center">Трафик:  <?php echo e($UserInfo['U_BANDWIDTH']); ?> мб</p>
+                      <div class="progress">
+
+                        <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo e($UserInfo['U_BANDWIDTH']); ?>" aria-valuemin="0" aria-valuemax="<?php echo e($UserInfo['BANDWIDTH']); ?>" style="width: <?php echo e($UserInfo['U_BANDWIDTH'] *  $UserInfo['BANDWIDTH'] / 100); ?> %; min-width: 2em;">
+                        </div>
+                      </div>
+
+
+                        <p  class="text-center">Диск: <?php echo e($UserInfo['U_DISK']); ?> мб</p>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo e($UserInfo['U_DISK']); ?>" aria-valuemin="0" aria-valuemax="<?php echo e($UserInfo['DISK_QUOTA']); ?>" style="width: <?php echo e($UserInfo['U_DISK'] *  $UserInfo['DISK_QUOTA'] / 100); ?> %; min-width: 2em;">
+                        </div>
+                      </div>
+</div>
+
+
+
+
+
+
+  </div>
+
+
+
+  <div class="col-md-6">
+        <table class="table">
+
+            <tr>
+                <td class="counter-name">Веб:</td>
+                <td class="counter-value"><?php echo e($UserInfo['U_DISK_WEB']); ?> мб</td>
+            </tr>
+
+            <tr>
+                <td class="counter-name">Базы данных::</td>
+                <td class="counter-value"><?php echo e($UserInfo['U_DISK_DB']); ?> мб</td>
+            </tr>
+
+            <tr>
+              <td class="counter-name">Веб домены:</td>
+              <td class="counter-value"><?php echo e($UserInfo['U_WEB_DOMAINS']); ?> / <?php echo e($UserInfo['WEB_DOMAINS']); ?></td>
+          </tr>
+          <tr>
+              <td class="counter-name">DNS домены::</td>
+              <td class="counter-value"> <?php echo e($UserInfo['U_DNS_DOMAINS']); ?> / <?php echo e($UserInfo['DNS_DOMAINS']); ?></td>
+          </tr>
+          <tr>
+              <td class="counter-name">Базы данных:</td>
+              <td class="counter-value"><?php echo e($UserInfo['U_DATABASES']); ?> / <?php echo e($UserInfo['DATABASES']); ?></td>
+          </tr>
+          <tr>
+              <td class="counter-name">Сервер имен:</td>
+              <td class="counter-value"><?php echo e($UserInfo['NS']); ?></td>
+          </tr>
+      </table>
+  </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-6">
+
+   <!-- <h2>Оплата !!</h2> -->
+
+    </div>
+
+    <div class="col-md-6">
+
+    <!-- <h2>Оплата !!</h2> -->
+
+    </div>
+</div>
+
+
+<hr>
+
+
+</div>
+
+
+</section>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -5,6 +5,7 @@ use App\Models\User;
 use Auth;
 use Crypt;
 use Session;
+use SSH;
 use Vesta;
 
 class HomeController extends Controller {
@@ -37,6 +38,7 @@ class HomeController extends Controller {
 	 */
 	public function getIndex()
 	{
+
 		// Информация о пользователе
 		$UserInfoLaravel = User::find(Auth::user()->id);
 

@@ -150,6 +150,7 @@ return [
 		 */
 		'Illuminate\Html\HtmlServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		'Collective\Remote\RemoteServiceProvider',
 	],
 
 	/*
@@ -205,6 +206,7 @@ return [
 		'HTML'=> 'Illuminate\Html\HtmlFacade',
 
 		'Vesta' => 'App\Facades\VestaFacades',
+		'SSH' => 'Collective\Remote\RemoteFacade',
 	],
 
 ];

@@ -6,6 +6,7 @@ use App\Services\VestaAPI\VestaService;
 use App\Services\VestaAPI\VestaUser;
 use App\Services\VestaAPI\VestaWeb;
 use Auth;
+use SSH;
 
 class Vesta  {
 
@@ -14,9 +15,10 @@ class Vesta  {
 
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
+	public $VESTA_CMD = 'sudo -s /usr/local/vesta/bin/';
+	private $output;
 
-
-    public function sendQuery($cmd,$arg1 = null,$arg2 = null,$arg3 = null,$arg4 = null,$arg5 = null,$arg6 = null)
+	public function sendQuery2($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL)
     {
     		// Проверям, если нам нужен json то выводим его или же код ошибки
 			$argReturnCodeDetector = array($arg1,$arg2,$arg3,$arg4,$arg5,$arg6);
@@ -82,7 +84,72 @@ class Vesta  {
     }
 
 
+	public function sendQuery($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL)
+	{
+		$argReturnCodeDetector = array($arg1, $arg2, $arg3, $arg4, $arg5, $arg6);
+		if (in_array('json', $argReturnCodeDetector))
+			$this->vst_returncode = 'no';
+		else
+			$this->vst_returncode = 'yes';
 
+		//Э ТО БЛЯТЬ НАДО ПЕРЕПИСАТЬ, ЧЁ ЗА ХУЙНЯ А НЕ АПИ
+
+		// Prepare arguments
+		if (isset($cmd)) $cmd = escapeshellarg($cmd);
+		if (isset($arg1)) $arg1 = escapeshellarg($arg1);
+		if (isset($arg2)) $arg2 = escapeshellarg($arg2);
+		if (isset($arg3)) $arg3 = escapeshellarg($arg3);
+		if (isset($arg4)) $arg4 = escapeshellarg($arg4);
+		if (isset($arg5)) $arg5 = escapeshellarg($arg5);
+		if (isset($arg6)) $arg6 = escapeshellarg($arg6);
+		if (isset($arg7)) $arg7 = escapeshellarg($arg7);
+		if (isset($arg8)) $arg8 = escapeshellarg($arg8);
+		if (isset($arg9)) $arg9 = escapeshellarg($arg9);
+
+		// Build query
+		$cmdquery = $this->VESTA_CMD . $cmd . " ";
+
+		if (!empty($arg1)) {
+			$cmdquery = $cmdquery . $arg1 . " ";
+		}
+		if (!empty($arg2)) {
+			$cmdquery = $cmdquery . $arg2 . " ";
+		}
+		if (!empty($arg3)) {
+			$cmdquery = $cmdquery . $arg3 . " ";
+		}
+		if (!empty($arg4)) {
+			$cmdquery = $cmdquery . $arg4 . " ";
+		}
+		if (!empty($arg5)) {
+			$cmdquery = $cmdquery . $arg5 . " ";
+		}
+		if (!empty($arg6)) {
+			$cmdquery = $cmdquery . $arg6 . " ";
+		}
+		if (!empty($arg7)) {
+			$cmdquery = $cmdquery . $arg7 . " ";
+		}
+		if (!empty($arg8)) {
+			$cmdquery = $cmdquery . $arg8 . " ";
+		}
+		if (!empty($arg9)) {
+			$cmdquery = $cmdquery . $arg9;
+		}
+
+
+		return $this->binSSH($cmdquery);
+	}
+
+
+	function  binSSH($cmdquery)
+	{
+		SSH::run($cmdquery, function ($output) {
+			$this->output .= $output . PHP_EOL;
+		});
+
+		return $this->output;
+	}
 
 
 }
