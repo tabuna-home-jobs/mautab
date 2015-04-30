@@ -79,7 +79,7 @@ class Vesta  {
         if($this->vst_returncode == 'yes' && $query !=0 )
             dd($query);
         else
-            return $query;
+	        return $query;
 
     }
 
@@ -138,18 +138,14 @@ class Vesta  {
 		}
 
 
-		return $this->binSSH($cmdquery);
-	}
-
-
-	function  binSSH($cmdquery)
-	{
 		SSH::run($cmdquery, function ($output) {
-			$this->output .= $output . PHP_EOL;
+			$this->output .= $output;
 		});
 
 		return $this->output;
+
 	}
+
 
 
 }

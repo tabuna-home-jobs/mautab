@@ -1,30 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Обновил">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/03f932bcdbc452ae7eadf525d051b1d5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/1837a839f44c09ec2d7f762cb001138f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/1a417874b32c9cf66863b18e6a113d0a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/324f74a4dff57b4a392d4724850bc50a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/38858e6128f20393872fd42585ef5d0e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/3a226a4bf68fd38377ea6a5248e9a526" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/3a99ba97462cc91a7026eb58610dcbbd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/60bc6d9f538d5dc157fe0d9654ecd6b6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/616ac1cc1dea59493097530b50e910b9" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/8540e64a12f08101f56f0aaa21df3ac3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/9747303e79188b8957aa546ff6699c87" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/9e89e92ee96d4e0619e01fbc07aa65a5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/bdbf7a507dabbabcf5b2786baf09941f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/f9c8e4e1ba0a3052164bbec33dc5a0d2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/ide-helper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/remote.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+    <list default="true" id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Попытка SSH">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/Vesta.php" afterPath="$PROJECT_DIR$/app/Services/Vesta.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/a06cc225ca78b975e1776c384349dac5" afterPath="$PROJECT_DIR$/storage/framework/views/a06cc225ca78b975e1776c384349dac5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cloudme.iml" afterPath="$PROJECT_DIR$/.idea/cloudme.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cloudme.iws" />
@@ -74,11 +52,12 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1314">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="1278">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
-                <element signature="e#669#733#0#PHP" expanded="true" />
-                <element signature="e#1007#1531#0#PHP" expanded="true" />
+                <element signature="e#668#732#0#PHP" expanded="true" />
+                <element signature="e#1006#1530#0#PHP" expanded="true" />
+                <marker date="1430430805714" expanded="false" signature="39:156" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -87,11 +66,12 @@
       <file leaf-file-name="Vesta.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/Vesta.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6615385" vertical-offset="1017" max-vertical-offset="1674">
-              <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.5368782" vertical-offset="2243" max-vertical-offset="2880">
+              <caret line="142" column="8" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
               <folding>
                 <element signature="e#31#65#0#PHP" expanded="true" />
-                <element signature="e#2433#3950#0#PHP" expanded="true" />
+                <element signature="e#453#2425#0#PHP" expanded="true" />
+                <element signature="e#4021#4074#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,8 +136,8 @@
       <file leaf-file-name="ide-helper.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/ide-helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6666667" vertical-offset="702" max-vertical-offset="1710">
-              <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.6666667" vertical-offset="738" max-vertical-offset="1710">
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -167,7 +147,7 @@
         <entry file="file://$PROJECT_DIR$/config/remote.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.0" vertical-offset="324" max-vertical-offset="972">
-              <caret line="27" column="35" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="44" />
+              <caret line="27" column="34" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -731,7 +711,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430259152510</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Попытка SSH">
+      <created>1430430810451</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1430430810451</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -759,23 +745,23 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3031625" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30382514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1971917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1910867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -808,7 +794,8 @@
     <MESSAGE value="Пофиксил баг с добавлением префикса в имени БД" />
     <MESSAGE value="ПОКА ЧТО ТОЛЬКО СЛОМАЛ ТИКЕТЫ, ЧТО БЫ ПОТОМ ВСЁ СРАСРОСЬ КАК У ГЛОБЫ" />
     <MESSAGE value="Обновил" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил" />
+    <MESSAGE value="Попытка SSH" />
+    <option name="LAST_COMMIT_MESSAGE" value="Попытка SSH" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1137,11 +1124,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1314">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="1278">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#669#733#0#PHP" expanded="true" />
-            <element signature="e#1007#1531#0#PHP" expanded="true" />
+            <element signature="e#668#732#0#PHP" expanded="true" />
+            <element signature="e#1006#1530#0#PHP" expanded="true" />
+            <marker date="1430430805714" expanded="false" signature="39:156" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1156,8 +1144,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/ide-helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6666667" vertical-offset="702" max-vertical-offset="1710">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.6666667" vertical-offset="738" max-vertical-offset="1710">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1173,7 +1161,7 @@
     <entry file="file://$PROJECT_DIR$/config/remote.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.0" vertical-offset="324" max-vertical-offset="972">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="44" />
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1218,11 +1206,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/Vesta.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6615385" vertical-offset="1017" max-vertical-offset="1674">
-          <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.5368782" vertical-offset="2243" max-vertical-offset="2880">
+          <caret line="142" column="8" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
           <folding>
             <element signature="e#31#65#0#PHP" expanded="true" />
-            <element signature="e#2433#3950#0#PHP" expanded="true" />
+            <element signature="e#453#2425#0#PHP" expanded="true" />
+            <element signature="e#4021#4074#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
