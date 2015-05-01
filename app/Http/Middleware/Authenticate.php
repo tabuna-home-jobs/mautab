@@ -23,6 +23,7 @@ class Authenticate {
 	public function __construct(Guard $auth)
 	{
 		$this->auth = $auth;
+
 	}
 
 	/**
@@ -48,8 +49,9 @@ class Authenticate {
         else
         {
             View::composer('*', function () {
-                $UserInfo = Vesta::listUserAccount($this->auth->user()->nickname, 'json')[$this->auth->user()->nickname];
-                View::share('UserInfo', $UserInfo);
+	            $UserInfo = Vesta::listUserAccount()[$this->auth->user()->nickname];
+	            View::share('UserInfo', $UserInfo);
+	            //!! Вот тут он должен записать переменную в шаблон!, но этого не происходит
             });
         }
 

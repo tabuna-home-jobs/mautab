@@ -1,6 +1,7 @@
 <?php namespace App\Services\VestaAPI;
 
 use Auth;
+use Cache;
 
 trait VestaUser
 {
@@ -39,11 +40,12 @@ trait VestaUser
 	//List User Account
 	public function listUserAccount()
 	{
-		$answer = $this->sendQuery('v-list-user', Auth::user()->nickname, 'json');
-		$data   = json_decode($answer, TRUE);
+		return Cache::remember('listUserAccount-' . Auth::user()->nickname, 10, function () {
+			$answer = $this->sendQuery('v-list-user', Auth::user()->nickname, 'json');
+			$data   = json_decode($answer, TRUE);
 
-		return $data;
-
+			return $data;
+		});
 	}
 
 	//List User Backups

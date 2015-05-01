@@ -15,10 +15,12 @@ class Vesta  {
 
 	public	$vst_username = 'admin';
 	public	$vst_password = '03af4d';
-	public $VESTA_CMD = 'sudo -s /usr/local/vesta/bin/';
-	private $output;
 
-	public function sendQuery2($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL)
+	//Для ssh соединения
+	public $VESTA_CMD = '/usr/local/vesta/bin/';
+	public $output;
+
+	public function sendQuery($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL)
     {
     		// Проверям, если нам нужен json то выводим его или же код ошибки
 			$argReturnCodeDetector = array($arg1,$arg2,$arg3,$arg4,$arg5,$arg6);
@@ -84,7 +86,7 @@ class Vesta  {
     }
 
 
-	public function sendQuery($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL)
+	public function sendQuery2($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL)
 	{
 		$argReturnCodeDetector = array($arg1, $arg2, $arg3, $arg4, $arg5, $arg6);
 		if (in_array('json', $argReturnCodeDetector))
@@ -108,7 +110,6 @@ class Vesta  {
 
 		// Build query
 		$cmdquery = $this->VESTA_CMD . $cmd . " ";
-
 		if (!empty($arg1)) {
 			$cmdquery = $cmdquery . $arg1 . " ";
 		}
@@ -142,7 +143,8 @@ class Vesta  {
 			$this->output .= $output;
 		});
 
-		return $this->output;
+
+		return (string)$this->output;
 
 	}
 
