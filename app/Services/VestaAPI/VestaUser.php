@@ -63,7 +63,6 @@ trait VestaUser
 	{
 		$answer = $this->sendQuery('v-list-user-backups', Auth::user()->nickname, 'json');
 		$data   = json_decode($answer, TRUE);
-
 		return $data;
 	}
 

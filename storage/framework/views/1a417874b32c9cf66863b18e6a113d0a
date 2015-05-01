@@ -143,16 +143,15 @@
           </tr>
       </table>
 
-      <p class="text-center"><a href="<?php echo e(URL::route('log.index')); ?>">Журнал действий</a> </p>
+      <p class="text-center"><a href="<?php echo e(URL::route('log.index')); ?>">Журнал действий</a></p>
 
   </div>
 </div>
 
 
-
-
-
 <hr>
+
+
 
 
 </div>
