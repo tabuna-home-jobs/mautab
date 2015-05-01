@@ -144,7 +144,10 @@
           </tr>
       </table>
 
+      <p class="text-center">Пока что пусть будет тут</p>
       <p class="text-center"><a href="{{URL::route('log.index')}}">Журнал действий</a></p>
+
+      <p class="text-center"><a href="{{URL::route('backup.index')}}">Резервные копии</a></p>
 
   </div>
 </div>

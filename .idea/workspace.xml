@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Лог пользователя">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackupController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/user/backup.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/log/logUser.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/logUser.blade.php" />
+    <list default="true" id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Резервные копии - начало">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/1a417874b32c9cf66863b18e6a113d0a" afterPath="$PROJECT_DIR$/storage/framework/views/1a417874b32c9cf66863b18e6a113d0a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserLogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserLogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php" afterPath="$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/style.css" afterPath="$PROJECT_DIR$/public/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cloudme.iws" />
@@ -76,22 +69,22 @@
             <state vertical-scroll-proportion="-11.703704" vertical-offset="422" max-vertical-offset="1008">
               <caret line="61" column="35" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="35" />
               <folding>
-                <element signature="e#40#49#0#PHP" expanded="true" />
                 <element signature="e#831#961#0#PHP" expanded="true" />
                 <element signature="e#986#1256#0#PHP" expanded="true" />
                 <element signature="e#1097#1251#1#PHP" expanded="true" />
                 <element signature="e#1260#1433#0#PHP" expanded="true" />
                 <element signature="e#1458#1638#0#PHP" expanded="true" />
+                <marker date="1430512704603" expanded="true" signature="40:60" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/user/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-44.925926" vertical-offset="803" max-vertical-offset="3096">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7838765" vertical-offset="2207" max-vertical-offset="3096">
+              <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,11 +113,11 @@
       <file leaf-file-name="UserLogController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserLogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="486">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state vertical-scroll-proportion="-10.666667" vertical-offset="36" max-vertical-offset="504">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
-                <element signature="e#39#61#0#PHP" expanded="true" />
-                <element signature="e#195#318#0#PHP" expanded="true" />
+                <element signature="e#195#319#0#PHP" expanded="true" />
+                <marker date="1430515435014" expanded="true" signature="39:72" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -146,20 +139,20 @@
       <file leaf-file-name="BackupController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackupController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="1314">
+            <state vertical-scroll-proportion="-9.333333" vertical-offset="54" max-vertical-offset="1386">
               <caret line="17" column="57" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="57" />
               <folding>
-                <element signature="e#39#61#0#PHP" expanded="true" />
+                <marker date="1430515435010" expanded="true" signature="39:72" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backup.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="backup.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/backup.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.432247" vertical-offset="0" max-vertical-offset="612">
-              <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+            <state vertical-scroll-proportion="-7.3333335" vertical-offset="90" max-vertical-offset="720">
+              <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -233,10 +226,10 @@
         <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserLogController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BackupController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/backup.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/home.blade.php" />
       </list>
     </option>
   </component>
@@ -751,7 +744,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430511611492</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Резервные копии - начало">
+      <created>1430515439243</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1430515439243</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -831,7 +830,8 @@
     <MESSAGE value="Попытка SSH" />
     <MESSAGE value="Попробуй силу ккккешшша!" />
     <MESSAGE value="Лог пользователя" />
-    <option name="LAST_COMMIT_MESSAGE" value="Лог пользователя" />
+    <MESSAGE value="Резервные копии - начало" />
+    <option name="LAST_COMMIT_MESSAGE" value="Резервные копии - начало" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1153,11 +1153,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserLogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="486">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state vertical-scroll-proportion="-10.666667" vertical-offset="36" max-vertical-offset="504">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
-            <element signature="e#39#61#0#PHP" expanded="true" />
-            <element signature="e#195#318#0#PHP" expanded="true" />
+            <element signature="e#195#319#0#PHP" expanded="true" />
+            <marker date="1430515435014" expanded="true" signature="39:72" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1178,35 +1178,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-44.925926" vertical-offset="803" max-vertical-offset="3096">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.703704" vertical-offset="422" max-vertical-offset="1008">
           <caret line="61" column="35" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="35" />
           <folding>
-            <element signature="e#40#49#0#PHP" expanded="true" />
             <element signature="e#831#961#0#PHP" expanded="true" />
             <element signature="e#986#1256#0#PHP" expanded="true" />
             <element signature="e#1097#1251#1#PHP" expanded="true" />
             <element signature="e#1260#1433#0#PHP" expanded="true" />
             <element signature="e#1458#1638#0#PHP" expanded="true" />
+            <marker date="1430512704603" expanded="true" signature="40:60" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackupController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="1314">
+        <state vertical-scroll-proportion="-9.333333" vertical-offset="54" max-vertical-offset="1386">
           <caret line="17" column="57" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="57" />
           <folding>
-            <element signature="e#39#61#0#PHP" expanded="true" />
+            <marker date="1430515435010" expanded="true" signature="39:72" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1221,8 +1213,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/backup.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.432247" vertical-offset="0" max-vertical-offset="612">
-          <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+        <state vertical-scroll-proportion="-7.3333335" vertical-offset="90" max-vertical-offset="720">
+          <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7838765" vertical-offset="2207" max-vertical-offset="3096">
+          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding />
         </state>
       </provider>
