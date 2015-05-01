@@ -63,13 +63,8 @@ class TiketsController extends Controller {
 
 	public function show($id)
 	{
-
-		$Tiket = Tiket::whereRaw('idu = ? AND id = ?',
-									[Auth::user()->id, $id] )->orderBy('id', 'desc')->find($id);
-
-		$subTiket = Tiket::whereRaw('idu = ? AND idt = ?',
-			[Auth::user()->id, $id] )->orderBy('id', 'desc')->simplePaginate(15);
-
+		$Tiket    = User::find(Auth::user()->id)->tiket()->find($id)->firstOrFail();
+		$subTiket = User::find(Auth::user()->id)->tiket()->find($id)->subtiket()->simplePaginate(15);
 		return view('tikets/viewer',['Tiket' => $Tiket, 'subTiket' => $subTiket]);
 	}
 

@@ -36,9 +36,9 @@ class Tiket extends Model {
 		return $this->belongsTo('App\Models\User');
 	}
 
-	public function tiket()
+	public function subtiket()
 	{
-		return $this->hasMany('App\Models\Tiket');
+		return $this->hasMany('App\Models\Tiket', 'tikets_id');
 	}
 
 

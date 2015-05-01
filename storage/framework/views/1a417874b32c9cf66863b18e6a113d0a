@@ -145,6 +145,7 @@
 
       <p class="text-center">Пока что пусть будет тут</p>
       <p class="text-center"><a href="<?php echo e(URL::route('log.index')); ?>">Журнал действий</a></p>
+
       <p class="text-center"><a href="<?php echo e(URL::route('backup.index')); ?>">Резервные копии</a></p>
 
   </div>
