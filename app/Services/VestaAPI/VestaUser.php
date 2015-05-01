@@ -48,6 +48,16 @@ trait VestaUser
 		});
 	}
 
+
+	public function listUserLog()
+	{
+		$answer = $this->sendQuery('v-list-user-log', Auth::user()->nickname, 'json');
+		$data   = json_decode($answer, TRUE);
+
+		return $data;
+	}
+
+
 	//List User Backups
 	public function listUserBackups()
 	{

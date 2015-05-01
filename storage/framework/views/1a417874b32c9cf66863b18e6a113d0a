@@ -142,6 +142,9 @@
               <td class="counter-value"><?php echo e($UserInfo['NS']); ?></td>
           </tr>
       </table>
+
+      <p class="text-center"><a href="<?php echo e(URL::route('log.index')); ?>">Журнал действий</a> </p>
+
   </div>
 </div>
 

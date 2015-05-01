@@ -143,6 +143,9 @@
               <td class="counter-value">{{ $UserInfo['NS'] }}</td>
           </tr>
       </table>
+
+      <p class="text-center"><a href="{{URL::route('log.index')}}">Журнал действий</a></p>
+
   </div>
 </div>
 
