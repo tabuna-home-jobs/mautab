@@ -67,4 +67,21 @@ trait VestaUser
 	}
 
 
+	//Удалить бекап пользователя
+	public function deleteUserBackup($backup)
+	{
+		return $this->sendQuery('v-delete-user-backup', Auth::user()->nickname, $backup);
+	}
+
+
+	//Просмотр бекапа
+	public function showUserBackup($backup)
+	{
+		$answer = $this->sendQuery('v-list-user-backup', Auth::user()->nickname, $backup, 'json');
+		$data   = json_decode($answer, TRUE);
+
+		return $data;
+	}
+
+
 }

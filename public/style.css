@@ -15,6 +15,10 @@ button::-moz-focus-inner {
     border: 0 !important;
 }
 
+blockquote > .table-responsive > table {
+    font-size: 12pt;
+}
+
 a {
     outline: none !important;
 }
@@ -952,7 +956,7 @@ footer{
     vertical-align: middle;
 }
 
-.subheaderlog {
+.subheaderlog, .subheaderlog > a {
     color: #c6c6c6;
     font-size: 16pt;
     font-weight: 900;

@@ -45,9 +45,11 @@ class BackupController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($backup)
 	{
-		//
+		$backupDetal = Vesta::showUserBackup($backup)["$backup"];
+
+		return view('user/backupDetal', ['Backup' => $backupDetal, 'name' => $backup]);
 	}
 
 	/**
@@ -81,9 +83,12 @@ class BackupController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($backup)
 	{
-		//
+		Vesta::deleteUserBackup($backup);
+		Session::flash('good', 'Вы успешно удалили базу данных.');
+
+		return redirect()->route('backup.index');
 	}
 
 }

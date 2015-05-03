@@ -6,7 +6,7 @@
 
         @forelse($Backups as $key =>  $Bakup)
             <div class="col-xs-12 log-row">
-                <h1 class="col-md-3 col-xs-12 subheaderlog"> {{ $key  }}</h1>
+                <h1 class="col-md-3 col-xs-12 subheaderlog"><a href="{{URL::route('backup.index')}}/{{ $key  }}"> {{ $key  }}</a></h1>
                 <blockquote class="col-md-9 col-xs-12">
                     <p class="question">Веб: {{ $Bakup['WEB']}}</p>
 

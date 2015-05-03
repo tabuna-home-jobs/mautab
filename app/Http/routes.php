@@ -25,7 +25,7 @@
 		Route::resource('dns', 'DnsController');
 		Route::resource('bd', 'BdController');
 		Route::resource('log', 'UserLogController', ['only' => ['index']]);
-		Route::resource('backup', 'BackupController', ['only' => ['index']]);
+		Route::resource('backup', 'BackupController');
 		Route::resource('tikets', 'TiketsController');
 		Route::controller('pay', 'RobokassaController');
 		Route::controller('home', 'HomeController', ['getIndex' => 'home.home']);
