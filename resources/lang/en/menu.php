@@ -7,7 +7,6 @@
 		"DNS"       => "DNS",
 		"BD"        => "Database",
 		"Cron"      => "Cron",
-
 		"disk"      => "disk",
 		"traffic"   => "traffic",
 		"domains"   => "domains",
@@ -21,4 +20,6 @@
 		"billing"   => "Billing",
 		"balance"   => "Balance",
 		"support"   => "Support",
+		"Settings" => "Settings",
+		"Info"     => "Info",
 	];

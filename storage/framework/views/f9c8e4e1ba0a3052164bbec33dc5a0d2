@@ -57,6 +57,7 @@
             <hr>
 
             <p class="menu-small"><?php echo e(Lang::get('menu.disk')); ?>: <?php echo e($UserInfo['U_DISK']); ?> мб </p>
+
             <p class="menu-small"><?php echo e(Lang::get('menu.traffic')); ?>: <?php echo e($UserInfo['U_BANDWIDTH']); ?> мб </p>
 
         </div>
@@ -69,6 +70,7 @@
             <hr>
 
             <p class="menu-small"> <?php echo e(Lang::get('menu.domains')); ?>: <?php echo e($UserInfo['U_WEB_DOMAINS']); ?> </p>
+
             <p class="menu-small"> <?php echo e(Lang::get('menu.aliases')); ?>: <?php echo e($UserInfo['U_WEB_ALIASES']); ?> </p>
         </div>
 
@@ -80,6 +82,7 @@
             </a>
             <hr>
             <p class="menu-small"> <?php echo e(Lang::get('menu.domains')); ?>: <?php echo e($UserInfo['U_DNS_DOMAINS']); ?> </p>
+
             <p class="menu-small"> <?php echo e(Lang::get('menu.records')); ?>: <?php echo e($UserInfo['U_DNS_RECORDS']); ?> </p>
         </div>
 

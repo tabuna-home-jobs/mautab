@@ -20,7 +20,9 @@
                         <small>Дата: <?php echo e($Bakup['DATE']); ?> : <?php echo e($Bakup['TIME']); ?> </small>
                     </p>
                     <p class="text-right">
-                        <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace('.','-',$key)); ?>"><small><i class="fa fa-trash"></i> Удалить</small></a>
+                        <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace('.','-',$key)); ?>">
+                            <small><i class="fa fa-trash"></i> Удалить</small>
+                        </a>
                     </p>
                 </blockquote>
             </div>
