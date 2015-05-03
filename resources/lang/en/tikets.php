@@ -23,4 +23,5 @@ return [
 	"viewTable"       => "View",
 	"statusTrue"      => "Closed",
 	"statusFalse"     => "considered",
+	"answers" => "Answers",
 ];

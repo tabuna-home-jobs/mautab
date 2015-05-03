@@ -12,7 +12,7 @@
 
 
             <!-- SHARE -->
-            <div class="single-section-container"><h6 class="single-section-title"><span class="single-section-text">Ответы</span></h6></div>
+    <div class="single-section-container"><h6 class="single-section-title"><span class="single-section-text">{{Lang::get('tikets.answers')}}</span></h6></div>
             <!-- END OF SHARE -->
             <!-- AUTHOR BOX -->
             @foreach ($subTiket as $Tik)
