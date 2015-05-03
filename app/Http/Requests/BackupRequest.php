@@ -2,7 +2,7 @@
 
 use Auth;
 
-class ChangeUserRequest extends Request
+class BackupRequest extends Request
 {
 
 	/**
@@ -23,8 +23,7 @@ class ChangeUserRequest extends Request
 	public function rules()
 	{
 		return [
-			'email'    => 'required|max:255|email',
-			'password' => 'required|max:255|min:8',
+			'backup' => 'required|max:255',
 		];
 	}
 

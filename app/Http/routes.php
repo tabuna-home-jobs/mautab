@@ -26,6 +26,7 @@
 		Route::resource('bd', 'BdController');
 		Route::resource('log', 'UserLogController', ['only' => ['index']]);
 		Route::resource('backup', 'BackupController');
+		Route::resource('cron', 'CronController');
 		Route::resource('tikets', 'TiketsController');
 		Route::controller('pay', 'RobokassaController');
 		Route::controller('home', 'HomeController', ['getIndex' => 'home.home']);

@@ -1,10 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests\BackupRequest;
-use Session;
-use Vesta;
+use App\Http\Requests;
 
-class BackupController extends Controller
+class CronController extends Controller
 {
 
 	/**
@@ -14,9 +12,7 @@ class BackupController extends Controller
 	 */
 	public function index()
 	{
-		$Backups = Vesta::listUserBackups();
-
-		return view('user/backup', ['Backups' => $Backups]);
+		//
 	}
 
 	/**
@@ -46,11 +42,9 @@ class BackupController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function show($backup)
+	public function show($id)
 	{
-		$backupDetal = Vesta::showUserBackup($backup)["$backup"];
-
-		return view('user/backupDetal', ['Backup' => $backupDetal, 'name' => $backup]);
+		//
 	}
 
 	/**
@@ -84,12 +78,9 @@ class BackupController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function destroy(BackupRequest $backup)
+	public function destroy($id)
 	{
-		Vesta::deleteUserBackup($backup->backup);
-		Session::flash('good', 'Вы успешно удалили резервную копию.');
-
-		return redirect()->route('backup.index');
+		//
 	}
 
 }

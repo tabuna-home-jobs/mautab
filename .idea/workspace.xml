@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Подправил тикеты, просмотр. надо ещё добавление, но хочу уже спать">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/user/backupDetal.blade.php" />
+    <list default="true" id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Бекапы, осталось только потдверждение сделать как у бд на удаление, надеюсь Славка поможет">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/03f932bcdbc452ae7eadf525d051b1d5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/38858e6128f20393872fd42585ef5d0e" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/3a99ba97462cc91a7026eb58610dcbbd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/60bc6d9f538d5dc157fe0d9654ecd6b6" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/7560c2de0fe7e34b15f1c2e9556114e2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/8540e64a12f08101f56f0aaa21df3ac3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/BackupRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/CronController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/a06cc225ca78b975e1776c384349dac5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/a460a10f64639084861f7813e14789ca" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/ac6f2aceaff275b457e2835f8f78a243" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/bdbf7a507dabbabcf5b2786baf09941f" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/d0e8a952c3ceee9d55fbe5c96574a8a7" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/04208b501629662e35eafdebb746c4dc" afterPath="$PROJECT_DIR$/storage/framework/views/04208b501629662e35eafdebb746c4dc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BackupController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackupController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php" afterPath="$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/ChangeDNSRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/ChangeDNSRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/ChangeUserRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/ChangeUserRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserLogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserLogController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/backup.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/backup.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/bd/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/bd/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/style.css" afterPath="$PROJECT_DIR$/public/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -50,85 +66,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="VestaUser.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.25926" vertical-offset="569" max-vertical-offset="1278">
-              <caret line="77" column="34" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="34" />
-              <folding>
-                <element signature="e#831#961#0#PHP" expanded="true" />
-                <element signature="e#986#1256#0#PHP" expanded="true" />
-                <element signature="e#1097#1251#1#PHP" expanded="true" />
-                <element signature="e#1260#1433#0#PHP" expanded="true" />
-                <element signature="e#1458#1638#0#PHP" expanded="true" />
-                <element signature="e#1672#1803#0#PHP" expanded="true" />
-                <element signature="e#1826#2021#0#PHP" expanded="true" />
-                <marker date="1430660512761" expanded="true" signature="40:60" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="540">
-              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="270">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#199#297#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/bd/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="1962">
-              <caret line="10" column="95" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="95" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="backup.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/backup.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.259259" vertical-offset="137" max-vertical-offset="720">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+            <state vertical-scroll-proportion="-2.925926" vertical-offset="695" max-vertical-offset="1278">
+              <caret line="43" column="74" selection-start-line="43" selection-start-column="74" selection-end-line="43" selection-end-column="74" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VestaService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="162">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BackupController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BackupController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackupController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.259259" vertical-offset="569" max-vertical-offset="1548">
-              <caret line="51" column="48" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1620">
+              <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding>
-                <element signature="e#194#318#0#PHP" expanded="true" />
-                <element signature="e#1242#1421#0#PHP" expanded="true" />
+                <element signature="e#39#75#0#PHP" expanded="true" />
+                <element signature="e#235#359#0#PHP" expanded="true" />
+                <element signature="e#696#874#0#PHP" expanded="true" />
+                <element signature="e#1282#1488#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BackupRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/BackupRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="630">
+              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+              <folding>
+                <element signature="e#36#66#0#PHP" expanded="true" />
+                <element signature="e#77#441#0#PHP" expanded="true" />
+                <element signature="e#210#267#0#PHP" expanded="true" />
+                <element signature="e#358#438#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddBDRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/AddBDRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="684">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="29" selection-end-column="10" />
+              <folding>
+                <element signature="e#209#272#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,18 +121,54 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17838">
-              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state vertical-scroll-proportion="15.107142" vertical-offset="11277" max-vertical-offset="18072">
+              <caret line="603" column="11" selection-start-line="603" selection-start-column="1" selection-end-line="603" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backupDetal.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/user/backupDetal.blade.php">
+      <file leaf-file-name="VestaBD.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaBD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40137222" vertical-offset="0" max-vertical-offset="1782">
-              <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+            <state vertical-scroll-proportion="-14.0" vertical-offset="0" max-vertical-offset="990">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding>
+                <element signature="e#82#210#0#PHP" expanded="true" />
+                <element signature="e#242#393#0#PHP" expanded="true" />
+                <element signature="e#618#810#0#PHP" expanded="true" />
+                <element signature="e#838#1080#0#PHP" expanded="true" />
+                <element signature="e#1107#1242#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="558">
+              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CronController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CronController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="198">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/bd/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.9259257" vertical-offset="2837" max-vertical-offset="3852">
+              <caret line="168" column="90" selection-start-line="168" selection-start-column="88" selection-end-line="168" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -157,9 +177,11 @@
       <file leaf-file-name="BdController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BdController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.62963" vertical-offset="1" max-vertical-offset="702">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="58" selection-end-column="45" />
-              <folding />
+            <state vertical-scroll-proportion="-11.296296" vertical-offset="1" max-vertical-offset="702">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding>
+                <element signature="e#1567#1794#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,7 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/RobokassaController.php" />
         <option value="$PROJECT_DIR$/../Kurs48/.htaccess" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/.htaccess" />
@@ -198,7 +219,6 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/ChangeUserRequest.php" />
         <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaDNS.php" />
         <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaService.php" />
-        <option value="$PROJECT_DIR$/resources/views/bd/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ru/pagination.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/tikets.php" />
@@ -221,11 +241,13 @@
         <option value="$PROJECT_DIR$/app/Models/Tiket.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TiketsController.php" />
         <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/backup.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BackupController.php" />
-        <option value="$PROJECT_DIR$/public/style.css" />
         <option value="$PROJECT_DIR$/resources/views/user/backupDetal.blade.php" />
+        <option value="$PROJECT_DIR$/public/style.css" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/bd/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/backup.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/BackupRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BackupController.php" />
       </list>
     </option>
   </component>
@@ -442,28 +464,6 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cloudme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cloudme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -566,6 +566,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Requests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -794,7 +816,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430518026624</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Бекапы, осталось только потдверждение сделать как у бд на удаление, надеюсь Славка поможет">
+      <created>1430665985124</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1430665985124</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -823,23 +851,23 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30382514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1971917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1959707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -876,48 +904,19 @@
     <MESSAGE value="Лог пользователя" />
     <MESSAGE value="Резервные копии - начало" />
     <MESSAGE value="Подправил тикеты, просмотр. надо ещё добавление, но хочу уже спать" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подправил тикеты, просмотр. надо ещё добавление, но хочу уже спать" />
+    <MESSAGE value="Бекапы, осталось только потдверждение сделать как у бд на удаление, надеюсь Славка поможет" />
+    <option name="LAST_COMMIT_MESSAGE" value="Бекапы, осталось только потдверждение сделать как у бд на удаление, надеюсь Славка поможет" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/BdController.php</url>
-          <line>28</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/user/backup.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="720">
-          <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bd/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3528" max-vertical-offset="3744">
-          <caret line="196" column="26" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/passwords.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang/en/pagination.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
@@ -1072,13 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaBD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667" vertical-offset="36" max-vertical-offset="990">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/web/domain.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.666667" vertical-offset="270" max-vertical-offset="2106">
@@ -1118,14 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="504">
           <caret line="22" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bd/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3528" max-vertical-offset="3744">
-          <caret line="196" column="26" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,10 +1161,10 @@
         <state vertical-scroll-proportion="-22.74074" vertical-offset="808" max-vertical-offset="1692">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <element signature="e#39#74#0#PHP" expanded="true" />
-            <element signature="e#806#1004#0#PHP" expanded="true" />
-            <element signature="e#1023#1389#0#PHP" expanded="true" />
-            <element signature="e#1392#1675#0#PHP" expanded="true" />
+            <element signature="e#39#74#0#PHP" expanded="false" />
+            <element signature="e#806#1004#0#PHP" expanded="false" />
+            <element signature="e#1023#1389#0#PHP" expanded="false" />
+            <element signature="e#1392#1675#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1190,9 +1174,9 @@
         <state vertical-scroll-proportion="-13.333333" vertical-offset="378" max-vertical-offset="1314">
           <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
           <folding>
-            <element signature="e#668#732#0#PHP" expanded="true" />
-            <element signature="e#818#1003#0#PHP" expanded="true" />
-            <element signature="e#1006#1530#0#PHP" expanded="true" />
+            <element signature="e#668#732#0#PHP" expanded="false" />
+            <element signature="e#818#1003#0#PHP" expanded="false" />
+            <element signature="e#1006#1530#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1201,14 +1185,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="540">
-          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1239,14 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BdController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.62963" vertical-offset="1" max-vertical-offset="702">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="58" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.25926" vertical-offset="569" max-vertical-offset="1278">
@@ -1259,43 +1227,117 @@
             <element signature="e#1458#1638#0#PHP" expanded="true" />
             <element signature="e#1672#1803#0#PHP" expanded="true" />
             <element signature="e#1826#2021#0#PHP" expanded="true" />
-            <marker date="1430660512761" expanded="true" signature="40:60" placeholder="..." />
+            <marker date="1430665980473" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430665980473" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackupController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/user/backupDetal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.259259" vertical-offset="569" max-vertical-offset="1548">
-          <caret line="51" column="48" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="48" />
-          <folding>
-            <element signature="e#194#318#0#PHP" expanded="true" />
-            <element signature="e#1242#1421#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="1764">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17838">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state vertical-scroll-proportion="15.107142" vertical-offset="11277" max-vertical-offset="18072">
+          <caret line="603" column="11" selection-start-line="603" selection-start-column="1" selection-end-line="603" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.0" vertical-offset="0" max-vertical-offset="990">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="e#82#210#0#PHP" expanded="true" />
+            <element signature="e#242#393#0#PHP" expanded="true" />
+            <element signature="e#618#810#0#PHP" expanded="true" />
+            <element signature="e#838#1080#0#PHP" expanded="true" />
+            <element signature="e#1107#1242#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BdController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.296296" vertical-offset="1" max-vertical-offset="702">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#1567#1794#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bd/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.9259257" vertical-offset="2837" max-vertical-offset="3852">
+          <caret line="168" column="90" selection-start-line="168" selection-start-column="88" selection-end-line="168" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="558">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/backup.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.259259" vertical-offset="137" max-vertical-offset="720">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        <state vertical-scroll-proportion="-2.925926" vertical-offset="695" max-vertical-offset="1278">
+          <caret line="43" column="74" selection-start-line="43" selection-start-column="74" selection-end-line="43" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/backupDetal.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/AddBDRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40137222" vertical-offset="0" max-vertical-offset="1782">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+        <state vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="684">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="29" selection-end-column="10" />
+          <folding>
+            <element signature="e#209#272#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/BackupRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding>
+            <element signature="e#36#66#0#PHP" expanded="true" />
+            <element signature="e#77#441#0#PHP" expanded="true" />
+            <element signature="e#210#267#0#PHP" expanded="true" />
+            <element signature="e#358#438#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CronController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="1620">
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding>
+            <element signature="e#39#75#0#PHP" expanded="true" />
+            <element signature="e#235#359#0#PHP" expanded="true" />
+            <element signature="e#696#874#0#PHP" expanded="true" />
+            <element signature="e#1282#1488#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

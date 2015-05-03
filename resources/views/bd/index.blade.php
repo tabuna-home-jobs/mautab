@@ -163,12 +163,12 @@
                                                             <h4 class="modal-title" id="myModalLabel">Удалить {{$nameBd}} ?</h4>
                                                         </div>
                                                         <div class="modal-body">
-                                                            Вы действительно хотите удалить {{$nameBd}} ?
+                                                            Вы действительно хотите удалить {{$nameBd}}
                                                         </div>
                                                         <div class="modal-footer">
                                                             <form action="{{URL::route('bd.destroy')}}" method="post">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
-                                                                <button type="submit" class="btn btn-primary">Да</button>
+                                                                <button type="submit" class="button-small">Да</button>
                                                                 <input type="hidden" name="v_database" value="{{$nameBd}}"/>
                                                                 <input type="hidden" name="_method" value="DELETE">
                                                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
