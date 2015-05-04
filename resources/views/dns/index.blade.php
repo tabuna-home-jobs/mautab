@@ -78,7 +78,6 @@
     </div>
 
 
-    <div class="col-xs-12">
         <div class="col-md-12" id="add-shadow">
             @if(!empty($DnsList))
                 @foreach($DnsList as $nameDns => $Dns)
@@ -94,9 +93,9 @@
                             </div>
 
                                         <ul class="list-group">
-                                            <li class="list-group-item"><span>SOA:</span><span>{{$Dns['SOA']}}</span></li>
-                                            <li class="list-group-item">TTL:</span><span>{{$Dns['TTL']}}</span></li>
-                                            <li class="list-group-item">Регистрация до:</span><span>{{$Dns['EXP']}}</span></li>
+                                            <li class="list-group-item">SOA: <span>{{$Dns['SOA']}}</span></li>
+                                            <li class="list-group-item">TTL: <span>{{$Dns['TTL']}}</span></li>
+                                            <li class="list-group-item">Регистрация до: <span>{{$Dns['EXP']}}</span></li>
                                         </ul>
                                         <div class="panel-footer">
 
@@ -111,8 +110,7 @@
                                                         Управление <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
-                                                        <li><a href="http://{{Auth::user()->IpServer}}/phpmyadmin" target="_blank"><i class="fa fa-server"></i> Открыть
-                                                                                                                                                                phpMyAdmin</a>
+                                                        <li><a href="{{URL::route('records.show', $nameDns)}}"><i class="fa fa-server"></i> Записи</a>
                                                         </li>
                                                         <li>
                                                             <a href="{{URL::route('dns.show', $nameDns)}}">
@@ -167,7 +165,7 @@
                         @endif
 
                     </div>
-
+        </div>
 
 
 </section>

@@ -23,6 +23,7 @@
 	Route::group(['middleware' => 'auth'], function () {
 		Route::resource('web', 'WebController');
 		Route::resource('dns', 'DnsController');
+		Route::resource('records', 'RecordController');
 		Route::resource('bd', 'BdController');
 		Route::resource('log', 'UserLogController', ['only' => ['index']]);
 		Route::resource('backup', 'BackupController');

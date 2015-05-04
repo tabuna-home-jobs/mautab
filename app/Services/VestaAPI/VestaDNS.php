@@ -19,9 +19,7 @@ trait VestaDNS
 	{
 
 		$listDNS = $this->sendQuery('v-list-dns-domain', Auth::user()->nickname, $dns, 'json');
-
 		$data = json_decode($listDNS, TRUE);
-
 		return $data;
 	}
 
@@ -56,6 +54,15 @@ trait VestaDNS
 	public function changeDNSDomainTtl($v_domain, $v_ttl)
 	{
 		return $this->sendQuery('v-change-dns-domain-ttl', Auth::user()->nickname, $v_domain, $v_ttl, "no");
+	}
+
+
+	public function listDNSRecords($domain)
+	{
+		$data = $this->sendQuery('v-list-dns-records', Auth::user()->nickname, $domain, 'json');
+		$data = json_decode($data, TRUE);
+
+		return $data;
 	}
 
 
