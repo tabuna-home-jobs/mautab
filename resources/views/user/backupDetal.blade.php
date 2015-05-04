@@ -17,7 +17,37 @@
                                 <tr>
                                     <td>Web - домен</td>
                                     <td class="question">{{ $value  }}</td>
-                                    <td><i class="fa fa-history"></i></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-{{str_replace('.','-',$value)}}-web"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-{{str_replace('.','-',$value)}}-web" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить {{$value}} ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить {{$value}} ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="{{$value}}"/>
+                                                        <input type="hidden" name="type" value="web">
+                                                        <input type="hidden" name="backup" value="{{$name}}">
+                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 </tr>
                             @endif
                         @endforeach
@@ -27,7 +57,35 @@
                                 <tr>
                                     <td>ДНС запись</td>
                                     <td class="question">{{ $value  }}</td>
-                                    <td><i class="fa fa-history"></i></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-{{str_replace('.','-',$value)}}-dns"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-{{str_replace('.','-',$value)}}-dns" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить {{$value}} ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить {{$value}} ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="{{$value}}"/>
+                                                        <input type="hidden" name="type" value="dns">
+                                                        <input type="hidden" name="backup" value="{{$name}}">
+                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             @endif
                         @endforeach
@@ -37,7 +95,35 @@
                                 <tr>
                                     <td>Почта</td>
                                     <td class="question">{{ $value  }}</td>
-                                    <td><i class="fa fa-history"></i></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-{{str_replace('.','-',$value)}}-mail"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-{{str_replace('.','-',$value)}}-mail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить {{$value}} ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить {{$value}} ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="{{$value}}"/>
+                                                        <input type="hidden" name="type" value="mail">
+                                                        <input type="hidden" name="backup" value="{{$name}}">
+                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             @endif
                         @endforeach
@@ -47,7 +133,35 @@
                                 <tr>
                                     <td>База данных</td>
                                     <td class="question">{{ $value  }}</td>
-                                    <td><i class="fa fa-history"></i></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-{{str_replace('.','-',$value)}}-db"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-{{str_replace('.','-',$value)}}-db" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить {{$value}} ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить {{$value}} ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="{{$value}}"/>
+                                                        <input type="hidden" name="type" value="db">
+                                                        <input type="hidden" name="backup" value="{{$name}}">
+                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             @endif
                         @endforeach
@@ -57,7 +171,35 @@
                                 <tr>
                                     <td>Задание</td>
                                     <td class="question">{{ $value  }}</td>
-                                    <td><i class="fa fa-history"></i></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-{{str_replace('.','-',$value)}}-cron"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-{{str_replace('.','-',$value)}}-cron" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить {{$value}} ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить {{$value}} ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="{{$value}}"/>
+                                                        <input type="hidden" name="type" value="cron">
+                                                        <input type="hidden" name="backup" value="{{$name}}">
+                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             @endif
                         @endforeach
@@ -67,7 +209,35 @@
                                 <tr>
                                     <td>user dir</td>
                                     <td class="question">{{ $value  }}</td>
-                                    <td><i class="fa fa-history"></i></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-{{str_replace('.','-',$value)}}-udir"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-{{str_replace('.','-',$value)}}-udir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить {{$value}} ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить {{$value}} ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="{{$value}}"/>
+                                                        <input type="hidden" name="type" value="udir">
+                                                        <input type="hidden" name="backup" value="{{$name}}">
+                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             @endif
                         @endforeach

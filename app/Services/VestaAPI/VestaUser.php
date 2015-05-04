@@ -79,8 +79,21 @@ trait VestaUser
 	{
 		$answer = $this->sendQuery('v-list-user-backup', Auth::user()->nickname, $backup, 'json');
 		$data   = json_decode($answer, TRUE);
-
 		return $data;
+	}
+
+	public function restoreBackup($arg)
+	{
+		$backup = 'no';
+		$web    = 'no';
+		$dns    = 'no';
+		$mail   = 'no';
+		$db     = 'no';
+		$cron   = 'no';
+		$udir   = 'no';
+		extract($arg, EXTR_OVERWRITE);
+
+		return $this->sendQuery('v-schedule-user-restore', Auth::user()->nickname, $backup, $web, $dns, $mail, $db, $cron, $udir);
 	}
 
 

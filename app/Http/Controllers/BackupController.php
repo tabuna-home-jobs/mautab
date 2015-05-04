@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\BackupRequest;
+use App\Http\Requests\RestoreBackup;
 use Session;
 use Vesta;
 
@@ -34,9 +35,15 @@ class BackupController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(RestoreBackup $request)
 	{
-		//
+		Vesta::restoreBackup([
+			$request->type => $request->object,
+			"backup"       => $request->backup,
+		]);
+		Session::flash('good', 'Востановление резервной копии началось, это может занять некоторое время.');
+
+		return redirect()->route('backup.index');
 	}
 
 	/**
@@ -49,7 +56,6 @@ class BackupController extends Controller
 	public function show($backup)
 	{
 		$backupDetal = Vesta::showUserBackup($backup)["$backup"];
-
 		return view('user/backupDetal', ['Backup' => $backupDetal, 'name' => $backup]);
 	}
 

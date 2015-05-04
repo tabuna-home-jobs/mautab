@@ -103,7 +103,7 @@
             <hr>
             <p class="menu-small"> {{Lang::get('menu.balance')}}: {{ Auth::user()->balans }} руб </p>
 
-            <p class="menu-small"> {{Lang::get('menu.suspended')}}: {{Auth::user()->EndOfService }} </p>
+            <p class="menu-small"> {{Lang::get('menu.suspended')}}: {{ Auth::user()->EndOfService }} </p>
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-6">
