@@ -2,64 +2,172 @@
 
 @section('content')
 <section class="container">
+    <p class="text-center">
+        <a id="show-add-bd" data-toggle="collapse" href="#add-dns" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-plus"></i>Добавить
+        </a>
+    </p>
 
-<div class="col-xs-12">
+    <div class="collapse col-xs-12" id="add-dns">
+        <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('dns.store')}}">
 
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Домен</th>
-                    <th>Информация</th>
-                    <th>Управление</th>
-                </tr>
-            </thead>
-            <tbody>
+            <div class="alert alert-info" role="alert"> Добавление DNS домена</div>
+            <div class="form-group input-line">
+                <label>Домен </label>
+                <input type="text" name="v_domain" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                <label>IP адрес</label>
+                <input type="text" class="form-control" name="v_ip" required/>
+            </div>
+            <p class="text-center">
+                <a id="show-dop-info" data-toggle="collapse" href="#dop-info" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fa fa-plus"></i>Дополнительные опции
+                </a>
+            </p>
 
-            @if(!empty($DnsList))
-                @foreach($DnsList as $nameDns => $Dns)
-                    @if($Dns['SUSPENDED'] != "no")
-                        <tr class="danger">
-                    @else
-                        <tr>
-                    @endif
-                        <td class="nameD">
-                            {{$nameDns}}
-                            <div>
-                                {{$Dns['IP']}}
-                            </div>
-                            <div><small>{{$Dns['DATE']}}</small></div>
-                        </td>
-                        <td class="info-dns">
-                            <p><div><span>SOA:</span>{{$Dns['SOA']}}</div></p>
-                            <p><div><span>TTL:</span>{{$Dns['TTL']}}</div></p>
-                            <p><div><span>Регистраци до:</span>{{$Dns['EXP']}}</div></p>
-                        </td>
-                        <td>
-                            <p><a href="#"><i class="fa fa-line-chart"></i>Показать записи: {{ $Dns{'RECORDS'}  }}</a></p>
-                            <p><a href="#"><i class="fa fa-plus"></i> Добавить запись</a></p>
+            <div class="collapse" id="dop-info">
+                <div class="form-group">
+                    <label>Зарегистрирован до
+                        <small>(ГГГГ-ММ-ДД)</small>
+                    </label>
+                    <input type="text" class="form-control" name="v_exp" value="{{date("Y-m-d",time() + 24 * 60 * 60 * 365)}}" required/>
+                </div>
+                <div class="form-group">
+                    <label>TTL</label>
+                    <input type="text" class="form-control" name="v_ttl" value="14400" required/>
+                </div>
+                <div class="form-group">
+                    <label>Сервер имен</label>
 
-                            <p><a href="{{URL::route('dns.show', $nameDns)}}"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
-                            <p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
-                        </td>
-                    </tr>
-                @endforeach
-            @else
-                <tr>
-                    <td>Нет данных</td>
-                    <td>Нет данных</td>
-                    <td>Нет данных</td>
-                    <td>Нет данных</td>
-                </tr>
-            @endif
+                    <div class="form-group">
+                        <label>NS1</label>
+                        <input type="text" class="form-control" name="v_ns1" value="ns1.localhost.ltd" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>NS2</label>
+                        <input type="text" class="form-control" name="v_ns2" value="ns2.localhost.ltd" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <input type="submit" value="Отправить" class="button-full">
+            </div>
+        </form>
+
+        <div class="col-md-4 hidden-sm hidden-xs">
 
 
-            </tbody>
-        </table>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Информация:</h3>
+                </div>
+                <div class="panel-body">
+                    <p>DNS - Компьютерная распределённая система для получения информации о доменах. Чаще всего используется для получения IP-адреса по имени хоста
+                       (компьютера или устройства), получения информации о маршрутизации почты, обслуживающих узлах для протоколов в домене (SRV-запись). </p>
+
+                    <p>Основой DNS является представление об иерархической структуре доменного имени и зонах.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="clearfix col-xs-12">
     </div>
 
 
-</div>
+    <div class="col-xs-12">
+        <div class="col-md-12" id="add-shadow">
+            @if(!empty($DnsList))
+                @foreach($DnsList as $nameDns => $Dns)
+                    <div class="col-xs-12 col-md-4">
+
+                        @if($Dns['SUSPENDED'] != "no")
+                            <div class="panel panel-danger ">
+                    @else
+                                    <div class="panel panel-default ">
+                    @endif
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title"> {{$nameDns}}</h3>
+                            </div>
+
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><span>SOA:</span><span>{{$Dns['SOA']}}</span></li>
+                                            <li class="list-group-item">TTL:</span><span>{{$Dns['TTL']}}</span></li>
+                                            <li class="list-group-item">Регистрация до:</span><span>{{$Dns['EXP']}}</span></li>
+                                        </ul>
+                                        <div class="panel-footer">
+
+
+                                            <div class="container-fluid">
+                                                <div class="pull-left">
+                                                    <small>{{$Dns['DATE']}}</small>
+                                                </div>
+
+                                                <div class="btn-group pull-right">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                        Управление <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="http://{{Auth::user()->IpServer}}/phpmyadmin" target="_blank"><i class="fa fa-server"></i> Открыть
+                                                                                                                                                                phpMyAdmin</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{URL::route('dns.show', $nameDns)}}">
+                                                                <i class="fa fa-pencil-square-o"></i> Редактировать</a>
+                                                        </li>
+                                                        <li class="divider"></li>
+                                                        <li>
+                                                            <a href="#" data-toggle="modal" data-target="#Modal-{{str_replace(".",'',$nameDns)}}"><i
+                                                                        class="fa fa-trash"></i> Удалить</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="Modal-{{str_replace(".",'',$nameDns)}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                        aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Удалить {{$nameDns}} ?</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Вы действительно хотите удалить {{$nameDns}}
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form action="{{URL::route('dns.destroy')}}" method="post">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                                <button type="submit" class="button-small">Да</button>
+                                                                <input type="hidden" name="v_domain" value="{{$nameDns}}"/>
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                @endforeach
+            @else
+                            <div class="jumbotron">
+                                <h1>Пусто!</h1>
+
+                                <p>Вы ещё не создали ни одной базы данных</p>
+
+                                <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
+                            </div>
+                        @endif
+
+                    </div>
+
 
 
 </section>

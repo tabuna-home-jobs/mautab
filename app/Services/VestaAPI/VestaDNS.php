@@ -40,7 +40,7 @@ trait VestaDNS
 
 
 	//Add DNS domain Для добовления домена!
-	public function addDNSDomain($domain, $v_ip, $v_ns1, $v_ns2, $v_ns3, $v_ns4)
+	public function addDNSDomain($domain, $v_ip, $v_ns1, $v_ns2, $v_ns3 = NULL, $v_ns4 = NULL)
 	{
 		return $this->sendQuery('v-add-dns-domain', Auth::user()->nickname, $domain, $v_ip, $v_ns1, $v_ns2, $v_ns3, $v_ns4, 'no');
 	}

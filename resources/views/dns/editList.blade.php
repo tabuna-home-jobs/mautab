@@ -14,34 +14,27 @@
                             Изменения для домена {{$nameDNS}}
                         </div>
                         <div class="form-group">
-                            <label>IP </label>
-                            <input type="text" class="form-control" value="{{$dns['IP']}}" name="ip" readonly/>
+                            <label>Домен </label>
+                            <input type="text" class="form-control" value="{{$nameDNS}}" name="dns" readonly/>
                         </div>
                         <div class="form-group">
-                            <label>TPL</label>
-                            <input type="text" class="form-control" name="tpl" required value="{{$dns['TPL']}}"/>
+                            <label>IP</label>
+                            <input type="text" class="form-control" name="ip" required value="{{$dns['IP']}}"/>
                         </div>
                         <div class="form-group">
-                            <label>TTL</label>
-                            <input type="text" class="form-control" name="TTL" value="{{$dns['TTL']}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Время окончания</label>
-                            <input type="text" class="form-control" value="{{$dns['EXP']}}" name="exp" readonly/>
+                            <label>Зарегистрирован до</label>
+                            <input type="text" class="form-control" value="{{$dns['EXP']}}" name="exp"/>
                         </div>
                         <div class="form-group">
                             <label>SOA</label>
                             <input type="text" class="form-control" value="{{$dns['SOA']}}" name="soa"/>
                         </div>
                         <div class="form-group">
-                            <label>Записей</label>
-                            <input type="text" class="form-control" value="{{$dns['RECORDS']}}" name="records"/>
+                            <label>TTL</label>
+                            <input type="text" class="form-control" name="ttl" value="{{$dns['TTL']}}"/>
                         </div>
-
-
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="hidden" name="dns" value="{{$nameDNS}}"/>
                         <input type="submit" value="Отправить" class="button-full">
                     </form>
 

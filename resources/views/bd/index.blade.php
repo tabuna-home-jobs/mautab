@@ -2,7 +2,6 @@
 
 @section('content')
     <section class="container">
-
         <p class="text-center">
             <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
                 <i class="fa fa-plus"></i>Добавить
@@ -184,19 +183,17 @@
                             </div>
                             @endforeach
 
-
                         @else
                             <div class="jumbotron">
                                 <h1>Пусто!</h1>
 
-                                <p>Вы ещё не создали ни одной базы данных</p>
+                                <p>У Вас ещё нет ДНС</p>
 
                                 <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
                             </div>
                         @endif
                     </div>
-
-
+        </div>
     </section>
 
 @endsection
