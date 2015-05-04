@@ -28,7 +28,7 @@
 		Route::resource('backup', 'BackupController');
 		Route::resource('cron', 'CronController');
 		Route::resource('tikets', 'TiketsController');
-		Route::controller('pay', 'RobokassaController');
-		Route::controller('home', 'HomeController', ['getIndex' => 'home.home']);
+		Route::resource('pay', 'RobokassaController');
+		Route::resource('home', 'HomeController');
 
 	});

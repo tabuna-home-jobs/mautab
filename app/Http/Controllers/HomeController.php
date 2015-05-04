@@ -36,7 +36,7 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getIndex()
+	public function Index()
 	{
 
 		// Информация о пользователе
@@ -45,10 +45,10 @@ class HomeController extends Controller {
 		return view('user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
 	}
 
-	public function putEdit(ChangeUserRequest $request)
+	public function update(ChangeUserRequest $request)
 	{
 
-		dd("Я хуй его знаю почему он сюда не заходит!");
+		//dd("Я хуй его знаю почему он сюда не заходит!");
 		//Смена в Vesta
 		Vesta::changeUserPassword($request->password);
 		Vesta::changeUserEmail($request->email);
@@ -58,10 +58,11 @@ class HomeController extends Controller {
 		$thisUser           = User::find(Auth::user()->id);
 		$thisUser->password = Crypt::encrypt($request->password);
 		$thisUser->email    = $request->email;
+		$thisUser->lang = $request->lang;
 		$thisUser->save();
 		Session::flash('good', 'Вы успешно изменили личные данных.');
 
-		return redirect()->route('home.home');
+		return redirect()->route('home.index');
 
 	}
 

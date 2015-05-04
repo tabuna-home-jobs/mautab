@@ -25,6 +25,7 @@ class ChangeUserRequest extends Request
 		return [
 			'email'    => 'required|max:255|email',
 			'password' => 'required|max:255|min:8',
+			'lang' => 'in:ru,en',
 		];
 	}
 

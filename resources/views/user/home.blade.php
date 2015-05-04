@@ -7,6 +7,18 @@
 
 <div class="col-xs-12">
 
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
 <hr>
 
 <div class="row">
@@ -21,7 +33,7 @@
 
         <hr>
 
-        <form class="col-md-12" action="/home/edit" method="post">
+        <form class="col-md-12" action="{{URL::route('home.update')}}" method="post">
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Аккаунт</label>
@@ -48,9 +60,18 @@
 
                 <div class="form-group">
                     <label for="password">Пароль</label>
-                    <input type="password" class="form-control" id="password" name="name" required pattern=".{8,}" title="Пароль должен содержать не менее 8 символов"
+                    <input type="password" class="form-control" id="password" name="password" required pattern=".{8,}" title="Пароль должен содержать не менее 8 символов"
                            placeholder="Пароль">
                 </div>
+
+                <div class="form-group">
+                    <label for="password">Язык</label>
+                    <select class="form-control" required name="lang">
+                        <option value="en" @if($UserInfoLaravel->lang == "en") selected @endif >English</option>
+                        <option value="ru" @if($UserInfoLaravel->lang == "ru") selected @endif >Russian</option>
+                    </select>
+                </div>
+
 
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
