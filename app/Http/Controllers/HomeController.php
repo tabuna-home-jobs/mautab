@@ -3,7 +3,7 @@
 use App\Http\Requests\ChangeUserRequest;
 use App\Models\User;
 use Auth;
-use Crypt;
+use Hash;
 use Session;
 use SSH;
 use Vesta;
@@ -56,7 +56,8 @@ class HomeController extends Controller {
 		//Смена в Laravel
 
 		$thisUser           = User::find(Auth::user()->id);
-		$thisUser->password = Crypt::encrypt($request->password);
+		//$thisUser->password = Crypt::encrypt($request->password);
+		$thisUser->password = Hash::make($request->password);
 		$thisUser->email    = $request->email;
 		$thisUser->lang = $request->lang;
 		$thisUser->save();
