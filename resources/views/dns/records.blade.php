@@ -7,28 +7,36 @@
 
             <div class="table-responsive">
                 <table class="table table-striped">
-
+                    <thead>
+                    <tr>
+                        <th colspan="5">{{$domain}}</th>
+                        <th>
+                            <a aria-controls="collapseExample" aria-expanded="false" href="#add-dns" data-toggle="collapse" id="show-add-bd">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </th>
+                    </tr>
+                    </thead>
                     <tbody>
 
 
                     @foreach($records as $key => $record)
 
-                        <tr>
-                            <th scope="row">
-                                {{$record['ID']}}
-                            </th>
-                            <td>{{$record['RECORD']}}</td>
+                        @if($record['SUSPENDED'] == 'no')
+                            <tr>
+                        @else
+                            <tr class="danger">
+                                @endif
+                                <td id=" {{$record['ID']}}">{{$record['RECORD']}}</td>
                             <td>{{$record['TYPE']}}</td>
                             <td>{{$record['PRIORITY']}}</td>
-                            <td>{{$record['VALUE']}}</td>
-                            <td>{{$record['TIME']}}</td>
-                            <td>{{$record['DATE']}}</td>
-                            <td>{{$record['SUSPENDED']}}</td>
-
+                                <td> {{substr($record['VALUE'],0,30)}}</td>
+                                <td>{{$record['DATE']}} : {{$record['TIME']}}</td>
                             <td>
-                                <p><a href="#"><i class="fa fa-pencil-square-o"></i> Редактировать</a></p>
-
-                                <p><a href="#"><i class="fa fa-trash"></i> Удалить</a></p>
+                                <div class="btn-group pull-right" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-default"><i class="fa fa-pencil-square-o"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                </div>
                             </td>
                         </tr>
                     @endforeach

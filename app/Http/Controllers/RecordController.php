@@ -47,7 +47,7 @@ class RecordController extends Controller
 	{
 		$records = Vesta::listDNSRecords($domain);
 
-		return view('dns/records', ['records' => $records]);
+		return view('dns/records', ['records' => $records, 'domain' => $domain]);
 	}
 
 	/**

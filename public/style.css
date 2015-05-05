@@ -23,6 +23,12 @@ a {
     outline: none !important;
 }
 
+td {
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
 body.modal-open {
     overflow: inherit;
     padding-right: inherit !important;
@@ -980,4 +986,8 @@ footer{
     color: #c66c66;
     font-size: 12pt;
     font-weight: 900;
+}
+
+.btn-danger {
+    background-color: #c5645b;
 }
