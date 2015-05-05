@@ -859,12 +859,54 @@ p.copyright {
 
 
 .table-striped > tbody > tr:nth-of-type(2n+1){
-    background-color: #e8e8e8;
+    padding: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #65454c;
+    border: 1px solid #65454c;
+    border-bottom: 3px solid #65454c;
+    background-color: #C5645B;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.02, #65454c), color-stop(0.51, #C5645B), color-stop(0.87, #C5645B));
+    background: -moz-linear-gradient(center bottom, #65454c 2%, #C5645B 51%, #C5645B) 87% );
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: verdana;
 }
 
+.table-striped > tbody > tr:nth-of-type(2n+1) td a {
+    color: #fff;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) td a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.table-striped td, .table-striped th {
+    vertical-align: middle !important;
+}
 .table-hover > tbody > tr:hover{
     background-color: #d58c85;
     color: #fff;
+}
+
+.table-striped > tbody > tr:nth-child(even) {
+    padding: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border: 1px solid #999;
+    border-bottom: 3px solid #999;
+    background-color: #E0E0E0;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.02, #E0E0E0), color-stop(0.51, #949494), color-stop(0.87, #949494));
+    background: -moz-linear-gradient(center bottom, #E0E0E0 2%, #949494 51%, #949494) 87% );
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: verdana;
 }
 
 footer{
