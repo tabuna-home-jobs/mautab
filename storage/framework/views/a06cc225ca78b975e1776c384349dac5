@@ -78,7 +78,7 @@
 
         <div class="col-md-12" id="add-shadow">
 
-                <?php $__empty_1 = true; foreach($DnsList as $nameDns => $Dns): $__empty_1 = false; ?>
+            <?php $__empty_1 = true; foreach($DnsList as $nameDns => $Dns): $__empty_1 = false; ?>
                     <div class="col-xs-12 col-md-4">
 
                         <?php if($Dns['SUSPENDED'] != "no"): ?>
@@ -149,7 +149,7 @@
                                         </div>
                                     </div>
                             </div>
-                <?php endforeach; if ($__empty_1): ?>
+                            <?php endforeach; if ($__empty_1): ?>
 
                             <div class="jumbotron">
                                 <h1>Пусто!</h1>
@@ -158,7 +158,7 @@
 
                                 <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
                             </div>
-                        <?php endif; ?>
+                            <?php endif; ?>
 
                     </div>
         </div>

@@ -112,6 +112,7 @@
             <hr>
 
             <p class="menu-small"><a href="<?php echo e(URL::route('log.index')); ?>">Журнал действий</a></p>
+
             <p class="menu-small"><a href="<?php echo e(URL::route('backup.index')); ?>">Резервные копии</a></p>
         </div>
 

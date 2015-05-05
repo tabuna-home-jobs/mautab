@@ -100,7 +100,7 @@
         <div class="col-md-12" id="add-shadow">
 
 
-                <?php $__empty_1 = true; foreach($BdList as $nameBd => $bd): $__empty_1 = false; ?>
+            <?php $__empty_1 = true; foreach($BdList as $nameBd => $bd): $__empty_1 = false; ?>
 
                     <div class="col-xs-12 col-md-4">
 
@@ -178,7 +178,7 @@
                             </div>
 
 
-                        <?php endforeach; if ($__empty_1): ?>
+                            <?php endforeach; if ($__empty_1): ?>
                             <div class="jumbotron">
                                 <h1>Пусто!</h1>
 

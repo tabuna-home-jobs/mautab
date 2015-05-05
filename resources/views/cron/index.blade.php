@@ -82,7 +82,7 @@
                                 @endif
                                 <td>{{$job['CMD']}}</td>
                                 <td>{{$job['MIN']}} - {{$job['HOUR']}} - {{$job['DAY']}} - {{$job['MONTH']}} - {{$job['WDAY']}}</td>
-                                <td>@if($job['JOB'] == 1) Запущен @else Ожидает @endif</td>
+                                <!-- АЙДИШНИК РАБОТЫ $job['JOB'] -->
                                 <td>{{$job['DATE']}} : {{$job['TIME']}}</td>
                                 <td>
                                     <div class="btn-group pull-right" role="group" aria-label="...">

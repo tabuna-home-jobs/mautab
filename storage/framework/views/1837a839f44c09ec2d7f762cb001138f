@@ -135,17 +135,17 @@
                                         </div>
 
                                         <div class="btn-group pull-right" role="group">
-                                                <a href="http://<?php echo e($key); ?>/" target="_blank" class="btn btn-default">
-                                                    <i class="fa fa-sign-in"></i>
-                                                </a>
+                                            <a href="http://<?php echo e($key); ?>/" target="_blank" class="btn btn-default">
+                                                <i class="fa fa-sign-in"></i>
+                                            </a>
 
-                                                <a href="<?php echo e(URL::route('bd.show', $key)); ?>" class="btn btn-default">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                </a>
+                                            <a href="<?php echo e(URL::route('bd.show', $key)); ?>" class="btn btn-default">
+                                                <i class="fa fa-pencil-square-o"></i>
+                                            </a>
 
-                                                <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e($key); ?>" class="btn btn-danger">
-                                                    <i class="fa fa-trash"></i>
-                                                </a>
+                                            <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e($key); ?>" class="btn btn-danger">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
                                         </div>
 
 
