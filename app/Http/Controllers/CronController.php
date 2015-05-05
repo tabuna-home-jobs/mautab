@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use App\Http\Requests\CronRequest;
+use Session;
+use Vesta;
 
 class CronController extends Controller
 {
@@ -12,7 +14,7 @@ class CronController extends Controller
 	 */
 	public function index()
 	{
-		//
+		return view('cron/index', ['CronList' => Vesta::listCron()]);
 	}
 
 	/**
@@ -30,9 +32,19 @@ class CronController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CronRequest $request)
 	{
-		//
+		Vesta::addCron(
+			$request->v_min,
+			$request->v_hour,
+			$request->v_day,
+			$request->v_month,
+			$request->v_wday,
+			$request->v_cmd
+		);
+		Session::flash('good', 'Вы успешно добавили задание.');
+
+		return redirect()->route('cron.index');
 	}
 
 	/**

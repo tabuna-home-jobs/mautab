@@ -1,6 +1,7 @@
 <?php namespace App\Services;
 
 use App\Services\VestaAPI\VestaBD;
+use App\Services\VestaAPI\VestaCron;
 use App\Services\VestaAPI\VestaDNS;
 use App\Services\VestaAPI\VestaService;
 use App\Services\VestaAPI\VestaUser;
@@ -10,7 +11,7 @@ use SSH;
 
 class Vesta  {
 
-	use VestaBD, VestaDNS, VestaUser, VestaWeb, VestaService;
+	use VestaBD, VestaDNS, VestaUser, VestaWeb, VestaService, VestaCron;
 
 
 	public	$vst_username = 'admin';

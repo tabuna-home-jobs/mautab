@@ -1,8 +1,8 @@
 <?php $__env->startSection('content'); ?>
     <section class="container">
         <p class="text-center">
-            <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
-                <i class="fa fa-plus"></i>Добавить
+            <a id="show-add-bd" data-toggle="collapse" class="btn btn-link btn-sm" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-plus"></i>
             </a>
         </p>
 
