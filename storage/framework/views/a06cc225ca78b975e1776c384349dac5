@@ -77,8 +77,8 @@
 
 
         <div class="col-md-12" id="add-shadow">
-            <?php if(!empty($DnsList)): ?>
-                <?php foreach($DnsList as $nameDns => $Dns): ?>
+
+                <?php $__empty_1 = true; foreach($DnsList as $nameDns => $Dns): $__empty_1 = false; ?>
                     <div class="col-xs-12 col-md-4">
 
                         <?php if($Dns['SUSPENDED'] != "no"): ?>
@@ -103,24 +103,21 @@
                                                     <small><?php echo e($Dns['DATE']); ?></small>
                                                 </div>
 
-                                                <div class="btn-group pull-right">
-                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                        Управление <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li><a href="<?php echo e(URL::route('records.show', $nameDns)); ?>"><i class="fa fa-server"></i> Записи</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="<?php echo e(URL::route('dns.show', $nameDns)); ?>">
-                                                                <i class="fa fa-pencil-square-o"></i> Редактировать</a>
-                                                        </li>
-                                                        <li class="divider"></li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace(".",'',$nameDns)); ?>"><i
-                                                                        class="fa fa-trash"></i> Удалить</a>
-                                                        </li>
-                                                    </ul>
+                                                <div class="btn-group pull-right" role="group">
+                                                    <a href="<?php echo e(URL::route('records.show', $nameDns)); ?>" class="btn btn-default">
+                                                        <i class="fa fa-server"></i>
+                                                    </a>
+
+                                                    <a href="<?php echo e(URL::route('bd.show', $nameDns)); ?>" class="btn btn-default">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+
+                                                    <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace(".",'',$nameDns)); ?>" class="btn btn-danger">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
                                                 </div>
+
+
                                             </div>
 
                                             <!-- Modal -->
@@ -152,8 +149,8 @@
                                         </div>
                                     </div>
                             </div>
-                <?php endforeach; ?>
-            <?php else: ?>
+                <?php endforeach; if ($__empty_1): ?>
+
                             <div class="jumbotron">
                                 <h1>Пусто!</h1>
 

@@ -50,7 +50,7 @@
 
         <div class="col-md-2 col-sm-4 col-xs-6">
 
-            <a href="/home">
+            <a href="{{URL::route('home.index')}}">
                 <span class="fa fa-user"></span>
                 <h4>{{Lang::get('menu.user')}}</h4>
             </a>
@@ -63,7 +63,7 @@
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="/web">
+            <a href="{{URL::route('web.index')}}">
                 <span class="fa fa-desktop"></span>
                 <h4>{{Lang::get('menu.Web')}}</h4>
             </a>
@@ -76,7 +76,7 @@
 
 
         <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="/dns">
+            <a href="{{URL::route('dns.index')}}">
                 <span class="fa fa-sitemap"></span>
                 <h4>{{Lang::get('menu.DNS')}}</h4>
             </a>
@@ -87,7 +87,7 @@
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="/bd">
+            <a href="{{URL::route('bd.index')}}">
                 <span class="fa fa-database"></span>
                 <h4>{{Lang::get('menu.BD')}}</h4>
             </a>
@@ -96,23 +96,24 @@
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="#">
-                <span class="fa fa-cart-arrow-down"></span>
-                <h4>{{Lang::get('menu.billing')}}</h4>
+            <a href="{{URL::route('cron.index')}}">
+                <span class="fa fa-clock-o"></span>
+                <h4>{{Lang::get('menu.Cron')}}</h4>
             </a>
             <hr>
-            <p class="menu-small"> {{Lang::get('menu.balance')}}: {{ Auth::user()->balans }} руб </p>
-
-            <p class="menu-small"> {{Lang::get('menu.suspended')}}: {{ Auth::user()->EndOfService }} </p>
+            <p class="menu-small"> {{Lang::get('menu.jobs')}}: {{$UserInfo['U_CRON_JOBS'] }} </p>
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="/tikets">
+            <a href="{{URL::route('tikets.index')}}">
                 <span class="fa fa-life-ring"></span>
                 <h4>{{Lang::get('menu.support')}}</h4>
             </a>
             <hr>
-            <p class="menu-small"> {{Lang::get('menu.jobs')}}: {{$UserInfo['U_CRON_JOBS'] }} </p>
+
+            <p class="menu-small"><a href="{{URL::route('log.index')}}">Журнал действий</a></p>
+
+            <p class="menu-small"><a href="{{URL::route('backup.index')}}">Резервные копии</a></p>
         </div>
 
 

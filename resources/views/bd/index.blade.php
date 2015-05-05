@@ -100,9 +100,9 @@
 
 
         <div class="col-md-12" id="add-shadow">
-            @if(!empty($BdList))
 
-                @foreach($BdList as $nameBd => $bd)
+
+            @forelse($BdList as $nameBd => $bd)
 
                     <div class="col-xs-12 col-md-4">
 
@@ -132,24 +132,20 @@
                                                     <small>{{$bd['DATE']}}</small>
                                                 </div>
 
-                                                <div class="btn-group pull-right">
-                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                        Управление <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li><a href="http://{{Auth::user()->IpServer}}/phpmyadmin" target="_blank"><i class="fa fa-server"></i> Открыть
-                                                                                                                                                                phpMyAdmin</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{URL::route('bd.show', $nameBd)}}">
-                                                                <i class="fa fa-pencil-square-o"></i> Редактировать</a>
-                                                        </li>
-                                                        <li class="divider"></li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#Modal-{{$nameBd}}"><i class="fa fa-trash"></i> Удалить</a>
-                                                        </li>
-                                                    </ul>
+                                                <div class="btn-group pull-right" role="group">
+                                                    <a href="http://{{Auth::user()->IpServer}}/phpmyadmin" target="_blank" class="btn btn-default">
+                                                        <i class="fa fa-server"></i>
+                                                    </a>
+
+                                                    <a href="{{URL::route('bd.show', $nameBd)}}" class="btn btn-default">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+
+                                                    <a href="#" data-toggle="modal" data-target="#Modal-{{$nameBd}}" class="btn btn-danger">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
                                                 </div>
+
                                             </div>
 
                                             <!-- Modal -->
@@ -181,9 +177,9 @@
                                     </div>
 
                             </div>
-                            @endforeach
 
-                        @else
+
+                            @empty
                             <div class="jumbotron">
                                 <h1>Пусто!</h1>
 
@@ -191,7 +187,8 @@
 
                                 <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
                             </div>
-                        @endif
+
+                            @endforelse
                     </div>
         </div>
     </section>
