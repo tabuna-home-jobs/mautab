@@ -81,7 +81,7 @@
       <p>Мы одни из первых, кто предлогает самые передовые технологии для профессиональной поддержки сайта</p>
 
 
-      <ul>
+      <ul class="col-xs-12">
         <li class="wow fadeInLeft col-xs-12 col-sm-4" data-wow-delay="0.2s">
           <i class="fa fa-database"></i>
 

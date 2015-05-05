@@ -1052,3 +1052,6 @@ footer{
     background-color: #c5645b;
 }
 
+.price .fa {
+    display: unset;
+}
