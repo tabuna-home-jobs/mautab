@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/animate.css">
   <link rel="stylesheet" href="/style.css">
   <script src="wow.js"></script>
@@ -154,127 +155,6 @@
 </section>
 
 
-<!--  TESTIMONIALS  -->
-<section class="testimonials col-xs-12">
-    <div class="circle"><i class="fa fa-heart"></i></div>
-    <h2>Нас выбрали <span id="lovedby">0</span> разработчика</h2>
-</section>
-<!--  END OF TESTIMONIALS -->
-
-<!--  PRICING BOXES  -->
-<div class="pricingboxes container">
-  <div class="col-xs-12">
-      <h2>Тут должен быть хороший современный вид цены!</h2>
-
-    <p>Оптимальное осотношение цены и позможностей для вашего проекта</p>
-  </div>
-
-  <div class="col-xs-12">
-    <div data-wow-delay="0.2s" class="col-xs-12 col-sm-4 columns wow zoomIn">
-      <div class="title">Любительский</div>
-      <ul class="pricing-table">
-        <li class="description">100% поддержка <strong>CMS</strong></li>
-        <li class="bullet-item">5GB Диск</li>
-        <li class="bullet-item">5 Сайтов</li>
-        <li class="bullet-item">Один почтовый адрес</li>
-        <li class="bullet-item">Одна база данных</li>
-        <li class="bullet-item">24/7 техническая поддержка</li>
-        <li class="price"><span><i class="fa fa-rub"></i>
-99</span>В месяц
-        </li>
-        <li class="cta-button"><p><span><a href="">Заказать</a></span></p></li>
-      </ul>
-    </div>
-
-    <div data-wow-delay="0.4s" class="col-xs-12 col-sm-4 columns wow zoomIn">
-      <div class="title">Профессиональный</div>
-      <ul class="pricing-table">
-        <li class="description">Тонкая настройка - <strong>Легко</strong></li>
-        <li class="bullet-item">10GB Диск</li>
-        <li class="bullet-item">20 Сайтов</li>
-        <li class="bullet-item">100 почтовых адресов</li>
-        <li class="bullet-item">20 Баз данных</li>
-        <li class="bullet-item">Доступ к консоли</li>
-        <li class="price"><span><i class="fa fa-rub"></i>
-299</span>В месяц
-        </li>
-        <li class="cta-button"><p><span><a href="">Заказать</a></span></p></li>
-      </ul>
-    </div>
-
-    <div data-wow-delay="0.6s" class="col-xs-12 col-sm-4 columns wow zoomIn">
-      <div class="title">Корпоративный</div>
-      <ul class="pricing-table">
-        <li class="description">Лучшее решение для <strong>Веб-студии</strong></li>
-        <li class="bullet-item">20GB Диск</li>
-        <li class="bullet-item">50 Сайтов</li>
-        <li class="bullet-item">Неограниченное число адресов</li>
-        <li class="bullet-item">50 Баз данных</li>
-        <li class="bullet-item">Доступ к консоли</li>
-        <li class="price"><span><i class="fa fa-rub"></i>
-499</span>В месяц
-        </li>
-        <li class="cta-button"><p><span><a href="">Заказать</a></span></p></li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-<!--  END OF PRCING BOXES  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="cd-pricing col-xs-12">
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!--  CALL TO ACTION  -->
 <section class="calltoaction col-xs-12">
@@ -283,16 +163,16 @@
         <div data-wow-delay="0.5s" class="calltoactioninfo wow fadeInUp"></div>
 
 
-
         <div class="container">
 
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4 wow zoomIn"  data-wow-delay="0.2s">
                 <div class="panel panel-price">
                     <div class="panel-heading">
                         <h3 class="panel-title">Стандарт</h3>
+
                         <div class="cd-price">
                             <span class="cd-currency"><i class="fa fa-rub"></i></span>
-                            <span class="cd-value">30</span>
+                            <span class="cd-value">99</span>
                             <span class="cd-duration">месяц</span>
                         </div>
                     </div>
@@ -311,13 +191,14 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4 wow zoomIn"  data-wow-delay="0.4s">
                 <div class="panel panel-price">
                     <div class="panel-heading">
                         <h3 class="panel-title">Стандарт</h3>
+
                         <div class="cd-price">
                             <span class="cd-currency"><i class="fa fa-rub"></i></span>
-                            <span class="cd-value">30</span>
+                            <span class="cd-value">199</span>
                             <span class="cd-duration">месяц</span>
                         </div>
                     </div>
@@ -336,13 +217,14 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-4 wow zoomIn"  data-wow-delay="0.6s">
                 <div class="panel panel-price">
                     <div class="panel-heading">
                         <h3 class="panel-title">Стандарт</h3>
+
                         <div class="cd-price">
                             <span class="cd-currency"><i class="fa fa-rub"></i></span>
-                            <span class="cd-value">30</span>
+                            <span class="cd-value">499</span>
                             <span class="cd-duration">месяц</span>
                         </div>
                     </div>
@@ -362,11 +244,6 @@
             </div>
 
         </div>
-
-
-
-
-
 
 
     </div>
