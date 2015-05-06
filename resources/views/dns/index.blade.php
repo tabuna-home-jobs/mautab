@@ -110,7 +110,7 @@
                                                         <i class="fa fa-server"></i>
                                                     </a>
 
-                                                    <a href="{{URL::route('bd.show', $nameDns)}}" class="btn btn-default">
+                                                    <a href="{{URL::route('dns.show', $nameDns)}}" class="btn btn-default">
                                                         <i class="fa fa-pencil-square-o"></i>
                                                     </a>
 

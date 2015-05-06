@@ -40,7 +40,6 @@ body.modal-open {
     background: url(/img/header_bg.jpg) bottom center no-repeat;
     min-height: 880px;
     position: relative;
-    min-height: 880px;
 }
 
 .header-login-bg {
@@ -1054,4 +1053,27 @@ footer{
 
 .price .fa {
     display: unset;
+}
+
+.name-dom-list:first-letter {
+    text-transform: capitalize;
+    color: #c5645b;
+}
+
+.name-dom-list {
+    letter-spacing: 5px;
+    line-height: 1em;
+    color: #c5645b;
+    font-weight: bold;
+    font-size: 60px;
+    text-shadow: 0px 0px 0 rgb(222, 222, 222), 1px 0px 0 rgb(198, 198, 198), 2px 0px 0 rgb(175, 175, 175), 3px 0px 0 rgb(151, 151, 151), 4px 0px 0 rgb(128, 128, 128), 5px 0px 0 rgb(104, 104, 104), 6px 0px 0 rgb(81, 81, 81), 7px 0px 6px rgba(0, 0, 0, 0.9), 7px 0px 1px rgba(0, 0, 0, 0.5), 0px 0px 6px rgba(0, 0, 0, .2);
+}
+
+.wrapp-dom-list-name {
+    /*
+    background: #753029;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px #ccc;
+    */
 }

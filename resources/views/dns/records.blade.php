@@ -5,10 +5,10 @@
 
         <div class="col-xs-12">
 
-            <div class="wrap-b">
-                <div>
-                    <div>{{$domain}}</div>
-                    <div>
+            <div class="wrap-b row">
+                <div class="row wrapp-dom-list-name">
+                    <div class="col-md-11 name-dom-list text-center">{{$domain}}</div>
+                    <div class="col-md-1 text-right add-dom">
                             <a aria-controls="collapseExample" aria-expanded="false" href="#add-dns" data-toggle="collapse" id="show-add-bd">
                                 <i class="fa fa-plus"></i>
                             </a>
