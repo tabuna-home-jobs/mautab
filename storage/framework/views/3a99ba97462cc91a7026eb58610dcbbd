@@ -53,7 +53,6 @@
   </nav>
 
 
-
     <!--  MONITORING  -->
     <section class="monitoring col-xs-12">
         <h2>Быстрое и богатое управление проектами</h2>
@@ -62,23 +61,26 @@
 
         <div data-wow-delay="0.3s" class="text-center wow fadeInUp monit"><img src="/img/monitoring.png" class="img-responsive center-block" alt=""/></div>
 
-        <div class="container"><p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin molestie ultrices. Aliquam at efficitur nibh. Etiam accumsan diam ut ligula interdum, non interdum est ornare. Curabitur dapibus nisl in ipsum aliquet condimentum quis sit amet metus. Aliquam semper vehicula lacus volutpat tincidunt. Suspendisse vel sem id ante rhoncus convallis id in dui. Vestibulum urna quam, porttitor id aliquet vel, lobortis at odio. Quisque nec pulvinar sapien.  </p></div>
+        <div class="container"><p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin molestie ultrices. Aliquam at
+                                                      efficitur nibh. Etiam accumsan diam ut ligula interdum, non interdum est ornare. Curabitur dapibus nisl in ipsum
+                                                      aliquet condimentum quis sit amet metus. Aliquam semper vehicula lacus volutpat tincidunt. Suspendisse vel sem id
+                                                      ante rhoncus convallis id in dui. Vestibulum urna quam, porttitor id aliquet vel, lobortis at odio. Quisque nec
+                                                      pulvinar sapien. </p></div>
 
     </section>
     <!--  END OF MONITORING  -->
 
 
-<!--
-  <div class="container text-center">
-    <h3>Хостинг для вашего сайта</h3>
+    <!--
+      <div class="container text-center">
+        <h3>Хостинг для вашего сайта</h3>
 
-    <h1>Лучшая площадка для вашего проекта</h1>
-    <button type="submit" class="btn button-prizrak">Тарифные планы</button>
-  </div>
--->
+        <h1>Лучшая площадка для вашего проекта</h1>
+        <button type="submit" class="btn button-prizrak">Тарифные планы</button>
+      </div>
+    -->
 
 </header>
-
 
 
 <!--  TESTIMONIALS  -->
@@ -87,9 +89,6 @@
     <h2>Нас выбрали <span id="lovedby">0</span> разработчика</h2>
 </section>
 <!--  END OF TESTIMONIALS -->
-
-
-
 
 
 <section class="features  col-xs-12">
@@ -165,7 +164,7 @@
 <!--  PRICING BOXES  -->
 <div class="pricingboxes container">
   <div class="col-xs-12">
-    <h2>Тут должен быть хороший современный вид цены!</h2>
+      <h2>Тут должен быть хороший современный вид цены!</h2>
 
     <p>Оптимальное осотношение цены и позможностей для вашего проекта</p>
   </div>
@@ -222,7 +221,6 @@
   </div>
 </div>
 <!--  END OF PRCING BOXES  -->
-
 
 
 <!--  CALL TO ACTION  -->
@@ -322,7 +320,7 @@
 
       <div id="contactform">
 
-            <h1>Тут красивая форма</h1>
+          <h1>Тут красивая форма</h1>
 
       </div>
 
