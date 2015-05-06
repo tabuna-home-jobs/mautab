@@ -24,7 +24,6 @@ trait VestaCron
 
 	public function deleteCron($v_job)
 	{
-		//Тут какой то затык, проверил +100500 раз
 		return $this->sendQuery('v-delete-cron-job', Auth::user()->nickname, $v_job);
 	}
 

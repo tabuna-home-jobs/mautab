@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests\CronDeleteRequest;
 use App\Http\Requests\CronRequest;
 use Session;
 use Vesta;
@@ -90,9 +91,12 @@ class CronController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(CronDeleteRequest $request)
 	{
-		//
+		Vesta::deleteCron($request->v_job);
+		Session::flash('good', 'Вы успешно добавили задание.');
+
+		return redirect()->route('cron.index');
 	}
 
 }
