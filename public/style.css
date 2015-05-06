@@ -184,40 +184,7 @@ header h3 {
     text-align: center;
 }
 
-.calltoaction h2 {
-    font-weight: 900;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    color: #37485c;
-    font-size: 57px;
-}
 
-.calltoaction h2 span {
-    color: #C5645B;
-}
-
-.calltoaction h3 {
-    font-weight: 300;
-    text-align: center;
-    margin: 15px 0 0;
-    padding: 0;
-    color: #C5645B;
-    font-size: 22px;
-}
-
-.calltoactioninfo .btn {
-    background: #C5645B;
-    color: #fff;
-    margin-top: 30px;
-    font-weight: 700;
-    float: none;
-}
-
-.calltoactioninfo .btn:hover {
-    background: #37485c;
-    text-decoration: none
-}
 
 /* Pricing Tables - Boxes */
 .pricingboxes {
@@ -704,8 +671,7 @@ header h3 {
     float: none;
 }
 
-
-footer {
+.footer {
     padding: 10px 0 15px;
     background: #222D3A;
 
@@ -883,7 +849,7 @@ footer{
     text-align: left;
 }
 
-.panel-title {
+.panel-default > .panel-heading > .panel-title {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 16px;
@@ -988,11 +954,74 @@ footer{
     */
 }
 
+/*
+    TEST PRICE
+*/
 
+.panel-price > .panel-heading {
+    text-align: center;
+}
 
+.panel-price {
+    border-radius: 10px 10px 6px 6px;
+    border: inherit;
 
+}
 
+.panel-heading h3 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
 
+.cd-value {
+    font-size: 5em;
+    font-weight: 300;
+}
 
+.cd-currency {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    vertical-align: top;
+}
 
+.cd-currency, .cd-duration {
+    color: rgba(23, 61, 80, 0.4);
+}
 
+.cd-duration::before {
+    content: "/";
+    margin-right: 2px;
+}
+
+.cd-duration {
+    font-size: 1.4rem;
+}
+
+.panel-price > .panel-footer {
+    background-color: #0c1f28;
+    color: #ffffff;
+    font-size: 1.4rem;
+    height: auto;
+    letter-spacing: 2px;
+    position: static;
+    text-indent: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.panel-price > .panel-footer:hover {
+    background-color: #112e3c;
+}
+
+.panel-price > ul > li:nth-of-type(2n+1) {
+    background-color: rgba(23, 61, 80, 0.06);
+}
+
+.panel-price > ul > li {
+    text-align: center;
+}

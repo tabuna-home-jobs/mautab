@@ -223,16 +223,101 @@
 <!--  END OF PRCING BOXES  -->
 
 
+<div class="cd-pricing col-xs-12">
+
+</div>
+
+
 <!--  CALL TO ACTION  -->
-<section class="calltoaction">
+<section class="calltoaction col-xs-12">
     <div class="col-xs-12">
         <div data-wow-delay="0.3s" class="longshadow wow fadeInDown">Новый клиент?</div>
-        <div data-wow-delay="0.5s" class="calltoactioninfo wow fadeInUp">
-            <h2><span id="discount">0</span><span>%</span> Скидка</h2>
+        <div data-wow-delay="0.5s" class="calltoactioninfo wow fadeInUp"></div>
 
-            <h3>При вводе промокода <strong>"CLOUDMENEW"</strong></h3>
-            <a href="#" class="btn">Войти сейчас!</a>
+
+        <div class="container">
+
+            <div class="col-xs-12 col-md-4">
+                <div class="panel panel-price">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Стандарт</h3>
+
+                        <div class="cd-price">
+                            <span class="cd-currency"><i class="fa fa-rub"></i></span>
+                            <span class="cd-value">30</span>
+                            <span class="cd-duration">месяц</span>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>256MB</strong> Memory</li>
+                        <li class="list-group-item"><strong>1</strong> User</li>
+                        <li class="list-group-item"><strong>1</strong> Website</li>
+                        <li class="list-group-item"><strong>1</strong> Domain</li>
+                        <li class="list-group-item"><strong>256MB</strong> Memory</li>
+                        <li class="list-group-item"><strong>1</strong> User</li>
+                        <li class="list-group-item"><strong>1</strong> Website</li>
+                        <li class="list-group-item"><strong>1</strong> Domain</li>
+                        <li class="list-group-item">24/7</strong> Support</li>
+                    </ul>
+                    <div class="panel-footer">Выбрать</div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+                <div class="panel panel-price">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Стандарт</h3>
+
+                        <div class="cd-price">
+                            <span class="cd-currency"><i class="fa fa-rub"></i></span>
+                            <span class="cd-value">30</span>
+                            <span class="cd-duration">месяц</span>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>256MB</strong> Memory</li>
+                        <li class="list-group-item"><strong>1</strong> User</li>
+                        <li class="list-group-item"><strong>1</strong> Website</li>
+                        <li class="list-group-item"><strong>1</strong> Domain</li>
+                        <li class="list-group-item"><strong>256MB</strong> Memory</li>
+                        <li class="list-group-item"><strong>1</strong> User</li>
+                        <li class="list-group-item"><strong>1</strong> Website</li>
+                        <li class="list-group-item"><strong>1</strong> Domain</li>
+                        <li class="list-group-item">24/7</strong> Support</li>
+                    </ul>
+                    <div class="panel-footer">Выбрать</div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+                <div class="panel panel-price">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Стандарт</h3>
+
+                        <div class="cd-price">
+                            <span class="cd-currency"><i class="fa fa-rub"></i></span>
+                            <span class="cd-value">30</span>
+                            <span class="cd-duration">месяц</span>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>256MB</strong> Memory</li>
+                        <li class="list-group-item"><strong>1</strong> User</li>
+                        <li class="list-group-item"><strong>1</strong> Website</li>
+                        <li class="list-group-item"><strong>1</strong> Domain</li>
+                        <li class="list-group-item"><strong>256MB</strong> Memory</li>
+                        <li class="list-group-item"><strong>1</strong> User</li>
+                        <li class="list-group-item"><strong>1</strong> Website</li>
+                        <li class="list-group-item"><strong>1</strong> Domain</li>
+                        <li class="list-group-item">24/7</strong> Support</li>
+                    </ul>
+                    <div class="panel-footer">Выбрать</div>
+                </div>
+            </div>
+
         </div>
+
+
     </div>
 </section>
 <!--  END OF CALL TO ACTION -->
@@ -240,7 +325,7 @@
 
 
 <!--  SHARE HOSTING FEATURES  -->
-<section class="sharedfeatures-odd wow fadeInUp ">
+<section class="sharedfeatures-odd col-xs-12 wow fadeInUp ">
   <div class="container">
     <div class="col-xs-12 col-sm-4">
       <div class="circle"><i class="fa fa-globe"></i></div>
@@ -253,7 +338,7 @@
   </div>
 </section>
 
-<section class="sharedfeatures-even wow fadeInUp">
+<section class="sharedfeatures-even col-xs-12 wow fadeInUp">
   <div class="container">
     <div class="col-xs-12 col-sm-8">
       <h2>Простая установка</h2>
@@ -267,7 +352,7 @@
 
 </section>
 
-<section class="sharedfeatures-odd wow fadeInUp">
+<section class="sharedfeatures-odd col-xs-12 wow fadeInUp">
   <div class="container">
     <div class="col-xs-12 col-sm-4">
       <div class="circle"><i class="fa fa-thumbs-o-up"></i></div>
@@ -280,7 +365,7 @@
   </div>
 </section>
 
-<section class="sharedfeatures-even wow fadeInUp">
+<section class="sharedfeatures-even col-xs-12  wow fadeInUp">
   <div class="container">
     <div class="col-xs-12 col-sm-8">
       <h2>SSD Диски</h2>

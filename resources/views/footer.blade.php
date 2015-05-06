@@ -1,5 +1,5 @@
 <!--  FOOTER  -->
-<footer class="col-xs-12">
+<footer class="footer col-xs-12">
   <p class="copyright">© Copyright CloudMe, все права защищены. </p>
 </footer>
 <!--  END OF FOOTER  -->
