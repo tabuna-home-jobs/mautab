@@ -21,10 +21,10 @@ class Vesta  {
 	public $VESTA_CMD = '/usr/local/vesta/bin/';
 	public $output;
 
-	public function sendQuery($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL)
+	public function sendQuery($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL, $arg7 = NULL, $arg8 = NULL, $arg9 = NULL)
     {
     		// Проверям, если нам нужен json то выводим его или же код ошибки
-			$argReturnCodeDetector = array($arg1,$arg2,$arg3,$arg4,$arg5,$arg6);
+	    $argReturnCodeDetector = array($arg1, $arg2, $arg3, $arg4, $arg5, $arg6, $arg7, $arg8, $arg9);
 			if (in_array('json',$argReturnCodeDetector))
 				$this->vst_returncode = 'no';
 			else
@@ -41,7 +41,10 @@ class Vesta  {
 				    'arg3' => $arg3,
 				    'arg4' => $arg4,
 				    'arg5' => $arg5,
-				    'arg6' => $arg6
+			        'arg6' => $arg6,
+			        'arg7' => $arg7,
+			        'arg8' => $arg8,
+			        'arg9' => $arg9,
 			);
 
 	    /*

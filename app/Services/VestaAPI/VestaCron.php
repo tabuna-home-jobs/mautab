@@ -17,6 +17,7 @@ trait VestaCron
 
 	public function addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
 	{
+
 		//Тут какой то затык, проверил +100500 раз
 		return $this->sendQuery('v-add-cron-job', Auth::user()->nickname, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd);
 	}
