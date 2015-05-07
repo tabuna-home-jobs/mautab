@@ -28,7 +28,7 @@
                                     <div class="col-xs-3"><?php echo e($record['DATE']); ?> : <?php echo e($record['TIME']); ?></div>
 
                                     <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="<?php echo e(URL::route('cron.show', $record['ID'])); ?>" class="btn btn-default">
+                                        <a href="<?php echo e(URL::route('records.edit', $record['ID'])); ?>" class="btn btn-default">
                                             <i class="fa fa-pencil-square-o"></i>
                                         </a>
 
