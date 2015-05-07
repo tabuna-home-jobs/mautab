@@ -23,7 +23,8 @@ class TiketRequest extends Request
 	public function rules()
 	{
 		return [
-			'title'   => 'required|max:255',
+			'id'    => 'sometimes|required|integer',
+			'title' => 'sometimes|required|max:255',
 			'message' => 'required'
 		];
 	}

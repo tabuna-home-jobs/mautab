@@ -43,44 +43,40 @@ class TiketsController extends Controller {
 	//Новая заявка
 	public function store(TiketRequest $request)
 	{
-
-
-			$tikets = new Tiket;
-
-			//Заполнение модели
-			$tikets->idu = Auth::user()->id;
-		$tikets->title = $request->title;
-		$tikets->message = $request->message;
-			$tikets->complete = 0;
-			$tikets->save();
-
-			//Флеш сообщение
-			Session::flash('good', 'Вы успешно создали тикет!');
-
+		$tiket = new Tiket([
+			'title'    => $request->title,
+			'message'  => $request->message,
+			'complete' => 0,
+		]);
+		User::find(Auth::user()->id)->tiket()->save($tiket);
+		Session::flash('good', 'Вы успешно создали тикет!');
 		return redirect()->back();
-
 	}
 
 	public function show($id)
 	{
-		$Tiket    = User::find(Auth::user()->id)->tiket()->find($id)->firstOrFail();
-		$subTiket = User::find(Auth::user()->id)->tiket()->find($id)->subtiket()->simplePaginate(15);
+		$Tiket    = User::find(Auth::user()->id)->tiket()->find($id);
+		$subTiket = User::find(Auth::user()->id)->tiket()->find($id)->subtiket($id)->simplePaginate(15);
 		return view('tikets/viewer',['Tiket' => $Tiket, 'subTiket' => $subTiket]);
 	}
 
 	//Ответ
-	public function edit()
+	public function update(TiketRequest $request)
 	{
-		$input = Request::all();
-
-		$tikets = new Tiket;
 
 		//Заполнение модели
-		$tikets->idu = Auth::user()->id;
-		$tikets->idt = $input['id'];
-		$tikets->message = $input['reply'];
-		$tikets->save();
 
+		$Tiket = User::find(Auth::user()->id)->tiket()->find($request->id)->subtiket($request->id);
+		$Tiket->save(new Tiket([
+			'message' => $request->message,
+		]));
+
+		/*
+				$tikets->idu = Auth::user()->id;
+				$tikets->idt = $input['id'];
+				$tikets->message = $input['reply'];
+				$tikets->save();
+		*/
 		Session::flash('good', 'Вы успешно добавили ответ.');
 
 		return redirect()->back();

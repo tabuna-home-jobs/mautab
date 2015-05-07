@@ -3,15 +3,18 @@
 
 
 <div class="container">
+
+
+
+    <div class="col-md-8 col-xs-12">
+
         <div class="col-xs-12">
             <h2 class="text-center"><?php echo e($Tiket->title); ?></h2>
             <p><?php echo e($Tiket->message); ?></p>
         </div>
 
-
-
             <!-- SHARE -->
-            <div class="single-section-container"><h6 class="single-section-title"><span class="single-section-text"><?php echo e(Lang::get('tikets.answers')); ?></span></h6></div>
+    <div class="single-section-container"><h6 class="single-section-title"><span class="single-section-text"><?php echo e(Lang::get('tikets.answers')); ?></span></h6></div>
             <!-- END OF SHARE -->
             <!-- AUTHOR BOX -->
             <?php foreach($subTiket as $Tik): ?>
@@ -35,19 +38,21 @@
             </div>
             <?php endforeach; ?>
             <!-- END OF AUTHOR BOX -->
+        </div>
 
             <!-- COMMENTS -->
-            <div class="commentsform">
+            <div class="commentsform col-md-4 col-xs-12">
                 <div id="addcomments">
                     <div id="respond" class="comment-respond">
                         <h3 id="reply-title" class="comment-reply-title">Ваш ответ</h3>
-                        <form action="/tikets/reply" method="POST" id="commentform" class="comment-form">
+                        <form action="<?php echo e(URL::route('tikets.update')); ?>" method="POST" id="commentform" class="comment-form">
                             <p class="comment-form-comment">
                                 <label for="comment">Сообщение</label>
-                                <textarea id="comment" name="reply" class="form-control" cols="45" rows="8" aria-required="true"></textarea></p>
+                                <textarea name="message" name="reply" class="form-control" cols="45" rows="8" aria-required="true"></textarea></p>
                             <p class="form-submit">
                                 <input name="id" type="hidden"  value="<?php echo e($Tiket->id); ?>" />
                                 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                <input type="hidden" name="_method" value="PUT">
                                 <input name="submit" type="submit" class="button-full" id="submit" value="Ответить" />
                             </p>
                         </form>
