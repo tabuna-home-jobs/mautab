@@ -8,68 +8,90 @@
     </p>
 
     <div class="collapse col-xs-12" id="add-bd">
-        <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('bd.store')); ?>">
+        <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('web.store')); ?>">
 
-            <div class="alert alert-info" role="alert"> Префикс <?php echo e(Auth::user()->nickname); ?>_ будет автоматически добавлен к БД и пользователю БД</div>
+            <div class="alert alert-info" role="alert">Добавление домена</div>
             <div class="form-group input-line">
-                <label>База данных </label>
-
-                <input type="text" name="v_database" class="form-control" value=""/>
-                <span id="pre_name_bd"></span>
+                <label>Домен </label>
+                <input type="text" name="v_domain" class="form-control" value="" required/>
             </div>
             <div class="form-group">
-                <label>Пользователь</label>
-                <input type="text" class="form-control" name="v_dbuser" required/>
-                <span id="pre_name_user"></span>
-
-            </div>
-            <div class="form-group">
-                <label>Пароль</label>
-                <input type="text" class="form-control" name="password_bd" required pattern=".{8,}" title="Пароль должен содержать не менее 8 символов"
-                       placeholder="*********"/>
-            </div>
-
-            <div class="form-group">
-                <label>Кодировка</label>
-                <select name="v_charset" class="form-control">
-                    <option value="big5">big5</option>
-                    <option value="dec8">dec8</option>
-                    <option value="cp850">cp850</option>
-                    <option value="hp8">hp8</option>
-                    <option value="koi8r">koi8r</option>
-                    <option value="latin1">latin1</option>
-                    <option value="latin2">latin2</option>
-                    <option value="swe7">swe7</option>
-                    <option value="ascii">ascii</option>
-                    <option value="ujis">ujis</option>
-                    <option value="sjis">sjis</option>
-                    <option value="hebrew">hebrew</option>
-                    <option value="tis620">tis620</option>
-                    <option value="euckr">euckr</option>
-                    <option value="koi8u">koi8u</option>
-                    <option value="gb2312">gb2312</option>
-                    <option value="greek">greek</option>
-                    <option value="cp1250">cp1250</option>
-                    <option value="gbk">gbk</option>
-                    <option value="latin5">latin5</option>
-                    <option value="armscii8">armscii8</option>
-                    <option selected="" value="utf8">utf8</option>
-                    <option value="ucs2">ucs2</option>
-                    <option value="cp866">cp866</option>
-                    <option value="keybcs2">keybcs2</option>
-                    <option value="macce">macce</option>
-                    <option value="macroman">macroman</option>
-                    <option value="cp852">cp852</option>
-                    <option value="latin7">latin7</option>
-                    <option value="cp1251">cp1251</option>
-                    <option value="cp1256">cp1256</option>
-                    <option value="cp1257">cp1257</option>
-                    <option value="binary">binary</option>
-                    <option value="geostd8">geostd8</option>
-                    <option value="cp932">cp932</option>
-                    <option value="eucjpms">eucjpms</option>
+                <label>IP адрес</label>
+                <select type="text" class="form-control" name="v_ip">
+                    <option value="0">Выбрать</option>
+                    <option value="151.80.164.81">151.80.164.81</option>
                 </select>
             </div>
+            <div class="form-group checkbox">
+                <label>
+                    <input type="checkbox" name="v_dns" checked/>Поддержка DNS
+                </label>
+            </div>
+            <div class="form-group checkbox">
+                <label>
+                    <input type="checkbox" name="v_mail" checked/>Поддержка почты
+                </label>
+            </div>
+            <div>
+                <a id="show-add-options" data-toggle="collapse" href="#options" aria-expanded="false" aria-controls="collapseExample">Дополнительные опции</a>
+            </div>
+
+            <!--Дополнительные опции (по умолчанию скрыт)-->
+            <div class="options collapse" id="options" aria-expanded="false">
+                <div class="form-group">
+                    <label>Алиасы</label>
+                    <textarea cols="40" rows="5" class="form-control" name="v_aliases"></textarea>
+                </div>
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" name="v_proxy" checked/>Поддержка Nginx
+                    </label>
+                </div>
+                <div class="form-group supp-niginx">
+                    <label>Proxy Extentions</label>
+                    <textarea cols="40" rows="5" name="v_proxy_ext" class="form-control">jpeg, jpg, png, gif, bmp, ico, svg, tif, tiff, css, js, htm, html, ttf, otf, webp, woff, txt, csv, rtf, doc, docx, xls, xlsx, ppt, pptx, odf, odp, ods, odt, pdf, psd, ai, eot, eps, ps, zip, tar, tgz, gz, rar, bz2, 7z, aac, m4a, mp3, mp4, ogg, wav, wma, 3gp, avi, flv, m4v, mkv, mov, mp4, mpeg, mpg, wmv, exe, iso, dmg, swf</textarea>
+                </div>
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" name="v_ssl"/>Поддержка SSL
+                    </label>
+                </div>
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" name="v_ftp"/>Дополнительный FTP
+                    </label>
+                </div>
+
+
+                <div class="add-ftp">
+                    <div class="form-group">
+                        <label>FTP#1</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Аккаунт</label>
+
+                        <div>
+                            <small>
+                                Префикс <?php echo e(Auth::user()->nickname); ?>_ будет автоматически добавлен к названию аккаунта
+                            </small>
+                        </div>
+                        <input disabled type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
+                        <input disabled type="text" name="v_ftp_user[1][v_ftp_password]" id="ftppas" class="form-control" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label>Path</label>
+                        <input disabled type="text" name="v_ftp_user[1][v_ftp_path]" class="form-control" value=""/>
+                    </div>
+                    <div class="form-group">
+                        <label>Отправить данные FTP аккаунта по адресу</label>
+                        <input disabled type="text" name="v_ftp_user[1][v_ftp_email]" class="form-control" value=""/>
+                    </div>
+                </div>
+            </div>
+            <!--Дополнительные опции (по умолчанию скрыт)-->
 
             <div class="form-group">
                 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">

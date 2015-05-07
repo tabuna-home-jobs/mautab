@@ -22,24 +22,69 @@
 
 <script>
     $(document).ready(function () {
+        //Проверка дополнительных опций в создании домена в разделе WEB
 
-        //Добаваление префикса для БД когда она добаляется
-        $("input[name='v_database']").blur(function() {
-            var currVal = $(this).val();
+
+        //Проверка нужен ли дополнительный фтп
+        $('input[name="v_ftp"]').change(function () {
+            if ($(this).prop("checked")) {
+                $(".add-ftp").slideDown(500, function () {
+                    $('input', this).attr('disabled', false);
+                });
+            } else {
+                $(".add-ftp").slideUp(500, function () {
+                    $('input', this).attr('disabled', true);
+                });
+            }
+        });
+
+        //Проверка нужна ли поддержка nginx
+        $('input[name="v_proxy"]').change(function () {
+            //Если чекед то показываем текстарею
+            if ($(this).prop("checked")) {
+                $(".supp-niginx").slideDown(300, function () {
+                    $(' textarea', this).attr('disabled', false);
+                });
+            } else {
+                $(".supp-niginx").slideUp(300, function () {
+                    $(' textarea', this).attr('disabled', true);
+                });
+            }
+        });
+        //Функция добавления префикса текущего юзера
+        function addPrefix(input) {
+            var currVal = $(input).val();
             var issetVal = currVal.indexOf("<?php echo e((!is_null(Auth::user())) ? Auth::user()->nickname : ''); ?>");
             if (issetVal == '-1') {
                 var needle = "<?php echo e((!is_null(Auth::user())) ? Auth::user()->nickname : ''); ?>" + "_" + currVal;
-                $(this).val(needle);
+                $(input).val(needle);
             }
+        }
+
+        //Функция-Генератор случайного пароля
+        function randWD() {
+            return Math.random().toString(36).slice(2, 2 + Math.max(1, Math.min(10, 10)));
+        }
+
+        //Добавление случайного пароля в инпут
+        $(".genPass").click(function () {
+            var genPas = randWD().toUpperCase();
+            $(this).parent().next('input').val(genPas);
+            return false;
+        });
+        //Добавление префикса для юзера фтп
+        $(".ftp_usr").blur(function () {
+            addPrefix($(this));
+        });
+
+
+        //Добаваление префикса для БД когда она добаляется
+        $("input[name='v_database']").blur(function () {
+            addPrefix($(this));
         });
         //Добаваление префикса для БД когда она добаляется
         $("input[name='v_dbuser']").blur(function() {
-            var currVal = $(this).val();
-            var issetVal = currVal.indexOf("<?php echo e((!is_null(Auth::user())) ? Auth::user()->nickname : ''); ?>");
-            if (issetVal == '-1') {
-                var needle = "<?php echo e((!is_null(Auth::user())) ? Auth::user()->nickname : ''); ?>" + "_" + currVal;
-                $(this).val(needle);
-            }
+            addPrefix($(this));
         });
 
         //Анимация показа форма добавления БД
