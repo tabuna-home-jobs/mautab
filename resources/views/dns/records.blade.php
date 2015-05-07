@@ -30,7 +30,7 @@
                                     <div class="col-xs-3">{{$record['DATE']}} : {{$record['TIME']}}</div>
 
                                     <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="{{URL::route('cron.show', $record['ID'])}}" class="btn btn-default">
+                                        <a href="{{URL::route('records.edit', $record['ID'])}}" class="btn btn-default">
                                             <i class="fa fa-pencil-square-o"></i>
                                         </a>
 

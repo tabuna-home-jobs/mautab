@@ -5,9 +5,6 @@
 
         <div class="col-xs-12">
 
-            @if(!empty($DnsList))
-                @foreach($DnsList as $nameDNS => $dns)
-
                     <form class="col-md-8" method="post" action="">
 
                         <div class="alert alert-info" role="alert">
@@ -15,24 +12,27 @@
                         </div>
                         <div class="form-group">
                             <label>Домен </label>
-                            <input type="text" class="form-control" value="{{$nameDNS}}" name="dns" readonly/>
+                            <input type="text" class="form-control" value="" name="v_domain" readonly/>
                         </div>
                         <div class="form-group">
-                            <label>IP</label>
-                            <input type="text" class="form-control" name="ip" required value="{{$dns['IP']}}"/>
+                            <label>Запись / Поддомен </label>
+                            <input type="text" class="form-control" name="v_rec" required value="" readonly/>
                         </div>
                         <div class="form-group">
-                            <label>Зарегистрирован до</label>
-                            <input type="text" class="form-control" value="{{$dns['EXP']}}" name="exp"/>
+                            <label>Тип</label>
+                            <input type="text" class="form-control" value="" name="v_type" readonly/>
                         </div>
+
                         <div class="form-group">
-                            <label>SOA</label>
-                            <input type="text" class="form-control" value="{{$dns['SOA']}}" name="soa"/>
+                            <label>IP адрес или значение </label>
+                            <input type="text" class="form-control" value="" name="v_val"/>
                         </div>
+
                         <div class="form-group">
-                            <label>TTL</label>
-                            <input type="text" class="form-control" name="ttl" value="{{$dns['TTL']}}"/>
+                            <label>Приоритет (опционально)</label>
+                            <input type="text" class="form-control" value="" name="v_priority"/>
                         </div>
+
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="submit" value="Отправить" class="button-full">
@@ -69,11 +69,6 @@
                             </div>
                         </div>
                     </div>
-
-                @endforeach
-            @else
-                <div>Нет данных</div>
-            @endif
         </div>
     </section>
 
