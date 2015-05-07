@@ -61,9 +61,13 @@ trait VestaDNS
 	{
 		$data = $this->sendQuery('v-list-dns-records', Auth::user()->nickname, $domain, 'json');
 		$data = json_decode($data, TRUE);
-
 		return $data;
 	}
+
+    public function removeDNSRecord($v_domain, $v_record_id)
+    {
+        $this->sendQuery('v-delete-dns-record', Auth::user()->nickname, $v_domain, $v_record_id);
+    }
 
 
 }

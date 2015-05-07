@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\RemoveDNSRecordRequest;
+use Session;
 use Vesta;
 
 class RecordController extends Controller
@@ -81,9 +83,11 @@ class RecordController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function destroy($id)
+    public function destroy(RemoveDNSRecordRequest $request)
 	{
-		//
+        Vesta::removeDNSRecord($request->v_domain, $request->v_record_id);
+        Session::flash('good', 'Вы успешно удалили запись.');
+        return redirect()->route('records.show', $request->v_domain);
 	}
 
 }
