@@ -124,6 +124,15 @@
         });
 
 
+        //Проба
+        $('form').submit(function () {
+            $('body').addClass('add-opacity');
+            $('#wath').addClass('circle');
+            // $('body').addClass('modal-open');
+        });
+
+
+
     });
 </script>
 
