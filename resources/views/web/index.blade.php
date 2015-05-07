@@ -163,11 +163,11 @@
                                                 <i class="fa fa-sign-in"></i>
                                             </a>
 
-                                            <a href="{{URL::route('bd.show', $key)}}" class="btn btn-default">
+                                            <a href="{{URL::route('web.show', $key)}}" class="btn btn-default">
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
 
-                                            <a href="#" data-toggle="modal" data-target="#Modal-{{$key}}" class="btn btn-danger">
+                                            <a href="#" data-toggle="modal" data-target="#Modal-{{str_replace(".","",trim($key))}}" class="btn btn-danger">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </div>
@@ -176,7 +176,8 @@
                                     </div>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="Modal-{{$key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="Modal-{{str_replace(".","",trim($key))}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -188,10 +189,10 @@
                                                     Вы действительно хотите удалить {{$key}}
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <form action="{{URL::route('bd.destroy')}}" method="post">
+                                                    <form action="{{URL::route('web.destroy')}}" method="post">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                                         <button type="submit" class="button-small">Да</button>
-                                                        <input type="hidden" name="v_database" value="{{$key}}"/>
+                                                        <input type="hidden" name="v_domain" value="{{$key}}"/>
                                                         <input type="hidden" name="_method" value="DELETE">
                                                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                     </form>

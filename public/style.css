@@ -575,6 +575,7 @@ footer{
 .panel-default {
     border-color: #ddd;
     box-shadow: 0px 5px 15px #ccc;
+    overflow: hidden;
 }
 .add-opacity{
     opacity: 0.5;

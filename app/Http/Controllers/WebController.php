@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\AddWebRequest;
+use App\Http\Requests\RemoveWebRequest;
 use Request;
 use Session;
 use Vesta;
@@ -52,8 +53,9 @@ class WebController extends Controller {
 		if ($request->v_mail == 'on') {
 			Vesta::addMail($request->v_domain);
 		}
+
 		//Добавление алиасов
-		if (!empty($request->v_aliases)) {
+		if (strlen($request->v_aliases) >= 1) {
 			//Распил алиасов
 			$valiases = preg_replace("/\n/", " ", $request->v_aliases);
 			$valiases = preg_replace("/,/", " ", $valiases);
@@ -61,20 +63,32 @@ class WebController extends Controller {
 			$valiases = trim($valiases);
 			$aliases  = explode(" ", $valiases);
 
+
 			//Запись алиасов
 			foreach ($aliases as $alias) {
-				Vesta::addWebDomainAlias($request->v_domain, $alias);
 
-				if ($request->v_dns == 'on') {
-					Vesta::addDnsAlias($request->v_domain, $alias);
+				if ($alias == 'www.' . $request->v_domain) {
+					$www_alias = 'yes';
+				} else {
+
+					Vesta::addWebDomainAlias($request->v_domain, $alias);
+
+					if ($request->v_dns == 'on') {
+						Vesta::addDnsAlias($request->v_domain, $alias);
+					}
 				}
-
 			}
 		}
 
+		if (empty($www_alias)) {
+			$alias = preg_replace("/^www./i", "", $request->v_domain);
+			$alias = 'www.' . $alias;
+			Vesta::deleteWebDomainAlias($request->v_domain, $alias);
+		}
 
 		if ($request->v_proxy == 'on') {
-			Vesta::addWebDomainProxy($request->v_domain, $request->v_proxy_ext);
+			$ext = str_replace(' ', '', $request->v_proxy_ext);
+			Vesta::addDomainProxy($request->v_domain, $ext);
 		}
 
 		Session::flash('good', 'Вы успешно добавили Домен.');
@@ -95,4 +109,18 @@ class WebController extends Controller {
         Request::url('/web/domain');
     }
 
+	public function destroy(RemoveWebRequest $request)
+	{
+
+		Vesta::deleteDomain($request->v_domain);
+		Session::flash('good', 'Вы успешно удалили веб домен.');
+
+		return redirect()->route('web.index');
+
+	}
+
+	public function show($name)
+	{
+		return view('web/editList', ['webList' => Vesta::listEditWebDomain($name)]);
+	}
 }

@@ -2,7 +2,7 @@
 
 use Auth;
 
-class AddWebRequest extends Request
+class RemoveWebRequest extends Request
 {
 
 	/**
@@ -22,11 +22,8 @@ class AddWebRequest extends Request
 	 */
 	public function rules()
 	{
-
-
 		return [
-			'v_domain' => 'max:255',
-			'v_ip'     => 'ip',
+			"v_domain" => 'max:255'
 		];
 	}
 

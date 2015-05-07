@@ -6,6 +6,15 @@ trait VestaWeb
 {
 
 	//List Web Domains
+	public function listEditWebDomain($domain)
+	{
+		$answer = $this->sendQuery('v-list-web-domain', Auth::user()->nickname, $domain, 'json');
+		$data   = json_decode($answer, TRUE);
+
+		return $data;
+	}
+
+	//List Web Domains
 	public function listWebDomain()
 	{
 			$answer = $this->sendQuery('v-list-web-domains', Auth::user()->nickname, 'json');
@@ -46,10 +55,11 @@ trait VestaWeb
 	}
 
 	//v-add-dns-on-web-alias
+	/*
 	public function addWebDNSOnWebAlias($domain, $alias)
 	{
 		return $this->sendQuery('v-add-web-domain-alias', Auth::user()->nickname, $domain, $alias, 'no');
-	}
+	}*/
 
 
 	// Delete www. alias if it wasn't found
@@ -60,12 +70,15 @@ trait VestaWeb
 
 
 	// Add proxy support
-	public function addWebDomainProxy($domain, $ext)
+	public function addDomainProxy($domain, $ext)
 	{
 
-		$ext = str_replace(' ', '', $ext);
+		return $this->sendQuery('v-add-web-domain-proxy', Auth::user()->nickname, $domain, '', $ext, 'no');
+	}
 
-		return $this->sendQuery('v-add-web-domain-proxy', Auth::user()->nickname, $domain, $ext, 'no');
+	public function deleteDomain($domain)
+	{
+		return $this->sendQuery('v-delete-domain', Auth::user()->nickname, $domain);
 	}
 
 }

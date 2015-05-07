@@ -1,8 +1,9 @@
 <?php namespace App\Http\Requests;
 
 use Auth;
+use Illuminate\Support\Facades\Request;
 
-class AddWebRequest extends Request
+class ChangeWebRequest extends Request
 {
 
 	/**
@@ -22,11 +23,10 @@ class AddWebRequest extends Request
 	 */
 	public function rules()
 	{
-
+		dd(Request::all());
 
 		return [
-			'v_domain' => 'max:255',
-			'v_ip'     => 'ip',
+
 		];
 	}
 

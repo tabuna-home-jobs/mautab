@@ -5,36 +5,35 @@
 
         <div class="col-xs-12">
 
+
+            @if(!empty($webList))
+                @foreach($webList as $domain => $d_val)
                     <form class="col-md-8" method="post" action="">
 
                         <div class="alert alert-info" role="alert">
-                            Изменения для домена {{$nameDNS}}
+                            Редактирование домена {{$domain}}
                         </div>
                         <div class="form-group">
-                            <label>Домен </label>
-                            <input type="text" class="form-control" value="" name="v_domain" readonly/>
+                            <label>База данных </label>
+                            <input type="text" class="form-control" value="{{$nameBd}}" disabled/>
                         </div>
                         <div class="form-group">
-                            <label>Запись / Поддомен </label>
-                            <input type="text" class="form-control" name="v_rec" required value="" readonly/>
+                            <label>Пользователь</label>
+                            <input type="text" class="form-control" name="user_bd" required value="{{$bd['DBUSER']}}"/>
                         </div>
                         <div class="form-group">
-                            <label>Тип</label>
-                            <input type="text" class="form-control" value="" name="v_type" readonly/>
+                            <label>Пароль</label>
+                            <input type="text" class="form-control" name="password_bd" required pattern=".{8,}" title="Пароль должен содержать не менее 8 символов"
+                                   placeholder="*********"/>
                         </div>
-
                         <div class="form-group">
-                            <label>IP адрес или значение </label>
-                            <input type="text" class="form-control" value="" name="v_val"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Приоритет (опционально)</label>
-                            <input type="text" class="form-control" value="" name="v_priority"/>
+                            <label>Кодировка</label>
+                            <input type="text" class="form-control" value="{{$bd['CHARSET']}}" disabled/>
                         </div>
 
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="bd" value="{{$nameBd}}"/>
                         <input type="submit" value="Отправить" class="button-full">
                     </form>
 
@@ -53,23 +52,34 @@
                             <ul class="list-group">
 
                                 <li class="list-group-item"> Статус:
-                                    @if($dns['SUSPENDED'] == 'no')
+                                    @if($bd['SUSPENDED'] == 'no')
                                         <span class="text-success"> Активен</span>
                                     @else
                                         <span class="text-danger"> Заблокирован</span>
                                     @endif
                                 </li>
+                                <li class="list-group-item">Занимаемое пространство: {{$bd['U_DISK']}} мб</li>
+                                <li class="list-group-item">Кодировка: {{$bd['CHARSET']}}</li>
+                                <li class="list-group-item">Тип:{{$bd['TYPE']}}</li>
+                                <li class="list-group-item">Адрес: {{$bd['HOST']}}</li>
                             </ul>
 
 
                             <div class="panel-footer">
                                 <p>
-                                    <small class="pull-right"> {{$dns['DATE'] ." ". $dns['TIME']}}</small>
+                                    <small class="pull-right"> {{$bd['DATE'] ." ". $bd['TIME']}}</small>
                                 </p>
                             </div>
                         </div>
                     </div>
+
+                @endforeach
+            @else
+                <div>Нет данных</div>
+            @endif
         </div>
+
+
     </section>
 
 @endsection

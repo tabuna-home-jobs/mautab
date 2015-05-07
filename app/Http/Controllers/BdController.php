@@ -1,12 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddBDRequest;
 use App\Http\Requests\ChangeBDRequest;
+use App\Http\Requests\RemoveBDRequest;
 use Auth;
 use Session;
 use Vesta;
-use App\Http\Requests\AddBDRequest;
-use App\Http\Requests\RemoveBDRequest;
 
 
 class BdController extends Controller{
@@ -25,7 +25,6 @@ class BdController extends Controller{
 		return view('bd/editList',['BdList' =>  Vesta::listOnlyBD($name)]);
 	}
 
-
 	public function update(ChangeBDRequest $request){
 
         //Обрезаем префикс
@@ -36,8 +35,7 @@ class BdController extends Controller{
         return redirect()->route('bd.index');
 	}
 
-
-    public  function  store(AddBDRequest $request)
+	public function store(AddBDRequest $request)
     {
 	    $request->v_dbuser =  preg_replace("/^". Auth::user()->nickname ."_/", "", $request->v_dbuser);
 	    $request->v_database =  preg_replace("/^". Auth::user()->nickname ."_/", "", $request->v_database);
