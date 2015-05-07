@@ -2,7 +2,7 @@
 
 	/**
 	 * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-	 * Generated on 2015-04-24.
+	 * Generated on 2015-05-07.
 	 *
 	 * @author Barry vd. Heuvel <barryvdh@gmail.com>
 	 * @see    https://github.com/barryvdh/laravel-ide-helper
@@ -118,6 +118,8 @@
 			'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
 			'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
 			'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+			'remote' instanceof \Collective\Remote\RemoteManager,
+			'command.tail' instanceof \Collective\Remote\Console\TailCommand,
 		],
 		\Illuminate\Contracts\Foundation\Application::make('') => [
 			'events' instanceof \Illuminate\Events\Dispatcher,
@@ -226,6 +228,8 @@
 			'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
 			'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
 			'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+			'remote' instanceof \Collective\Remote\RemoteManager,
+			'command.tail' instanceof \Collective\Remote\Console\TailCommand,
 		],
 		\Illuminate\Contracts\Container\Container::make('')    => [
 			'events' instanceof \Illuminate\Events\Dispatcher,
@@ -334,6 +338,8 @@
 			'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
 			'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
 			'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+			'remote' instanceof \Collective\Remote\RemoteManager,
+			'command.tail' instanceof \Collective\Remote\Console\TailCommand,
 		],
 		\Illuminate\Container\Container::make('')              => [
 			'events' instanceof \Illuminate\Events\Dispatcher,
@@ -442,6 +448,8 @@
 			'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
 			'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
 			'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+			'remote' instanceof \Collective\Remote\RemoteManager,
+			'command.tail' instanceof \Collective\Remote\Console\TailCommand,
 		],
 		\App::make('')                                         => [
 			'events' instanceof \Illuminate\Events\Dispatcher,
@@ -550,6 +558,8 @@
 			'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
 			'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
 			'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+			'remote' instanceof \Collective\Remote\RemoteManager,
+			'command.tail' instanceof \Collective\Remote\Console\TailCommand,
 		],
 		app('')                                                => [
 			'events' instanceof \Illuminate\Events\Dispatcher,
@@ -658,6 +668,8 @@
 			'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
 			'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
 			'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+			'remote' instanceof \Collective\Remote\RemoteManager,
+			'command.tail' instanceof \Collective\Remote\Console\TailCommand,
 		],
 	];
 }

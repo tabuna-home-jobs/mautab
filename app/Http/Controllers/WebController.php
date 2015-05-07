@@ -1,7 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-use Auth;
+use App\Http\Requests\AddWebRequest;
 use Request;
+use Session;
 use Vesta;
 
 class WebController extends Controller {
@@ -37,6 +38,49 @@ class WebController extends Controller {
 		return view('web/index',[ "UserDomain" => Vesta::listWebDomain() ]);
 	}
 
+	public function store(AddWebRequest $request)
+	{
+
+
+		Vesta::addWebDomain($request->v_domain, $request->v_ip);
+
+		//Добавление поддержки днс
+		if ($request->v_dns == 'on') {
+			Vesta::addDns($request->v_domain, $request->v_ip);
+		}
+		//Добавление поддержки мыла
+		if ($request->v_mail == 'on') {
+			Vesta::addMail($request->v_domain);
+		}
+		//Добавление алиасов
+		if (!empty($request->v_aliases)) {
+			//Распил алиасов
+			$valiases = preg_replace("/\n/", " ", $request->v_aliases);
+			$valiases = preg_replace("/,/", " ", $valiases);
+			$valiases = preg_replace('/\s+/', ' ', $valiases);
+			$valiases = trim($valiases);
+			$aliases  = explode(" ", $valiases);
+
+			//Запись алиасов
+			foreach ($aliases as $alias) {
+				Vesta::addWebDomainAlias($request->v_domain, $alias);
+
+				if ($request->v_dns == 'on') {
+					Vesta::addDnsAlias($request->v_domain, $alias);
+				}
+
+			}
+		}
+
+
+		if ($request->v_proxy == 'on') {
+			Vesta::addWebDomainProxy($request->v_domain, $request->v_proxy_ext);
+		}
+
+		Session::flash('good', 'Вы успешно добавили Домен.');
+
+		return redirect()->route('web.index');
+	}
 
     public  function getDomain()
     {

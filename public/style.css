@@ -740,3 +740,7 @@ footer{
 .panel-price > ul > li {
     text-align: center;
 }
+
+.add-ftp {
+    display: none;
+}

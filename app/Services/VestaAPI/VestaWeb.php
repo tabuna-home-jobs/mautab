@@ -15,16 +15,34 @@ trait VestaWeb
 
 
 	//Add Web Domains Для добовления домена!
-	public function addWebDomain($domain)
+	public function addWebDomain($domain, $v_ip)
 	{
-		return $this->sendQuery('v-add-domain', Auth::user()->nickname, $domain);
+
+		return $this->sendQuery('v-add-web-domain', Auth::user()->nickname, $domain, $v_ip);
 	}
 
+	//Поддержка днс если стоит чек
+	public function addDns($domain, $v_ip)
+	{
+		return $this->sendQuery('v-add-dns-domain', Auth::user()->nickname, $domain, $v_ip);
+	}
+
+	//Поддержка почты если стоит чек
+	public function addMail($domain)
+	{
+		return $this->sendQuery('v-add-mail-domain', Auth::user()->nickname, $domain);
+	}
 
 	// Add domain aliases
 	public function addWebDomainAlias($domain, $alias)
 	{
 		return $this->sendQuery('v-add-web-domain-alias', Auth::user()->nickname, $domain, $alias, 'no');
+	}
+
+	//Поддержка алиасов днс если чек
+	public function addDnsAlias($domain, $alias)
+	{
+		return $this->sendQuery('v-add-dns-on-web-alias', Auth::user()->nickname, $domain, $alias, 'no');
 	}
 
 	//v-add-dns-on-web-alias
@@ -42,9 +60,12 @@ trait VestaWeb
 
 
 	// Add proxy support
-	public function addWebDomainProxy($domain, $alias, $v_proxy_ext)
+	public function addWebDomainProxy($domain, $ext)
 	{
-		return $this->sendQuery('v-add-web-domain-proxy', Auth::user()->nickname, $domain, $alias, $v_proxy_ext, 'no');
+
+		$ext = str_replace(' ', '', $ext);
+
+		return $this->sendQuery('v-add-web-domain-proxy', Auth::user()->nickname, $domain, $ext, 'no');
 	}
 
 }
