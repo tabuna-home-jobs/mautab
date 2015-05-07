@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Вчерашнее" />
-    <list default="true" id="db3a6495-b962-411d-8794-9f7d21043a7c" name="New changelist" comment=" оОО что то новое откуда это появилсоь?">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/04208b501629662e35eafdebb746c4dc" afterPath="$PROJECT_DIR$/storage/framework/views/04208b501629662e35eafdebb746c4dc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/3e7dfb0f909c1d8b5e94a19dc4f78c52" afterPath="$PROJECT_DIR$/storage/framework/views/3e7dfb0f909c1d8b5e94a19dc4f78c52" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/8540e64a12f08101f56f0aaa21df3ac3" afterPath="$PROJECT_DIR$/storage/framework/views/8540e64a12f08101f56f0aaa21df3ac3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/TiketRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/TiketRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TiketsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TiketsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tikets/viewer.blade.php" afterPath="$PROJECT_DIR$/resources/views/tikets/viewer.blade.php" />
+    <list default="true" id="db3a6495-b962-411d-8794-9f7d21043a7c" name="New changelist" comment="Тикеты">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/style.css" afterPath="$PROJECT_DIR$/public/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cloudme.iws" />
@@ -132,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewer.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewer.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/tikets/viewer.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56" vertical-offset="90" max-vertical-offset="1512">
-              <caret line="24" column="119" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="119" />
+            <state vertical-scroll-proportion="-12.666667" vertical-offset="72" max-vertical-offset="1512">
+              <caret line="23" column="119" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="119" />
               <folding />
             </state>
           </provider>
@@ -145,13 +140,14 @@
       <file leaf-file-name="TiketsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TiketsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.3333335" vertical-offset="891" max-vertical-offset="1566">
+            <state vertical-scroll-proportion="-5.0" vertical-offset="873" max-vertical-offset="1548">
               <caret line="63" column="26" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="26" />
               <folding>
                 <element signature="e#806#1004#0#PHP" expanded="true" />
-                <element signature="e#1023#1327#0#PHP" expanded="true" />
-                <element signature="e#1330#1601#0#PHP" expanded="true" />
-                <element signature="e#1613#2068#0#PHP" expanded="true" />
+                <element signature="e#1023#1331#0#PHP" expanded="true" />
+                <element signature="e#1334#1605#0#PHP" expanded="true" />
+                <element signature="e#1617#2083#0#PHP" expanded="true" />
+                <marker date="1431029411442" expanded="false" signature="39:140" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -164,8 +160,18 @@
               <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="e#179#236#0#PHP" expanded="true" />
-                <element signature="e#327#486#0#PHP" expanded="true" />
+                <element signature="e#327#487#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.54599404" vertical-offset="9172" max-vertical-offset="13734">
+              <caret line="517" column="56" selection-start-line="517" selection-start-column="56" selection-end-line="517" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -229,7 +235,6 @@
         <option value="$PROJECT_DIR$/resources/views/web/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dns/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/public/style.css" />
         <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CronDeleteRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CronController.php" />
@@ -247,6 +252,7 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/TiketRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TiketsController.php" />
         <option value="$PROJECT_DIR$/resources/views/tikets/viewer.blade.php" />
+        <option value="$PROJECT_DIR$/public/style.css" />
       </list>
     </option>
   </component>
@@ -378,6 +384,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -945,7 +965,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431026499985</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Тикеты">
+      <created>1431029415397</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1431029415397</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -1016,7 +1042,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Добавлен контроллер днс" />
     <MESSAGE value="Контроллер вывода БД, и чучуть вывода изменения этой ж БД" />
     <MESSAGE value="Всеравно никто не читает" />
     <MESSAGE value="Трейт и небольшие правки" />
@@ -1041,7 +1066,8 @@
     <MESSAGE value="Вчерашнее" />
     <MESSAGE value="Новые права" />
     <MESSAGE value=" оОО что то новое откуда это появилсоь?" />
-    <option name="LAST_COMMIT_MESSAGE" value=" оОО что то новое откуда это появилсоь?" />
+    <MESSAGE value="Тикеты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Тикеты" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1219,14 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.148149" vertical-offset="2003" max-vertical-offset="3906">
           <caret line="134" column="63" selection-start-line="134" selection-start-column="63" selection-end-line="134" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="12366" max-vertical-offset="13464">
-          <caret line="687" column="24" selection-start-line="687" selection-start-column="24" selection-end-line="687" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1467,13 +1485,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TiketsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3333335" vertical-offset="891" max-vertical-offset="1566">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="873" max-vertical-offset="1548">
           <caret line="63" column="26" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="26" />
           <folding>
             <element signature="e#806#1004#0#PHP" expanded="true" />
-            <element signature="e#1023#1327#0#PHP" expanded="true" />
-            <element signature="e#1330#1601#0#PHP" expanded="true" />
-            <element signature="e#1613#2068#0#PHP" expanded="true" />
+            <element signature="e#1023#1331#0#PHP" expanded="true" />
+            <element signature="e#1334#1605#0#PHP" expanded="true" />
+            <element signature="e#1617#2083#0#PHP" expanded="true" />
+            <marker date="1431029411442" expanded="false" signature="39:140" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1484,15 +1503,23 @@
           <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="e#179#236#0#PHP" expanded="true" />
-            <element signature="e#327#486#0#PHP" expanded="true" />
+            <element signature="e#327#487#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tikets/viewer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56" vertical-offset="90" max-vertical-offset="1512">
-          <caret line="24" column="119" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="119" />
+        <state vertical-scroll-proportion="-12.666667" vertical-offset="72" max-vertical-offset="1512">
+          <caret line="23" column="119" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54599404" vertical-offset="9172" max-vertical-offset="13734">
+          <caret line="517" column="56" selection-start-line="517" selection-start-column="56" selection-end-line="517" selection-end-column="56" />
           <folding />
         </state>
       </provider>

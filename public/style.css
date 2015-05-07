@@ -508,14 +508,6 @@ p.copyright {
     vertical-align: middle !important;
     padding: 25px 0;
 }
-.table-hover > tbody > tr:hover{
-    background-color: #d58c85;
-    color: #fff;
-}
-
-.table-striped > tbody > tr:nth-child(even) {
-
-}
 
 footer{
     margin-top: 20px;
