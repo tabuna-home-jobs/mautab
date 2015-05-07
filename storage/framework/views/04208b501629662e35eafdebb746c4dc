@@ -1,10 +1,15 @@
 <?php $__env->startSection('content'); ?>
     <section class="container">
-        <p class="text-center">
-            <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
-                <i class="fa fa-plus"></i>Добавить
-            </a>
-        </p>
+        <div class="col-md-6">
+            <p class="text-center">
+                <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fa fa-plus"></i>Добавить
+                </a>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <input type="search" placeholder="Search..." class="form-control" value="" id="container-search">
+        </div>
 
         <div class="collapse col-xs-12" id="add-bd">
             <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('bd.store')); ?>">
