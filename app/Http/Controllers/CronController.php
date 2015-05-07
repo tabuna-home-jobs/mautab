@@ -44,7 +44,6 @@ class CronController extends Controller
 			$request->v_cmd
 		);
 		Session::flash('good', 'Вы успешно добавили задание.');
-
 		return redirect()->route('cron.index');
 	}
 
@@ -55,9 +54,9 @@ class CronController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function show($id)
+    public function show($v_job)
 	{
-		//
+        return view('cron/edit', ['Cron' => Vesta::showCron($v_job)[$v_job], 'name' => $v_job]);
 	}
 
 	/**
@@ -67,9 +66,9 @@ class CronController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function edit($id)
+    public function edit()
 	{
-		//
+
 	}
 
 	/**
@@ -79,9 +78,19 @@ class CronController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function update($id)
+    public function update(CronRequest $request)
 	{
-		//
+        Vesta::EditCron(
+            $request->v_job,
+            $request->v_min,
+            $request->v_hour,
+            $request->v_day,
+            $request->v_month,
+            $request->v_wday,
+            $request->v_cmd
+        );
+        Session::flash('good', 'Вы успешно изменили задание.');
+        return redirect()->route('cron.index');
 	}
 
 	/**

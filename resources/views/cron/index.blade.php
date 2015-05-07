@@ -86,7 +86,7 @@
                                 <td>{{$job['DATE']}} : {{$job['TIME']}}</td>
                                 <td>
                                     <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="#" class="btn btn-default">
+                                        <a href="{{URL::route('cron.show', $job['JOB'])}}" class="btn btn-default">
                                             <i class="fa fa-pencil-square-o"></i>
                                         </a>
 
