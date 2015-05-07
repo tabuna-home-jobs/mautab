@@ -1,7 +1,6 @@
 <?php namespace App\Services\VestaAPI;
 
 use Auth;
-use Cache;
 
 trait VestaWeb
 {
@@ -9,15 +8,9 @@ trait VestaWeb
 	//List Web Domains
 	public function listWebDomain()
 	{
-		if (Cache::has('listWebDomain-' . Auth::user()->nickname)) {
-			return Cache::get('listWebDomain-' . Auth::user()->nickname);
-		} else {
 			$answer = $this->sendQuery('v-list-web-domains', Auth::user()->nickname, 'json');
 			$data   = json_decode($answer, TRUE);
-			Cache::put('listWebDomain-' . Auth::user()->nickname, $data, 10);
-
 			return $data;
-		}
 	}
 
 

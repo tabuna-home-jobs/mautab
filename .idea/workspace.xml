@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Крон">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/RemoveDNSRecordRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RecordController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecordController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/VestaAPI/VestaDNS.php" afterPath="$PROJECT_DIR$/app/Services/VestaAPI/VestaDNS.php" />
+    <list default="true" id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Удаление записи">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/dns/editRecord.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/VestaAPI/VestaWeb.php" afterPath="$PROJECT_DIR$/app/Services/VestaAPI/VestaWeb.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/f8de4baadcaad8ff737220a483505b59" afterPath="$PROJECT_DIR$/storage/framework/views/f8de4baadcaad8ff737220a483505b59" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dns/records.blade.php" afterPath="$PROJECT_DIR$/resources/views/dns/records.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cloudme.iws" />
@@ -57,21 +55,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/cron/index.blade.php">
+      <file leaf-file-name="records.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/dns/records.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.0" vertical-offset="1350" max-vertical-offset="2574">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="95" selection-end-column="42" />
+            <state vertical-scroll-proportion="-16.0" vertical-offset="1080" max-vertical-offset="1692">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="records.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/dns/records.blade.php">
+      <file leaf-file-name="editRecord.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/dns/editRecord.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5074627" vertical-offset="648" max-vertical-offset="1584">
-              <caret line="53" column="84" selection-start-line="53" selection-start-column="84" selection-end-line="53" selection-end-column="84" />
+            <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="1548">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/web/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-43.333332" vertical-offset="0" max-vertical-offset="3870">
+              <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="domain.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/web/domain.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="40.148148" vertical-offset="1462" max-vertical-offset="2052">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VestaWeb.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaWeb.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3283582" vertical-offset="0" max-vertical-offset="1008">
+              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editList.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/dns/editList.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.0" vertical-offset="0" max-vertical-offset="1548">
+              <caret line="24" column="53" selection-start-line="0" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,23 +125,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VestaDNS.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaDNS.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.814816" vertical-offset="752" max-vertical-offset="1422">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RecordController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0" vertical-offset="1188" max-vertical-offset="1800">
-              <caret line="84" column="23" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+            <state vertical-scroll-proportion="-12.0" vertical-offset="1170" max-vertical-offset="1782">
+              <caret line="83" column="23" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
               <folding>
-                <element signature="e#39#84#0#PHP" expanded="true" />
+                <marker date="1430982989324" expanded="true" signature="39:131" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -112,10 +140,10 @@
       <file leaf-file-name="RemoveDNSRecordRequest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Requests/RemoveDNSRecordRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.333334" vertical-offset="0" max-vertical-offset="666">
+            <state vertical-scroll-proportion="-16.666666" vertical-offset="18" max-vertical-offset="666">
               <caret line="26" column="24" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="24" />
               <folding>
-                <element signature="e#36#66#0#PHP" expanded="true" />
+                <marker date="1430982989324" expanded="true" signature="36:45" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -172,7 +200,6 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaBD.php" />
         <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaUser.php" />
-        <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaWeb.php" />
         <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaService.php" />
         <option value="$PROJECT_DIR$/app/Services/Vesta.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
@@ -189,6 +216,8 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/RemoveDNSRecordRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RecordController.php" />
         <option value="$PROJECT_DIR$/resources/views/dns/records.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/dns/editRecord.blade.php" />
+        <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaWeb.php" />
       </list>
     </option>
   </component>
@@ -323,6 +352,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -682,7 +733,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430980584157</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Удаление записи">
+      <created>1430982991452</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1430982991452</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -758,7 +815,8 @@
     <MESSAGE value="Трейт и небольшие правки" />
     <MESSAGE value="Пофиксил баг с добавлением префикса в имени БД" />
     <MESSAGE value="Крон" />
-    <option name="LAST_COMMIT_MESSAGE" value="Крон" />
+    <MESSAGE value="Удаление записи" />
+    <option name="LAST_COMMIT_MESSAGE" value="Удаление записи" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -777,27 +835,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="27.444445" vertical-offset="741" max-vertical-offset="2489">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env.example">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.9259257" vertical-offset="660" max-vertical-offset="1083">
@@ -816,13 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.5269461" vertical-offset="6029" max-vertical-offset="10887">
           <caret line="340" column="19" selection-start-line="340" selection-start-column="16" selection-end-line="340" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/web/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.592592" vertical-offset="585" max-vertical-offset="1482">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="46" selection-end-column="78" />
         </state>
       </provider>
     </entry>
@@ -987,13 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaWeb.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033450704" vertical-offset="266" max-vertical-offset="1197">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30105633" vertical-offset="0" max-vertical-offset="568">
@@ -1124,10 +1147,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/RemoveDNSRecordRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.333334" vertical-offset="0" max-vertical-offset="666">
+        <state vertical-scroll-proportion="-16.666666" vertical-offset="18" max-vertical-offset="666">
           <caret line="26" column="24" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="24" />
           <folding>
-            <element signature="e#36#66#0#PHP" expanded="true" />
+            <marker date="1430982989324" expanded="true" signature="36:45" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1142,18 +1165,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="1188" max-vertical-offset="1800">
-          <caret line="84" column="23" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+        <state vertical-scroll-proportion="-12.0" vertical-offset="1170" max-vertical-offset="1782">
+          <caret line="83" column="23" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
           <folding>
-            <element signature="e#39#84#0#PHP" expanded="true" />
+            <marker date="1430982989324" expanded="true" signature="39:131" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/dns/records.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5074627" vertical-offset="648" max-vertical-offset="1584">
-          <caret line="53" column="84" selection-start-line="53" selection-start-column="84" selection-end-line="53" selection-end-column="84" />
+        <state vertical-scroll-proportion="-16.0" vertical-offset="1080" max-vertical-offset="1692">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dns/editList.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.0" vertical-offset="0" max-vertical-offset="1548">
+          <caret line="24" column="53" selection-start-line="0" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dns/editRecord.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="1548">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/web/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-43.333332" vertical-offset="0" max-vertical-offset="3870">
+          <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/web/domain.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="40.148148" vertical-offset="1462" max-vertical-offset="2052">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/VestaAPI/VestaWeb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3283582" vertical-offset="0" max-vertical-offset="1008">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
           <folding />
         </state>
       </provider>
