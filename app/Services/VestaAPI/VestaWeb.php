@@ -81,4 +81,13 @@ trait VestaWeb
 		return $this->sendQuery('v-delete-domain', Auth::user()->nickname, $domain);
 	}
 
+	// Chane dns domain IP
+	public function changeWebDomainIp($domain, $ip)
+	{
+
+		return $this->sendQuery('v-change-web-domain-ip', Auth::user()->nickname, $domain, $ip, 'no');
+	}
+
+
+
 }

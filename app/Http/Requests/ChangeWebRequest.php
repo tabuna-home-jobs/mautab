@@ -1,7 +1,7 @@
 <?php namespace App\Http\Requests;
 
+
 use Auth;
-use Illuminate\Support\Facades\Request;
 
 class ChangeWebRequest extends Request
 {
@@ -23,10 +23,9 @@ class ChangeWebRequest extends Request
 	 */
 	public function rules()
 	{
-		dd(Request::all());
 
 		return [
-
+			'v_domain' => 'max:255'
 		];
 	}
 

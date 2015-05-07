@@ -8,33 +8,83 @@
 
             @if(!empty($webList))
                 @foreach($webList as $domain => $d_val)
-                    <form class="col-md-8" method="post" action="">
 
-                        <div class="alert alert-info" role="alert">
-                            Редактирование домена {{$domain}}
+                    <div class="alert alert-info" role="alert">
+                        Редактирование домена {{$domain}}
+                    </div>
+                    <form class="col-md-8 col-xs-12" method="post" action="">
+
+                        <div class="form-group input-line">
+                            <label>Домен </label>
+                            <input type="text" name="v_domain" class="form-control" value="{{$domain}}" required/>
                         </div>
                         <div class="form-group">
-                            <label>База данных </label>
-                            <input type="text" class="form-control" value="{{$nameBd}}" disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label>Пользователь</label>
-                            <input type="text" class="form-control" name="user_bd" required value="{{$bd['DBUSER']}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Пароль</label>
-                            <input type="text" class="form-control" name="password_bd" required pattern=".{8,}" title="Пароль должен содержать не менее 8 символов"
-                                   placeholder="*********"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Кодировка</label>
-                            <input type="text" class="form-control" value="{{$bd['CHARSET']}}" disabled/>
+                            <label>IP адрес</label>
+                            <select type="text" class="form-control" name="v_ip">
+                                <option value="{{$d_val['IP']}}" selected>{{$d_val['IP']}}</option>
+                            </select>
                         </div>
 
-                        <input type="hidden" name="_method" value="PUT">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="hidden" name="bd" value="{{$nameBd}}"/>
-                        <input type="submit" value="Отправить" class="button-full">
+
+                        <div class="form-group">
+                            <label>Алиасы</label>
+                            <textarea cols="40" rows="5" class="form-control" name="v_aliases">{{$d_val['ALIAS']}}</textarea>
+                        </div>
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" name="v_proxy" checked/>Поддержка Nginx
+                            </label>
+                        </div>
+                        <div class="form-group supp-niginx">
+                            <label>Proxy Extentions</label>
+                            <textarea cols="40" rows="5" name="v_proxy_ext" class="form-control">{{$d_val['PROXY_EXT']}}</textarea>
+                        </div>
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" name="v_ssl"/>Поддержка SSL
+                            </label>
+                        </div>
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" name="v_ftp"/>Дополнительный FTP
+                            </label>
+                        </div>
+
+
+                        <div class="add-ftp">
+                            <div class="form-group">
+                                <label>FTP#1</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Аккаунт</label>
+
+                                <div>
+                                    <small>
+                                        Префикс {{Auth::user()->nickname }}_ будет автоматически добавлен к названию аккаунта
+                                    </small>
+                                </div>
+                                <input disabled type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr" value=""/>
+                            </div>
+                            <div class="form-group">
+                                <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
+                                <input disabled type="text" name="v_ftp_user[1][v_ftp_password]" id="ftppas" class="form-control" value=""/>
+                            </div>
+                            <div class="form-group">
+                                <label>Path</label>
+                                <input disabled type="text" name="v_ftp_user[1][v_ftp_path]" class="form-control" value=""/>
+                            </div>
+                            <div class="form-group">
+                                <label>Отправить данные FTP аккаунта по адресу</label>
+                                <input disabled type="text" name="v_ftp_user[1][v_ftp_email]" class="form-control" value=""/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <input type="submit" value="Отправить" class="button-full">
+                            <input type="hidden" name="domain" value="{{$domain}}"/>
+                            <input type="hidden" name="_method" value="PUT">
+                        </div>
                     </form>
 
                     <div class="col-md-4">
@@ -52,22 +102,20 @@
                             <ul class="list-group">
 
                                 <li class="list-group-item"> Статус:
-                                    @if($bd['SUSPENDED'] == 'no')
+                                    @if($d_val['SUSPENDED'] == 'no')
                                         <span class="text-success"> Активен</span>
                                     @else
                                         <span class="text-danger"> Заблокирован</span>
                                     @endif
                                 </li>
-                                <li class="list-group-item">Занимаемое пространство: {{$bd['U_DISK']}} мб</li>
-                                <li class="list-group-item">Кодировка: {{$bd['CHARSET']}}</li>
-                                <li class="list-group-item">Тип:{{$bd['TYPE']}}</li>
-                                <li class="list-group-item">Адрес: {{$bd['HOST']}}</li>
+                                <li class="list-group-item">Занимаемое пространство: {{$d_val['U_DISK']}} мб</li>
+
                             </ul>
 
 
                             <div class="panel-footer">
                                 <p>
-                                    <small class="pull-right"> {{$bd['DATE'] ." ". $bd['TIME']}}</small>
+                                    <small class="pull-right"> {{$d_val['DATE'] ." ". $d_val['TIME']}}</small>
                                 </p>
                             </div>
                         </div>

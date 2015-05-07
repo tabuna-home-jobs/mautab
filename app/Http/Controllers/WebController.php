@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\AddWebRequest;
+use App\Http\Requests\ChangeWebRequest;
 use App\Http\Requests\RemoveWebRequest;
 use Request;
 use Session;
@@ -123,4 +124,15 @@ class WebController extends Controller {
 	{
 		return view('web/editList', ['webList' => Vesta::listEditWebDomain($name)]);
 	}
+
+	public function update(ChangeWebRequest $request)
+	{
+
+		Vesta::changeWebDomainIp($request->v_domain, $request->v_ip);
+
+		Session::flash('good', 'Ты красавчег! обновил всё каг надо');
+
+		return redirect()->route('web.index');
+	}
+
 }
