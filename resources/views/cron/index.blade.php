@@ -8,7 +8,6 @@
                 <i class="fa fa-plus"></i>Добавить
             </a>
         </p>
-
         <div class="collapse col-xs-12" id="add-bd">
             <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('cron.store')}}">
 

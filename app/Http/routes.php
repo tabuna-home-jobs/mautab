@@ -11,16 +11,16 @@
 |
 */
 
-
+	// Общее
     Route::get('/', 'WelcomeController@index');
-
-
     Route::controllers([
         'auth' => 'Auth\AuthController',
         'password' => 'Auth\PasswordController',
     ]);
 
-	Route::group(['middleware' => 'auth'], function () {
+
+	// Всё для пользователя
+	Route::group(['middleware' => ['auth', 'user']], function () {
 		Route::resource('web', 'WebController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('records', 'RecordController');
@@ -31,5 +31,16 @@
 		Route::resource('tikets', 'TiketsController');
 		Route::resource('pay', 'RobokassaController');
 		Route::resource('home', 'HomeController');
+	});
+
+
+	// Всё для администратора
+	Route::group(['middleware' => ['auth', 'admin']], function () {
+
+	});
+
+
+	// Всё для ассистентов
+	Route::group(['middleware' => ['auth', 'assistant']], function () {
 
 	});

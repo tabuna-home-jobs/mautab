@@ -2,8 +2,7 @@
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Vesta;
-use View;
+
 
 class Authenticate {
 
@@ -46,17 +45,6 @@ class Authenticate {
 				return redirect()->guest('auth/login');
 			}
 		}
-        else
-        {
-            View::composer('*', function () {
-	            $UserInfo = Vesta::listUserAccount()[$this->auth->user()->nickname];
-	            View::share('UserInfo', $UserInfo);
-	            //!! Вот тут он должен записать переменную в шаблон!, но этого не происходит
-            });
-        }
-
-
-
 		return $next($request);
 	}
 
