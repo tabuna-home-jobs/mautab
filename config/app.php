@@ -151,6 +151,7 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Collective\Remote\RemoteServiceProvider',
+		'Cartalyst\Sentry\SentryServiceProvider',
 	],
 
 	/*
@@ -207,6 +208,7 @@ return [
 
 		'Vesta' => 'App\Facades\VestaFacades',
 		'SSH' => 'Collective\Remote\RemoteFacade',
+		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 	],
 
 ];

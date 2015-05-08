@@ -38,31 +38,25 @@ class HomeController extends Controller {
 	 */
 	public function Index()
 	{
-
 		// Информация о пользователе
 		$UserInfoLaravel = User::find(Auth::user()->id);
-
 		return view('user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
 	}
 
 	public function update(ChangeUserRequest $request)
 	{
 
-		//dd("Я хуй его знаю почему он сюда не заходит!");
-		//Смена в Vesta
+
 		Vesta::changeUserPassword($request->password);
 		Vesta::changeUserEmail($request->email);
 
 		//Смена в Laravel
-
 		$thisUser           = User::find(Auth::user()->id);
-		//$thisUser->password = Crypt::encrypt($request->password);
 		$thisUser->password = Hash::make($request->password);
 		$thisUser->email    = $request->email;
 		$thisUser->lang = $request->lang;
 		$thisUser->save();
 		Session::flash('good', 'Вы успешно изменили личные данных.');
-
 		return redirect()->route('home.index');
 
 	}

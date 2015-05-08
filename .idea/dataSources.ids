@@ -57,7 +57,7 @@
       <column name="password" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
       <column name="package" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="EndOfService" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" remarks="0JTQsNGC0LAg0L7QutC+0L3Rh9Cw0L3QuNGPINC00LXQudGB0YLQstC40Y8g0YPRgdC70YPQs9C4"/>
-      <column name="IpServer" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="JzE1MS44MC4xNjQuODEn"/>
+      <column name="server" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="balans" sqlType="FLOAT" precision="10" scale="2" nullable="false" jdbcType="7" def="MC4wMA==" remarks="0JHQsNC70LDQvdGB"/>
       <column name="role" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="J3VzZXIn" remarks="0KDQvtC70Yw="/>
       <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>

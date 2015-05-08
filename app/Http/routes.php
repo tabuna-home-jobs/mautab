@@ -35,12 +35,12 @@
 
 
 	// Всё для администратора
-	Route::group(['middleware' => ['auth', 'admin']], function () {
+	//Route::group(['middleware' => ['auth']], function () {
 
-	});
+	//});
 
 
 	// Всё для ассистентов
-	Route::group(['middleware' => ['auth', 'assistant']], function () {
+	//Route::group(['middleware' => ['auth']], function () {
 
-	});
+	//});

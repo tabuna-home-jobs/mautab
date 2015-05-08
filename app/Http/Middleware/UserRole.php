@@ -5,10 +5,8 @@ use Closure;
 use Vesta;
 use View;
 
-
 class UserRole
 {
-
 	/**
 	 * Handle an incoming request.
 	 *
@@ -20,15 +18,12 @@ class UserRole
 	public function handle($request, Closure $next)
 	{
 		if (Auth::user()->role == 'user') {
-
 			View::composer('*', function () {
 				$UserInfo = Vesta::listUserAccount()[Auth::user()->nickname];
 				View::share('UserInfo', $UserInfo);
 			});
-
 			return $next($request);
 		} else
 			abort(404);
 	}
-
 }

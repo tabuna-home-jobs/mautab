@@ -7,22 +7,33 @@ use App\Services\VestaAPI\VestaService;
 use App\Services\VestaAPI\VestaUser;
 use App\Services\VestaAPI\VestaWeb;
 use Auth;
+use Config;
 use SSH;
 
 class Vesta  {
 
 	use VestaBD, VestaDNS, VestaUser, VestaWeb, VestaService, VestaCron;
 
-
-	public	$vst_username = 'admin';
-	public	$vst_password = '03af4d';
+	public $vst_username;
+	public $vst_password;
+	public $vst_server;
 
 	//Для ssh соединения
 	public $VESTA_CMD = '/usr/local/vesta/bin/';
 	public $output;
 
+
+	public function __construct()
+	{
+		$this->vst_username = (string)Config::get('vesta.server')[Auth::user()->server]['login'];
+		$this->vst_password = (string)Config::get('vesta.server')[Auth::user()->server]['password'];
+		$this->vst_server   = (string)Config::get('vesta.server')[Auth::user()->server]['ip'];
+	}
+
+
 	public function sendQuery($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL, $arg7 = NULL, $arg8 = NULL, $arg9 = NULL)
     {
+
     		// Проверям, если нам нужен json то выводим его или же код ошибки
 	    $argReturnCodeDetector = array($arg1, $arg2, $arg3, $arg4, $arg5, $arg6, $arg7, $arg8, $arg9);
 			if (in_array('json',$argReturnCodeDetector))
@@ -46,6 +57,7 @@ class Vesta  {
 			        'arg8' => $arg8,
 			        'arg9' => $arg9,
 			);
+
 
 	    /*
 				Версия php
@@ -71,16 +83,19 @@ class Vesta  {
 
 	    $postdata = http_build_query($postvars);
 	    $curl     = curl_init();
-	    curl_setopt($curl, CURLOPT_URL, 'https://' . Auth::user()->IpServer . ':8083/api/');
+
+
+	    curl_setopt($curl, CURLOPT_URL, 'https://' . $this->vst_server . ':8083/api/');
 	    curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
 	    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
 	    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
 	    curl_setopt($curl, CURLOPT_POST, TRUE);
 	    curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
 
-        $query = curl_exec($curl);
 
+	    $query = curl_exec($curl);
 
+	    // dd($curl);
         //Если он должен возвращать ошибку, и она случилось перенаправить на 404 страницу
         if($this->vst_returncode == 'yes' && $query !=0 )
             dd($query);

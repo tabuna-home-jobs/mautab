@@ -1,0 +1,171 @@
+<?php $__env->startSection('content'); ?>
+<section class="container">
+    <p class="text-center">
+        <a id="show-add-bd" data-toggle="collapse" href="#add-dns" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-plus"></i>Добавить
+        </a>
+    </p>
+
+    <div class="collapse col-xs-12" id="add-dns">
+        <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('dns.store')); ?>">
+
+            <div class="alert alert-info" role="alert"> Добавление DNS домена</div>
+            <div class="form-group input-line">
+                <label>Домен </label>
+                <input type="text" name="v_domain" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                <label>IP адрес</label>
+                <input type="text" class="form-control" name="v_ip" required/>
+            </div>
+            <p class="text-center">
+                <a id="show-dop-info" data-toggle="collapse" href="#dop-info" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fa fa-plus"></i>Дополнительные опции
+                </a>
+            </p>
+
+            <div class="collapse" id="dop-info">
+                <div class="form-group">
+                    <label>Зарегистрирован до
+                        <small>(ГГГГ-ММ-ДД)</small>
+                    </label>
+                    <input type="text" class="form-control" name="v_exp" value="<?php echo e(date("Y-m-d",time() + 24 * 60 * 60 * 365)); ?>" required/>
+                </div>
+                <div class="form-group">
+                    <label>TTL</label>
+                    <input type="text" class="form-control" name="v_ttl" value="14400" required/>
+                </div>
+                <div class="form-group">
+                    <label>Сервер имен</label>
+
+                    <div class="form-group">
+                        <label>NS1</label>
+                        <input type="text" class="form-control" name="v_ns1" value="ns1.localhost.ltd" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>NS2</label>
+                        <input type="text" class="form-control" name="v_ns2" value="ns2.localhost.ltd" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                <input type="submit" value="Отправить" class="button-full">
+            </div>
+        </form>
+
+        <div class="col-md-4 hidden-sm hidden-xs">
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Информация:</h3>
+                </div>
+                <div class="panel-body">
+                    <p>DNS - Компьютерная распределённая система для получения информации о доменах. Чаще всего используется для получения IP-адреса по имени хоста
+                       (компьютера или устройства), получения информации о маршрутизации почты, обслуживающих узлах для протоколов в домене (SRV-запись). </p>
+
+                    <p>Основой DNS является представление об иерархической структуре доменного имени и зонах.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="clearfix col-xs-12">
+    </div>
+
+
+        <div class="col-md-12" id="add-shadow">
+
+            <?php $__empty_1 = true; foreach($DnsList as $nameDns => $Dns): $__empty_1 = false; ?>
+                    <div class="col-xs-12 col-md-4">
+
+                        <?php if($Dns['SUSPENDED'] != "no"): ?>
+                            <div class="panel panel-danger ">
+                    <?php else: ?>
+                                    <div class="panel panel-default ">
+                    <?php endif; ?>
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title"> <?php echo e($nameDns); ?></h3>
+                            </div>
+
+                                        <ul class="list-group">
+                                            <li class="list-group-item">SOA: <span><?php echo e($Dns['SOA']); ?></span></li>
+                                            <li class="list-group-item">TTL: <span><?php echo e($Dns['TTL']); ?></span></li>
+                                            <li class="list-group-item">Регистрация до: <span><?php echo e($Dns['EXP']); ?></span></li>
+                                        </ul>
+                                        <div class="panel-footer">
+
+
+                                            <div class="container-fluid">
+                                                <div class="pull-left">
+                                                    <small><?php echo e($Dns['DATE']); ?></small>
+                                                </div>
+
+                                                <div class="btn-group pull-right" role="group">
+                                                    <a href="<?php echo e(URL::route('records.show', $nameDns)); ?>" class="btn btn-default">
+                                                        <i class="fa fa-server"></i>
+                                                    </a>
+
+                                                    <a href="<?php echo e(URL::route('dns.show', $nameDns)); ?>" class="btn btn-default">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+
+                                                    <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace(".",'',$nameDns)); ?>" class="btn btn-danger">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                </div>
+
+
+                                            </div>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="Modal-<?php echo e(str_replace(".",'',$nameDns)); ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                        aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Удалить <?php echo e($nameDns); ?> ?</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Вы действительно хотите удалить <?php echo e($nameDns); ?>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form action="<?php echo e(URL::route('dns.destroy')); ?>" method="post">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                                <button type="submit" class="button-small">Да</button>
+                                                                <input type="hidden" name="v_domain" value="<?php echo e($nameDns); ?>"/>
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <?php endforeach; if ($__empty_1): ?>
+
+                            <div class="jumbotron">
+                                <h1>Пусто!</h1>
+
+                                <p>Вы ещё не создали ни одной базы данных</p>
+
+                                <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
+                            </div>
+                            <?php endif; ?>
+
+                    </div>
+        </div>
+
+
+</section>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

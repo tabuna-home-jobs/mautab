@@ -13,7 +13,7 @@
 	 */
 	public function up()
 	{
-		Schema::create('users', function(Blueprint $table)
+		Schema::create('users_old', function (Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('nickname')->unique();
