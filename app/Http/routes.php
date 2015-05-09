@@ -13,14 +13,22 @@
 
 	// Общее
     Route::get('/', 'WelcomeController@index');
+	/*
     Route::controllers([
         'auth' => 'Auth\AuthController',
         'password' => 'Auth\PasswordController',
     ]);
+*/
+
+	//Авторизация, регистрация, востановление парля
+	Route::group(['namespace' => 'Auth'], function () {
+		Route::resource('reg', 'RegistrationController');
+		Route::resource('login', 'AuthController');
+	});
 
 
-	// Всё для пользователя
-	Route::group(['middleware' => ['auth', 'user']], function () {
+	// Всё для пользователя ['middleware' => ['auth', 'user']],
+	Route::group(['middleware' => ['user']], function () {
 		Route::resource('web', 'WebController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('records', 'RecordController');

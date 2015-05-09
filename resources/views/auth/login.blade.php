@@ -38,13 +38,8 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-        <ul class="nav navbar-nav navbar-right">
-                  @if (Auth::guest())
             <li><a href="/auth/login">Войти</a></li>
             <li><a href="/auth/register">Зарегистрироваться</a></li>
-           @else
-          <li><a href="#">{{ Auth::user()->name }} </a></li>
-          @endif
         </ul>
       </div>
     </div>
@@ -66,8 +61,7 @@
     <div class="login-form text-center">
 
 
-{!! Form::open(array('action' => 'Auth\AuthController@postLogin','class' => 'col-xs-12 col-md-6')) !!}
-   
+        <form class="col-xs-12 col-md-6" action="/login" method="post">
           @if (count($errors) > 0)
             <div class="alert alert-danger">
               <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>

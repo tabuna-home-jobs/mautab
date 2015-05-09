@@ -10,7 +10,9 @@
                         @foreach($BdList as $nameBd => $bd)
                             <form class="col-md-8" method="post" action="">
 
-                                <div class="alert alert-info" role="alert"> Префикс {{Auth::user()->nickname }}_ будет автоматически добавлен к БД и пользователю БД</div>
+                                <div class="alert alert-info" role="alert"> Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к БД и пользователю
+                                                                            БД
+                                </div>
                                 <div class="form-group">
                                     <label>База данных </label>
                                     <input type="text" class="form-control" value="{{$nameBd}}" disabled />

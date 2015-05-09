@@ -53,9 +53,9 @@
         //Функция добавления префикса текущего юзера
         function addPrefix(input) {
             var currVal = $(input).val();
-            var issetVal = currVal.indexOf("<?php echo e((!is_null(Auth::user())) ? Auth::user()->nickname : ''); ?>");
+            var issetVal = currVal.indexOf("<?php echo e((!is_null(Auth::user())) ? Sentry::getUser()->nickname : ''); ?>");
             if (issetVal == '-1') {
-                var needle = "<?php echo e((!is_null(Auth::user())) ? Auth::user()->nickname : ''); ?>" + "_" + currVal;
+                var needle = "<?php echo e((!is_null(Auth::user())) ? Sentry::getUser()->nickname : ''); ?>" + "_" + currVal;
                 $(input).val(needle);
             }
         }
@@ -127,8 +127,7 @@
         //Проба
         $('form').submit(function () {
             $('body').addClass('add-opacity');
-            $('#wath').addClass('circle');
-            // $('body').addClass('modal-open');
+            $('#wath').addClass('load');
         });
 
 

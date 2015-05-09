@@ -1,9 +1,6 @@
 <?php namespace App\Http\Controllers;
 
 use Auth;
-use Request;
-use Session;
-use Redirect;
 
 class PayController extends Controller {
 
@@ -18,15 +15,6 @@ class PayController extends Controller {
 	|
 	*/
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
 
 	/**
 	 * Show the application dashboard to the user.

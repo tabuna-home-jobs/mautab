@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,12 +41,8 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-                  @if (Auth::guest())
             <li><a href="/auth/login">Войти</a></li>
             <li><a href="/auth/register">Зарегистрироваться</a></li>
-           @else
-          <li><a href="#">{{ Auth::user()->name }} </a></li>
-          @endif
         </ul>
       </div>
     </div>

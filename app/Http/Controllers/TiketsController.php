@@ -3,7 +3,7 @@
 use App\Http\Requests\TiketRequest;
 use App\Models\Tiket;
 use App\Models\User;
-use Auth;
+use Sentry;
 use Session;
 
 class TiketsController extends Controller {
@@ -24,10 +24,7 @@ class TiketsController extends Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+
 
 	/**
 	 * Show the application dashboard to the user.
@@ -36,7 +33,7 @@ class TiketsController extends Controller {
 	 */
 	public function index()
 	{
-		$Tikets = User::find(Auth::user()->id)->tiket()->where('tikets_id')->orderBy('id', 'desc')->simplePaginate(15);
+		$Tikets = User::find(Sentry::getUser()->id)->tiket()->where('tikets_id')->orderBy('id', 'desc')->simplePaginate(15);
 		return view('/tikets/index', ['Tikets' => $Tikets]);
 	}
 

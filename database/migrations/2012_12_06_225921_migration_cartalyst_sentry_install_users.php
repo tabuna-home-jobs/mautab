@@ -45,14 +45,15 @@
 				$table->string('first_name')->nullable();
 				$table->string('last_name')->nullable();
 				$table->string('lang')->default('en');
-				$table->timestamp('EndOfService');
-				$table->string('IpServer')->default('151.80.164.81');
+				$table->timestamp('end_of_service');
+				$table->string('server')->default('151.80.164.81');
 				$table->double('balans')->default('0.00');
-
+				$table->integer('package');
+				$table->timestamps();
+				$table->rememberToken();
 				// We'll need to ensure that MySQL uses the InnoDB engine to
 				// support the indexes, other engines aren't affected.
 				$table->engine = 'InnoDB';
-				$table->unique('email');
 				$table->index('activation_code');
 				$table->index('reset_password_code');
 			});

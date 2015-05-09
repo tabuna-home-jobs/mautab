@@ -10,7 +10,8 @@
 
                         <form class="col-md-8" method="post" action="{{URL::route('bd.store')}}">
 
-                            <div class="alert alert-info" role="alert"> Префикс {{Auth::user()->nickname }}_ будет автоматически добавлен к БД и пользователю БД</div>
+                            <div class="alert alert-info" role="alert"> Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к БД и пользователю БД
+                            </div>
                             <div class="form-group input-line">
                                 <label>База данных </label>
 

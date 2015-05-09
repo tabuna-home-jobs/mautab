@@ -37,7 +37,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Аккаунт</label>
-                                <input type="text" class="form-control" disabled value="{{Auth::user()->nickname}} ">
+                                <input type="text" class="form-control" disabled value="{{Sentry::getUser()->nickname}} ">
                             </div>
 
                             <div class="form-group">
@@ -54,7 +54,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="email">Электронная почта</label>
-                                <input type="email" name="email" class="form-control" required value="{{ Auth::user()->email }} ">
+                                <input type="email" name="email" class="form-control" required value="{{ Sentry::getUser()->email }} ">
                             </div>
 
 

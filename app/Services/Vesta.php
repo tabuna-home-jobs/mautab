@@ -6,8 +6,8 @@ use App\Services\VestaAPI\VestaDNS;
 use App\Services\VestaAPI\VestaService;
 use App\Services\VestaAPI\VestaUser;
 use App\Services\VestaAPI\VestaWeb;
-use Auth;
 use Config;
+use Sentry;
 use SSH;
 
 class Vesta  {
@@ -25,9 +25,18 @@ class Vesta  {
 
 	public function __construct()
 	{
-		$this->vst_username = (string)Config::get('vesta.server')[Auth::user()->server]['login'];
-		$this->vst_password = (string)Config::get('vesta.server')[Auth::user()->server]['password'];
-		$this->vst_server   = (string)Config::get('vesta.server')[Auth::user()->server]['ip'];
+		if (!Sentry::check()) {
+
+			// User is not logged in, or is not activated
+			$this->vst_username = (string)Config::get('vesta.server')[Config::get('vesta.primary')]['login'];
+			$this->vst_password = (string)Config::get('vesta.server')[Config::get('vesta.primary')]['password'];
+			$this->vst_server   = (string)Config::get('vesta.server')[Config::get('vesta.primary')]['ip'];
+		} else {
+			$this->vst_username = 'admin';//(string)Config::get('vesta.server')[Sentry::getUser()->server]['login'];
+			$this->vst_password = '03af4d';//(string)Config::get('vesta.server')[Sentry::getUser()->server]['password'];
+			$this->vst_server   = '151.80.164.81';//(string)Config::get('vesta.server')[Sentry::getUser()->server]['ip'];
+		}
+
 	}
 
 

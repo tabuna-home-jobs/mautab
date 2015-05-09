@@ -1,7 +1,7 @@
 <?php namespace App\Http\Middleware;
 
-use Auth;
 use Closure;
+use Sentry;
 use Vesta;
 use View;
 
@@ -17,9 +17,9 @@ class UserRole
 	 */
 	public function handle($request, Closure $next)
 	{
-		if (Auth::user()->role == 'user') {
+		if (Sentry::check()) {
 			View::composer('*', function () {
-				$UserInfo = Vesta::listUserAccount()[Auth::user()->nickname];
+				$UserInfo = Vesta::listUserAccount()[Sentry::getUser()->nickname];
 				View::share('UserInfo', $UserInfo);
 			});
 			return $next($request);

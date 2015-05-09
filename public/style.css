@@ -739,10 +739,10 @@ footer{
 }
 
 /*
-тест
+    Загрузка
 */
 
-.circle {
+.load {
     background-color: rgba(0, 0, 0, 0);
     border: 5px solid rgba(0, 183, 229, 0.9);
     opacity: .9;

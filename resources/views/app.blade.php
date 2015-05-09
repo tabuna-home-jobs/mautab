@@ -11,12 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/animate.css">
     <link rel="stylesheet" href="/style.css">
-    <script src="wow.js"></script>
-    <script>
-        new WOW().init();
-    </script>
+
 
 </head>
 <body>
@@ -43,7 +39,7 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">{{ Auth::user()->name }} </a></li>
+                    <li><a href="#">{{ Sentry::getUser()->name }} </a></li>
                 </ul>
             </div>
         </div>

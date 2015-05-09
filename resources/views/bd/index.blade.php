@@ -12,7 +12,7 @@
         <div class="collapse col-xs-12" id="add-bd">
             <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('bd.store')}}">
 
-                <div class="alert alert-info" role="alert"> Префикс {{Auth::user()->nickname }}_ будет автоматически добавлен к БД и пользователю БД</div>
+                <div class="alert alert-info" role="alert"> Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к БД и пользователю БД</div>
                 <div class="form-group input-line">
                     <label>База данных </label>
 
@@ -134,7 +134,7 @@
                                                 </div>
 
                                                 <div class="btn-group pull-right" role="group">
-                                                    <a href="http://{{Auth::user()->IpServer}}/phpmyadmin" target="_blank" class="btn btn-default">
+                                                    <a href="http://{{Sentry::getUser()->IpServer}}/phpmyadmin" target="_blank" class="btn btn-default">
                                                         <i class="fa fa-server"></i>
                                                     </a>
 

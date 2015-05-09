@@ -1,9 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\ChangeUserRequest;
-use App\Models\User;
-use Auth;
 use Hash;
+use Sentry;
 use Session;
 use SSH;
 use Vesta;
@@ -26,10 +25,6 @@ class HomeController extends Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
 
 	/**
 	 * Show the application dashboard to the user.
@@ -39,7 +34,7 @@ class HomeController extends Controller {
 	public function Index()
 	{
 		// Информация о пользователе
-		$UserInfoLaravel = User::find(Auth::user()->id);
+		$UserInfoLaravel = Sentry::getUser();
 		return view('user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
 	}
 
@@ -51,7 +46,7 @@ class HomeController extends Controller {
 		Vesta::changeUserEmail($request->email);
 
 		//Смена в Laravel
-		$thisUser           = User::find(Auth::user()->id);
+		$thisUser = Sentry::getUser();
 		$thisUser->password = Hash::make($request->password);
 		$thisUser->email    = $request->email;
 		$thisUser->lang = $request->lang;

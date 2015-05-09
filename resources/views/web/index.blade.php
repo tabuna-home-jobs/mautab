@@ -74,7 +74,7 @@
 
                         <div>
                             <small>
-                                Префикс {{Auth::user()->nickname }}_ будет автоматически добавлен к названию аккаунта
+                                Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
                             </small>
                         </div>
                         <input disabled type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr" value=""/>

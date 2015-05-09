@@ -4,18 +4,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddBDRequest;
 use App\Http\Requests\ChangeBDRequest;
 use App\Http\Requests\RemoveBDRequest;
-use Auth;
 use Session;
 use Vesta;
 
 
 class BdController extends Controller{
 
-	public function __construct(){
-
-		$this->middleware('auth');
-
-	}
 
 	public function Index(){
 		return view('bd/index',['BdList' => Vesta::listBD()]);
@@ -28,7 +22,7 @@ class BdController extends Controller{
 	public function update(ChangeBDRequest $request){
 
         //Обрезаем префикс
-        $request->user_bd =  preg_replace("/^". Auth::user()->nickname ."_/", "", $request->user_bd);
+		$request->user_bd = preg_replace("/^" . Sentry::getUser()->nickname . "_/", "", $request->user_bd);
         Vesta::changeDbUser($request->bd, $request->user_bd);
         Vesta::changeDbPassword($request->bd, $request->password_bd);
         Session::flash('good', 'Вы успешно изменили базу данных.');
@@ -37,8 +31,8 @@ class BdController extends Controller{
 
 	public function store(AddBDRequest $request)
     {
-	    $request->v_dbuser =  preg_replace("/^". Auth::user()->nickname ."_/", "", $request->v_dbuser);
-	    $request->v_database =  preg_replace("/^". Auth::user()->nickname ."_/", "", $request->v_database);
+	    $request->v_dbuser   = preg_replace("/^" . Sentry::getUser()->nickname . "_/", "", $request->v_dbuser);
+	    $request->v_database = preg_replace("/^" . Sentry::getUser()->nickname . "_/", "", $request->v_database);
 
         Vesta::addDateBase($request->v_database,
                             $request->v_dbuser,
