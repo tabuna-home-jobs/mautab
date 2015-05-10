@@ -41,7 +41,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/auth/login">Войти</a></li>
             <li><a href="/auth/register">Зарегистрироваться</a></li>
-          </ul>
+        </ul>
       </div>
     </div>
   </nav>
@@ -60,8 +60,6 @@
 
   <div class="container login-container">
     <div class="login-form text-center">
-
-
 
 
         <form action="/reg" method="post" class="col-xs-12 col-md-6">

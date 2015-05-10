@@ -22,7 +22,7 @@
 
 	//Авторизация, регистрация, востановление парля
 	Route::group(['namespace' => 'Auth'], function () {
-		Route::resource('reg', 'RegistrationController');
+		Route::resource('register', 'RegistrationController');
 		Route::resource('login', 'AuthController');
 	});
 
