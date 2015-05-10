@@ -1,7 +1,7 @@
 <?php namespace App\Http\Requests;
 
 
-use Auth;
+use Sentry;
 
 class ChangeWebRequest extends Request
 {
@@ -13,7 +13,7 @@ class ChangeWebRequest extends Request
 	 */
 	public function authorize()
 	{
-		return Auth::check();
+		return Sentry::check();
 	}
 
 	/**

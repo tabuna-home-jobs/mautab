@@ -1,7 +1,6 @@
 <?php namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
-use Auth;
+use Sentry;
 
 class ChangeBDRequest extends Request {
 
@@ -12,7 +11,7 @@ class ChangeBDRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return Auth::check();
+		return Sentry::check();
 	}
 
 	/**

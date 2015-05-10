@@ -1,6 +1,6 @@
 <?php namespace App\Http\Requests;
 
-use Auth;
+use Sentry;
 
 class ChangeDNSRequest extends Request
 {
@@ -13,7 +13,7 @@ class ChangeDNSRequest extends Request
 	public function authorize()
 	{
 
-		return Auth::check();
+		return Sentry::check();
 	}
 
 	/**

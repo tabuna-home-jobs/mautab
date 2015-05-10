@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Models\User;
+use Sentry;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
 
 	/**
@@ -13,7 +15,9 @@ class AdminController extends Controller
 	 */
 	public function index()
 	{
-		//
+		$Users = User::paginate(15);
+
+		return view('admin/users', ['Users' => $Users]);
 	}
 
 	/**

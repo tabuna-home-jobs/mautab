@@ -44,7 +44,8 @@
 
 	// Всё для администратора
 	Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
-		Route::resource('dashboard', 'AdminController');
+		Route::resource('users', 'UserController');
+		Route::resource('groups', 'GroupsController');
 	});
 
 

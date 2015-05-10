@@ -61,7 +61,7 @@
     <div class="login-form text-center">
 
 
-       <form class="col-xs-12 col-md-6" action="/login" method="post">
+        <form class="col-xs-12 col-md-6" action="/login" method="post">
           <?php if(count($errors) > 0): ?>
             <div class="alert alert-danger">
               <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>

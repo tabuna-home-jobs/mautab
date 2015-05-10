@@ -1,10 +1,9 @@
 <?php namespace App\Http\Controllers\Auth;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Sentry;
-use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Requests\Auth\AuthRequest;
+use Sentry;
 
 class AuthController extends Controller {
 

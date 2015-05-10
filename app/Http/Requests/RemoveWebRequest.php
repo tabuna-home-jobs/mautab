@@ -1,6 +1,6 @@
 <?php namespace App\Http\Requests;
 
-use Auth;
+use Sentry;
 
 class RemoveWebRequest extends Request
 {
@@ -12,7 +12,7 @@ class RemoveWebRequest extends Request
 	 */
 	public function authorize()
 	{
-		return Auth::check();
+		return Sentry::check();
 	}
 
 	/**
