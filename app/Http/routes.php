@@ -43,9 +43,9 @@
 
 
 	// Всё для администратора
-	//Route::group(['middleware' => ['auth']], function () {
-
-	//});
+	Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+		Route::resource('dashboard', 'AdminController');
+	});
 
 
 	// Всё для ассистентов
