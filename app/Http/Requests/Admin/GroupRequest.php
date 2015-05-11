@@ -24,7 +24,8 @@ class GroupRequest extends Request
 	public function rules()
 	{
 		return [
-			'name'        => 'required|max:255|unique:groups',
+			'id'   => 'sometimes|integer|required',
+			'name' => 'sometimes|required|max:255|unique:groups',
 			'permissions' => 'array',
 		];
 	}

@@ -8,12 +8,12 @@
                 <table class="table table-condensed table-hover table-striped">
                     <tbody>
                     <?php foreach($Users as $key => $User): ?>
-                            <tr>
-                                <td><?php echo e($User->id); ?></td>
-                                <td><?php echo e($User->nickname); ?></td>
-                                <td><?php echo e($User->email); ?></td>
-                                <td><?php echo e($User->balans); ?></td>
-                            </tr>
+                        <tr>
+                            <td><?php echo e($User->id); ?></td>
+                            <td><?php echo e($User->nickname); ?></td>
+                            <td><?php echo e($User->email); ?></td>
+                            <td><?php echo e($User->balans); ?></td>
+                        </tr>
                     <?php endforeach; ?>
                     </tbody>
                     <?php echo $Users->render();; ?>

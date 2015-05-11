@@ -37,15 +37,19 @@ class AuthController extends Controller {
 
 		try
 		{
-			// Login credentials
 			$credentials = array(
 				'email'    => $request->email,
 				'password' => $request->password,
 			);
+			Sentry::authenticateAndRemember($credentials);
 
-			// Authenticate the user
-			$user = Sentry::authenticate($credentials, false);
+
 		}
+			//catch (Exception $e) {
+			//	dd('stop');
+			//return redirect()->back()->withErrors(array($e->getMessage()));
+			//}
+
 		catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
 		{
 			echo 'Login field is required.';
@@ -56,6 +60,7 @@ class AuthController extends Controller {
 		}
 		catch (Cartalyst\Sentry\Users\WrongPasswordException $e)
 		{
+			dd('stop');
 			echo 'Wrong password, try again.';
 		}
 		catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
@@ -76,6 +81,9 @@ class AuthController extends Controller {
 		{
 			echo 'User is banned.';
 		}
+
+		return redirect('home');
+
 	}
 
 	/**

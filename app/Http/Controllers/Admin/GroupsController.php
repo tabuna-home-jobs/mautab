@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Http\Requests\Admin\GroupRequest;
 use App\Models\Group;
 use Sentry;
+use Session;
 
 class GroupsController extends Controller
 {
@@ -49,6 +50,9 @@ class GroupsController extends Controller
 				'name'        => $request->name,
 				'permissions' => $request->permissions
 			));
+			Session::flash('good', 'Вы создали удалили группу.');
+
+			return redirect()->route('admin.groups.index');
 		} catch (Cartalyst\Sentry\Groups\NameRequiredException $e) {
 			echo 'Name field is required';
 		} catch (Cartalyst\Sentry\Groups\GroupExistsException $e) {
@@ -101,9 +105,16 @@ class GroupsController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(GroupRequest $request)
 	{
-		//
+		try {
+			Sentry::findGroupById($request->id)->delete();
+			Session::flash('good', 'Вы успешно удалили группу.');
+
+			return redirect()->route('admin.groups.index');
+		} catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e) {
+			echo 'Group was not found.';
+		}
 	}
 
 }
