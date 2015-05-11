@@ -25,6 +25,7 @@ class GroupRequest extends Request
 	{
 		return [
 			'id'   => 'sometimes|integer|required',
+			'namenew' => 'sometimes|required|max:255',
 			'name' => 'sometimes|required|max:255|unique:groups',
 			'permissions' => 'array',
 		];

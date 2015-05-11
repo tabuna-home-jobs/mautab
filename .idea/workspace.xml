@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Вчерашнее" />
-    <list default="true" id="db3a6495-b962-411d-8794-9f7d21043a7c" name="New changelist" comment="Ура я вижу фишиш">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/7f430ff50f0a7d8d1b05f163d40a3992" afterPath="$PROJECT_DIR$/storage/framework/views/7f430ff50f0a7d8d1b05f163d40a3992" />
+    <list default="true" id="db3a6495-b962-411d-8794-9f7d21043a7c" name="New changelist" comment="Новые правила и права доступа">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/groupsEdit.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/8c865c391eb4663b5ce9e14976169b9f" afterPath="$PROJECT_DIR$/storage/framework/views/8c865c391eb4663b5ce9e14976169b9f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Admin/GroupRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/GroupRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/groups.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/groups.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cloudme.iws" />
@@ -90,31 +86,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserRole.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/UserRole.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="576">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="28" />
-              <folding>
-                <element signature="e#359#488#1#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GroupsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.810651" vertical-offset="54" max-vertical-offset="2268">
-              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+            <state vertical-scroll-proportion="-10.962963" vertical-offset="1558" max-vertical-offset="2808">
+              <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
               <folding>
-                <element signature="e#314#494#0#PHP" expanded="true" />
-                <element signature="e#579#614#0#PHP" expanded="true" />
-                <element signature="e#699#1212#0#PHP" expanded="true" />
-                <element signature="e#1462#1498#0#PHP" expanded="true" />
-                <element signature="e#1606#1644#0#PHP" expanded="true" />
-                <element signature="e#1754#2078#0#PHP" expanded="true" />
-                <marker date="1431359253883" expanded="true" signature="45:180" placeholder="..." />
+                <element signature="e#45#81#0#PHP" expanded="true" />
+                <element signature="e#315#495#0#PHP" expanded="true" />
+                <element signature="e#580#615#0#PHP" expanded="true" />
+                <element signature="e#700#1214#0#PHP" expanded="true" />
+                <element signature="e#1312#1437#0#PHP" expanded="true" />
+                <element signature="e#1553#1589#0#PHP" expanded="true" />
+                <element signature="e#2595#2914#0#PHP" expanded="true" />
+                <marker date="1431363663052" expanded="true" signature="45:194" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -123,8 +108,75 @@
       <file leaf-file-name="groups.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/groups.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-47.333332" vertical-offset="0" max-vertical-offset="2502">
-              <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+            <state vertical-scroll-proportion="-9.333333" vertical-offset="1080" max-vertical-offset="2520">
+              <caret line="74" column="77" selection-start-line="74" selection-start-column="77" selection-end-line="74" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_default.users" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/ea3b34e1/831013f8-cce7-4293-bd76-bb03ae3cfd81/admin_default..users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editList.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/bd/editList.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="27.703703" vertical-offset="748" max-vertical-offset="1746">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/bd/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="4.6666665" vertical-offset="2646" max-vertical-offset="4194">
+              <caret line="140" column="95" selection-start-line="140" selection-start-column="61" selection-end-line="140" selection-end-column="95" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="groupsEdit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/groupsEdit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.333333" vertical-offset="54" max-vertical-offset="1548">
+              <caret line="23" column="56" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.333333" vertical-offset="468" max-vertical-offset="1332">
+              <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+              <folding>
+                <element signature="e#45#81#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.3333335" vertical-offset="2106" max-vertical-offset="2952">
+              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="137" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -133,36 +185,12 @@
       <file leaf-file-name="GroupRequest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/GroupRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="684">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state vertical-scroll-proportion="-18.0" vertical-offset="18" max-vertical-offset="720">
+              <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
               <folding>
+                <element signature="e#42#72#0#PHP" expanded="true" />
                 <element signature="e#218#277#0#PHP" expanded="true" />
-                <element signature="e#368#547#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="684">
-              <caret line="4" column="63" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="63" />
-              <folding>
-                <element signature="e#154#319#1#PHP" expanded="true" />
-                <element signature="e#391#891#1#PHP" expanded="true" />
-                <element signature="e#984#1095#1#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.37037" vertical-offset="17" max-vertical-offset="720">
-              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -170,49 +198,10 @@
       <file leaf-file-name="RedirectIfAuthenticated.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="612">
+            <state vertical-scroll-proportion="-13.333333" vertical-offset="36" max-vertical-offset="612">
               <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding>
-                <element signature="e#38#50#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Authenticate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.0" vertical-offset="54" max-vertical-offset="1026">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding>
-                <element signature="e#281#351#0#PHP" expanded="true" />
-                <element signature="e#493#749#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Localization.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Localization.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="198">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.0" vertical-offset="684" max-vertical-offset="2394">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-              <folding>
-                <element signature="e#44#80#0#PHP" expanded="true" />
-                <element signature="e#1810#1846#0#PHP" expanded="true" />
-                <element signature="e#1959#1995#0#PHP" expanded="true" />
-                <element signature="e#2100#2138#0#PHP" expanded="true" />
-                <element signature="e#2245#2284#0#PHP" expanded="true" />
+                <marker date="1431359803892" expanded="true" signature="38:100" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -229,7 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/UserRole.php" />
         <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaBD.php" />
@@ -273,13 +261,14 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/RemoveWebRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/RestoreBackup.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/TiketRequest.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/groups.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Admin/GroupRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Admin/GroupRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/groupsEdit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/groups.blade.php" />
       </list>
     </option>
   </component>
@@ -437,6 +426,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="bd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -530,6 +541,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Requests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Requests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -722,12 +781,6 @@
       <created>1426930944319</created>
       <option name="number" value="Default" />
       <updated>1431026378726</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add query">
-      <created>1427121162415</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1427121162415</updated>
     </task>
     <task id="LOCAL-00006" summary="add ListDns">
       <created>1429358312665</created>
@@ -1018,7 +1071,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431301518302</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Новые правила и права доступа">
+      <created>1431360738369</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1431360738370</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -1050,24 +1109,24 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20392585" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20437159" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1978022" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32677597" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32677597" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896176" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24786325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32677597" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32677597" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896176" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1089,7 +1148,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="ПОКА ЧТО ТОЛЬКО СЛОМАЛ ТИКЕТЫ, ЧТО БЫ ПОТОМ ВСЁ СРАСРОСЬ КАК У ГЛОБЫ" />
     <MESSAGE value="Обновил" />
     <MESSAGE value="Попытка SSH" />
     <MESSAGE value="Попробуй силу ккккешшша!" />
@@ -1114,7 +1172,8 @@
     <MESSAGE value="Вот теперь это реально мульти-сервер.&#10;Больше не буду уставшим кодить, 2 часа искал ошибку в коде, а оказалась ошибка в ip адресе." />
     <MESSAGE value="Смена Auth на Sentry&#10;Всё тяжко" />
     <MESSAGE value="Ура я вижу фишиш" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ура я вижу фишиш" />
+    <MESSAGE value="Новые правила и права доступа" />
+    <option name="LAST_COMMIT_MESSAGE" value="Новые правила и права доступа" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1134,39 +1193,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DnsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="127" max-vertical-offset="1116">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TiketsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="936">
-          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ea3b34e1/831013f8-cce7-4293-bd76-bb03ae3cfd81/admin_default..tikets">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Tiket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="810">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6666665" vertical-offset="576" max-vertical-offset="7308">
@@ -1199,18 +1225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="648">
           <caret line="16" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ea3b34e1/831013f8-cce7-4293-bd76-bb03ae3cfd81/admin_default..users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1430,16 +1444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.0" vertical-offset="54" max-vertical-offset="1332">
-          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-          <folding>
-            <element signature="e#45#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BdController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="648">
@@ -1472,35 +1476,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/groups.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-47.333332" vertical-offset="0" max-vertical-offset="2502">
-          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.0" vertical-offset="684" max-vertical-offset="2394">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        <state vertical-scroll-proportion="-20.0" vertical-offset="666" max-vertical-offset="2394">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
-            <element signature="e#44#80#0#PHP" expanded="true" />
-            <element signature="e#1810#1846#0#PHP" expanded="true" />
-            <element signature="e#1959#1995#0#PHP" expanded="true" />
-            <element signature="e#2100#2138#0#PHP" expanded="true" />
-            <element signature="e#2245#2284#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/GroupRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="684">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#218#277#0#PHP" expanded="true" />
-            <element signature="e#368#547#0#PHP" expanded="true" />
+            <element signature="e#1800#1836#0#PHP" expanded="true" />
+            <element signature="e#1949#1985#0#PHP" expanded="true" />
+            <element signature="e#2090#2128#0#PHP" expanded="true" />
+            <element signature="e#2235#2274#0#PHP" expanded="true" />
+            <marker date="1431360734667" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1556,27 +1541,102 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.666667" vertical-offset="0" max-vertical-offset="612">
+        <state vertical-scroll-proportion="-13.333333" vertical-offset="36" max-vertical-offset="612">
           <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
-            <element signature="e#38#50#0#PHP" expanded="true" />
+            <marker date="1431359803892" expanded="true" signature="38:100" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3333335" vertical-offset="2106" max-vertical-offset="2952">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="137" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.810651" vertical-offset="54" max-vertical-offset="2268">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+        <state vertical-scroll-proportion="-10.962963" vertical-offset="1558" max-vertical-offset="2808">
+          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
           <folding>
-            <element signature="e#314#494#0#PHP" expanded="true" />
-            <element signature="e#579#614#0#PHP" expanded="true" />
-            <element signature="e#699#1212#0#PHP" expanded="true" />
-            <element signature="e#1462#1498#0#PHP" expanded="true" />
-            <element signature="e#1606#1644#0#PHP" expanded="true" />
-            <element signature="e#1754#2078#0#PHP" expanded="true" />
-            <marker date="1431359253883" expanded="true" signature="45:180" placeholder="..." />
+            <element signature="e#45#81#0#PHP" expanded="true" />
+            <element signature="e#315#495#0#PHP" expanded="true" />
+            <element signature="e#580#615#0#PHP" expanded="true" />
+            <element signature="e#700#1214#0#PHP" expanded="true" />
+            <element signature="e#1312#1437#0#PHP" expanded="true" />
+            <element signature="e#1553#1589#0#PHP" expanded="true" />
+            <element signature="e#2595#2914#0#PHP" expanded="true" />
+            <marker date="1431363663052" expanded="true" signature="45:194" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.333333" vertical-offset="468" max-vertical-offset="1332">
+          <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/GroupRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.0" vertical-offset="18" max-vertical-offset="720">
+          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+          <folding>
+            <element signature="e#42#72#0#PHP" expanded="true" />
+            <element signature="e#218#277#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/groupsEdit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333" vertical-offset="54" max-vertical-offset="1548">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bd/editList.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="27.703703" vertical-offset="748" max-vertical-offset="1746">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bd/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.6666665" vertical-offset="2646" max-vertical-offset="4194">
+          <caret line="140" column="95" selection-start-line="140" selection-start-column="61" selection-end-line="140" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/groups.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.333333" vertical-offset="1080" max-vertical-offset="2520">
+          <caret line="74" column="77" selection-start-line="74" selection-start-column="77" selection-end-line="74" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ea3b34e1/831013f8-cce7-4293-bd76-bb03ae3cfd81/admin_default..users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -71,7 +71,9 @@ class GroupsController extends Controller
 	 */
 	public function show($id)
 	{
-		//
+		$group = Sentry::findGroupById($id);
+
+		return view('admin/groupsEdit', ['group' => $group]);
 	}
 
 	/**
@@ -93,9 +95,29 @@ class GroupsController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(GroupRequest $request)
 	{
-		//
+		try {
+			// Find the group using the group id
+			$group = Sentry::findGroupById($request->id);
+			// Update the group details
+			$group->name        = $request->namenew;
+			$group->permissions = $request->permissions;
+			// Update the group
+			if ($group->save()) {
+				Session::flash('good', 'Вы изменили группу.');
+
+				return redirect()->route('admin.groups.index');
+			} else {
+				// Group information was not updated
+			}
+		} catch (Cartalyst\Sentry\Groups\NameRequiredException $e) {
+			echo 'Name field is required';
+		} catch (Cartalyst\Sentry\Groups\GroupExistsException $e) {
+			echo 'Group already exists.';
+		} catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e) {
+			echo 'Group was not found.';
+		}
 	}
 
 	/**

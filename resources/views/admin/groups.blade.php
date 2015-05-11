@@ -14,7 +14,7 @@
 
                 <div class="form-group">
                     <label>Название</label>
-                    <input class="form-control" name="name">
+                    <input class="form-control" required name="name">
                 </div>
 
                 <div class="form-group">
@@ -71,7 +71,7 @@
                             <td>{{$Group->name}}</td>
                             <td>
                                 <div class="btn-group pull-right" role="group" aria-label="...">
-                                    <a href="" class="btn btn-default">
+                                    <a href="{{URL::route('admin.groups.show', $Group->id)}}" class="btn btn-default">
                                         <i class="fa fa-pencil-square-o"></i>
                                     </a>
 
