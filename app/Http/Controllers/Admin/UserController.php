@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Http\Requests\Admin\UserRequest;
 use App\Models\User;
 use Sentry;
+use Session;
 
 class UserController extends Controller
 {
@@ -49,7 +51,9 @@ class UserController extends Controller
 	 */
 	public function show($id)
 	{
-		//
+		$User = Sentry::findUserById($id);
+
+		return view('admin/usersEdit', ['user' => $User]);
 	}
 
 	/**
@@ -83,9 +87,21 @@ class UserController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(UserRequest $request)
 	{
-		//
+		try {
+			// Find the user using the user id
+			$user = Sentry::findUserById($request->id);
+
+			// Delete the user
+			$user->delete();
+
+			Session::flash('good', 'Вы удалили пользователя.');
+
+			return redirect()->route('admin.users.index');
+		} catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
+			echo 'User was not found.';
+		}
 	}
 
 }
