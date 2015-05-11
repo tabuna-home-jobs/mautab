@@ -1,9 +1,11 @@
 <?php
 
 
+	Route::get('/', 'WelcomeController@index');
+
+
 	//Авторизация, регистрация, востановление парля, а так же главная там и все дела
 	Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function () {
-		Route::get('/', 'WelcomeController@index');
 		Route::resource('register', 'RegistrationController');
 		Route::resource('login', 'AuthController');
 	});
