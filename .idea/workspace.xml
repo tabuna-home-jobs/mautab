@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Вчерашнее" />
-    <list default="true" id="db3a6495-b962-411d-8794-9f7d21043a7c" name="New changelist" comment="Пользователь начало">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/1a417874b32c9cf66863b18e6a113d0a" afterPath="$PROJECT_DIR$/storage/framework/views/1a417874b32c9cf66863b18e6a113d0a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/f9c8e4e1ba0a3052164bbec33dc5a0d2" afterPath="$PROJECT_DIR$/storage/framework/views/f9c8e4e1ba0a3052164bbec33dc5a0d2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/usersEdit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/usersEdit.blade.php" />
+    <list default="true" id="db3a6495-b962-411d-8794-9f7d21043a7c" name="New changelist" comment="Наконец то!! Разграничение прав">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/8be2be87a1481dd21cd5cc1a9a8defba" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/SentryMiddleware.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/UserRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/d96a2e7003868cea66d59bff8c79d910" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/Localization.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Localization.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cloudme.iws" />
@@ -94,16 +89,16 @@
       <file leaf-file-name="GroupsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.296296" vertical-offset="46" max-vertical-offset="2592">
+            <state vertical-scroll-proportion="-8.666667" vertical-offset="90" max-vertical-offset="2592">
               <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
-                <element signature="e#45#81#0#PHP" expanded="true" />
                 <element signature="e#517#552#0#PHP" expanded="true" />
                 <element signature="e#637#1151#0#PHP" expanded="true" />
                 <element signature="e#1249#1376#0#PHP" expanded="true" />
                 <element signature="e#1492#1528#0#PHP" expanded="true" />
                 <element signature="e#1636#2409#0#PHP" expanded="true" />
                 <element signature="e#2519#2838#0#PHP" expanded="true" />
+                <marker date="1431369255494" expanded="true" signature="45:193" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -119,6 +114,7 @@
                 <element signature="e#1955#1991#0#PHP" expanded="true" />
                 <element signature="e#2096#2134#0#PHP" expanded="true" />
                 <element signature="e#2241#2280#0#PHP" expanded="true" />
+                <marker date="1431369012747" expanded="false" signature="44:155" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -127,8 +123,8 @@
       <file leaf-file-name="SentryMiddleware.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Middleware/SentryMiddleware.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.296297" vertical-offset="10" max-vertical-offset="684">
-              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+            <state vertical-scroll-proportion="-14.962963" vertical-offset="10" max-vertical-offset="684">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="33" />
               <folding>
                 <element signature="e#38#50#0#PHP" expanded="true" />
               </folding>
@@ -184,46 +180,49 @@
       <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.037037" vertical-offset="17" max-vertical-offset="738">
-              <caret line="31" column="57" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="57" />
+            <state vertical-scroll-proportion="-12.037037" vertical-offset="17" max-vertical-offset="738">
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Localization.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Localization.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4272997" vertical-offset="0" max-vertical-offset="792">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding>
+                <element signature="e#38#46#0#PHP" expanded="true" />
+                <element signature="e#266#605#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/UserRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.0" vertical-offset="0" max-vertical-offset="630">
+              <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+              <folding>
+                <element signature="e#42#72#0#PHP" expanded="true" />
+                <element signature="e#216#275#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72106826" vertical-offset="0" max-vertical-offset="684">
-              <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+            <state vertical-scroll-proportion="-18.0" vertical-offset="0" max-vertical-offset="684">
+              <caret line="27" column="86" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="86" />
               <folding>
                 <element signature="e#154#319#1#PHP" expanded="true" />
-                <element signature="e#400#900#1#PHP" expanded="true" />
-                <element signature="e#1018#1129#1#PHP" expanded="true" />
+                <element signature="e#401#901#1#PHP" expanded="true" />
+                <element signature="e#1020#1131#1#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.666667" vertical-offset="810" max-vertical-offset="1980">
-              <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
-              <folding>
-                <element signature="e#290#351#0#PHP" expanded="true" />
-                <element signature="e#436#471#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CronController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CronController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.62963" vertical-offset="379" max-vertical-offset="1494">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="47" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -239,7 +238,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Services/VestaAPI/VestaWeb.php" />
         <option value="$PROJECT_DIR$/app/Services/Vesta.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PayController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WebController.php" />
@@ -290,6 +288,7 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/Sentry.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/SentryMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/Localization.php" />
       </list>
     </option>
   </component>
@@ -851,12 +850,6 @@
       <option name="number" value="Default" />
       <updated>1431026378726</updated>
     </task>
-    <task id="LOCAL-00008" summary="Контроллер вывода БД, и чучуть вывода изменения этой ж БД">
-      <created>1429540511351</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1429540511351</updated>
-    </task>
     <task id="LOCAL-00009" summary="Всеравно никто не читает">
       <created>1429974152185</created>
       <option name="number" value="00009" />
@@ -1146,7 +1139,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431368504855</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Наконец то!! Разграничение прав">
+      <created>1431369944579</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1431369944580</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -1217,7 +1216,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Попробуй силу ккккешшша!" />
     <MESSAGE value="Лог пользователя" />
     <MESSAGE value="Резервные копии - начало" />
     <MESSAGE value="Подправил тикеты, просмотр. надо ещё добавление, но хочу уже спать" />
@@ -1242,7 +1240,8 @@
     <MESSAGE value="Новые правила и права доступа" />
     <MESSAGE value="Закончил группы" />
     <MESSAGE value="Пользователь начало" />
-    <option name="LAST_COMMIT_MESSAGE" value="Пользователь начало" />
+    <MESSAGE value="Наконец то!! Разграничение прав" />
+    <option name="LAST_COMMIT_MESSAGE" value="Наконец то!! Разграничение прав" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1477,14 +1476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Localization.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.333333" vertical-offset="36" max-vertical-offset="612">
@@ -1524,17 +1515,6 @@
         <state vertical-scroll-proportion="-14.481482" vertical-offset="455" max-vertical-offset="1548">
           <caret line="47" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/UserRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.0" vertical-offset="0" max-vertical-offset="630">
-          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-          <folding>
-            <element signature="e#42#72#0#PHP" expanded="true" />
-            <element signature="e#216#275#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1635,20 +1615,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.666667" vertical-offset="810" max-vertical-offset="1980">
+        <state vertical-scroll-proportion="-11.333333" vertical-offset="792" max-vertical-offset="1980">
           <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
           <folding>
             <element signature="e#290#351#0#PHP" expanded="true" />
             <element signature="e#436#471#0#PHP" expanded="true" />
+            <marker date="1431369941574" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.037037" vertical-offset="17" max-vertical-offset="738">
-          <caret line="31" column="57" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1691,16 +1664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/SentryMiddleware.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.296297" vertical-offset="10" max-vertical-offset="684">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="e#38#50#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-36.0" vertical-offset="324" max-vertical-offset="2340">
@@ -1710,34 +1673,75 @@
             <element signature="e#1955#1991#0#PHP" expanded="true" />
             <element signature="e#2096#2134#0#PHP" expanded="true" />
             <element signature="e#2241#2280#0#PHP" expanded="true" />
+            <marker date="1431369012747" expanded="false" signature="44:155" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.296296" vertical-offset="46" max-vertical-offset="2592">
+        <state vertical-scroll-proportion="-8.666667" vertical-offset="90" max-vertical-offset="2592">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
-            <element signature="e#45#81#0#PHP" expanded="true" />
             <element signature="e#517#552#0#PHP" expanded="true" />
             <element signature="e#637#1151#0#PHP" expanded="true" />
             <element signature="e#1249#1376#0#PHP" expanded="true" />
             <element signature="e#1492#1528#0#PHP" expanded="true" />
             <element signature="e#1636#2409#0#PHP" expanded="true" />
             <element signature="e#2519#2838#0#PHP" expanded="true" />
+            <marker date="1431369255494" expanded="true" signature="45:193" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72106826" vertical-offset="0" max-vertical-offset="684">
-          <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+        <state vertical-scroll-proportion="-18.0" vertical-offset="0" max-vertical-offset="684">
+          <caret line="27" column="86" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="86" />
           <folding>
             <element signature="e#154#319#1#PHP" expanded="true" />
-            <element signature="e#400#900#1#PHP" expanded="true" />
-            <element signature="e#1018#1129#1#PHP" expanded="true" />
+            <element signature="e#401#901#1#PHP" expanded="true" />
+            <element signature="e#1020#1131#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.037037" vertical-offset="17" max-vertical-offset="738">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/UserRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <folding>
+            <element signature="e#42#72#0#PHP" expanded="true" />
+            <element signature="e#216#275#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/SentryMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.962963" vertical-offset="10" max-vertical-offset="684">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="e#38#50#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Localization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4272997" vertical-offset="0" max-vertical-offset="792">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="e#38#46#0#PHP" expanded="true" />
+            <element signature="e#266#605#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

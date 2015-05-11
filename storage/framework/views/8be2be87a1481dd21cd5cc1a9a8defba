@@ -1,0 +1,78 @@
+<?php $__env->startSection('content'); ?>
+
+    <section class="container">
+
+        <?php if(count($errors) > 0): ?>
+            <div class="alert alert-danger">
+                <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
+                <ul>
+                    <?php foreach($errors->all() as $error): ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
+
+        <div class=" col-xs-12">
+            <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('admin.groups.update')); ?>">
+
+                <div class="form-group">
+                    <label>Название</label>
+                    <input class="form-control" required name="namenew" value="<?php echo e($group->name); ?>">
+                </div>
+
+                <div class="form-group">
+
+
+                    <?php foreach(Route::getRoutes() as $route): ?>
+                        <?php if(!is_null($route->getName())): ?>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"
+                                    <?php if(isset($group->permissions[$route->getName()])): ?>
+                                           checked
+                                           <?php endif; ?>
+                                           name="permissions[<?php echo e($route->getName()); ?>]" value="1">
+                                    <?php echo e($route->getName()); ?>
+
+                                </label>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+
+
+                </div>
+
+
+                <div class="form-group">
+                    <input type="hidden" name="id" value="<?php echo e($group->id); ?>">
+                    <input type="hidden" name="_method" value="PUT">
+                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                    <input type="submit" value="Отправить" class="button-full">
+                </div>
+            </form>
+
+            <div class="col-md-4 hidden-sm hidden-xs">
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Информация:</h3>
+                    </div>
+                    <div class="panel-body">
+                        cron — демон-планировщик задач в UNIX-подобных операционных системах, использующийся для периодического выполнения заданий в определённое время.
+                        Регулярные действия описываются инструкциями, помещенными в файлы crontab и в специальные директории.
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="clearfix col-xs-12">
+        </div>
+
+    </section>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

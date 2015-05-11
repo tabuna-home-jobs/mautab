@@ -1,11 +1,10 @@
 <?php namespace App\Http\Middleware;
 
-use App;
 use Closure;
+use Route;
 use Sentry;
-use Session;
 
-class Localization
+class SentryMiddleware
 {
 
 	/**
@@ -19,20 +18,16 @@ class Localization
 	public function handle($request, Closure $next)
 	{
 		if (Sentry::check()) {
-			App::setLocale(Sentry::getUser()->lang);
+			//Узнаём что хочет выполнить пользователь
+			$current = Route::currentRouteName();
 
-			return $next($request);
-		} else {
-			if (Session::has('lang')) {
-				App::setLocale(Session::get('lang'));
-
+			//Узнаём есть ли у пользователя права
+			if (Sentry::getUser()->hasAccess($current))
 				return $next($request);
-			} else {
-				App::setLocale('en');
-
-				return $next($request);
-			}
+			else
+				abort(404);
 		}
+		abort(404);
 	}
 
 }
