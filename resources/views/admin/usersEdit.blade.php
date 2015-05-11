@@ -19,7 +19,6 @@
         <div class=" col-xs-12">
             <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('admin.users.update')}}">
 
-
                 <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
                     <ul role="tablist" class="nav nav-tabs" id="myTab">
                         <li class="active" role="presentation"><a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">Основное</a>

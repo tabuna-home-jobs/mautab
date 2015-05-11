@@ -63,12 +63,10 @@ class RegistrationController extends Controller
 		Vesta::regUser($request->nickname, $request->password, $request->email, 'default', $request->name, $request->lastname);
 
 
-		// Find the group using the group id
-		//$adminGroup = Sentry::findGroupById(1);
+		$adminGroup = Sentry::findGroupByName('User');
+		$user->addGroup($adminGroup);
 
-		// Assign the group to the user
-		//$user->addGroup($adminGroup);
-
+		return redirect()->route('home.index');
 	}
 
 	/**

@@ -82,7 +82,7 @@ class AuthController extends Controller {
 			echo 'User is banned.';
 		}
 
-		return redirect('home');
+		return redirect('home.index');
 
 	}
 

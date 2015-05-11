@@ -104,7 +104,7 @@
 
                         <p><?php echo e(Lang::get('menu.balance')); ?>: <?php echo e($UserInfoLaravel->balans); ?> руб </p>
 
-                        <p><?php echo e(Lang::get('menu.suspended')); ?>: <?php echo e($UserInfoLaravel->EndOfService); ?> </p>
+                        <p><?php echo e(Lang::get('menu.suspended')); ?>: <?php echo e($UserInfoLaravel->end_of_service); ?> </p>
 
                         <p>Тариф: <?php echo e($UserInfo['PACKAGE']); ?>  </p>
 

@@ -10,7 +10,7 @@
 
 
 	// Всё для пользователя
-	Route::group(['middleware' => ['user']], function () {
+	Route::group(['middleware' => ['user', 'sentry']], function () {
 		Route::resource('web', 'WebController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('records', 'RecordController');
@@ -25,7 +25,7 @@
 
 
 	// Всё для администратора
-	Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+	Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'sentry'], function () {
 		Route::resource('users', 'UserController');
 		Route::resource('groups', 'GroupsController');
 	});

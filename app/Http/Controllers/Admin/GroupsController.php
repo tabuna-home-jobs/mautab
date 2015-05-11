@@ -17,10 +17,6 @@ class GroupsController extends Controller
 	 */
 	public function index()
 	{
-
-
-		//dd(Route::currentRouteName());
-		//dd(Route::current());
 		$Groups = Group::paginate(15);
 
 		return view('admin/groups', ['Groups' => $Groups]);

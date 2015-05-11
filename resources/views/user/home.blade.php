@@ -105,7 +105,7 @@
 
                         <p>{{Lang::get('menu.balance')}}: {{ $UserInfoLaravel->balans }} руб </p>
 
-                        <p>{{Lang::get('menu.suspended')}}: {{ $UserInfoLaravel->EndOfService }} </p>
+                        <p>{{Lang::get('menu.suspended')}}: {{ $UserInfoLaravel->end_of_service }} </p>
 
                         <p>Тариф: {{ $UserInfo['PACKAGE'] }}  </p>
 
