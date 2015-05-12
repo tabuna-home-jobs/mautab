@@ -2,7 +2,6 @@
 
 @section('content')
 
-    <section class="container">
 
         <div class="col-md-12" id="add-shadow">
 
@@ -62,6 +61,5 @@
 
 
         </div>
-    </section>
 
 @endsection

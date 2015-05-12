@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\ChangeUserRequest;
-use Hash;
 use Sentry;
 use Session;
 use SSH;
@@ -47,7 +46,7 @@ class HomeController extends Controller {
 
 		//Смена в Laravel
 		$thisUser = Sentry::getUser();
-		$thisUser->password = Hash::make($request->password);
+		$thisUser->password = $request->password;
 		$thisUser->email    = $request->email;
 		$thisUser->lang = $request->lang;
 		$thisUser->save();

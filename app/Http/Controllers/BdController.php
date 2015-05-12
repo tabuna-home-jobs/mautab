@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddBDRequest;
 use App\Http\Requests\ChangeBDRequest;
 use App\Http\Requests\RemoveBDRequest;
+use Sentry;
 use Session;
 use Vesta;
 
@@ -34,7 +35,8 @@ class BdController extends Controller{
 	    $request->v_dbuser   = preg_replace("/^" . Sentry::getUser()->nickname . "_/", "", $request->v_dbuser);
 	    $request->v_database = preg_replace("/^" . Sentry::getUser()->nickname . "_/", "", $request->v_database);
 
-        Vesta::addDateBase($request->v_database,
+
+	    Vesta::addDateBase($request->v_database,
                             $request->v_dbuser,
                             $request->password_bd,
                             'mysql', // По умолчанию MySQL

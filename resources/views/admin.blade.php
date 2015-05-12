@@ -46,107 +46,55 @@
     </nav>
 
 
-    <menu class="menuapp container text-center">
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-
-            <a href="{{URL::route('home.index')}}">
-                <span class="fa fa-user"></span>
-                <h4>{{Lang::get('menu.user')}}</h4>
-            </a>
-            <hr>
-
-            <p class="menu-small"></p>
-
-            <p class="menu-small"></p>
-
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="{{URL::route('web.index')}}">
-                <span class="fa fa-desktop"></span>
-                <h4>{{Lang::get('menu.Web')}}</h4>
-            </a>
-            <hr>
-
-            <p class="menu-small"></p>
-
-            <p class="menu-small"></p>
-        </div>
-
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="{{URL::route('dns.index')}}">
-                <span class="fa fa-sitemap"></span>
-                <h4>{{Lang::get('menu.DNS')}}</h4>
-            </a>
-            <hr>
-            <p class="menu-small"></p>
-
-            <p class="menu-small"></p>
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="{{URL::route('bd.index')}}">
-                <span class="fa fa-database"></span>
-                <h4>{{Lang::get('menu.BD')}}</h4>
-            </a>
-            <hr>
-            <p class="menu-small"></p>
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="{{URL::route('cron.index')}}">
-                <span class="fa fa-clock-o"></span>
-                <h4>{{Lang::get('menu.Cron')}}</h4>
-            </a>
-            <hr>
-            <p class="menu-small"></p>
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="{{URL::route('tikets.index')}}">
-                <span class="fa fa-life-ring"></span>
-                <h4>{{Lang::get('menu.support')}}</h4>
-            </a>
-            <hr>
-
-            <p class="menu-small"><a href="{{URL::route('log.index')}}">Журнал действий</a></p>
-
-            <p class="menu-small"><a href="{{URL::route('backup.index')}}">Резервные копии</a></p>
-        </div>
-
-    </menu>
-
-
-
-
-    @if (Session::has('good'))
-        <div class="container">
-            <div class="alert alert-success text-center">{{Session::get('good')}}</div>
-        </div>
-
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-    @endif
-
-
 </header>
 
 
+<div class="container">
+
+    <nav class="menu-admin text-center col-xs-1">
+
+        <div class="btn-group-vertical" role="group" aria-label="...">
+            <a class="btn btn-default" href="{{URL::route('home.index')}}">
+                <span class="fa fa-home"></span>
+            </a>
+
+            <a class="btn btn-default" href="{{URL::route('home.index')}}">
+                <span class="fa fa-tasks"></span>
+            </a>
 
 
+            <a class="btn btn-default" href="{{URL::route('admin.users.index')}}">
+                <span class="fa fa-user"></span>
+            </a>
 
-@yield('content')
 
+            <a class="btn btn-default" href="{{URL::route('admin.groups.index')}}">
+                <span class="fa fa-users"></span>
+            </a>
+
+            <a class="btn btn-default" href="{{URL::route('admin.pages.index')}}">
+                <span class="fa fa-file-text"></span>
+            </a>
+
+            <a class="btn btn-default" href="{{URL::route('home.index')}}">
+                <span class="fa fa-user"></span>
+            </a>
+
+        </div>
+
+
+    </nav>
+
+
+    <arside class="col-xs-11">
+
+    @if (Session::has('good'))
+            <div class="alert alert-success text-center">{{Session::get('good')}}</div>
+    @endif
+
+        @yield('content')
+    </arside>
+
+</div>
 
 @include('footer')
