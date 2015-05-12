@@ -68,6 +68,10 @@ trait VestaWeb
 		return $this->sendQuery('v-delete-web-domain-alias', Sentry::getUser()->nickname, $domain, $alias, 'no');
 	}
 
+	public function addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path)
+	{
+		return $this->sendQuery('v-add-web-domain-ftp', Sentry::getUser()->nuckname, $domain, $ftp_username, $ftp_password, $ftp_path);
+	}
 
 	// Add proxy support
 	public function addDomainProxy($domain, $ext)

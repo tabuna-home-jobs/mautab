@@ -77,6 +77,8 @@
                                 Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
                             </small>
                         </div>
+                        <input disabled type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[1][is_new]" value="1"/>
+
                         <input disabled type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr" value=""/>
                     </div>
                     <div class="form-group">
