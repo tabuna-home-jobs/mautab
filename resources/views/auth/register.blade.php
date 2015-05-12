@@ -62,7 +62,7 @@
     <div class="login-form text-center">
 
 
-        <form action="/reg" method="post" class="col-xs-12 col-md-6">
+        <form action="{{URL::route('register.store')}}" method="post" class="col-xs-12 col-md-6">
         <div class="form-group">
 
           {!! Form::label('nickname', 'Псевдоним', array('class' => 'control-label')) !!}

@@ -18,17 +18,19 @@
 		Route::resource('records', 'RecordController');
 		Route::resource('bd', 'BdController');
 		Route::resource('log', 'UserLogController', ['only' => ['index']]);
-		Route::resource('backup', 'BackupController');
+		Route::resource('backup', 'BackupController', ['only' => ['index', 'store', 'show', 'destroy']]);
 		Route::resource('cron', 'CronController');
 		Route::resource('tikets', 'TiketsController');
 		Route::resource('pay', 'RobokassaController');
-		Route::resource('home', 'HomeController');
+		Route::resource('home', 'HomeController', ['only' => ['index', 'update']]);
 	});
 
 
 	// Всё для администратора
 	Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'sentry'], function () {
+		Route::get('/', 'HomeAdminController', ['only' => 'index']);
 		Route::resource('users', 'UserController');
 		Route::resource('groups', 'GroupsController');
+		Route::resource('pages', 'PagesController');
 	});
 

@@ -1,0 +1,67 @@
+<?php $__env->startSection('content'); ?>
+
+    <section class="content-header">
+        <h1 class="text-center">
+            <?php echo e(isset($Page->name) ? $Page->name : 'Новая страница'); ?>
+
+        </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class='row'>
+            <div class='col-md-12'>
+
+
+
+                        <form action="<?php echo e(URL::route('admin.pages.update')); ?>" method="post">
+
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Заголовок</label>
+                                    <input class="form-control" type="text" maxlength="255" required name="title" value="<?php echo e(isset($Page->title) ? $Page->title : ''); ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Имя</label>
+                                    <input class="form-control" type="text" maxlength="255" required name="name" value="<?php echo e(isset($Page->name) ? $Page->name : ''); ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Теги</label>
+                                    <input class="form-control" type="text" maxlength="255" required name="tag" value="<?php echo e(isset($Page->tag) ? $Page->tag : ''); ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Описание</label>
+                                    <input class="form-control" type="text" maxlength="255" required name="descript" value="<?php echo e(isset($Page->descript) ? $Page->descript : ''); ?>">
+                                </div>
+                                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                <button type="submit" class="btn btn-default">Отправить</button>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Содержание</label>
+                                    <textarea class="textarea form-control textareaedit" name="cont" rows="20">
+                                        <?php echo isset($Page->content) ? $Page->content : ''; ?>
+
+                                    </textarea>
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="id" value="<?php echo e($Page->id); ?>">
+                            <input type="hidden" name="_method" value="PUT">
+
+
+                        </form>
+                    </div>
+                </div>
+            </div><!-- /.col-->
+        </div><!-- ./row -->
+
+    </section><!-- /.content -->
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
