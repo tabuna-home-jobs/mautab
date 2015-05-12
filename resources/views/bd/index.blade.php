@@ -134,7 +134,7 @@
                                                 </div>
 
                                                 <div class="btn-group pull-right" role="group">
-                                                    <a href="http://{{Sentry::getUser()->IpServer}}/phpmyadmin" target="_blank" class="btn btn-default">
+                                                    <a href="http://{{Sentry::getUser()->server}}/phpmyadmin" target="_blank" class="btn btn-default">
                                                         <i class="fa fa-server"></i>
                                                     </a>
 

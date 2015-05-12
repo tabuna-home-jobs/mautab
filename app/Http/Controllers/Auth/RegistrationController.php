@@ -65,7 +65,7 @@ class RegistrationController extends Controller
 
 		$adminGroup = Sentry::findGroupByName('User');
 		$user->addGroup($adminGroup);
-
+		Sentry::loginAndRemember($user);
 		return redirect()->route('home.index');
 	}
 

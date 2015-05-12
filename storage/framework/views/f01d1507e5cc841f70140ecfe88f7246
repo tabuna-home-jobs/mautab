@@ -46,10 +46,6 @@
     </nav>
 
 
-
-
-
-
 </header>
 
 
@@ -58,34 +54,33 @@
     <nav class="menu-admin text-center col-xs-1">
 
         <div class="btn-group-vertical" role="group" aria-label="...">
-                <a class="btn btn-default" href="<?php echo e(URL::route('home.index')); ?>">
-                    <span class="fa fa-home"></span>
-                </a>
+            <a class="btn btn-default" href="<?php echo e(URL::route('home.index')); ?>">
+                <span class="fa fa-home"></span>
+            </a>
 
-                <a class="btn btn-default" href="<?php echo e(URL::route('home.index')); ?>">
-                    <span class="fa fa-tasks"></span>
-                </a>
-
-
-                <a class="btn btn-default" href="<?php echo e(URL::route('admin.users.index')); ?>">
-                    <span class="fa fa-user"></span>
-                </a>
+            <a class="btn btn-default" href="<?php echo e(URL::route('home.index')); ?>">
+                <span class="fa fa-tasks"></span>
+            </a>
 
 
-                <a class="btn btn-default" href="<?php echo e(URL::route('admin.groups.index')); ?>">
-                    <span class="fa fa-users"></span>
-                </a>
+            <a class="btn btn-default" href="<?php echo e(URL::route('admin.users.index')); ?>">
+                <span class="fa fa-user"></span>
+            </a>
 
-                <a class="btn btn-default"  href="<?php echo e(URL::route('admin.pages.index')); ?>">
-                    <span class="fa fa-file-text"></span>
-                </a>
 
-                <a class="btn btn-default"  href="<?php echo e(URL::route('home.index')); ?>">
-                    <span class="fa fa-user"></span>
-                </a>
+            <a class="btn btn-default" href="<?php echo e(URL::route('admin.groups.index')); ?>">
+                <span class="fa fa-users"></span>
+            </a>
+
+            <a class="btn btn-default" href="<?php echo e(URL::route('admin.pages.index')); ?>">
+                <span class="fa fa-file-text"></span>
+            </a>
+
+            <a class="btn btn-default" href="<?php echo e(URL::route('home.index')); ?>">
+                <span class="fa fa-user"></span>
+            </a>
 
         </div>
-
 
 
     </nav>

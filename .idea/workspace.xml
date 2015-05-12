@@ -2,421 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="b4943632-36b9-419e-b5ae-0a7f09bb430e" name="Default" comment="Вчерашнее" />
-    <list default="true" id="db3a6495-b962-411d-8794-9f7d21043a7c" name="New changelist" comment="Наконец то!! Разграничение прав">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/actionscript/Jplayer.fla" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/jquery.jplayer/Jplayer.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ZeroClipboard.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/ac3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/ac3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/accdb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/accdb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/ade.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/ade.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/adp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/adp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/ai.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/ai.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/aiff.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/aiff.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/img/anchor.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/img/anchor.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/img/anchor.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/avi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/avi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/bmp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/bmp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/clipboard_apply.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/clipboard_clear.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/copy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/css.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/css.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/csv.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/csv.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/cut.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/date.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/default.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/default.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/dimension.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/dmg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/dmg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/doc.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/doc.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/docx.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/docx.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/download.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/duplicate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/edit_img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/file_edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/fla.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/fla.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/flv.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/flv.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/folder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/folder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/folder_back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/folder_back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/gif.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/gif.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/gz.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/gz.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/html.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/html.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/info.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/responsivefilemanager/img/insertfile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/iso.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/iso.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/jpeg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/jpeg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/jpg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/jpg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/skin/blue.monday/jplayer.blue.monday.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/skin/blue.monday/jplayer.blue.monday.seeking.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/skin/blue.monday/jplayer.blue.monday.video.play.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/skin/pink.flag/jplayer.pink.flag.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/skin/pink.flag/jplayer.pink.flag.seeking.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/skin/pink.flag/jplayer.pink.flag.video.play.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/key.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/kogmbh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/label.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/img/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/img/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/img/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/log.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/log.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/m4a.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/m4a.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/mdb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/mdb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/mid.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/mid.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/mov.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/mov.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/media/moxieplayer.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/mp3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/mp3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/mp4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/mp4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/mpeg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/mpeg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/mpg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/mpg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/nlnet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/img/object.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/img/object.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/img/object.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/odb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/odb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/odf.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/odf.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/odg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/odg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/odp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/odp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/ods.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/ods.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/odt.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/odt.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/ogg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/ogg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/otg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/otg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/otp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/otp.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/ots.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/ots.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/ott.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/ott.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/pdf.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/pdf.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/png.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/png.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/ppt.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/ppt.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/pptx.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/pptx.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/preview.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/processing.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/psd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/psd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/rar.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/rar.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/rename.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/rtf.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/rtf.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/size.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-cool.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-cry.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-embarassed.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-foot-in-mouth.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-frown.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-innocent.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-kiss.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-laughing.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-money-mouth.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-sealed.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-surprised.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-undecided.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-wink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/img/smiley-yell.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/sort.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/sql.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/sql.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/storing_animation.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/uploader/success.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/svg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/svg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/tar.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/tar.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/texture.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/tiff.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/tiff.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce-small.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/fonts/tinymce-small.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce-small.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce-small.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/fonts/tinymce-small.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce-small.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce-small.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/fonts/tinymce-small.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce-small.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/fonts/tinymce.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/fonts/tinymce.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/fonts/tinymce.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/toolbarButton-download.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/toolbarButton-fullscreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/toolbarButton-menuArrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/toolbarButton-pageDown.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/toolbarButton-pageUp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/toolbarButton-presentation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/toolbarButton-zoomIn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/images/toolbarButton-zoomOut.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/img/trans.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/img/trans.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/img/trans.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/txt.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/txt.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/upload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/url.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/wav.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/wav.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/webm.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/webm.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/uploader/wjhk.jupload.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/wma.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/wma.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/xhtml.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/xhtml.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/xls.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/xls.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/xlsx.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/xlsx.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/xml.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/xml.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico/zip.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/ico_dark/zip.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/img/zip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/config/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/0072019c52282483d2d525971459f71d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_04_09_071246_create_pages_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/72ed083327947c1c8bb5ab1cff8ebda8" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/AGPL-3.0.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/actionscript/happyworm/jPlayer/ConnectManager.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeAdminContrller.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/actionscript/Jplayer.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/actionscript/happyworm/jPlayer/JplayerEvent.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/actionscript/happyworm/jPlayer/JplayerMp3.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/actionscript/happyworm/jPlayer/JplayerMp4.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/actionscript/happyworm/jPlayer/JplayerRtmp.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/actionscript/happyworm/jPlayer/JplayerStatus.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/MIT-LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/ODFViewerPlugin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/ODFViewerPlugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/PDFViewerPlugin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/PDFViewerPlugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Models/Page.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PagesController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/PagesRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/PluginLoader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/include/Response.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/actionscript/happyworm/jPlayer/TraceOut.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/ajax_calls.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/az_AZ.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/bg_BG.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/ca.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/compatibility.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/config/config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/content.inline.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/content.inline.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/content.inline.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/content.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/content.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/content.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/pages/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/cs.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/d28b65210d610e3d9b08e45cb328a1c6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/da.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/de.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/example/dialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/dialog.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/pages/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/el_GR.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/en_EN.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/es.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/example.local.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/execute.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/f8de4baadcaad8ff737220a483505b59" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/fa.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/force_download.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/fr_FR.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/he_IL.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/hr.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/hu_HU.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/include.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/pages/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/uploader/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/it.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/ja.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/skin/blue.monday/jplayer.blue.monday.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/jplayer.jquery.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/skin/pink.flag/jplayer.pink.flag.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/add-on/jplayer.playlist.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/add-on/jquery.jplayer.inspector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/jquery.jplayer/jquery.jplayer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/jquery.tinymce.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/uploader/jupload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/languages.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/license.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/local.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/lt.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/include/mime_type_lib.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/mn_MN.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/modernizr.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/nb_NO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/nl.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/pdf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/pdf.worker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/pdfjsversion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/include/php_image_magician.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/pl.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/advlist/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/anchor/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/autolink/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/autoresize/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/autosave/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/bbcode/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/charmap/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/code/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/colorpicker/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/contextmenu/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/directionality/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/emoticons/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/example/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/example_dependency/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/fullpage/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/fullscreen/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/hr/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/image/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/importcss/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/insertdatetime/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/layer/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/legacyoutput/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/link/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/lists/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/media/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/nonbreaking/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/noneditable/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/pagebreak/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/paste/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/preview/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/print/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/responsivefilemanager/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/save/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/searchreplace/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/spellchecker/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/tabfocus/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/table/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/template/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/textcolor/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/textpattern/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/visualblocks/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/visualchars/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/wordcount/plugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/plugins.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/popcorn/player/popcorn.jplayer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/pt_BR.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/pt_PT.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/langs/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/langs/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/ru.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/sk.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/jPlayer/skin/blue.monday/skin.handlebars" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/skin.ie7.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/skin.ie7.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/skin.ie7.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/skin.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/skin.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/skin.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/sl.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/uploader/success.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/sv_SE.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/text_layer_builder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/themes/modern/theme.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce-small.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce-small.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce-small.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/fonts/tinymce-small.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce-small.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/tinymce.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/light/fonts/tinymce.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/fonts/tinymce.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/skins/lightgray/light/fonts/tinymce.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/tr_TR.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/ui_utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/uk_UA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/upload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/include/utils.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/viewer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/viewer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/plugins/tinymce/plugins/visualblocks/css/visualblocks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/js/ViewerJS/webodf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dist/filemanager/lang/zh_CN.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+    <list default="true" id="db3a6495-b962-411d-8794-9f7d21043a7c" name="New changelist" comment="Посты админка">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.phpstorm.meta.php" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/04208b501629662e35eafdebb746c4dc" afterPath="$PROJECT_DIR$/storage/framework/views/04208b501629662e35eafdebb746c4dc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/3a226a4bf68fd38377ea6a5248e9a526" afterPath="$PROJECT_DIR$/storage/framework/views/3a226a4bf68fd38377ea6a5248e9a526" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/8c865c391eb4663b5ce9e14976169b9f" afterPath="$PROJECT_DIR$/storage/framework/views/8c865c391eb4663b5ce9e14976169b9f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BdController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BdController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/7f430ff50f0a7d8d1b05f163d40a3992" afterPath="$PROJECT_DIR$/storage/framework/views/7f430ff50f0a7d8d1b05f163d40a3992" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_ide_helper.php" afterPath="$PROJECT_DIR$/_ide_helper.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/f01d1507e5cc841f70140ecfe88f7246" afterPath="$PROJECT_DIR$/storage/framework/views/f01d1507e5cc841f70140ecfe88f7246" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/groups.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/groups.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/style.css" afterPath="$PROJECT_DIR$/public/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/bd/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/bd/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cloudme.iws" />
@@ -484,7 +79,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="pages" />
+        <option name="myItemId" value="users" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -495,116 +90,115 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6557864" vertical-offset="0" max-vertical-offset="1476">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state vertical-scroll-proportion="-40.0" vertical-offset="90" max-vertical-offset="1494">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
                 <element signature="e#45#81#0#PHP" expanded="true" />
-                <element signature="e#211#355#0#PHP" expanded="true" />
-                <element signature="e#361#440#0#PHP" expanded="true" />
-                <element signature="e#443#556#0#PHP" expanded="true" />
-                <element signature="e#599#1025#0#PHP" expanded="true" />
-                <element signature="e#1029#1425#0#PHP" expanded="true" />
-                <element signature="e#1448#1676#0#PHP" expanded="true" />
+                <element signature="e#206#333#0#PHP" expanded="true" />
+                <element signature="e#336#403#0#PHP" expanded="true" />
+                <element signature="e#406#519#0#PHP" expanded="true" />
+                <element signature="e#556#947#0#PHP" expanded="true" />
+                <element signature="e#951#1371#0#PHP" expanded="true" />
+                <element signature="e#1387#1592#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <file leaf-file-name="RegistrationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.296296" vertical-offset="379" max-vertical-offset="1080">
-              <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/users.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.666666" vertical-offset="0" max-vertical-offset="1422">
-              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BdController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BdController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.037037" vertical-offset="62" max-vertical-offset="810">
-              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            <state vertical-scroll-proportion="-15.333333" vertical-offset="684" max-vertical-offset="1998">
+              <caret line="65" column="54" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
               <folding>
-                <element signature="e#39#74#0#PHP" expanded="true" />
-                <element signature="e#1740#1798#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeAdminContrller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/HomeAdminContrller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="198">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PagesRequest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/PagesRequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.333334" vertical-offset="0" max-vertical-offset="738">
-              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-              <folding>
-                <element signature="e#42#72#0#PHP" expanded="true" />
-                <element signature="e#218#277#0#PHP" expanded="true" />
-                <element signature="e#368#627#0#PHP" expanded="true" />
+                <element signature="e#290#351#0#PHP" expanded="true" />
+                <element signature="e#436#471#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/pages/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/bd/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.666666" vertical-offset="828" max-vertical-offset="1926">
-              <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+            <state vertical-scroll-proportion="-11.962963" vertical-offset="2125" max-vertical-offset="4248">
+              <caret line="136" column="95" selection-start-line="136" selection-start-column="95" selection-end-line="136" selection-end-column="95" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/pages/edit.blade.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.962963" vertical-offset="694" max-vertical-offset="1368">
-              <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+            <state vertical-scroll-proportion="-22.0" vertical-offset="0" max-vertical-offset="774">
+              <caret line="33" column="30" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="30" />
+              <folding>
+                <element signature="e#201#320#1#PHP" expanded="true" />
+                <element signature="e#402#986#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BackupController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackupController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.962963" vertical-offset="577" max-vertical-offset="1278">
+              <caret line="92" column="27" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="groups.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/groups.blade.php">
+      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6666667" vertical-offset="1512" max-vertical-offset="2502">
-              <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="106" selection-end-column="34" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2232">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/pages/create.blade.php">
+      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.0" vertical-offset="36" max-vertical-offset="1152">
-              <caret line="41" column="99" selection-start-line="41" selection-start-column="99" selection-end-line="41" selection-end-column="99" />
+            <state vertical-scroll-proportion="0.5875371" vertical-offset="810" max-vertical-offset="2862">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="groupsEdit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/groupsEdit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="1548">
+              <caret line="19" column="104" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="104" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="password.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/password.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2376">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedirectIfAuthenticated.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="558">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -621,8 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/AddBDRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/AddDNSRequest.php" />
@@ -649,7 +241,6 @@
         <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Sentry.php" />
@@ -672,6 +263,9 @@
         <option value="$PROJECT_DIR$/resources/views/admin/pages/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/pages/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PagesController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php" />
+        <option value="$PROJECT_DIR$/resources/views/bd/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
       </list>
     </option>
   </component>
@@ -873,7 +467,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -896,10 +490,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1049,11 +639,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Requests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
+              <option name="myItemId" value="Middleware" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1076,32 +662,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cloudme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cloudme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1198,18 +758,6 @@
       <created>1426930944319</created>
       <option name="number" value="Default" />
       <updated>1431026378726</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Пофиксил баг с добавлением префикса в имени БД">
-      <created>1430165157323</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1430165157323</updated>
-    </task>
-    <task id="LOCAL-00012" summary="ПОКА ЧТО ТОЛЬКО СЛОМАЛ ТИКЕТЫ, ЧТО БЫ ПОТОМ ВСЁ СРАСРОСЬ КАК У ГЛОБЫ">
-      <created>1430167712488</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1430167712488</updated>
     </task>
     <task id="LOCAL-00013" summary="Обновил">
       <created>1430252019669</created>
@@ -1494,7 +1042,19 @@
       <option name="project" value="LOCAL" />
       <updated>1431374474551</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Посты админка">
+      <created>1431464269684</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1431464269685</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Посты админка">
+      <created>1431464293638</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1431464293638</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -1523,27 +1083,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="22" width="1682" height="1029" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20437159" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1978022" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32677597" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32677597" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896176" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25091577" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25091577" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32677597" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32677597" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896176" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1562,10 +1122,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Лог пользователя" />
     <MESSAGE value="Резервные копии - начало" />
     <MESSAGE value="Подправил тикеты, просмотр. надо ещё добавление, но хочу уже спать" />
     <MESSAGE value="Бекапы, осталось только потдверждение сделать как у бд на удаление, надеюсь Славка поможет" />
@@ -1590,11 +1151,9 @@
     <MESSAGE value="Закончил группы" />
     <MESSAGE value="Пользователь начало" />
     <MESSAGE value="Наконец то!! Разграничение прав" />
-    <option name="LAST_COMMIT_MESSAGE" value="Наконец то!! Разграничение прав" />
+    <MESSAGE value="Посты админка" />
+    <option name="LAST_COMMIT_MESSAGE" value="Посты админка" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1620,23 +1179,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#81#133#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cron/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1715976" vertical-offset="1404" max-vertical-offset="2808">
-          <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/UserRole.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="576">
@@ -1655,20 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="27.703703" vertical-offset="748" max-vertical-offset="1746">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bd/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.3333335" vertical-offset="2862" max-vertical-offset="4194">
-          <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="174" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/groupsEdit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.481482" vertical-offset="455" max-vertical-offset="1548">
-          <caret line="47" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1705,13 +1233,6 @@
         <state vertical-scroll-proportion="-10.62963" vertical-offset="379" max-vertical-offset="1494">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="47" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.333333" vertical-offset="792" max-vertical-offset="1980">
-          <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1793,16 +1314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="558">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <marker date="1431372279238" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.333333" vertical-offset="0" max-vertical-offset="630">
@@ -1839,20 +1350,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="701">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackupController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.37037" vertical-offset="1052" max-vertical-offset="1728">
-          <caret line="92" column="27" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="27" />
-          <folding>
-            <element signature="e#258#382#0#PHP" expanded="false" />
-            <element signature="e#587#895#0#PHP" expanded="false" />
-            <element signature="e#993#1170#0#PHP" expanded="false" />
-            <element signature="e#1286#1322#0#PHP" expanded="false" />
-            <element signature="e#1430#1468#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1978,18 +1475,7 @@
         <state vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="702">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="31" />
           <folding>
-            <element signature="e#368#588#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.962963" vertical-offset="82" max-vertical-offset="756">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="30" />
-          <folding>
-            <element signature="e#201#320#1#PHP" expanded="true" />
-            <element signature="e#402#982#1#PHP" expanded="true" />
+            <element signature="e#368#588#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2012,8 +1498,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/pages/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.962963" vertical-offset="694" max-vertical-offset="1368">
-          <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+        <state vertical-scroll-proportion="-16.296297" vertical-offset="568" max-vertical-offset="1242">
+          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -2022,7 +1508,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="198">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="43" />
-          <folding />
+          <folding>
+            <marker date="1431464074039" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2036,11 +1524,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BdController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.037037" vertical-offset="62" max-vertical-offset="810">
+        <state vertical-scroll-proportion="-12.0" vertical-offset="90" max-vertical-offset="810">
           <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
           <folding>
-            <element signature="e#39#74#0#PHP" expanded="true" />
-            <element signature="e#1740#1798#0#PHP" expanded="true" />
+            <element signature="e#1737#1795#0#PHP" expanded="true" />
+            <marker date="1431464073959" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2048,52 +1536,132 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.296296" vertical-offset="379" max-vertical-offset="1080">
-          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
-          <folding />
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+          <folding>
+            <marker date="1431464033616" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/pages/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.0" vertical-offset="36" max-vertical-offset="1152">
-          <caret line="41" column="99" selection-start-line="41" selection-start-column="99" selection-end-line="41" selection-end-column="99" />
+        <state vertical-scroll-proportion="-27.333334" vertical-offset="0" max-vertical-offset="1062">
+          <caret line="41" column="91" selection-start-line="41" selection-start-column="91" selection-end-line="41" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/pages/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.666666" vertical-offset="828" max-vertical-offset="1926">
-          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        <state vertical-scroll-proportion="-29.333334" vertical-offset="666" max-vertical-offset="1836">
+          <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/PagesRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.333334" vertical-offset="0" max-vertical-offset="738">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state vertical-scroll-proportion="-20.666666" vertical-offset="36" max-vertical-offset="756">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
-            <element signature="e#42#72#0#PHP" expanded="true" />
             <element signature="e#218#277#0#PHP" expanded="true" />
-            <element signature="e#368#627#0#PHP" expanded="true" />
+            <element signature="e#368#649#0#PHP" expanded="true" />
+            <marker date="1431464073687" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6557864" vertical-offset="0" max-vertical-offset="1476">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state vertical-scroll-proportion="-40.0" vertical-offset="90" max-vertical-offset="1494">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
             <element signature="e#45#81#0#PHP" expanded="true" />
-            <element signature="e#211#355#0#PHP" expanded="true" />
-            <element signature="e#361#440#0#PHP" expanded="true" />
-            <element signature="e#443#556#0#PHP" expanded="true" />
-            <element signature="e#599#1025#0#PHP" expanded="true" />
-            <element signature="e#1029#1425#0#PHP" expanded="true" />
-            <element signature="e#1448#1676#0#PHP" expanded="true" />
+            <element signature="e#206#333#0#PHP" expanded="true" />
+            <element signature="e#336#403#0#PHP" expanded="true" />
+            <element signature="e#406#519#0#PHP" expanded="true" />
+            <element signature="e#556#947#0#PHP" expanded="true" />
+            <element signature="e#951#1371#0#PHP" expanded="true" />
+            <element signature="e#1387#1592#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.333333" vertical-offset="684" max-vertical-offset="1998">
+          <caret line="65" column="54" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
+          <folding>
+            <element signature="e#290#351#0#PHP" expanded="true" />
+            <element signature="e#436#471#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bd/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.962963" vertical-offset="2125" max-vertical-offset="4248">
+          <caret line="136" column="95" selection-start-line="136" selection-start-column="95" selection-end-line="136" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="558">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.0" vertical-offset="0" max-vertical-offset="774">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="30" />
+          <folding>
+            <element signature="e#201#320#1#PHP" expanded="true" />
+            <element signature="e#402#986#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BackupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.962963" vertical-offset="577" max-vertical-offset="1278">
+          <caret line="92" column="27" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2232">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/groupsEdit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="1548">
+          <caret line="19" column="104" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/password.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2376">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5875371" vertical-offset="810" max-vertical-offset="2862">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
