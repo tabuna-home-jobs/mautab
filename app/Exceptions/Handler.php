@@ -2,6 +2,8 @@
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use \Cartalyst\Sentry\Users\WrongPasswordException;
+
 
 class Handler extends ExceptionHandler {
 
@@ -24,6 +26,7 @@ class Handler extends ExceptionHandler {
 	 */
 	public function report(Exception $e)
 	{
+
 		return parent::report($e);
 	}
 
@@ -36,6 +39,13 @@ class Handler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $e)
 	{
+        if ($e instanceof WrongPasswordException)
+        {
+            return redirect()->back()->withErrors(array($e->getMessage()));
+        }
+
+
+
 		return parent::render($request, $e);
 	}
 

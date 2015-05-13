@@ -3,7 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-class HomeAdminContrller extends Controller
+class HomeAdminController extends Controller
 {
 
 	/**

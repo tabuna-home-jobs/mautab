@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\Auth\AuthRequest;
+use App\Exceptions\Handler;
 use Sentry;
 
 class AuthController extends Controller {
@@ -35,8 +36,8 @@ class AuthController extends Controller {
 	public function store(AuthRequest $request)
 	{
 
-		try
-		{
+		//try
+		//{
 			$credentials = array(
 				'email'    => $request->email,
 				'password' => $request->password,
@@ -44,12 +45,9 @@ class AuthController extends Controller {
 			Sentry::authenticateAndRemember($credentials);
 
 
-		}
-			//catch (Exception $e) {
-			//	dd('stop');
-			//return redirect()->back()->withErrors(array($e->getMessage()));
-			//}
+		//}
 
+        /*
 		catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
 		{
 			echo 'Login field is required.';
@@ -58,7 +56,7 @@ class AuthController extends Controller {
 		{
 			echo 'Password field is required.';
 		}
-		catch (Cartalyst\Sentry\Users\WrongPasswordException $e)
+		catch (WrongPasswordException $e)
 		{
 			dd('stop');
 			echo 'Wrong password, try again.';
@@ -81,8 +79,8 @@ class AuthController extends Controller {
 		{
 			echo 'User is banned.';
 		}
-
-		return redirect('home.index');
+*/
+		return redirect('/home');
 
 	}
 

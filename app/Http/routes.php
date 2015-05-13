@@ -1,7 +1,7 @@
 <?php
 
 
-	Route::get('/', 'WelcomeController@index');
+	Route::resource('/', 'WelcomeController@index');
 
 
 	//Авторизация, регистрация, востановление парля, а так же главная там и все дела
@@ -28,7 +28,7 @@
 
 	// Всё для администратора
 	Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'sentry'], function () {
-		Route::get('/', 'HomeAdminController', ['only' => 'index']);
+		Route::resource('/', 'HomeAdminController', ['only' => 'index']);
 		Route::resource('users', 'UserController');
 		Route::resource('groups', 'GroupsController');
 		Route::resource('pages', 'PagesController');

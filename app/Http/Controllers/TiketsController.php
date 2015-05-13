@@ -67,15 +67,7 @@ class TiketsController extends Controller {
 		$Tiket->save(new Tiket([
 			'message' => $request->message,
 		]));
-
-		/*
-				$tikets->idu = Auth::user()->id;
-				$tikets->idt = $input['id'];
-				$tikets->message = $input['reply'];
-				$tikets->save();
-		*/
 		Session::flash('good', 'Вы успешно добавили ответ.');
-
 		return redirect()->back();
 	}
 
