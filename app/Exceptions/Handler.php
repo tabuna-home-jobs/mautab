@@ -1,8 +1,8 @@
 <?php namespace App\Exceptions;
 
+use App\Exceptions\Sentry\SentryExceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use \Cartalyst\Sentry\Users\WrongPasswordException;
 
 
 class Handler extends ExceptionHandler {
@@ -39,10 +39,9 @@ class Handler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $e)
 	{
-        if ($e instanceof WrongPasswordException)
-        {
-            return redirect()->back()->withErrors(array($e->getMessage()));
-        }
+
+		if ($sentry = SentryExceptions::render($e))
+			return $sentry;
 
 
 

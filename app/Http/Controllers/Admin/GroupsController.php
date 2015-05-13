@@ -93,27 +93,21 @@ class GroupsController extends Controller
 	 */
 	public function update(GroupRequest $request)
 	{
-		try {
-			// Find the group using the group id
-			$group = Sentry::findGroupById($request->id);
-			// Update the group details
-			$group->name        = $request->namenew;
-			$group->permissions = $request->permissions;
-			// Update the group
-			if ($group->save()) {
-				Session::flash('good', 'Вы изменили группу.');
 
-				return redirect()->route('admin.groups.index');
-			} else {
-				// Group information was not updated
-			}
-		} catch (Cartalyst\Sentry\Groups\NameRequiredException $e) {
-			echo 'Name field is required';
-		} catch (Cartalyst\Sentry\Groups\GroupExistsException $e) {
-			echo 'Group already exists.';
-		} catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e) {
-			echo 'Group was not found.';
-		}
+			$group = Sentry::findGroupById($request->id);
+
+			// Update the group details
+		$raznica = array_diff_key($group->permissions, $request->permissions);
+		foreach ($raznica as $key => $value)
+			$raznica[$key] = 0;
+		$group->name        = $request->namenew;
+		$group->permissions = array_merge($raznica, $request->permissions);
+
+		$group->save();
+		Session::flash('good', 'Вы изменили группу.');
+
+		return redirect()->route('admin.groups.index');
+
 	}
 
 	/**
