@@ -38,10 +38,10 @@ class WebController extends Controller {
 		return view('web/index',[ "UserDomain" => Vesta::listWebDomain() ]);
 	}
 
+	//Добавление веб домена
 	public function store(AddWebRequest $request)
 	{
-
-
+		//Добавление нового домена
 		Vesta::addWebDomain($request->v_domain, $request->v_ip);
 
 		//Добавление поддержки днс
@@ -92,53 +92,44 @@ class WebController extends Controller {
 
 		//Добавление ФТП
 		if ($request->v_ftp == 'on') {
-			$v_ftp_users_updated = array();
+
 			foreach ($request->v_ftp_user as $i => $v_ftp_user_data) {
+
 				if ($v_ftp_user_data['is_new'] == 1) {
 
 					$v_ftp_user_data['v_ftp_user'] = preg_replace("/^" . Sentry::getUser()->nickname . "_/i", "", $v_ftp_user_data['v_ftp_user']);
+
 					$v_ftp_username                = $v_ftp_user_data['v_ftp_user'];
-					$v_ftp_username_full           = Sentry::getUser()->nickname . '_' . $v_ftp_user_data['v_ftp_user'];
+
 					$v_ftp_password                = $v_ftp_user_data['v_ftp_password'];
 					$domain_added                  = 1;
 
-					if ($domain_added) {
-						$v_ftp_path = trim($v_ftp_user_data['v_ftp_path']);
 
-						Vesta::addFtpDomain($request->v_domain, $v_ftp_username, $v_ftp_password, $v_ftp_path);
+					if ($domain_added) {
+						//Проверяем есть ли первым символом слеш
+						$v_ftp_path = trim($v_ftp_user_data['v_ftp_path']);
+						$pos = strpos($v_ftp_path, '/');
+						($pos === 0) ? $v_ftp_p = $v_ftp_path : $v_ftp_p = '';
+
+						//Добавляем данные для фтп
+						Vesta::addFtpDomain($request->v_domain, $v_ftp_username, $v_ftp_password, $v_ftp_p);
 
 						if ((!empty($v_ftp_user_data['v_ftp_email']))) {
 							$mail = $v_ftp_user_data['v_ftp_email'];
 
-							Mail::raw('Новый фтп', function ($message, $mail) {
+							Mail::raw('Новый фтп', function ($message) use ($mail) {
+
 								$message->from('no-reply@cloudme.ru', 'Ларыч');
 								$message->to($mail)->cc($mail);
 							});
 						}
-					} else {
-						$return_var = -1;
 					}
-
-					if ($return_var == 0) {
-						$v_ftp_password            = "••••••••";
-						$v_ftp_user_data['is_new'] = 0;
-					} else {
-						$v_ftp_user_data['is_new'] = 1;
-					}
-
-					$v_ftp_username        = preg_replace("/^" . Sentry::getUser()->nickname . "_/", "", $v_ftp_user_data['v_ftp_user']);
-					$v_ftp_users_updated[] = array(
-						'is_new'         => $v_ftp_user_data['is_new'],
-						'v_ftp_user'     => $return_var == 0 ? $v_ftp_username_full : $v_ftp_username,
-						'v_ftp_password' => $v_ftp_password,
-						'v_ftp_path'     => $v_ftp_user_data['v_ftp_path'],
-						'v_ftp_email'    => $v_ftp_user_data['v_ftp_email']
-						//'v_ftp_pre_path'    => $v_ftp_user_prepath
-					);
 					continue;
 				}
 			}
 		}
+
+
 
 		Session::flash('good', 'Вы успешно добавили Домен.');
 

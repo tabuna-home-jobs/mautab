@@ -66,33 +66,36 @@
 
 
                 <div class="add-ftp">
-                    <div class="form-group">
-                        <label>FTP#1</label>
-                    </div>
-                    <div class="form-group">
-                        <label>Аккаунт</label>
-
-                        <div>
-                            <small>
-                                Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
-                            </small>
+                    <div class="ftp-groupz">
+                        <div class="form-group">
+                            <label>FTP#1</label>
                         </div>
-                        <input disabled type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[1][is_new]" value="1"/>
+                        <div class="form-group">
+                            <label>Аккаунт</label>
 
-                        <input disabled type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr" value=""/>
+                            <div>
+                                <small>
+                                    Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
+                                </small>
+                            </div>
+                            <input disabled type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[1][is_new]" value="1"/>
+
+                            <input disabled type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
+                            <input disabled type="text" name="v_ftp_user[1][v_ftp_password]" id="ftppas" class="form-control" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Path</label>
+                            <input disabled type="text" name="v_ftp_user[1][v_ftp_path]" class="form-control" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>Отправить данные FTP аккаунта по адресу</label>
+                            <input disabled type="text" name="v_ftp_user[1][v_ftp_email]" class="form-control" value=""/>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
-                        <input disabled type="text" name="v_ftp_user[1][v_ftp_password]" id="ftppas" class="form-control" value=""/>
-                    </div>
-                    <div class="form-group">
-                        <label>Path</label>
-                        <input disabled type="text" name="v_ftp_user[1][v_ftp_path]" class="form-control" value=""/>
-                    </div>
-                    <div class="form-group">
-                        <label>Отправить данные FTP аккаунта по адресу</label>
-                        <input disabled type="text" name="v_ftp_user[1][v_ftp_email]" class="form-control" value=""/>
-                    </div>
+                    <a href="#" id="addFtps">Добавить ещё один FTP аккаунт</a>
                 </div>
             </div>
             <!--Дополнительные опции (по умолчанию скрыт)-->

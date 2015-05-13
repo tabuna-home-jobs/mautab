@@ -23,7 +23,24 @@
 
 <script>
     $(document).ready(function () {
-        //Проверка дополнительных опций в создании домена в разделе WEB
+        //Функция добавления FTP
+        function clickAddFtp(elem, num){
+            //Форма нового FTP
+            var strHtml = '<div class="ftp-groupz"><div class="form-group"><label>FTP#' + num + '</label>            </div><div class="form-group"><label>Аккаунт</label><div><small>Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта</small></div><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_new]" value="1"/><input type="text" name="v_ftp_user[' + num + '][v_ftp_user]" class="form-control ftp_usr" value=""/></div><div class="form-group"><label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>            <input type="text" name="v_ftp_user[' + num + '][v_ftp_password]" id="ftppas" class="form-control" value=""/></div><div class="form-group"><label>Path</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_path]" class="form-control" value=""/></div>            <div class="form-group"><label>Отправить данные FTP аккаунта по адресу</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_email]" class="form-control" value=""/></div</div>';
+
+            elem.before(strHtml);
+        }
+        $('body').on('click','#addFtps',function(){
+            //Получаем количество элементов FTP
+            var countElems = $(".ftp-groupz").length;
+            //Добавляем новый с порядковым номером +1
+            clickAddFtp($(this), countElems + 1);
+            return false;
+        });
+        function removeFtp(elem){
+
+        }
+
 
 
         //Проверка нужен ли дополнительный фтп
@@ -55,9 +72,9 @@
         //Функция добавления префикса текущего юзера
         function addPrefix(input) {
             var currVal = $(input).val();
-            var issetVal = currVal.indexOf("{{(!is_null(Auth::user())) ? Sentry::getUser()->nickname : '' }}");
+            var issetVal = currVal.indexOf("{{(!is_null(Sentry::getUser())) ? Sentry::getUser()->nickname : '' }}");
             if (issetVal == '-1') {
-                var needle = "{{(!is_null(Auth::user())) ? Sentry::getUser()->nickname : '' }}" + "_" + currVal;
+                var needle = "{{(!is_null(Sentry::getUser())) ? Sentry::getUser()->nickname : '' }}" + "_" + currVal;
                 $(input).val(needle);
             }
         }
@@ -68,13 +85,13 @@
         }
 
         //Добавление случайного пароля в инпут
-        $(".genPass").click(function () {
+        $('body').on('click', '.genPass', function(){
             var genPas = randWD().toUpperCase();
             $(this).parent().next('input').val(genPas);
             return false;
         });
         //Добавление префикса для юзера фтп
-        $(".ftp_usr").blur(function () {
+        $('body').on('blur', '.ftp_usr', function() {
             addPrefix($(this));
         });
 
@@ -161,26 +178,7 @@
                 external_plugins: {"filemanager": "/dist/filemanager/plugin.min.js"}
             });
         });
-
-
-
-
-
-
-
-
-
-
-
-
     });
 </script>
-
-
-
-
-
-
-
 </body>
 </html>

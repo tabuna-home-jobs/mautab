@@ -54,23 +54,17 @@ trait VestaWeb
 		return $this->sendQuery('v-add-dns-on-web-alias', Sentry::getUser()->nickname, $domain, $alias, 'no');
 	}
 
-	//v-add-dns-on-web-alias
-	/*
-	public function addWebDNSOnWebAlias($domain, $alias)
-	{
-		return $this->sendQuery('v-add-web-domain-alias', Sentry::getUser()->nickname, $domain, $alias, 'no');
-	}*/
-
-
 	// Delete www. alias if it wasn't found
 	public function deleteWebDomainAlias($domain, $alias)
 	{
 		return $this->sendQuery('v-delete-web-domain-alias', Sentry::getUser()->nickname, $domain, $alias, 'no');
 	}
 
+	//Добавление ftp домена
 	public function addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path)
 	{
-		return $this->sendQuery('v-add-web-domain-ftp', Sentry::getUser()->nuckname, $domain, $ftp_username, $ftp_password, $ftp_path);
+
+		return $this->sendQuery('v-add-web-domain-ftp', Sentry::getUser()->nickname, $domain, $ftp_username, $ftp_password, $ftp_path);
 	}
 
 	// Add proxy support
