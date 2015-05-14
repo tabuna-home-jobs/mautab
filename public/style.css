@@ -756,8 +756,8 @@ footer{
     -moz-animation: spinPulse 1s infinite ease-in-out;
     -webkit-animation: spinPulse 1s infinite linear;
 
-    position: absolute;
-    top: 25%;
+    position: fixed;
+    top: 35%;
     left: 50%;
     z-index: 9999;
 }
@@ -801,5 +801,7 @@ footer{
 .menu-admin a {
     font-size: 16pt;
 }
-
+.del-current-ftp{
+    margin-left: 10px;
+}
 

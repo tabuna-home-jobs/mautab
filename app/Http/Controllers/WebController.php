@@ -41,6 +41,7 @@ class WebController extends Controller {
 	//Добавление веб домена
 	public function store(AddWebRequest $request)
 	{
+
 		//Добавление нового домена
 		Vesta::addWebDomain($request->v_domain, $request->v_ip);
 

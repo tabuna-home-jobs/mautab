@@ -15,7 +15,7 @@
             <div class="alert alert-info" role="alert">Добавление домена</div>
             <div class="form-group input-line">
                 <label>Домен </label>
-                <input type="text" name="v_domain" class="form-control" value="" required/>
+                <input type="text" name="v_domain" class="form-control" value="" required />
             </div>
             <div class="form-group">
                 <label>IP адрес</label>
