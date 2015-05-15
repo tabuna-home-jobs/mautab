@@ -15,21 +15,39 @@
 <!--  TinyMCE -->
 <script src="<?php echo e(asset('/dist/plugins/tinymce/tinymce.min.js')); ?>" type="text/javascript"></script>
 
-
-
-
-
 <!-- Процесс регистрации-->
 
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
+
+        //Добавить алиас после ввода домена
+        /*
+        $('input[name="v_domain"]').blur(function(){
+            var currVal = $(this).val();
+            var checkSimbl = currVal.indexOf(".") + 1;
+            if(checkSimbl != 0){
+                var arrVal = currVal.split(".");
+
+                var domain = arrVal[1];
+
+
+                var correctDomain = "www." + domain;
+                (arrVal[2]) ? correctDomain += "." + arrVal[2] : correctDomain;
+                $("textarea[name='v_aliases']").val(correctDomain);
+            }else{
+                var correctDomain = "www." + currVal;
+                $("textarea[name='v_aliases']").val(correctDomain);
+            }
+        });*/
+
         //Функция добавления FTP
         function clickAddFtp(elem, num){
             //Форма нового FTP
-            var strHtml = '<div class="ftp-groupz"><div class="form-group"><label>FTP#' + num + '</label>            </div><div class="form-group"><label>Аккаунт</label><div><small>Префикс <?php echo e((!is_null(Sentry::getUser())) ? Sentry::getUser()->nickname : ''); ?>_ будет автоматически добавлен к названию аккаунта</small></div><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_new]" value="1"/><input type="text" name="v_ftp_user[' + num + '][v_ftp_user]" class="form-control ftp_usr" value=""/></div><div class="form-group"><label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>            <input type="text" name="v_ftp_user[' + num + '][v_ftp_password]" id="ftppas" class="form-control" value=""/></div><div class="form-group"><label>Path</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_path]" class="form-control" value=""/></div>            <div class="form-group"><label>Отправить данные FTP аккаунта по адресу</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_email]" class="form-control" value=""/></div</div>';
+            var strHtml = '<div class="ftp-groupz"><div class="form-group"><label>FTP#' + num + '<a href="#" class="del-current-ftp"><small>Удалить</small></a></label>            </div><div class="form-group"><label>Аккаунт</label><div><small>Префикс <?php echo e((!is_null(Sentry::getUser())) ? Sentry::getUser()->nickname : ''); ?>_ будет автоматически добавлен к названию аккаунта</small></div><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_new]" value="1"/><input type="text" name="v_ftp_user[' + num + '][v_ftp_user]" class="form-control ftp_usr" value=""/></div><div class="form-group"><label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>            <input type="text" name="v_ftp_user[' + num + '][v_ftp_password]" id="ftppas" class="form-control" value=""/></div><div class="form-group"><label>Path</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_path]" class="form-control" value=""/></div>            <div class="form-group"><label>Отправить данные FTP аккаунта по адресу</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_email]" class="form-control" value=""/></div</div>';
 
             elem.before(strHtml);
         }
+
         $('body').on('click','#addFtps',function(){
             //Получаем количество элементов FTP
             var countElems = $(".ftp-groupz").length;
@@ -37,10 +55,14 @@
             clickAddFtp($(this), countElems + 1);
             return false;
         });
-        function removeFtp(elem){
 
-        }
-
+        //Удаление ненужного фтп
+        $('body').on('click','.del-current-ftp',function(){
+            var obj = $(this);
+            var rapentObj = $(obj).parent().parent().parent();
+            rapentObj.empty();
+            return false
+        });
 
 
         //Проверка нужен ли дополнительный фтп
