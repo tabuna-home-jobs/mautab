@@ -54,7 +54,6 @@ body.modal-open {
     min-height: 200px;
 }
 
-
 .navbar-default {
     background: none repeat scroll 0 0 rgba(35, 46, 63, 0.6);
     border-color: transparent;
@@ -117,8 +116,6 @@ header h3 {
     color: #f7ebdf;
     padding-top: 10px;
 }
-
-
 
 .features {
     padding: 75px 0;
