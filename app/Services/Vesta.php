@@ -1,5 +1,6 @@
 <?php namespace App\Services;
 
+use App\Exceptions\VestaExceptions;
 use App\Services\VestaAPI\VestaBD;
 use App\Services\VestaAPI\VestaCron;
 use App\Services\VestaAPI\VestaDNS;
@@ -107,7 +108,7 @@ class Vesta  {
 	    // dd($curl);
         //Если он должен возвращать ошибку, и она случилось перенаправить на 404 страницу
         if($this->vst_returncode == 'yes' && $query !=0 )
-            dd($query);
+            $this->Exception($query);
         else
 	        return $query;
 
@@ -176,6 +177,70 @@ class Vesta  {
 
 	}
 
-
+	public  function  Exceptions($code)
+	{
+		switch ($code) {
+			case 1:
+				throw new ArgsException('Not enough arguments provided');
+				break;
+			case 2:
+				throw new InvalidException('Object or argument is not valid');
+				break;
+			case 3:
+				throw new NotexistException("Object doesn't exist");
+				break;
+			case 4:
+				throw new ExistsException('Object already exists');
+				break;
+			case 5:
+				throw new SuspendedException('Object is suspended');
+				break;
+			case 6:
+				throw new UnspendedException('Object is already unsuspended');
+				break;
+			case 7:
+				throw new InuseException("Object can't be deleted because is used by the other object");
+				break;
+			case 8:
+				throw new LimitException('Object cannot be created because of hosting package limits');
+				break;
+			case 9:
+				throw new PasswordException('Wrong password');
+				break;
+			case 10:
+				throw new ForbidenException('Object cannot be accessed be the user');
+				break;
+			case 11:
+				throw new DisabledException('Subsystem is disabled');
+				break;
+			case 12:
+				throw new ParsingException('Configuration is broken');
+				break;
+			case 13:
+				throw new DiskException('Not enough disk space to complete the action');
+				break;
+			case 14:
+				throw new LaException('Server is to busy to complete the action');
+				break;
+			case 15:
+				throw new ConnectException('Connection failed. Host is unreachable');
+				break;
+			case 16:
+				throw new FtpException('FTP server is not responding');
+				break;
+			case 17:
+				throw new DbException('Database server is not responding');
+				break;
+			case 18:
+				throw new RrdException('RRDtool failed to update the database');
+				break;
+			case 19:
+				throw new UpdateException('Update operation failed');
+				break;
+			case 20:
+				throw new RestartException('Service restart failed');
+				break;
+		}
+	}
 
 }
