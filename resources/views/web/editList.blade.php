@@ -55,7 +55,7 @@
                 </label>
                         </div>
 
-@if(isset($d_val['FTP_USER']))
+@if(isset($d_val['FTP_USER']) && is_array($d_val['FTP_USER']))
 
     @foreach($d_val['FTP_USER'] as $key => $ftpU)
     <div class="add-ftp-edit">
