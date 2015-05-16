@@ -35,7 +35,6 @@ class BdController extends Controller{
 	    $request->v_dbuser   = preg_replace("/^" . Sentry::getUser()->nickname . "_/", "", $request->v_dbuser);
 	    $request->v_database = preg_replace("/^" . Sentry::getUser()->nickname . "_/", "", $request->v_database);
 
-
 	    Vesta::addDateBase($request->v_database,
                             $request->v_dbuser,
                             $request->password_bd,
