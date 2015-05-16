@@ -167,6 +167,7 @@ class WebController extends Controller {
 
 	public function update(ChangeWebRequest $request)
 	{
+		dd($request);
 
 		Vesta::changeWebDomainIp($request->v_domain, $request->v_ip);
 

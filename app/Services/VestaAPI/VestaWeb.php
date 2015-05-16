@@ -35,7 +35,6 @@ trait VestaWeb
 			return $data;
 	}
 
-
 	//Add Web Domains Для добовления домена!
 	public function addWebDomain($domain, $v_ip)
 	{
