@@ -7,6 +7,7 @@
 
 
             @if(!empty($webList))
+
                 @foreach($webList as $domain => $d_val)
 
                     <div class="alert alert-info" role="alert">
@@ -45,47 +46,52 @@
                             </label>
                         </div>
                         <div class="form-group checkbox">
-                            <label>
-                                <input type="checkbox" name="v_ftp"/>Дополнительный FTP
-                            </label>
+                <label>
+        @if(!isset($d_val['FTP_USER']))
+            <input type="checkbox" name="v_ftp" />Дополнительный FTP
+        @else
+            <input checked type="checkbox" name="v_ftp" />Дополнительный FTP
+        @endif
+                </label>
                         </div>
 
+@if(isset($d_val['FTP_USER']))
 
-                        <div class="add-ftp">
-                            <div class="form-group">
-                                <label>FTP#1</label>
-                            </div>
-                            <div class="form-group">
-                                <label>Аккаунт</label>
+    @foreach($d_val['FTP_USER'] as $key => $ftpU)
+    <div class="add-ftp-edit">
+        <div class="form-group">
+            <label>FTP#{{$key+1}}</label>
+        </div>
+        <div class="form-group">
+            <label>Аккаунт</label>
 
-                                <div>
-                                    <small>
-                                        Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
-                                    </small>
-                                </div>
-                                <input disabled type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr" value=""/>
-                            </div>
-                            <div class="form-group">
-                                <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
-                                <input disabled type="text" name="v_ftp_user[1][v_ftp_password]" id="ftppas" class="form-control" value=""/>
-                            </div>
-                            <div class="form-group">
-                                <label>Path</label>
-                                <input disabled type="text" name="v_ftp_user[1][v_ftp_path]" class="form-control" value=""/>
-                            </div>
-                            <div class="form-group">
-                                <label>Отправить данные FTP аккаунта по адресу</label>
-                                <input disabled type="text" name="v_ftp_user[1][v_ftp_email]" class="form-control" value=""/>
-                            </div>
-                        </div>
+            <div>
+                <small>
+                    Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
+                </small>
+            </div>
+            <input type="text" name="v_ftp_user[{{$key+1}}][v_ftp_user]" class="form-control ftp_usr" value="{{$ftpU}}"/>
+        </div>
+        <div class="form-group">
+            <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
+            <input type="text" name="v_ftp_user[{{$key+1}}][v_ftp_password]" id="ftppas" class="form-control" value="********"/>
+        </div>
+        <div class="form-group">
+            <label>Path</label>
+            <input type="text" name="v_ftp_user[{{$key+1}}][v_ftp_path]" class="form-control" value="{{$d_val['FTP_PATH'][$key]}}"/>
+        </div>
+    </div>
+    @endforeach
 
-                        <div class="form-group">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <input type="submit" value="Отправить" class="button-full">
-                            <input type="hidden" name="domain" value="{{$domain}}"/>
-                            <input type="hidden" name="_method" value="PUT">
-                        </div>
-                    </form>
+@endif
+
+    <div class="form-group">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="submit" value="Отправить" class="button-full">
+        <input type="hidden" name="domain" value="{{$domain}}"/>
+        <input type="hidden" name="_method" value="PUT">
+    </div>
+</form>
 
                     <div class="col-md-4">
 

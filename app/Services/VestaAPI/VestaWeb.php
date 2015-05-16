@@ -9,7 +9,20 @@ trait VestaWeb
 	public function listEditWebDomain($domain)
 	{
 		$answer = $this->sendQuery('v-list-web-domain', Sentry::getUser()->nickname, $domain, 'json');
+
 		$data   = json_decode($answer, TRUE);
+
+		$ftpU = strpos($data[$domain]['FTP_USER'], ":");
+		$ftpPath = strpos($data[$domain]['FTP_PATH'], ":");
+
+		if($ftpU !== false){
+			$ftAr = explode(":", $data[$domain]['FTP_USER']);
+			$data[$domain]['FTP_USER'] = $ftAr;
+		}
+		if($ftpPath !== false){
+			$ftpP = explode(":", $data[$domain]['FTP_PATH']);
+			$data[$domain]['FTP_PATH'] = $ftpP;
+		}
 
 		return $data;
 	}
