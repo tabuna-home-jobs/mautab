@@ -36,18 +36,6 @@ body.modal-open {
 }
 /* Конец фиксов */
 
-/*
-.header-alt-bg {
-    background: url(/img/header_bg.jpg) bottom center no-repeat;
-    min-height: 880px;
-    position: relative;
-}
-*/
-
-.header-login-bg {
-    background: url(/img/login_page_bg.jpg) top center repeat;
-    min-height: 880px;
-}
 
 .header-login-app {
     background: url(/img/header_alt-4_bg.png) top center no-repeat;
@@ -444,67 +432,6 @@ p.copyright {
     font-size: 100%;
 }
 
-.stick {
-    position: relative !important;
-    height: 80px;
-
-}
-
-.stick:nth-child(even) {
-    background: #F0F0F0;
-}
-
-.stick {
-    background: #fff;
-    margin: 20px 0;
-    color: #7D7D7D;
-    font-weight: bold;
-}
-
-.stick:nth-child(even):before, .stick:nth-child(even):after {
-    z-index: -1;
-    position: absolute;
-    content: "";
-    bottom: 25px;
-    left: 10px;
-    width: 50%;
-    top: 80%;
-    height: 2px;
-    max-width: 300px;
-    background: #777;
-    -webkit-box-shadow: 0 35px 20px #777;
-    -moz-box-shadow: 0 35px 20px #777;
-    box-shadow: 0 15px 10px #777;
-    -webkit-transform: rotate(-8deg);
-    -moz-transform: rotate(-8deg);
-    -o-transform: rotate(-8deg);
-    -ms-transform: rotate(-8deg);
-    transform: rotate(-4deg);
-}
-
-.stick:nth-child(even):after {
-    -webkit-transform: rotate(8deg);
-    -moz-transform: rotate(8deg);
-    -o-transform: rotate(8deg);
-    -ms-transform: rotate(8deg);
-    transform: rotate(4deg);
-    right: 10px;
-    left: auto;
-}
-
-.stick:nth-of-type(2n+1) td a {
-    color: #fff;
-}
-
-.stick:nth-of-type(2n+1) td a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-.stick {
-    vertical-align: middle !important;
-    padding: 25px 0;
-}
 
 footer{
     margin-top: 20px;
@@ -636,28 +563,7 @@ footer{
     display: unset;
 }
 
-.name-dom-list:first-letter {
-    text-transform: capitalize;
-    color: #c5645b;
-}
 
-.name-dom-list {
-    letter-spacing: 5px;
-    line-height: 1em;
-    color: #c5645b;
-    font-weight: bold;
-    font-size: 60px;
-    text-shadow: 0px 0px 0 rgb(222, 222, 222), 1px 0px 0 rgb(198, 198, 198), 2px 0px 0 rgb(175, 175, 175), 3px 0px 0 rgb(151, 151, 151), 4px 0px 0 rgb(128, 128, 128), 5px 0px 0 rgb(104, 104, 104), 6px 0px 0 rgb(81, 81, 81), 7px 0px 6px rgba(0, 0, 0, 0.9), 7px 0px 1px rgba(0, 0, 0, 0.5), 0px 0px 6px rgba(0, 0, 0, .2);
-}
-
-.wrapp-dom-list-name {
-    /*
-    background: #753029;
-    padding: 5px;
-    border-radius: 6px;
-    box-shadow: 1px 1px 3px #ccc;
-    */
-}
 
 /*
     TEST PRICE
