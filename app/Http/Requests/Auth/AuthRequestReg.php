@@ -2,7 +2,7 @@
 
 use Sentry;
 
-class AuthRequest extends Request
+class AuthRequestReg extends Request
 {
 
 	/**

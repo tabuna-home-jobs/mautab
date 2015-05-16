@@ -39,7 +39,7 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">{{ Sentry::getUser()->nickname }} </a></li>
+                    <li>{{ Sentry::getUser()->nickname }}  <a href="/auth/logout">Выйти</a></li>
                 </ul>
             </div>
         </div>

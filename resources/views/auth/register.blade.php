@@ -41,8 +41,8 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/login">Войти</a></li>
-                    <li><a href="/register">Зарегистрироваться</a></li>
+                    <li><a href="/auth/login">Войти</a></li>
+                    <li><a href="/auth/register">Зарегистрироваться</a></li>
                 </ul>
             </div>
         </div>
@@ -52,11 +52,16 @@
 </header>
 
 
+<div class="container text-center">
+    <h1>Регистрация</h1>
+</div>
+
+
 <div class="container login-container">
     <div class="login-form text-center">
 
 
-        <form action="{{URL::route('register.store')}}" method="post" class="col-xs-12 col-md-6">
+        <form action="/auth/register" method="post" class="col-xs-12 col-md-6">
             <div class="form-group">
 
                 {!! Form::label('nickname', 'Псевдоним', array('class' => 'control-label')) !!}

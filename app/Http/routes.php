@@ -1,13 +1,18 @@
 <?php
 
 
-	Route::resource('/', 'WelcomeController@index');
+
+	Route::group(['middleware' => 'guest'], function () {
+		Route::resource('/', 'WelcomeController@index');
+	});
 
 
 	//Авторизация, регистрация, востановление парля, а так же главная там и все дела
-	Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function () {
-		Route::resource('register', 'RegistrationController');
-		Route::resource('login', 'AuthController');
+	Route::group(['namespace' => 'Auth'], function () {
+		Route::controllers([
+			'auth' => 'AuthController',
+			//'password' => 'Auth\RegistrationController',
+		]);
 	});
 
 

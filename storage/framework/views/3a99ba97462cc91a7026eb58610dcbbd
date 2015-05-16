@@ -41,8 +41,8 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/login">Войти</a></li>
-            <li><a href="/register">Зарегистрироваться</a></li>
+            <li><a href="/auth/login">Войти</a></li>
+            <li><a href="/auth/register">Зарегистрироваться</a></li>
         </ul>
       </div>
     </div>
