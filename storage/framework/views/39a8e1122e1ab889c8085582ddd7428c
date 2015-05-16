@@ -1,41 +1,40 @@
-@extends('app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <section class="container">
 
         <div class="col-xs-12">
 
-            <form class="col-md-8" method="post" action="{{URL::route('records.update',$domain)}}">
+                    <form class="col-md-8" method="post" action="<?php echo e(URL::route('records.update',$domain)); ?>">
 
                         <div class="alert alert-info" role="alert">
-                            Изменения для домена {{$domain}}
+                            Изменения для домена <?php echo e($domain); ?>
+
                         </div>
                         <div class="form-group">
                             <label>Домен </label>
-                            <input type="text" class="form-control" value="{{$domain}}" name="v_domain" disabled/>
+                            <input type="text" class="form-control" value="<?php echo e($domain); ?>" name="v_domain"  disabled/>
                         </div>
                         <div class="form-group">
                             <label>Запись / Поддомен </label>
-                            <input type="text" class="form-control" name="v_rec" required value="{{$record['RECORD']}}" disabled/>
+                            <input type="text" class="form-control" name="v_rec" required value="<?php echo e($record['RECORD']); ?>" disabled/>
                         </div>
                         <div class="form-group">
                             <label>Тип</label>
-                            <input type="text" class="form-control" value="{{$record['TYPE']}}" name="v_type" disabled/>
+                            <input type="text" class="form-control" value="<?php echo e($record['TYPE']); ?>" name="v_type" disabled/>
                         </div>
 
                         <div class="form-group">
                             <label>IP адрес или значение </label>
-                            <input type="text" class="form-control" value="{{$record['VALUE']}}" name="v_val"/>
+                            <input type="text" class="form-control" value="<?php echo e($record['VALUE']); ?>" name="v_val"/>
                         </div>
 
                         <div class="form-group">
                             <label>Приоритет (опционально)</label>
-                            <input type="text" class="form-control" value="{{$record['PRIORITY']}}" name="v_priority"/>
+                            <input type="text" class="form-control" value="<?php echo e($record['PRIORITY']); ?>" name="v_priority"/>
                         </div>
 
                         <input type="hidden" name="_method" value="PUT">
-                <input type="hidden" name="record" value="{{$record['ID']}}">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="record" value="<?php echo e($record['ID']); ?>">
+                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                         <input type="submit" value="Отправить" class="button-full">
                     </form>
 
@@ -54,18 +53,18 @@
                             <ul class="list-group">
 
                                 <li class="list-group-item"> Статус:
-                                    @if($record['SUSPENDED'] == 'no')
+                                    <?php if($record['SUSPENDED'] == 'no'): ?>
                                         <span class="text-success"> Активен</span>
-                                    @else
+                                    <?php else: ?>
                                         <span class="text-danger"> Заблокирован</span>
-                                    @endif
+                                    <?php endif; ?>
                                 </li>
                             </ul>
 
 
                             <div class="panel-footer">
                                 <p>
-                                    <small class="pull-right"> {{$record['DATE'] ." ". $record['TIME']}}</small>
+                                    <small class="pull-right"> <?php echo e($record['DATE'] ." ". $record['TIME']); ?></small>
                                 </p>
                             </div>
                         </div>
@@ -73,4 +72,6 @@
         </div>
     </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

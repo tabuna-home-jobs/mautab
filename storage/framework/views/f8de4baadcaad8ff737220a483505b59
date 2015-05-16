@@ -1,13 +1,11 @@
-@extends('app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <section class="container">
 
         <div class="col-xs-12">
 
             <div class="wrap-b row">
                 <div class="row wrapp-dom-list-name">
-                    <div class="col-md-11 name-dom-list text-center">{{$domain}}</div>
+                    <div class="col-md-11 name-dom-list text-center"><?php echo e($domain); ?></div>
                     <div class="col-md-1 text-right add-dom">
                             <a aria-controls="collapseExample" aria-expanded="false" href="#add-dns" data-toggle="collapse" id="show-add-bd">
                                 <i class="fa fa-plus"></i>
@@ -16,25 +14,25 @@
                 </div>
 
 
-                    @foreach($records as $key => $record)
+                    <?php foreach($records as $key => $record): ?>
 
-                        @if($record['SUSPENDED'] == 'no')
+                        <?php if($record['SUSPENDED'] == 'no'): ?>
                         <div class="stick row">
-                        @else
+                        <?php else: ?>
                                 <div class="danger stick row">
-                                @endif
-                                    <div class="col-xs-1" id=" {{$record['ID']}}">{{$record['RECORD']}}</div>
-                                    <div class="col-xs-1">{{$record['TYPE']}}</div>
-                                    <div class="col-xs-1">{{$record['PRIORITY']}}</div>
-                                    <div class="col-xs-4"> {{substr($record['VALUE'],0,30)}}</div>
-                                    <div class="col-xs-3">{{$record['DATE']}} : {{$record['TIME']}}</div>
+                                <?php endif; ?>
+                                    <div class="col-xs-1" id=" <?php echo e($record['ID']); ?>"><?php echo e($record['RECORD']); ?></div>
+                                    <div class="col-xs-1"><?php echo e($record['TYPE']); ?></div>
+                                    <div class="col-xs-1"><?php echo e($record['PRIORITY']); ?></div>
+                                    <div class="col-xs-4"> <?php echo e(substr($record['VALUE'],0,30)); ?></div>
+                                    <div class="col-xs-3"><?php echo e($record['DATE']); ?> : <?php echo e($record['TIME']); ?></div>
 
                                     <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="{{URL::route('records.edit',['domain' => $domain, 'record' => $record['ID']])}}" class="btn btn-default">
+                                        <a href="<?php echo e(URL::route('records.edit',['domain' => $domain, 'record' => $record['ID']])); ?>" class="btn btn-default">
                                             <i class="fa fa-pencil-square-o"></i>
                                         </a>
 
-                                        <a href="#" data-toggle="modal" data-target="#Modal-{{$record['ID']}}"
+                                        <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e($record['ID']); ?>"
                                            class="btn btn-danger">
                                             <i class="fa fa-trash"></i>
                                         </a>
@@ -42,7 +40,7 @@
 
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="Modal-{{$record['ID']}}" tabindex="-1" role="dialog"
+                                    <div class="modal fade" id="Modal-<?php echo e($record['ID']); ?>" tabindex="-1" role="dialog"
                                          aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -53,20 +51,22 @@
                                                     <h4 class="modal-title" id="myModalLabel">Удалить Задание ?</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Вы действительно хотите удалить {{$record['RECORD']}}
-                                                    - {{$record['VALUE']}}
+                                                    Вы действительно хотите удалить <?php echo e($record['RECORD']); ?>
+
+                                                    - <?php echo e($record['VALUE']); ?>
+
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <form action="{{URL::route('records.destroy')}}" method="post">
+                                                    <form action="<?php echo e(URL::route('records.destroy')); ?>" method="post">
                                                         <button type="button" class="btn btn-default"
                                                                 data-dismiss="modal">Нет
                                                         </button>
                                                         <button type="submit" class="button-small">Да</button>
                                                         <input type="hidden" name="v_record_id"
-                                                               value="{{$record['ID']}}"/>
-                                                        <input type="hidden" name="v_domain" value="{{$domain}}"/>
+                                                               value="<?php echo e($record['ID']); ?>"/>
+                                                        <input type="hidden" name="v_domain" value="<?php echo e($domain); ?>"/>
                                                         <input type="hidden" name="_method" value="DELETE">
-                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                                                     </form>
                                                 </div>
                                             </div>
@@ -74,7 +74,7 @@
                                     </div>
 
                                 </div>
-                    @endforeach
+                    <?php endforeach; ?>
 
 
             </div>
@@ -85,4 +85,6 @@
 
     </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

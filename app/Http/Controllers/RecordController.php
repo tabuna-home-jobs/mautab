@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use App\Http\Requests\DomainRecordRequest;
 use App\Http\Requests\RemoveDNSRecordRequest;
 use Session;
 use Vesta;
@@ -59,8 +59,11 @@ class RecordController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($domain, DomainRecordRequest $request)
 	{
+		$record = Vesta::listDNSRecords($domain)[$request->record];
+
+		return view('dns/editRecord', ['record' => $record, 'domain' => $domain]);
 
     }
 
@@ -71,9 +74,16 @@ class RecordController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($domain, DomainRecordRequest $request)
 	{
-		//
+		Vesta::changeeDNSDomainRecord(
+			$domain,
+			$request->record,
+			$request->v_val,
+			(int)$request->v_priority);
+		Session::flash('good', 'Вы успешно изменили запись.');
+
+		return redirect()->route('records.show', $domain);
 	}
 
 	/**

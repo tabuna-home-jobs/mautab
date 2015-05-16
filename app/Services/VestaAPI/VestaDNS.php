@@ -65,6 +65,14 @@ trait VestaDNS
 		return $data;
 	}
 
+
+	public function changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority)
+	{
+		return $this->sendQuery('v-change-dns-record', Sentry::getUser()->nickname, $v_domain, $v_record_id, $v_val, $v_priority);
+	}
+
+
+
     public function removeDNSRecord($v_domain, $v_record_id)
     {
 	    $this->sendQuery('v-delete-dns-record', Sentry::getUser()->nickname, $v_domain, $v_record_id);
