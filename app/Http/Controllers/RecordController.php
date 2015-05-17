@@ -33,9 +33,18 @@ class RecordController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(DomainRecordRequest $request)
 	{
-		//
+		Vesta::addDNSRecord(
+			$request->v_domain,
+			$request->v_rec,
+			$request->v_type,
+			$request->v_val,
+			$request->v_priority
+		);
+		Session::flash('good', 'Вы успешно изменили запись.');
+
+		return redirect()->route('records.show', $request->v_domain);
 	}
 
 	/**

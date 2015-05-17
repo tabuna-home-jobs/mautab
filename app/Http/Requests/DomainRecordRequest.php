@@ -23,7 +23,7 @@ class DomainRecordRequest extends Request
 	public function rules()
 	{
 		return [
-			'record' => 'required|integer'
+			'record' => 'sometimes|required|integer'
 		];
 	}
 

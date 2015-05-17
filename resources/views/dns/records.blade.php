@@ -17,51 +17,49 @@
 
 
                 <div class="collapse col-xs-12" id="add-records">
-                    <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('dns.store')}}">
+                    <form class="col-md-8" method="post" action="{{URL::route('records.store')}}">
 
-                        <div class="alert alert-info" role="alert"> Добавление DNS домена</div>
-                        <div class="form-group input-line">
+                        <div class="alert alert-info" role="alert">
+                            Изменения записей для домена {{$domain}}
+                        </div>
+                        <div class="form-group">
                             <label>Домен </label>
-                            <input type="text" name="v_domain" class="form-control" required/>
+                            <input type="text" class="form-control" value="{{$domain}}" name="v_domain" readonly/>
                         </div>
                         <div class="form-group">
-                            <label>IP адрес</label>
-                            <input type="text" class="form-control" name="v_ip" required/>
-                        </div>
-                        <p class="text-center">
-                            <a id="show-dop-info" data-toggle="collapse" href="#dop-info" aria-expanded="false" aria-controls="collapseExample">
-                                <i class="fa fa-plus"></i>Дополнительные опции
-                            </a>
-                        </p>
-
-                        <div class="collapse" id="dop-info">
-                            <div class="form-group">
-                                <label>Зарегистрирован до
-                                    <small>(ГГГГ-ММ-ДД)</small>
-                                </label>
-                                <input type="text" class="form-control" name="v_exp" value="{{date("Y-m-d",time() + 24 * 60 * 60 * 365)}}" required/>
-                            </div>
-                            <div class="form-group">
-                                <label>TTL</label>
-                                <input type="text" class="form-control" name="v_ttl" value="14400" required/>
-                            </div>
-                            <div class="form-group">
-                                <label>Сервер имен</label>
-
-                                <div class="form-group">
-                                    <label>NS1</label>
-                                    <input type="text" class="form-control" name="v_ns1" value="ns1.localhost.ltd" required/>
-                                </div>
-                                <div class="form-group">
-                                    <label>NS2</label>
-                                    <input type="text" class="form-control" name="v_ns2" value="ns2.localhost.ltd" required/>
-                                </div>
-                            </div>
+                            <label>Запись / Поддомен </label>
+                            <input type="text" class="form-control" name="v_rec" required/>
                         </div>
                         <div class="form-group">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <input type="submit" value="Отправить" class="button-full">
+                            <label>Тип</label>
+                            <select name="v_type" class="form-control">
+                                <option value="A">A</option>
+                                <option value="AAAA">AAAA</option>
+                                <option value="NS">NS</option>
+                                <option value="CNAME">CNAME</option>
+                                <option value="MX">MX</option>
+                                <option value="TXT">TXT</option>
+                                <option value="SRV">SRV</option>
+                                <option value="DNSKEY">DNSKEY</option>
+                                <option value="KEY">KEY</option>
+                                <option value="IPSECKEY">IPSECKEY</option>
+                                <option value="PTR">PTR</option>
+                                <option value="SPF">SPF</option>
+                            </select>
                         </div>
+
+                        <div class="form-group">
+                            <label>IP адрес или значение </label>
+                            <input type="text" class="form-control" value="" name="v_val"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Приоритет (опционально)</label>
+                            <input type="text" class="form-control" value="" name="v_priority"/>
+                        </div>
+
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="submit" value="Отправить" class="button-full">
                     </form>
 
                     <div class="col-md-4 hidden-sm hidden-xs">
