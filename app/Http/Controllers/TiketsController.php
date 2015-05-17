@@ -45,15 +45,15 @@ class TiketsController extends Controller {
 			'message'  => $request->message,
 			'complete' => 0,
 		]);
-		User::find(Auth::user()->id)->tiket()->save($tiket);
+		User::find(Sentry::getUser()->id)->tiket()->save($tiket);
 		Session::flash('good', 'Вы успешно создали тикет!');
 		return redirect()->back();
 	}
 
 	public function show($id)
 	{
-		$Tiket    = User::find(Auth::user()->id)->tiket()->find($id);
-		$subTiket = User::find(Auth::user()->id)->tiket()->find($id)->subtiket($id)->simplePaginate(15);
+		$Tiket    = User::find(Sentry::getUser()->id)->tiket()->find($id);
+		$subTiket = User::find(Sentry::getUser()->id)->tiket()->find($id)->subtiket($id)->simplePaginate(15);
 		return view('tikets/viewer',['Tiket' => $Tiket, 'subTiket' => $subTiket]);
 	}
 
@@ -63,7 +63,7 @@ class TiketsController extends Controller {
 
 		//Заполнение модели
 
-		$Tiket = User::find(Auth::user()->id)->tiket()->find($request->id)->subtiket($request->id);
+		$Tiket = User::find(Sentry::getUser()->id)->tiket()->find($request->id)->subtiket($request->id);
 		$Tiket->save(new Tiket([
 			'message' => $request->message,
 		]));

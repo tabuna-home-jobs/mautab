@@ -1,0 +1,262 @@
+<?php $__env->startSection('content'); ?>
+    <section class="container" xmlns="http://www.w3.org/1999/html">
+
+
+        <div class="col-xs-12 log-row">
+            <h1 class="col-md-3 col-xs-12 subheaderlog"> <?php echo e($name); ?></h1>
+            <blockquote class="col-md-9 col-xs-12">
+
+
+                <div class="table-responsive">
+                    <table class="table">
+
+                        <?php foreach($web = explode(',',$Backup['WEB']) as $value): ?>
+                            <?php if(!empty($value)): ?>
+                                <tr>
+                                    <td>Web - домен</td>
+                                    <td class="question"><?php echo e($value); ?></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace('.','-',$value)); ?>-web"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-<?php echo e(str_replace('.','-',$value)); ?>-web" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить <?php echo e($value); ?> ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить <?php echo e($value); ?> ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="<?php echo e(URL::route('backup.store')); ?>" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="<?php echo e($value); ?>"/>
+                                                        <input type="hidden" name="type" value="web">
+                                                        <input type="hidden" name="backup" value="<?php echo e($name); ?>">
+                                                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+
+                        <?php foreach($web = explode(',',$Backup['DNS']) as $value): ?>
+                            <?php if(!empty($value)): ?>
+                                <tr>
+                                    <td>ДНС запись</td>
+                                    <td class="question"><?php echo e($value); ?></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace('.','-',$value)); ?>-dns"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-<?php echo e(str_replace('.','-',$value)); ?>-dns" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить <?php echo e($value); ?> ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить <?php echo e($value); ?> ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="<?php echo e(URL::route('backup.store')); ?>" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="<?php echo e($value); ?>"/>
+                                                        <input type="hidden" name="type" value="dns">
+                                                        <input type="hidden" name="backup" value="<?php echo e($name); ?>">
+                                                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+
+                        <?php foreach($web = explode(',',$Backup['MAIL']) as $value): ?>
+                            <?php if(!empty($value)): ?>
+                                <tr>
+                                    <td>Почта</td>
+                                    <td class="question"><?php echo e($value); ?></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace('.','-',$value)); ?>-mail"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-<?php echo e(str_replace('.','-',$value)); ?>-mail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить <?php echo e($value); ?> ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить <?php echo e($value); ?> ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="<?php echo e(URL::route('backup.store')); ?>" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="<?php echo e($value); ?>"/>
+                                                        <input type="hidden" name="type" value="mail">
+                                                        <input type="hidden" name="backup" value="<?php echo e($name); ?>">
+                                                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+
+                        <?php foreach($web = explode(',',$Backup['DB']) as $value): ?>
+                            <?php if(!empty($value)): ?>
+                                <tr>
+                                    <td>База данных</td>
+                                    <td class="question"><?php echo e($value); ?></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace('.','-',$value)); ?>-db"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-<?php echo e(str_replace('.','-',$value)); ?>-db" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить <?php echo e($value); ?> ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить <?php echo e($value); ?> ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="<?php echo e(URL::route('backup.store')); ?>" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="<?php echo e($value); ?>"/>
+                                                        <input type="hidden" name="type" value="db">
+                                                        <input type="hidden" name="backup" value="<?php echo e($name); ?>">
+                                                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+
+                        <?php foreach($web = explode(',',$Backup['CRON']) as $value): ?>
+                            <?php if(!empty($value)): ?>
+                                <tr>
+                                    <td>Задание</td>
+                                    <td class="question"><?php echo e($value); ?></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace('.','-',$value)); ?>-cron"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-<?php echo e(str_replace('.','-',$value)); ?>-cron" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить <?php echo e($value); ?> ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить <?php echo e($value); ?> ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="<?php echo e(URL::route('backup.store')); ?>" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="<?php echo e($value); ?>"/>
+                                                        <input type="hidden" name="type" value="cron">
+                                                        <input type="hidden" name="backup" value="<?php echo e($name); ?>">
+                                                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+
+                        <?php foreach($web = explode(',',$Backup['UDIR']) as $value): ?>
+                            <?php if(!empty($value)): ?>
+                                <tr>
+                                    <td>user dir</td>
+                                    <td class="question"><?php echo e($value); ?></td>
+                                    <td><a href="#" data-toggle="modal" data-target="#Modal-<?php echo e(str_replace('.','-',$value)); ?>-udir"><i class="fa fa-history"></i></a></td>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-<?php echo e(str_replace('.','-',$value)); ?>-udir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Востановить <?php echo e($value); ?> ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите востановить <?php echo e($value); ?> ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="<?php echo e(URL::route('backup.store')); ?>" method="post">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="object" value="<?php echo e($value); ?>"/>
+                                                        <input type="hidden" name="type" value="udir">
+                                                        <input type="hidden" name="backup" value="<?php echo e($name); ?>">
+                                                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+
+                    </table>
+                </div>
+
+                <hr>
+
+                <p class="text-right">
+                    <small>Размер: <?php echo e($Backup['SIZE']); ?> мб</small>
+                </p>
+                <p class="text-right">
+                    <small>Дата: <?php echo e($Backup['DATE']); ?> : <?php echo e($Backup['TIME']); ?> </small>
+                </p>
+            </blockquote>
+        </div>
+        <hr class="col-xs-12">
+
+    </section>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

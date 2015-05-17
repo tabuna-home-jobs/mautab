@@ -16,6 +16,11 @@
                             <td>{{$User->balans}} руб</td>
                             <td>
                                 <div class="btn-group pull-right" role="group" aria-label="...">
+                                    <a href="{{URL::route('LoginAs', $User->nickname)}}" class="btn btn-default">
+                                        <i class="fa fa-sign-out"></i>
+                                    </a>
+
+
                                     <a href="{{URL::route('admin.users.show', $User->id)}}" class="btn btn-default">
                                         <i class="fa fa-pencil-square-o"></i>
                                     </a>

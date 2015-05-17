@@ -67,14 +67,13 @@
     <!--  END OF MONITORING  -->
 
 
-    <!--
-      <div class="container text-center">
+    <div class="container text-center">
         <h3>Хостинг для вашего сайта</h3>
 
         <h1>Лучшая площадка для вашего проекта</h1>
         <button type="submit" class="btn button-prizrak">Тарифные планы</button>
       </div>
-    -->
+
 
 </header>
 

@@ -17,7 +17,7 @@
 
 
 	// Всё для пользователя
-	Route::group(['middleware' => ['user', 'sentry']], function () {
+	Route::group(['middleware' => ['sentry', 'LoginAs', 'user']], function () {
 		Route::resource('web', 'WebController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('records', 'RecordController');
@@ -37,5 +37,9 @@
 		Route::resource('users', 'UserController');
 		Route::resource('groups', 'GroupsController');
 		Route::resource('pages', 'PagesController');
+		Route::controller('LoginAs', 'LoginAsController', [
+			'getLoginAs' => 'LoginAs',
+			'getExit'    => 'ExitAs',
+		]);
 	});
 
