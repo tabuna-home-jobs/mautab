@@ -2,7 +2,7 @@
 
 
 
-	Route::group(['middleware' => 'guest'], function () {
+	Route::group(['middleware' => 'guest', 'namespace' => 'Guest'], function () {
 		Route::resource('/', 'WelcomeController@index');
 	});
 
@@ -17,7 +17,7 @@
 
 
 	// Всё для пользователя
-	Route::group(['middleware' => ['sentry', 'LoginAs', 'user']], function () {
+	Route::group(['middleware' => ['sentry', 'LoginAs', 'user'], 'namespace' => 'User'], function () {
 		Route::resource('web', 'WebController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('records', 'RecordController');

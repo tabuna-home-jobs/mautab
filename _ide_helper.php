@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.0.30 on 2015-05-12.
+ * Generated for Laravel 5.0.30 on 2015-05-17.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -5144,83 +5144,105 @@ namespace {
     class Input extends \Illuminate\Support\Facades\Input{
         
         /**
+         * Retrieve an input item from the request.
+         *
+         * @param string $key
+         * @param mixed  $default
+         *
+         * @return string|array
+         * @static
+         */
+	    public static function input($key = NULL, $default = NULL)
+	    {
+		    return \Illuminate\Http\Request::input($key, $default);
+	    }
+
+	    /**
          * Create a new Illuminate HTTP request from server variables.
          *
-         * @return static 
-         * @static 
+	     * @return static
+	     * @static
          */
-        public static function capture(){
-            return \Illuminate\Http\Request::capture();
+	    public static function capture()
+	    {
+		    return \Illuminate\Http\Request::capture();
         }
         
         /**
          * Return the Request instance.
          *
-         * @return $this 
-         * @static 
+         * @return $this
+         * @static
          */
-        public static function instance(){
-            return \Illuminate\Http\Request::instance();
+	    public static function instance()
+	    {
+		    return \Illuminate\Http\Request::instance();
         }
         
         /**
          * Get the request method.
          *
-         * @return string 
-         * @static 
+         * @return string
+         * @static
          */
-        public static function method(){
-            return \Illuminate\Http\Request::method();
+	    public static function method()
+	    {
+		    return \Illuminate\Http\Request::method();
         }
         
         /**
          * Get the root URL for the application.
          *
-         * @return string 
-         * @static 
+         * @return string
+         * @static
          */
-        public static function root(){
-            return \Illuminate\Http\Request::root();
+	    public static function root()
+	    {
+		    return \Illuminate\Http\Request::root();
         }
         
         /**
          * Get the URL (no query string) for the request.
          *
-         * @return string 
-         * @static 
+         * @return string
+         * @static
          */
-        public static function url(){
-            return \Illuminate\Http\Request::url();
+	    public static function url()
+	    {
+		    return \Illuminate\Http\Request::url();
         }
         
         /**
          * Get the full URL for the request.
          *
-         * @return string 
-         * @static 
+         * @return string
+         * @static
          */
-        public static function fullUrl(){
-            return \Illuminate\Http\Request::fullUrl();
+	    public static function fullUrl()
+	    {
+		    return \Illuminate\Http\Request::fullUrl();
         }
         
         /**
          * Get the current path info for the request.
          *
-         * @return string 
-         * @static 
+         * @return string
+         * @static
          */
-        public static function path(){
-            return \Illuminate\Http\Request::path();
+	    public static function path()
+	    {
+		    return \Illuminate\Http\Request::path();
         }
         
         /**
          * Get the current encoded path info for the request.
          *
-         * @return string 
-         * @static 
+         * @return string
+         * @static
          */
-        public static function decodedPath(){
-            return \Illuminate\Http\Request::decodedPath();
+	    public static function decodedPath()
+	    {
+		    return \Illuminate\Http\Request::decodedPath();
         }
         
         /**
@@ -5228,126 +5250,129 @@ namespace {
          *
          * @param int $index
          * @param mixed $default
-         * @return string 
-         * @static 
-         */
-        public static function segment($index, $default = null){
-            return \Illuminate\Http\Request::segment($index, $default);
-        }
-        
-        /**
-         * Get all of the segments for the request path.
          *
-         * @return array 
-         * @static 
+         * @return string
+         * @static
          */
-        public static function segments(){
-            return \Illuminate\Http\Request::segments();
+	    public static function segment($index, $default = NULL)
+	    {
+		    return \Illuminate\Http\Request::segment($index, $default);
         }
-        
-        /**
-         * Determine if the current request URI matches a pattern.
-         *
-         * @param mixed  string
-         * @return bool 
-         * @static 
-         */
-        public static function is(){
-            return \Illuminate\Http\Request::is();
+
+	    /**
+	     * Get all of the segments for the request path.
+	     *
+	     * @return array
+	     * @static
+	     */
+	    public static function segments()
+	    {
+		    return \Illuminate\Http\Request::segments();
         }
-        
-        /**
-         * Determine if the request is the result of an AJAX call.
-         *
-         * @return bool 
-         * @static 
-         */
-        public static function ajax(){
-            return \Illuminate\Http\Request::ajax();
+
+	    /**
+	     * Determine if the current request URI matches a pattern.
+	     *
+	     * @param mixed  string
+	     *
+	     * @return bool
+	     * @static
+	     */
+	    public static function is()
+	    {
+		    return \Illuminate\Http\Request::is();
         }
-        
-        /**
-         * Determine if the request is the result of an PJAX call.
-         *
-         * @return bool 
-         * @static 
-         */
-        public static function pjax(){
-            return \Illuminate\Http\Request::pjax();
+
+	    /**
+	     * Determine if the request is the result of an AJAX call.
+	     *
+	     * @return bool
+	     * @static
+	     */
+	    public static function ajax()
+	    {
+		    return \Illuminate\Http\Request::ajax();
         }
-        
-        /**
-         * Determine if the request is over HTTPS.
-         *
-         * @return bool 
-         * @static 
-         */
-        public static function secure(){
-            return \Illuminate\Http\Request::secure();
+
+	    /**
+	     * Determine if the request is the result of an PJAX call.
+	     *
+	     * @return bool
+	     * @static
+	     */
+	    public static function pjax()
+	    {
+		    return \Illuminate\Http\Request::pjax();
         }
-        
-        /**
-         * Returns the client IP address.
-         *
-         * @return string 
-         * @static 
-         */
-        public static function ip(){
-            return \Illuminate\Http\Request::ip();
+
+	    /**
+	     * Determine if the request is over HTTPS.
+	     *
+	     * @return bool
+	     * @static
+	     */
+	    public static function secure()
+	    {
+		    return \Illuminate\Http\Request::secure();
         }
-        
-        /**
-         * Returns the client IP addresses.
-         *
-         * @return array 
-         * @static 
-         */
-        public static function ips(){
-            return \Illuminate\Http\Request::ips();
+
+	    /**
+	     * Returns the client IP address.
+	     *
+	     * @return string
+	     * @static
+	     */
+	    public static function ip()
+	    {
+		    return \Illuminate\Http\Request::ip();
         }
-        
-        /**
-         * Determine if the request contains a given input item key.
+
+	    /**
+	     * Returns the client IP addresses.
+	     *
+	     * @return array
+	     * @static
+	     */
+	    public static function ips()
+	    {
+		    return \Illuminate\Http\Request::ips();
+        }
+
+	    /**
+	     * Determine if the request contains a given input item key.
          *
          * @param string|array $key
-         * @return bool 
-         * @static 
-         */
-        public static function exists($key){
-            return \Illuminate\Http\Request::exists($key);
+	     *
+	     * @return bool
+	     * @static
+	     */
+	    public static function exists($key)
+	    {
+		    return \Illuminate\Http\Request::exists($key);
         }
-        
-        /**
-         * Determine if the request contains a non-empty value for an input item.
-         *
-         * @param string|array $key
-         * @return bool 
-         * @static 
-         */
-        public static function has($key){
-            return \Illuminate\Http\Request::has($key);
+
+	    /**
+	     * Determine if the request contains a non-empty value for an input item.
+	     *
+	     * @param string|array $key
+	     *
+	     * @return bool
+	     * @static
+	     */
+	    public static function has($key)
+	    {
+		    return \Illuminate\Http\Request::has($key);
         }
-        
-        /**
-         * Get all of the input and files for the request.
-         *
-         * @return array 
-         * @static 
-         */
-        public static function all(){
-            return \Illuminate\Http\Request::all();
-        }
-        
-        /**
-         * Retrieve an input item from the request.
-         *
-         * @param string $key
-         * @param mixed $default
-         * @return string|array 
-         * @static 
-         */
-        public static function input($key = null, $default = null){
-            return \Illuminate\Http\Request::input($key, $default);
+
+	    /**
+	     * Get all of the input and files for the request.
+	     *
+	     * @return array
+	     * @static
+	     */
+	    public static function all()
+	    {
+		    return \Illuminate\Http\Request::all();
         }
         
         /**
@@ -6832,114 +6857,132 @@ namespace {
 
 
     class Log extends \Illuminate\Support\Facades\Log{
-        
-        /**
-         * Adds a log record at the DEBUG level.
+
+	    /**
+	     * Log a message to the logs.
+	     *
+	     * @param string $level
+	     * @param string $message
+	     * @param array  $context
+	     *
+	     * @return void
+	     * @static
+	     */
+	    public static function log($level, $message, $context = array())
+	    {
+		    \Illuminate\Log\Writer::log($level, $message, $context);
+        }
+
+	    /**
+	     * Adds a log record at the DEBUG level.
          *
          * @param string $message The log message
          * @param array $context The log context
-         * @return Boolean Whether the record has been processed
-         * @static 
-         */
-        public static function debug($message, $context = array()){
-            return \Monolog\Logger::debug($message, $context);
+	     *
+	     * @return Boolean Whether the record has been processed
+	     * @static
+	     */
+	    public static function debug($message, $context = array())
+	    {
+		    return \Monolog\Logger::debug($message, $context);
         }
-        
-        /**
-         * Adds a log record at the INFO level.
+
+	    /**
+	     * Adds a log record at the INFO level.
          *
          * @param string $message The log message
          * @param array $context The log context
-         * @return Boolean Whether the record has been processed
-         * @static 
-         */
-        public static function info($message, $context = array()){
-            return \Monolog\Logger::info($message, $context);
+	     *
+	     * @return Boolean Whether the record has been processed
+	     * @static
+	     */
+	    public static function info($message, $context = array())
+	    {
+		    return \Monolog\Logger::info($message, $context);
         }
-        
-        /**
-         * Adds a log record at the NOTICE level.
+
+	    /**
+	     * Adds a log record at the NOTICE level.
          *
          * @param string $message The log message
          * @param array $context The log context
-         * @return Boolean Whether the record has been processed
-         * @static 
-         */
-        public static function notice($message, $context = array()){
-            return \Monolog\Logger::notice($message, $context);
+	     *
+	     * @return Boolean Whether the record has been processed
+	     * @static
+	     */
+	    public static function notice($message, $context = array())
+	    {
+		    return \Monolog\Logger::notice($message, $context);
         }
-        
-        /**
-         * Adds a log record at the WARNING level.
+
+	    /**
+	     * Adds a log record at the WARNING level.
          *
          * @param string $message The log message
          * @param array $context The log context
-         * @return Boolean Whether the record has been processed
-         * @static 
-         */
-        public static function warning($message, $context = array()){
-            return \Monolog\Logger::warning($message, $context);
+	     *
+	     * @return Boolean Whether the record has been processed
+	     * @static
+	     */
+	    public static function warning($message, $context = array())
+	    {
+		    return \Monolog\Logger::warning($message, $context);
         }
-        
-        /**
-         * Adds a log record at the ERROR level.
+
+	    /**
+	     * Adds a log record at the ERROR level.
          *
          * @param string $message The log message
          * @param array $context The log context
-         * @return Boolean Whether the record has been processed
-         * @static 
-         */
-        public static function error($message, $context = array()){
-            return \Monolog\Logger::error($message, $context);
+	     *
+	     * @return Boolean Whether the record has been processed
+	     * @static
+	     */
+	    public static function error($message, $context = array())
+	    {
+		    return \Monolog\Logger::error($message, $context);
         }
-        
-        /**
-         * Adds a log record at the CRITICAL level.
+
+	    /**
+	     * Adds a log record at the CRITICAL level.
          *
          * @param string $message The log message
          * @param array $context The log context
-         * @return Boolean Whether the record has been processed
-         * @static 
-         */
-        public static function critical($message, $context = array()){
-            return \Monolog\Logger::critical($message, $context);
-        }
-        
-        /**
-         * Adds a log record at the ALERT level.
+	     *
+	     * @return Boolean Whether the record has been processed
+	     * @static
+	     */
+	    public static function critical($message, $context = array())
+	    {
+		    return \Monolog\Logger::critical($message, $context);
+	    }
+
+	    /**
+	     * Adds a log record at the ALERT level.
          *
          * @param string $message The log message
          * @param array $context The log context
-         * @return Boolean Whether the record has been processed
-         * @static 
-         */
-        public static function alert($message, $context = array()){
-            return \Monolog\Logger::alert($message, $context);
-        }
-        
-        /**
-         * Adds a log record at the EMERGENCY level.
-         *
-         * @param string $message The log message
-         * @param array $context The log context
-         * @return Boolean Whether the record has been processed
-         * @static 
-         */
-        public static function emergency($message, $context = array()){
-            return \Monolog\Logger::emergency($message, $context);
-        }
-        
-        /**
-         * Log a message to the logs.
-         *
-         * @param string $level
-         * @param string $message
-         * @param array $context
-         * @return void 
-         * @static 
-         */
-        public static function log($level, $message, $context = array()){
-            \Illuminate\Log\Writer::log($level, $message, $context);
+	     *
+	     * @return Boolean Whether the record has been processed
+	     * @static
+	     */
+	    public static function alert($message, $context = array())
+	    {
+		    return \Monolog\Logger::alert($message, $context);
+	    }
+
+	    /**
+	     * Adds a log record at the EMERGENCY level.
+	     *
+	     * @param string $message The log message
+	     * @param array  $context The log context
+	     *
+	     * @return Boolean Whether the record has been processed
+	     * @static
+	     */
+	    public static function emergency($message, $context = array())
+	    {
+		    return \Monolog\Logger::emergency($message, $context);
         }
         
         /**
@@ -12281,8 +12324,18 @@ namespace {
         /**
          * 
          *
-         * @static 
+         * @static
          */
+	    public static function Exceptions($code)
+	    {
+		    return \App\Services\Vesta::Exceptions($code);
+	    }
+
+	    /**
+	     *
+	     *
+	     * @static
+	     */
         public static function listBD(){
             return \App\Services\Vesta::listBD();
         }
@@ -12407,8 +12460,18 @@ namespace {
         /**
          * 
          *
-         * @static 
+         * @static
          */
+	    public static function changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority)
+	    {
+		    return \App\Services\Vesta::changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority);
+	    }
+
+	    /**
+	     *
+	     *
+	     * @static
+	     */
         public static function removeDNSRecord($v_domain, $v_record_id){
             return \App\Services\Vesta::removeDNSRecord($v_domain, $v_record_id);
         }
@@ -12416,8 +12479,18 @@ namespace {
         /**
          * 
          *
-         * @static 
+         * @static
          */
+	    public static function addDNSRecord($v_domain, $v_rec, $v_type, $v_val, $v_priority)
+	    {
+		    return \App\Services\Vesta::addDNSRecord($v_domain, $v_rec, $v_type, $v_val, $v_priority);
+	    }
+
+	    /**
+	     *
+	     *
+	     * @static
+	     */
         public static function regUser($username, $password, $email, $package, $fist_name, $last_name){
             return \App\Services\Vesta::regUser($username, $password, $email, $package, $fist_name, $last_name);
         }
@@ -12569,8 +12642,18 @@ namespace {
         /**
          * 
          *
-         * @static 
+         * @static
          */
+	    public static function addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path)
+	    {
+		    return \App\Services\Vesta::addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path);
+	    }
+
+	    /**
+	     *
+	     *
+	     * @static
+	     */
         public static function addDomainProxy($domain, $ext){
             return \App\Services\Vesta::addDomainProxy($domain, $ext);
         }
@@ -12591,6 +12674,36 @@ namespace {
          */
         public static function changeWebDomainIp($domain, $ip){
             return \App\Services\Vesta::changeWebDomainIp($domain, $ip);
+        }
+
+	    /**
+	     *
+	     *
+	     * @static
+	     */
+	    public static function deleteWebDomain($domain, $v_ftp_username)
+	    {
+		    return \App\Services\Vesta::deleteWebDomain($domain, $v_ftp_username);
+	    }
+
+	    /**
+	     *
+	     *
+	     * @static
+	     */
+	    public static function changeWebDomain($domain, $v_ftp_username, $v_ftp_path)
+	    {
+		    return \App\Services\Vesta::changeWebDomain($domain, $v_ftp_username, $v_ftp_path);
+	    }
+
+	    /**
+	     *
+	     *
+	     * @static
+	     */
+	    public static function changeFtpPassword($domain, $v_ftp_username, $v_password)
+	    {
+		    return \App\Services\Vesta::changeFtpPassword($domain, $v_ftp_username, $v_password);
         }
         
         /**

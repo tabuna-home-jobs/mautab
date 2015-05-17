@@ -2,7 +2,7 @@
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2015-05-12.
+    * Generated on 2015-05-17.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -40,7 +40,6 @@
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
-            'Illuminate\Contracts\Auth\Registrar' instanceof \App\Services\Registrar,
             'sentry.hasher' instanceof \Cartalyst\Sentry\Hashing\NativeHasher,
             'sentry.user' instanceof \Cartalyst\Sentry\Users\Eloquent\Provider,
             'sentry.group' instanceof \Cartalyst\Sentry\Groups\Eloquent\Provider,
@@ -157,7 +156,6 @@
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
-            'Illuminate\Contracts\Auth\Registrar' instanceof \App\Services\Registrar,
             'sentry.hasher' instanceof \Cartalyst\Sentry\Hashing\NativeHasher,
             'sentry.user' instanceof \Cartalyst\Sentry\Users\Eloquent\Provider,
             'sentry.group' instanceof \Cartalyst\Sentry\Groups\Eloquent\Provider,
@@ -274,7 +272,6 @@
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
-            'Illuminate\Contracts\Auth\Registrar' instanceof \App\Services\Registrar,
             'sentry.hasher' instanceof \Cartalyst\Sentry\Hashing\NativeHasher,
             'sentry.user' instanceof \Cartalyst\Sentry\Users\Eloquent\Provider,
             'sentry.group' instanceof \Cartalyst\Sentry\Groups\Eloquent\Provider,
@@ -391,7 +388,6 @@
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
-            'Illuminate\Contracts\Auth\Registrar' instanceof \App\Services\Registrar,
             'sentry.hasher' instanceof \Cartalyst\Sentry\Hashing\NativeHasher,
             'sentry.user' instanceof \Cartalyst\Sentry\Users\Eloquent\Provider,
             'sentry.group' instanceof \Cartalyst\Sentry\Groups\Eloquent\Provider,
@@ -508,7 +504,6 @@
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
-            'Illuminate\Contracts\Auth\Registrar' instanceof \App\Services\Registrar,
             'sentry.hasher' instanceof \Cartalyst\Sentry\Hashing\NativeHasher,
             'sentry.user' instanceof \Cartalyst\Sentry\Users\Eloquent\Provider,
             'sentry.group' instanceof \Cartalyst\Sentry\Groups\Eloquent\Provider,
@@ -625,7 +620,6 @@
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
-            'Illuminate\Contracts\Auth\Registrar' instanceof \App\Services\Registrar,
             'sentry.hasher' instanceof \Cartalyst\Sentry\Hashing\NativeHasher,
             'sentry.user' instanceof \Cartalyst\Sentry\Users\Eloquent\Provider,
             'sentry.group' instanceof \Cartalyst\Sentry\Groups\Eloquent\Provider,

@@ -1,6 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Guest;
 
-use Sentry;
+use App\Http\Controllers\Controller;
 
 class WelcomeController extends Controller {
 

@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ChangeUserRequest;
 use Sentry;
 use Session;
-use SSH;
 use Vesta;
 
 class HomeController extends Controller {
