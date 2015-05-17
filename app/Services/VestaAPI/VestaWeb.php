@@ -98,6 +98,23 @@ trait VestaWeb
 		return $this->sendQuery('v-change-web-domain-ip', Sentry::getUser()->nickname, $domain, $ip, 'no');
 	}
 
+	public function deleteWebDomain($domain, $v_ftp_username){
+
+		return $this->sendQuery('v-delete-web-domain-ftp', Sentry::getUser()->nickname, $domain, $v_ftp_username);
+
+	}
+
+	public function changeWebDomain($domain,$v_ftp_username, $v_ftp_path){
+
+		return $this->sendQuery('v-change-web-domain-ftp-path', Sentry::getUser()->nickname, $domain, $v_ftp_username, $v_ftp_path);
+
+	}
+
+	public function changeFtpPassword($domain, $v_ftp_username, $v_password){
+
+		return $this->sendQuery('v-change-web-domain-ftp-password', Sentry::getUser()->nickname, $domain, $v_ftp_username, $v_password);
+
+	}
 
 
 }
