@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\AuthRequest;
 use App\Http\Requests\Auth\AuthRequestReg;
 use Sentry;
+use Session;
 
 class AuthController extends Controller {
 
@@ -75,6 +76,7 @@ class AuthController extends Controller {
 	public function getLogout()
 	{
 		Sentry::logout();
+		Session::flush();
 		return redirect('/');
 	}
 
