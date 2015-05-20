@@ -119,7 +119,7 @@
 
                             <div class="progress-bar" role="progressbar" aria-valuenow="{{ $UserInfo['U_BANDWIDTH'] }}" aria-valuemin="0"
                                  aria-valuemax="{{ $UserInfo['BANDWIDTH'] }}"
-                                 style="width:  {{$UserInfo['U_BANDWIDTH'] *  $UserInfo['BANDWIDTH'] / 100  }} %; min-width: 2em;">
+                                 style="width:  {{$UserInfo['U_BANDWIDTH']/$UserInfo['BANDWIDTH'] * 100  }}%; min-width: 2em;">
                             </div>
                         </div>
 
@@ -129,7 +129,7 @@
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" aria-valuenow="{{ $UserInfo['U_DISK'] }}" aria-valuemin="0"
                                  aria-valuemax="{{ $UserInfo['DISK_QUOTA'] }}"
-                                 style="width: {{  $UserInfo['U_DISK'] *  $UserInfo['DISK_QUOTA'] / 100  }} %; min-width: 2em;">
+                                 style="width: {{  $UserInfo['U_DISK']/$UserInfo['DISK_QUOTA']*100  }}%; min-width: 2em;">
                             </div>
                         </div>
                     </div>
