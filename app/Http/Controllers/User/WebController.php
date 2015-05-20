@@ -166,6 +166,10 @@ class WebController extends Controller {
 		return view('web/editList', ['webList' => Vesta::listEditWebDomain($name)]);
 	}
 
+	public function showFTP(){
+
+	}
+
 	public function update(ChangeWebRequest $request)
 	{
 		//Изменение IP
