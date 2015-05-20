@@ -53,7 +53,7 @@
 
             <a href="{{URL::route('home.index')}}">
                 <span class="fa fa-home"></span>
-                <h4>{{Lang::get('menu.user')}}</h4>
+                <h4>{{Lang::get('menu.Panel')}}</h4>
             </a>
 
 
@@ -69,7 +69,7 @@
 
             <a href="{{URL::route('admin.users.index')}}">
                 <span class="fa fa-user"></span>
-                <h4>{{Lang::get('menu.Web')}}</h4>
+                <h4>{{Lang::get('menu.Users')}}</h4>
             </a>
 
 
@@ -84,7 +84,7 @@
         <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="{{URL::route('admin.groups.index')}}">
                 <span class="fa fa-users"></span>
-                <h4>{{Lang::get('menu.DNS')}}</h4>
+                <h4>{{Lang::get('menu.Groups')}}</h4>
             </a>
 
 
@@ -97,7 +97,7 @@
         <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="{{URL::route('admin.pages.index')}}">
                 <span class="fa fa-file-text"></span>
-                <h4>{{Lang::get('menu.BD')}}</h4>
+                <h4>{{Lang::get('menu.Pages')}}</h4>
             </a>
 
 

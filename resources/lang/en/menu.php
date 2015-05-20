@@ -22,4 +22,8 @@
 		"support"   => "Support",
 		"Settings" => "Settings",
 		"Info"     => "Info",
+		"Panel"  => "Panel",
+		"Users"  => "Users",
+		'Groups' => "Groups",
+		'Pages'  => "Pages",
 	];
