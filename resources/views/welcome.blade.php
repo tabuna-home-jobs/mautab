@@ -22,6 +22,7 @@
 </head>
 <body>
 
+<div id="wath"></div>
 
 <header class="header-login-app">
 
@@ -66,13 +67,6 @@
     </section>
     <!--  END OF MONITORING  -->
 
-
-    <div class="container text-center">
-        <h3>Хостинг для вашего сайта</h3>
-
-        <h1>Лучшая площадка для вашего проекта</h1>
-        <button type="submit" class="btn button-prizrak">Тарифные планы</button>
-      </div>
 
 
 </header>
@@ -159,7 +153,8 @@
 
         <div class="container">
 
-            <div class="col-xs-12 col-md-4 wow zoomIn" data-wow-delay="0.2s">
+
+        <div class="col-xs-12 col-md-4 wow zoomIn" data-wow-delay="0.2s">
                 <div class="panel panel-price">
                     <div class="panel-heading">
                         <h3 class="panel-title">Мини</h3>

@@ -77,23 +77,6 @@ body.modal-open {
     transition: all 0.3s ease 0s;
 }
 
-.button-prizrak {
-    background: none repeat scroll 0 0 transparent;
-    border: 1px solid #f7ebdf;
-    color: #f7ebdf;
-    font-weight: 700;
-    margin-top: 60px;
-    padding: 15px;
-}
-
-.button-prizrak:hover {
-    background: none repeat scroll 0 0 #65464c;
-    border-color: #65464c;
-    text-decoration: none;
-    color: #f7ebdf;
-    transition: all 0.5s ease 0s;
-}
-
 header h1 {
     color: #67484e;
     font-size: 30pt;
