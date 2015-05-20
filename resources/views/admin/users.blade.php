@@ -3,7 +3,10 @@
 @section('content')
 
 
-        <div class="col-md-12" id="add-shadow">
+    <section class="container">
+
+
+    <div class="col-md-12" id="add-shadow">
 
             <div class=" table-responsive">
                 <table class="table table-condensed table-hover table-striped">
@@ -66,5 +69,7 @@
 
 
         </div>
+
+    </section>
 
 @endsection

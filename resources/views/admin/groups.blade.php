@@ -2,6 +2,11 @@
 
 @section('content')
 
+
+    <section class="container">
+
+        <div class="col-xs-12">
+
         <p class="text-center">
             <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
                 <i class="fa fa-plus"></i>Добавить
@@ -115,5 +120,9 @@
 
 
         </div>
+
+
+        </div>
+        <section>
 
 @endsection

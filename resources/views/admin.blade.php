@@ -39,62 +39,123 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">{{ Sentry::getUser()->name }} </a></li>
+                    <li>{{ Sentry::getUser()->nickname }}</li>
+                    <li><a href="/auth/logout">Выйти</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
 
-</header>
+    <menu class="menuapp container text-center">
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
 
 
-<div class="container">
-
-    <nav class="menu-admin text-center col-xs-1">
-
-        <div class="btn-group-vertical" role="group" aria-label="...">
-            <a class="btn btn-default" href="{{URL::route('home.index')}}">
+            <a href="{{URL::route('home.index')}}">
                 <span class="fa fa-home"></span>
-            </a>
-
-            <a class="btn btn-default" href="{{URL::route('home.index')}}">
-                <span class="fa fa-tasks"></span>
+                <h4>{{Lang::get('menu.user')}}</h4>
             </a>
 
 
-            <a class="btn btn-default" href="{{URL::route('admin.users.index')}}">
-                <span class="fa fa-user"></span>
-            </a>
+            <hr>
 
+            <p class="menu-small">Текст</p>
 
-            <a class="btn btn-default" href="{{URL::route('admin.groups.index')}}">
-                <span class="fa fa-users"></span>
-            </a>
-
-            <a class="btn btn-default" href="{{URL::route('admin.pages.index')}}">
-                <span class="fa fa-file-text"></span>
-            </a>
-
-            <a class="btn btn-default" href="{{URL::route('home.index')}}">
-                <span class="fa fa-user"></span>
-            </a>
+            <p class="menu-small">Текст</p>
 
         </div>
 
+        <div class="col-md-2 col-sm-4 col-xs-6">
 
-    </nav>
+            <a href="{{URL::route('admin.users.index')}}">
+                <span class="fa fa-user"></span>
+                <h4>{{Lang::get('menu.Web')}}</h4>
+            </a>
 
 
-    <arside class="col-xs-11">
+            <hr>
+
+            <p class="menu-small"> Текст </p>
+
+            <p class="menu-small"> Текст </p>
+        </div>
+
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="{{URL::route('admin.groups.index')}}">
+                <span class="fa fa-users"></span>
+                <h4>{{Lang::get('menu.DNS')}}</h4>
+            </a>
+
+
+            <hr>
+            <p class="menu-small"> Текст </p>
+
+            <p class="menu-small"> Текст </p>
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="{{URL::route('admin.pages.index')}}">
+                <span class="fa fa-file-text"></span>
+                <h4>{{Lang::get('menu.BD')}}</h4>
+            </a>
+
+
+            <hr>
+            <p class="menu-small">Текст </p>
+        </div>
+
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="{{URL::route('cron.index')}}">
+                <span class="fa fa-clock-o"></span>
+                <h4>{{Lang::get('menu.Cron')}}</h4>
+            </a>
+            <hr>
+            <p class="menu-small"> Текст </p>
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+            <a href="{{URL::route('tikets.index')}}">
+                <span class="fa fa-life-ring"></span>
+                <h4>{{Lang::get('menu.support')}}</h4>
+            </a>
+            <hr>
+
+            <p class="menu-small"><a href="{{URL::route('log.index')}}">Журнал действий</a></p>
+
+            <p class="menu-small"><a href="{{URL::route('backup.index')}}">Резервные копии</a></p>
+        </div>
+
+    </menu>
+
+
+
 
     @if (Session::has('good'))
+        <div class="container">
             <div class="alert alert-success text-center">{{Session::get('good')}}</div>
+        </div>
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
     @endif
 
-        @yield('content')
-    </arside>
 
-</div>
+</header>
+
+
+@yield('content')
+
 
 @include('footer')
