@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="utf-8">
@@ -44,6 +44,16 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/auth/login">Войти</a></li>
             <li><a href="/auth/register">Зарегистрироваться</a></li>
+            <li>
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Язык</a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
         </ul>
       </div>
     </div>
@@ -237,85 +247,75 @@
 </section>
 <!--  END OF CALL TO ACTION -->
 
-
-<div class="container">
+<section class="col-xs-12">
+    <div class="container popcms">
     <!-- Example row of columns -->
         <div class="col-md-4">
+            <header class="text-center">
+                <img src="https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png" width="150">
             <h2>WordPress</h2>
-
+            </header>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
                amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-            <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+            <p class="text-center"><a role="button" href="#" class="button-small">View details »</a></p>
         </div>
-        <div class="col-md-4">
-            <h2>Bitrix</h2>
+    <div class="col-md-4">
+        <header class="text-center">
+            <img src="http://www.hitsteps.com/responsive/images/logo-joomla.png" width="150">
 
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-               amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-
-            <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
-        </div>
-        <div class="col-md-4">
             <h2>Joomla</h2>
-
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac
-               cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-            <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
-        </div>
-
-
-    <div class="col-md-4">
-        <h2>WordPress</h2>
-
+        </header>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
            amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-        <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+        <p class="text-center"><a role="button" href="#" class="button-small">View details »</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Bitrix</h2>
+        <header class="text-center">
+            <img src="https://www.freelock.com/sites/default/files/druplicon.large_.png" width="150">
 
+            <h2>Drupal</h2>
+        </header>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
            amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-        <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+        <p class="text-center"><a role="button" href="#" class="button-small">View details »</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Joomla</h2>
+        <header class="text-center">
+            <img src="http://modxpdx.s3.amazonaws.com/assets/images/modx-logo-480.png" width="150">
 
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac
-           cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-        <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
-    </div>
-
-
-    <div class="col-md-4">
-        <h2>WordPress</h2>
-
+            <h2>ModX</h2>
+        </header>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
            amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-        <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+        <p class="text-center"><a role="button" href="#" class="button-small">View details »</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Bitrix</h2>
+        <header class="text-center">
+            <img src="https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png" width="150">
 
+            <h2>WordPress</h2>
+        </header>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
            amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-        <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+        <p class="text-center"><a role="button" href="#" class="button-small">View details »</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Joomla</h2>
+        <header class="text-center">
+            <img src="https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png" width="150">
 
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac
-           cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <h2>WordPress</h2>
+        </header>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+           amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-        <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+        <p class="text-center"><a role="button" href="#" class="button-small">View details »</a></p>
     </div>
+
 
     <hr>
 
@@ -323,7 +323,7 @@
         <p>&copy; Company 2014</p>
     </footer>
 </div>
-
+</section>
 
 
 @include('footer')
