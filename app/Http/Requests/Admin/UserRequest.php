@@ -25,6 +25,11 @@ class UserRequest extends Request
 	{
 		return [
 			'id' => 'integer',
+            'email' => 'sometimes|required|email',
+            'first_name' => 'sometimes|required|max:255',
+            'last_name' => 'sometimes|required|max:255',
+            'groups' => 'array',
+            'permissions' => 'array'
 		];
 	}
 

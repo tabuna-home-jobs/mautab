@@ -52,8 +52,10 @@ class UserController extends Controller
 	public function show($id)
 	{
 		$User = Sentry::findUserById($id);
+        $groups = Sentry::findAllGroups();
+        $thisgroup = $User->getGroups();
 
-		return view('admin/usersEdit', ['user' => $User]);
+        return view('admin/usersEdit', ['user' => $User, 'groups' => $groups, 'thisgroup' => $thisgroup]);
 	}
 
 	/**
@@ -75,9 +77,16 @@ class UserController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function update($id)
+    public function update(UserRequest $request)
 	{
-		//
+        $user = Sentry::getUser();
+        $user->email = $request->email;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->save();
+
+
+        dd(Sentry::getUser());
 	}
 
 	/**
@@ -89,19 +98,10 @@ class UserController extends Controller
 	 */
 	public function destroy(UserRequest $request)
 	{
-		try {
-			// Find the user using the user id
 			$user = Sentry::findUserById($request->id);
-
-			// Delete the user
 			$user->delete();
-
 			Session::flash('good', 'Вы удалили пользователя.');
-
 			return redirect()->route('admin.users.index');
-		} catch (Cartalyst\Sentry\Users\UserNotFoundException $e) {
-			echo 'User was not found.';
-		}
 	}
 
 }

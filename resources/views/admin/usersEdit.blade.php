@@ -73,7 +73,26 @@
                         </div>
 
                         <div aria-labelledby="groups-tab" id="groups" class="tab-pane fade" role="tabpanel">
-                            <p>Это группа</p>
+                            <div class="col-xs-12">
+                                <div class="form-group">
+
+                                    @foreach($groups as $value)
+                                        @foreach($thisgroup as $thisUserGroup)
+                                            <div class="checkbox">
+                                                <input type="checkbox" name="groups[]"
+                                                       value="{{$value->id}}"
+                                                @if($value->id == $thisUserGroup->id)
+                                                       checked
+                                                        @endif
+                                                        >
+                                                {{$value->name}}
+                                                </label>
+                                            </div>
+
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
 
 
@@ -87,10 +106,12 @@
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox"
+                                                       name="permissions['{{$route->getName()}}']"
+                                                       value="1"
                                                 @if(isset($user->permissions[$route->getName()]))
                                                        checked
-                                                       @endif
-                                                       name="permissions[{{$route->getName()}}]" value="1">
+                                                        @endif
+                                                        >
                                                 {{$route->getName()}}
                                             </label>
                                         </div>
