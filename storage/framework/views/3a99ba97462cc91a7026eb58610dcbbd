@@ -72,8 +72,10 @@
 </header>
 
 
+
+
 <!--  TESTIMONIALS  -->
-<section class="testimonials col-xs-12">
+<section class="testimonials col-xs-12 fullscreen  parallax" style="background-image:url('https://pp.vk.me/c623228/v623228062/326f7/khA6DwFB8Vc.jpg');" data-img-width="100%" data-img-height="1064" data-diff="100">
     <div class="circle"><i class="fa fa-heart"></i></div>
     <h2>Нас выбрали <span id="lovedby">0</span> разработчика</h2>
 </section>
@@ -238,112 +240,35 @@
 
 
 
-<!--  SHARE HOSTING FEATURES  -->
-<section class="sharedfeatures-odd col-xs-12 wow fadeInUp ">
-  <div class="container">
-    <div class="col-xs-12 col-sm-4">
-      <div class="circle"><i class="fa fa-globe"></i></div>
+
+
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>WordPress</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Bitrix</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a role="button" href="#" class="btn btn-default">View details »</a></p>
+        </div>
     </div>
-    <div class="col-xs-12 col-sm-8">
-      <h2>Расположение серверов по всему миру</h2>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin molestie ultrices. Aliquam at efficitur nibh. Etiam accumsan diam ut ligula interdum, non interdum est ornare. Curabitur dapibus nisl in ipsum aliquet condimentum quis sit amet metus. Aliquam semper vehicula lacus volutpat tincidunt. Suspendisse vel sem id ante rhoncus convallis id in dui. Vestibulum urna quam, porttitor id aliquet vel, lobortis at odio. Quisque nec pulvinar sapien. </p>
-    </div>
-  </div>
-</section>
+    <hr>
 
-<section class="sharedfeatures-even col-xs-12 wow fadeInUp">
-  <div class="container">
-    <div class="col-xs-12 col-sm-8">
-      <h2>Простая установка</h2>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin molestie ultrices. Aliquam at efficitur nibh. Etiam accumsan diam ut ligula interdum, non interdum est ornare. Curabitur dapibus nisl in ipsum aliquet condimentum quis sit amet metus. Aliquam semper vehicula lacus volutpat tincidunt. Suspendisse vel sem id ante rhoncus convallis id in dui. Vestibulum urna quam, porttitor id aliquet vel, lobortis at odio. Quisque nec pulvinar sapien.  </p>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="circle"><i class="fa fa-random"></i></div>
-    </div>
-  </div>
-
-</section>
-
-<section class="sharedfeatures-odd col-xs-12 wow fadeInUp">
-  <div class="container">
-    <div class="col-xs-12 col-sm-4">
-      <div class="circle"><i class="fa fa-thumbs-o-up"></i></div>
-    </div>
-    <div class="col-xs-12 col-sm-8">
-      <h2>24/7  Круглосуточная поддержка</h2>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin molestie ultrices. Aliquam at efficitur nibh. Etiam accumsan diam ut ligula interdum, non interdum est ornare. Curabitur dapibus nisl in ipsum aliquet condimentum quis sit amet metus. Aliquam semper vehicula lacus volutpat tincidunt. Suspendisse vel sem id ante rhoncus convallis id in dui. Vestibulum urna quam, porttitor id aliquet vel, lobortis at odio. Quisque nec pulvinar sapien. </p>
-    </div>
-  </div>
-</section>
-
-<section class="sharedfeatures-even col-xs-12  wow fadeInUp">
-  <div class="container">
-    <div class="col-xs-12 col-sm-8">
-      <h2>SSD Диски</h2>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin molestie ultrices. Aliquam at efficitur nibh. Etiam accumsan diam ut ligula interdum, non interdum est ornare. Curabitur dapibus nisl in ipsum aliquet condimentum quis sit amet metus. Aliquam semper vehicula lacus volutpat tincidunt. Suspendisse vel sem id ante rhoncus convallis id in dui. Vestibulum urna quam, porttitor id aliquet vel, lobortis at odio. Quisque nec pulvinar sapien.  </p>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="circle"><i class="fa fa-hdd-o"></i></div>
-    </div>
-  </div>
-</section>
-<!--  SHARE HOSTING FEATURES  -->
-
-
-
-
-
-
-<!--  CONTACT CONTENT  -->
-<div class="contact-section col-xs-12">
-  <div class="container">
-    <div class="col-xs-12 col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin molestie ultrices. Aliquam at efficitur nibh. Etiam accumsan diam ut ligula interdum, non interdum est ornare. Curabitur dapibus nisl in ipsum aliquet condimentum quis sit amet metus. Aliquam semper vehicula lacus volutpat tincidunt. Suspendisse vel sem id ante rhoncus convallis id in dui. Vestibulum urna quam, porttitor id aliquet vel, lobortis at odio. Quisque nec pulvinar sapien. </p>
-
-      <div class="contact-details">
-        <h4>CloudMe</h4>
-        <ul>
-          <li><span>г.Москва, Красная площадь, Кремль. </span>
-            Центральный регион, Россия
-          </li>
-          <li>8 (495) 695-37-76</li>
-          <li><a href="" title="">hello@cloudme.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-8 wow fadeInUp">
-
-      <div id="contactform">
-
-          <h1>Тут красивая форма</h1>
-
-      </div>
-
-    </div>
-  </div>
+    <footer>
+        <p>&copy; Company 2014</p>
+    </footer>
 </div>
-
-<!--  END OF CONTACT CONTENT  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
