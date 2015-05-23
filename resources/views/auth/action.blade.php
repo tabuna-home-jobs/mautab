@@ -81,7 +81,7 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="submit" class="button-full" value="Активировать">
 
-            <p>Мне не пришёл код сообщения?</p>
+            <p><a href="/auth/repeat/">Мне не пришёл код сообщения?</a></p>
         </form>
 
 

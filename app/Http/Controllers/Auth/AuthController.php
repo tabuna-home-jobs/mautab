@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\ActionRequest;
 use App\Http\Requests\Auth\AuthRequest;
 use App\Http\Requests\Auth\AuthRequestReg;
+use App\Http\Requests\Auth\RepeatRequest;
 use Mail;
 use Sentry;
 use Session;
@@ -123,22 +124,21 @@ class AuthController extends Controller {
 	}
 
 
-	public function anyPassword($email = NULL)
+	public function getRepeat()
 	{
-		if (is_null($email))
-			return view('auth/password');
-		else {
-			$user      = Sentry::findUserByLogin($email);
-			$resetCode = $user->getResetPasswordCode();
-
-			Mail::send('mail/password', ['resetCode' => $resetCode, 'email' => $email], function ($message) use ($email) {
-				$message->from('us@example.com', 'Laravel');
-				$message->to($email)->cc($email);
-			});
-
-
-		}
+		return view('auth/repeat');
 	}
 
+	public function  postRepeat(RepeatRequest $request)
+	{
+		$user           = Sentry::findUserByLogin($request->email);
+		$activationCode = $user->getActivationCode();
+		Mail::send('mail/activate', ['activationCode' => $activationCode, 'email' => $request->email], function ($message) use ($request) {
+			$message->from('us@example.com', 'Laravel');
+			$message->to($request->email)->cc($request->email);
+		});
+
+		return redirect('/auth/action');
+	}
 
 }

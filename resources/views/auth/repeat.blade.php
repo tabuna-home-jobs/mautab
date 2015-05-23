@@ -53,7 +53,7 @@
 
 
 <div class="container text-center">
-    <h1>Активация аккаунта</h1>
+    <h1>Опришлите ещё раз</h1>
 </div>
 
 
@@ -61,43 +61,38 @@
     <div class="login-form text-center">
 
 
-        <form action="/auth/action" class="col-xs-12 col-md-6" method="post">
-
-            <div class="alert alert-info" role="alert">
-                <p>На указанный адрес электронной потчы была высланна информация для активации аккаунта</p>
-            </div>
+        <form action="/auth/repeat" class="col-xs-12 col-md-6" method="post">
 
             <div class="form-group">
-                <label for="email" class="control-label">E-mail</label>
-                <input type="email" name="email" class="form-control" size="100" value="<?php echo e(old('email')); ?>">
+                <label for="email" class="control-label">Email</label>
+                <input class="form-control" size="100" value="{{ old('email')  }}" name="email" type="email">
             </div>
 
-            <div class="form-group">
-                <label for="email" class="control-label">Ключ</label>
-                <input type="text" name="key" class="form-control" size="255" value="<?php echo e(old('key')); ?>">
-            </div>
-
-
-            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
-            <input type="submit" class="button-full" value="Активировать">
-
-            <p><a href="/auth/repeat/">Мне не пришёл код сообщения?</a></p>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="submit" class="button-full" value="Востановить пароль">
         </form>
 
 
         <div class="col-xs-12 col-md-6">
 
 
-            <?php if(count($errors) > 0): ?>
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+
+
+            @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
                     <ul>
-                        <?php foreach($errors->all() as $error): ?>
-                            <li><?php echo e($error); ?></li>
-                        <?php endforeach; ?>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
                     </ul>
                 </div>
-            <?php endif; ?>
+            @endif
 
             <img class="img-responsive" alt="" src="/img/email-mockup.png">
         </div>
@@ -107,10 +102,10 @@
 </div>
 
 
+</header>
 
 
 
 
 
-
-<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@include('footer')
