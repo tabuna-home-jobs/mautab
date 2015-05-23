@@ -3,9 +3,9 @@
 @section('content')
 
 
-    <section class="container">
 
-        <div class="col-xs-12">
+
+    <div class="col-xs-12">
 
         <p class="text-center">
             <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
@@ -123,6 +123,5 @@
 
 
         </div>
-    </section>
 
 @endsection

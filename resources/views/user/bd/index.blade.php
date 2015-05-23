@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('content')
-    <section class="container">
-            <p class="text-center">
+
+    <p class="text-center">
                 <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
                     <i class="fa fa-plus"></i>Добавить
                 </a>
@@ -192,6 +192,5 @@
                             @endforelse
                     </div>
         </div>
-    </section>
 
 @endsection

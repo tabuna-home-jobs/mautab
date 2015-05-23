@@ -194,7 +194,7 @@ header h3 {
 
 /* Monitoring */
 .monitoring {
-    padding: 80px 0 0;
+    padding: 150px 0 0;
 
 }
 
@@ -247,13 +247,11 @@ header h3 {
 }
 
 .footer {
-    padding: 10px 0 15px;
+    padding: 0 0 15px;
     background: #222D3A;
-    margin-top: 40px;
     position: absolute !important;
     bottom: 0;
     width: 100% !important;
-    /* Set the fixed height of the footer here */
 }
 
 p.copyright {
@@ -284,7 +282,15 @@ p.copyright {
 
 /* Login ------------------------ */
 .login-container {padding:60px 0;  overflow:hidden;}
-.login-form {text-align: center; background:#fff; border: 2px solid #ebebeb;    border-radius: 5px; overflow:hidden; padding:60px 30px;}
+
+.login-form {
+    text-align: center;
+    background: #fff;
+    border: 2px solid #ebebeb;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 60px 30px;
+}
 
 
 .menuapp{
@@ -622,7 +628,7 @@ footer{
 }
 
 .info-box .progress .progress-bar {
-    background: #fff;
+    background: #c5645b;
 }
 
 .info-box-icon {
@@ -637,7 +643,8 @@ footer{
     text-align: center;
     font-size: 45px;
     line-height: 90px;
-    background: rgba(0, 0, 0, 0.2);
+    background: #c5645b;
+    color: #fff;
 }
 
 .info-box-content {
@@ -670,4 +677,11 @@ footer{
 
 .progress-description {
     margin: 0;
+}
+
+.main-container {
+    background: #fff;
+    padding: 10px 15px;
+    border: 1px solid #E0E0E0;
+    overflow: hidden;
 }

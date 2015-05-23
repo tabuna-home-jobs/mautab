@@ -16,7 +16,7 @@ class CronController extends Controller
 	 */
 	public function index()
 	{
-		return view('cron/index', ['CronList' => Vesta::listCron()]);
+		return view('user/cron/index', ['CronList' => Vesta::listCron()]);
 	}
 
 	/**
@@ -57,7 +57,7 @@ class CronController extends Controller
 	 */
     public function show($v_job)
 	{
-        return view('cron/edit', ['Cron' => Vesta::showCron($v_job)[$v_job], 'name' => $v_job]);
+		return view('user/cron/edit', ['Cron' => Vesta::showCron($v_job)[$v_job], 'name' => $v_job]);
 	}
 
 	/**

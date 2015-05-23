@@ -34,7 +34,8 @@ class HomeController extends Controller {
 	{
 		// Информация о пользователе
 		$UserInfoLaravel = Sentry::getUser();
-		return view('user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
+
+		return view('user/user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
 	}
 
 	public function update(ChangeUserRequest $request)

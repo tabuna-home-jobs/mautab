@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-    <section class="container" xmlns="http://www.w3.org/1999/html">
 
 
         <div class="col-xs-12 log-row">
@@ -257,6 +256,5 @@
         </div>
         <hr class="col-xs-12">
 
-    </section>
 
 @endsection

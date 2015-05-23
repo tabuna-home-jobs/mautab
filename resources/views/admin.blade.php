@@ -154,7 +154,8 @@
 </header>
 
 
+<section class="container main-container">
 @yield('content')
-
+</section>
 
 @include('footer')

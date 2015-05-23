@@ -1,8 +1,6 @@
 @extends('app')
 
 @section('content')
-    <section class="container">
-
 
         @forelse($log as $elementlog)
             <div class="col-xs-12 log-row">
@@ -17,6 +15,5 @@
         @endforelse
 
 
-    </section>
 
 @endsection

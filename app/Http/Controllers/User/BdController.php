@@ -13,11 +13,11 @@ class BdController extends Controller{
 
 
 	public function Index(){
-		return view('bd/index',['BdList' => Vesta::listBD()]);
+		return view('user/bd/index', ['BdList' => Vesta::listBD()]);
 	}
 
 	public function show($name){
-		return view('bd/editList',['BdList' =>  Vesta::listOnlyBD($name)]);
+		return view('user/bd/editList', ['BdList' => Vesta::listOnlyBD($name)]);
 	}
 
 	public function update(ChangeBDRequest $request){
@@ -53,7 +53,7 @@ class BdController extends Controller{
     }
 	public function create(){
 
-		return view('bd/create');
+		return view('user/bd/create');
 
 	}
 

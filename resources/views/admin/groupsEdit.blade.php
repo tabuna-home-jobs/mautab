@@ -3,7 +3,6 @@
 @section('content')
 
 
-    <section class="container">
 
         @if (count($errors) > 0)
             <div class="alert alert-danger">
@@ -73,6 +72,5 @@
             <hr class="clearfix col-xs-12">
         </div>
 
-    </section>
 
 @endsection

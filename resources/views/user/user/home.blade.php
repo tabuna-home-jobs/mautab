@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-    <section class="container">
 
 
         <div class="col-xs-12">
@@ -17,8 +16,6 @@
                 </div>
             @endif
 
-
-            <hr>
 
             <div class="row">
 
@@ -87,31 +84,6 @@
 
                 </div>
 
-
-                <div class="col-md-8">
-
-
-                    <div class="col-md-12">
-                        <p>{{ $UserInfo['FNAME'] }} {{ $UserInfo['LNAME'] }}
-
-
-                            @if($UserInfo['SUSPENDED'] == "no")
-                                <span class="label label-success">Активен</span>
-                            @else
-                                <span class="label label-danger">Не активен</span>
-                            @endif
-
-                        </p>
-
-                        <p>{{Lang::get('menu.balance')}}: {{ $UserInfoLaravel->balans }} руб </p>
-
-                        <p>{{Lang::get('menu.suspended')}}: {{ $UserInfoLaravel->end_of_service }} </p>
-
-                        <p>Тариф: {{ $UserInfo['PACKAGE'] }}  </p>
-
-                    </div>
-
-                </div>
 
 
                 <div class="col-md-4">
@@ -205,15 +177,77 @@
 
 
                 </div>
+
+
+                <div class="col-md-8">
+
+                    <div class="col-md-12">
+                        <p>{{ $UserInfo['FNAME'] }} {{ $UserInfo['LNAME'] }}
+
+
+                            @if($UserInfo['SUSPENDED'] == "no")
+                                <span class="label label-success">Активен</span>
+                            @else
+                                <span class="label label-danger">Не активен</span>
+                            @endif
+
+                        </p>
+
+                        <p>{{Lang::get('menu.balance')}}: {{ $UserInfoLaravel->balans }} руб </p>
+
+                        <p>{{Lang::get('menu.suspended')}}: {{ $UserInfoLaravel->end_of_service }} </p>
+
+                        <p>Тариф: {{ $UserInfo['PACKAGE'] }}  </p>
+
+
+                        <table class="table table-condensed table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th>{{Lang::get('tikets.numberTable')}}</th>
+                                <th>{{Lang::get('tikets.titleTable')}}</th>
+                                <th>{{Lang::get('tikets.statusTable')}}</th>
+                                <th>{{Lang::get('tikets.managementTable')}}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                            </tr>
+                            <tr>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                            </tr>
+                            <tr>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                            </tr>
+                            <tr>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                                <th>Тест</th>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+
             </div>
-
-
-            <hr>
 
 
         </div>
 
 
-    </section>
+
 
 @endsection
