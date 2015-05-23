@@ -45,14 +45,14 @@
             <li><a href="/auth/login">Войти</a></li>
             <li><a href="/auth/register">Зарегистрироваться</a></li>
             <li>
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Язык</a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Язык</a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
             </li>
         </ul>
       </div>
@@ -248,7 +248,7 @@
 <!--  END OF CALL TO ACTION -->
 
 <section class="col-xs-12">
-<div class="container popcms">
+    <div class="container popcms">
     <!-- Example row of columns -->
         <div class="col-md-4">
             <header class="text-center">
@@ -263,6 +263,7 @@
     <div class="col-md-4">
         <header class="text-center">
             <img src="http://www.hitsteps.com/responsive/images/logo-joomla.png" width="150">
+
             <h2>Joomla</h2>
         </header>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
@@ -273,6 +274,7 @@
     <div class="col-md-4">
         <header class="text-center">
             <img src="https://www.freelock.com/sites/default/files/druplicon.large_.png" width="150">
+
             <h2>Drupal</h2>
         </header>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
@@ -283,6 +285,7 @@
     <div class="col-md-4">
         <header class="text-center">
             <img src="http://modxpdx.s3.amazonaws.com/assets/images/modx-logo-480.png" width="150">
+
             <h2>ModX</h2>
         </header>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
@@ -293,6 +296,7 @@
     <div class="col-md-4">
         <header class="text-center">
             <img src="https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png" width="150">
+
             <h2>WordPress</h2>
         </header>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
@@ -303,6 +307,7 @@
     <div class="col-md-4">
         <header class="text-center">
             <img src="https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png" width="150">
+
             <h2>WordPress</h2>
         </header>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
