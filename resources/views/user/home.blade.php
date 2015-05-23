@@ -152,23 +152,6 @@
 
 
                     <div class="info-box">
-                        <span class="info-box-icon"><i class="fa fa-hdd-o"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">{{Lang::get('menu.disk')}}</span>
-                            <span class="info-box-number">{{ $UserInfo['U_DISK'] }}</span>
-
-                            <div class="progress">
-                                <div style="width:  {{$UserInfo['U_DISK']/$UserInfo['DISK_QUOTA'] * 100  }}%;" class="progress-bar"></div>
-                            </div>
-                                  <span class="progress-description">
-                                    Общее дисковое пространство
-                                  </span>
-                        </div>
-                    </div>
-
-
-                    <div class="info-box">
                         <span class="info-box-icon"><i class="fa fa-desktop"></i></span>
 
                         <div class="info-box-content">

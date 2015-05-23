@@ -1,11 +1,11 @@
 <?php namespace App\Http\Controllers\Auth;
 
+use App\Events\SendMailAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\ActionRequest;
 use App\Http\Requests\Auth\AuthRequest;
 use App\Http\Requests\Auth\AuthRequestReg;
 use App\Http\Requests\Auth\RepeatRequest;
-use Mail;
 use Sentry;
 use Session;
 use Vesta;
@@ -70,12 +70,7 @@ class AuthController extends Controller {
 
 
 		$activationCode = $user->getActivationCode();
-		Mail::send('mail/activate', ['activationCode' => $activationCode, 'email' => $request->email], function ($message) use ($request) {
-			$message->from('us@example.com', 'Laravel');
-			$message->to($request->email)->cc($request->email);
-		});
-
-
+		event(new SendMailAction($activationCode, $request));
 		return redirect('/auth/action');
 	}
 
@@ -133,11 +128,7 @@ class AuthController extends Controller {
 	{
 		$user           = Sentry::findUserByLogin($request->email);
 		$activationCode = $user->getActivationCode();
-		Mail::send('mail/activate', ['activationCode' => $activationCode, 'email' => $request->email], function ($message) use ($request) {
-			$message->from('us@example.com', 'Laravel');
-			$message->to($request->email)->cc($request->email);
-		});
-
+		event(new SendMailAction($activationCode, $request));
 		return redirect('/auth/action');
 	}
 
