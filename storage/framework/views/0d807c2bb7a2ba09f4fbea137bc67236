@@ -1,0 +1,6 @@
+Привет вот твой код <?php echo e($activationCode); ?>
+
+
+<p>Что бы активировать аккаунт на сайте перейдите по данной
+    <a href="http://localhost/auth/action/<?php echo e($email); ?>/<?php echo e($activationCode); ?>">ссылке </a>
+</p>

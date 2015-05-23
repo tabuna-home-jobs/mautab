@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\ActionRequest;
 use App\Http\Requests\Auth\AuthRequest;
 use App\Http\Requests\Auth\AuthRequestReg;
 use Mail;
@@ -86,8 +87,10 @@ class AuthController extends Controller {
 	}
 
 
-	public function anyAction($email = NULL, $activationCode = NULL)
+	public function getAction($email = NULL, $activationCode = NULL)
 	{
+
+
 		if (is_null($email) || is_null($activationCode))
 			return view('auth/action', ['email' => $email]);
 		else {
@@ -104,10 +107,37 @@ class AuthController extends Controller {
 		}
 	}
 
-
-	public function anyReset()
+	public function  postAction(ActionRequest $request)
 	{
-		return view('auth/reset');
+
+		$user = Sentry::findUserByLogin($request->email);
+		if ($user->attemptActivation($request->key)) {
+			$adminGroup = Sentry::findGroupByName('User');
+			$user->addGroup($adminGroup);
+			Sentry::loginAndRemember($user);
+
+			return redirect()->route('home.index');
+		} else {
+			return redirect()->back()->withErrors(array('Ключ не подходит к email'));
+		}
+	}
+
+
+	public function anyPassword($email = NULL)
+	{
+		if (is_null($email))
+			return view('auth/password');
+		else {
+			$user      = Sentry::findUserByLogin($email);
+			$resetCode = $user->getResetPasswordCode();
+
+			Mail::send('mail/password', ['resetCode' => $resetCode, 'email' => $email], function ($message) use ($email) {
+				$message->from('us@example.com', 'Laravel');
+				$message->to($email)->cc($email);
+			});
+
+
+		}
 	}
 
 

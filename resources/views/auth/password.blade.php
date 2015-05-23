@@ -66,7 +66,7 @@
     <div class="login-form text-center">
 
 
-{!! Form::open(array('routing' => '/password/email','class' => 'col-xs-12 col-md-6')) !!}
+        {!! Form::open(array('routing' => '/auth/password','class' => 'col-xs-12 col-md-6')) !!}
    
 
 
