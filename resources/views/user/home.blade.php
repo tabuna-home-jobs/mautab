@@ -88,7 +88,7 @@
                 </div>
 
 
-                <div class="col-md-6">
+                <div class="col-md-8">
 
 
                     <div class="col-md-12">
@@ -111,34 +111,62 @@
 
                     </div>
 
+                </div>
 
-                    <div class="col-md-12">
-                        <p class="text-center">{{Lang::get('menu.traffic')}}:  {{ $UserInfo['U_BANDWIDTH'] }} мб</p>
 
-                        <div class="progress">
+                <div class="col-md-4">
 
-                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ $UserInfo['U_BANDWIDTH'] }}" aria-valuemin="0"
-                                 aria-valuemax="{{ $UserInfo['BANDWIDTH'] }}"
-                                 style="width:  {{$UserInfo['U_BANDWIDTH']/$UserInfo['BANDWIDTH'] * 100  }}%; min-width: 2em;">
+
+                    <div class="info-box">
+                        <span class="info-box-icon"><i class="fa fa-bolt"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{Lang::get('menu.traffic')}}</span>
+                            <span class="info-box-number">{{ $UserInfo['U_BANDWIDTH'] }}</span>
+
+                            <div class="progress">
+                                <div style="width:  {{$UserInfo['U_BANDWIDTH']/$UserInfo['BANDWIDTH'] * 100  }}%;" class="progress-bar"></div>
                             </div>
-                        </div>
-
-
-                        <p class="text-center">{{Lang::get('menu.disk')}}: {{ $UserInfo['U_DISK'] }} мб</p>
-
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ $UserInfo['U_DISK'] }}" aria-valuemin="0"
-                                 aria-valuemax="{{ $UserInfo['DISK_QUOTA'] }}"
-                                 style="width: {{  $UserInfo['U_DISK']/$UserInfo['DISK_QUOTA']*100  }}%; min-width: 2em;">
-                            </div>
+                                  <span class="progress-description">
+                                    Траффик
+                                  </span>
                         </div>
                     </div>
 
 
-                </div>
+                    <div class="info-box">
+                        <span class="info-box-icon"><i class="fa fa-hdd-o"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{Lang::get('menu.disk')}}</span>
+                            <span class="info-box-number">{{ $UserInfo['U_DISK'] }}</span>
+
+                            <div class="progress">
+                                <div style="width:  {{$UserInfo['U_DISK']/$UserInfo['DISK_QUOTA'] * 100  }}%;" class="progress-bar"></div>
+                            </div>
+                                  <span class="progress-description">
+                                    Общее дисковое пространство
+                                  </span>
+                        </div>
+                    </div>
 
 
-                <div class="col-md-6">
+                    <div class="info-box">
+                        <span class="info-box-icon"><i class="fa fa-hdd-o"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{Lang::get('menu.disk')}}</span>
+                            <span class="info-box-number">{{ $UserInfo['U_DISK'] }}</span>
+
+                            <div class="progress">
+                                <div style="width:  {{$UserInfo['U_DISK']/$UserInfo['DISK_QUOTA'] * 100  }}%;" class="progress-bar"></div>
+                            </div>
+                                  <span class="progress-description">
+                                    Общее дисковое пространство
+                                  </span>
+                        </div>
+                    </div>
+
 
                     <div class="info-box">
                         <span class="info-box-icon"><i class="fa fa-desktop"></i></span>
