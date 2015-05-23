@@ -77,23 +77,6 @@ body.modal-open {
     transition: all 0.3s ease 0s;
 }
 
-.button-prizrak {
-    background: none repeat scroll 0 0 transparent;
-    border: 1px solid #f7ebdf;
-    color: #f7ebdf;
-    font-weight: 700;
-    margin-top: 60px;
-    padding: 15px;
-}
-
-.button-prizrak:hover {
-    background: none repeat scroll 0 0 #65464c;
-    border-color: #65464c;
-    text-decoration: none;
-    color: #f7ebdf;
-    transition: all 0.5s ease 0s;
-}
-
 header h1 {
     color: #67484e;
     font-size: 30pt;
@@ -171,61 +154,6 @@ header h3 {
 }
 
 
-/* shared hosting - features */
-.sharedfeatures-odd {
-    padding: 50px 0;
-    overflow: hidden;
-    background: #F8F8F8;
-}
-
-.sharedfeatures-odd h2, .sharedfeatures-even h2 {
-    font-weight: 900;
-    margin-bottom: 12px;
-    font-size: 23px;
-}
-
-.sharedfeatures-odd i {
-    color: #B86662;
-    font-size: 100px;
-}
-
-.sharedfeatures-odd .circle {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 200px;
-    height: 200px;
-    background: #37485c;
-    padding-top: 50px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 99999;
-    text-align: center;
-}
-
-.sharedfeatures-even {
-    padding: 50px 0;
-    overflow: hidden;
-    background: #fff;
-}
-
-.sharedfeatures-even i {
-    color: #DBDBDB;
-    font-size: 100px;
-}
-
-.sharedfeatures-even .circle {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 200px;
-    height: 200px;
-    background: #B86662;
-    padding-top: 50px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 99999;
-    text-align: center;
-}
-
 /* Testimonials */
 .testimonials {
     padding: 50px 0;
@@ -282,59 +210,6 @@ header h3 {
 }
 
 
-
-
-
-/* Contact ------------------------ */
-.contact-section {
-    padding: 50px 0 77px 0;
-}
-
-.contact-details h4 {
-    color: #4B4854;
-    margin-top: 75px;
-    font-size: 18px;
-    padding: 0;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    position: relative;
-    font-weight: 900;
-}
-
-.contact-details ul {
-    list-style: none;
-    margin: 0;
-    padding: 4px 0;
-}
-
-.contact-details ul li {
-    padding: 7px 0;
-    border-bottom: 1px solid;
-    border-color: #ecedee;
-    font-weight: 600;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    font-size: 12px;
-    text-align: left
-}
-
-.contact-details ul li span {
-    display: block;
-}
-
-.contact-details ul li:last-child {
-    border-bottom: 0;
-}
-
-.contact-details ul li a {
-    color: #303038
-}
-
-.contact-details ul li a:hover {
-    color: #b86662;
-    text-decoration: none
-}
-
 .button-full, .button-small {
     -moz-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
@@ -374,7 +249,7 @@ header h3 {
 .footer {
     padding: 10px 0 15px;
     background: #222D3A;
-
+    margin-top: 40px;
     position: absolute !important;
     bottom: 0;
     width: 100% !important;
@@ -706,4 +581,13 @@ footer{
 }
 .del-current-ftp{
     margin-left: 10px;
+}
+
+/* background setup */
+.parallax {
+    background-size: 100% !important;
+}
+
+.popcms {
+    padding: 20px 0 50px;
 }

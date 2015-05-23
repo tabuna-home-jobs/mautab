@@ -1,23 +1,21 @@
-@extends('admin')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <section class="container">
 
-        @if (count($errors) > 0)
+        <?php if(count($errors) > 0): ?>
             <div class="alert alert-danger">
                 <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
+                    <?php foreach($errors->all() as $error): ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
-        @endif
+        <?php endif; ?>
 
 
         <div class=" col-xs-12">
-            <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('admin.users.update')}}">
+            <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('admin.users.update')); ?>">
 
                 <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
                     <ul role="tablist" class="nav nav-tabs" id="myTab">
@@ -35,64 +33,45 @@
 
                             <div class="form-group">
                                 <label>Email</label>
-                                <input class="form-control" required name="email" value="{{$user->email}}">
+                                <input class="form-control" required name="email" value="<?php echo e($user->email); ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>Ник нейм</label>
-                                <input class="form-control" required name="nickname" value="{{$user->nickname}}">
+                                <input class="form-control" required name="nickname" value="<?php echo e($user->nickname); ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>Имя</label>
-                                <input class="form-control" required name="first_name" value="{{$user->first_name}}">
+                                <input class="form-control" required name="first_name" value="<?php echo e($user->first_name); ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>Фамилия</label>
-                                <input class="form-control" required name="last_name" value="{{$user->last_name}}">
+                                <input class="form-control" required name="last_name" value="<?php echo e($user->last_name); ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>Баланс</label>
-                                <input class="form-control" required name="balans" value="{{$user->balans}}">
+                                <input class="form-control" required name="balans" value="<?php echo e($user->balans); ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>Окончание услуг</label>
-                                <input class="form-control" required name="end_of_service" value="{{$user->end_of_service}}">
+                                <input class="form-control" required name="end_of_service" value="<?php echo e($user->end_of_service); ?>">
                             </div>
 
                             <div class="form-group">
-                                <input type="hidden" name="id" value="{{$user->id}}">
+                                <input type="hidden" name="id" value="<?php echo e($user->id); ?>">
                                 <input type="hidden" name="_method" value="PUT">
-                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                                 <input type="submit" value="Отправить" class="button-full">
                             </div>
 
                         </div>
 
                         <div aria-labelledby="groups-tab" id="groups" class="tab-pane fade" role="tabpanel">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-
-                                    @foreach($groups as $value)
-                                        @foreach($thisgroup as $thisUserGroup)
-                                            <div class="checkbox">
-                                                <input type="checkbox" name="groups[]"
-                                                       value="{{$value->id}}"
-                                                @if($value->id == $thisUserGroup->id)
-                                                       checked
-                                                        @endif
-                                                        >
-                                                {{$value->name}}
-                                                </label>
-                                            </div>
-
-                                        @endforeach
-                                    @endforeach
-                                </div>
-                            </div>
+                            <p>Это группа</p>
                         </div>
 
 
@@ -101,22 +80,21 @@
                             <div class="form-group">
 
 
-                                @foreach (Route::getRoutes() as $route)
-                                    @if(!is_null($route->getName()))
+                                <?php foreach(Route::getRoutes() as $route): ?>
+                                    <?php if(!is_null($route->getName())): ?>
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox"
-                                                       name="permissions['{{$route->getName()}}']"
-                                                       value="1"
-                                                @if(isset($user->permissions[$route->getName()]))
+                                                <?php if(isset($user->permissions[$route->getName()])): ?>
                                                        checked
-                                                        @endif
-                                                        >
-                                                {{$route->getName()}}
+                                                       <?php endif; ?>
+                                                       name="permissions[<?php echo e($route->getName()); ?>]" value="1">
+                                                <?php echo e($route->getName()); ?>
+
                                             </label>
                                         </div>
-                                    @endif
-                                @endforeach
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
 
 
                             </div>
@@ -150,4 +128,6 @@
 
     </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

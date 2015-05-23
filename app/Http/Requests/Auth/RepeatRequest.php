@@ -3,7 +3,7 @@
 use App\Http\Requests\Request;
 use Sentry;
 
-class AuthRequestReg extends Request
+class RepeatRequest extends Request
 {
 
 	/**
@@ -24,12 +24,7 @@ class AuthRequestReg extends Request
 	public function rules()
 	{
 		return [
-			'nickname' => 'required|max:255|unique:users',
-			'name'     => 'required|max:255',
-			'lastname' => 'required|max:255',
-			'email'    => 'required|email|max:255|unique:users',
-			'password' => 'required|confirmed|min:6',
-			'package'  => 'required|integer|between:0,2'
+			'email' => 'email|required|max:255',
 		];
 	}
 

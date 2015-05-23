@@ -39,12 +39,12 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav navbar-right">
-                  @if (Auth::guest())
+                  <?php if(Auth::guest()): ?>
             <li><a href="/auth/login">Войти</a></li>
             <li><a href="/auth/register">Зарегистрироваться</a></li>
-           @else
-          <li><a href="#">{{ Auth::user()->name }} </a></li>
-          @endif
+           <?php else: ?>
+          <li><a href="#"><?php echo e(Auth::user()->name); ?> </a></li>
+          <?php endif; ?>
         </ul>
       </div>
     </div>
@@ -56,7 +56,7 @@
   <div class="container text-center">
     <h3>Хостинг для вашего сайта</h3>
 
-    <h1>Востановление доступа</h1>
+    <h1>Регистрация</h1>
   </div>
 
 
@@ -66,44 +66,52 @@
     <div class="login-form text-center">
 
 
-{!! Form::open(array('routing' => '/password/email','class' => 'col-xs-12 col-md-6')) !!}
+<?php echo Form::open(array('routing' => '/password/reset','class' => 'col-xs-12 col-md-6')); ?>
+
    
 
-
         <div class="form-group">
-          {!! Form::label('email', 'E-Mail Адрес', array('class' => 'control-label')) !!}
-          {!! Form::email('email', @$email, array('size'=> '100','class' => 'form-control'))!!}
+          <?php echo Form::label('email', 'E-Mail Адрес', array('class' => 'control-label')); ?>
+
+          <?php echo Form::email('email', @$email, array('size'=> '100','class' => 'form-control')); ?>
+
         </div>
 
 
+        <div class="form-group">
+          <?php echo Form::label('password', 'Пароль', array('class' => 'control-label')); ?>
 
+          <?php echo Form::password('password', array('size'=> '100','class' => 'form-control')); ?>
 
+        </div>
 
-       {!!  Form::token(); !!}
-        <input type="submit" class="button-full" value="Востановить пароль">
-    {!! Form::close() !!}
+  
+        <div class="form-group">
+          <?php echo Form::label('password_confirmation', 'Повторите пароль', array('class' => 'control-label')); ?>
+
+          <?php echo Form::password('password_confirmation', array('size'=> '100','class' => 'form-control')); ?>
+
+        </div>
+
+       <?php echo Form::token();; ?>
+
+        <input type="submit" class="button-full" value="Изменить пароль">
+    <?php echo Form::close(); ?>
+
 
 
       <div  class="col-xs-12 col-md-6">
 
-
-		@if (session('status'))
-			<div class="alert alert-success">
-				{{ session('status') }}
-			</div>
-		@endif
-
-
-          @if (count($errors) > 0)
+          <?php if(count($errors) > 0): ?>
             <div class="alert alert-danger">
               <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
               <ul>
-                @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                @endforeach
+                <?php foreach($errors->all() as $error): ?>
+                  <li><?php echo e($error); ?></li>
+                <?php endforeach; ?>
               </ul>
             </div>
-          @endif
+          <?php endif; ?>
 
         <img class="img-responsive" alt="" src="/img/email-mockup.png">
       </div>
@@ -112,15 +120,8 @@
 
     </div>
   </div>
-
-
-
-
-
 </header>
 
 
 
-
-
-@include('footer')
+<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

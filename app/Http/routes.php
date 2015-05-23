@@ -26,7 +26,6 @@
 		Route::resource('backup', 'BackupController', ['only' => ['index', 'store', 'show', 'destroy']]);
 		Route::resource('cron', 'CronController');
 		Route::resource('tikets', 'TiketsController');
-		Route::resource('pay', 'RobokassaController');
 		Route::resource('home', 'HomeController', ['only' => ['index', 'update']]);
 	});
 

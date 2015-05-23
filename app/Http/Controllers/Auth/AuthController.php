@@ -1,10 +1,14 @@
 <?php namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\ActionRequest;
 use App\Http\Requests\Auth\AuthRequest;
 use App\Http\Requests\Auth\AuthRequestReg;
+use App\Http\Requests\Auth\RepeatRequest;
+use Mail;
 use Sentry;
 use Session;
+use Vesta;
 
 class AuthController extends Controller {
 
@@ -48,7 +52,6 @@ class AuthController extends Controller {
 			'email'      => $request->email,
 			'package'    => $request->package,
 			'password'   => $request->password,
-			'activated'  => TRUE,
 		));
 
 
@@ -66,10 +69,14 @@ class AuthController extends Controller {
 		Vesta::regUser($request->nickname, $request->password, $request->email, 'default', $request->name, $request->lastname);
 
 
-		$adminGroup = Sentry::findGroupByName('User');
-		$user->addGroup($adminGroup);
-		Sentry::loginAndRemember($user);
-		return redirect()->route('home.index');
+		$activationCode = $user->getActivationCode();
+		Mail::send('mail/activate', ['activationCode' => $activationCode, 'email' => $request->email], function ($message) use ($request) {
+			$message->from('us@example.com', 'Laravel');
+			$message->to($request->email)->cc($request->email);
+		});
+
+
+		return redirect('/auth/action');
 	}
 
 
@@ -81,5 +88,57 @@ class AuthController extends Controller {
 	}
 
 
+	public function getAction($email = NULL, $activationCode = NULL)
+	{
+
+
+		if (is_null($email) || is_null($activationCode))
+			return view('auth/action', ['email' => $email]);
+		else {
+			$user = Sentry::findUserByLogin($email);
+			if ($user->attemptActivation($activationCode)) {
+				$adminGroup = Sentry::findGroupByName('User');
+				$user->addGroup($adminGroup);
+				Sentry::loginAndRemember($user);
+
+				return redirect()->route('home.index');
+			} else {
+				return redirect()->back()->withErrors(array('Ключ не подходит к email'));
+			}
+		}
+	}
+
+	public function  postAction(ActionRequest $request)
+	{
+
+		$user = Sentry::findUserByLogin($request->email);
+		if ($user->attemptActivation($request->key)) {
+			$adminGroup = Sentry::findGroupByName('User');
+			$user->addGroup($adminGroup);
+			Sentry::loginAndRemember($user);
+
+			return redirect()->route('home.index');
+		} else {
+			return redirect()->back()->withErrors(array('Ключ не подходит к email'));
+		}
+	}
+
+
+	public function getRepeat()
+	{
+		return view('auth/repeat');
+	}
+
+	public function  postRepeat(RepeatRequest $request)
+	{
+		$user           = Sentry::findUserByLogin($request->email);
+		$activationCode = $user->getActivationCode();
+		Mail::send('mail/activate', ['activationCode' => $activationCode, 'email' => $request->email], function ($message) use ($request) {
+			$message->from('us@example.com', 'Laravel');
+			$message->to($request->email)->cc($request->email);
+		});
+
+		return redirect('/auth/action');
+	}
 
 }

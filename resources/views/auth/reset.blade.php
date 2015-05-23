@@ -86,7 +86,6 @@
           {!! Form::password('password_confirmation', array('size'=> '100','class' => 'form-control'))!!}
         </div>
 
-        <input type="hidden" name="token" value="{{ $token }}">
        {!!  Form::token(); !!}
         <input type="submit" class="button-full" value="Изменить пароль">
     {!! Form::close() !!}
