@@ -16,7 +16,6 @@ class SendMailAction extends Event
 	public function __construct($activationCode, $request)
 	{
 		Mail::send('mail/activate', ['activationCode' => $activationCode, 'email' => $request->email], function ($message) use ($request) {
-			$message->from('us@example.com', 'Laravel');
 			$message->to($request->email)->cc($request->email);
 		});
 	}
