@@ -139,35 +139,59 @@
 
 
                 <div class="col-md-6">
-                    <table class="table">
 
-                        <tr>
-                            <td class="counter-name">{{Lang::get('menu.Web')}}:</td>
-                            <td class="counter-value">{{ $UserInfo['U_DISK_WEB'] }} мб</td>
-                        </tr>
+                    <div class="info-box">
+                        <span class="info-box-icon"><i class="fa fa-desktop"></i></span>
 
-                        <tr>
-                            <td class="counter-name">{{Lang::get('menu.BD')}}:</td>
-                            <td class="counter-value">{{ $UserInfo['U_DISK_DB'] }} мб</td>
-                        </tr>
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{Lang::get('menu.domains')}}</span>
+                            <span class="info-box-number">{{ $UserInfo['U_WEB_DOMAINS'] }}</span>
 
-                        <tr>
-                            <td class="counter-name">{{Lang::get('menu.domains')}}:</td>
-                            <td class="counter-value">{{ $UserInfo['U_WEB_DOMAINS'] }} / {{ $UserInfo['WEB_DOMAINS'] }}</td>
-                        </tr>
-                        <tr>
-                            <td class="counter-name">{{Lang::get('menu.DNS')}}::</td>
-                            <td class="counter-value"> {{ $UserInfo['U_DNS_DOMAINS'] }} / {{ $UserInfo['DNS_DOMAINS'] }}</td>
-                        </tr>
-                        <tr>
-                            <td class="counter-name">{{Lang::get('menu.BD')}}:</td>
-                            <td class="counter-value">{{ $UserInfo['U_DATABASES'] }} / {{ $UserInfo['DATABASES'] }}</td>
-                        </tr>
-                        <tr>
-                            <td class="counter-name">Сервер имен:</td>
-                            <td class="counter-value">{{ $UserInfo['NS'] }}</td>
-                        </tr>
-                    </table>
+                            <div class="progress">
+                                <div style="width:  {{$UserInfo['U_WEB_DOMAINS']/$UserInfo['WEB_DOMAINS'] * 100  }}%;" class="progress-bar"></div>
+                            </div>
+                                  <span class="progress-description">
+                                <p class="pull-left"> Cоздано  {{ $UserInfo['U_WEB_DOMAINS'] }} из {{ $UserInfo['WEB_DOMAINS'] }}</p>
+                                      <p class="pull-right">{{ $UserInfo['U_DISK_WEB'] }} мб</p>
+                                  </span>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box">
+                        <span class="info-box-icon"><i class="fa fa-sitemap"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{Lang::get('menu.DNS')}}</span>
+                            <span class="info-box-number">{{ $UserInfo['U_DNS_DOMAINS'] }}</span>
+
+                            <div class="progress">
+                                <div style="width:  {{$UserInfo['U_DNS_DOMAINS']/$UserInfo['DNS_DOMAINS'] * 100  }}%;" class="progress-bar"></div>
+                            </div>
+                                  <span class="progress-description">
+                                 Cоздано  {{ $UserInfo['U_DNS_DOMAINS'] }} из {{ $UserInfo['DNS_DOMAINS'] }}
+                                  </span>
+                        </div>
+                    </div>
+
+
+                    <div class="info-box">
+                        <span class="info-box-icon"><i class="fa fa-database"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">{{Lang::get('menu.BD')}}</span>
+                            <span class="info-box-number">{{ $UserInfo['U_DATABASES'] }}</span>
+
+                            <div class="progress">
+                                <div style="width:  {{$UserInfo['U_DATABASES']/$UserInfo['DATABASES'] * 100  }}%;" class="progress-bar"></div>
+                            </div>
+                                  <span class="progress-description">
+                                <p class="pull-left"> Cоздано  {{ $UserInfo['U_DATABASES'] }} из {{ $UserInfo['DATABASES'] }}</p>
+                                      <p class="pull-right">{{ $UserInfo['U_DISK_DB'] }} мб</p>
+                                  </span>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
