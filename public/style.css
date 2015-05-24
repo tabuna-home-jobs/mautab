@@ -194,7 +194,7 @@ header h3 {
 
 /* Monitoring */
 .monitoring {
-    padding: 80px 0 0;
+    padding: 150px 0 0;
 
 }
 
@@ -247,13 +247,11 @@ header h3 {
 }
 
 .footer {
-    padding: 10px 0 15px;
+    padding: 0 0 15px;
     background: #222D3A;
-    margin-top: 40px;
     position: absolute !important;
     bottom: 0;
     width: 100% !important;
-    /* Set the fixed height of the footer here */
 }
 
 p.copyright {
@@ -284,7 +282,15 @@ p.copyright {
 
 /* Login ------------------------ */
 .login-container {padding:60px 0;  overflow:hidden;}
-.login-form {text-align: center; background:#fff; border: 2px solid #ebebeb;    border-radius: 5px; overflow:hidden; padding:60px 30px;}
+
+.login-form {
+    text-align: center;
+    background: #fff;
+    border: 2px solid #ebebeb;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 60px 30px;
+}
 
 
 .menuapp{
@@ -590,4 +596,92 @@ footer{
 
 .popcms {
     padding: 20px 0 50px;
+}
+
+/*
+ * Component: Info Box
+ * -------------------
+ */
+.info-box {
+    display: block;
+    min-height: 90px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin-bottom: 15px;
+}
+
+.info-box small {
+    font-size: 14px;
+}
+
+.info-box .progress {
+    background: rgba(0, 0, 0, 0.2);
+    margin: 5px -10px 5px -10px;
+    height: 2px;
+}
+
+.info-box .progress,
+.info-box .progress .progress-bar {
+    border-radius: 0;
+}
+
+.info-box .progress .progress-bar {
+    background: #c5645b;
+}
+
+.info-box-icon {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+    font-size: 45px;
+    line-height: 90px;
+    background: #c5645b;
+    color: #fff;
+}
+
+.info-box-content {
+    padding: 5px 10px;
+    margin-left: 90px;
+}
+
+.info-box-number {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.progress-description,
+.info-box-text {
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info-box-text {
+    text-transform: uppercase;
+}
+
+.info-box-more {
+    display: block;
+}
+
+.progress-description {
+    margin: 0;
+}
+
+.main-container {
+    background: #fff;
+    padding: 10px 15px;
+    border: 1px solid #E0E0E0;
+    overflow: hidden;
 }

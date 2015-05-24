@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-    <section class="container">
 
 
         @forelse($Backups as $key =>  $Bakup)
@@ -61,6 +60,5 @@
         @endforelse
 
 
-    </section>
 
 @endsection

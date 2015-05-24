@@ -36,7 +36,7 @@ class WebController extends Controller {
 	 */
 	public function Index()
 	{
-		return view('web/index',[ "UserDomain" => Vesta::listWebDomain() ]);
+		return view('user/web/index', ["UserDomain" => Vesta::listWebDomain()]);
 	}
 
 	//Добавление веб домена
@@ -141,7 +141,7 @@ class WebController extends Controller {
 
     public  function getDomain()
     {
-        return view('web/domain');
+	    return view('user/web/domain');
     }
 
     public  function postDomain()
@@ -164,7 +164,7 @@ class WebController extends Controller {
 
 	public function show($name)
 	{
-		return view('web/editList', ['webList' => Vesta::listEditWebDomain($name)]);
+		return view('user/web/editList', ['webList' => Vesta::listEditWebDomain($name)]);
 	}
 
 	public function update(ChangeWebRequest $request)

@@ -19,7 +19,7 @@ class BackupController extends Controller
 	{
 		$Backups = Vesta::listUserBackups();
 
-		return view('user/backup', ['Backups' => $Backups]);
+		return view('user/user/backup', ['Backups' => $Backups]);
 	}
 
 	/**
@@ -58,7 +58,8 @@ class BackupController extends Controller
 	public function show($backup)
 	{
 		$backupDetal = Vesta::showUserBackup($backup)["$backup"];
-		return view('user/backupDetal', ['Backup' => $backupDetal, 'name' => $backup]);
+
+		return view('user/user/backupDetal', ['Backup' => $backupDetal, 'name' => $backup]);
 	}
 
 	/**

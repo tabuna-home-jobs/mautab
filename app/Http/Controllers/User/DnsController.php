@@ -13,12 +13,13 @@ class DnsController extends Controller{
 	public function Index()
 	{
 		$DnsList = Vesta::listDNS();
-		return view('dns/index',['DnsList' => $DnsList]);
+
+		return view('user/dns/index', ['DnsList' => $DnsList]);
 	}
 
 	public function show($name)
 	{
-		return view('dns/editList', ['DnsList' => Vesta::listOnlyDNS($name)]);
+		return view('user/dns/editList', ['DnsList' => Vesta::listOnlyDNS($name)]);
 	}
 
 	public function update(ChangeDNSRequest $request)

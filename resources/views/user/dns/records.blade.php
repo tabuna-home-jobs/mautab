@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-    <section class="container">
 
         <div class="col-xs-12">
 
@@ -155,6 +154,5 @@
         </div>
 
 
-    </section>
 
 @endsection

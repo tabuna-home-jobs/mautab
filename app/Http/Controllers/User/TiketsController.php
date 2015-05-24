@@ -35,7 +35,8 @@ class TiketsController extends Controller {
 	public function index()
 	{
 		$Tikets = User::find(Sentry::getUser()->id)->tiket()->where('tikets_id')->orderBy('id', 'desc')->simplePaginate(15);
-		return view('/tikets/index', ['Tikets' => $Tikets]);
+
+		return view('user/tikets/index', ['Tikets' => $Tikets]);
 	}
 
 	//Новая заявка
@@ -55,7 +56,8 @@ class TiketsController extends Controller {
 	{
 		$Tiket    = User::find(Sentry::getUser()->id)->tiket()->find($id);
 		$subTiket = User::find(Sentry::getUser()->id)->tiket()->find($id)->subtiket($id)->simplePaginate(15);
-		return view('tikets/viewer',['Tiket' => $Tiket, 'subTiket' => $subTiket]);
+
+		return view('user/tikets/viewer', ['Tiket' => $Tiket, 'subTiket' => $subTiket]);
 	}
 
 	//Ответ

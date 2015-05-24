@@ -16,7 +16,8 @@ class UserLogController extends Controller
 	{
 
 		$log = array_reverse(Vesta::listUserLog());
-		return view('user/logUser', ['log' => $log]);
+
+		return view('user/user/logUser', ['log' => $log]);
 	}
 
 
