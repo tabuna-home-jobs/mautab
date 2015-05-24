@@ -40,50 +40,9 @@
                             <label>Proxy Extentions</label>
                             <textarea cols="40" rows="5" name="v_proxy_ext" class="form-control">{{$d_val['PROXY_EXT']}}</textarea>
                         </div>
-                        <div class="form-group checkbox">
-                            <label>
-                                <input type="checkbox" name="v_ssl"/>Поддержка SSL
-                            </label>
-                        </div>
-                        <div class="form-group checkbox">
-                <label>
-        @if(!isset($d_val['FTP_USER']))
-            <input type="checkbox" name="v_ftp" />Дополнительный FTP
-        @else
-            <input checked type="checkbox" name="v_ftp" />Дополнительный FTP
-        @endif
-                </label>
-                        </div>
 
-@if(isset($d_val['FTP_USER']) && is_array($d_val['FTP_USER']))
 
-    @foreach($d_val['FTP_USER'] as $key => $ftpU)
-    <div class="add-ftp-edit">
-        <div class="form-group">
-            <label>FTP#{{$key+1}}</label>
-        </div>
-        <div class="form-group">
-            <label>Аккаунт</label>
 
-            <div>
-                <small>
-                    Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
-                </small>
-            </div>
-            <input type="text" name="v_ftp_user[{{$key+1}}][v_ftp_user]" class="form-control ftp_usr" value="{{$ftpU}}"/>
-        </div>
-        <div class="form-group">
-            <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
-            <input type="text" name="v_ftp_user[{{$key+1}}][v_ftp_password]" id="ftppas" class="form-control" value="********"/>
-        </div>
-        <div class="form-group">
-            <label>Path</label>
-            <input type="text" name="v_ftp_user[{{$key+1}}][v_ftp_path]" class="form-control" value="{{$d_val['FTP_PATH'][$key]}}"/>
-        </div>
-    </div>
-    @endforeach
-
-@endif
 
     <div class="form-group">
         <input type="hidden" name="_token" value="{{csrf_token()}}">

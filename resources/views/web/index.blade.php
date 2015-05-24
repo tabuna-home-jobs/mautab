@@ -167,7 +167,7 @@
                                             <a href="http://{{$key}}/" target="_blank" class="btn btn-default">
                                                 <i class="fa fa-sign-in"></i>
                                             </a>
-                                            <a href="{{URL::route('web.showFTP', $key)}}" class="btn btn-default">
+                                            <a href="{{URL::route('ftp.show', $key)}}" class="btn btn-default">
                                                 <i class="fa fa-plus"></i>
                                             </a>
                                             <a href="{{URL::route('web.show', $key)}}" class="btn btn-default">
@@ -195,16 +195,16 @@
                                                 <div class="modal-body">
                                                     Вы действительно хотите удалить {{$key}}
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <form action="{{URL::route('web.destroy')}}" method="post">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
-                                                        <button type="submit" class="button-small">Да</button>
-                                                        <input type="hidden" name="v_domain" value="{{$key}}"/>
-                                                        <input type="hidden" name="_method" value="DELETE">
-                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                                    </form>
-                                                </div>
-                                            </div>
+                <div class="modal-footer">
+                        <form action="{{URL::route('web.destroy')}}" method="post">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                            <button type="submit" class="button-small">Да</button>
+                            <input type="hidden" name="v_domain" value="{{$key}}"/>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        </form>
+                    </div>
+                </div>
                                         </div>
                                     </div>
 

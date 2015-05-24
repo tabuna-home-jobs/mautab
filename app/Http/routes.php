@@ -19,6 +19,7 @@
 	// Всё для пользователя
 	Route::group(['middleware' => ['sentry', 'LoginAs', 'user'], 'namespace' => 'User'], function () {
 		Route::resource('web', 'WebController');
+		Route::resource('ftp', 'FtpController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('records', 'RecordController');
 		Route::resource('bd', 'BdController');

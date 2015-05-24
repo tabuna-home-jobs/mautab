@@ -19,6 +19,27 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        //Удаление фтп
+        function deleteFtp(csrf, ddom){
+            $.ajax({
+                url: '/ftp/destroy',//'/ftp.destroy',
+                type: 'DELETE',
+                dataType: 'json',
+                data: {domain:ddom},
+                beforeSend: function(request) {
+                    request.setRequestHeader('X-CSRF-Token', csrf);
+                },
+                success: function(res) {
+                    console.log(res);
+                }
+            });
+        }
+        $("#delftp").click(function(){
+            var csrf = $("input[name='_token']").val();
+            var ddom = $("input[name='domain']").val();
+            deleteFtp(csrf,ddom);
+            return false;
+        });
 
         //Добавить алиас после ввода домена
         /*

@@ -116,5 +116,9 @@ trait VestaWeb
 
 	}
 
+	public function deleteFtp($domain, $v_username){
+
+		return $this->sendQuery("v-delete-web-domain-ftp ".Sentry::getUser()->nickname." ".$domain." ".$v_username);
+	}
 
 }

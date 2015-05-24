@@ -92,6 +92,7 @@ class WebController extends Controller {
 			Vesta::addDomainProxy($request->v_domain, $ext);
 		}
 
+		/* Пока закрыто всё ето есть в контроллере ФТП
 		//Добавление ФТП
 		if ($request->v_ftp == 'on') {
 
@@ -129,7 +130,7 @@ class WebController extends Controller {
 					continue;
 				}
 			}
-		}
+		}*/
 
 
 
@@ -166,79 +167,10 @@ class WebController extends Controller {
 		return view('web/editList', ['webList' => Vesta::listEditWebDomain($name)]);
 	}
 
-	public function showFTP(){
-
-	}
-
 	public function update(ChangeWebRequest $request)
 	{
 		//Изменение IP
 		Vesta::changeWebDomainIp($request->v_domain, $request->v_ip);
-
-		//Изменение FTP
-		if (!empty($request->v_ftp_user)) {
-
-			$v_ftp_users_updated = array();
-
-			foreach ($request->v_ftp_user as $i => $v_ftp_user_data) {
-				if (empty($v_ftp_user_data['v_ftp_user']) && empty($v_ftp_user_data['v_ftp_password'])) {
-					continue;
-				}
-				$v_ftp_user_data['v_ftp_user'] = preg_replace("/^" . Sentry::getUser()->nickname . "_/i", "", $v_ftp_user_data['v_ftp_user']);
-
-				if ($v_ftp_user_data['is_new'] == 1 && !empty($request->v_ftp)) {
-
-					$v_ftp_username      = $v_ftp_user_data['v_ftp_user'];
-
-					$v_ftp_password = $v_ftp_user_data['v_ftp_password'];
-
-					//Проверяем есть ли первым символом слеш
-					$v_ftp_path = trim($v_ftp_user_data['v_ftp_path']);
-					$pos = strpos($v_ftp_path, '/');
-					($pos === 0) ? $v_ftp_p = $v_ftp_path : $v_ftp_p = '';
-
-
-					//Добавляем данные для фтп
-					Vesta::addFtpDomain($request->v_domain, $v_ftp_username, $v_ftp_password, $v_ftp_p);
-
-					continue;
-				}
-
-
-				//Какоето удаление домена, пока не приходит в массиве со стороны клиента
-				//Но теоретически сделано
-				if ($v_ftp_user_data['delete'] == 1) {
-					$v_ftp_username = Sentry::getUser()->nickname . '_' . $v_ftp_user_data['v_ftp_user'];
-
-					Vesta::deleteWebDomain($request->v_domain, $v_ftp_username);
-					continue;
-				}
-
-				if (!empty($request->v_ftp)){
-
-					// Изменение FTP акаунта
-
-
-					$v_ftp_username      = $v_ftp_user_data['v_ftp_user'];
-					$v_ftp_password = $v_ftp_user_data['v_ftp_password'];
-
-					//Проверяем есть ли первым символом слеш
-					$v_ftp_path = trim($v_ftp_user_data['v_ftp_path']);
-					$pos = strpos($v_ftp_path, '/');
-					($pos === 0) ? $v_ftp_p = $v_ftp_path : $v_ftp_p = '';
-
-
-					Vesta::changeWebDomain($request->v_domain, $v_ftp_username, $v_ftp_p);
-
-					if ($v_ftp_user_data['v_ftp_password'] != "" && $v_ftp_user_data['v_ftp_password'] != "" && !empty($v_ftp_user_data['v_ftp_password'])) {
-
-					Vesta::changeFtpPassword($request->v_domain, $v_ftp_username, $v_ftp_user_data['v_ftp_password']);
-
-					}
-
-				}
-			}
-		}
 
 		Session::flash('good', 'Обновление прошло успешно');
 
