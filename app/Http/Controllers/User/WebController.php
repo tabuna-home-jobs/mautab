@@ -4,9 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AddWebRequest;
 use App\Http\Requests\ChangeWebRequest;
 use App\Http\Requests\RemoveWebRequest;
-use Mail;
 use Request;
-use Sentry;
 use Session;
 use Vesta;
 
@@ -47,13 +45,16 @@ class WebController extends Controller {
 		Vesta::addWebDomain($request->v_domain, $request->v_ip);
 
 		//Добавление поддержки днс
-		if ($request->v_dns == 'on') {
+		//if ($request->v_dns == 'on') {
+		// !! Поддержка днс пускай будет по умолчанию  !!
 			Vesta::addDns($request->v_domain, $request->v_ip);
-		}
+		//}
+
+		//Убираем почту до лучших времён
 		//Добавление поддержки мыла
-		if ($request->v_mail == 'on') {
-			Vesta::addMail($request->v_domain);
-		}
+		//if ($request->v_mail == 'on') {
+		//	Vesta::addMail($request->v_domain);
+		//}
 
 		//Добавление алиасов
 		if (strlen($request->v_aliases) >= 1) {
@@ -74,9 +75,9 @@ class WebController extends Controller {
 
 					Vesta::addWebDomainAlias($request->v_domain, $alias);
 
-					if ($request->v_dns == 'on') {
+					//if ($request->v_dns == 'on') {
 						Vesta::addDnsAlias($request->v_domain, $alias);
-					}
+					//}
 				}
 			}
 		}

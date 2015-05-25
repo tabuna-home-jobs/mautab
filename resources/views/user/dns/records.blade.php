@@ -2,17 +2,23 @@
 
 @section('content')
 
-        <div class="col-xs-12">
 
-            <div class="wrap-b row">
-                <div class="row">
-                    <div class="col-md-11 text-center">{{$domain}}</div>
-                    <div class="col-md-1 text-right add-dom">
-                        <a aria-controls="collapseExample" aria-expanded="false" href="#add-records" data-toggle="collapse" id="show-add-bd">
-                                <i class="fa fa-plus"></i>
-                            </a>
-                    </div>
-                </div>
+
+    <div class="col-xs-12">
+        <h3 class="text-center">
+            <small>Записи домена</small>
+            <b>{{$domain}}</b></h3>
+
+        <p class="text-center">
+            <a aria-controls="collapseExample" aria-expanded="false" href="#add-records" data-toggle="collapse" id="show-add-bd">
+                <i class="fa fa-plus"></i>
+            </a>
+        </p>
+    </div>
+
+
+
+
 
 
                 <div class="collapse col-xs-12" id="add-records">
@@ -84,22 +90,26 @@
                 </div>
 
 
-
-
+    <div id="add-shadow" class="col-xs-12">
+        <div class="table-responsive">
+            <table class="table table-condensed table-hover table-striped">
+                <tbody>
 
                 @foreach($records as $key => $record)
 
                         @if($record['SUSPENDED'] == 'no')
-                        <div class="row">
+                            <tr>
                         @else
-                                <div class="danger row">
+                            <tr class="danger">
                                 @endif
-                                    <div class="col-xs-1" id=" {{$record['ID']}}">{{$record['RECORD']}}</div>
-                                    <div class="col-xs-1">{{$record['TYPE']}}</div>
-                                    <div class="col-xs-1">{{$record['PRIORITY']}}</div>
-                                    <div class="col-xs-4"> {{substr($record['VALUE'],0,30)}}</div>
-                                    <div class="col-xs-3">{{$record['DATE']}} : {{$record['TIME']}}</div>
 
+
+                                <td id=" {{$record['ID']}}">{{$record['RECORD']}}</td>
+                                <td>{{$record['TYPE']}}</td>
+                                <td> {{substr($record['VALUE'],0,30)}}</td>
+                                <td>{{$record['DATE']}} : {{$record['TIME']}}</td>
+
+                                <td>
                                     <div class="btn-group pull-right" role="group" aria-label="...">
                                         <a href="{{URL::route('records.edit',['domain' => $domain, 'record' => $record['ID']])}}" class="btn btn-default">
                                             <i class="fa fa-pencil-square-o"></i>
@@ -110,6 +120,7 @@
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </div>
+                                </td>
 
 
                                     <!-- Modal -->
@@ -144,15 +155,14 @@
                                         </div>
                                     </div>
 
-                                </div>
-                    @endforeach
-
-
+                            </tr>
+                            @endforeach
+                </tbody>
+            </table>
             </div>
 
 
         </div>
-
 
 
 @endsection

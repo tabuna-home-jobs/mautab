@@ -3,11 +3,19 @@
 @section('content')
 
 
-    <p class="text-center">
+
+
+    <div class="col-xs-12">
+        <p class="text-center">
             <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
-                <i class="fa fa-plus"></i>Добавить
+                <i class="fa fa-plus"></i>
             </a>
         </p>
+    </div>
+
+
+
+
         <div class="collapse col-xs-12" id="add-bd">
             <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('cron.store')}}">
 
@@ -67,7 +75,7 @@
         </div>
 
 
-        <div class="col-md-12" id="add-shadow">
+    <div class="col-xs-12" id="add-shadow">
 
 
             <div class=" table-responsive">

@@ -19,20 +19,10 @@
             <div class="form-group">
                 <label>IP адрес</label>
                 <select type="text" class="form-control" name="v_ip">
-                    <option value="0">Выбрать</option>
                     <option value="151.80.164.81">151.80.164.81</option>
                 </select>
             </div>
-            <div class="form-group checkbox">
-                <label>
-                    <input type="checkbox" name="v_dns" checked/>Поддержка DNS
-                </label>
-            </div>
-            <div class="form-group checkbox">
-                <label>
-                    <input type="checkbox" name="v_mail" checked/>Поддержка почты
-                </label>
-            </div>
+
             <div>
                 <a id="show-add-options" data-toggle="collapse" href="#options" aria-expanded="false" aria-controls="collapseExample">Дополнительные опции</a>
             </div>
@@ -52,50 +42,16 @@
                     <label>Proxy Extentions</label>
                     <textarea cols="40" rows="5" name="v_proxy_ext" class="form-control">jpeg, jpg, png, gif, bmp, ico, svg, tif, tiff, css, js, htm, html, ttf, otf, webp, woff, txt, csv, rtf, doc, docx, xls, xlsx, ppt, pptx, odf, odp, ods, odt, pdf, psd, ai, eot, eps, ps, zip, tar, tgz, gz, rar, bz2, 7z, aac, m4a, mp3, mp4, ogg, wav, wma, 3gp, avi, flv, m4v, mkv, mov, mp4, mpeg, mpg, wmv, exe, iso, dmg, swf</textarea>
                 </div>
+
+                <!-- Как пойдёт
                 <div class="form-group checkbox">
                     <label>
                         <input type="checkbox" name="v_ssl"/>Поддержка SSL
                     </label>
                 </div>
-                <div class="form-group checkbox">
-                    <label>
-                        <input type="checkbox" name="v_ftp"/>Дополнительный FTP
-                    </label>
-                </div>
+                -->
 
 
-                <div class="add-ftp">
-                    <div class="ftp-groupz">
-                        <div class="form-group">
-                            <label>FTP#1</label>
-                        </div>
-                        <div class="form-group">
-                            <label>Аккаунт</label>
-
-                            <div>
-                                <small>
-                                    Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
-                                </small>
-                            </div>
-                            <input disabled type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[1][is_new]" value="1"/>
-
-                            <input disabled type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr" value=""/>
-                        </div>
-                        <div class="form-group">
-                            <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
-                            <input disabled type="text" name="v_ftp_user[1][v_ftp_password]" id="ftppas" class="form-control" value=""/>
-                        </div>
-                        <div class="form-group">
-                            <label>Path</label>
-                            <input disabled type="text" name="v_ftp_user[1][v_ftp_path]" class="form-control" value=""/>
-                        </div>
-                        <div class="form-group">
-                            <label>Отправить данные FTP аккаунта по адресу</label>
-                            <input disabled type="text" name="v_ftp_user[1][v_ftp_email]" class="form-control" value=""/>
-                        </div>
-                    </div>
-                    <a href="#" id="addFtps">Добавить ещё один FTP аккаунт</a>
-                </div>
             </div>
             <!--Дополнительные опции (по умолчанию скрыт)-->
 

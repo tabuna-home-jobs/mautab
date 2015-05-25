@@ -1,84 +1,89 @@
 <?php namespace App\Exceptions;
 
+use Exception;
 
-class ArgsException extends  BadFunctionCallException
+class ArgsException
 {
 
 }
 
-class InvalidException extends InvalidArgumentException
+class InvalidException extends Exception
+{
+	function  __construct($e)
+	{
+		//$this->message = (string) $e;
+	}
+}
+
+class NotexistException
 {
 }
 
-class NotexistException extends  UnderflowException
+class ExistsException
 {
 }
 
-class ExistsException extends  UnderflowException
+class SuspendedException
 {
 }
 
-class SuspendedException extends  UnderflowException
+class UnspendedException
 {
 }
 
-class UnspendedException extends  UnderflowException
+class InuseException
 {
 }
 
-class InuseException extends  UnderflowException
+class LimitException
 {
 }
 
-class LimitException extends  UnderflowException
+class PasswordException
 {
 }
 
-class PasswordException extends  UnderflowException
+class ForbidenException
 {
 }
 
-class ForbidenException extends  UnderflowException
+class DisabledException
 {
 }
 
-class DisabledException extends  UnderflowException
+class ParsingException
 {
 }
 
-class ParsingException extends  UnderflowException
+class DiskException
 {
 }
 
-class DiskException extends  UnderflowException
+class LaException
 {
 }
 
-class LaException extends  UnderflowException
+class ConnectException
 {
 }
 
-class ConnectException extends  UnderflowException
+class FtpException
 {
 }
 
-class FtpException extends  UnderflowException
+class DbException
 {
 }
 
-class DbException extends  UnderflowException
+class RrdException
 {
 }
 
-class RrdException extends  UnderflowException
+class UpdateException
 {
 }
 
-class UpdateException extends  UnderflowException
-{
-}
-
-class RestartException extends  UnderflowException
+class RestartException
 {
 }
 

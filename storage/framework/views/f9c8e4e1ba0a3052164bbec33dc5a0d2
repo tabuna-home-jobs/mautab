@@ -125,26 +125,26 @@
         <div class="container">
             <div class="alert alert-success text-center"><?php echo e(Session::get('good')); ?></div>
         </div>
-
-        <?php if(count($errors) > 0): ?>
-            <div class="alert alert-danger">
-                <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-                <ul>
-                    <?php foreach($errors->all() as $error): ?>
-                        <li><?php echo e($error); ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endif; ?>
-
+    <?php endif; ?>
+    <?php if(Session::has('danger')): ?>
+        <div class="container">
+            <div class="alert alert-danger text-center"><?php echo e(Session::get('danger')); ?></div>
+        </div>
+    <?php endif; ?>
+    <?php if(count($errors) > 0): ?>
+        <div class="alert alert-danger">
+            <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
+            <ul>
+                <?php foreach($errors->all() as $error): ?>
+                    <li><?php echo e($error); ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
     <?php endif; ?>
 
 
 
-
 </header>
-
-
 
 
 <section class="container main-container">
