@@ -8,11 +8,6 @@
         <div class="alert alert-info" role="alert">
             Добавление и редактирование FTP для домена {{$domain}}
         </div>
-        @if(!isset($d_val['FTP_USER']))
-            <input type="checkbox" name="v_ftp" />Дополнительный FTP
-        @else
-            <input checked type="checkbox" name="v_ftp" />Дополнительный FTP
-        @endif
 
         @if(isset($d_val['FTP_USER']) && is_array($d_val['FTP_USER']))
             @foreach($d_val['FTP_USER'] as $key => $ftpU)
@@ -29,9 +24,10 @@
                     Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
                 </small>
             </div>
+            <input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[{{$key+1}}][is_new]" value="0"/>
             <input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[{{$key+1}}][is_old]" value="1"/>
 
-            <input type="text" name="v_ftp_user[{{$key+1}}][v_ftp_user]" class="form-control ftp_usr" value="{{$ftpU}}"/>
+            <input type="text" name="v_ftp_user[{{$key+1}}][v_ftp_user]" class="form-control ftp_usr ftp_usr_namen  " value="{{$ftpU}}" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"/>
         </div>
         <div class="form-group">
             <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
@@ -44,12 +40,11 @@
                     </div>
                 </div>
             @endforeach
-@elseif(isset($d_val['FTP_USER']) && !is_array($d_val['FTP_USER']))
+@elseif(!empty($d_val['FTP_USER']) && !is_array($d_val['FTP_USER']))
     <div class="ftp-groupz">
         <div class="add-ftp-edit">
             <div class="form-group">
                 <label>FTP#1
-                    <a id="delftp">delftp</a>
                     <a href="#" class="del-current-ftp"><small>Удалить</small></a></label>
             </div>
             <div class="form-group">
@@ -60,8 +55,10 @@
                         Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к названию аккаунта
                     </small>
                 </div>
+                <input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[1][is_new]" value="0"/>
                 <input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[1][is_old]" value="1"/>
-        <input type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr" value="{{$d_val['FTP_USER']}}"/>
+
+        <input type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr ftp_usr_namen" value="{{$d_val['FTP_USER']}}" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"/>
             </div>
             <div class="form-group">
                 <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>

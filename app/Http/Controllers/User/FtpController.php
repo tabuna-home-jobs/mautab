@@ -73,13 +73,13 @@ dd('df');
 	 */
 	public function update(ChangeFtpRequest $request){
 
-
+		if(!is_array($request->v_ftp_user)){
+			Session::flash('danger', 'Ничего не изменено.');
+			return redirect()->route('web.index');
+		}
+		
 		//Изменение FTP
-
-			$v_ftp_users_updated = array();
-
 			foreach ($request->v_ftp_user as $i => $v_ftp_user_data) {
-
 
 				if (empty($v_ftp_user_data['v_ftp_user']) && empty($v_ftp_user_data['v_ftp_password'])) {
 					continue;
@@ -97,6 +97,7 @@ dd('df');
 					$pos = strpos($v_ftp_path, '/');
 					($pos === 0) ? $v_ftp_p = $v_ftp_path : $v_ftp_p = '';
 
+
 					//Добавляем данные для фтп
 					Vesta::addFtpDomain($request->domain, $v_ftp_username, $v_ftp_password, $v_ftp_p);
 
@@ -106,8 +107,6 @@ dd('df');
 				if ($v_ftp_user_data['is_old'] == 1){
 
 					// Изменение FTP акаунта
-
-
 					$v_ftp_username      = $v_ftp_user_data['v_ftp_user'];
 					$v_ftp_password = $v_ftp_user_data['v_ftp_password'];
 
@@ -117,11 +116,14 @@ dd('df');
 					($pos === 0) ? $v_ftp_p = $v_ftp_path : $v_ftp_p = '';
 
 
+					$v_ftp_username = Sentry::getUser()->nickname . "_" . $v_ftp_username;
+
+
 					Vesta::changeWebDomain($request->domain, $v_ftp_username, $v_ftp_p);
 
 if ($v_ftp_user_data['v_ftp_password'] != "" && $v_ftp_user_data['v_ftp_password'] != "********" && !empty($v_ftp_user_data['v_ftp_password'])) {
 
-						Vesta::changeFtpPassword($request->v_domain, $v_ftp_username, $v_ftp_user_data['v_ftp_password']);
+						Vesta::changeFtpPassword($request->domain, $v_ftp_username, $v_ftp_user_data['v_ftp_password']);
 
 					}
 
@@ -142,28 +144,8 @@ if ($v_ftp_user_data['v_ftp_password'] != "" && $v_ftp_user_data['v_ftp_password
 	 */
 	public function destroy(RemoveFtpRequest $request){
 
+		Vesta::deleteWebDomain($request->domain, $request->ftpUser);
 
-		if (!empty($_POST['v_ftp_user'])) {
-			$v_ftp_users_updated = array();
-			foreach ($_POST['v_ftp_user'] as $i => $v_ftp_user_data) {
-				if (empty($v_ftp_user_data['v_ftp_user']) && empty($v_ftp_user_data['v_ftp_password'])) {
-					continue;
-				}
-				$v_ftp_user_data['v_ftp_user'] = preg_replace("/^".Sentry::getUser()->nickname."_/i", "", $v_ftp_user_data['v_ftp_user']);
-
-
-
-			//	if ($v_ftp_user_data['delete'] == 1) {
-
-					$v_ftp_username = Sentry::getUser()->nickname . '_' . $v_ftp_user_data['v_ftp_user'];
-
-					Vesta::deleteFtp($request->domain, $v_ftp_username);
-
-					continue;
-			//	}
-
-			}
-		}
 	}
 
 }

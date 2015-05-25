@@ -19,27 +19,31 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+
         //Удаление фтп
-        function deleteFtp(csrf, ddom){
+        function deleteFtp(csrf, ddom, ftpUser){
+
             $.ajax({
-                url: '/ftp/destroy',//'/ftp.destroy',
+                url: '/ftp/destroy',
                 type: 'DELETE',
-                dataType: 'json',
-                data: {domain:ddom},
+                data: {domain:ddom, ftpUser:ftpUser},
                 beforeSend: function(request) {
                     request.setRequestHeader('X-CSRF-Token', csrf);
+                    $('body').addClass('add-opacity');
+                    $('#wath').addClass('load');
                 },
                 success: function(res) {
-                    console.log(res);
+                    alert('Удаление прошло успешно');
+                },
+                complete: function(){
+                    $('body').removeClass('add-opacity');
+                    $('#wath').removeClass('load');
+                },
+                error: function(){
+                    alert('Ошибка при удалении');
                 }
             });
         }
-        $("#delftp").click(function(){
-            var csrf = $("input[name='_token']").val();
-            var ddom = $("input[name='domain']").val();
-            deleteFtp(csrf,ddom);
-            return false;
-        });
 
         //Добавить алиас после ввода домена
         /*
@@ -64,7 +68,7 @@
         //Функция добавления FTP
         function clickAddFtp(elem, num){
             //Форма нового FTP
-            var strHtml = '<div class="ftp-groupz"><div class="form-group"><label>FTP#' + num + '<a href="#" class="del-current-ftp"><small>Удалить</small></a></label>            </div><div class="form-group"><label>Аккаунт</label><div><small>Префикс {{(!is_null(Sentry::getUser())) ? Sentry::getUser()->nickname : '' }}_ будет автоматически добавлен к названию аккаунта</small></div><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_new]" value="1"/><input type="text" name="v_ftp_user[' + num + '][v_ftp_user]" class="form-control ftp_usr" value=""/></div><div class="form-group"><label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>            <input type="text" name="v_ftp_user[' + num + '][v_ftp_password]" id="ftppas" class="form-control" value=""/></div><div class="form-group"><label>Path</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_path]" class="form-control" value=""/></div>            <div class="form-group"><label>Отправить данные FTP аккаунта по адресу</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_email]" class="form-control" value=""/></div</div>';
+            var strHtml = '<div class="ftp-groupz"><div class="form-group"><label>FTP#' + num + '<a href="#" class="del-current-ftp"><small>Удалить</small></a></label>            </div><div class="form-group"><label>Аккаунт</label><div><small>Префикс {{(!is_null(Sentry::getUser())) ? Sentry::getUser()->nickname : '' }}_ будет автоматически добавлен к названию аккаунта</small></div><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_new]" value="1"/><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_old]" value="0"/><input type="text" name="v_ftp_user[' + num + '][v_ftp_user]" class="form-control ftp_usr" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"/></div><div class="form-group"><label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>            <input type="text" name="v_ftp_user[' + num + '][v_ftp_password]" id="ftppas" class="form-control" value=""/></div><div class="form-group"><label>Path</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_path]" class="form-control" value=""/></div>            <div class="form-group"><label>Отправить данные FTP аккаунта по адресу</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_email]" class="form-control" value=""/></div</div>';
 
             elem.before(strHtml);
         }
@@ -79,10 +83,20 @@
 
         //Удаление ненужного фтп
         $('body').on('click','.del-current-ftp',function(){
+
+
             var obj = $(this);
-            var rapentObj = $(obj).parent().parent().parent();
+            var rapentObj = $(obj).parent().parent().parent().parent();
+
+            var csrf = $("input[name='_token']").val();
+            var ddom = $("input[name='domain']").val();
+            var ftpUser = $(".ftp_usr_namen", rapentObj).val();
+
+
+            deleteFtp(csrf, ddom, ftpUser);
+
             rapentObj.empty();
-            return false
+            return false;
         });
 
 
