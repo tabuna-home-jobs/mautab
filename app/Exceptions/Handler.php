@@ -42,7 +42,8 @@ class Handler extends ExceptionHandler {
 		if ($sentry = SentryExceptions::render($e))
 			return $sentry;
 
-
+		if ($vesta = VestaExceptions::render($e))
+			return $vesta;
 
 		return parent::render($request, $e);
 	}
