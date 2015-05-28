@@ -79,14 +79,34 @@ class UserController extends Controller
 	 */
     public function update(UserRequest $request)
 	{
-        $user = Sentry::getUser();
-        $user->email = $request->email;
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->save();
+		$user = Sentry::getUser();
+		$user->email = $request->email;
+		$user->first_name = $request->first_name;
+		$user->last_name = $request->last_name;
 
+		//Удаление групп
+		foreach($user->groups as $groupz){
+			$user->removeGroup($groupz);
+		}
 
-        dd(Sentry::getUser());
+		//Запись новых групп
+		foreach($request->groups as $value){
+			$groupz = Sentry::findGroupById($value);
+			$user->addGroup($groupz);
+		}
+
+		//Запись/обновление отдельных прав пользователя
+		if(!is_null($request->permissions)){
+			unset($user->permissions);
+			$user->permissions = $request->permissions;
+		}else{
+			unset($user->permissions);
+			$user->permissions = array();
+		}
+
+		$user->save();
+		return redirect()->route('admin.users.index');
+
 	}
 
 	/**

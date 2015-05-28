@@ -62,33 +62,33 @@
                                 <input class="form-control" required name="end_of_service" value="{{$user->end_of_service}}">
                             </div>
 
-                            <div class="form-group">
-                                <input type="hidden" name="id" value="{{$user->id}}">
-                                <input type="hidden" name="_method" value="PUT">
-                                <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                <input type="submit" value="Отправить" class="button-full">
-                            </div>
+
 
                         </div>
 
                         <div aria-labelledby="groups-tab" id="groups" class="tab-pane fade" role="tabpanel">
                             <div class="col-xs-12">
                                 <div class="form-group">
-
+                                    <div class="check-all">
+                                        <label>
+                                            <input type="checkbox" id="check-all-group"/>
+                                            Отметить/снять все
+                                        </label>
+                                    </div>
                                     @foreach($groups as $value)
-                                        @foreach($thisgroup as $thisUserGroup)
-                                            <div class="checkbox">
+                                        <div class="permissGroup col-xs-4">
+                                            <label>
                                                 <input type="checkbox" name="groups[]"
                                                        value="{{$value->id}}"
-                                                @if($value->id == $thisUserGroup->id)
+                                                @foreach($thisgroup as $thisUserGroup)
+                                                    @if($value->id == $thisUserGroup->id)
                                                        checked
-                                                        @endif
-                                                        >
+                                                            @endif
+                                                        @endforeach
+                                                        />
                                                 {{$value->name}}
-                                                </label>
-                                            </div>
-
-                                        @endforeach
+                                            </label>
+                                        </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -98,16 +98,20 @@
                         <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade" role="tabpanel">
 
                             <div class="form-group">
-
-
+                                <div class="check-all">
+                                    <label>
+                                        <input type="checkbox" id="check-all"/>
+                                        Отметить/снять все
+                                    </label>
+                                </div>
                                 @foreach (Route::getRoutes() as $route)
                                     @if(!is_null($route->getName()))
-                                        <div class="checkbox">
+                                        <div class="col-xs-4 premissionCheckbox">
                                             <label>
                                                 <input type="checkbox"
                                                        name="permissions['{{$route->getName()}}']"
                                                        value="1"
-                                                @if(isset($user->permissions[$route->getName()]))
+                                                @if(isset($user->permissions["'".$route->getName()."'"]))
                                                        checked
                                                         @endif
                                                         >
@@ -116,13 +120,17 @@
                                         </div>
                                     @endif
                                 @endforeach
-
-
                             </div>
 
 
                         </div>
 
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="{{$user->id}}">
+                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <input type="submit" value="Отправить" class="button-full">
                     </div>
                 </div>
 

@@ -20,6 +20,33 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
+        //Выбор всех чекбоксов в группах
+        $('#check-all-group').click(function() {
+            if(this.checked) {
+                $('.permissGroup input:checkbox').each(function() {
+                    this.checked = true;
+                });
+            }else{
+                $('.permissGroup input:checkbox').each(function() {
+                    this.checked = false;
+                });
+            }
+        });
+
+        //Выбор всех чекбоксов в правах
+        $('#check-all').click(function() {
+            if(this.checked) {
+                $('.premissionCheckbox input:checkbox').each(function() {
+                    this.checked = true;
+                });
+            }else{
+                $('.premissionCheckbox input:checkbox').each(function() {
+                    this.checked = false;
+                });
+            }
+        });
+
+
         //Удаление фтп
         function deleteFtp(csrf, ddom, ftpUser){
 

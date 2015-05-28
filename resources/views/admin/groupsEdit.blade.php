@@ -25,11 +25,16 @@
                 </div>
 
                 <div class="form-group">
-
+                    <div class="check-all">
+                        <label>
+                            <input type="checkbox" id="check-all"/>
+                            Отметить/снять все
+                        </label>
+                    </div>
 
                     @foreach (Route::getRoutes() as $route)
                         @if(!is_null($route->getName()))
-                            <div class="checkbox">
+                            <div class="col-xs-4 premissionCheckbox">
                                 <label>
                                     <input type="checkbox"
                                     @if(isset($group->permissions[$route->getName()]))
