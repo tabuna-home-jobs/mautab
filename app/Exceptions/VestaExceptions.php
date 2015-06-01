@@ -68,6 +68,8 @@ class VestaExceptions extends Exception
 			case 20:
 				$return = redirect()->back()->withErrors(array('Service restart failed'));
 				break;
+			default:
+				$return = FALSE;
 		}
 		return $return;
 	}

@@ -1,254 +1,361 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="/favicon.png" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MauTab</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Cloudme</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="/animate.css">
-  <link rel="stylesheet" href="/style.css">
-  <script src="wow.js"></script>
-  <script>
-    new WOW().init();
-  </script>
+    <!-- Fonts -->
+
+
+
+    <!-- CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/main.css">
+
+
+    <!-- Js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
 
 </head>
 <body>
 
-<div id="wath"></div>
 
-<header class="header-login-app">
-
-    <nav class="navbar navbar-default navbar-fixed-top">
+<header>
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Меню</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">
-          <img title="" alt="" src="/img/logo.png">
-        </a>
-      </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-6 col-sm-3">
+                <a href="#" class="logo">
+                    <img src="/images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="col-md-6 col-xs-6 col-sm-6">
+                <div class="menu">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
 
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/auth/login">Войти</a></li>
-            <li><a href="/auth/register">Зарегистрироваться</a></li>
-            <li>
-                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Язык</a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#banner">О нас</a></li>
+                                    <li><a href="#service">Веб студия</a></li>
+                                    <li><a href="#feature">Хостинг</a></li>
+                                    <li><a href="#utility">Партнёрам</a></li>
+                                </ul>
+
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-12 col-sm-3">
+                <ul class="social-info">
+                    <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
+                    <li><a href="#"><i class="fa fa-phone-square"></i></a></li>
                 </ul>
-            </li>
-        </ul>
-      </div>
+            </div>
+
+
+        </div>
     </div>
-  </nav>
-
-
-    <!--  MONITORING  -->
-    <section class="monitoring col-xs-12">
-        <h2>Быстрое и богатое управление проектами</h2>
-
-        <p class="text-center">С нашими бесплатными онлайн сервесами вы с лёгкостью сможете администрировать свой ресурс</p>
-
-        <div data-wow-delay="0.3s" class="text-center wow fadeInUp monit"><img src="/img/monitoring.png" class="img-responsive center-block" alt=""/></div>
-
-        <div class="container"><p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin molestie ultrices. Aliquam at
-                                                      efficitur nibh. Etiam accumsan diam ut ligula interdum, non interdum est ornare. Curabitur dapibus nisl in ipsum
-                                                      aliquet condimentum quis sit amet metus. Aliquam semper vehicula lacus volutpat tincidunt. Suspendisse vel sem id
-                                                      ante rhoncus convallis id in dui. Vestibulum urna quam, porttitor id aliquet vel, lobortis at odio. Quisque nec
-                                                      pulvinar sapien. </p></div>
-
-    </section>
-    <!--  END OF MONITORING  -->
-
-
-
 </header>
 
 
-<!--  TESTIMONIALS  -->
-<section class="testimonials col-xs-12 fullscreen  parallax" style="background-image:url('https://pp.vk.me/c623228/v623228062/326f7/khA6DwFB8Vc.jpg');"
-         data-img-width="100%" data-img-height="1064" data-diff="100">
-    <div class="circle"><i class="fa fa-heart"></i></div>
-    <h2>Нас выбрали <span id="lovedby">0</span> разработчика</h2>
-</section>
-<!--  END OF TESTIMONIALS -->
 
 
-<section class="features  col-xs-12">
-  <div class="container">
-    <div class="row text-center">
-      <h2>Особенности</h2>
+<section id="banner">
+    <div class="container">
+        <div class="row">
 
-      <p>Мы одни из первых, кто предлогает самые передовые технологии для профессиональной поддержки сайта</p>
+            <div class="col-md-4 col-sm-6">
+                <div class="block">
+                    <img class="app-img img-responsive" src="/images/app.png" alt="">
+                </div>
 
-
-        <ul class="col-xs-12">
-        <li class="wow fadeInLeft col-xs-12 col-sm-4" data-wow-delay="0.2s">
-          <i class="fa fa-database"></i>
-
-          <h3>Базы данных</h3>
-
-          <p>Используйте не только MySQL, но и PostgreSQL с предоставлением сервиса для их администрирования онлайн</p>
-        </li>
-
-        <li class="wow fadeInLeft col-xs-12 col-sm-4" data-wow-delay="0.4s">
-          <i class="fa fa-git-square"></i>
-
-          <h3>Контроль версий</h3>
-
-          <p>Идеальная совместная работа комадны, обеспечиваеться системой контроля версий git</p>
-        </li>
-
-        <li class="wow fadeInLeft col-xs-12 col-sm-4" data-wow-delay="0.6s">
-          <i class="fa fa-code"></i>
-
-          <h3>Программное обеспечение</h3>
-
-          <p>Использование только стабильного и современного программного обеспечения с постоянным автоматически обновлением</p>
-        </li>
-
-        <li class="wow fadeInRight col-xs-12 col-sm-4" data-wow-delay="0.2s">
-          <i class="fa fa-bolt"></i>
-
-          <h3>Канал связи</h3>
-
-          <p>Мощный и стабильный канал связи обеспечит высокую скорость загрузки страниц</p>
-        </li>
-
-        <li class="wow fadeInRight col-xs-12 col-sm-4" data-wow-delay="0.4s">
-          <i class="fa fa-hdd-o"></i>
-
-          <h3>SSD-Диски</h3>
-
-          <p>Для высокой производительности используеться исключительно твердотелые носители</p>
-        </li>
-
-        <li class="wow fadeInRight col-xs-12 col-sm-4" data-wow-delay="0.6s">
-          <i class="fa fa-rocket"></i>
-
-          <h3>Node.js</h3>
-
-          <p>Теперь не нужно покупать VPS для использоания Node.js</p>
-        </li>
-      </ul>
-
-    </div>
-  </div>
-</section>
+            </div>
+            <div class="col-md-6 col-md-offset-1 col-sm-6">
+                <div class="block">
+                    <h1>
+                        Быстрое и богатое управление проектами
+                    </h1>
+                    <p>
+                        С нашими бесплатными онлайн сервесами вы с лёгкостью сможете администрировать свой ресурс
+                    </p>
 
 
-
-<!--  CALL TO ACTION  -->
-<section class="calltoaction col-xs-12">
-    <div class="col-xs-12">
-        <div data-wow-delay="0.3s" class="longshadow wow fadeInDown">Новый клиент?</div>
-        <div data-wow-delay="0.5s" class="calltoactioninfo wow fadeInUp"></div>
-
-
-        <div class="container">
-
-
-        <div class="col-xs-12 col-md-4 wow zoomIn" data-wow-delay="0.2s">
-                <div class="panel panel-price">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Мини</h3>
-
-                        <div class="cd-price">
-                            <span class="cd-currency"><i class="fa fa-rub"></i></span>
-                            <span class="cd-value">99</span>
-                            <span class="cd-duration">месяц</span>
-                        </div>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>10</strong> Доменов</li>
-                        <li class="list-group-item"><strong>10</strong> Баз данных</li>
-                        <li class="list-group-item"><strong>1</strong> Заданий</li>
-                        <li class="list-group-item"><strong>10Gb</strong> Дискового пространства</li>
-                        <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
-                        <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
-                        <li class="list-group-item"><strong>3</strong> Резевных копии</li>
-                        <li class="list-group-item">24/7</strong> Поддержка</li>
+                    <ul class="download-btn">
+                        <li>
+                            <a href="#" class="btn btn-default btn-apple"> <i class="fa fa-apple"></i>App store</a>
+                        </li>
+                        <li>
+                            <a href="/auth/login" class="btn btn-default btn-andriod"><i class="fa fa-android"></i>Войти</a>
+                        </li>
+                        <li>
+                            <a href="/auth/register" class="btn btn-default btn-windows"><i class="fa fa-windows"></i>Зарегистироваться</a>
+                        </li>
                     </ul>
-                    <div class="panel-footer">Выбрать</div>
+
+
                 </div>
             </div>
-
-            <div class="col-xs-12 col-md-4 wow zoomIn" data-wow-delay="0.4s">
-                <div class="panel panel-price">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Стандарт</h3>
-
-                        <div class="cd-price">
-                            <span class="cd-currency"><i class="fa fa-rub"></i></span>
-                            <span class="cd-value">499</span>
-                            <span class="cd-duration">месяц</span>
-                        </div>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>50</strong> Доменов</li>
-                        <li class="list-group-item"><strong>50</strong> Баз данных</li>
-                        <li class="list-group-item"><strong>10</strong> Заданий</li>
-                        <li class="list-group-item"><strong>30Gb</strong> Диск</li>
-                        <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
-                        <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
-                        <li class="list-group-item"><strong>3</strong> Резевных копии</li>
-                        <li class="list-group-item">24/7</strong> Поддержка</li>
-                    </ul>
-                    <div class="panel-footer">Выбрать</div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-md-4 wow zoomIn" data-wow-delay="0.6s">
-                <div class="panel panel-price">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Студия</h3>
-
-                        <div class="cd-price">
-                            <span class="cd-currency"><i class="fa fa-rub"></i></span>
-                            <span class="cd-value">999</span>
-                            <span class="cd-duration">месяц</span>
-                        </div>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>100</strong> Доменов</li>
-                        <li class="list-group-item"><strong>100</strong> Баз данных</li>
-                        <li class="list-group-item"><strong>30</strong> Заданий</li>
-                        <li class="list-group-item"><strong>50Gb</strong> Диск</li>
-                        <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
-                        <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
-                        <li class="list-group-item"><strong>3</strong> Резевных копии</li>
-                        <li class="list-group-item">24/7</strong> Поддержка</li>
-                    </ul>
-                    <div class="panel-footer">Выбрать</div>
-                </div>
-            </div>
-
         </div>
-
-
     </div>
 </section>
-<!--  END OF CALL TO ACTION -->
+
+
+<section id="service">
+    <div class="container">
+        <div class="service-wrapper">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-code"></i>
+                        </div>
+
+                        <h3>ПО</h3>
+                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-hdd-o"></i>
+                        </div>
+                        <h3>SSD-Диски</h3>
+                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-code"></i>
+                        </div>
+
+                        <h3>ПО</h3>
+                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-hdd-o"></i>
+                        </div>
+                        <h3>SSD-Диски</h3>
+                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
-<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
+
+
+
+
+<section id="feature">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="title">Ориентированны на цель</h2>
+
+                <div class="feature-item">
+
+                    <div class="media">
+                        <div class="pull-left icon" href="#">
+                            <i class="fa fa-paint-brush"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+                            <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="media">
+                        <div class="pull-left icon" href="#">
+                            <i class="fa fa-qrcode"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+                            <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="media">
+                        <div class="pull-left icon" href="#">
+                            <i class="fa fa-recycle"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+                            <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="block">
+                    <img class="img-responsive" src="/images/featured-app.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <div class="title text-center">
+                        <h2>Цены</h2>
+                        <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                    </div>
+
+
+
+
+
+                    <div class="col-xs-12 col-md-4">
+                        <div class="panel panel-price">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Мини</h3>
+
+                                <div class="cd-price">
+                                    <span class="cd-currency"><i class="fa fa-rub"></i></span>
+                                    <span class="cd-value">99</span>
+                                    <span class="cd-duration">месяц</span>
+                                </div>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>10</strong> Доменов</li>
+                                <li class="list-group-item"><strong>10</strong> Баз данных</li>
+                                <li class="list-group-item"><strong>1</strong> Заданий</li>
+                                <li class="list-group-item"><strong>10Gb</strong> Дискового пространства</li>
+                                <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
+                                <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
+                                <li class="list-group-item"><strong>3</strong> Резевных копии</li>
+                                <li class="list-group-item">24/7</strong> Поддержка</li>
+                            </ul>
+                            <div class="panel-footer">Выбрать</div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-4">
+                        <div class="panel panel-price">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Стандарт</h3>
+
+                                <div class="cd-price">
+                                    <span class="cd-currency"><i class="fa fa-rub"></i></span>
+                                    <span class="cd-value">499</span>
+                                    <span class="cd-duration">месяц</span>
+                                </div>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>50</strong> Доменов</li>
+                                <li class="list-group-item"><strong>50</strong> Баз данных</li>
+                                <li class="list-group-item"><strong>10</strong> Заданий</li>
+                                <li class="list-group-item"><strong>30Gb</strong> Диск</li>
+                                <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
+                                <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
+                                <li class="list-group-item"><strong>3</strong> Резевных копии</li>
+                                <li class="list-group-item">24/7</strong> Поддержка</li>
+                            </ul>
+                            <div class="panel-footer">Выбрать</div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-4">
+                        <div class="panel panel-price">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Студия</h3>
+
+                                <div class="cd-price">
+                                    <span class="cd-currency"><i class="fa fa-rub"></i></span>
+                                    <span class="cd-value">999</span>
+                                    <span class="cd-duration">месяц</span>
+                                </div>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>100</strong> Доменов</li>
+                                <li class="list-group-item"><strong>100</strong> Баз данных</li>
+                                <li class="list-group-item"><strong>30</strong> Заданий</li>
+                                <li class="list-group-item"><strong>50Gb</strong> Диск</li>
+                                <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
+                                <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
+                                <li class="list-group-item"><strong>3</strong> Резевных копии</li>
+                                <li class="list-group-item">24/7</strong> Поддержка</li>
+                            </ul>
+                            <div class="panel-footer">Выбрать</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="footer-logo"href="#">
+                    <img class="img-responsive" src="/images/footer-logo.png" alt="">
+                </a>
+                <p>Copyright © 2015 MauTab. Все права защищены. </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
