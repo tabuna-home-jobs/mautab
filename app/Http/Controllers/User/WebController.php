@@ -32,7 +32,7 @@ class WebController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function Index()
+	public function index()
 	{
 		return view('user/web/index', ["UserDomain" => Vesta::listWebDomain()]);
 	}

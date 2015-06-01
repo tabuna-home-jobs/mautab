@@ -3,7 +3,6 @@
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ChangeFtpRequest;
 use App\Http\Requests\RemoveFtpRequest;
-use Request;
 use Sentry;
 use Session;
 use Vesta;
