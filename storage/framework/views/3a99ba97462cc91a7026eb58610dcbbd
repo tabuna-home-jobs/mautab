@@ -12,7 +12,6 @@
     <!-- Fonts -->
 
 
-
     <!-- CSS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -24,7 +23,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 
 
 </head>
@@ -62,8 +60,10 @@
                                     <li><a href="#utility">Партнёрам</a></li>
                                 </ul>
 
-                            </div><!-- /.navbar-collapse -->
-                        </div><!-- /.container-fluid -->
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
                     </nav>
                 </div>
             </div>
@@ -83,9 +83,7 @@
 </header>
 
 
-
-
-<section id="banner">
+<section class="banner">
     <div class="container">
         <div class="row">
 
@@ -100,6 +98,7 @@
                     <h1>
                         Быстрое и богатое управление проектами
                     </h1>
+
                     <p>
                         С нашими бесплатными онлайн сервесами вы с лёгкостью сможете администрировать свой ресурс
                     </p>
@@ -125,7 +124,7 @@
 </section>
 
 
-<section id="service">
+<section class="service">
     <div class="container">
         <div class="service-wrapper">
             <div class="row">
@@ -136,6 +135,7 @@
                         </div>
 
                         <h3>ПО</h3>
+
                         <p>Использование современного программного обеспечения с постоянным обновлением</p>
                     </div>
                 </div>
@@ -145,6 +145,7 @@
                             <i class="fa fa-hdd-o"></i>
                         </div>
                         <h3>SSD-Диски</h3>
+
                         <p>Для высокой производительности используеться исключительно твердотелые носители</p>
                     </div>
                 </div>
@@ -155,6 +156,7 @@
                         </div>
 
                         <h3>ПО</h3>
+
                         <p>Использование современного программного обеспечения с постоянным обновлением</p>
                     </div>
                 </div>
@@ -164,6 +166,7 @@
                             <i class="fa fa-hdd-o"></i>
                         </div>
                         <h3>SSD-Диски</h3>
+
                         <p>Для высокой производительности используеться исключительно твердотелые носители</p>
                     </div>
                 </div>
@@ -173,14 +176,7 @@
 </section>
 
 
-
-
-
-
-
-
-
-<section id="feature">
+<section class="feature">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -194,6 +190,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+
                             <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
                         </div>
                     </div>
@@ -207,6 +204,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+
                             <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
                         </div>
                     </div>
@@ -220,6 +218,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+
                             <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
                         </div>
                     </div>
@@ -235,11 +234,6 @@
 </section>
 
 
-
-
-
-
-
 <section>
     <div class="container">
         <div class="row">
@@ -247,11 +241,9 @@
                 <div class="block">
                     <div class="title text-center">
                         <h2>Цены</h2>
+
                         <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
                     </div>
-
-
-
 
 
                     <div class="col-xs-12 col-md-4">
@@ -332,12 +324,6 @@
                 </div>
 
 
-
-
-
-
-
-
             </div>
         </div>
     </div>
@@ -347,9 +333,10 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-md-12">
-                <a class="footer-logo"href="#">
+                <a class="footer-logo" href="#">
                     <img class="img-responsive" src="/images/footer-logo.png" alt="">
                 </a>
+
                 <p>Copyright © 2015 MauTab. Все права защищены. </p>
 
             </div>

@@ -3,18 +3,6 @@
 
         <div class="col-xs-12">
 
-            <?php if(count($errors) > 0): ?>
-                <div class="alert alert-danger">
-                    <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-                    <ul>
-                        <?php foreach($errors->all() as $error): ?>
-                            <li><?php echo e($error); ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-
-
             <div class="row">
 
                 <div class="col-xs-12">

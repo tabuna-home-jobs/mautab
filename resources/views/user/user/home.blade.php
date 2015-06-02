@@ -5,18 +5,6 @@
 
         <div class="col-xs-12">
 
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-
             <div class="row">
 
                 <div class="col-xs-12">

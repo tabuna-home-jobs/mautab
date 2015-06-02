@@ -101,42 +101,42 @@ header .social-info li a:hover {
     color: #f48e5c;
 }
 
-#banner {
+.banner {
     background-size: cover;
     position: relative;
     padding: 100px 0;
 }
 
-#banner .app-img {
+.banner .app-img {
     padding-top: 10px;
 }
 
-#banner .block > p {
+.banner .block > p {
     margin-bottom: 65px;
 }
 
-#banner .block {
+.banner .block {
     padding-top: 10px;
 }
 
-#banner .block h1 {
+.banner .block h1 {
     margin-bottom: 18px;
     line-height: 55px;
     color: #262b31;
     font-weight: 300;
 }
 
-#banner .block p {
+.banner .block p {
     font-size: 20px;
     color: #999;
     font-weight: 300;
 }
 
-#banner .block .download-btn li {
+.banner .block .download-btn li {
     display: inline-block;
 }
 
-#banner .block .download-btn li a {
+.banner .block .download-btn li a {
     color: #fff;
     border: none;
     border-radius: 0;
@@ -144,12 +144,12 @@ header .social-info li a:hover {
     font-size: 18px;
 }
 
-#banner .block .download-btn li a i {
+.banner .block .download-btn li a i {
     margin-right: 10px;
     font-size: 20px;
 }
 
-#banner .block .download-btn li .btn-apple {
+.banner .block .download-btn li .btn-apple {
     background: #8883bc;
     border: 1px solid transparent;
     -webkit-transition: .2s all;
@@ -157,13 +157,13 @@ header .social-info li a:hover {
     transition: .2s all;
 }
 
-#banner .block .download-btn li .btn-apple:hover {
+.banner .block .download-btn li .btn-apple:hover {
     color: #8883bc;
     background: #fff;
     border: 1px solid #8883bc;
 }
 
-#banner .block .download-btn li .btn-andriod {
+.banner .block .download-btn li .btn-andriod {
     background: #6fbf39;
     border: 1px solid transparent;
     -webkit-transition: .2s all;
@@ -171,13 +171,13 @@ header .social-info li a:hover {
     transition: .2s all;
 }
 
-#banner .block .download-btn li .btn-andriod:hover {
+.banner .block .download-btn li .btn-andriod:hover {
     color: #6fbf39;
     background: #fff;
     border: 1px solid #6fbf39;
 }
 
-#banner .block .download-btn li .btn-windows {
+.banner .block .download-btn li .btn-windows {
     background: #00afec;
     border: 1px solid transparent;
     -webkit-transition: .2s all;
@@ -185,36 +185,36 @@ header .social-info li a:hover {
     transition: .2s all;
 }
 
-#banner .block .download-btn li .btn-windows:hover {
+.banner .block .download-btn li .btn-windows:hover {
     color: #00afec;
     background: #fff;
     border: 1px solid #00afec;
 }
 
-#service {
+.service {
     padding: 30px 0;
 }
 
-#service .service-wrapper {
+.service .service-wrapper {
     border-top: 1px solid #dedede;
     border-bottom: 1px solid #dedede;
     padding: 110px 0;
 }
 
-#service .block {
+.service .block {
     cursor: pointer;
     text-align: center;
 }
 
-#service .block:hover .icon i {
+.service .block:hover .icon i {
     color: #fff;
 }
 
-#service .block:hover h3 {
+.service .block:hover h3 {
     color: #f48e5c;
 }
 
-#service .block:hover .icon {
+.service .block:hover .icon {
     border: 1px solid #FFFFFF;
     background: #f48e5c;
     color: #fff;
@@ -223,7 +223,7 @@ header .social-info li a:hover {
     box-shadow: 0 0 0px 2px #f48e5c;
 }
 
-#service .block .icon {
+.service .block .icon {
     width: 90px;
     height: 90px;
     margin: 0 auto;
@@ -235,7 +235,7 @@ header .social-info li a:hover {
     transition: .2s all;
 }
 
-#service .block i {
+.service .block i {
     font-size: 25px;
     line-height: 90px;
     color: #989898;
@@ -244,56 +244,56 @@ header .social-info li a:hover {
     transition: .2s all;
 }
 
-#service .block h3 {
+.service .block h3 {
     color: #555;
     font-weight: 300;
 }
 
-#service .block p {
+.service .block p {
     color: #666;
 }
 
-#feature {
+.feature {
     padding: 120px 0;
 }
 
-#feature .title {
+.feature .title {
     font-weight: 300;
 }
 
-#feature .feature-item {
+.feature .feature-item {
     margin-top: 40px;
 }
 
-#feature .feature-item:first-child {
+.feature .feature-item:first-child {
     margin-top: 0;
 }
 
-#feature .feature-item .icon {
+.feature .feature-item .icon {
     padding-right: 22px;
 }
 
-#feature .feature-item .icon i {
+.feature .feature-item .icon i {
     color: #f48e5c;
     font-size: 30px;
 }
 
-#feature .feature-item h4 {
+.feature .feature-item h4 {
     color: #f48e5c;
     margin-bottom: 0;
     font-weight: 300;
     margin-bottom: 8px;
 }
 
-#feature .feature-item p {
+.feature .feature-item p {
     color: #9499a2;
 }
 
-#feature .block {
+.feature .block {
     text-align: center;
 }
 
-#feature .block img {
+.feature .block img {
     display: inline-block;
 }
 
@@ -386,3 +386,16 @@ footer p {
 }
 
 /* !Price */
+
+/* menuapp */
+
+.menuapp {
+    padding-top: 70px;
+}
+
+.menuapp a {
+    color: #666;
+    font-size: 15px;
+}
+
+/* !menuapp */

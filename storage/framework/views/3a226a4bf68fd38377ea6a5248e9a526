@@ -1,16 +1,19 @@
-<!--  FOOTER  -->
-<footer class="footer col-xs-12">
-  <p class="copyright">© Copyright CloudMe, все права защищены. </p>
+<footer>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="footer-logo" href="#">
+                    <img class="img-responsive" src="/images/footer-logo.png" alt="">
+                </a>
+
+                <p>Copyright © 2015 MauTab. Все права защищены. </p>
+
+            </div>
+        </div>
+    </div>
 </footer>
-<!--  END OF FOOTER  -->
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 <!--  TinyMCE -->
 <script src="<?php echo e(asset('/dist/plugins/tinymce/tinymce.min.js')); ?>" type="text/javascript"></script>

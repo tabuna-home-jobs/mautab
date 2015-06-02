@@ -83,7 +83,7 @@
 </header>
 
 
-<section id="banner">
+<section class="banner">
     <div class="container">
         <div class="row">
 
@@ -124,7 +124,7 @@
 </section>
 
 
-<section id="service">
+<section class="service">
     <div class="container">
         <div class="service-wrapper">
             <div class="row">
@@ -176,7 +176,7 @@
 </section>
 
 
-<section id="feature">
+<section class="feature">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6">
