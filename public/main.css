@@ -47,7 +47,7 @@ ul li {
 }
 
 .menu .navbar-default .navbar-nav > li > a:hover {
-    color: #f48e5c;
+    color: #00afec;
 }
 
 .menu .navbar-nav {
@@ -98,7 +98,7 @@ header .social-info li a {
 }
 
 header .social-info li a:hover {
-    color: #f48e5c;
+    color: #00afec;
 }
 
 .banner {
@@ -211,16 +211,16 @@ header .social-info li a:hover {
 }
 
 .service .block:hover h3 {
-    color: #f48e5c;
+    color: #00afec;
 }
 
 .service .block:hover .icon {
     border: 1px solid #FFFFFF;
-    background: #f48e5c;
+    background: #00afec;
     color: #fff;
-    -webkit-box-shadow: 0 0 0px 2px #f48e5c;
-    -moz-box-shadow: 0 0 0px 2px #f48e5c;
-    box-shadow: 0 0 0px 2px #f48e5c;
+    -webkit-box-shadow: 0 0 0px 2px #00afec;
+    -moz-box-shadow: 0 0 0px 2px #00afec;
+    box-shadow: 0 0 0px 2px #00afec;
 }
 
 .service .block .icon {
@@ -274,12 +274,12 @@ header .social-info li a:hover {
 }
 
 .feature .feature-item .icon i {
-    color: #f48e5c;
+    color: #00afec;
     font-size: 30px;
 }
 
 .feature .feature-item h4 {
-    color: #f48e5c;
+    color: #00afec;
     margin-bottom: 0;
     font-weight: 300;
     margin-bottom: 8px;
@@ -373,7 +373,7 @@ footer p {
 }
 
 .panel-price > .panel-footer:hover {
-    background-color: #f48e5c;
+    background-color: #00afec;
     transition: all 1s linear;
 }
 

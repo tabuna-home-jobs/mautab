@@ -87,7 +87,7 @@
 </header>
 
 
-    <section class="menuapp container text-center">
+<section class="menuapp container text-center">
 
         <div class="col-md-2 col-sm-4 col-xs-6">
 
@@ -151,28 +151,28 @@
             <p class="menu-small"><a href="<?php echo e(URL::route('backup.index')); ?>">Резервные копии</a></p>
         </div>
 
-    </section>
+</section>
 
 
 
 
     <?php if(Session::has('good')): ?>
-            <div class="alert alert-success text-center alert-fixed-bottom">
-                <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
-                <?php echo e(Session::get('good')); ?>
+        <div class="alert alert-success text-center alert-fixed-bottom">
+            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <?php echo e(Session::get('good')); ?>
 
-            </div>
+        </div>
     <?php endif; ?>
     <?php if(Session::has('danger')): ?>
-            <div class="alert alert-danger text-center alert-fixed-bottom">
-                <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
-                <?php echo e(Session::get('danger')); ?>
+        <div class="alert alert-danger text-center alert-fixed-bottom">
+            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <?php echo e(Session::get('danger')); ?>
 
-            </div>
+        </div>
     <?php endif; ?>
     <?php if(count($errors) > 0): ?>
-            <div class="alert alert-danger alert-fixed-bottom">
-                <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+        <div class="alert alert-danger alert-fixed-bottom">
+            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
                 <ul>
                     <?php foreach($errors->all() as $error): ?>
                         <li><?php echo e($error); ?></li>
