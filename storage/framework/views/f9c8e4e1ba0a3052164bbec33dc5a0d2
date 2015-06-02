@@ -183,7 +183,7 @@
 
 
 
-<section class="container">
+<section class="container app-container">
 <?php echo $__env->yieldContent('content'); ?>
 </section>
 

@@ -181,7 +181,7 @@
 
 
 
-<section class="container">
+<section class="container app-container">
 @yield('content')
 </section>
 
