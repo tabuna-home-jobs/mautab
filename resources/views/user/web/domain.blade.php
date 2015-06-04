@@ -94,7 +94,7 @@
 
 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input name="submit" type="submit" class="button-full" id="submit" value="Добавить" />
+                <input name="submit" type="submit" class="btn btn-blue" id="submit" value="Добавить"/>
                 </p>
             </form>
 

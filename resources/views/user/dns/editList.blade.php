@@ -35,7 +35,7 @@
                         </div>
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="submit" value="Отправить" class="button-full">
+                        <input type="submit" value="Отправить" class="btn btn-blue">
                     </form>
 
                     <div class="col-md-4">

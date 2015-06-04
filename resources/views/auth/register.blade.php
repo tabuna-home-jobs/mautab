@@ -111,7 +111,7 @@
 
 
             {!!  Form::token(); !!}
-            <input type="submit" class="button-full" value="Зарегистрироваться">
+            <input type="submit" class="btn btn-blue" value="Зарегистрироваться">
             {!! Form::close() !!}
 
 

@@ -13,7 +13,8 @@
 
 
     <!-- CSS -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300,700&subset=latin,cyrillic' rel='stylesheet'
+          type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
 
@@ -92,6 +93,7 @@
         <div class="col-md-2 col-sm-4 col-xs-6">
 
             <a href="{{URL::route('home.index')}}">
+                <span class="fa fa-user"></span>
                 <h4>{{Lang::get('menu.user')}}</h4>
             </a>
             <hr>
@@ -104,6 +106,7 @@
 
         <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="{{URL::route('web.index')}}">
+                <span class="fa fa-desktop"></span>
                 <h4>{{Lang::get('menu.Web')}}</h4>
             </a>
             <hr>
@@ -116,6 +119,7 @@
 
         <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="{{URL::route('dns.index')}}">
+                <span class="fa fa-sitemap"></span>
                 <h4>{{Lang::get('menu.DNS')}}</h4>
             </a>
             <hr>
@@ -126,6 +130,7 @@
 
         <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="{{URL::route('bd.index')}}">
+                <span class="fa fa-database"></span>
                 <h4>{{Lang::get('menu.BD')}}</h4>
             </a>
             <hr>
@@ -134,6 +139,7 @@
 
         <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="{{URL::route('cron.index')}}">
+                <span class="fa fa-clock-o"></span>
                 <h4>{{Lang::get('menu.Cron')}}</h4>
             </a>
             <hr>
@@ -142,6 +148,7 @@
 
         <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="{{URL::route('tikets.index')}}">
+                <span class="fa fa-life-ring"></span>
                 <h4>{{Lang::get('menu.support')}}</h4>
             </a>
             <hr>

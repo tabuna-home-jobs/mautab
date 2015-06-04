@@ -89,7 +89,7 @@
 
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="submit" class="button-full" value="Войти">
+                <input type="submit" class="btn btn-blue" value="Войти">
             <a href="/password/email">Забыли пароль?</a>
         </form>
 

@@ -53,7 +53,7 @@
                 <textarea name="message" cols="5" class="form-control"></textarea>
             </div>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="submit" class="button-full" value="Войти">
+            <input type="submit" class="btn btn-blue" value="Войти">
         </form>
     </div>
 

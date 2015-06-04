@@ -52,7 +52,7 @@
 
                 <div class="form-group">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <input type="submit" value="Отправить" class="button-full">
+                    <input type="submit" value="Отправить" class="btn btn-blue">
                 </div>
             </form>
 

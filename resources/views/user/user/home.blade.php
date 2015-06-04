@@ -61,7 +61,7 @@
 
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="submit" value="Изменить" class="button-full">
+                            <input type="submit" value="Изменить" class="btn btn btn-blue">
 
                         </div>
 

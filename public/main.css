@@ -133,9 +133,6 @@ header .social-info li a:hover {
 }
 
 .banner .block .download-btn li a {
-    color: #fff;
-    border: none;
-    border-radius: 0;
     padding: 10px 28px 13px;
     font-size: 18px;
 }
@@ -146,6 +143,9 @@ header .social-info li a:hover {
 }
 
 .banner .block .download-btn li .btn-apple {
+    border: none;
+    border-radius: 0;
+    color: #fff;
     background: #8883bc;
     border: 1px solid transparent;
     -webkit-transition: .2s all;
@@ -160,6 +160,9 @@ header .social-info li a:hover {
 }
 
 .banner .block .download-btn li .btn-andriod {
+    border: none;
+    border-radius: 0;
+    color: #fff;
     background: #6fbf39;
     border: 1px solid transparent;
     -webkit-transition: .2s all;
@@ -173,7 +176,10 @@ header .social-info li a:hover {
     border: 1px solid #6fbf39;
 }
 
-.banner .block .download-btn li .btn-windows {
+.btn-blue {
+    border: none;
+    border-radius: 0;
+    color: #fff;
     background: #00afec;
     border: 1px solid transparent;
     -webkit-transition: .2s all;
@@ -181,7 +187,7 @@ header .social-info li a:hover {
     transition: .2s all;
 }
 
-.banner .block .download-btn li .btn-windows:hover {
+.btn-blue:hover {
     color: #00afec;
     background: #fff;
     border: 1px solid #00afec;
@@ -418,4 +424,68 @@ footer p {
 
 .menuapp h4 {
     font-weight: 300;
+}
+
+.menuapp .fa {
+    font-size: 26pt;
+}
+
+.info-box {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-bottom: 15px;
+    min-height: 90px;
+    width: 100%;
+}
+
+.info-box small {
+    font-size: 14px;
+}
+
+.info-box .progress {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    height: 2px;
+    margin: 5px -10px;
+}
+
+.info-box .progress, .info-box .progress .progress-bar {
+    border-radius: 0;
+}
+
+.info-box .progress .progress-bar {
+    background: #fff none repeat scroll 0 0;
+}
+
+.info-box-icon {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    border-radius: 2px 0 0 2px;
+    display: block;
+    float: left;
+    font-size: 45px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    width: 90px;
+}
+
+.info-box-content {
+    margin-left: 90px;
+    padding: 5px 10px;
+}
+
+/* Журнал действий */
+.log-row {
+    vertical-align: middle;
+}
+
+.subheaderlog, .subheaderlog > a {
+    color: #c6c6c6;
+    font-size: 16pt;
+    font-weight: 200;
+}
+
+.log-row p {
+    color: #c66c66;
 }

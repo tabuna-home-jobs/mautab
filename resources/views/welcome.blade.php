@@ -112,7 +112,7 @@
                             <a href="/auth/login" class="btn btn-default btn-andriod"><i class="fa fa-android"></i>Войти</a>
                         </li>
                         <li>
-                            <a href="/auth/register" class="btn btn-default btn-windows"><i class="fa fa-windows"></i>Зарегистироваться</a>
+                            <a href="/auth/register" class="btn btn-default btn btn-blue"><i class="fa fa-windows"></i>Зарегистироваться</a>
                         </li>
                     </ul>
 

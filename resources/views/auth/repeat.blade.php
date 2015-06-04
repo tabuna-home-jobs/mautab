@@ -69,7 +69,7 @@
             </div>
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="submit" class="button-full" value="Востановить пароль">
+            <input type="submit" class="btn btn-blue" value="Востановить пароль">
         </form>
 
 

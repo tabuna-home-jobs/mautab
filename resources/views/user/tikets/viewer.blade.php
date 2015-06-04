@@ -50,7 +50,7 @@
                                 <input name="id" type="hidden"  value="{{$Tiket->id}}" />
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="_method" value="PUT">
-                                <input name="submit" type="submit" class="button-full" id="submit" value="Ответить" />
+                                <input name="submit" type="submit" class="btn btn-blue" id="submit" value="Ответить"/>
                             </p>
                         </form>
                     </div>

@@ -87,7 +87,7 @@
         </div>
 
        {!!  Form::token(); !!}
-        <input type="submit" class="button-full" value="Изменить пароль">
+        <input type="submit" class="btn btn-blue" value="Изменить пароль">
     {!! Form::close() !!}
 
 

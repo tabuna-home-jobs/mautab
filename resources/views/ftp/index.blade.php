@@ -75,7 +75,7 @@
         <a href="#" id="addFtps">Добавить FTP</a>
         <div class="form-group">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <input type="submit" value="Сохранить" class="button-full">
+            <input type="submit" value="Сохранить" class="btn btn-blue">
             <input type="hidden" name="domain" value="{{$domain}}"/>
             <input type="hidden" name="_method" value="PUT">
         </div>
