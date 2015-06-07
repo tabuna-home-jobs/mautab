@@ -331,7 +331,7 @@ footer p {
 .panel-price > .panel-heading h3 {
     font-size: 1.8rem;
     letter-spacing: 2px;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 3px;
     text-transform: uppercase;
 }
@@ -489,3 +489,121 @@ footer p {
 .log-row p {
     color: #c66c66;
 }
+
+/* portfolio */
+.filters {
+    margin-bottom: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.filters .nav-pills > li {
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+
+.filters .nav-pills > li + li {
+    margin-left: 0;
+}
+
+.text-center.filters .nav-pills > li {
+    display: inline-block;
+    float: none;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.isotope-container {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.isotope-item {
+    margin-bottom: 20px;
+}
+
+.isotope-item .btn-default {
+    border-radius: 0;
+    color: #999999;
+}
+
+.isotope-item .btn-default:hover {
+    border-radius: 0;
+    color: #ffffff;
+    background-color: #339beb;
+    border-color: #339beb;
+    transition: 0.6s;
+}
+
+@media (max-width: 480px) {
+    .filters .nav-pills > li {
+        display: block;
+        width: 100%;
+    }
+}
+
+.overlay-container {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.overlay-container > img {
+    width: 100%;
+}
+
+.overlay {
+    background-color: rgba(85, 172, 238, 0.9);
+    bottom: -1px;
+    cursor: pointer;
+    left: 0;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    right: -1px;
+    top: 0;
+    transform: scale(0.8);
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: linear;
+}
+
+.overlay:hover {
+    text-decoration-color: -moz-use-text-color;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+}
+
+.overlay span {
+    bottom: 10px;
+    color: #ffffff;
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.overlay i {
+    color: #ffffff;
+    font-size: 18px;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+}
+
+.overlay-container:hover .overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* !portfolio */

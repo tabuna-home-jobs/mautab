@@ -1,4 +1,4 @@
-<?php echo $__env->make('header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@include('header')
 
 
 <section class="banner">
@@ -247,4 +247,4 @@
     </div>
 </section>
 
-<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@include('footer')

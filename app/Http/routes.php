@@ -3,7 +3,10 @@
 
 
 	Route::group(['middleware' => 'guest', 'namespace' => 'Guest'], function () {
-		Route::resource('/', 'WelcomeController@index');
+		Route::resource('/host', 'WelcomeHostingController@index');
+		Route::resource('/web', 'WelcomeWebStudioController@index');
+		Route::resource('/parner', 'WelcomePartnerController@index');
+		Route::resource('/', 'WelcomeAboutController@index');
 	});
 
 
@@ -17,7 +20,7 @@
 
 
 	// Всё для пользователя
-	Route::group(['middleware' => ['sentry', 'LoginAs', 'user'], 'namespace' => 'User'], function () {
+	Route::group(['middleware' => ['sentry', 'LoginAs', 'user'], 'prefix' => 'hosting', 'namespace' => 'User'], function () {
 		Route::resource('web', 'WebController');
 		Route::resource('ftp', 'FtpController');
 		Route::resource('dns', 'DnsController');

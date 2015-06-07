@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\Controller;
 
-class WelcomeController extends Controller {
+class WelcomeAboutController extends Controller
+{
 
 	/*
 	|--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		return view('welcome/about');
 	}
 
 }
