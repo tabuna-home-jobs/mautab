@@ -115,14 +115,14 @@ header .social-info li a:hover {
     padding-top: 10px;
 }
 
-.banner .block h1 {
+h1 {
     margin-bottom: 18px;
     line-height: 55px;
     color: #262b31;
     font-weight: 300;
 }
 
-.banner .block p {
+p {
     font-size: 20px;
     color: #999;
     font-weight: 300;
@@ -607,3 +607,48 @@ footer p {
 }
 
 /* !portfolio */
+
+/* web service */
+
+.service-box-none p, .service-box p {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 13pt;
+}
+
+.service-box-none h3, .service-box h3 {
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+    font-weight: 300;
+}
+
+.service-box-none i {
+    color: #00afec;
+}
+
+.service-box-none {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.service-box i {
+    color: #00afec;
+}
+
+.service-box {
+    border-bottom-color: #dedede;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.service-box-l {
+    border-left-color: #dedede;
+    border-left-style: solid;
+    border-left-width: 1px;
+}
+
+/* !web service */

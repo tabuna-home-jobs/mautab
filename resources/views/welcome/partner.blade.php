@@ -183,7 +183,7 @@
                                 <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
                                 <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
                                 <li class="list-group-item"><strong>3</strong> Резевных копии</li>
-                                <li class="list-group-item">24/7</strong> Поддержка</li>
+                                <li class="list-group-item"><strong>24/7</strong> Поддержка</li>
                             </ul>
                             <div class="panel-footer">Выбрать</div>
                         </div>
@@ -208,7 +208,7 @@
                                 <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
                                 <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
                                 <li class="list-group-item"><strong>3</strong> Резевных копии</li>
-                                <li class="list-group-item">24/7</strong> Поддержка</li>
+                                <li class="list-group-item"><strong>24/7</strong> Поддержка</li>
                             </ul>
                             <div class="panel-footer">Выбрать</div>
                         </div>
@@ -233,7 +233,7 @@
                                 <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
                                 <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
                                 <li class="list-group-item"><strong>3</strong> Резевных копии</li>
-                                <li class="list-group-item">24/7</strong> Поддержка</li>
+                                <li class="list-group-item"><strong>24/7</strong> Поддержка</li>
                             </ul>
                             <div class="panel-footer">Выбрать</div>
                         </div>

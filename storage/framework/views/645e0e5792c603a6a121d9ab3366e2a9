@@ -42,56 +42,90 @@
 </section>
 
 
-<section class="service">
-    <div class="container">
-        <div class="service-wrapper">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="block">
-                        <div class="icon">
-                            <i class="fa fa-code"></i>
-                        </div>
+<div id="services" class="container text-center">
 
-                        <h3>ПО</h3>
+    <h1 class="text-center title" id="portfolio">Премущества</h1>
 
-                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="block">
-                        <div class="icon">
-                            <i class="fa fa-hdd-o"></i>
-                        </div>
-                        <h3>SSD-Диски</h3>
+    <div class="separator"></div>
+    <p class="lead text-center">Lorem ipsum dolor sit amet laudantium molestias similique.<br> Quisquam incidunt ut laboriosam.</p>
+    <br>
 
-                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="block">
-                        <div class="icon">
-                            <i class="fa fa-code"></i>
-                        </div>
+    <div class="row">
 
-                        <h3>ПО</h3>
+        <!-- Service Item (title, icon and description for your service) -->
+        <div class="col-sm-4 col-md-4 service-box">
+            <!-- Icon -->
+            <i class="fa fa-desktop fa-3x"></i>
 
-                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="block">
-                        <div class="icon">
-                            <i class="fa fa-hdd-o"></i>
-                        </div>
-                        <h3>SSD-Диски</h3>
-
-                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
-                    </div>
-                </div>
+            <!-- Title and Description -->
+            <div class="service-title">
+                <h3>Minimal Design</h3>
             </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
         </div>
-    </div>
-</section>
+
+        <!-- Service Item (title, icon and description for your service) -->
+        <div class="col-sm-4 col-md-4 service-box service-box-l">
+            <!-- Icon -->
+            <i class="fa fa-folder-open-o fa-3x"></i>
+
+            <!-- Title and Description -->
+            <div class="service-title">
+                <h3>Полная Документация</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+
+        <!-- Service Item (title, icon and description for your service) -->
+        <div class="col-sm-4 col-md-4 service-box service-box-l">
+            <!-- Icon -->
+            <i class="fa fa-cubes fa-3x"></i>
+
+            <!-- Title and Description -->
+            <div class="service-title">
+                <h3>Использование Bootstrap</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+
+        <!-- Service Item (title, icon and description for your service) -->
+        <div class="col-sm-4 col-md-4 service-box-none">
+            <!-- Icon -->
+            <i class="fa fa-laptop fa-3x"></i>
+
+            <!-- Title and Description -->
+            <div class="service-title">
+                <h3>Адоптированный дизайн</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+
+        <!-- Service Item (title, icon and description for your service) -->
+        <div class="col-sm-4 col-md-4 service-box-none service-box-l">
+            <!-- Icon -->
+            <i class="fa fa-cog fa-3x"></i>
+
+            <!-- Title and Description -->
+            <div class="service-title">
+                <h3>SEO оптимизация</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+
+        <!-- Service Item (title, icon and description for your service) -->
+        <div class="col-sm-4 col-md-4 service-box-none service-box-l">
+            <!-- Icon -->
+            <i class="fa fa-file-code-o fa-3x"></i>
+
+            <!-- Title and Description -->
+            <div class="service-title">
+                <h3>Чистый код</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+
+    </div><!-- /row -->
+</div>
 
 
 <!-- section start -->
