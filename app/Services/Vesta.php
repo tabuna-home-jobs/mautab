@@ -33,9 +33,9 @@ class Vesta  {
 			$this->vst_password = (string)Config::get('vesta.server')[Config::get('vesta.primary')]['password'];
 			$this->vst_server   = (string)Config::get('vesta.server')[Config::get('vesta.primary')]['ip'];
 		} else {
-			$this->vst_username = 'admin';//(string)Config::get('vesta.server')[Sentry::getUser()->server]['login'];
-			$this->vst_password = '03af4d';//(string)Config::get('vesta.server')[Sentry::getUser()->server]['password'];
-			$this->vst_server   = '151.80.164.81';//(string)Config::get('vesta.server')[Sentry::getUser()->server]['ip'];
+			$this->vst_username = (string)Config::get('vesta.server')[Sentry::getUser()->server]['login'];
+			$this->vst_password = (string)Config::get('vesta.server')[Sentry::getUser()->server]['password'];
+			$this->vst_server   = (string)Config::get('vesta.server')[Sentry::getUser()->server]['ip'];
 		}
 
 	}

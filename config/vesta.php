@@ -5,10 +5,10 @@
 
 		'server'  => [
 			'testVDS' => [
-				'ip'       => '151.80.164.81',
+				'ip'       => '193.111.141.198',
 				'login'    => 'admin',
-				'password' => '03af4d',
-				'ssh'      => '03af4d',
+				'password' => '03af4dE1',
+				'ssh'      => '03af4dE1',
 			],
 
 			'Server2' => [
