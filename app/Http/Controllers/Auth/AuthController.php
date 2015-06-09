@@ -1,5 +1,6 @@
 <?php namespace Mautab\Http\Controllers\Auth;
 
+use Config;
 use Mautab\Events\SendMailAction;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\Auth\ActionRequest;
@@ -53,7 +54,7 @@ class AuthController extends Controller {
 			'email'      => $request->email,
 			'package'    => $request->package,
 			'password'   => $request->password,
-			'server' => (string)Config::get('vesta.server')[Config::get('vesta.primary')]['ip'],
+			'server' => (string)Config::get('vesta.primary'),
 		));
 
 
