@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace Mautab\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\AddBDRequest;
-use App\Http\Requests\ChangeBDRequest;
-use App\Http\Requests\RemoveBDRequest;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests\AddBDRequest;
+use Mautab\Http\Requests\ChangeBDRequest;
+use Mautab\Http\Requests\RemoveBDRequest;
 use Sentry;
 use Session;
 use Vesta;

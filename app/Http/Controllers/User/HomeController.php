@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace Mautab\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ChangeUserRequest;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests\ChangeUserRequest;
 use Sentry;
 use Session;
 use Vesta;

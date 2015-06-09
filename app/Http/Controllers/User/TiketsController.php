@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace Mautab\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\TiketRequest;
-use App\Models\Tiket;
-use App\Models\User;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests\TiketRequest;
+use Mautab\Models\Tiket;
+use Mautab\Models\User;
 use Sentry;
 use Session;
 

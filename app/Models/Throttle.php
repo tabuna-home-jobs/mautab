@@ -1,4 +1,4 @@
-<?php namespace App\Models;
+<?php namespace Mautab\Models;
 
 /**
  * Part of the Sentry package.
@@ -33,7 +33,7 @@ class Throttle extends Model implements ThrottleInterface
 	 *
 	 * @var string
 	 */
-	protected static $userModel = 'App\Models\User';
+	protected static $userModel = 'Mautab\Models\User';
 	/**
 	 * Attempt limit.
 	 *

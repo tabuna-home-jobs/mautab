@@ -1,6 +1,6 @@
-<?php namespace App\Http\Controllers\Guest;
+<?php namespace Mautab\Http\Controllers\Guest;
 
-use App\Http\Controllers\Controller;
+use Mautab\Http\Controllers\Controller;
 
 class WelcomePartnerController extends Controller
 {

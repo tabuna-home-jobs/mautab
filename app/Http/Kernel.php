@@ -1,4 +1,4 @@
-<?php namespace App\Http;
+<?php namespace Mautab\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,8 +15,8 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'App\Http\Middleware\VerifyCsrfToken',
-		'App\Http\Middleware\Localization',
+		'Mautab\Http\Middleware\VerifyCsrfToken',
+		'Mautab\Http\Middleware\Localization',
 	];
 
 	/**
@@ -25,12 +25,12 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		//	'auth' => 'App\Http\Middleware\Authenticate',
+		//	'auth' => 'Mautab\Http\Middleware\Authenticate',
 		//	'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
-		'user' => 'App\Http\Middleware\UserRole',
-		'sentry' => 'App\Http\Middleware\SentryMiddleware',
-		'LoginAs' => 'App\Http\Middleware\LoginAsMiddleware',
+		'guest'   => 'Mautab\Http\Middleware\RedirectIfAuthenticated',
+		'user'    => 'Mautab\Http\Middleware\UserRole',
+		'sentry'  => 'Mautab\Http\Middleware\SentryMiddleware',
+		'LoginAs' => 'Mautab\Http\Middleware\LoginAsMiddleware',
 	];
 
 }

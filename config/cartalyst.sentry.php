@@ -95,7 +95,7 @@
 			|
 			*/
 
-			'model' => 'App\Models\Group',
+			'model' => 'Mautab\Models\Group',
 
 		),
 
@@ -120,7 +120,7 @@
 			|
 			*/
 
-			'model' => 'App\Models\User',
+			'model' => 'Mautab\Models\User',
 
 			/*
 			|--------------------------------------------------------------------------
@@ -186,7 +186,7 @@
 			|
 			*/
 
-			'model'           => 'App\Models\Throttle',
+			'model' => 'Mautab\Models\Throttle',
 
 			/*
 			|--------------------------------------------------------------------------

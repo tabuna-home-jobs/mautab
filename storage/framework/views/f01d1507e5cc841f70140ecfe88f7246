@@ -88,54 +88,65 @@
 </header>
 
 
-<section class="menuapp container text-center">
+    <section class="menuapp container text-center">
 
         <div class="col-md-2 col-sm-4 col-xs-6">
+
 
             <a href="<?php echo e(URL::route('home.index')); ?>">
+                <span class="fa fa-home"></span>
+                <h4><?php echo e(Lang::get('menu.Panel')); ?></h4>
+            </a>
+
+
+            <hr>
+
+            <p class="menu-small">Текст</p>
+
+            <p class="menu-small">Текст</p>
+
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+
+            <a href="<?php echo e(URL::route('admin.users.index')); ?>">
                 <span class="fa fa-user"></span>
-                <h4><?php echo e(Lang::get('menu.user')); ?></h4>
+                <h4><?php echo e(Lang::get('menu.Users')); ?></h4>
             </a>
+
+
             <hr>
 
-            <p class="menu-small"><?php echo e(Lang::get('menu.disk')); ?>: <?php echo e($UserInfo['U_DISK']); ?> мб </p>
+            <p class="menu-small"> Текст </p>
 
-            <p class="menu-small"><?php echo e(Lang::get('menu.traffic')); ?>: <?php echo e($UserInfo['U_BANDWIDTH']); ?> мб </p>
-
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="<?php echo e(URL::route('web.index')); ?>">
-                <span class="fa fa-desktop"></span>
-                <h4><?php echo e(Lang::get('menu.Web')); ?></h4>
-            </a>
-            <hr>
-
-            <p class="menu-small"> <?php echo e(Lang::get('menu.domains')); ?>: <?php echo e($UserInfo['U_WEB_DOMAINS']); ?> </p>
-
-            <p class="menu-small"> <?php echo e(Lang::get('menu.aliases')); ?>: <?php echo e($UserInfo['U_WEB_ALIASES']); ?> </p>
+            <p class="menu-small"> Текст </p>
         </div>
 
 
         <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="<?php echo e(URL::route('dns.index')); ?>">
-                <span class="fa fa-sitemap"></span>
-                <h4><?php echo e(Lang::get('menu.DNS')); ?></h4>
+            <a href="<?php echo e(URL::route('admin.groups.index')); ?>">
+                <span class="fa fa-users"></span>
+                <h4><?php echo e(Lang::get('menu.Groups')); ?></h4>
             </a>
-            <hr>
-            <p class="menu-small"> <?php echo e(Lang::get('menu.domains')); ?>: <?php echo e($UserInfo['U_DNS_DOMAINS']); ?> </p>
 
-            <p class="menu-small"> <?php echo e(Lang::get('menu.records')); ?>: <?php echo e($UserInfo['U_DNS_RECORDS']); ?> </p>
+
+            <hr>
+            <p class="menu-small"> Текст </p>
+
+            <p class="menu-small"> Текст </p>
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="<?php echo e(URL::route('bd.index')); ?>">
-                <span class="fa fa-database"></span>
-                <h4><?php echo e(Lang::get('menu.BD')); ?></h4>
+            <a href="<?php echo e(URL::route('admin.pages.index')); ?>">
+                <span class="fa fa-file-text"></span>
+                <h4><?php echo e(Lang::get('menu.Pages')); ?></h4>
             </a>
+
+
             <hr>
-            <p class="menu-small"> <?php echo e(Lang::get('menu.BD')); ?>: <?php echo e($UserInfo['U_DATABASES']); ?> </p>
+            <p class="menu-small">Текст </p>
         </div>
+
 
         <div class="col-md-2 col-sm-4 col-xs-6">
             <a href="<?php echo e(URL::route('cron.index')); ?>">
@@ -143,7 +154,7 @@
                 <h4><?php echo e(Lang::get('menu.Cron')); ?></h4>
             </a>
             <hr>
-            <p class="menu-small"> <?php echo e(Lang::get('menu.jobs')); ?>: <?php echo e($UserInfo['U_CRON_JOBS']); ?> </p>
+            <p class="menu-small"> Текст </p>
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-6">
@@ -158,39 +169,33 @@
             <p class="menu-small"><a href="<?php echo e(URL::route('backup.index')); ?>">Резервные копии</a></p>
         </div>
 
-</section>
+    </section>
 
 
 
 
     <?php if(Session::has('good')): ?>
-        <div class="alert alert-success text-center alert-fixed-bottom">
-            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
-            <?php echo e(Session::get('good')); ?>
-
+        <div class="container">
+            <div class="alert alert-success text-center"><?php echo e(Session::get('good')); ?></div>
         </div>
-    <?php endif; ?>
-    <?php if(Session::has('danger')): ?>
-        <div class="alert alert-danger text-center alert-fixed-bottom">
-            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
-            <?php echo e(Session::get('danger')); ?>
 
-        </div>
-    <?php endif; ?>
-    <?php if(count($errors) > 0): ?>
-        <div class="alert alert-danger alert-fixed-bottom">
-            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+        <?php if(count($errors) > 0): ?>
+            <div class="alert alert-danger">
+                <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
                 <ul>
                     <?php foreach($errors->all() as $error): ?>
                         <li><?php echo e($error); ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
+        <?php endif; ?>
+
     <?php endif; ?>
 
 
 
-<section class="container app-container">
+
+<section class="container main-container">
 <?php echo $__env->yieldContent('content'); ?>
 </section>
 

@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace Mautab\Commands;
 
 abstract class Command {
 

@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace Mautab\Http\Controllers\User;
 
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\BackupRequest;
-use App\Http\Requests\RestoreBackup;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests\BackupRequest;
+use Mautab\Http\Requests\RestoreBackup;
 use Session;
 use Vesta;
 

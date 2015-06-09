@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace Mautab\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\AddDNSRequest;
-use App\Http\Requests\ChangeDNSRequest;
-use App\Http\Requests\RemoveDNSRequest;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests\AddDNSRequest;
+use Mautab\Http\Requests\ChangeDNSRequest;
+use Mautab\Http\Requests\RemoveDNSRequest;
 use Session;
 use Vesta;
 

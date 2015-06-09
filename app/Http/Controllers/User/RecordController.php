@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace Mautab\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\DomainRecordRequest;
-use App\Http\Requests\RemoveDNSRecordRequest;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests\DomainRecordRequest;
+use Mautab\Http\Requests\RemoveDNSRecordRequest;
 use Session;
 use Vesta;
 

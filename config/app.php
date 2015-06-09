@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'cloudmeplz.tk',
+	'url'       => 'mautab.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -139,11 +139,11 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'App\Providers\AppServiceProvider',
-		'App\Providers\BusServiceProvider',
-		'App\Providers\ConfigServiceProvider',
-		'App\Providers\EventServiceProvider',
-		'App\Providers\RouteServiceProvider',
+		'Mautab\Providers\AppServiceProvider',
+		'Mautab\Providers\BusServiceProvider',
+		'Mautab\Providers\ConfigServiceProvider',
+		'Mautab\Providers\EventServiceProvider',
+		'Mautab\Providers\RouteServiceProvider',
 
 		/*
 		 * Я добавил
@@ -206,7 +206,7 @@ return [
 		'Form'=> 'Illuminate\Html\FormFacade',
 		'HTML'=> 'Illuminate\Html\HtmlFacade',
 
-		'Vesta' => 'App\Facades\VestaFacades',
+		'Vesta' => 'Mautab\Facades\VestaFacades',
 		'SSH' => 'Collective\Remote\RemoteFacade',
 		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 	],

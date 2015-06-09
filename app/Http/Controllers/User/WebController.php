@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace Mautab\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\AddWebRequest;
-use App\Http\Requests\ChangeWebRequest;
-use App\Http\Requests\RemoveWebRequest;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests\AddWebRequest;
+use Mautab\Http\Requests\ChangeWebRequest;
+use Mautab\Http\Requests\RemoveWebRequest;
 use Request;
 use Session;
 use Vesta;

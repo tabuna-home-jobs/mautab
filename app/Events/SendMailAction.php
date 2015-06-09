@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace Mautab\Events;
 
 use Illuminate\Queue\SerializesModels;
 use Mail;

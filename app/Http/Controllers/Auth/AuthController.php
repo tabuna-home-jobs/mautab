@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers\Auth;
+<?php namespace Mautab\Http\Controllers\Auth;
 
-use App\Events\SendMailAction;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\ActionRequest;
-use App\Http\Requests\Auth\AuthRequest;
-use App\Http\Requests\Auth\AuthRequestReg;
-use App\Http\Requests\Auth\RepeatRequest;
+use Mautab\Events\SendMailAction;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests\Auth\ActionRequest;
+use Mautab\Http\Requests\Auth\AuthRequest;
+use Mautab\Http\Requests\Auth\AuthRequestReg;
+use Mautab\Http\Requests\Auth\RepeatRequest;
 use Sentry;
 use Session;
 use Vesta;

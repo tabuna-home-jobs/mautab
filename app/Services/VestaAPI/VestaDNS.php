@@ -1,4 +1,4 @@
-<?php namespace App\Services\VestaAPI;
+<?php namespace Mautab\Services\VestaAPI;
 
 use Sentry;
 

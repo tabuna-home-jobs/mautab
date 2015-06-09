@@ -1,6 +1,6 @@
-<?php namespace App\Http\Requests\Auth;
+<?php namespace Mautab\Http\Requests\Auth;
 
-use App\Http\Requests\Request;
+use Mautab\Http\Requests\Request;
 use Sentry;
 
 class ActionRequest extends Request

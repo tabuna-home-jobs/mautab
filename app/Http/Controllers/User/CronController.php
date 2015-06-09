@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers\User;
+<?php namespace Mautab\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CronDeleteRequest;
-use App\Http\Requests\CronRequest;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests\CronDeleteRequest;
+use Mautab\Http\Requests\CronRequest;
 use Session;
 use Vesta;
 

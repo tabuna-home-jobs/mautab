@@ -1,4 +1,4 @@
-<?php namespace App\Http\Requests;
+<?php namespace Mautab\Http\Requests;
 
 
 use Sentry;

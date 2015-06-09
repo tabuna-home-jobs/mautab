@@ -1,6 +1,6 @@
-<?php namespace App\Http\Requests\Admin;
+<?php namespace Mautab\Http\Requests\Admin;
 
-use App\Http\Requests\Request;
+use Mautab\Http\Requests\Request;
 use Sentry;
 
 class UserRequest extends Request

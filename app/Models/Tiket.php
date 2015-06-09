@@ -1,10 +1,10 @@
-<?php namespace App\Models;
+<?php namespace Mautab\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 
 /**
- * App\Models\Tiket
+ * Mautab\Models\Tiket
  *
  */
 class Tiket extends Model {
@@ -33,12 +33,12 @@ class Tiket extends Model {
 
 	public function user()
 	{
-		return $this->belongsTo('App\Models\User');
+		return $this->belongsTo('Mautab\Models\User');
 	}
 
 	public function subtiket()
 	{
-		return $this->hasMany('App\Models\Tiket', 'tikets_id');
+		return $this->hasMany('Mautab\Models\Tiket', 'tikets_id');
 	}
 
 

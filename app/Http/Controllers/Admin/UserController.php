@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php namespace Mautab\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests;
-use App\Http\Requests\Admin\UserRequest;
-use App\Models\User;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests;
+use Mautab\Http\Requests\Admin\UserRequest;
+use Mautab\Models\User;
 use Sentry;
 use Session;
 

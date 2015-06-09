@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php namespace Mautab\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests;
-use App\Http\Requests\Admin\GroupRequest;
-use App\Models\Group;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests;
+use Mautab\Http\Requests\Admin\GroupRequest;
+use Mautab\Models\Group;
 use Sentry;
 use Session;
 

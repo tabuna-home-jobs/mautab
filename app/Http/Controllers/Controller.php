@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Mautab\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Foundation\Validation\ValidatesRequests;

@@ -1,4 +1,4 @@
-<?php namespace App\Models;
+<?php namespace Mautab\Models;
 
 /**
  * Part of the Sentry package.
@@ -49,7 +49,7 @@ class User extends Model implements UserInterface
 	 *
 	 * @var string
 	 */
-	protected static $groupModel = 'App\Models\Group';
+	protected static $groupModel = 'Mautab\Models\Group';
 	/**
 	 * The Eloquent group provider model.
 	 *
@@ -1011,6 +1011,6 @@ class User extends Model implements UserInterface
 
 	public function tiket()
 	{
-		return $this->hasMany('App\Models\Tiket');
+		return $this->hasMany('Mautab\Models\Tiket');
 	}
 }

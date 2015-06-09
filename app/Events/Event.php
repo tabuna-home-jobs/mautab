@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace Mautab\Events;
 
 abstract class Event {
 

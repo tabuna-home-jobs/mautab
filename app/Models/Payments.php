@@ -1,10 +1,10 @@
-<?php namespace App\Models;
+<?php namespace Mautab\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 
 /**
- * App\Models\Payments
+ * Mautab\Models\Payments
  *
  */
 class Payments extends Model {
