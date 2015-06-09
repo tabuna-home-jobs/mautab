@@ -7,7 +7,7 @@
     </p>
 
     <div class="collapse col-xs-12" id="add-bd">
-        <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('web.store')); ?>">
+        <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('hosting.web.store')); ?>">
 
             <div class="alert alert-info" role="alert">Добавление домена</div>
             <div class="form-group input-line">
@@ -150,7 +150,7 @@
 
                                                 </div>
                 <div class="modal-footer">
-                        <form action="<?php echo e(URL::route('web.destroy')); ?>" method="post">
+                    <form action="<?php echo e(URL::route('hosting.web.destroy')); ?>" method="post">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                             <button type="submit" class="button-small">Да</button>
                             <input type="hidden" name="v_domain" value="<?php echo e($key); ?>"/>
