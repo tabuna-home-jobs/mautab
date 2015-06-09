@@ -9,7 +9,7 @@
     </p>
 
     <div class="collapse col-xs-12" id="add-bd">
-        <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('web.store')}}">
+        <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('hosting.web.store')}}">
 
             <div class="alert alert-info" role="alert">Добавление домена</div>
             <div class="form-group input-line">
@@ -151,7 +151,7 @@
                                                     Вы действительно хотите удалить {{$key}}
                                                 </div>
                 <div class="modal-footer">
-                        <form action="{{URL::route('web.destroy')}}" method="post">
+                    <form action="{{URL::route('hosting.web.destroy')}}" method="post">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                             <button type="submit" class="button-small">Да</button>
                             <input type="hidden" name="v_domain" value="{{$key}}"/>

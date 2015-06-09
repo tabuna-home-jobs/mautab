@@ -28,7 +28,6 @@ trait VestaBD
 	{
 		$listBd = $this->sendQuery('v-list-database', Sentry::getUser()->nickname, $database, 'json');
 		$data   = json_decode($listBd, TRUE);
-
 		return $data;
 	}
 

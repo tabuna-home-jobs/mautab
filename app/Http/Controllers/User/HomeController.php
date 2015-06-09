@@ -52,7 +52,8 @@ class HomeController extends Controller {
 		$thisUser->lang = $request->lang;
 		$thisUser->save();
 		Session::flash('good', 'Вы успешно изменили личные данных.');
-		return redirect()->route('home.index');
+
+		return redirect()->route('hosting.home.index');
 
 	}
 

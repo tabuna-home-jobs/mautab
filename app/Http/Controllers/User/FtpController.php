@@ -74,7 +74,8 @@ dd('df');
 
 		if(!is_array($request->v_ftp_user)){
 			Session::flash('danger', 'Ничего не изменено.');
-			return redirect()->route('web.index');
+
+			return redirect()->route('hosting.web.index');
 		}
 		
 		//Изменение FTP
@@ -132,7 +133,7 @@ if ($v_ftp_user_data['v_ftp_password'] != "" && $v_ftp_user_data['v_ftp_password
 
 		Session::flash('good', 'Вы успешно добавили/обновили FTP.');
 
-		return redirect()->route('web.index');
+		return redirect()->route('hosting.web.index');
 	}
 
 	/**

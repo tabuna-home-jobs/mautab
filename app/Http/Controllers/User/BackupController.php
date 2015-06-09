@@ -45,7 +45,7 @@ class BackupController extends Controller
 		]);
 		Session::flash('good', 'Востановление резервной копии началось, это может занять некоторое время.');
 
-		return redirect()->route('backup.index');
+		return redirect()->route('hosting.backup.index');
 	}
 
 	/**
@@ -98,7 +98,7 @@ class BackupController extends Controller
 		Vesta::deleteUserBackup($backup->backup);
 		Session::flash('good', 'Вы успешно удалили резервную копию.');
 
-		return redirect()->route('backup.index');
+		return redirect()->route('hosting.backup.index');
 	}
 
 }

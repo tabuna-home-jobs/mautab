@@ -27,7 +27,8 @@ class BdController extends Controller{
         Vesta::changeDbUser($request->bd, $request->user_bd);
         Vesta::changeDbPassword($request->bd, $request->password_bd);
         Session::flash('good', 'Вы успешно изменили базу данных.');
-        return redirect()->route('bd.index');
+
+		return redirect()->route('hosting.bd.index');
 	}
 
 	public function store(AddBDRequest $request)
@@ -42,14 +43,16 @@ class BdController extends Controller{
                             $request->v_charset);
 
         Session::flash('good', 'Вы успешно добавили базу данных.');
-        return redirect()->route('bd.index');
+
+	    return redirect()->route('hosting.bd.index');
     }
 
     public function destroy(RemoveBDRequest $request)
     {
         Vesta::deleteDateBase($request->v_database);
         Session::flash('good', 'Вы успешно удалили базу данных.');
-        return redirect()->route('bd.index');
+
+	    return redirect()->route('hosting.bd.index');
     }
 	public function create(){
 

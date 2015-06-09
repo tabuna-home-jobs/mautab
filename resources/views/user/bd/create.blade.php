@@ -7,7 +7,7 @@
 
             <div class="table-responsive add-bd">
 
-                        <form class="col-md-8" method="post" action="{{URL::route('bd.store')}}">
+                <form class="col-md-8" method="post" action="{{URL::route('hosting.bd.store')}}">
 
                             <div class="alert alert-info" role="alert"> Префикс {{Sentry::getUser()->nickname }}_ будет автоматически добавлен к БД и пользователю БД
                             </div>

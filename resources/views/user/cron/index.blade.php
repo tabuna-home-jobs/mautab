@@ -17,7 +17,7 @@
 
 
         <div class="collapse col-xs-12" id="add-bd">
-            <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('cron.store')}}">
+            <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('hosting.cron.store')}}">
 
 
                 <div class="form-group input-line">
@@ -93,7 +93,7 @@
                                 <td>{{$job['DATE']}} : {{$job['TIME']}}</td>
                                 <td>
                                     <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="{{URL::route('cron.show', $job['JOB'])}}" class="btn btn-default">
+                                        <a href="{{URL::route('hosting.cron.show', $job['JOB'])}}" class="btn btn-default">
                                             <i class="fa fa-pencil-square-o"></i>
                                         </a>
 
@@ -117,7 +117,7 @@
                                                 Вы действительно хотите удалить {{$job['CMD']}}
                                             </div>
                                             <div class="modal-footer">
-                                                <form action="{{URL::route('cron.destroy')}}" method="post">
+                                                <form action="{{URL::route('hosting.cron.destroy')}}" method="post">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                                     <button type="submit" class="button-small">Да</button>
                                                     <input type="hidden" name="v_job" value="{{$job['JOB']}}"/>

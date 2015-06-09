@@ -28,7 +28,7 @@ class DnsController extends Controller{
 		Vesta::changeDNSDomainTtl($request->dns, $request->ttl);
 		Session::flash('good', 'Вы успешно изменили ДНС.');
 
-		return redirect()->route('dns.index');
+		return redirect()->route('hosting.dns.index');
 
 	}
 
@@ -44,7 +44,7 @@ class DnsController extends Controller{
 
 		Session::flash('good', 'Вы успешно добавили DNS.');
 
-		return redirect()->route('dns.index');
+		return redirect()->route('hosting.dns.index');
 	}
 
 	public function destroy(RemoveDNSRequest $request)
@@ -53,7 +53,7 @@ class DnsController extends Controller{
 		Vesta::deleteDNDDomain($request->v_domain);
 		Session::flash('good', 'Вы успешно удалили Домен.');
 
-		return redirect()->route('dns.index');
+		return redirect()->route('hosting.dns.index');
 	}
 
 

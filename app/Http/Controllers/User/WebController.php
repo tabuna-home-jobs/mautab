@@ -137,7 +137,7 @@ class WebController extends Controller {
 
 		Session::flash('good', 'Вы успешно добавили Домен.');
 
-		return redirect()->route('web.index');
+		return redirect()->route('hosting.web.index');
 	}
 
     public  function getDomain()
@@ -159,7 +159,7 @@ class WebController extends Controller {
 		Vesta::deleteDomain($request->v_domain);
 		Session::flash('good', 'Вы успешно удалили веб домен.');
 
-		return redirect()->route('web.index');
+		return redirect()->route('hosting.web.index');
 
 	}
 
@@ -175,7 +175,7 @@ class WebController extends Controller {
 
 		Session::flash('good', 'Обновление прошло успешно');
 
-		return redirect()->route('web.index');
+		return redirect()->route('hosting.web.index');
 	}
 
 }

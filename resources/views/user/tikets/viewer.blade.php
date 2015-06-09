@@ -12,7 +12,7 @@
         </div>
 
             <!-- SHARE -->
-    <div class="single-section-container"><h6 class="single-section-title"><span class="single-section-text">{{Lang::get('tikets.answers')}}</span></h6></div>
+        <div class="single-section-container"><h6 class="single-section-title"><span class="single-section-text">{{Lang::get('hosting.tikets.answers')}}</span></h6></div>
             <!-- END OF SHARE -->
             <!-- AUTHOR BOX -->
             @foreach ($subTiket as $Tik)
@@ -42,7 +42,7 @@
                     <div id="respond" class="comment-respond">
                         <h3 id="reply-title" class="comment-reply-title">Ваш ответ</h3>
 
-                        <form action="{{URL::route('tikets.update')}}" method="POST" id="commentform" class="comment-form">
+                        <form action="{{URL::route('hosting.tikets.update')}}" method="POST" id="commentform" class="comment-form">
                             <p class="comment-form-comment">
                                 <label for="comment">Сообщение</label>
                                 <textarea name="message" name="reply" class="form-control" cols="45" rows="8" aria-required="true"></textarea></p>

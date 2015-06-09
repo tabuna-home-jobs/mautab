@@ -88,12 +88,12 @@
 </header>
 
 
-    <section class="menuapp container text-center">
+<section class="menuapp container text-center">
 
         <div class="col-md-2 col-sm-4 col-xs-6">
 
 
-            <a href="<?php echo e(URL::route('home.index')); ?>">
+            <a href="<?php echo e(URL::route('hosting.home.index')); ?>">
                 <span class="fa fa-home"></span>
                 <h4><?php echo e(Lang::get('menu.Panel')); ?></h4>
             </a>
@@ -149,7 +149,7 @@
 
 
         <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="<?php echo e(URL::route('cron.index')); ?>">
+            <a href="<?php echo e(URL::route('hosting.cron.index')); ?>">
                 <span class="fa fa-clock-o"></span>
                 <h4><?php echo e(Lang::get('menu.Cron')); ?></h4>
             </a>
@@ -158,18 +158,18 @@
         </div>
 
         <div class="col-md-2 col-sm-4 col-xs-6">
-            <a href="<?php echo e(URL::route('tikets.index')); ?>">
+            <a href="<?php echo e(URL::route('hosting.tikets.index')); ?>">
                 <span class="fa fa-life-ring"></span>
                 <h4><?php echo e(Lang::get('menu.support')); ?></h4>
             </a>
             <hr>
 
-            <p class="menu-small"><a href="<?php echo e(URL::route('log.index')); ?>">Журнал действий</a></p>
+            <p class="menu-small"><a href="<?php echo e(URL::route('hosting.log.index')); ?>">Журнал действий</a></p>
 
-            <p class="menu-small"><a href="<?php echo e(URL::route('backup.index')); ?>">Резервные копии</a></p>
+            <p class="menu-small"><a href="<?php echo e(URL::route('hosting.backup.index')); ?>">Резервные копии</a></p>
         </div>
 
-    </section>
+</section>
 
 
 
