@@ -19,7 +19,7 @@ class RedirectIfAuthenticated {
 	{
 		if (Sentry::check())
 		{
-			return new RedirectResponse(url('/home'));
+			return new RedirectResponse(url('/hosting/home'));
 		}
 		return $next($request);
 	}

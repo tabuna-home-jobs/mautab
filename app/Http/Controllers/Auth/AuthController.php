@@ -30,7 +30,8 @@ class AuthController extends Controller {
 			'password' => $request->password,
 		);
 		Sentry::authenticateAndRemember($credentials);
-		return redirect('/home');
+
+		return redirect('/hosting/home');
 
 	}
 
@@ -52,6 +53,7 @@ class AuthController extends Controller {
 			'email'      => $request->email,
 			'package'    => $request->package,
 			'password'   => $request->password,
+			'server' => (string)Config::get('vesta.server')[Config::get('vesta.primary')]['ip'],
 		));
 
 
@@ -96,7 +98,7 @@ class AuthController extends Controller {
 				$user->addGroup($adminGroup);
 				Sentry::loginAndRemember($user);
 
-				return redirect()->route('home.index');
+				return redirect()->route('hosting.home.index');
 			} else {
 				return redirect()->back()->withErrors(array('Ключ не подходит к email'));
 			}
@@ -112,7 +114,7 @@ class AuthController extends Controller {
 			$user->addGroup($adminGroup);
 			Sentry::loginAndRemember($user);
 
-			return redirect()->route('home.index');
+			return redirect()->route('hosting.home.index');
 		} else {
 			return redirect()->back()->withErrors(array('Ключ не подходит к email'));
 		}
