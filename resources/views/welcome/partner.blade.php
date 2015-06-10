@@ -53,7 +53,7 @@
 
                 <!-- feature-box-title -->
                 <div class="feature-box-title">
-                    <h3>about this project</h3>
+                    <h3>Важная информация</h3>
                 </div>
                 <!-- /feature-box-title -->
 
@@ -111,7 +111,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="related_project_content">
                             <div class="port_project_title">
-                                <h4>the process</h4>
+                                <h4>Как это работает</h4>
                             </div>
                         </div>
                     </div>
