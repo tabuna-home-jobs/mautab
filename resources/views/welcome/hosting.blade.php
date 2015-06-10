@@ -154,97 +154,97 @@
 
 <section>
     <div class="container">
+
         <div class="row">
-            <div class="col-md-12">
-                <div class="block">
-                    <div class="title text-center">
-                        <h2>Цены</h2>
 
-                        <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
-                    </div>
+            <div class="block">
+                <div class="title text-center">
+                    <h2>Удобная ценовая политика</h2>
 
-
-                    <div class="col-xs-12 col-md-4">
-                        <div class="panel panel-price">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Мини</h3>
-
-                                <div class="cd-price">
-                                    <span class="cd-currency"><i class="fa fa-rub"></i></span>
-                                    <span class="cd-value">99</span>
-                                    <span class="cd-duration">месяц</span>
-                                </div>
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item"><strong>10</strong> Доменов</li>
-                                <li class="list-group-item"><strong>10</strong> Баз данных</li>
-                                <li class="list-group-item"><strong>1</strong> Заданий</li>
-                                <li class="list-group-item"><strong>10Gb</strong> Дискового пространства</li>
-                                <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
-                                <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
-                                <li class="list-group-item"><strong>3</strong> Резевных копии</li>
-                                <li class="list-group-item">24/7</strong> Поддержка</li>
-                            </ul>
-                            <div class="panel-footer">Выбрать</div>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12 col-md-4">
-                        <div class="panel panel-price">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Стандарт</h3>
-
-                                <div class="cd-price">
-                                    <span class="cd-currency"><i class="fa fa-rub"></i></span>
-                                    <span class="cd-value">499</span>
-                                    <span class="cd-duration">месяц</span>
-                                </div>
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item"><strong>50</strong> Доменов</li>
-                                <li class="list-group-item"><strong>50</strong> Баз данных</li>
-                                <li class="list-group-item"><strong>10</strong> Заданий</li>
-                                <li class="list-group-item"><strong>30Gb</strong> Диск</li>
-                                <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
-                                <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
-                                <li class="list-group-item"><strong>3</strong> Резевных копии</li>
-                                <li class="list-group-item">24/7</strong> Поддержка</li>
-                            </ul>
-                            <div class="panel-footer">Выбрать</div>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12 col-md-4">
-                        <div class="panel panel-price">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Студия</h3>
-
-                                <div class="cd-price">
-                                    <span class="cd-currency"><i class="fa fa-rub"></i></span>
-                                    <span class="cd-value">999</span>
-                                    <span class="cd-duration">месяц</span>
-                                </div>
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item"><strong>100</strong> Доменов</li>
-                                <li class="list-group-item"><strong>100</strong> Баз данных</li>
-                                <li class="list-group-item"><strong>30</strong> Заданий</li>
-                                <li class="list-group-item"><strong>50Gb</strong> Диск</li>
-                                <li class="list-group-item"><strong>100Gb</strong> Траффик</li>
-                                <li class="list-group-item"><strong>Не ограниченное</strong> число FTP</li>
-                                <li class="list-group-item"><strong>3</strong> Резевных копии</li>
-                                <li class="list-group-item">24/7</strong> Поддержка</li>
-                            </ul>
-                            <div class="panel-footer">Выбрать</div>
-                        </div>
-                    </div>
-
+                    <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
                 </div>
-
-
             </div>
+
+
+            <div class="pricing-table row">
+                <div class="col-md-4">
+                    <div class="plan">
+                        <header class="pricing-head">
+                            <h3>Стандарт</h3>
+                            <span class="price"><sup><i class="fa fa-rub"></i></sup> 499</span>
+                            <small>/ месяц</small>
+                        </header>
+                        <div class="pricing-body">
+                            <ul>
+                                <li><strong>50</strong> Доменов</li>
+                                <li><strong>50</strong> Баз данных</li>
+                                <li><strong>10</strong> Заданий</li>
+                                <li><strong>30Gb</strong> Диск</li>
+                                <li><strong>100Gb</strong> Траффик</li>
+                                <li><strong>Не ограниченное</strong> число FTP</li>
+                                <li><strong>3</strong> Резевных копии</li>
+                                <li>24/7 Поддержка</li>
+                            </ul>
+                        </div>
+                        <footer class="pricing-footer">
+                            <a class="btn btn-default btn btn-blue" href="#">Заказать</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan popular">
+                        <header class="pricing-head">
+                            <h3>Стандарт</h3>
+                            <span class="price"><sup><i class="fa fa-rub"></i></sup> 499</span>
+                            <small>/ месяц</small>
+                        </header>
+                        <div class="pricing-body">
+                            <ul>
+                                <li><strong>50</strong> Доменов</li>
+                                <li><strong>50</strong> Баз данных</li>
+                                <li><strong>10</strong> Заданий</li>
+                                <li><strong>30Gb</strong> Диск</li>
+                                <li><strong>100Gb</strong> Траффик</li>
+                                <li><strong>Не ограниченное</strong> число FTP</li>
+                                <li><strong>3</strong> Резевных копии</li>
+                                <li>24/7 Поддержка</li>
+                            </ul>
+                        </div>
+                        <footer class="pricing-footer">
+                            <a class="btn btn-default btn btn-blue" href="#">Заказать</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan">
+                        <header class="pricing-head">
+                            <h3>Стандарт</h3>
+                            <span class="price"><sup><i class="fa fa-rub"></i></sup> 499</span>
+                            <small>/ месяц</small>
+                        </header>
+                        <div class="pricing-body">
+                            <ul>
+                                <li><strong>50</strong> Доменов</li>
+                                <li><strong>50</strong> Баз данных</li>
+                                <li><strong>10</strong> Заданий</li>
+                                <li><strong>30Gb</strong> Диск</li>
+                                <li><strong>100Gb</strong> Траффик</li>
+                                <li><strong>Не ограниченное</strong> число FTP</li>
+                                <li><strong>3</strong> Резевных копии</li>
+                                <li>24/7 Поддержка</li>
+                            </ul>
+                        </div>
+                        <footer class="pricing-footer">
+                            <a class="btn btn-default btn btn-blue" href="#">Заказать</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </section>
+
 
 @include('footer')
