@@ -1,17 +1,37 @@
 @include('header')
 
 
-
+<div class="auth-container">
 <div class="container text-center">
     <h1>Опришлите ещё раз</h1>
 </div>
 
 
-<div class="container login-container">
-    <div class="login-form text-center">
+    <div class="container">
+        <div class="app-container text-center">
 
 
-        <form action="/auth/repeat" class="col-xs-12 col-md-6" method="post">
+            <form action="/auth/repeat" class="col-md-6 col-md-offset-3" method="post">
+
+
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
 
             <div class="form-group">
                 <label for="email" class="control-label">Email</label>
@@ -23,29 +43,6 @@
         </form>
 
 
-        <div class="col-xs-12 col-md-6">
-
-
-            @if (session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
-                </div>
-            @endif
-
-
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-            <img class="img-responsive" alt="" src="/img/email-mockup.png">
-        </div>
 
 
     </div>
@@ -55,7 +52,7 @@
 </header>
 
 
-
+</div>
 
 
 @include('footer')

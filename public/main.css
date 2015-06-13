@@ -169,23 +169,6 @@ h1 {
     border: 1px solid #8883bc;
 }
 
-.banner .block .download-btn li .btn-andriod {
-    border: none;
-    border-radius: 0;
-    color: #fff;
-    background: #6fbf39;
-    border: 1px solid transparent;
-    -webkit-transition: .2s all;
-    -o-transition: .2s all;
-    transition: .2s all;
-}
-
-.banner .block .download-btn li .btn-andriod:hover {
-    color: #6fbf39;
-    background: #fff;
-    border: 1px solid #6fbf39;
-}
-
 .btn-blue {
     border: none;
     border-radius: 0;
@@ -214,7 +197,6 @@ h1 {
 }
 
 .service .block {
-    cursor: pointer;
     text-align: center;
 }
 
@@ -262,10 +244,12 @@ h1 {
 }
 
 .service .block p {
-    color: #666;
+    font-size: 12pt;
+    font-weight: 300;
+    color: #999;
 }
 
-.feature {
+.feature, .auth-container {
     padding: 120px 0;
 }
 

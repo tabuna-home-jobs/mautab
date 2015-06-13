@@ -181,12 +181,11 @@
 
 
                             @empty
-                            <div class="jumbotron">
+                                <div class="jumbotron text-center">
                                 <h1>Пусто!</h1>
 
-                                <p>У Вас ещё нет ДНС</p>
+                                    <p>Вы ещё не создали ни одной базы данных</p>
 
-                                <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
                             </div>
 
                             @endforelse

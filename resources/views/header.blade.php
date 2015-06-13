@@ -10,11 +10,12 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet'
+          type='text/css'>
 
 
     <!-- CSS -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet'
-          type='text/css'>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/main.css">
@@ -34,7 +35,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-xs-6 col-sm-3">
-                <a href="#" class="logo">
+                <a href="/" class="logo">
                     <img src="/images/logo.png" alt="">
                 </a>
             </div>

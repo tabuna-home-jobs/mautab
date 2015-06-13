@@ -81,7 +81,7 @@
             <div class=" table-responsive">
                 <table class="table table-condensed table-hover table-striped">
                     <tbody>
-                    @foreach($CronList as $key => $job)
+                    @forelse($CronList as $key => $job)
                         @if($job['SUSPENDED'] == 'no')
                             <tr>
                         @else
@@ -132,7 +132,15 @@
 
                             </tr>
 
-                            @endforeach
+                            @empty
+                                <div class="jumbotron text-center">
+                                    <h1>Пусто!</h1>
+
+                                    <p>Вы ещё не создали ни одной базы данных</p>
+
+                                </div>
+
+                            @endforelse
                     </tbody>
                 </table>
             </div>

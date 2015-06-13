@@ -50,7 +50,7 @@ class FtpController extends Controller {
 	public function show($name)
 	{
 
-		return view('ftp/index',['ftplist' => Vesta::listEditWebDomain($name)]);
+        return view('users/ftp/index', ['ftplist' => Vesta::listEditWebDomain($name)]);
 	}
 
 	/**
