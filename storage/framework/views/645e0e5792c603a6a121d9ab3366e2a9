@@ -22,16 +22,6 @@
                     </p>
 
 
-                    <ul class="download-btn text-center">
-                        <li>
-                            <a href="/auth/login" class="btn btn-default btn-apple">Войти</a>
-                        </li>
-                        <li>
-                            <a href="/auth/register" class="btn btn-default btn btn-blue">Зарегистироваться</a>
-                        </li>
-                    </ul>
-
-
                 </div>
             </div>
         </div>
@@ -41,10 +31,10 @@
 
 <div id="services" class="container text-center">
 
-    <h1 class="text-center title" id="portfolio">Премущества</h1>
+    <h1 class="text-center title" id="portfolio">Наши преимущества</h1>
 
     <div class="separator"></div>
-    <p class="lead text-center">Lorem ipsum dolor sit amet laudantium molestias similique.<br> Quisquam incidunt ut laboriosam.</p>
+    <p class="lead text-center"> являются результатом ограничения других </p>
     <br>
 
     <div class="row">
@@ -56,9 +46,9 @@
 
             <!-- Title and Description -->
             <div class="service-title">
-                <h3>Minimal Design</h3>
+                <h3>Веб-дизайн</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <p>Использование только красивых и элегантных страниц веб-сайта с вашим успешным брендом</p>
         </div>
 
         <!-- Service Item (title, icon and description for your service) -->
@@ -68,9 +58,9 @@
 
             <!-- Title and Description -->
             <div class="service-title">
-                <h3>Полная Документация</h3>
+                <h3>Опыт и знания</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <p>На нашем счету множество сложных и нестандартных веб решений различной тематики</p>
         </div>
 
         <!-- Service Item (title, icon and description for your service) -->
@@ -82,19 +72,19 @@
             <div class="service-title">
                 <h3>Использование Bootstrap</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <p>Даёт уверенность в кросбраузерности веб-сайта, а так же в простоте изменения внешнего вида</p>
         </div>
 
         <!-- Service Item (title, icon and description for your service) -->
         <div class="col-sm-4 col-md-4 service-box-none">
             <!-- Icon -->
-            <i class="fa fa-laptop fa-3x"></i>
+            <i class="fa fa-bolt fa-3x"></i>
 
             <!-- Title and Description -->
             <div class="service-title">
-                <h3>Адоптированный дизайн</h3>
+                <h3>Высокая произодительность</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <p>Максимальна быстрая загрузка страниц веб-сайта, с соблюдением рекомендаций от Google Speed Page</p>
         </div>
 
         <!-- Service Item (title, icon and description for your service) -->
@@ -106,7 +96,7 @@
             <div class="service-title">
                 <h3>SEO оптимизация</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <p>Понимание современных поисковых систем даёт необходимую информацию как лучше продвигать веб-сайт</p>
         </div>
 
         <!-- Service Item (title, icon and description for your service) -->
@@ -116,9 +106,9 @@
 
             <!-- Title and Description -->
             <div class="service-title">
-                <h3>Чистый код</h3>
+                <h3>Чистый код c Laravel</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <p>В ходе работы используеться исключительно Laravel в тандеме с высоко квалифицированными специалистами</p>
         </div>
 
     </div>
@@ -133,7 +123,7 @@
         <h1 class="text-center title" id="portfolio">Наши работы</h1>
 
         <div class="separator"></div>
-        <p class="lead text-center">Lorem ipsum dolor sit amet laudantium molestias similique.<br> Quisquam incidunt ut laboriosam.</p>
+        <p class="lead text-center">Интересные или нестандатрные работы с подробным описанием проделанной работы</p>
         <br>
 
         <div class="row object-non-visible" data-animation-effect="fadeIn">

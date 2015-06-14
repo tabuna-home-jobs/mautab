@@ -91,7 +91,7 @@
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="block">
-                    <img class="img-responsive" src="/images/featured-app.png" alt="">
+                    <img class="img-responsive" src="/images/server.png" alt="">
                 </div>
             </div>
         </div>

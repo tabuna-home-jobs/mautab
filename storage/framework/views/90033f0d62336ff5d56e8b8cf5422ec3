@@ -24,7 +24,7 @@
                                 </p>
                     </div>
                 </div>
-                <hr>
+            <hr>
             <?php endforeach; ?>
             <!-- END OF AUTHOR BOX -->
     </div>
