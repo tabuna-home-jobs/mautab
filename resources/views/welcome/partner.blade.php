@@ -128,10 +128,4 @@
 </section>
 
 
-
-
-
-
-
-
 @include('footer')
