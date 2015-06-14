@@ -12,26 +12,19 @@
         </div>
 
             <!-- SHARE -->
-        <div class="single-section-container"><h6 class="single-section-title"><span class="single-section-text">{{Lang::get('hosting.tikets.answers')}}</span></h6></div>
+        <div class="text-right"><h6>{{Lang::get('hosting.tikets.answers')}}</h6></div>
+        <hr>
             <!-- END OF SHARE -->
             <!-- AUTHOR BOX -->
             @foreach ($subTiket as $Tik)
-            <div class="author-wrap">
                 <div class="row">
-                    <div class="col-xs-2">
-                        <div class="author-gravatar"><img src="/img/gravatar.png" class="img-responsive" alt=""/></div>
-                    </div>
-                    <div class="col-xs-10">
-                        <div class="author-info">
-                            <div class="author-description">
+                    <div class="col-xs-12">
                                 <p>
                                     {{$Tik->message}}
                                 </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
+            <hr>
             @endforeach
             <!-- END OF AUTHOR BOX -->
     </div>
