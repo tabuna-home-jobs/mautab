@@ -1,32 +1,28 @@
 @include('header')
 
 
-<section class="banner">
-    <div class="container">
-        <div class="row">
+<div id="home" class="web-open hidden-xs">
+    <div>
+        <img class="img-responsive" alt="banner" src="/images/open.jpg">
 
-            <div class="col-md-4 col-sm-6">
-                <div class="block">
-                    <img class="app-img img-responsive" src="/images/app.png" alt="">
-                </div>
+        <div class="caption">
+            <div class="caption-wrapper">
+                <div class="caption-info">
+                    <h1 class="animated bounceInUp">Профессиональная веб-разработка</h1>
 
-            </div>
-            <div class="col-md-6 col-md-offset-1 col-sm-6">
-                <div class="block">
-                    <h1>
-                        Профессиональная веб-разработка
-                    </h1>
-
-                    <p>
-                        Передовые технологии и уникальные компетенции решать наиболее сложные задачи
-                    </p>
-
-
+                    <p class="animated bounceInLeft">Передовые технологии и уникальные компетенции решать наиболее сложные задачи</p>
+                    <a class="explore animated bounceInDown" href="#about"><i class="fa fa-angle-down  fa-3x"></i></a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+
+
+
+
+
+
 
 
 <div id="services" class="container text-center">
@@ -116,6 +112,37 @@
 </div>
 
 
+<div class="container">
+
+    <div class="process">
+        <h3 class="text-center">Процес создания Веб-сайта</h3>
+        <ul class="row text-center list-inline">
+            <li>
+                <span><i class="fa fa-history"></i><b>Получаем заявку</b></span>
+            </li>
+            <li>
+                <span><i class="fa fa-puzzle-piece"></i><b>Согласуем ТЗ</b></span>
+            </li>
+            <li>
+                <span><i class="fa fa-database"></i><b>Разработка</b></span>
+            </li>
+            <li>
+                <span><i class="fa fa-magic"></i><b>Интеграция</b></span>
+            </li>
+            <li>
+                <span><i class="fa fa-cloud-upload"></i><b>Продвижение</b></span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
 <!-- section start -->
 <!-- ================ -->
 <div class="section">
@@ -145,7 +172,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item web-design">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-1.jpg" alt="">
+                                <img src="/images/portfolio-1.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-1">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Web дизайн</span>
@@ -179,7 +206,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-1.jpg" class="img-responsive" alt="">
+                                                <img src="/images/portfolio-1.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -195,7 +222,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item app-development">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-2.jpg" alt="">
+                                <img src="/images/portfolio-2.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-2">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Приложения</span>
@@ -229,7 +256,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img class="img-responsive" src="images/portfolio-2.jpg" alt="">
+                                                <img class="img-responsive" src="/images/portfolio-2.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -245,7 +272,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item web-design">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-3.jpg" alt="">
+                                <img src="/images/portfolio-3.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-3">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Web дизайн</span>
@@ -279,7 +306,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img class="img-responsive" src="images/portfolio-3.jpg" alt="">
+                                                <img class="img-responsive" src="/images/portfolio-3.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -295,7 +322,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item site-building">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-4.jpg" alt="">
+                                <img src="/images/portfolio-4.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-4">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Сайты</span>
@@ -329,7 +356,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img class="img-responsive" src="images/portfolio-4.jpg" alt="">
+                                                <img class="img-responsive" src="/images/portfolio-4.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -345,7 +372,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item app-development">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-5.jpg" alt="">
+                                <img src="/images/portfolio-5.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-5">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Приложения</span>
@@ -379,7 +406,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-5.jpg" class="img-responsive" alt="">
+                                                <img src="/images/portfolio-5.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -395,7 +422,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item web-design">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-6.jpg" alt="">
+                                <img src="/images/portfolio-6.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-6">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Web дизайн</span>
@@ -429,7 +456,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-6.jpg" class="img-responsive" alt="">
+                                                <img src="/images/portfolio-6.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -445,7 +472,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item site-building">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-7.jpg" alt="">
+                                <img src="/images/portfolio-7.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-7">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Сайты</span>
@@ -479,7 +506,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-7.jpg" class="img-responsive" alt="">
+                                                <img src="/images/portfolio-7.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -495,7 +522,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item web-design">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-8.jpg" alt="">
+                                <img src="/images/portfolio-8.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-8">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Web дизайн</span>
@@ -529,7 +556,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-8.jpg" class="img-responsive" alt="">
+                                                <img src="/images/portfolio-8.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -545,7 +572,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item web-design">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-9.jpg" alt="">
+                                <img src="/images/portfolio-9.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-9">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Web дизайн</span>
@@ -579,7 +606,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-9.jpg" class="img-responsive" alt="">
+                                                <img src="/images/portfolio-9.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -595,7 +622,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item site-building">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-10.jpg" alt="">
+                                <img src="/images/portfolio-10.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-10">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Сайты</span>
@@ -629,7 +656,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-10.jpg" class="img-responsive" alt="">
+                                                <img src="/images/portfolio-10.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -645,7 +672,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item web-design">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-11.jpg" alt="">
+                                <img src="/images/portfolio-11.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-11">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Web дизайн</span>
@@ -679,7 +706,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-11.jpg" class="img-responsive" alt="">
+                                                <img src="/images/portfolio-11.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -695,7 +722,7 @@
                     <div class="col-sm-6 col-md-3 isotope-item app-development">
                         <div class="image-box">
                             <div class="overlay-container">
-                                <img src="images/portfolio-12.jpg" alt="">
+                                <img src="/images/portfolio-12.jpg" alt="">
                                 <a class="overlay" data-toggle="modal" data-target="#project-12">
                                     <i class="fa fa-search-plus"></i>
                                     <span>Приложения</span>
@@ -729,7 +756,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-12.jpg" class="img-responsive" alt="">
+                                                <img src="/images/portfolio-12.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
