@@ -7,6 +7,7 @@
 		Route::resource('/web', 'WelcomeWebStudioController@index');
 		Route::resource('/patner', 'WelcomePartnerController@index');
 		Route::resource('/', 'WelcomeAboutController@index');
+		Route::resource('page', 'PageController');
 	});
 
 

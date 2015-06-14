@@ -43,7 +43,7 @@
     <div class="col-md-4">
         <h2>Напиши и будет решено</h2>
 
-        <form action="/tikets" method="POST">
+        <form action="{{URL::route('hosting.tikets.store')}}" method="POST">
             <div class="form-group">
                 <label>Заголовок</label>
                 <input type="text" name="title" class="form-control">

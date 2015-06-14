@@ -79,7 +79,7 @@
             <div class=" table-responsive">
                 <table class="table table-condensed table-hover table-striped">
                     <tbody>
-                    <?php foreach($CronList as $key => $job): ?>
+                    <?php $__empty_1 = true; foreach($CronList as $key => $job): $__empty_1 = false; ?>
                         <?php if($job['SUSPENDED'] == 'no'): ?>
                             <tr>
                         <?php else: ?>
@@ -131,7 +131,15 @@
 
                             </tr>
 
-                            <?php endforeach; ?>
+                            <?php endforeach; if ($__empty_1): ?>
+                                <div class="jumbotron text-center">
+                                    <h1>Пусто!</h1>
+
+                                    <p>Вы ещё не создали ни одной базы данных</p>
+
+                                </div>
+
+                            <?php endif; ?>
                     </tbody>
                 </table>
             </div>

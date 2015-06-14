@@ -134,7 +134,8 @@
                                                 </div>
 
                                                 <div class="btn-group pull-right" role="group">
-                                                    <a href="http://{{Sentry::getUser()->server}}/phpmyadmin" target="_blank" class="btn btn-default">
+                                                    <a href="http://{{(string)Config::get('vesta.server')[Sentry::getUser()->server]['ip'] }}/phpmyadmin" target="_blank"
+                                                       class="btn btn-default">
                                                         <i class="fa fa-server"></i>
                                                     </a>
 

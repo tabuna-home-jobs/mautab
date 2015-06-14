@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MauTab</title>
-    <meta name="description" content="">
+    <title>MauTab @yield('title', ' - Профессиональное решение')</title>
+    <meta name="description" content="@yield('description', ' - Профессиональное решение')">
+    <meta name="keywords" content="@yield('keywords', ' - Профессиональное решение')">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
