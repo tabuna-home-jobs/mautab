@@ -7,6 +7,16 @@ a {
     outline: none !important;
 }
 
+body.modal-open {
+    overflow: inherit;
+    padding-right: inherit !important;
+}
+
+.modal-content {
+    border-radius: 0px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
 h1 {
     font-size: 52px;
 }
@@ -159,23 +169,6 @@ h1 {
     border: 1px solid #8883bc;
 }
 
-.banner .block .download-btn li .btn-andriod {
-    border: none;
-    border-radius: 0;
-    color: #fff;
-    background: #6fbf39;
-    border: 1px solid transparent;
-    -webkit-transition: .2s all;
-    -o-transition: .2s all;
-    transition: .2s all;
-}
-
-.banner .block .download-btn li .btn-andriod:hover {
-    color: #6fbf39;
-    background: #fff;
-    border: 1px solid #6fbf39;
-}
-
 .btn-blue {
     border: none;
     border-radius: 0;
@@ -204,7 +197,6 @@ h1 {
 }
 
 .service .block {
-    cursor: pointer;
     text-align: center;
 }
 
@@ -252,10 +244,12 @@ h1 {
 }
 
 .service .block p {
-    color: #666;
+    font-size: 12pt;
+    font-weight: 300;
+    color: #999;
 }
 
-.feature {
+.feature, .auth-container {
     padding: 120px 0;
 }
 
@@ -543,7 +537,8 @@ footer p {
 .service-box-none p, .service-box p {
     margin-left: 25px;
     margin-right: 25px;
-    font-size: 13pt;
+    color: #999;
+    font-weight: 300;
 }
 
 .service-box-none h3, .service-box h3 {
@@ -583,162 +578,6 @@ footer p {
 
 /* !web service */
 
-/* процесс */
-
-.process {
-    clear: both;
-    float: left;
-    width: 100%;
-}
-
-.process_wraper {
-    float: left;
-    width: 100%;
-}
-
-.process_wraper ul {
-    float: left;
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-    padding-left: 0;
-    width: 100%;
-}
-
-.process_content {
-    float: left;
-    position: relative;
-    text-align: center;
-    width: 100%;
-}
-
-.process_content::after {
-    -x-system-font: none;
-    color: #99a4bd;
-    content: "";
-    font-family: FontAwesome;
-    font-feature-settings: normal;
-    font-kerning: auto;
-    font-language-override: normal;
-    font-size: 20px;
-    font-size-adjust: none;
-    font-stretch: normal;
-    font-style: normal;
-    font-synthesis: weight style;
-    font-variant-alternates: normal;
-    font-variant-caps: normal;
-    font-variant-east-asian: normal;
-    font-variant-ligatures: normal;
-    font-variant-numeric: normal;
-    font-variant-position: normal;
-    font-weight: normal;
-    left: 100%;
-    line-height: 1;
-    margin-left: -9.5px;
-    margin-top: -12px;
-    position: absolute;
-    top: 50%;
-}
-
-.boxed .process_content::after {
-    margin-top: -9px;
-}
-
-.process_wraper ul li:hover .process_content::after {
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-duration: 1s;
-    animation-fill-mode: none;
-    animation-iteration-count: infinite;
-    animation-name: fadeInLeft;
-    animation-play-state: running;
-    animation-timing-function: ease;
-}
-
-.process_icon {
-    float: left;
-    padding-bottom: 50px;
-    position: relative;
-    width: 100%;
-}
-
-.process_detail {
-    float: left;
-    padding-bottom: 10px;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 10px;
-    width: 100%;
-}
-
-.process_detail h4 {
-    color: #99a4bd;
-    text-transform: uppercase;
-}
-
-.process_icon span {
-    background-color: #99a4bd;
-    border-bottom-left-radius: 100%;
-    border-bottom-right-radius: 100%;
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-    color: #fff;
-    display: inline-block;
-    font-size: 40px;
-    height: 80px;
-    line-height: 80px;
-    position: relative;
-    width: 80px;
-}
-
-.process_icon::after {
-    border-bottom-color: #99a4bd;
-    border-bottom-style: dashed;
-    border-bottom-width: 1px;
-    content: "";
-    left: 0;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-}
-
-.process_icon span::after {
-    border-bottom-style: dashed;
-    border-left-color: #99a4bd;
-    border-left-style: dashed;
-    border-left-width: 1px;
-    border-right-style: dashed;
-    border-top-style: dashed;
-    content: "";
-    height: 50px;
-    left: 50%;
-    position: absolute;
-    top: 100%;
-}
-
-.process_wraper ul li:first-child .process_icon::after {
-    left: 50%;
-    width: 50% !important;
-}
-
-.process_wraper ul li:last-child .process_icon::after {
-    width: 50% !important;
-}
-
-.process_wraper ul li:last-child .process_content::after {
-    display: none;
-}
-
-.process_text {
-    float: left;
-    padding-bottom: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0;
-    width: 100%;
-}
-
-/* !процесс */
 
 /* Новый прайс */
 .pricing-table {

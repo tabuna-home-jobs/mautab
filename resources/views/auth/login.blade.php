@@ -1,19 +1,18 @@
 @include('header')
 
 
-
+<div class="auth-container">
 <div class="container text-center">
     <h1>Авторизация</h1>
 </div>
 
 
-<div class="container login-container">
+    <div class="container">
 
 
+        <div class="app-container text-center">
 
-    <div class="login-form text-center">
-
-        <form class="col-xs-12 col-md-6" action="/auth/login" method="post">
+            <form class="col-md-6 col-md-offset-3" action="/auth/login" method="post">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
@@ -28,7 +27,13 @@
 
             <div class="form-group">
                 <label class="control-label">Email:</label>
-                {!! Form::email('email', @$email, array('size'=> '50','class' => 'form-control'))!!}
+
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                    <input type="email" class="form-control" value="{{old('email')}}">
+                </div>
+
+
             </div>
 
             <div class="form-group">
@@ -39,21 +44,16 @@
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="submit" class="btn btn-blue" value="Войти">
-            <a href="/password/email">Забыли пароль?</a>
+
+                <p><a href="/password/email">Забыли пароль?</a></p>
         </form>
-
-
-        <div  class="col-xs-12 col-md-6">
-            <img class="img-responsive" alt="" src="/img/email-mockup.png">
-        </div>
-
 
 
     </div>
 </div>
 
 
-
+</div>
 
 
 

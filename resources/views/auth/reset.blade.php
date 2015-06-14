@@ -1,6 +1,8 @@
 @include('header')
 
 
+<div class="auth-container">
+
 <div class="container text-center">
     <h3>Хостинг для вашего сайта</h3>
 
@@ -61,6 +63,6 @@
   </div>
 </header>
 
-
+</div>
 
 @include('footer')

@@ -153,12 +153,11 @@
                             </div>
                             @empty
 
-                            <div class="jumbotron">
+                                <div class="jumbotron text-center">
                                 <h1>Пусто!</h1>
 
-                                <p>Вы ещё не создали ни одной базы данных</p>
+                                    <p>Вы ещё не создали ни одной DNS записи</p>
 
-                                <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
                             </div>
                             @endforelse
 

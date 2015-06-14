@@ -16,12 +16,6 @@
                 <label>Домен </label>
                 <input type="text" name="v_domain" class="form-control" value="" required />
             </div>
-            <div class="form-group">
-                <label>IP адрес</label>
-                <select type="text" class="form-control" name="v_ip">
-                    <option value="151.80.164.81">151.80.164.81</option>
-                </select>
-            </div>
 
             <div>
                 <a id="show-add-options" data-toggle="collapse" href="#options" aria-expanded="false" aria-controls="collapseExample">Дополнительные опции</a>
@@ -170,12 +164,12 @@
 
 
                     @empty
-                        <div class="jumbotron">
+                        <div class="jumbotron text-center">
                             <h1>Пусто!</h1>
 
-                            <p>У Вас ещё нет ДНС</p>
+                            <p>У Вас ещё нет ни одного веб-сайта</p>
 
-                            <p><a class="btn btn-primary btn-lg" href="#" role="button">Создать</a></p>
+                            <p></p>
                         </div>
 
                     @endforelse
