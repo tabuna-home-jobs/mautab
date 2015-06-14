@@ -1,17 +1,15 @@
 <?php echo $__env->make('header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
-
-
-
-
 <div id="home" class="web-open hidden-xs">
     <div>
         <img class="img-responsive" alt="banner" src="/images/open.jpg">
-            <div class="caption">
+
+        <div class="caption">
             <div class="caption-wrapper">
                 <div class="caption-info">
                     <h1 class="animated bounceInUp">Профессиональная веб-разработка</h1>
+
                     <p class="animated bounceInLeft">Передовые технологии и уникальные компетенции решать наиболее сложные задачи</p>
                     <a class="explore animated bounceInDown" href="#about"><i class="fa fa-angle-down  fa-3x"></i></a>
                 </div>
@@ -114,13 +112,7 @@
 </div>
 
 
-
-
-
-
-
-
-<div  class="container">
+<div class="container">
 
     <div class="process">
         <h3 class="text-center">Процес создания Веб-сайта</h3>

@@ -39,6 +39,59 @@
 </section>
 
 
+<section class="service">
+    <div class="container">
+        <div class="service-wrapper">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-code"></i>
+                        </div>
+
+                        <h3>ПО</h3>
+
+                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-hdd-o"></i>
+                        </div>
+                        <h3>SSD-Диски</h3>
+
+                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-code"></i>
+                        </div>
+
+                        <h3>ПО</h3>
+
+                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-hdd-o"></i>
+                        </div>
+                        <h3>SSD-Диски</h3>
+
+                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 
 
 <section class="feature">
