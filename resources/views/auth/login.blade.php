@@ -30,7 +30,7 @@
 
                 <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                    <input type="email" class="form-control" value="{{old('email')}}">
+                    <input type="email" class="form-control" name="email" value="{{old('email')}}">
                 </div>
 
 

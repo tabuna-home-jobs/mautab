@@ -22,15 +22,12 @@
                     </p>
 
 
-                    <ul class="download-btn">
+                    <ul class="download-btn text-center">
                         <li>
-                            <a href="#" class="btn btn-default btn-apple"> <i class="fa fa-apple"></i>App store</a>
+                            <a href="/auth/login" class="btn btn-default btn-apple">Войти</a>
                         </li>
                         <li>
-                            <a href="/auth/login" class="btn btn-default btn-andriod"><i class="fa fa-android"></i>Войти</a>
-                        </li>
-                        <li>
-                            <a href="/auth/register" class="btn btn-default btn btn-blue"><i class="fa fa-windows"></i>Зарегистироваться</a>
+                            <a href="/auth/register" class="btn btn-default btn btn-blue">Зарегистироваться</a>
                         </li>
                     </ul>
 
@@ -192,7 +189,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-1.jpg" alt="">
+                                                <img src="images/portfolio-1.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -242,7 +239,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-2.jpg" alt="">
+                                                <img class="img-responsive" src="images/portfolio-2.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -292,7 +289,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-3.jpg" alt="">
+                                                <img class="img-responsive" src="images/portfolio-3.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -342,7 +339,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-4.jpg" alt="">
+                                                <img class="img-responsive" src="images/portfolio-4.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -392,7 +389,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-5.jpg" alt="">
+                                                <img src="images/portfolio-5.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -442,7 +439,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-6.jpg" alt="">
+                                                <img src="images/portfolio-6.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -492,7 +489,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-7.jpg" alt="">
+                                                <img src="images/portfolio-7.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -542,7 +539,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-8.jpg" alt="">
+                                                <img src="images/portfolio-8.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -592,7 +589,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-9.jpg" alt="">
+                                                <img src="images/portfolio-9.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -642,7 +639,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-10.jpg" alt="">
+                                                <img src="images/portfolio-10.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -692,7 +689,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-11.jpg" alt="">
+                                                <img src="images/portfolio-11.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -742,7 +739,7 @@
                                                    placeat corporis quisquam dolorum at nesciunt.</p>
                                             </div>
                                             <div class="col-md-6">
-                                                <img src="images/portfolio-12.jpg" alt="">
+                                                <img src="images/portfolio-12.jpg" class="img-responsive" alt="">
                                             </div>
                                         </div>
                                     </div>

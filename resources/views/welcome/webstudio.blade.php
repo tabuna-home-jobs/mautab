@@ -22,12 +22,12 @@
                     </p>
 
 
-                    <ul class="download-btn">
+                    <ul class="download-btn text-center">
                         <li>
-                            <a href="#" class="btn btn-default btn-apple"> <i class="fa fa-apple"></i>App store</a>
+                            <a href="/auth/login" class="btn btn-default btn-apple">Войти</a>
                         </li>
                         <li>
-                            <a href="/auth/register" class="btn btn-default btn btn-blue"><i class="fa fa-windows"></i>Зарегистироваться</a>
+                            <a href="/auth/register" class="btn btn-default btn btn-blue">Зарегистироваться</a>
                         </li>
                     </ul>
 

@@ -3,6 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Изменения бутстрапа */
 a {
     outline: none !important;
 }
@@ -16,6 +17,27 @@ body.modal-open {
     border-radius: 0px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
+
+.panel, .form-control, .alert {
+    border-radius: inherit;
+}
+
+label {
+    font-weight: 500;
+}
+
+.panel-default > .panel-heading {
+    background-color: #99a4bd;
+    color: #fff;
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: #99a4bd;
+    color: #fff;
+}
+
+/* !Изменения бутстрапа */
 
 h1 {
     font-size: 52px;
@@ -383,7 +405,7 @@ footer p {
 }
 
 .info-box-icon {
-    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    background: #99a4bd none repeat scroll 0 0;
     border-radius: 2px 0 0 2px;
     display: block;
     float: left;
@@ -392,6 +414,7 @@ footer p {
     line-height: 90px;
     text-align: center;
     width: 90px;
+    color: #fff;
 }
 
 .info-box-content {

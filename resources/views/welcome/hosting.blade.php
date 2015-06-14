@@ -22,12 +22,12 @@
                     </p>
 
 
-                    <ul class="download-btn">
+                    <ul class="download-btn text-center">
                         <li>
-                            <a href="#" class="btn btn-default btn-apple"> <i class="fa fa-apple"></i>App store</a>
+                            <a href="/auth/login" class="btn btn-default btn-apple">Войти</a>
                         </li>
                         <li>
-                            <a href="/auth/register" class="btn btn-default btn btn-blue"><i class="fa fa-windows"></i>Зарегистироваться</a>
+                            <a href="/auth/register" class="btn btn-default btn btn-blue">Зарегистироваться</a>
                         </li>
                     </ul>
 
@@ -127,10 +127,7 @@
                                 <li><strong>50</strong> Баз данных</li>
                                 <li><strong>10</strong> Заданий</li>
                                 <li><strong>30Gb</strong> Диск</li>
-                                <li><strong>100Gb</strong> Траффик</li>
-                                <li><strong>Не ограниченное</strong> число FTP</li>
-                                <li><strong>3</strong> Резевных копии</li>
-                                <li>24/7 Поддержка</li>
+                                <li><strong>1</strong> Резевная копия</li>
                             </ul>
                         </div>
                         <footer class="pricing-footer">
@@ -151,10 +148,7 @@
                                 <li><strong>50</strong> Баз данных</li>
                                 <li><strong>10</strong> Заданий</li>
                                 <li><strong>30Gb</strong> Диск</li>
-                                <li><strong>100Gb</strong> Траффик</li>
-                                <li><strong>Не ограниченное</strong> число FTP</li>
                                 <li><strong>3</strong> Резевных копии</li>
-                                <li>24/7 Поддержка</li>
                             </ul>
                         </div>
                         <footer class="pricing-footer">
@@ -175,10 +169,7 @@
                                 <li><strong>50</strong> Баз данных</li>
                                 <li><strong>10</strong> Заданий</li>
                                 <li><strong>30Gb</strong> Диск</li>
-                                <li><strong>100Gb</strong> Траффик</li>
-                                <li><strong>Не ограниченное</strong> число FTP</li>
                                 <li><strong>3</strong> Резевных копии</li>
-                                <li>24/7 Поддержка</li>
                             </ul>
                         </div>
                         <footer class="pricing-footer">
