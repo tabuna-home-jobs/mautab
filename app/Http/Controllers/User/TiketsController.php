@@ -34,7 +34,7 @@ class TiketsController extends Controller {
 	 */
 	public function index()
 	{
-		$Tikets = User::find(Sentry::getUser()->id)->tiket()->where('tikets_id')->orderBy('id', 'desc')->simplePaginate(15);
+		$Tikets = User::find(Sentry::getUser()->id)->tiket()->where('tikets_id', 0)->orderBy('id', 'desc')->simplePaginate(15);
 
 		return view('user/tikets/index', ['Tikets' => $Tikets]);
 	}

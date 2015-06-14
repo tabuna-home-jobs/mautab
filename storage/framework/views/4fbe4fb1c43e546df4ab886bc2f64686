@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MauTab <?php echo e($title); ?> <?php echo $__env->yieldContent('title', ' - Профессиональное решение'); ?></title>
+    <title>MauTab <?php echo $__env->yieldContent('title', ' - Профессиональное решение'); ?></title>
     <meta name="description" content="<?php echo $__env->yieldContent('description', ' - Профессиональное решение'); ?>">
     <meta name="keywords" content="<?php echo $__env->yieldContent('keywords', ' - Профессиональное решение'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">

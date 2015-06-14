@@ -19,7 +19,7 @@ class UserController extends Controller
 	{
 		$Users = User::paginate(15);
 
-		return view('admin/users', ['Users' => $Users]);
+		return view('admin/users/users', ['Users' => $Users]);
 	}
 
 	/**
@@ -55,7 +55,7 @@ class UserController extends Controller
         $groups = Sentry::findAllGroups();
         $thisgroup = $User->getGroups();
 
-        return view('admin/usersEdit', ['user' => $User, 'groups' => $groups, 'thisgroup' => $thisgroup]);
+		return view('admin/users/usersEdit', ['user' => $User, 'groups' => $groups, 'thisgroup' => $thisgroup]);
 	}
 
 	/**

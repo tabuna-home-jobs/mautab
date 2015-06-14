@@ -31,7 +31,7 @@
 
                         <?php endif; ?>
                     </td>
-                    <td><a href="/tikets/<?php echo e($Tiket->id); ?>"><?php echo e(Lang::get('tikets.viewTable')); ?></a></td>
+                    <td><a href="<?php echo e(URL::route('hosting.tikets.show', $Tiket->id)); ?>"><?php echo e(Lang::get('tikets.viewTable')); ?></a></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

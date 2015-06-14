@@ -31,7 +31,7 @@
                             {{Lang::get('tikets.statusTrue')}}
                         @endif
                     </td>
-                    <td><a href="/tikets/{{ $Tiket->id }}">{{Lang::get('tikets.viewTable')}}</a></td>
+                    <td><a href="{{ URL::route('hosting.tikets.show', $Tiket->id) }}">{{Lang::get('tikets.viewTable')}}</a></td>
                 </tr>
             @endforeach
             </tbody>

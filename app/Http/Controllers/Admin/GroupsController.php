@@ -19,7 +19,7 @@ class GroupsController extends Controller
 	{
 		$Groups = Group::paginate(15);
 
-		return view('admin/groups', ['Groups' => $Groups]);
+		return view('admin/groups/groups', ['Groups' => $Groups]);
 	}
 
 	/**
@@ -40,7 +40,7 @@ class GroupsController extends Controller
 	public function store(GroupRequest $request)
 	{
 
-		try {
+
 			// Create the group
 			$group = Sentry::createGroup(array(
 				'name'        => $request->name,
@@ -49,11 +49,6 @@ class GroupsController extends Controller
 			Session::flash('good', 'Вы создали удалили группу.');
 
 			return redirect()->route('admin.groups.index');
-		} catch (Cartalyst\Sentry\Groups\NameRequiredException $e) {
-			echo 'Name field is required';
-		} catch (Cartalyst\Sentry\Groups\GroupExistsException $e) {
-			echo 'Group already exists';
-		}
 
 
 	}
@@ -69,7 +64,7 @@ class GroupsController extends Controller
 	{
 		$group = Sentry::findGroupById($id);
 
-		return view('admin/groupsEdit', ['group' => $group]);
+		return view('admin/groups/groupsEdit', ['group' => $group]);
 	}
 
 	/**
@@ -119,14 +114,9 @@ class GroupsController extends Controller
 	 */
 	public function destroy(GroupRequest $request)
 	{
-		try {
 			Sentry::findGroupById($request->id)->delete();
 			Session::flash('good', 'Вы успешно удалили группу.');
-
 			return redirect()->route('admin.groups.index');
-		} catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e) {
-			echo 'Group was not found.';
-		}
 	}
 
 }
