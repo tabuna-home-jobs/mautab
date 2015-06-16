@@ -1,9 +1,6 @@
 <?php echo $__env->make('header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
-
-
-
 <div class="web-open">
     <div>
         <img class="img-responsive" alt="banner" src="/images/background-auth.jpeg">
@@ -13,12 +10,12 @@
                 <div class="caption-info">
 
 
-
                     <div class="container container-auth">
 
 
                         <h1>Регистрация</h1>
-                <form action="/auth/register" method="post">
+
+                        <form action="/auth/register" method="post">
 
 
                 <?php if(count($errors) > 0): ?>
@@ -97,15 +94,10 @@
             <?php echo Form::token();; ?>
 
             <input type="submit" class="btn btn-blue" value="Зарегистрироваться">
-            </form>
-
+                        </form>
 
 
                     </div>
-
-
-
-
 
 
                 </div>
@@ -113,11 +105,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 
 
 <?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
