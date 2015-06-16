@@ -67,27 +67,25 @@
 
 
                                     <li class="parent megamenu promo">
-                                        <a href="#">Mega Menu<span class="item-new">New</span></a>
+                                        <a href="#">Продукты</a>
                                         <ul class="sub">
                                             <li class="sub-wrapper">
                                                 <div class="sub-list">
                                                     <div class="box closed">
-                                                        <h6 class="title">Savant Apple Integration</h6>
+                                                        <h6 class="title">Разработка веб проектов</h6>
                                                         <ul>
-                                                            <li><a href="#">iPad, iPod touch, iPhone &amp; Mac
-                                                                    Control</a></li>
-                                                            <li><a href="#">iPod touch Remote Control</a></li>
-                                                            <li><a href="#">Savant Host (Mac Mini)<span
-                                                                            class="item-new bg-warning">Wow</span></a>
+                                                            <li><a href="#">Веб-сайт</a></li>
+                                                            <li><a href="#">Веб-система</a></li>
+                                                            <li><a href="#">Веб-что то там</a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <!-- .box -->
 
                                                     <div class="box closed">
-                                                        <h6 class="title">Savant Audio/Video Control</h6>
+                                                        <h6 class="title">Поддержка</h6>
                                                         <ul>
-                                                            <li><a href="#">Distributed Audio &amp; Video</a></li>
+                                                            <li><a href="#">Хостинг сайтов</a></li>
                                                             <li><a href="#">Matrix Switchers</a></li>
                                                             <li><a href="#">Audio/Video Processing</a></li>
                                                         </ul>
@@ -95,23 +93,21 @@
                                                     <!-- .box -->
 
                                                     <div class="box closed">
-                                                        <h6 class="title">Savant Display Solutions</h6>
+                                                        <h6 class="title">Системы для бизнеса</h6>
                                                         <ul>
-                                                            <li><a href="#">Video Tiling<span
-                                                                            class="item-new">New</span></a></li>
-                                                            <li><a href="#">On-Screen Display</a></li>
-                                                            <li><a href="#">Digital Messaging</a></li>
+                                                            <li><a href="#">Система ведения проектов</a></li>
+                                                            <li><a href="#">Система управления контентом</a></li>
+                                                            <li><a href="#">Системы для бизнеса</a></li>
                                                         </ul>
                                                     </div>
                                                     <!-- .box -->
 
                                                     <div class="box closed">
-                                                        <h6 class="title">Savant Sound</h6>
+                                                        <h6 class="title">Инструменты SEO</h6>
                                                         <ul>
-                                                            <li><a href="#">Distributed Audio Controller</a></li>
-                                                            <li><a href="#">Multi-channel Amplifiers<span
-                                                                            class="item-new">New</span></a></li>
-                                                            <li><a href="#">Architectural Speakers</a></li>
+                                                            <li><a href="#">Контроль позиций сайта</a></li>
+                                                            <li><a href="#">Who Is</a></li>
+                                                            <li><a href="#">Узнать ТИЦ сайта</a></li>
                                                         </ul>
                                                     </div>
                                                     <!-- .box -->
@@ -129,12 +125,11 @@
                                                     <!-- .box -->
 
                                                     <div class="box closed">
-                                                        <h6 class="title">Savant Sound</h6>
+                                                        <h6 class="title">Войти\Зарегистироваться</h6>
                                                         <ul>
-                                                            <li><a href="#">Distributed Audio Controller</a></li>
-                                                            <li><a href="#">Multi-channel Amplifiers</a></li>
-                                                            <li><a href="#">Architectural Speakers<span
-                                                                            class="item-new">New</span></a></li>
+                                                            <li><a href="/auth/login">Войти</a></li>
+                                                            <li><a href="/auth/register">Зарегистироваться</a></li>
+                                                            <li><a href="#">Architectural Speakers</a></li>
                                                         </ul>
                                                     </div>
                                                     <!-- .box -->
