@@ -1,17 +1,20 @@
 @include('header')
 
 
-<div class="auth-container">
-<div class="container text-center">
-    <h1>Опришлите ещё раз</h1>
-</div>
+<div class="web-open">
+    <div>
+        <img class="img-responsive" alt="banner" src="/images/background-auth.jpeg">
+
+        <div class="caption">
+            <div class="caption-wrapper">
+                <div class="caption-info">
 
 
-    <div class="container">
-        <div class="app-container text-center">
+                    <div class="container container-auth">
 
+                        <h1>Опришлите ещё раз</h1>
 
-            <form action="/auth/repeat" class="col-md-6 col-md-offset-3" method="post">
+                        <form action="/auth/repeat" method="post">
 
 
                 @if (session('status'))
@@ -40,18 +43,16 @@
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="submit" class="btn btn-blue" value="Востановить пароль">
-        </form>
+                        </form>
 
 
+                    </div>
 
 
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-
-</header>
-
-
 </div>
 
 

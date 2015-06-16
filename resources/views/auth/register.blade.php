@@ -1,18 +1,21 @@
 @include('header')
 
 
-<div class="auth-container">
+<div class="web-open">
+    <div>
+        <img class="img-responsive" alt="banner" src="/images/background-auth.jpeg">
 
-    <div class="container text-center">
-    <h1>Регистрация</h1>
-</div>
-
-
-    <div class="container">
-        <div class="app-container text-center">
+        <div class="caption">
+            <div class="caption-wrapper">
+                <div class="caption-info">
 
 
-            <form action="/auth/register" method="post" class="col-md-6 col-md-offset-3">
+                    <div class="container container-auth">
+
+
+                        <h1>Регистрация</h1>
+
+                        <form action="/auth/register" method="post">
 
 
                 @if (count($errors) > 0)
@@ -77,20 +80,17 @@
 
             {!!  Form::token(); !!}
             <input type="submit" class="btn btn-blue" value="Зарегистрироваться">
-            {!! Form::close() !!}
+                        </form>
 
 
+                    </div>
 
 
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-
-</div>
-
-
-
-
 
 
 @include('footer')

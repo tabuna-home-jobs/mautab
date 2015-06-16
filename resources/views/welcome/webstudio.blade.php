@@ -1,7 +1,7 @@
 @include('header')
 
 
-<div id="home" class="web-open hidden-xs">
+<div class="web-open hidden-xs">
     <div>
         <img class="img-responsive" alt="banner" src="/images/open.jpg">
 

@@ -1,16 +1,19 @@
 @include('header')
 
-<div class="auth-container">
-<div class="container text-center">
+
+<div class="web-open">
+    <div>
+        <img class="img-responsive" alt="banner" src="/images/background-auth.jpeg">
+
+        <div class="caption">
+            <div class="caption-wrapper">
+                <div class="caption-info">
+
+
+                    <div class="container container-auth">
     <h1>Активация аккаунта</h1>
-</div>
 
-
-    <div class="container">
-        <div class="app-container text-center">
-
-
-            <form action="/auth/action" class="col-md-6 col-md-offset-3" method="post">
+                        <form action="/auth/action" method="post">
 
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
@@ -42,12 +45,16 @@
             <input type="submit" class="btn btn-blue" value="Активировать">
 
             <p><a href="/auth/repeat/">Мне не пришёл код сообщения?</a></p>
-        </form>
+                        </form>
 
 
-    </div>
+                    </div>
+
+
+                </div>
 </div>
-
+        </div>
+    </div>
 </div>
 
 

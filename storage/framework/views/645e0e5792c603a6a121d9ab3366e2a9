@@ -1,7 +1,7 @@
 <?php echo $__env->make('header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
-<div id="home" class="web-open hidden-xs">
+<div class="web-open hidden-xs">
     <div>
         <img class="img-responsive" alt="banner" src="/images/open.jpg">
 
