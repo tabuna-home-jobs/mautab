@@ -148,6 +148,10 @@ return [
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 		Collective\Remote\RemoteServiceProvider::class,
 		Cartalyst\Sentry\SentryServiceProvider::class,
+
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
 	],
 
 	/*
@@ -206,6 +210,8 @@ return [
 		'Vesta'     => Mautab\Facades\VestaFacades::class,
 		'SSH'       => Collective\Remote\RemoteFacade::class,
 		'Sentry'    => Cartalyst\Sentry\Facades\Laravel\Sentry::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 	],
 
 ];
