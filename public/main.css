@@ -41,13 +41,13 @@ label {
 }
 
 .panel-default > .panel-heading {
-    background-color: #99a4bd;
+    background-color: #605ca8;
     color: #fff;
     text-align: center;
 }
 
 .jumbotron {
-    background-color: #99a4bd;
+    background-color: #605ca8;
     color: #fff;
 }
 
@@ -352,7 +352,7 @@ footer p {
 /* menuapp */
 
 .menuapp {
-    padding-top: 70px;
+    padding-top: 80px;
     padding-bottom: 20px;
 }
 
@@ -1142,4 +1142,8 @@ footer p {
 .container-auth h1 {
     color: #1e1e1e;
 }
-
+.btn-danger {
+    color: #fff;
+    background-color: #d62828;
+    border-color: #c90000;
+}
