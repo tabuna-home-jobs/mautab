@@ -8,6 +8,7 @@
 		Route::resource('/patner', 'WelcomePartnerController@index');
 		Route::resource('/', 'WelcomeAboutController@index');
 		Route::resource('page', 'PageController');
+        Route::resource('whois', 'WhoisController');
 	});
 
 

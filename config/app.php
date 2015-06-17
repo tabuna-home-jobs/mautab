@@ -208,6 +208,7 @@ return [
 		'HTML'      => Illuminate\Html\HtmlFacade::class,
 
 		'Vesta'     => Mautab\Facades\VestaFacades::class,
+        'Whois' => Mautab\Facades\WhoisFacades::class,
 		'SSH'       => Collective\Remote\RemoteFacade::class,
 		'Sentry'    => Cartalyst\Sentry\Facades\Laravel\Sentry::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,

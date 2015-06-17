@@ -3,12 +3,11 @@
 
 use Illuminate\Support\Facades\Facade;
 
-	class VestaFacades extends Facade
+class VestaFacades extends Facade
 	{
 
 
 
-// extends Facade
     /**
      * Получить зарегистрированное имя компонента.
      *
@@ -16,7 +15,7 @@ use Illuminate\Support\Facades\Facade;
      */
 		protected static function getFacadeAccessor()
 		{
-			return 'Mautab\Services\Vesta';
+            return 'Mautab\Services\VestaAPI\Vesta';
     }
 
 }

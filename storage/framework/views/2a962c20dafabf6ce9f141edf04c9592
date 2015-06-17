@@ -105,11 +105,11 @@
                                                 </div>
 
                                                 <div class="btn-group pull-right" role="group">
-                                                    <a href="<?php echo e(URL::route('records.show', $nameDns)); ?>" class="btn btn-default">
+                                                    <a href="<?php echo e(URL::route('hosting.records.show', $nameDns)); ?>" class="btn btn-default">
                                                         <i class="fa fa-server"></i>
                                                     </a>
 
-                                                    <a href="<?php echo e(URL::route('dns.show', $nameDns)); ?>" class="btn btn-default">
+                                                    <a href="<?php echo e(URL::route('hosting.dns.show', $nameDns)); ?>" class="btn btn-default">
                                                         <i class="fa fa-pencil-square-o"></i>
                                                     </a>
 
@@ -136,7 +136,7 @@
 
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <form action="<?php echo e(URL::route('dns.destroy')); ?>" method="post">
+                                                            <form action="<?php echo e(URL::route('hosting.dns.destroy')); ?>" method="post">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                                                 <button type="submit" class="button-small">Да</button>
                                                                 <input type="hidden" name="v_domain" value="<?php echo e($nameDns); ?>"/>

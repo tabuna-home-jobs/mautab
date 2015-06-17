@@ -1,13 +1,7 @@
-<?php namespace Mautab\Services;
+<?php namespace Mautab\Services\VestaAPI;
 
 use Config;
 use Mautab\Exceptions\VestaExceptions;
-use Mautab\Services\VestaAPI\VestaBD;
-use Mautab\Services\VestaAPI\VestaCron;
-use Mautab\Services\VestaAPI\VestaDNS;
-use Mautab\Services\VestaAPI\VestaService;
-use Mautab\Services\VestaAPI\VestaUser;
-use Mautab\Services\VestaAPI\VestaWeb;
 use Sentry;
 use SSH;
 

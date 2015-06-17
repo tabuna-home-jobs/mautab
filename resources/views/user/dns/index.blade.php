@@ -107,11 +107,13 @@
                                                 </div>
 
                                                 <div class="btn-group pull-right" role="group">
-                                                    <a href="{{URL::route('records.show', $nameDns)}}" class="btn btn-default">
+                                                    <a href="{{URL::route('hosting.records.show', $nameDns)}}"
+                                                       class="btn btn-default">
                                                         <i class="fa fa-server"></i>
                                                     </a>
 
-                                                    <a href="{{URL::route('dns.show', $nameDns)}}" class="btn btn-default">
+                                                    <a href="{{URL::route('hosting.dns.show', $nameDns)}}"
+                                                       class="btn btn-default">
                                                         <i class="fa fa-pencil-square-o"></i>
                                                     </a>
 
@@ -137,7 +139,8 @@
                                                             Вы действительно хотите удалить {{$nameDns}}
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <form action="{{URL::route('dns.destroy')}}" method="post">
+                                                            <form action="{{URL::route('hosting.dns.destroy')}}"
+                                                                  method="post">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                                                 <button type="submit" class="button-small">Да</button>
                                                                 <input type="hidden" name="v_domain" value="{{$nameDns}}"/>
