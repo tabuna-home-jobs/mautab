@@ -4,8 +4,8 @@ namespace Mautab\Http\Controllers\Guest;
 
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
+use Mautab\Http\Requests\SEO\WhoisRequest;
 use Mautab\Services\Whois\Whois;
-
 
 class WhoisController extends Controller
 {
@@ -35,16 +35,19 @@ class WhoisController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(WhoisRequest $request)
     {
 
-        $domain = new Whois($sld);
+        $domain = new Whois($request->domain);
+
 
         if (!$domain->isAvailable()) {
             $result = $domain->info();
+        } else {
+            $result = "Домен свободен";
         }
 
-        return view('seo/whois', ['result' => $result]);
+        return view('seo/whois')->withName($result);
 
     }
 
