@@ -26,7 +26,6 @@ class AddWebRequest extends Request
 
 		return [
 			'v_domain' => 'max:255',
-			'v_ip'     => 'ip',
 		];
 	}
 

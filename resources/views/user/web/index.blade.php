@@ -116,10 +116,10 @@
                                             <a href="http://{{$key}}/" target="_blank" class="btn btn-default">
                                                 <i class="fa fa-sign-in"></i>
                                             </a>
-                                            <a href="{{URL::route('ftp.show', $key)}}" class="btn btn-default">
+                                            <a href="{{URL::route('hosting.ftp.show', $key)}}" class="btn btn-default">
                                                 <i class="fa fa-plus"></i>
                                             </a>
-                                            <a href="{{URL::route('web.show', $key)}}" class="btn btn-default">
+                                            <a href="{{URL::route('hosting.web.show', $key)}}" class="btn btn-default">
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
 

@@ -114,10 +114,10 @@
                                             <a href="http://<?php echo e($key); ?>/" target="_blank" class="btn btn-default">
                                                 <i class="fa fa-sign-in"></i>
                                             </a>
-                                            <a href="<?php echo e(URL::route('ftp.show', $key)); ?>" class="btn btn-default">
+                                            <a href="<?php echo e(URL::route('hosting.ftp.show', $key)); ?>" class="btn btn-default">
                                                 <i class="fa fa-plus"></i>
                                             </a>
-                                            <a href="<?php echo e(URL::route('web.show', $key)); ?>" class="btn btn-default">
+                                            <a href="<?php echo e(URL::route('hosting.web.show', $key)); ?>" class="btn btn-default">
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
 

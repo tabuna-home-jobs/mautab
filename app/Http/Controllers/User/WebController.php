@@ -1,10 +1,12 @@
 <?php namespace Mautab\Http\Controllers\User;
 
+use Config;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\AddWebRequest;
 use Mautab\Http\Requests\ChangeWebRequest;
 use Mautab\Http\Requests\RemoveWebRequest;
 use Request;
+use Sentry;
 use Session;
 use Vesta;
 
@@ -40,14 +42,16 @@ class WebController extends Controller {
 	//Добавление веб домена
 	public function store(AddWebRequest $request)
 	{
+        $UserIP = (string)Config::get('vesta.server')[Sentry::getUser()->server]['ip'];
+
 
 		//Добавление нового домена
-		Vesta::addWebDomain($request->v_domain, $request->v_ip);
+        Vesta::addWebDomain($request->v_domain, $UserIP);
 
 		//Добавление поддержки днс
 		//if ($request->v_dns == 'on') {
 		// !! Поддержка днс пускай будет по умолчанию  !!
-			Vesta::addDns($request->v_domain, $request->v_ip);
+        Vesta::addDns($request->v_domain, $UserIP);
 		//}
 
 		//Убираем почту до лучших времён
