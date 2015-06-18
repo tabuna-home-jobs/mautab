@@ -744,26 +744,26 @@
         },
         {
             "name": "laravelcollective/remote",
-            "version": "v5.0.1",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/remote.git",
-                "reference": "fde27073ef465626dd042c4d080e811c1813eded"
+                "reference": "bb0cdfb7e846ef15fdf13a0fb3cd0ff8215b7f8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/remote/zipball/fde27073ef465626dd042c4d080e811c1813eded",
-                "reference": "fde27073ef465626dd042c4d080e811c1813eded",
+                "url": "https://api.github.com/repos/LaravelCollective/remote/zipball/bb0cdfb7e846ef15fdf13a0fb3cd0ff8215b7f8e",
+                "reference": "bb0cdfb7e846ef15fdf13a0fb3cd0ff8215b7f8e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/filesystem": "~5.0",
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0",
+                "illuminate/filesystem": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "php": ">=5.5.9",
                 "phpseclib/phpseclib": "0.3.*"
             },
             "require-dev": {
-                "illuminate/console": "~5.0",
+                "illuminate/console": "5.1.*",
                 "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0"
             },
@@ -779,6 +779,10 @@
             ],
             "authors": [
                 {
+                    "name": "Tom Shafer",
+                    "email": "tj@tjshafer.com"
+                },
+                {
                     "name": "Taylor Otwell",
                     "email": "taylorotwell@gmail.com"
                 }
@@ -789,7 +793,7 @@
                 "laravel",
                 "remote"
             ],
-            "time": "2015-04-23 14:40:09"
+            "time": "2015-06-18 02:58:27"
         },
         {
             "name": "league/flysystem",
@@ -2209,16 +2213,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.4",
+            "version": "v1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "b5202eb9e83f8db52e0e58867e0a46e63be8332e"
+                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/b5202eb9e83f8db52e0e58867e0a46e63be8332e",
-                "reference": "b5202eb9e83f8db52e0e58867e0a46e63be8332e",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f4a91702ca3cd2e568c3736aa031ed00c3752af4",
+                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4",
                 "shasum": ""
             },
             "require": {
@@ -2273,7 +2277,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-12-23 22:40:37"
+            "time": "2015-06-17 12:21:22"
         },
         {
             "name": "doctrine/cache",
@@ -3129,16 +3133,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.7.3",
+            "version": "4.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "41fea1e84ed84d373f5ac099a1276c4358c90708"
+                "reference": "e5f851f324f7add846316f39e668e9deac97a103"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/41fea1e84ed84d373f5ac099a1276c4358c90708",
-                "reference": "41fea1e84ed84d373f5ac099a1276c4358c90708",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e5f851f324f7add846316f39e668e9deac97a103",
+                "reference": "e5f851f324f7add846316f39e668e9deac97a103",
                 "shasum": ""
             },
             "require": {
@@ -3152,7 +3156,7 @@
                 "phpunit/php-code-coverage": "~2.1",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
-                "phpunit/php-timer": "~1.0",
+                "phpunit/php-timer": ">=1.0.6",
                 "phpunit/phpunit-mock-objects": "~2.3",
                 "sebastian/comparator": "~1.1",
                 "sebastian/diff": "~1.2",
@@ -3197,7 +3201,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-11 16:20:25"
+            "time": "2015-06-18 13:33:26"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

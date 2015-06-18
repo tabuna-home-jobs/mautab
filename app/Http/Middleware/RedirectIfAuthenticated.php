@@ -1,7 +1,6 @@
 <?php namespace Mautab\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\RedirectResponse;
 use Sentry;
 
 class RedirectIfAuthenticated {
@@ -19,7 +18,7 @@ class RedirectIfAuthenticated {
 	{
 		if (Sentry::check())
 		{
-			return new RedirectResponse(url('/hosting/home'));
+            //return new RedirectResponse(url('/hosting/home'));
 		}
 		return $next($request);
 	}

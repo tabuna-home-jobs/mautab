@@ -36,7 +36,7 @@ body.modal-open {
     border-radius: inherit;
 }
 
-label {
+label, strong {
     font-weight: 500;
 }
 
@@ -1146,4 +1146,75 @@ footer p {
     color: #fff;
     background-color: #d62828;
     border-color: #c90000;
+}
+
+/* О нас */
+
+.background-about {
+    background: url("/images/background-about.jpg") no-repeat;
+    background-size: 100%;
+    color: #fff;
+}
+
+.background-about > div {
+    background: rgba(0, 0, 0, 0.5);
+    background-size: 100%;
+}
+
+.about-title {
+    margin-top: 80px;
+}
+
+.separator {
+    height: 1px;
+    margin: 20px auto 15px;
+    position: relative;
+    width: 100%;
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.5) 35%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%) repeat scroll 0 0;
+}
+
+.feature-box-2 {
+    margin-bottom: 30px;
+}
+
+.feature-box-2 .icon.without-bg {
+    height: 0;
+    width: 0;
+}
+
+.feature-box-2.boxed .icon {
+    left: 20px;
+    top: 20px;
+}
+
+.icon.small {
+    font-size: 18px;
+    height: 45px;
+    line-height: 43px;
+    width: 45px;
+}
+
+.feature-box-2 .body {
+    margin-left: 62px;
+}
+
+.feature-box-2.right .body {
+    margin-left: 0;
+    margin-right: 62px;
+    text-align: right;
+}
+
+.feature-box-2 .icon {
+    right: 40px;
+    background-color: transparent;
+    color: inherit;
+    font-size: 36px;
+    height: 100%;
+    line-height: 1;
+}
+
+@media (max-width: 991px) {
+    .feature-box-2:not(.boxed) {
+        padding-bottom: 0;
+    }
 }
