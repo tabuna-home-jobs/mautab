@@ -146,7 +146,7 @@ body > header .social-info li a:hover {
 .banner {
     background-size: cover;
     position: relative;
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
 }
 
 .banner .app-img {
@@ -1152,13 +1152,13 @@ footer p {
 
 .background-about {
     background: url("/images/background-about.jpg") no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     color: #fff;
 }
 
 .background-about > div {
     background: rgba(0, 0, 0, 0.5);
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 
 .about-title {
@@ -1218,3 +1218,14 @@ footer p {
         padding-bottom: 0;
     }
 }
+
+/* !О нас */
+
+/* Отзывы */
+.testimonial {
+    padding: 10px;
+}
+
+/* !Отзывы */
+
+

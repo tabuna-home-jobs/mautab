@@ -7,7 +7,7 @@
     <meta name="description" content="<?php echo $__env->yieldContent('description', ' - Профессиональное решение'); ?>">
     <meta name="keywords" content="<?php echo $__env->yieldContent('keywords', ' - Профессиональное решение'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="robots" content="none"/>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- Fonts -->

@@ -7,7 +7,7 @@
     <meta name="description" content="@yield('description', ' - Профессиональное решение')">
     <meta name="keywords" content="@yield('keywords', ' - Профессиональное решение')">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="robots" content="none"/>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- Fonts -->

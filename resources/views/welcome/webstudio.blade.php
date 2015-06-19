@@ -112,36 +112,6 @@
 </div>
 
 
-<div class="container">
-
-    <div class="process">
-        <h1 class="text-center title">Процес создания</h1>
-
-        <div class="separator"></div>
-        <p class="lead text-center">Интересные или нестандатрные работы с подробным описанием проделанной работы</p>
-        <br>
-
-        <ul class="row text-center list-inline">
-            <li>
-                <span><i class="fa fa-history"></i><b>Получаем заявку</b></span>
-            </li>
-            <li>
-                <span><i class="fa fa-puzzle-piece"></i><b>Согласуем ТЗ</b></span>
-            </li>
-            <li>
-                <span><i class="fa fa-database"></i><b>Разработка</b></span>
-            </li>
-            <li>
-                <span><i class="fa fa-magic"></i><b>Интеграция</b></span>
-            </li>
-            <li>
-                <span><i class="fa fa-cloud-upload"></i><b>Продвижение</b></span>
-            </li>
-        </ul>
-    </div>
-</div>
-
-
 
 
 
