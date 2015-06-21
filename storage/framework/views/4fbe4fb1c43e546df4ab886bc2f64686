@@ -125,12 +125,12 @@
 
                                                 <div class="promo-block text-right">
 
-                                                <?php if(!Sentry::check()): ?>
+                                                    <?php if(!Sentry::check()): ?>
                                                     <p><a href="/auth/login">Войти</a></p>
                                                     <p><a href="/auth/register">Зарегистироваться</a></p>
-                                                <?php else: ?>
-                                                    <p><a href="/auth/logout">Выйти</a></p>
-                                                <?php endif; ?>
+                                                    <?php else: ?>
+                                                        <p><a href="/auth/logout">Выйти</a></p>
+                                                    <?php endif; ?>
 
                                                     <a href="#">
                                                         <img height="260" alt="" class="replace-2x"
