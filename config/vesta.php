@@ -7,8 +7,8 @@
 			'testVDS' => [
 				'ip'       => '193.111.141.198',
 				'login'    => 'admin',
-				'password' => '03af4dE1',
-				'ssh'      => '03af4dE1',
+				'password' => '03af4dE10',
+				'ssh'      => '03af4dE10',
 			],
 
 			'Server2' => [
