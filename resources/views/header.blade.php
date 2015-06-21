@@ -74,9 +74,9 @@
                                                     <div class="box closed">
                                                         <h6 class="title">Разработка веб проектов</h6>
                                                         <ul>
-                                                            <li><a href="#">Веб-сайт</a></li>
-                                                            <li><a href="#">Веб-система</a></li>
-                                                            <li><a href="#">Веб-что то там</a>
+                                                            <li><a href="#">Корпоративный</a></li>
+                                                            <li><a href="#">Интернет магазин</a></li>
+                                                            <li><a href="#">Лейдинг</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -85,9 +85,11 @@
                                                     <div class="box closed">
                                                         <h6 class="title">Поддержка</h6>
                                                         <ul>
-                                                            <li><a href="#">Хостинг сайтов</a></li>
-                                                            <li><a href="#">Matrix Switchers</a></li>
-                                                            <li><a href="#">Audio/Video Processing</a></li>
+                                                            <li><a href="#">Хостинг</a></li>
+                                                            <li><a href="#">Доступность24 <span
+                                                                            class="badge">Скоро</span></a></li>
+                                                            <li><a href="#">Audio/Video Processing <span class="badge">Скоро</span></a>
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                     <!-- .box -->
@@ -95,9 +97,12 @@
                                                     <div class="box closed">
                                                         <h6 class="title">Системы для бизнеса</h6>
                                                         <ul>
-                                                            <li><a href="#">Система ведения проектов</a></li>
-                                                            <li><a href="#">Система управления контентом</a></li>
-                                                            <li><a href="#">Системы для бизнеса</a></li>
+                                                            <li><a href="#">Ведения проектов <span
+                                                                            class="badge">Скоро</span></a></li>
+                                                            <li><a href="#">Управления контентом <span class="badge">Скоро</span></a>
+                                                            </li>
+                                                            <li><a href="#">Учёт времени <span
+                                                                            class="badge">Скоро</span></a></li>
                                                         </ul>
                                                     </div>
                                                     <!-- .box -->
@@ -105,42 +110,32 @@
                                                     <div class="box closed">
                                                         <h6 class="title">Инструменты SEO</h6>
                                                         <ul>
-                                                            <li><a href="#">Контроль позиций сайта</a></li>
-                                                            <li><a href="#">Who Is</a></li>
-                                                            <li><a href="#">Узнать ТИЦ сайта</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- .box -->
-
-                                                    <div class="box closed">
-                                                        <h6 class="title">Savant Display Solutions</h6>
-                                                        <ul>
-                                                            <li><a href="#">Video Tiling<span
-                                                                            class="item-new bg-success">Coming Soon</span></a>
+                                                            <li><a href="#">Контроль позиций <span
+                                                                            class="badge">Скоро</span></a></li>
+                                                            <li><a href="/whois">Who Is</a></li>
+                                                            <li><a href="#">Оптимизация <span class="badge">Скоро</span></a>
                                                             </li>
-                                                            <li><a href="#">On-Screen Display</a></li>
-                                                            <li><a href="#">Digital Messaging</a></li>
                                                         </ul>
                                                     </div>
                                                     <!-- .box -->
 
-                                                    <div class="box closed">
-                                                        <h6 class="title">Войти\Зарегистироваться</h6>
-                                                        <ul>
-                                                            <li><a href="/auth/login">Войти</a></li>
-                                                            <li><a href="/auth/register">Зарегистироваться</a></li>
-                                                            <li><a href="#">Architectural Speakers</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- .box -->
+
                                                 </div>
                                                 <!-- .sub-list -->
 
                                                 <div class="promo-block text-right">
+
+
+                                                    <p><a href="/auth/login">Войти</a></p>
+
+                                                    <p><a href="/auth/register">Зарегистироваться</a></p>
+
+
                                                     <a href="#">
-                                                        <img width="253" height="457" alt="" class="replace-2x"
+                                                        <img height="260" alt="" class="replace-2x"
                                                              src="http://template.progressive.itembridge.com/3.0.1/content/img/megamenu-big.jpg">
                                                     </a>
+
                                                 </div>
                                                 <!-- .promo-block -->
                                             </li>
