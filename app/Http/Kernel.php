@@ -31,6 +31,7 @@ class Kernel extends HttpKernel {
 		'user'    => 'Mautab\Http\Middleware\UserRole',
 		'sentry'  => 'Mautab\Http\Middleware\SentryMiddleware',
 		'LoginAs' => 'Mautab\Http\Middleware\LoginAsMiddleware',
+		'IsActiveHosting' => 'Mautab\Http\Middleware\Hosting\IsActiveHosting',
 	];
 
 }

@@ -21,8 +21,8 @@
 	});
 
 
-	// Всё для пользователя
-	Route::group(['middleware' => ['sentry', 'LoginAs', 'user'], 'prefix' => 'hosting', 'namespace' => 'User'], function () {
+	// Хостинг
+	Route::group(['middleware' => ['IsActiveHosting', 'sentry', 'LoginAs', 'user'], 'prefix' => 'hosting', 'namespace' => 'User'], function () {
 		Route::resource('web', 'WebController');
 		Route::resource('ftp', 'FtpController');
 		Route::resource('dns', 'DnsController');

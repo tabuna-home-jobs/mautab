@@ -24,12 +24,10 @@ class AuthRequestReg extends Request
 	public function rules()
 	{
 		return [
-			'nickname' => 'required|max:255|unique:users',
 			'name'     => 'required|max:255',
 			'lastname' => 'required|max:255',
 			'email'    => 'required|email|max:255|unique:users',
 			'password' => 'required|confirmed|min:6',
-			'package'  => 'required|integer|between:0,2'
 		];
 	}
 

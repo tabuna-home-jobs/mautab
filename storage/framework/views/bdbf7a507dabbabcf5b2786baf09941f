@@ -31,14 +31,6 @@
 
 
             <div class="form-group">
-
-                <?php echo Form::label('nickname', 'Псевдоним', array('class' => 'control-label')); ?>
-
-                <?php echo Form::text('nickname', @$nickname, array('size'=> '50','class' => 'form-control')); ?>
-
-            </div>
-
-            <div class="form-group">
                 <?php echo Form::label('name', 'Имя', array('class' => 'control-label')); ?>
 
                 <?php echo Form::text('name', @$name, array('size'=> '50','class' => 'form-control')); ?>
@@ -49,20 +41,6 @@
                 <?php echo Form::label('lastname', 'Фамилия', array('class' => 'control-label')); ?>
 
                 <?php echo Form::text('lastname', @$lastname, array('size'=> '50','class' => 'form-control')); ?>
-
-            </div>
-
-
-            <div class="form-group">
-                <?php echo Form::label('package', 'Тарифный план', array('class' => 'control-label')); ?>
-
-
-                <?php echo Form::select('package', array(
-                '0' => 'Любительский',
-                '1' => 'Профессиональный',
-                '2' => 'Корпоративный'),
-                null,
-                array('class' => 'form-control')); ?>
 
             </div>
 

@@ -1,4 +1,4 @@
-@include('header')
+<?php echo $__env->make('header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 <div class="web-open">
@@ -18,21 +18,21 @@
                         <form action="/auth/hosting" method="post">
 
 
-                            @if (count($errors) > 0)
+                            <?php if(count($errors) > 0): ?>
                                 <div class="alert alert-danger">
                                     <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
                                     <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
+                                        <?php foreach($errors->all() as $error): ?>
+                                            <li><?php echo e($error); ?></li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </div>
-                            @endif
+                            <?php endif; ?>
 
 
                             <div class="form-group">
                                 <label for="nickname">Псевдоним</label>
-                                <input type="text" name="nickname" size="50" value="{{old('nickname')}}"
+                                <input type="text" name="nickname" size="50" value="<?php echo e(old('nickname')); ?>"
                                        class="form-control">
                             </div>
 
@@ -47,7 +47,7 @@
                             </div>
 
                             <input type="hidden" name="_method" value="PUT">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                             <input type="submit" class="btn btn-blue" value="Зарегистрироваться">
                         </form>
 
@@ -62,7 +62,7 @@
 </div>
 
 
-@include('footer')
+<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 

@@ -4,6 +4,7 @@ use Config;
 use Mautab\Events\SendMailAction;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\Auth\ActionRequest;
+use Mautab\Http\Requests\Auth\AuthRegHostingRequest;
 use Mautab\Http\Requests\Auth\AuthRequest;
 use Mautab\Http\Requests\Auth\AuthRequestReg;
 use Mautab\Http\Requests\Auth\RepeatRequest;
@@ -43,20 +44,19 @@ class AuthController extends Controller {
 		return view('auth/register');
 	}
 
-
-	public function postRegister(AuthRequestReg $request)
+	public function getHosting()
 	{
-		// Create the user
-		$user = Sentry::createUser(array(
-			'nickname'   => $request->nickname,
-			'first_name' => $request->name,
-			'last_name'  => $request->lastname,
-			'email'      => $request->email,
-			'package'    => $request->package,
-			'password'   => $request->password,
-			'server' => (string)Config::get('vesta.primary'),
-		));
+		return view('auth/registerHosting');
+	}
 
+	public function putHosting(AuthRegHostingRequest $request)
+	{
+		$user           = Sentry::getUser();
+		$user->nickname = $request->nickname;
+		$user->package  = $request->package;
+		$user->server   = (string)Config::get('vesta.primary');
+		$user->addGroup(Sentry::findGroupByName('Hosting'));
+		$user->save();
 
 		$def_package = array(0 => 'starter',
 		                     1 => 'professional',
@@ -69,7 +69,22 @@ class AuthController extends Controller {
 			}
 		}
 
-		Vesta::regUser($request->nickname, $request->password, $request->email, 'default', $request->name, $request->lastname);
+		Vesta::regUser($user->nickname, $user->password, $user->email, 'default', $user->name, $user->lastname);
+
+		return redirect()->route('hosting.home.index');
+
+	}
+
+
+	public function postRegister(AuthRequestReg $request)
+	{
+		// Create the user
+		$user = Sentry::createUser(array(
+			'first_name' => $request->name,
+			'last_name'  => $request->lastname,
+			'email'      => $request->email,
+			'password'   => $request->password,
+		));
 
 
 		$activationCode = $user->getActivationCode();
@@ -88,8 +103,6 @@ class AuthController extends Controller {
 
 	public function getAction($email = NULL, $activationCode = NULL)
 	{
-
-
 		if (is_null($email) || is_null($activationCode))
 			return view('auth/action', ['email' => $email]);
 		else {
@@ -99,7 +112,7 @@ class AuthController extends Controller {
 				$user->addGroup($adminGroup);
 				Sentry::loginAndRemember($user);
 
-				return redirect()->route('hosting.home.index');
+				return redirect('/');
 			} else {
 				return redirect()->back()->withErrors(array('Ключ не подходит к email'));
 			}

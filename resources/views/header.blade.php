@@ -125,11 +125,12 @@
 
                                                 <div class="promo-block text-right">
 
-
+                                                    @if(!Sentry::check())
                                                     <p><a href="/auth/login">Войти</a></p>
-
                                                     <p><a href="/auth/register">Зарегистироваться</a></p>
-
+                                                    @else
+                                                        <p><a href="/auth/logout">Выйти</a></p>
+                                                    @endif
 
                                                     <a href="#">
                                                         <img height="260" alt="" class="replace-2x"

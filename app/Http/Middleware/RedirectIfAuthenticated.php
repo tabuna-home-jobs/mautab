@@ -20,6 +20,7 @@ class RedirectIfAuthenticated {
 		{
             //return new RedirectResponse(url('/hosting/home'));
 		}
+
 		return $next($request);
 	}
 
