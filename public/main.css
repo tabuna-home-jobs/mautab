@@ -14,8 +14,6 @@ body > footer {
     bottom: 0;
     width: 100%;
     height: 65px;
-    height: inherit;
-
 }
 
 /* Изменения бутстрапа */
@@ -362,7 +360,7 @@ footer p {
     font-size: 15px;
 }
 
-.menuapp a:hover {
+.menuapp a:hover, .menuapp a.active {
     color: #00afec;
     text-decoration: none;
 }

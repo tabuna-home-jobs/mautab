@@ -2,7 +2,8 @@
 
     <div class="col-md-2 col-sm-4 col-xs-6">
 
-        <a href="{{URL::route('hosting.home.index')}}">
+        <a href="{{URL::route('hosting.home.index')}}"
+           class="{{Active::route('hosting.home.*')}}">
             <span class="fa fa-user"></span>
             <h4>{{Lang::get('menu.user')}}</h4>
         </a>
@@ -15,7 +16,8 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.web.index')}}">
+        <a href="{{URL::route('hosting.web.index')}}"
+           class="{{Active::route('hosting.web.*')}}">
             <span class="fa fa-desktop"></span>
             <h4>{{Lang::get('menu.Web')}}</h4>
         </a>
@@ -28,7 +30,8 @@
 
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.dns.index')}}">
+        <a href="{{URL::route('hosting.dns.index')}}"
+           class="{{Active::route('hosting.dns.*')}}">
             <span class="fa fa-sitemap"></span>
             <h4>{{Lang::get('menu.DNS')}}</h4>
         </a>
@@ -39,7 +42,8 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.bd.index')}}">
+        <a href="{{URL::route('hosting.bd.index')}}"
+           class="{{Active::route('hosting.bd.*')}}">
             <span class="fa fa-database"></span>
             <h4>{{Lang::get('menu.BD')}}</h4>
         </a>
@@ -48,7 +52,8 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.cron.index')}}">
+        <a href="{{URL::route('hosting.cron.index')}}"
+           class="{{Active::route('hosting.cron.*')}}">
             <span class="fa fa-clock-o"></span>
             <h4>{{Lang::get('menu.Cron')}}</h4>
         </a>
@@ -57,7 +62,8 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.tikets.index')}}">
+        <a href="{{URL::route('hosting.tikets.index')}}"
+           class="{{Active::route('hosting.tikets.*')}}">
             <span class="fa fa-life-ring"></span>
             <h4>{{Lang::get('menu.support')}}</h4>
         </a>

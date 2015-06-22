@@ -151,7 +151,7 @@ return [
 
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-
+		Watson\Active\ActiveServiceProvider::class,
 	],
 
 	/*
@@ -213,6 +213,7 @@ return [
 		'Sentry'    => Cartalyst\Sentry\Facades\Laravel\Sentry::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Image' => Intervention\Image\Facades\Image::class,
+		'Active' => Watson\Active\Facades\Active::class,
 	],
 
 ];
