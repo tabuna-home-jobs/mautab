@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <p class="text-center">
+    <p class="text-center text-success">
         <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-plus"></i>Добавить
         </a>
@@ -75,9 +75,7 @@
         <hr class="clearfix col-xs-12">
     </div>
 
-
     <div class="col-md-12" id="add-shadow">
-
 
         @forelse($UserDomain as $key => $Domain)
 

@@ -40,13 +40,13 @@ label, strong {
 }
 
 .panel-default > .panel-heading {
-    background-color: #605ca8;
+    background-color: #0f6d82;
     color: #fff;
     text-align: center;
 }
 
 .jumbotron {
-    background-color: #605ca8;
+    background-color: #0f6d82;
     color: #fff;
 }
 
@@ -361,7 +361,7 @@ footer p {
 }
 
 .menuapp a:hover, .menuapp a.active {
-    color: #00afec;
+    color: #17b9dd;
     text-decoration: none;
 }
 
@@ -414,11 +414,11 @@ footer p {
 }
 
 .info-box .progress .progress-bar {
-    background: #fff none repeat scroll 0 0;
+    background: #0a5b6d none repeat scroll 0 0;
 }
 
 .info-box-icon {
-    background: #99a4bd none repeat scroll 0 0;
+    background: #0a5b6d none repeat scroll 0 0;
     border-radius: 2px 0 0 2px;
     display: block;
     float: left;
