@@ -1,0 +1,241 @@
+<?php echo $__env->make('header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+<section class="banner">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-sm-6">
+                <div class="block">
+                    <img class="app-img img-responsive" src="/images/app.png" alt="">
+                </div>
+
+            </div>
+            <div class="col-md-6 col-md-offset-1 col-sm-6">
+                <div class="block">
+                    <h1>
+                        Быстрое и богатое управление проектами
+                    </h1>
+
+                    <p>
+                        С нашими бесплатными онлайн сервесами вы с лёгкостью сможете администрировать свой ресурс
+                    </p>
+
+
+                    <ul class="download-btn text-center">
+                        <li>
+                            <a href="/auth/login" class="btn btn-default btn-apple">Войти</a>
+                        </li>
+                        <li>
+                            <a href="/auth/register" class="btn btn-default btn btn-blue">Зарегистироваться</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="service">
+    <div class="container">
+        <div class="service-wrapper">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-code"></i>
+                        </div>
+
+                        <h3>ПО</h3>
+
+                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-hdd-o"></i>
+                        </div>
+                        <h3>SSD-Диски</h3>
+
+                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-code"></i>
+                        </div>
+
+                        <h3>ПО</h3>
+
+                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block">
+                        <div class="icon">
+                            <i class="fa fa-hdd-o"></i>
+                        </div>
+                        <h3>SSD-Диски</h3>
+
+                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="feature">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="title">Ориентированны на цель</h2>
+
+                <div class="feature-item">
+
+                    <div class="media">
+                        <div class="pull-left icon" href="#">
+                            <i class="fa fa-paint-brush"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+
+                            <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="media">
+                        <div class="pull-left icon" href="#">
+                            <i class="fa fa-qrcode"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+
+                            <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+
+                    <div class="media">
+                        <div class="pull-left icon" href="#">
+                            <i class="fa fa-recycle"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+
+                            <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="block">
+                    <img class="img-responsive" src="/images/server.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="block">
+                <div class="title text-center">
+                    <h2>Удобная ценовая политика</h2>
+
+                    <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                </div>
+            </div>
+
+
+            <div class="pricing-table row">
+                <div class="col-md-4">
+                    <div class="plan">
+                        <header class="pricing-head">
+                            <h3>Стандарт</h3>
+                            <span class="price"><sup><i class="fa fa-rub"></i></sup> 499</span>
+                            <small>/ месяц</small>
+                        </header>
+                        <div class="pricing-body">
+                            <ul>
+                                <li><strong>50</strong> Доменов</li>
+                                <li><strong>50</strong> Баз данных</li>
+                                <li><strong>10</strong> Заданий</li>
+                                <li><strong>30Gb</strong> Диск</li>
+                                <li><strong>1</strong> Резевная копия</li>
+                            </ul>
+                        </div>
+                        <footer class="pricing-footer">
+                            <a class="btn btn-default btn btn-blue" href="#">Заказать</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan popular">
+                        <header class="pricing-head">
+                            <h3>Стандарт</h3>
+                            <span class="price"><sup><i class="fa fa-rub"></i></sup> 499</span>
+                            <small>/ месяц</small>
+                        </header>
+                        <div class="pricing-body">
+                            <ul>
+                                <li><strong>50</strong> Доменов</li>
+                                <li><strong>50</strong> Баз данных</li>
+                                <li><strong>10</strong> Заданий</li>
+                                <li><strong>30Gb</strong> Диск</li>
+                                <li><strong>3</strong> Резевных копии</li>
+                            </ul>
+                        </div>
+                        <footer class="pricing-footer">
+                            <a class="btn btn-default btn btn-blue" href="#">Заказать</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan">
+                        <header class="pricing-head">
+                            <h3>Стандарт</h3>
+                            <span class="price"><sup><i class="fa fa-rub"></i></sup> 499</span>
+                            <small>/ месяц</small>
+                        </header>
+                        <div class="pricing-body">
+                            <ul>
+                                <li><strong>50</strong> Доменов</li>
+                                <li><strong>50</strong> Баз данных</li>
+                                <li><strong>10</strong> Заданий</li>
+                                <li><strong>30Gb</strong> Диск</li>
+                                <li><strong>3</strong> Резевных копии</li>
+                            </ul>
+                        </div>
+                        <footer class="pricing-footer">
+                            <a class="btn btn-default btn btn-blue" href="#">Заказать</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

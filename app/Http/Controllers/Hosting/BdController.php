@@ -1,4 +1,4 @@
-<?php namespace Mautab\Http\Controllers\User;
+<?php namespace Mautab\Http\Controllers\Hosting;
 
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\AddBDRequest;
