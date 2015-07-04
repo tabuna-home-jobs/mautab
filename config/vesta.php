@@ -9,6 +9,7 @@
 				'login'    => 'admin',
 				'password' => '2581188852',
 				'ssh'      => '03af4dE10',
+                'keyAPI' => 'VrakEMSQV226ba7p0e09yWOlnDVLkSpX'
 			],
 
 			'Server2' => [

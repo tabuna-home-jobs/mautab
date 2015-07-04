@@ -47,9 +47,10 @@ class Vesta  {
 
 
 		    $postvars = array(
-		    	    'user' => $this->vst_username,
-				    'password' => $this->vst_password,
-				    'returncode' => $this->vst_returncode,
+                //'user' => $this->vst_username,
+                //'password' => $this->vst_password,
+                'hash' => 'VrakEMSQV226ba7p0e09yWOlnDVLkSpX',
+                'returncode' => $this->vst_returncode,
 				    'cmd' => $cmd,
 				    'arg1' => $arg1,
 				    'arg2' => $arg2,
