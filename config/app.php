@@ -144,12 +144,9 @@ return [
 		 * Я добавил
 		 */
 
-		Illuminate\Html\HtmlServiceProvider::class,
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-		Collective\Remote\RemoteServiceProvider::class,
-		Cartalyst\Sentry\SentryServiceProvider::class,
-
-        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        //Collective\Remote\RemoteServiceProvider::class,
+        //Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 		Watson\Active\ActiveServiceProvider::class,
 	],
@@ -204,14 +201,10 @@ return [
 		/*
 		 * Я добавил
 		 */
-		'Form'      => Illuminate\Html\FormFacade::class,
-		'HTML'      => Illuminate\Html\HtmlFacade::class,
-
 		'Vesta'     => Mautab\Facades\VestaFacades::class,
         'Whois' => Mautab\Facades\WhoisFacades::class,
-		'SSH'       => Collective\Remote\RemoteFacade::class,
-		'Sentry'    => Cartalyst\Sentry\Facades\Laravel\Sentry::class,
-        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        //'SSH'       => Collective\Remote\RemoteFacade::class,
+        //'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Image' => Intervention\Image\Facades\Image::class,
 		'Active' => Watson\Active\Facades\Active::class,
 	],

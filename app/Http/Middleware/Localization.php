@@ -1,8 +1,8 @@
 <?php namespace Mautab\Http\Middleware;
 
 use App;
+use Auth;
 use Closure;
-use Sentry;
 use Session;
 
 class Localization
@@ -18,8 +18,8 @@ class Localization
 	 */
 	public function handle($request, Closure $next)
 	{
-		if (Sentry::check()) {
-			App::setLocale(Sentry::getUser()->lang);
+        if (Auth::check()) {
+            App::setLocale(Auth::User()->lang);
 
 			return $next($request);
 		} else {
@@ -29,7 +29,6 @@ class Localization
 				return $next($request);
 			} else {
 				App::setLocale('en');
-
 				return $next($request);
 			}
 		}

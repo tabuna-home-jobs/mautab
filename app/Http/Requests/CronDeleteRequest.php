@@ -1,6 +1,6 @@
 <?php namespace Mautab\Http\Requests;
 
-use Sentry;
+use Auth;
 
 class CronDeleteRequest extends Request
 {
@@ -12,7 +12,7 @@ class CronDeleteRequest extends Request
 	 */
 	public function authorize()
 	{
-		return Sentry::check();
+        return Auth::check();
 	}
 
 	/**

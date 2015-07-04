@@ -3,7 +3,6 @@
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-
 class Authenticate {
 
 	/**
@@ -22,7 +21,6 @@ class Authenticate {
 	public function __construct(Guard $auth)
 	{
 		$this->auth = $auth;
-
 	}
 
 	/**
@@ -45,8 +43,8 @@ class Authenticate {
 				return redirect()->guest('auth/login');
 			}
 		}
-		return $next($request);
 
+        return $next($request);
 	}
 
 }

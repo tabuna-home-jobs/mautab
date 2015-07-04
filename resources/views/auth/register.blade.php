@@ -1,92 +1,93 @@
-@include('header')
+@extends('appContent')
+
+@section('content')
 
 
-<div class="web-open">
-    <div>
-        <img class="img-responsive" alt="banner" src="/images/background-auth.jpeg">
+    <div class="web-open">
+        <div>
+            <img class="img-responsive" alt="banner" src="/images/background-auth.jpeg">
 
-        <div class="caption">
-            <div class="caption-wrapper">
-                <div class="caption-info">
-
-
-                    <div class="container container-auth">
+            <div class="caption">
+                <div class="caption-wrapper">
+                    <div class="caption-info">
 
 
-                        <h1>Регистрация</h1>
-
-                        <form action="/auth/register" method="post">
+                        <div class="container container-auth">
 
 
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
+                            <h1>Регистрация</h1>
+
+
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <form class="form-horizontal" role="form" method="POST"
+                                  action="{{ url('/auth/register') }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Никнейм</label>
+
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="nickname" placeholder="Sheldon"
+                                               value="{{ old('nickname') }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">E-Mail адрес</label>
+
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" name="email"
+                                               placeholder="Sheldon@gmail.com" value="{{ old('email') }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Пароль</label>
+
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control" placeholder="*******"
+                                               name="password">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Повторите пароль</label>
+
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control" placeholder="*******"
+                                               name="password_confirmation">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-blue">
+                                            Зарегистрироваться
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+
                     </div>
-                @endif
-
-
-            <div class="form-group">
-                {!! Form::label('name', 'Имя', array('class' => 'control-label')) !!}
-                {!! Form::text('name', @$name, array('size'=> '50','class' => 'form-control'))!!}
-            </div>
-
-            <div class="form-group">
-                {!! Form::label('lastname', 'Фамилия', array('class' => 'control-label')) !!}
-                {!! Form::text('lastname', @$lastname, array('size'=> '50','class' => 'form-control'))!!}
-            </div>
-
-
-            <div class="form-group">
-                {!! Form::label('email', 'E-Mail Адрес', array('class' => 'control-label')) !!}
-                {!! Form::email('email', @$email, array('size'=> '100','class' => 'form-control'))!!}
-            </div>
-
-
-            <div class="form-group">
-                {!! Form::label('password', 'Пароль', array('class' => 'control-label')) !!}
-                {!! Form::password('password', array('size'=> '100','class' => 'form-control'))!!}
-            </div>
-
-
-            <div class="form-group">
-                {!! Form::label('password_confirmation', 'Повторите пароль', array('class' => 'control-label')) !!}
-                {!! Form::password('password_confirmation', array('size'=> '100','class' => 'form-control'))!!}
-            </div>
-
-
-            {!!  Form::token(); !!}
-            <input type="submit" class="btn btn-blue" value="Зарегистрироваться">
-                        </form>
-
-
-                    </div>
-
-
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
-@include('footer')
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+@endsection

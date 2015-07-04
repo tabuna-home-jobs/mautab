@@ -1,6 +1,6 @@
 <?php namespace Mautab\Services\VestaAPI;
 
-use Sentry;
+use Auth;
 
 trait VestaUser
 {
@@ -27,19 +27,19 @@ trait VestaUser
 
 	public function  changeUserPassword($password)
 	{
-		return $this->sendQuery('v-change-user-password', Sentry::getUser()->nickname, $password);
+        return $this->sendQuery('v-change-user-password', Auth::User()->nickname, $password);
 	}
 
 	public function  changeUserEmail($email)
 	{
-		return $this->sendQuery('v-change-user-contact', Sentry::getUser()->nickname, $email);
+        return $this->sendQuery('v-change-user-contact', Auth::User()->nickname, $email);
 	}
 
 
 	//List User Account
 	public function listUserAccount()
 	{
-		$answer = $this->sendQuery('v-list-user', Sentry::getUser()->nickname, 'json');
+        $answer = $this->sendQuery('v-list-user', Auth::User()->nickname, 'json');
 			$data   = json_decode($answer, TRUE);
 			return $data;
 
@@ -48,7 +48,7 @@ trait VestaUser
 
 	public function listUserLog()
 	{
-		$answer = $this->sendQuery('v-list-user-log', Sentry::getUser()->nickname, 'json');
+        $answer = $this->sendQuery('v-list-user-log', Auth::User()->nickname, 'json');
 		$data   = json_decode($answer, TRUE);
 		return $data;
 	}
@@ -57,7 +57,7 @@ trait VestaUser
 	//List User Backups
 	public function listUserBackups()
 	{
-		$answer = $this->sendQuery('v-list-user-backups', Sentry::getUser()->nickname, 'json');
+        $answer = $this->sendQuery('v-list-user-backups', Auth::User()->nickname, 'json');
 		$data   = json_decode($answer, TRUE);
 		return $data;
 	}
@@ -66,14 +66,14 @@ trait VestaUser
 	//Удалить бекап пользователя
 	public function deleteUserBackup($backup)
 	{
-		return $this->sendQuery('v-delete-user-backup', Sentry::getUser()->nickname, $backup);
+        return $this->sendQuery('v-delete-user-backup', Auth::User()->nickname, $backup);
 	}
 
 
 	//Просмотр бекапа
 	public function showUserBackup($backup)
 	{
-		$answer = $this->sendQuery('v-list-user-backup', Sentry::getUser()->nickname, $backup, 'json');
+        $answer = $this->sendQuery('v-list-user-backup', Auth::User()->nickname, $backup, 'json');
 		$data   = json_decode($answer, TRUE);
 		return $data;
 	}
@@ -89,7 +89,7 @@ trait VestaUser
 		$udir   = 'no';
 		extract($arg, EXTR_OVERWRITE);
 
-		return $this->sendQuery('v-schedule-user-restore', Sentry::getUser()->nickname, $backup, $web, $dns, $mail, $db, $cron, $udir);
+        return $this->sendQuery('v-schedule-user-restore', Auth::User()->nickname, $backup, $web, $dns, $mail, $db, $cron, $udir);
 	}
 
 

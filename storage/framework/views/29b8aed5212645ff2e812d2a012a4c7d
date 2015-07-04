@@ -20,7 +20,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Аккаунт</label>
-                                <input type="text" class="form-control" disabled value="<?php echo e(Sentry::getUser()->nickname); ?> ">
+                                <input type="text" class="form-control" disabled value="<?php echo e(Auth::User()->nickname); ?> ">
                             </div>
 
                             <div class="form-group">
@@ -37,7 +37,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="email">Электронная почта</label>
-                                <input type="email" name="email" class="form-control" required value="<?php echo e(Sentry::getUser()->email); ?> ">
+                                <input type="email" name="email" class="form-control" required value="<?php echo e(Auth::User()->email); ?> ">
                             </div>
 
 

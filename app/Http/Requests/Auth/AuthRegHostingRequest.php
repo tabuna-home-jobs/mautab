@@ -3,9 +3,9 @@
 	namespace Mautab\Http\Requests\Auth;
 
 	use Mautab\Http\Requests\Request;
-	use Sentry;
+    use Sentry;
 
-	class AuthRegHostingRequest extends Request
+    class AuthRegHostingRequest extends Request
 	{
 
 		/**

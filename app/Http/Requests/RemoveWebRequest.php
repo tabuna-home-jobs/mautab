@@ -1,6 +1,6 @@
 <?php namespace Mautab\Http\Requests;
 
-use Sentry;
+use Auth;
 
 class RemoveWebRequest extends Request
 {
@@ -12,7 +12,7 @@ class RemoveWebRequest extends Request
 	 */
 	public function authorize()
 	{
-		return Sentry::check();
+        return Auth::check();
 	}
 
 	/**

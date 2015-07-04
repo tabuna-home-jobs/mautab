@@ -1,9 +1,9 @@
 <?php namespace Mautab\Http\Controllers\Hosting;
 
+use Auth;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\ChangeFtpRequest;
 use Mautab\Http\Requests\RemoveFtpRequest;
-use Sentry;
 use Session;
 use Vesta;
 
@@ -84,7 +84,7 @@ dd('df');
 				if (empty($v_ftp_user_data['v_ftp_user']) && empty($v_ftp_user_data['v_ftp_password'])) {
 					continue;
 				}
-				$v_ftp_user_data['v_ftp_user'] = preg_replace("/^" . Sentry::getUser()->nickname . "_/i", "", $v_ftp_user_data['v_ftp_user']);
+                $v_ftp_user_data['v_ftp_user'] = preg_replace("/^" . Auth::User()->nickname . "_/i", "", $v_ftp_user_data['v_ftp_user']);
 
 				if ($v_ftp_user_data['is_new'] == 1) {
 
@@ -116,7 +116,7 @@ dd('df');
 					($pos === 0) ? $v_ftp_p = $v_ftp_path : $v_ftp_p = '';
 
 
-					$v_ftp_username = Sentry::getUser()->nickname . "_" . $v_ftp_username;
+                    $v_ftp_username = Auth::User()->nickname . "_" . $v_ftp_username;
 
 
 					Vesta::changeWebDomain($request->domain, $v_ftp_username, $v_ftp_p);

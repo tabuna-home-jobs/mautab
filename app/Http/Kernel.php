@@ -10,13 +10,13 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $middleware = [
-		'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
-		'Illuminate\Cookie\Middleware\EncryptCookies',
-		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
-		'Illuminate\Session\Middleware\StartSession',
-		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'Mautab\Http\Middleware\VerifyCsrfToken',
-		'Mautab\Http\Middleware\Localization',
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \Mautab\Http\Middleware\EncryptCookies::class,
+        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \Mautab\Http\Middleware\VerifyCsrfToken::class,
+        \Mautab\Http\Middleware\Localization::class,
 	];
 
 	/**
@@ -25,13 +25,11 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		//	'auth' => 'Mautab\Http\Middleware\Authenticate',
-		//	'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest'   => 'Mautab\Http\Middleware\RedirectIfAuthenticated',
-		'user'    => 'Mautab\Http\Middleware\UserRole',
-		'sentry'  => 'Mautab\Http\Middleware\SentryMiddleware',
+        'auth' => 'Mautab\Http\Middleware\Authenticate',
+        'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
+        'guest' => 'Mautab\Http\Middleware\RedirectIfAuthenticated',
 		'LoginAs' => 'Mautab\Http\Middleware\LoginAsMiddleware',
-		'IsActiveHosting' => 'Mautab\Http\Middleware\Hosting\IsActiveHosting',
+        'Hosting' => 'Mautab\Http\Middleware\Hosting\Hosting',
 	];
 
 }

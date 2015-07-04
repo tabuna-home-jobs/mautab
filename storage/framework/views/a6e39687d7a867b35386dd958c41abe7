@@ -31,7 +31,7 @@
 
                         <?php endif; ?>
                     </td>
-                    <td><a href="/tikets/<?php echo e($Tiket->id); ?>"><?php echo e(Lang::get('tikets.viewTable')); ?></a></td>
+                    <td><a href="<?php echo e(URL::route('hosting.tikets.show', $Tiket->id)); ?>"><?php echo e(Lang::get('tikets.viewTable')); ?></a></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
@@ -44,7 +44,7 @@
     <div class="col-md-4">
         <h2>Напиши и будет решено</h2>
 
-        <form action="/tikets" method="POST">
+        <form action="<?php echo e(URL::route('hosting.tikets.store')); ?>" method="POST">
             <div class="form-group">
                 <label>Заголовок</label>
                 <input type="text" name="title" class="form-control">

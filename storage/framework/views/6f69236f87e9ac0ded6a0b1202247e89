@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 
-    <p class="text-center">
+    <p class="text-center text-success">
         <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-plus"></i>Добавить
         </a>
@@ -73,9 +73,7 @@
         <hr class="clearfix col-xs-12">
     </div>
 
-
     <div class="col-md-12" id="add-shadow">
-
 
         <?php $__empty_1 = true; foreach($UserDomain as $key => $Domain): $__empty_1 = false; ?>
 
@@ -114,10 +112,10 @@
                                             <a href="http://<?php echo e($key); ?>/" target="_blank" class="btn btn-default">
                                                 <i class="fa fa-sign-in"></i>
                                             </a>
-                                            <a href="<?php echo e(URL::route('ftp.show', $key)); ?>" class="btn btn-default">
+                                            <a href="<?php echo e(URL::route('hosting.ftp.show', $key)); ?>" class="btn btn-default">
                                                 <i class="fa fa-plus"></i>
                                             </a>
-                                            <a href="<?php echo e(URL::route('web.show', $key)); ?>" class="btn btn-default">
+                                            <a href="<?php echo e(URL::route('hosting.web.show', $key)); ?>" class="btn btn-default">
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
 

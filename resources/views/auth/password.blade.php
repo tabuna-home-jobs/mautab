@@ -15,8 +15,15 @@
                         <div class="container container-auth">
 
 
-                            <h1>Востановить пароль</h1>
+                            <h1>Востановление пароля</h1>
 
+
+
+                            @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
 
                             @if (count($errors) > 0)
                                 <div class="alert alert-danger">
@@ -30,9 +37,8 @@
                             @endif
 
                             <form class="form-horizontal" role="form" method="POST"
-                                  action="{{ url('/password/reset') }}">
+                                  action="{{ url('/password/email') }}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="hidden" name="token" value="{{ $token }}">
 
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">E-Mail Address</label>
@@ -44,25 +50,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label">Password</label>
-
-                                    <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Confirm Password</label>
-
-                                    <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password_confirmation">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
                                         <button type="submit" class="btn btn-primary">
-                                            Reset Password
+                                            Send Password Reset Link
                                         </button>
                                     </div>
                                 </div>

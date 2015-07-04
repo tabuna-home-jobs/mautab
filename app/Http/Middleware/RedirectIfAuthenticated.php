@@ -1,11 +1,28 @@
 <?php namespace Mautab\Http\Middleware;
 
 use Closure;
-use Sentry;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\RedirectResponse;
 
 class RedirectIfAuthenticated {
 
+    /**
+     * The Guard implementation.
+     *
+     * @var Guard
+     */
+    protected $auth;
 
+    /**
+     * Create a new filter instance.
+     *
+     * @param  Guard $auth
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
 
 	/**
 	 * Handle an incoming request.
@@ -16,9 +33,9 @@ class RedirectIfAuthenticated {
 	 */
 	public function handle($request, Closure $next)
 	{
-		if (Sentry::check())
+        if ($this->auth->check())
 		{
-            //return new RedirectResponse(url('/hosting/home'));
+            return new RedirectResponse(url('/home'));
 		}
 
 		return $next($request);

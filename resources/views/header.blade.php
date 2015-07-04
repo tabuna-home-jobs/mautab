@@ -125,7 +125,7 @@
 
                                                 <div class="promo-block text-right">
 
-                                                    @if(!Sentry::check())
+                                                    @if(!Auth::check())
                                                     <p><a href="/auth/login">Войти</a></p>
                                                     <p><a href="/auth/register">Зарегистироваться</a></p>
                                                     @else

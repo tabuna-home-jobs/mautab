@@ -1,8 +1,8 @@
 <?php namespace Mautab\Services\VestaAPI;
 
+use Auth;
 use Config;
 use Mautab\Exceptions\VestaExceptions;
-use Sentry;
 use SSH;
 
 class Vesta  {
@@ -20,16 +20,16 @@ class Vesta  {
 
 	public function __construct()
 	{
-		if (!Sentry::check()) {
+        if (!Auth::check()) {
 
 			// User is not logged in, or is not activated
 			$this->vst_username = (string)Config::get('vesta.server')[Config::get('vesta.primary')]['login'];
 			$this->vst_password = (string)Config::get('vesta.server')[Config::get('vesta.primary')]['password'];
 			$this->vst_server   = (string)Config::get('vesta.server')[Config::get('vesta.primary')]['ip'];
 		} else {
-			$this->vst_username = (string)Config::get('vesta.server')[Sentry::getUser()->server]['login'];
-			$this->vst_password = (string)Config::get('vesta.server')[Sentry::getUser()->server]['password'];
-			$this->vst_server   = (string)Config::get('vesta.server')[Sentry::getUser()->server]['ip'];
+            $this->vst_username = (string)Config::get('vesta.server')[Auth::User()->server]['login'];
+            $this->vst_password = (string)Config::get('vesta.server')[Auth::User()->server]['password'];
+            $this->vst_server = (string)Config::get('vesta.server')[Auth::User()->server]['ip'];
 		}
 
 	}

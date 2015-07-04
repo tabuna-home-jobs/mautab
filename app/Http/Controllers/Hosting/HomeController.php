@@ -1,8 +1,8 @@
 <?php namespace Mautab\Http\Controllers\Hosting;
 
+use Auth;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\ChangeUserRequest;
-use Sentry;
 use Session;
 use Vesta;
 
@@ -33,7 +33,7 @@ class HomeController extends Controller {
 	public function Index()
 	{
 		// Информация о пользователе
-		$UserInfoLaravel = Sentry::getUser();
+        $UserInfoLaravel = Auth::User();
 
 		return view('user/user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
 	}
@@ -46,7 +46,7 @@ class HomeController extends Controller {
 		Vesta::changeUserEmail($request->email);
 
 		//Смена в Laravel
-		$thisUser = Sentry::getUser();
+        $thisUser = Auth::User();
 		$thisUser->password = $request->password;
 		$thisUser->email    = $request->email;
 		$thisUser->lang = $request->lang;

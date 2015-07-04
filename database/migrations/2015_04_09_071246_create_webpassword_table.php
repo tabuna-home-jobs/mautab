@@ -1,9 +1,9 @@
 <?php
 
-	use Illuminate\Database\Migrations\Migration;
-	use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
-	class CreateWebPasswordTable extends Migration
+class CreateWebPasswordTable extends Migration
 	{
 
 		/**
@@ -17,7 +17,6 @@
                 $table->bigIncrements('id');
                 $table->integer('user_id');
                 $table->text('url');
-                $table->longText('login');
                 $table->longText('login');
                 $table->mediumText('comment');
                 $table->text('category');

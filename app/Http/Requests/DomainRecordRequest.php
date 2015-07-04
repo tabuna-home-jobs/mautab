@@ -1,6 +1,6 @@
 <?php namespace Mautab\Http\Requests;
 
-use Sentry;
+use Auth;
 
 class DomainRecordRequest extends Request
 {
@@ -12,7 +12,7 @@ class DomainRecordRequest extends Request
 	 */
 	public function authorize()
 	{
-		return Sentry::check();
+        return Auth::check();
 	}
 
 	/**
