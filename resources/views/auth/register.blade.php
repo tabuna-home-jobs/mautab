@@ -42,6 +42,27 @@
                                     </div>
                                 </div>
 
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="nickname">Имя</label>
+
+                                    <div class="col-md-6">
+                                        <input type="text" name="firstname" size="50" value="{{old('firstname')}}"
+                                               class="form-control" placeholder="Sheldon">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="nickname">Фамилия</label>
+
+                                    <div class="col-md-6">
+                                        <input type="text" name="lastname" size="50" value="{{old('lastname')}}"
+                                               class="form-control" placeholder="Cooper">
+                                    </div>
+                                </div>
+
+
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">E-Mail адрес</label>
 
@@ -50,6 +71,20 @@
                                                placeholder="Sheldon@gmail.com" value="{{ old('email') }}">
                                     </div>
                                 </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="package">Тарифный план</label>
+
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="package">
+                                            <option value="0">Любительский</option>
+                                            <option value="1">Профессиональный</option>
+                                            <option value="2">Корпоративный</option>
+                                        </select>
+                                    </div>
+                                </div>
+
 
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">Пароль</label>

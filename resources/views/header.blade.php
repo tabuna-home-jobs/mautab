@@ -23,8 +23,7 @@
     <link rel="stylesheet" href="/css/app.css">
 
     <!-- Js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.0/isotope.pkgd.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 
@@ -61,92 +60,9 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
                                     <li><a href="/">О нас</a></li>
-                                    <li><a href="/web">Веб студия</a></li>
                                     <li><a href="/host">Хостинг</a></li>
-                                    <li><a href="/patner">Партнёрам</a></li>
-
-
-                                    <li class="parent megamenu promo">
-                                        <a href="#">Продукты</a>
-                                        <ul class="sub">
-                                            <li class="sub-wrapper">
-                                                <div class="sub-list">
-                                                    <div class="box closed">
-                                                        <h6 class="title">Разработка веб проектов</h6>
-                                                        <ul>
-                                                            <li><a href="#">Корпоративный</a></li>
-                                                            <li><a href="#">Интернет магазин</a></li>
-                                                            <li><a href="#">Лейдинг</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- .box -->
-
-                                                    <div class="box closed">
-                                                        <h6 class="title">Поддержка</h6>
-                                                        <ul>
-                                                            <li><a href="#">Хостинг</a></li>
-                                                            <li><a href="#">Доступность24 <span
-                                                                            class="badge">Скоро</span></a></li>
-                                                            <li><a href="#">Audio/Video Processing <span class="badge">Скоро</span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- .box -->
-
-                                                    <div class="box closed">
-                                                        <h6 class="title">Системы для бизнеса</h6>
-                                                        <ul>
-                                                            <li><a href="#">Ведения проектов <span
-                                                                            class="badge">Скоро</span></a></li>
-                                                            <li><a href="#">Управления контентом <span class="badge">Скоро</span></a>
-                                                            </li>
-                                                            <li><a href="#">Учёт времени <span
-                                                                            class="badge">Скоро</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- .box -->
-
-                                                    <div class="box closed">
-                                                        <h6 class="title">Инструменты SEO</h6>
-                                                        <ul>
-                                                            <li><a href="#">Контроль позиций <span
-                                                                            class="badge">Скоро</span></a></li>
-                                                            <li><a href="/whois">Who Is</a></li>
-                                                            <li><a href="#">Оптимизация <span class="badge">Скоро</span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- .box -->
-
-
-                                                </div>
-                                                <!-- .sub-list -->
-
-                                                <div class="promo-block text-right">
-
-                                                    @if(!Auth::check())
-                                                    <p><a href="/auth/login">Войти</a></p>
-                                                    <p><a href="/auth/register">Зарегистироваться</a></p>
-                                                    @else
-                                                        <p><a href="/auth/logout">Выйти</a></p>
-                                                    @endif
-
-                                                    <a href="#">
-                                                        <img height="260" alt="" class="replace-2x"
-                                                             src="http://template.progressive.itembridge.com/3.0.1/content/img/megamenu-big.jpg">
-                                                    </a>
-
-                                                </div>
-                                                <!-- .promo-block -->
-                                            </li>
-                                        </ul>
-                                        <!-- .sub -->
-                                    </li>
-
-
+                                    <li><a href="/auth/login">Войти</a></li>
                                 </ul>
-
                             </div>
                             <!-- /.navbar-collapse -->
                         </div>

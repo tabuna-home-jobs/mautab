@@ -1,4 +1,4 @@
-@include('header')
+<?php echo $__env->make('header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 <section class="banner">
@@ -37,6 +37,18 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="web-open hidden-xs">
@@ -152,6 +164,15 @@
 <!-- section end -->
 
 
+
+
+
+
+
+
+
+
+
 <section class="container">
 
     <div class="process">
@@ -181,6 +202,12 @@
     </div>
 
 </section>
+
+
+
+
+
+
 
 
 <section class="service">
@@ -419,4 +446,4 @@
 </section>
 
 
-@include('footer')
+<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

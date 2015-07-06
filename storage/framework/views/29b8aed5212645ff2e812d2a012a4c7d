@@ -37,7 +37,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="email">Электронная почта</label>
-                                <input type="email" name="email" class="form-control" required value="<?php echo e(Auth::User()->email); ?> ">
+                                <input type="email" name="email" class="form-control" required
+                                       value="<?php echo e(Auth::User()->email); ?> ">
                             </div>
 
 

@@ -1,6 +1,7 @@
 <?php
 namespace Mautab\Http\Controllers\Auth;
 
+use Config;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Mautab\Http\Controllers\Controller;
@@ -56,8 +57,29 @@ class AuthController extends Controller
     {
         return User::create([
             'nickname' => $data['nickname'],
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'server' => (string)Config::get('vesta.primary'),
         ]);
+
+        /*
+        $def_package = array(0 => 'starter',
+            1 => 'professional',
+            2 => 'enterprice');
+
+
+        foreach ($def_package as $key => $val) {
+            if ($key == $request->package) {
+                $data['package'] = $val;
+            }
+        }
+
+        Vesta::regUser($user->nickname, $user->password, $user->email, 'default', $user->name, $user->lastname);
+*/
+
+
+
     }
 }

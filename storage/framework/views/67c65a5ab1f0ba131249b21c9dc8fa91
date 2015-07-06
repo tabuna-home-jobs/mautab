@@ -1,6 +1,4 @@
-@extends('app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <p class="text-center">
                 <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
@@ -10,11 +8,9 @@
 
 
         <div class="collapse col-xs-12" id="add-bd">
-            <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('hosting.bd.store')}}">
+            <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('hosting.bd.store')); ?>">
 
-                <div class="alert alert-info" role="alert"> Префикс {{Auth::User()->nickname }}_ будет автоматически
-                    добавлен к БД и пользователю БД
-                </div>
+                <div class="alert alert-info" role="alert"> Префикс <?php echo e(Auth::User()->nickname); ?>_ будет автоматически добавлен к БД и пользователю БД</div>
                 <div class="form-group input-line">
                     <label>База данных </label>
 
@@ -76,7 +72,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                     <input type="submit" value="Отправить" class="btn btn-blue">
                 </div>
             </form>
@@ -105,25 +101,25 @@
         <div class="col-md-12" id="add-shadow">
 
 
-            @forelse($BdList as $nameBd => $bd)
+            <?php $__empty_1 = true; foreach($BdList as $nameBd => $bd): $__empty_1 = false; ?>
 
                     <div class="col-xs-12 col-md-4">
 
 
-                        @if($bd['SUSPENDED'] == 'no')
+                        <?php if($bd['SUSPENDED'] == 'no'): ?>
                             <div class="panel panel-default ">
-                                @else
+                                <?php else: ?>
                                     <div class="panel panel-danger ">
-                                        @endif
+                                        <?php endif; ?>
 
                                         <div class="panel-heading">
-                                            <h3 class="panel-title"> {{$nameBd}}</h3>
+                                            <h3 class="panel-title"> <?php echo e($nameBd); ?></h3>
                                         </div>
 
                                         <ul class="list-group">
-                                            <li class="list-group-item"><span>Диск:</span><span>{{$bd['U_DISK']}} мб</span></li>
-                                            <li class="list-group-item">Пользователь:</span><span>{{$bd['DBUSER']}}</span></li>
-                                            <li class="list-group-item">Кодировка:</span><span>{{$bd['CHARSET']}}</span></li>
+                                            <li class="list-group-item"><span>Диск:</span><span><?php echo e($bd['U_DISK']); ?> мб</span></li>
+                                            <li class="list-group-item">Пользователь:</span><span><?php echo e($bd['DBUSER']); ?></span></li>
+                                            <li class="list-group-item">Кодировка:</span><span><?php echo e($bd['CHARSET']); ?></span></li>
                                         </ul>
 
 
@@ -132,21 +128,20 @@
 
                                             <div class="container-fluid">
                                                 <div class="pull-left">
-                                                    <small>{{$bd['DATE']}}</small>
+                                                    <small><?php echo e($bd['DATE']); ?></small>
                                                 </div>
 
                                                 <div class="btn-group pull-right" role="group">
-                                                    <a href="http://{{(string)Config::get('vesta.server')[Auth::User()->server]['ip'] }}/phpmyadmin"
-                                                       target="_blank"
+                                                    <a href="http://<?php echo e((string)Config::get('vesta.server')[Auth::User()->server]['ip']); ?>/phpmyadmin" target="_blank"
                                                        class="btn btn-default">
                                                         <i class="fa fa-server"></i>
                                                     </a>
 
-                                                    <a href="{{URL::route('hosting.bd.show', $nameBd)}}" class="btn btn-default">
+                                                    <a href="<?php echo e(URL::route('hosting.bd.show', $nameBd)); ?>" class="btn btn-default">
                                                         <i class="fa fa-pencil-square-o"></i>
                                                     </a>
 
-                                                    <a href="#" data-toggle="modal" data-target="#Modal-{{$nameBd}}" class="btn btn-danger">
+                                                    <a href="#" data-toggle="modal" data-target="#Modal-<?php echo e($nameBd); ?>" class="btn btn-danger">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </div>
@@ -154,24 +149,25 @@
                                             </div>
 
                                             <!-- Modal -->
-                                            <div class="modal fade" id="Modal-{{$nameBd}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="Modal-<?php echo e($nameBd); ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                                                         aria-hidden="true">&times;</span></button>
-                                                            <h4 class="modal-title" id="myModalLabel">Удалить {{$nameBd}} ?</h4>
+                                                            <h4 class="modal-title" id="myModalLabel">Удалить <?php echo e($nameBd); ?> ?</h4>
                                                         </div>
                                                         <div class="modal-body">
-                                                            Вы действительно хотите удалить {{$nameBd}}
+                                                            Вы действительно хотите удалить <?php echo e($nameBd); ?>
+
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <form action="{{URL::route('hosting.bd.destroy')}}" method="post">
+                                                            <form action="<?php echo e(URL::route('hosting.bd.destroy')); ?>" method="post">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                                                 <button type="submit" class="button-small">Да</button>
-                                                                <input type="hidden" name="v_database" value="{{$nameBd}}"/>
+                                                                <input type="hidden" name="v_database" value="<?php echo e($nameBd); ?>"/>
                                                                 <input type="hidden" name="_method" value="DELETE">
-                                                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                                                             </form>
                                                         </div>
                                                     </div>
@@ -184,7 +180,7 @@
                             </div>
 
 
-                            @empty
+                            <?php endforeach; if ($__empty_1): ?>
                                 <div class="jumbotron text-center">
                                 <h1>Пусто!</h1>
 
@@ -192,8 +188,10 @@
 
                             </div>
 
-                            @endforelse
+                            <?php endif; ?>
                     </div>
         </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
