@@ -7,7 +7,7 @@
 
             <div class="col-md-4 col-sm-6">
                 <div class="block">
-                    <img class="app-img img-responsive" src="/images/app.png" alt="">
+                    <img class="app-img img-responsive" src="http://www.designnxt.com/wp-content/uploads/2012/10/cloud-server.png" alt="">
                 </div>
 
             </div>
@@ -37,25 +37,6 @@
         </div>
     </div>
 </section>
-
-
-<div class="web-open hidden-xs">
-    <div>
-        <img class="img-responsive" alt="banner" src="/images/open.jpg">
-
-        <div class="caption">
-            <div class="caption-wrapper">
-                <div class="caption-info">
-                    <h1 class="animated bounceInUp">Профессиональная веб-разработка</h1>
-
-                    <p class="animated bounceInLeft">Передовые технологии и уникальные компетенции решать наиболее
-                        сложные задачи</p>
-                    <a class="explore animated bounceInDown" href="#about"><i class="fa fa-angle-down  fa-3x"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div id="services" class="container text-center">
@@ -150,127 +131,6 @@
 </div>
 </div>
 <!-- section end -->
-
-
-<section class="container">
-
-    <div class="process">
-        <h1 class="text-center title">Процес создания</h1>
-
-        <div class="separator"></div>
-        <p class="lead text-center">Интересные или нестандатрные работы с подробным описанием проделанной работы</p>
-        <br>
-
-        <ul class="row text-center list-inline">
-            <li>
-                <span><i class="fa fa-history"></i><b>Получаем заявку</b></span>
-            </li>
-            <li>
-                <span><i class="fa fa-puzzle-piece"></i><b>Согласуем ТЗ</b></span>
-            </li>
-            <li>
-                <span><i class="fa fa-database"></i><b>Разработка</b></span>
-            </li>
-            <li>
-                <span><i class="fa fa-magic"></i><b>Интеграция</b></span>
-            </li>
-            <li>
-                <span><i class="fa fa-cloud-upload"></i><b>Продвижение</b></span>
-            </li>
-        </ul>
-    </div>
-
-</section>
-
-
-<section class="service">
-
-
-    <div class="highlight-info">
-        <div class="overlayback spacer">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-sm-3 col-xs-6">
-                        <i class="fa fa-smile-o  fa-5x"></i><h4>230 довольных клиетов</h4>
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <i class="fa fa-rocket  fa-5x"></i><h4>Более 100 проектов</h4>
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <i class="fa fa-cloud-download  fa-5x"></i><h4>6 мощных серверов</h4>
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <i class="fa fa-map-marker fa-5x"></i><h4>Удобное расположение</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="service">
-    <div class="container">
-        <div class="service-wrapper">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="block">
-                        <div class="icon">
-                            <i class="fa fa-code"></i>
-                        </div>
-
-                        <h3>ПО</h3>
-
-                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="block">
-                        <div class="icon">
-                            <i class="fa fa-hdd-o"></i>
-                        </div>
-                        <h3>SSD-Диски</h3>
-
-                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="block">
-                        <div class="icon">
-                            <i class="fa fa-code"></i>
-                        </div>
-
-                        <h3>ПО</h3>
-
-                        <p>Использование современного программного обеспечения с постоянным обновлением</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="block">
-                        <div class="icon">
-                            <i class="fa fa-hdd-o"></i>
-                        </div>
-                        <h3>SSD-Диски</h3>
-
-                        <p>Для высокой производительности используеться исключительно твердотелые носители</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 
 

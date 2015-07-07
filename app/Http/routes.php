@@ -3,8 +3,7 @@
 
 
 	Route::group(['middleware' => 'guest', 'namespace' => 'Guest'], function () {
-		Route::resource('/host', 'WelcomeHostingController@index');
-		Route::resource('/', 'WelcomeAboutController@index');
+		Route::resource('/', 'WelcomeHostingController@index');
 		Route::resource('page', 'PageController');
 	});
 
