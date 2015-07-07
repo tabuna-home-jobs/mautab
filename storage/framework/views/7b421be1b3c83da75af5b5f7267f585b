@@ -39,18 +39,6 @@
 </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="web-open hidden-xs">
     <div>
         <img class="img-responsive" alt="banner" src="/images/open.jpg">
@@ -164,15 +152,6 @@
 <!-- section end -->
 
 
-
-
-
-
-
-
-
-
-
 <section class="container">
 
     <div class="process">
@@ -202,12 +181,6 @@
     </div>
 
 </section>
-
-
-
-
-
-
 
 
 <section class="service">

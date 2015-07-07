@@ -10,7 +10,9 @@
         <div class="collapse col-xs-12" id="add-bd">
             <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('hosting.bd.store')); ?>">
 
-                <div class="alert alert-info" role="alert"> Префикс <?php echo e(Auth::User()->nickname); ?>_ будет автоматически добавлен к БД и пользователю БД</div>
+                <div class="alert alert-info" role="alert"> Префикс <?php echo e(Auth::User()->nickname); ?>_ будет автоматически
+                    добавлен к БД и пользователю БД
+                </div>
                 <div class="form-group input-line">
                     <label>База данных </label>
 
@@ -132,7 +134,8 @@
                                                 </div>
 
                                                 <div class="btn-group pull-right" role="group">
-                                                    <a href="http://<?php echo e((string)Config::get('vesta.server')[Auth::User()->server]['ip']); ?>/phpmyadmin" target="_blank"
+                                                    <a href="http://<?php echo e((string)Config::get('vesta.server')[Auth::User()->server]['ip']); ?>/phpmyadmin"
+                                                       target="_blank"
                                                        class="btn btn-default">
                                                         <i class="fa fa-server"></i>
                                                     </a>

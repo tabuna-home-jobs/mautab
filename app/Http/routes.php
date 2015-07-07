@@ -27,7 +27,8 @@ Route::controllers([
 
 	// Хостинг
 Route::group(['middleware' => ['Hosting', 'LoginAs', 'auth'], 'prefix' => 'hosting', 'namespace' => 'Hosting'], function () {
-		Route::resource('web', 'WebController');
+        Route::resource('search', 'SearchController');
+        Route::resource('web', 'WebController');
 		Route::resource('ftp', 'FtpController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('records', 'RecordController');

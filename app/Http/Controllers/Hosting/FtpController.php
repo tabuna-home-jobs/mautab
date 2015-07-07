@@ -16,7 +16,6 @@ class FtpController extends Controller {
 	 */
 	public function index()
 	{
-		dd('dsdfsdfsdff');
 
 	}
 
@@ -49,7 +48,6 @@ class FtpController extends Controller {
 	 */
 	public function show($name)
 	{
-
         return view('user/ftp/index', ['ftplist' => Vesta::listEditWebDomain($name)]);
 	}
 
