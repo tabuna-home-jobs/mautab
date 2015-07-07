@@ -121,7 +121,7 @@
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
 
-                                            <a href="#" data-toggle="modal" data-target="#Modal-{{str_replace(".","",trim($key))}}" class="btn btn-danger">
+                                            <a href="#" class="btn btn-danger" onclick="delModal('кум');">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </div>
@@ -129,31 +129,16 @@
 
                                     </div>
 
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="Modal-{{str_replace(".","",trim($key))}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                         aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                                                aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Удалить {{$key}} ?</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Вы действительно хотите удалить {{$key}}
-                                                </div>
-                <div class="modal-footer">
-                    <form action="{{URL::route('hosting.web.destroy')}}" method="post">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
-                            <button type="submit" class="button-small">Да</button>
-                            <input type="hidden" name="v_domain" value="{{$key}}"/>
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        </form>
-                    </div>
-                </div>
-                                        </div>
-                                    </div>
+                        <!-- Modal -->
+
+
+
+        <script type="text/javascript">
+            //Модалка для удаления
+            function delModal(key){
+                var modalka =' <div class="modal fade" id="Modal-{{str_replace(".","",trim(key))}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <h4 class="modal-title" id="myModalLabel">Удалить {{key}} ?</h4></div><div class="modal-body">Вы действительно хотите удалить {{key}}</div><div class="modal-footer"><form action="{{URL::route('hosting.web.destroy')}}" method="post"><button type="button" class="btn btn-default" data-dismiss="modal">Нет</button><button type="submit" class="button-small">Да</button><input type="hidden" name="v_domain" value="{{key}}"/><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="_token" value="{{csrf_token()}}"></form></div></div></div></div>'
+            }
+        </script>
 
                                 </div>
                             </div>

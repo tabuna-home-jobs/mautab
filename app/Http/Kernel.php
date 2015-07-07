@@ -17,6 +17,7 @@ class Kernel extends HttpKernel {
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \Mautab\Http\Middleware\VerifyCsrfToken::class,
         \Mautab\Http\Middleware\Localization::class,
+
 	];
 
 	/**

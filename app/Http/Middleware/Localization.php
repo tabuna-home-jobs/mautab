@@ -18,6 +18,8 @@ class Localization
 	 */
 	public function handle($request, Closure $next)
 	{
+
+
         if (Auth::check()) {
             App::setLocale(Auth::User()->lang);
 
