@@ -115,52 +115,46 @@
                                             <i class="fa fa-pencil-square-o"></i>
                                         </a>
 
-                                        <a href="#" data-toggle="modal" data-target="#Modal-{{$record['ID']}}"
-                                           class="btn btn-danger">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
+    <a href="#" class="btn btn-danger" onclick="delModal('{{$domain}}','/hosting/records/destroy','{{$record["ID"]}}')">
+        <i class="fa fa-trash"></i>
+    </a>
                                     </div>
                                 </td>
-
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="Modal-{{$record['ID']}}" tabindex="-1" role="dialog"
-                                         aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close"><span
-                                                                aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Удалить Задание ?</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Вы действительно хотите удалить {{$record['RECORD']}}
-                                                    - {{$record['VALUE']}}
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <form action="{{URL::route('hosting.records.destroy')}}" method="post">
-                                                        <button type="button" class="btn btn-default"
-                                                                data-dismiss="modal">Нет
-                                                        </button>
-                                                        <button type="submit" class="button-small">Да</button>
-                                                        <input type="hidden" name="v_record_id"
-                                                               value="{{$record['ID']}}"/>
-                                                        <input type="hidden" name="v_domain" value="{{$domain}}"/>
-                                                        <input type="hidden" name="_method" value="DELETE">
-                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                             </tr>
                             @endforeach
                 </tbody>
             </table>
             </div>
+            <script type="text/javascript">
+                //Модалка для удаления
+                /**
+                 *
+                 * @param name - имя элемента которы надо удалить
+                 * @param route - используемый роут Например: (/hosting/web/destroy)
+                 * @param id - id записи с которой происходят манипуляции удаления
+                 *
+                 */
+                function delModal(name, route, id){
 
+                    //csfr
+                    var csrf = $('meta[name="csrf-token"]').attr('content');
+
+                    var valueName = name;
+                    //Обрабатываем выходящее значение
+                    var key = name.replace('.','');
+                    //Формируем модалку
+                    var modalka =' <div class="modal fade" id="Modal-'+key+'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <h4 class="modal-title" id="myModalLabel">Удалить '+valueName+' ?</h4></div><div class="modal-body">Вы действительно хотите удалить '+valueName+'</div><div class="modal-footer"><form action="'+route+'" method="post"><button type="button" class="btn btn-default" data-dismiss="modal">Нет</button><button type="submit" class="btn btn-danger">Да</button><input type="hidden" name="v_domain" value="'+valueName+'"/><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="v_record_id" value="'+id+'" ><input type="hidden" name="_token" value="'+csrf+'"></form></div></div></div></div>';
+
+                    //Добавляем модалку в дом дерево
+                    $('footer').append(modalka);
+                    //Вызываем модалку
+                    $('#Modal-'+key).modal();
+                    //По зыкрытию нашей модалки удаляем её из дома
+                    $('#Modal-'+key).on('hidden.bs.modal', function () {
+                        $('#Modal-'+key).remove();
+                    })
+                }
+            </script>
 
         </div>
 
