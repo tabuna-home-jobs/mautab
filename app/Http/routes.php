@@ -3,8 +3,7 @@
 
 
 	Route::group(['middleware' => 'guest', 'namespace' => 'Guest'], function () {
-		Route::resource('/host', 'WelcomeHostingController@index');
-		Route::resource('/', 'WelcomeAboutController@index');
+		Route::resource('/', 'WelcomeHostingController@index');
 		Route::resource('page', 'PageController');
 	});
 
@@ -27,7 +26,8 @@ Route::controllers([
 
 	// Хостинг
 Route::group(['middleware' => ['Hosting', 'LoginAs', 'auth'], 'prefix' => 'hosting', 'namespace' => 'Hosting'], function () {
-		Route::resource('web', 'WebController');
+        Route::resource('search', 'SearchController');
+        Route::resource('web', 'WebController');
 		Route::resource('ftp', 'FtpController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('records', 'RecordController');

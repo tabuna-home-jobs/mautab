@@ -1,0 +1,8 @@
+{
+  "name": "Mautab",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "components-font-awesome": "~4.3.0"
+  }
+}

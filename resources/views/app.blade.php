@@ -55,10 +55,11 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="/">О нас</a></li>
-                                    <li><a href="/web">Веб студия</a></li>
-                                    <li><a href="/host">Хостинг</a></li>
-                                    <li><a href="/patner">Партнёрам</a></li>
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="/">О нас</a></li>
+                                        <li><a href="/host">Хостинг</a></li>
+                                        <li><a href="/auth/login">Войти</a></li>
+                                    </ul>
 
 
                                     <li class="parent megamenu promo">

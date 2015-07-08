@@ -2,11 +2,30 @@
 
 @section('content')
 
-    <p class="text-center text-success">
+    <p class="col-sm-10 text-center text-success">
         <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-plus"></i>Добавить
         </a>
     </p>
+
+
+    <div class="col-sm-2">
+
+
+        <form method="get" action="{{URL::route('hosting.search.index')}}">
+            <div class="input-group">
+                <input type="text" name="query" class="form-control" placeholder="Поиск ...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                    <span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+        </form>
+
+
+    </div>
+
 
     <div class="collapse col-xs-12" id="add-bd">
         <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('hosting.web.store')}}">
@@ -93,9 +112,8 @@
                                 </div>
 
                                 <ul class="list-group">
-                                    <li class="list-group-item"><span>Алиасы:</span><span>{{$Domain['ALIAS']}}</span></li>
-                                    <li class="list-group-item"><span>Диск:</span><span> {{ $Domain['U_DISK'] }} мб</span></li>
-                                    <li class="list-group-item"><span>Трафик:</span><span>{{ $Domain['U_BANDWIDTH'] }} мб</span></li>
+                                    <li class="list-group-item">Диск:{{ $Domain['U_DISK'] }} мб
+                                    Трафик:{{ $Domain['U_BANDWIDTH'] }} мб</li>
 
                                     <li class="list-group-item"><span>IP:</span><span>{{ $Domain['IP'] }}  {{ $Domain['IP6'] }}</span></li>
                                     <li class="list-group-item"><span>Поддержка Nginx:</span><span>@if($Domain['PROXY'] == "") Нет @else Да @endif</span></li>

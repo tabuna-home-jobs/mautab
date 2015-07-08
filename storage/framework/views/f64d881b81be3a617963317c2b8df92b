@@ -1,0 +1,87 @@
+<?php $__env->startSection('content'); ?>
+    <section class="container">
+        <div class="col-xs-12">
+    <form class="col-md-8 col-xs-12" method="post" action="">
+    <?php foreach($ftplist as $domain => $d_val): ?>
+        <div class="alert alert-info" role="alert">
+            Добавление и редактирование FTP для домена <?php echo e($domain); ?>
+
+        </div>
+
+        <?php if(isset($d_val['FTP_USER']) && is_array($d_val['FTP_USER'])): ?>
+            <?php foreach($d_val['FTP_USER'] as $key => $ftpU): ?>
+                <div class="ftp-groupz">
+                    <div class="add-ftp-edit">
+                        <div class="form-group">
+                            <label>FTP#<?php echo e($key+1); ?><a href="#" class="del-current-ftp"><small>Удалить</small></a></label>
+                        </div>
+        <div class="form-group">
+            <label>Аккаунт</label>
+
+            <div>
+                <small>
+                    Префикс <?php echo e(Sentry::getUser()->nickname); ?>_ будет автоматически добавлен к названию аккаунта
+                </small>
+            </div>
+            <input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[<?php echo e($key+1); ?>][is_new]" value="0"/>
+            <input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[<?php echo e($key+1); ?>][is_old]" value="1"/>
+
+            <input type="text" name="v_ftp_user[<?php echo e($key+1); ?>][v_ftp_user]" class="form-control ftp_usr ftp_usr_namen  " value="<?php echo e($ftpU); ?>" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"/>
+        </div>
+        <div class="form-group">
+            <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
+            <input type="text" name="v_ftp_user[<?php echo e($key+1); ?>][v_ftp_password]" id="ftppas" class="form-control" value="********"/>
+        </div>
+        <div class="form-group">
+            <label>Path</label>
+            <input type="text" name="v_ftp_user[<?php echo e($key+1); ?>][v_ftp_path]" class="form-control" value="<?php echo e($d_val['FTP_PATH'][$key]); ?>"/>
+        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+<?php elseif(!empty($d_val['FTP_USER']) && !is_array($d_val['FTP_USER'])): ?>
+    <div class="ftp-groupz">
+        <div class="add-ftp-edit">
+            <div class="form-group">
+                <label>FTP#1
+                    <a href="#" class="del-current-ftp"><small>Удалить</small></a></label>
+            </div>
+            <div class="form-group">
+                <label>Аккаунт</label>
+
+                <div>
+                    <small>
+                        Префикс <?php echo e(Sentry::getUser()->nickname); ?>_ будет автоматически добавлен к названию аккаунта
+                    </small>
+                </div>
+                <input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[1][is_new]" value="0"/>
+                <input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[1][is_old]" value="1"/>
+
+        <input type="text" name="v_ftp_user[1][v_ftp_user]" class="form-control ftp_usr ftp_usr_namen" value="<?php echo e($d_val['FTP_USER']); ?>" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"/>
+            </div>
+            <div class="form-group">
+                <label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>
+                <input type="text" name="v_ftp_user[1][v_ftp_password]" id="ftppas" class="form-control" value="********"/>
+            </div>
+            <div class="form-group">
+                <label>Path</label>
+                <input type="text" name="v_ftp_user[1][v_ftp_path]" class="form-control" value="<?php echo e($d_val['FTP_PATH']); ?>"/>
+            </div>
+        </div>
+    </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+        <a href="#" id="addFtps">Добавить FTP</a>
+        <div class="form-group">
+            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+            <input type="submit" value="Сохранить" class="btn btn-blue">
+            <input type="hidden" name="domain" value="<?php echo e($domain); ?>"/>
+            <input type="hidden" name="_method" value="PUT">
+        </div>
+    </form>
+    </div>
+
+</section>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
