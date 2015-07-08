@@ -139,9 +139,9 @@
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
 
-                                            <a href="#" class="btn btn-danger" onclick="delModal('кум');">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
+                    <a href="#" class="btn btn-danger" onclick="delModal('{{$key}}');">
+                        <i class="fa fa-trash"></i>
+                    </a>
                                         </div>
 
 
@@ -154,7 +154,20 @@
         <script type="text/javascript">
             //Модалка для удаления
             function delModal(key){
-                var modalka =' <div class="modal fade" id="Modal-{{str_replace(".","",trim(key))}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <h4 class="modal-title" id="myModalLabel">Удалить {{key}} ?</h4></div><div class="modal-body">Вы действительно хотите удалить {{key}}</div><div class="modal-footer"><form action="{{URL::route('hosting.web.destroy')}}" method="post"><button type="button" class="btn btn-default" data-dismiss="modal">Нет</button><button type="submit" class="button-small">Да</button><input type="hidden" name="v_domain" value="{{key}}"/><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="_token" value="{{csrf_token()}}"></form></div></div></div></div>'
+                var valueName = key;
+                //Обрабатываем выходящее значение
+                var key = key.replace('.','');
+                //Формируем модалку
+                var modalka =' <div class="modal fade" id="Modal-'+key+'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <h4 class="modal-title" id="myModalLabel">Удалить '+valueName+' ?</h4></div><div class="modal-body">Вы действительно хотите удалить '+valueName+'</div><div class="modal-footer"><form action="{{URL::route('hosting.web.destroy')}}" method="post"><button type="button" class="btn btn-default" data-dismiss="modal">Нет</button><button type="submit" class="btn btn-danger">Да</button><input type="hidden" name="v_domain" value="'+valueName+'"/><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="_token" value="{{csrf_token()}}"></form></div></div></div></div>';
+
+                //Добавляем модалку в дом дерево
+                $('footer').append(modalka);
+                //Вызываем модалку
+                $('#Modal-'+key).modal();
+                //По зыкрытию нашей модалки удаляем её из дома
+                $('#Modal-'+key).on('hidden.bs.modal', function () {
+                    $('#Modal-'+key).remove();
+                })
             }
         </script>
 
