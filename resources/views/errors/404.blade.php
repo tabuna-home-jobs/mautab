@@ -1,5 +1,6 @@
-@include('header')
+@extends('appFull')
 
+@section('content')
 
 <section class="banner">
     <div class="container">
@@ -23,5 +24,4 @@
     </div>
 </section>
 
-
-@include('footer')
+@endsection

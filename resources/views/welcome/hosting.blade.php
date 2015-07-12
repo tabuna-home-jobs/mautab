@@ -1,7 +1,82 @@
-@include('header')
+@extends('app')
+
+@section('content')
 
 
-<section class="banner">
+
+
+    <div class="page-header">
+        <h1>Navmenu Template</h1>
+    </div>
+
+
+
+    <section class="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <h2 class="title">Ориентированны на цель</h2>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-paint-brush"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+
+                                <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-qrcode"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+
+                                <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-recycle"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
+
+                                <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="block">
+                        <img class="img-responsive" src="/images/server.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="banner">
     <div class="container">
         <div class="row">
 
@@ -20,16 +95,6 @@
                     <p>
                         С нашими бесплатными онлайн сервесами вы с лёгкостью сможете администрировать свой ресурс
                     </p>
-
-
-                    <ul class="download-btn text-center">
-                        <li>
-                            <a href="/auth/login" class="btn btn-default btn-apple">Войти</a>
-                        </li>
-                        <li>
-                            <a href="/auth/register" class="btn btn-default btn btn-blue">Зарегистироваться</a>
-                        </li>
-                    </ul>
 
 
                 </div>
@@ -135,64 +200,6 @@
 
 
 
-<section class="feature">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <h2 class="title">Ориентированны на цель</h2>
-
-                <div class="feature-item">
-
-                    <div class="media">
-                        <div class="pull-left icon" href="#">
-                            <i class="fa fa-paint-brush"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
-
-                            <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-
-                    <div class="media">
-                        <div class="pull-left icon" href="#">
-                            <i class="fa fa-qrcode"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
-
-                            <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-
-                    <div class="media">
-                        <div class="pull-left icon" href="#">
-                            <i class="fa fa-recycle"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">MauTab поможет вашему бизнесу</h4>
-
-                            <p>Если вам не хватает собственных ресурсов или компетенций вашей команды </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="block">
-                    <img class="img-responsive" src="/images/server.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <section>
     <div class="container">
 
@@ -279,4 +286,4 @@
 </section>
 
 
-@include('footer')
+@endsection

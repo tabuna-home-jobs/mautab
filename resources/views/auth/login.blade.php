@@ -1,15 +1,9 @@
-@extends('appContent')
+@extends('appFull')
 
 @section('content')
 
 
-    <div class="web-open">
-        <div>
-            <img class="img-responsive" alt="banner" src="/images/background-auth.jpeg">
 
-            <div class="caption">
-                <div class="caption-wrapper">
-                    <div class="caption-info">
 
 
                         <div class="container container-auth">
@@ -72,9 +66,5 @@
 
 
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 @endsection

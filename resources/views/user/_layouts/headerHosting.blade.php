@@ -1,4 +1,4 @@
-<section class="menuapp container text-center">
+<section class="menuapp row text-center">
 
     <div class="col-md-2 col-sm-4 col-xs-6">
 

@@ -20,77 +20,47 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
     <link rel="stylesheet" href="/main.css">
 
 
     <!-- Js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
 </head>
+
+
 <body>
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
+    <a class="navmenu-brand visible-md visible-lg" href="/"> <i class="fa fa-server fa-2x"></i> MauTab</a>
+    <ul class="nav navmenu-nav">
+        <li class="active"><a href="/">Хостинг</a></li>
+        <li><a href="/auth/login"><i class="fa fa-tachometer"></i>
+                Тарифы</a></li>
+        <li><a href="/auth/login"><i class="fa fa-book"></i>
+                База знаний</a></li>
+        <li><a href="/auth/login"><i class="fa fa-usd"></i>
+                Оплата</a></li>
+        <li><a href="/auth/login"><i class="fa fa-sign-in"></i>
+                Войти</a></li>
+        <li><a href="/auth/login">Зарегистрироваться</a></li>
+    </ul>
 
 
-<header>
-    <div class="topbar"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-xs-6 col-sm-3">
-                <a href="/" class="logo">
-                    <img src="/images/logo.png" alt="">
-                </a>
-            </div>
-            <div class="col-md-6 col-xs-6 col-sm-6">
-                <div class="menu">
-                    <nav class="navbar navbar-default" role="navigation">
-                        <div class="container-fluid">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                        data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
+</div>
 
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="/">О нас</a></li>
-                                        <li><a href="/host">Хостинг</a></li>
-                                        <li><a href="/auth/login">Войти</a></li>
-                                    </ul>
-                                </ul>
-
-                            </div>
-                            <!-- /.navbar-collapse -->
-                        </div>
-                        <!-- /.container-fluid -->
-                    </nav>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-xs-12 col-sm-3">
-                <ul class="social-info">
-                    <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
-                    <li><a href="#"><i class="fa fa-phone-square"></i></a></li>
-                </ul>
-            </div>
+<div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/"><i class="fa fa-server"></i> MauTab</a>
+</div>
 
 
-        </div>
-    </div>
-</header>
-
-
-
-@include('user/_layouts/headerHosting')
-
-
+<section class="container">
 
 
     @if (Session::has('good'))
@@ -108,18 +78,19 @@
     @if (count($errors) > 0)
         <div class="alert alert-danger container">
             <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
     @endif
 
 
 
-<section class="container app-container">
-@yield('content')
+
+
+        @yield('content')
 </section>
 
 @include('footer')

@@ -2,29 +2,25 @@
 
 @section('content')
 
-    <p class="col-sm-10 text-center text-success">
+
+
+    <div class="page-header">
+        <h1>Navmenu Template</h1>
+    </div>
+    <p class="lead">This example shows the navmenu element. If the viewport is <b>less than 992px</b> the menu will be placed the off canvas and will be shown with a
+                    slide in effect.</p>
+    <p>Also take a look at the examples for a navmenu with <a href="../navmenu-push">push effect</a> and <a href="../navmenu-reveal">reveal effect</a>.</p>
+
+
+
+
+
+    <p class="col-sm-12 text-center text-success">
         <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-plus"></i>Добавить
         </a>
     </p>
 
-
-    <div class="col-sm-2">
-
-
-        <form method="get" action="{{URL::route('hosting.search.index')}}">
-            <div class="input-group">
-                <input type="text" name="query" class="form-control" placeholder="Поиск ...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                    <span class="glyphicon glyphicon-search"></span></button>
-                </span>
-            </div>
-            <input type="hidden" name="_token" value="{{csrf_token()}}">
-        </form>
-
-
-    </div>
 
 
     <div class="collapse col-xs-12" id="add-bd">

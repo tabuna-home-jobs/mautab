@@ -2,32 +2,21 @@
 
 
 
-	Route::group(['middleware' => 'guest', 'namespace' => 'Guest'], function () {
+	Route::group(['namespace' => 'Guest'], function () {
 		Route::resource('/', 'WelcomeHostingController@index');
 		Route::resource('page', 'PageController');
 	});
 
 
-
-	//Авторизация, регистрация, востановление парля, а так же главная там и все дела
-/*
-	Route::group(['namespace' => 'Auth'], function () {
-		Route::controllers([
-			'auth' => 'AuthController',
-			//'password' => 'Auth\RegistrationController',
-		]);
-	});
-*/
-
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
+	Route::controllers([
+		'auth'     => 'Auth\AuthController',
+		'password' => 'Auth\PasswordController',
+	]);
 
 	// Хостинг
-Route::group(['middleware' => ['Hosting', 'LoginAs', 'auth'], 'prefix' => 'hosting', 'namespace' => 'Hosting'], function () {
-        Route::resource('search', 'SearchController');
-        Route::resource('web', 'WebController');
+	Route::group(['middleware' => ['Hosting', 'LoginAs', 'auth'], 'prefix' => 'hosting', 'namespace' => 'Hosting'], function () {
+		Route::resource('search', 'SearchController');
+		Route::resource('web', 'WebController');
 		Route::resource('ftp', 'FtpController');
 		Route::resource('dns', 'DnsController');
 		Route::resource('records', 'RecordController');
