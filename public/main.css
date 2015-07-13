@@ -575,4 +575,15 @@ footer p {
 .container-logo a:hover .fa {
     color: #fc4803;
 }
-
+.page-head h1{
+    color: #4c4c4c;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.page-head span{
+    color: #989898;
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 8px;
+}

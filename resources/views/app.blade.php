@@ -36,7 +36,7 @@
     <a class="navmenu-brand visible-md visible-lg" href="/"> <i class="fa fa-server fa-2x"></i> MauTab</a>
     <ul class="nav navmenu-nav">
         <li class="active"><a href="/">Хостинг</a></li>
-        <li><a href="/auth/login"><i class="fa fa-tachometer"></i>
+        <li><a href="/page/rates"><i class="fa fa-tachometer"></i>
                 Тарифы</a></li>
         <li><a href="/auth/login"><i class="fa fa-book"></i>
                 База знаний</a></li>

@@ -3,17 +3,18 @@
 	namespace Mautab\Http\Controllers\Guest;
 
 	use Mautab\Http\Controllers\Controller;
-    use Mautab\Http\Requests;
-    use Mautab\Models\Page;
 
     class PageController extends Controller
 	{
-
-		public function show($id)
+	    /**
+	     * @param Request $request - http запрос
+	     *
+	     * @return \Illuminate\View\View - Возращает вьюху по запросу
+	     */
+		public function show($url)
 		{
-			$Page = Page::find($id);
-
-			return view('pages/page', ['page' => $Page]);
+			//Передаем часть http запроса для определения запрашиваемой страницы
+			return view('pages/'.$url);
 		}
 
 	}
