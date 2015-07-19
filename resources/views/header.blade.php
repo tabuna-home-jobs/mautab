@@ -1,86 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <!-- set the title of you site -->
+    <title>Framer - Awesome components based framework / Demo 2</title>
+    <!-- encoding -->
     <meta charset="utf-8">
+    <!-- responsiveness, scaling... -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <!-- set the descritpion of you site -->
+    <meta name="description"
+          content="Responsive, Mobile First, Retina, Bootstrap 3, One Page, Multi Page, Multi-Purpose, Agency, Clean, Creative, Minimal">
+    <!-- set author of your site -->
+    <meta name="author" content="Awerest - interactive studio">
+    <!-- IE compatibility modes -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MauTab @yield('title', ' - Профессиональное решение')</title>
-    <meta name="description" content="@yield('description', ' - Профессиональное решение')">
-    <meta name="keywords" content="@yield('keywords', ' - Профессиональное решение')">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="none"/>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet'
-          type='text/css'>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 
-    <!-- CSS -->
-
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <!--<link rel="stylesheet" href="/main.css">-->
-    <link rel="stylesheet" href="/css/app.css">
-
-    <!-- Js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-    <script src="{{asset('/js/custom.js')}}" type="text/javascript"></script>
-
+    <!-- custom styling -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+    <!-- iconic font - FontAwesome -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700,300,600,400&subset=latin,cyrillic-ext'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat::300italic,400italic,600italic,700,300,600,400&subset=latin,cyrillic-ext'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700,300,600,400&subset=latin,cyrillic-ext'
+          rel='stylesheet' type='text/css'>
+    <!-- favicon -->
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries. All other JS at the end of file. -->
+    <!-- [if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="60" class="theme-two">
 
 
-<header>
-    <div class="topbar"></div>
-
+<div class="navbar navbar-default navbar-fixed-top skrollable skrollable-between" role="navigation"
+     data-start="padding: 15px 0px;" data-200="padding: 0px 0px;" style="padding: 15px 0px;">
     <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-xs-6 col-sm-3">
-                <a href="/" class="logo">
-                    <img src="/images/logo.png" alt="">
-                </a>
-            </div>
-            <div class="col-md-6 col-xs-6 col-sm-6">
-                <div class="menu">
-                    <nav class="navbar navbar-default" role="navigation">
-                        <div class="container-fluid">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                        data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="/host">Хостинг</a></li>
-                                    <li><a href="/auth/login">Войти</a></li>
-                                </ul>
-                            </div>
-                            <!-- /.navbar-collapse -->
-                        </div>
-                        <!-- /.container-fluid -->
-                    </nav>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-xs-12 col-sm-3">
-                <ul class="social-info">
-                    <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
-                    <li><a href="#"><i class="fa fa-phone-square"></i></a></li>
-                </ul>
-            </div>
-
-
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#video-hero-1" class="navbar-brand"><img class="img-responsive" src="img/framer-logo.png"
+                                                              alt=""></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#video-hero-1">Home</a></li>
+                <li class=""><a href="#services">Services</a></li>
+                <li class=""><a href="#features">Features</a></li>
+                <li class=""><a href="#counter">About</a></li>
+                <li class=""><a href="#blog">Blog</a></li>
+            </ul>
         </div>
     </div>
-</header>
+</div>
