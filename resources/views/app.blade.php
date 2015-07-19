@@ -44,8 +44,7 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="60" class="theme-two">
 
 
-<div class="navbar navbar-default navbar-fixed-top skrollable skrollable-between" role="navigation"
-     data-start="padding: 15px 0px;" data-200="padding: 0px 0px;" style="padding: 15px 0px;">
+<div class="navbar navbar-default navbar-fixed-top skrollable skrollable-between" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">

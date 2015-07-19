@@ -74,9 +74,7 @@
                             <li role="presentation">
                                 <a href="index-3.html#tab-5" aria-controls="tab-5" role="tab" data-toggle="tab">
                                     <div class="icon icon-lg gray">
-                                        <svg viewBox="0 0 32 32">
-                                            <use xlink:href="#happy-smiley"></use>
-                                        </svg>
+                                        <i class="fa fa-user"></i>
                                     </div>
                                     <h3>Why</h3>
                                 </a>
