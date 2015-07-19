@@ -22,7 +22,7 @@
 
 
     <!-- custom styling -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/main.css">
     <!-- iconic font - FontAwesome -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#video-hero-1" class="navbar-brand"><img class="img-responsive" src="/img/framer-logo-light.png"
+            <a href="/" class="navbar-brand"><img class="img-responsive" src="/img/framer-logo-light.png"
                                                               alt=""></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -105,7 +105,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-xs-12 divide-sm">
-                <img class="img-responsive" src="img/framer-logo-light.png" alt="">
+                <img class="img-responsive" src="/img/framer-logo-light.png" alt="">
             </div>
             <div class="col-sm-6 col-sm-offset-3 divide-sm">
                 <p class="dark-smoke">Framer is not just one template, it's a tons of components that together create
