@@ -11,7 +11,7 @@
     </p>
 
     <div class="collapse col-xs-12" id="add-dns">
-        <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('hosting.dns.store')}}">
+        <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('dns.store')}}">
 
             <div class="alert alert-info" role="alert"> Добавление DNS домена</div>
             <div class="form-group input-line">
@@ -108,12 +108,12 @@
                                                 </div>
 
                                                 <div class="btn-group pull-right" role="group">
-                                                    <a href="{{URL::route('hosting.records.show', $nameDns)}}"
+                                                    <a href="{{URL::route('records.show', $nameDns)}}"
                                                        class="btn btn-default">
                                                         <i class="fa fa-server"></i>
                                                     </a>
 
-                                                    <a href="{{URL::route('hosting.dns.show', $nameDns)}}"
+                                                    <a href="{{URL::route('dns.show', $nameDns)}}"
                                                        class="btn btn-default">
                                                         <i class="fa fa-pencil-square-o"></i>
                                                     </a>
@@ -140,7 +140,7 @@
                                                             Вы действительно хотите удалить {{$nameDns}}
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <form action="{{URL::route('hosting.dns.destroy')}}"
+                                                            <form action="{{URL::route('dns.destroy')}}"
                                                                   method="post">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                                                 <button type="submit" class="button-small">Да</button>

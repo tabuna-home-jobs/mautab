@@ -2,8 +2,8 @@
 
     <div class="col-md-2 col-sm-4 col-xs-6">
 
-        <a href="{{URL::route('hosting.home.index')}}"
-           class="{{Active::route('hosting.home.*')}}">
+        <a href="{{URL::route('home.index')}}"
+           class="{{Active::route('home.*')}}">
             <span class="fa fa-user"></span>
             <h4>{{Lang::get('menu.user')}}</h4>
         </a>
@@ -16,8 +16,8 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.web.index')}}"
-           class="{{Active::route('hosting.web.*')}}">
+        <a href="{{URL::route('web.index')}}"
+           class="{{Active::route('web.*')}}">
             <span class="fa fa-desktop"></span>
             <h4>{{Lang::get('menu.Web')}}</h4>
         </a>
@@ -30,8 +30,8 @@
 
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.dns.index')}}"
-           class="{{Active::route('hosting.dns.*')}}">
+        <a href="{{URL::route('dns.index')}}"
+           class="{{Active::route('dns.*')}}">
             <span class="fa fa-sitemap"></span>
             <h4>{{Lang::get('menu.DNS')}}</h4>
         </a>
@@ -42,8 +42,8 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.bd.index')}}"
-           class="{{Active::route('hosting.bd.*')}}">
+        <a href="{{URL::route('bd.index')}}"
+           class="{{Active::route('bd.*')}}">
             <span class="fa fa-database"></span>
             <h4>{{Lang::get('menu.BD')}}</h4>
         </a>
@@ -52,8 +52,8 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.cron.index')}}"
-           class="{{Active::route('hosting.cron.*')}}">
+        <a href="{{URL::route('cron.index')}}"
+           class="{{Active::route('cron.*')}}">
             <span class="fa fa-clock-o"></span>
             <h4>{{Lang::get('menu.Cron')}}</h4>
         </a>
@@ -62,16 +62,16 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.tikets.index')}}"
-           class="{{Active::route('hosting.tikets.*')}}">
+        <a href="{{URL::route('tikets.index')}}"
+           class="{{Active::route('tikets.*')}}">
             <span class="fa fa-life-ring"></span>
             <h4>{{Lang::get('menu.support')}}</h4>
         </a>
         <hr>
 
-        <p class="menu-small"><a href="{{URL::route('hosting.log.index')}}">Журнал действий</a></p>
+        <p class="menu-small"><a href="{{URL::route('log.index')}}">Журнал действий</a></p>
 
-        <p class="menu-small"><a href="{{URL::route('hosting.backup.index')}}">Резервные копии</a></p>
+        <p class="menu-small"><a href="{{URL::route('backup.index')}}">Резервные копии</a></p>
     </div>
 
 </section>

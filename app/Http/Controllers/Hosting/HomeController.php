@@ -53,7 +53,7 @@ class HomeController extends Controller {
 		$thisUser->save();
 		Session::flash('good', 'Вы успешно изменили личные данных.');
 
-		return redirect()->route('hosting.home.index');
+		return redirect()->route('home.index');
 
 	}
 

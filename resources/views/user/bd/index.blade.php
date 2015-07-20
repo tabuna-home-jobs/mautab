@@ -11,7 +11,7 @@
 
 
         <div class="collapse col-xs-12" id="add-bd">
-            <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('hosting.bd.store')}}">
+            <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('bd.store')}}">
 
                 <div class="alert alert-info" role="alert"> Префикс {{Auth::User()->nickname }}_ будет автоматически
                     добавлен к БД и пользователю БД
@@ -143,7 +143,8 @@
                                                         <i class="fa fa-server"></i>
                                                     </a>
 
-                                                    <a href="{{URL::route('hosting.bd.show', $nameBd)}}" class="btn btn-default">
+                                                    <a href="{{URL::route('bd.show', $nameBd)}}"
+                                                       class="btn btn-default">
                                                         <i class="fa fa-pencil-square-o"></i>
                                                     </a>
 
@@ -167,7 +168,7 @@
                                                             Вы действительно хотите удалить {{$nameBd}}
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <form action="{{URL::route('hosting.bd.destroy')}}" method="post">
+                                                            <form action="{{URL::route('bd.destroy')}}" method="post">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                                                 <button type="submit" class="button-small">Да</button>
                                                                 <input type="hidden" name="v_database" value="{{$nameBd}}"/>

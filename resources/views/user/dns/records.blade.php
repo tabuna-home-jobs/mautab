@@ -21,7 +21,7 @@
 
 
                 <div class="collapse col-xs-12" id="add-records">
-                    <form class="col-md-8" method="post" action="{{URL::route('hosting.records.store')}}">
+                    <form class="col-md-8" method="post" action="{{URL::route('records.store')}}">
 
                         <div class="alert alert-info" role="alert">
                             Изменения записей для домена {{$domain}}
@@ -110,7 +110,8 @@
 
                                 <td>
                                     <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="{{URL::route('hosting.records.edit',['domain' => $domain, 'record' => $record['ID']])}}" class="btn btn-default">
+                                        <a href="{{URL::route('records.edit',['domain' => $domain, 'record' => $record['ID']])}}"
+                                           class="btn btn-default">
                                             <i class="fa fa-pencil-square-o"></i>
                                         </a>
 

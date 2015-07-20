@@ -45,7 +45,7 @@ class RecordController extends Controller
 		);
 		Session::flash('good', 'Вы успешно изменили запись.');
 
-		return redirect()->route('hosting.records.show', $request->v_domain);
+		return redirect()->route('records.show', $request->v_domain);
 	}
 
 	/**
@@ -93,7 +93,7 @@ class RecordController extends Controller
 			(int)$request->v_priority);
 		Session::flash('good', 'Вы успешно изменили запись.');
 
-		return redirect()->route('hosting.records.show', $domain);
+		return redirect()->route('records.show', $domain);
 	}
 
 	/**
@@ -108,7 +108,7 @@ class RecordController extends Controller
         Vesta::removeDNSRecord($request->v_domain, $request->v_record_id);
         Session::flash('good', 'Вы успешно удалили запись.');
 
-		return redirect()->route('hosting.records.show', $request->v_domain);
+		return redirect()->route('records.show', $request->v_domain);
 	}
 
 }

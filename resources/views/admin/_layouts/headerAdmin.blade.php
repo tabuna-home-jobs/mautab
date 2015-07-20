@@ -2,7 +2,7 @@
 
     <div class="col-md-2 col-sm-4 col-xs-6">
 
-        <a href="{{URL::route('hosting.home.index')}}">
+        <a href="{{URL::route('home.index')}}">
             <span class="fa fa-home"></span>
             <h4>{{Lang::get('menu.Panel')}}</h4>
         </a>
@@ -70,15 +70,15 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('hosting.tikets.index')}}">
+        <a href="{{URL::route('tikets.index')}}">
             <span class="fa fa-life-ring"></span>
             <h4>{{Lang::get('menu.support')}}</h4>
         </a>
         <hr>
 
-        <p class="menu-small"><a href="{{URL::route('hosting.log.index')}}">Журнал действий</a></p>
+        <p class="menu-small"><a href="{{URL::route('log.index')}}">Журнал действий</a></p>
 
-        <p class="menu-small"><a href="{{URL::route('hosting.backup.index')}}">Резервные копии</a></p>
+        <p class="menu-small"><a href="{{URL::route('backup.index')}}">Резервные копии</a></p>
     </div>
 
 </section>

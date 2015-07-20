@@ -12,7 +12,7 @@
         </div>
 
             <!-- SHARE -->
-        <div class="text-right"><h6>{{Lang::get('hosting.tikets.answers')}}</h6></div>
+        <div class="text-right"><h6>{{Lang::get('tikets.answers')}}</h6></div>
         <hr>
             <!-- END OF SHARE -->
             <!-- AUTHOR BOX -->
@@ -35,7 +35,8 @@
                     <div id="respond" class="comment-respond">
                         <h3 id="reply-title" class="comment-reply-title">Ваш ответ</h3>
 
-                        <form action="{{URL::route('hosting.tikets.update')}}" method="POST" id="commentform" class="comment-form">
+                        <form action="{{URL::route('tikets.update')}}" method="POST" id="commentform"
+                              class="comment-form">
                             <p class="comment-form-comment">
                                 <label for="comment">Сообщение</label>
                                 <textarea name="message" name="reply" class="form-control" cols="45" rows="8" aria-required="true"></textarea></p>

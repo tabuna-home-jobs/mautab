@@ -46,7 +46,7 @@ class CronController extends Controller
 		);
 		Session::flash('good', 'Вы успешно добавили задание.');
 
-		return redirect()->route('hosting.cron.index');
+		return redirect()->route('cron.index');
 	}
 
 	/**
@@ -93,7 +93,7 @@ class CronController extends Controller
         );
         Session::flash('good', 'Вы успешно изменили задание.');
 
-		return redirect()->route('hosting.cron.index');
+		return redirect()->route('cron.index');
 	}
 
 	/**
@@ -108,7 +108,7 @@ class CronController extends Controller
 		Vesta::deleteCron($request->v_job);
 		Session::flash('good', 'Вы успешно добавили задание.');
 
-		return redirect()->route('hosting.cron.index');
+		return redirect()->route('cron.index');
 	}
 
 }

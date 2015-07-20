@@ -14,7 +14,7 @@
 
 
     <div class="collapse col-xs-12" id="add-bd">
-        <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('hosting.web.store')}}">
+        <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('web.store')}}">
 
             <div class="alert alert-info" role="alert">Добавление домена</div>
             <div class="form-group input-line">
@@ -118,10 +118,10 @@
                                             <a href="http://{{$key}}/" target="_blank" class="btn btn-default">
                                                 <i class="fa fa-sign-in"></i>
                                             </a>
-                                            <a href="{{URL::route('hosting.ftp.show', $key)}}" class="btn btn-default">
+                                            <a href="{{URL::route('ftp.show', $key)}}" class="btn btn-default">
                                                 <i class="fa fa-plus"></i>
                                             </a>
-                                            <a href="{{URL::route('hosting.web.show', $key)}}" class="btn btn-default">
+                                            <a href="{{URL::route('web.show', $key)}}" class="btn btn-default">
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
 

@@ -6,7 +6,8 @@
 
     @forelse($Backups as $key =>  $Bakup)
             <div class="col-xs-12 log-row">
-                <h1 class="col-md-3 col-xs-12 subheaderlog"><a href="{{URL::route('hosting.backup.index')}}/{{ $key  }}"> {{ $key  }}</a></h1>
+                <h1 class="col-md-3 col-xs-12 subheaderlog"><a
+                            href="{{URL::route('backup.index')}}/{{ $key  }}"> {{ $key  }}</a></h1>
                 <blockquote class="col-md-9 col-xs-12">
                     <p class="question">Веб: {{ $Bakup['WEB']}}</p>
 
@@ -43,7 +44,7 @@
                             Вы действительно хотите удалить {{$key}}
                         </div>
                         <div class="modal-footer">
-                            <form action="{{URL::route('hosting.backup.destroy')}}" method="post">
+                            <form action="{{URL::route('backup.destroy')}}" method="post">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                 <button type="submit" class="button-small">Да</button>
                                 <input type="hidden" name="backup" value="{{$key}}"/>

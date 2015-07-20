@@ -6,7 +6,7 @@
 
     <div class="col-xs-12">
 
-            <form class="col-md-8" method="post" action="{{URL::route('hosting.records.update',$domain)}}">
+        <form class="col-md-8" method="post" action="{{URL::route('records.update',$domain)}}">
 
                         <div class="alert alert-info" role="alert">
                             Изменения для домена {{$domain}}

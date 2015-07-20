@@ -19,7 +19,7 @@
 
                     <hr>
 
-                    <form class="col-md-12" action="{{URL::route('hosting.home.update')}}" method="post">
+                    <form class="col-md-12" action="{{URL::route('home.update')}}" method="post">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Аккаунт</label>
