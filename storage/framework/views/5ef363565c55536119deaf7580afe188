@@ -1,8 +1,66 @@
-<footer>
-    <div class="col-md-12 ">
-        <p class="text-right">Copyright © 2015 MauTab. Все права защищены. </p>
+<footer class="dark-footer black-gray-bg light">
+    <div class="divide-xs"></div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-12 divide-sm">
+                <img class="img-responsive" src="img/framer-logo-light.png" alt="">
             </div>
+            <div class="col-sm-6 col-sm-offset-3 divide-sm">
+                <p class="dark-smoke">Framer is not just one template, it's a tons of components that together create
+                    unlimited number of templates. Initial version contains: 8 hero, 14 content, 11 showcase sections, 8
+                    footers, 2 contact pages, 10 blog pages and 7 demos, + 20 various other sections. We are dedicated
+                    to work on new components and expand framer in the future.</p>
+            </div>
+            <div class="col-xs-12 divide-sm">
+                <div class="social">
+                    <a href="index-3.html#">
+                        <div class="icon icon-md gray">
+                            <svg viewBox="0 0 32 32">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <div class="horizontal-divider"></div>
+                    <a href="index-3.html#">
+                        <div class="icon icon-md gray">
+                            <svg viewBox="0 0 32 32">
+                                <use xlink:href="#twitter"></use>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <div class="horizontal-divider"></div>
+                    <a href="index-3.html#">
+                        <div class="icon icon-md gray">
+                            <svg viewBox="0 0 32 32">
+                                <use xlink:href="#linkedin"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divide-xs"></div>
+    <div class="black-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12  divide-xs text-center dark-smoke">
+                    <p>
+                        <small>Copyright &copy; 2015 Awerest Inc. All rights reserved.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
 
 
 

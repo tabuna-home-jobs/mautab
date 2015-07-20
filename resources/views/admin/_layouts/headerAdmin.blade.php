@@ -23,14 +23,7 @@
             <h4>{{Lang::get('menu.Users')}}</h4>
         </a>
 
-
         <hr>
-
-        <p class="menu-small">
-            <a href="{{URL::route('admin.groups.index')}}">
-                {{Lang::get('menu.Groups')}}
-            </a>
-        </p>
 
     </div>
 

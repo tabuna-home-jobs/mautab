@@ -1,7 +1,7 @@
 <?php namespace Mautab\Http\Middleware;
 
+use Auth;
 use Closure;
-use Sentry;
 use Session;
 
 class LoginAsMiddleware
@@ -18,7 +18,7 @@ class LoginAsMiddleware
 	public function handle($request, Closure $next)
 	{
 		if (Session::has('LoginAs')) {
-			Sentry::getUser()->nickname = Session::get('LoginAs');
+			Auth::User()->nickname = Session::get('LoginAs');
 		}
 
 		return $next($request);

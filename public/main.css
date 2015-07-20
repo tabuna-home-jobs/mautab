@@ -165,3 +165,7 @@ label, strong {
 .log-row p {
     color: #c66c66;
 }
+
+.app-container {
+    padding: 60px 0;
+}

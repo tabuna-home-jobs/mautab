@@ -4,16 +4,6 @@
 
 
 
-    <div class="page-header">
-        <h1>Navmenu Template</h1>
-    </div>
-    <p class="lead">This example shows the navmenu element. If the viewport is <b>less than 992px</b> the menu will be placed the off canvas and will be shown with a
-                    slide in effect.</p>
-    <p>Also take a look at the examples for a navmenu with <a href="../navmenu-push">push effect</a> and <a href="../navmenu-reveal">reveal effect</a>.</p>
-
-
-
-
 
     <p class="col-sm-12 text-center text-success">
         <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false" aria-controls="collapseExample">
@@ -196,7 +186,6 @@
                     @endforelse
             </div>
     </div>
-
 
 
 

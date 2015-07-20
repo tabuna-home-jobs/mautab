@@ -2,7 +2,9 @@
 
 @section('content')
 
-        <div class="col-xs-12">
+
+
+    <div class="col-xs-12">
 
             <form class="col-md-8" method="post" action="{{URL::route('hosting.records.update',$domain)}}">
 
@@ -70,6 +72,5 @@
                         </div>
                     </div>
         </div>
-
 
 @endsection

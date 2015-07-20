@@ -3,7 +3,9 @@
 @section('content')
 
 
-        <div class="col-xs-12 log-row">
+
+
+    <div class="col-xs-12 log-row">
             <h1 class="col-md-3 col-xs-12 subheaderlog"> {{ $name  }}</h1>
             <blockquote class="col-md-9 col-xs-12">
 

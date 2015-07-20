@@ -1,7 +1,6 @@
 <?php
 
 
-
 	Route::group(['namespace' => 'Guest'], function () {
 		Route::resource('/', 'WelcomeHostingController@index');
 		Route::resource('page', 'PageController');
@@ -30,10 +29,9 @@
 
 
 	// Всё для администратора
-	Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'sentry'], function () {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 		Route::resource('/', 'HomeAdminController', ['only' => 'index']);
 		Route::resource('users', 'UserController');
-		Route::resource('groups', 'GroupsController');
 		Route::resource('pages', 'PagesController');
 		Route::controller('LoginAs', 'LoginAsController', [
 			'getLoginAs' => 'LoginAs',

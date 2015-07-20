@@ -1,8 +1,9 @@
 @extends('app')
 
 @section('content')
-    <section class="container">
-        <div class="col-xs-12">
+
+
+    <div class="col-xs-12">
     <form class="col-md-8 col-xs-12" method="post" action="">
     @foreach($ftplist as $domain => $d_val)
         <div class="alert alert-info" role="alert">
@@ -82,5 +83,4 @@
     </form>
     </div>
 
-</section>
 @endsection

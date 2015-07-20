@@ -3,7 +3,8 @@
 @section('content')
 
 
-        @forelse($Backups as $key =>  $Bakup)
+
+    @forelse($Backups as $key =>  $Bakup)
             <div class="col-xs-12 log-row">
                 <h1 class="col-md-3 col-xs-12 subheaderlog"><a href="{{URL::route('hosting.backup.index')}}/{{ $key  }}"> {{ $key  }}</a></h1>
                 <blockquote class="col-md-9 col-xs-12">

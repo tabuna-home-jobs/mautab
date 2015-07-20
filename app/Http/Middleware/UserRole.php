@@ -1,7 +1,7 @@
 <?php namespace Mautab\Http\Middleware;
 
+use Auth;
 use Closure;
-use Sentry;
 use Vesta;
 use View;
 
@@ -17,9 +17,9 @@ class UserRole
 	 */
 	public function handle($request, Closure $next)
 	{
-		if (Sentry::check()) {
+		if (Auth::check()) {
 			View::composer('*', function () {
-				$UserInfo = Vesta::listUserAccount()[Sentry::getUser()->nickname];
+				$UserInfo = Vesta::listUserAccount()[Auth::User()->nickname];
 				View::share('UserInfo', $UserInfo);
 			});
 			return $next($request);

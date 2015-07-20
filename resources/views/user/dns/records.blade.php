@@ -3,7 +3,6 @@
 @section('content')
 
 
-
     <div class="col-xs-12">
         <h3 class="text-center">
             <small>Записи домена</small>
@@ -157,6 +156,7 @@
             </script>
 
         </div>
+
 
 
 @endsection

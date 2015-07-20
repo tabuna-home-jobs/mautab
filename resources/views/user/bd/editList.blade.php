@@ -2,7 +2,9 @@
 
 @section('content')
 
-        <div class="col-xs-12">
+
+
+    <div class="col-xs-12">
 
 
                     @if(!empty($BdList))

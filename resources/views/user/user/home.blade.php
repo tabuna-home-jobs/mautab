@@ -3,20 +3,8 @@
 @section('content')
 
 
-        <div class="col-xs-12">
 
-
-            <div class="page-header">
-                <h1>Информация</h1>
-            </div>
-
-
-
-
-            @include('user/_layouts/headerHosting')
-
-
-
+    <div class="col-xs-12">
 
             <div class="row">
 
@@ -248,7 +236,6 @@
 
 
         </div>
-
 
 
 

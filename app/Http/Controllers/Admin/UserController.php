@@ -1,10 +1,10 @@
 <?php namespace Mautab\Http\Controllers\Admin;
 
+use Auth;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Http\Requests\Admin\UserRequest;
 use Mautab\Models\User;
-use Sentry;
 use Session;
 
 class UserController extends Controller
@@ -51,11 +51,13 @@ class UserController extends Controller
 	 */
 	public function show($id)
 	{
+		/*
 		$User = Sentry::findUserById($id);
         $groups = Sentry::findAllGroups();
         $thisgroup = $User->getGroups();
 
 		return view('admin/users/usersEdit', ['user' => $User, 'groups' => $groups, 'thisgroup' => $thisgroup]);
+		*/
 	}
 
 	/**
@@ -79,7 +81,7 @@ class UserController extends Controller
 	 */
     public function update(UserRequest $request)
 	{
-		$user = Sentry::getUser();
+		$user = Auth::User();
 		$user->email = $request->email;
 		$user->first_name = $request->first_name;
 		$user->last_name = $request->last_name;
@@ -91,7 +93,7 @@ class UserController extends Controller
 
 		//Запись новых групп
 		foreach($request->groups as $value){
-			$groupz = Sentry::findGroupById($value);
+			$groupz = User::find($value);
 			$user->addGroup($groupz);
 		}
 
@@ -118,7 +120,7 @@ class UserController extends Controller
 	 */
 	public function destroy(UserRequest $request)
 	{
-			$user = Sentry::findUserById($request->id);
+		$user = User::find($request->id);
 			$user->delete();
 			Session::flash('good', 'Вы удалили пользователя.');
 			return redirect()->route('admin.users.index');

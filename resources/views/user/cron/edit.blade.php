@@ -2,7 +2,9 @@
 
 @section('content')
 
-        <div class="col-xs-12">
+
+
+    <div class="col-xs-12">
 
 
             <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('hosting.cron.update')}}">
@@ -67,6 +69,5 @@
 
 
         </div>
-
 
 @endsection
