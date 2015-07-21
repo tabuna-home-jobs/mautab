@@ -85,7 +85,7 @@ label, strong {
 }
 
 .menuapp a:hover, .menuapp a.active {
-    color: #fc4803;
+    color: #00afec;
     text-decoration: none;
 }
 
@@ -164,8 +164,4 @@ label, strong {
 
 .log-row p {
     color: #c66c66;
-}
-
-.app-container {
-    padding: 60px 0;
 }

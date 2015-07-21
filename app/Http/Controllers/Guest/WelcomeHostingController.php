@@ -27,4 +27,9 @@ class WelcomeHostingController extends Controller
 		return view('welcome/hosting');
 	}
 
+	public function price()
+	{
+		return view('welcome.price');
+	}
+
 }

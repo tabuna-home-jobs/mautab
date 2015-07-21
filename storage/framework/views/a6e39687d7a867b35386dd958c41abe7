@@ -1,0 +1,72 @@
+<?php $__env->startSection('content'); ?>
+
+
+
+
+    <div class="col-xs-12">
+        <h2 class="text-center"><?php echo e(Lang::get('tikets.Tickets')); ?></h2>
+
+        <p class="text-center"><?php echo e(Lang::get('tikets.description')); ?> </p>
+    </div>
+
+    <div class="col-md-8 table-responsive">
+        <table class="table table-condensed table-hover table-striped">
+            <thead>
+            <tr>
+                <th><?php echo e(Lang::get('tikets.numberTable')); ?></th>
+                <th><?php echo e(Lang::get('tikets.titleTable')); ?></th>
+                <th><?php echo e(Lang::get('tikets.statusTable')); ?></th>
+                <th><?php echo e(Lang::get('tikets.managementTable')); ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($Tikets as $Tiket): ?>
+                <tr>
+                    <td><?php echo e($Tiket->id); ?></td>
+                    <td><?php echo e($Tiket->title); ?></td>
+                    <td><?php if(!$Tiket->complete): ?>
+                            <?php echo e(Lang::get('tikets.statusFalse')); ?>
+
+                        <?php else: ?>
+                            <?php echo e(Lang::get('tikets.statusTrue')); ?>
+
+                        <?php endif; ?>
+                    </td>
+                    <td><a href="<?php echo e(URL::route('hosting.tikets.show', $Tiket->id)); ?>"><?php echo e(Lang::get('tikets.viewTable')); ?></a></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php echo $Tikets->render(); ?>
+
+    </div>
+
+
+    <div class="col-md-4">
+        <h2>Напиши и будет решено</h2>
+
+        <form action="<?php echo e(URL::route('hosting.tikets.store')); ?>" method="POST">
+            <div class="form-group">
+                <label>Заголовок</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Описание</label>
+                <textarea name="message" cols="5" class="form-control"></textarea>
+            </div>
+            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+            <input type="submit" class="btn btn-blue" value="Войти">
+        </form>
+    </div>
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+
+
+
+
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
