@@ -57,7 +57,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right visible-md visible-lg">
                 <li>
-                    <a href="signup.html" class="button">Попробывать</a>
+                    <a href="/auth/login" class="button">Попробывать</a>
                 </li>
             </ul>
         </nav>
@@ -65,12 +65,7 @@
 </header>
 
 
-
-
-
 <?php echo $__env->yieldContent('content'); ?>
-
-
 
 
 <div id="footer">
@@ -100,10 +95,10 @@
             </div>
             <div class="col-sm-3 social">
                 <a href="features.html#">
-                    <img src="images/social/social-tw.png" alt="twitter" />
+                    <img src="images/social/social-tw.png" alt="twitter"/>
                 </a>
                 <a href="features.html#">
-                    <img src="images/social/social-dbl.png" alt="dribbble" />
+                    <img src="images/social/social-dbl.png" alt="dribbble"/>
                 </a>
             </div>
         </div>

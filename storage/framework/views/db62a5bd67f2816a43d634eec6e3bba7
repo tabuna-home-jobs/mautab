@@ -9,6 +9,7 @@
             <div class="container">
                 <div class="row header">
                     <h3>Comparison charts</h3>
+
                     <p>
                         When you need to compare your plans or competitors
                     </p>
@@ -57,13 +58,13 @@
                                     </div>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">&nbsp;</div>
                                 <div class="spec">&nbsp;</div>
@@ -80,19 +81,19 @@
                                     </div>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">&nbsp;</div>
                                 <div class="spec">&nbsp;</div>
@@ -107,25 +108,25 @@
                                     </div>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
                                 <div class="spec">
-                                    <img src="images/checkmark.png" class="check" alt="checkmark" />
+                                    <img src="images/checkmark.png" class="check" alt="checkmark"/>
                                 </div>
 
                                 <a href="signup.html" class="button button-small">Sign up free</a>
@@ -150,40 +151,58 @@
                             <div class="col-md-6">
                                 <div class="question">
                                     <strong>Do I need a card to signup?</strong>
+
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don’t look even slightly believable. If you are anything embarrassing hidden in the middle of text.
+                                        There are many variations of passages of Lorem Ipsum available, but the
+                                        randomised words which don’t look even slightly believable. If you are anything
+                                        embarrassing hidden in the middle of text.
                                     </p>
                                 </div>
                                 <div class="question">
                                     <strong>Can I cancel at anytime?</strong>
+
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don’t look even slightly believable. If you are anything embarrassing hidden in the middle of text.
+                                        There are many variations of passages of Lorem Ipsum available, but the
+                                        randomised words which don’t look even slightly believable. If you are anything
+                                        embarrassing hidden in the middle of text.
                                     </p>
                                 </div>
                                 <div class="question">
                                     <strong>Do I need a card to signup?</strong>
+
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don’t look even slightly believable. If you are anything embarrassing hidden in the middle of text.
+                                        There are many variations of passages of Lorem Ipsum available, but the
+                                        randomised words which don’t look even slightly believable. If you are anything
+                                        embarrassing hidden in the middle of text.
                                     </p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="question">
                                     <strong>Can I cancel at anytime?</strong>
+
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don’t look even slightly believable. If you are anything embarrassing hidden in the middle of text.
+                                        There are many variations of passages of Lorem Ipsum available, but the
+                                        randomised words which don’t look even slightly believable. If you are anything
+                                        embarrassing hidden in the middle of text.
                                     </p>
                                 </div>
                                 <div class="question">
                                     <strong>Do I need a card to signup?</strong>
+
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don’t look even slightly believable. If you are anything embarrassing hidden in the middle of text.
+                                        There are many variations of passages of Lorem Ipsum available, but the
+                                        randomised words which don’t look even slightly believable. If you are anything
+                                        embarrassing hidden in the middle of text.
                                     </p>
                                 </div>
                                 <div class="question">
                                     <strong>Can I cancel at anytime?</strong>
+
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don’t look even slightly believable. If you are anything embarrassing hidden in the middle of text.
+                                        There are many variations of passages of Lorem Ipsum available, but the
+                                        randomised words which don’t look even slightly believable. If you are anything
+                                        embarrassing hidden in the middle of text.
                                     </p>
                                 </div>
                             </div>
