@@ -29,10 +29,9 @@
 </head>
 
 
-
 <body id="signup">
-    <div class="container">
-        <?php echo $__env->yieldContent('content'); ?>
-    </div>
+<div class="container">
+    <?php echo $__env->yieldContent('content'); ?>
+</div>
 </body>
 </html>

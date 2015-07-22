@@ -34,10 +34,6 @@
 </head>
 
 
-
-
-
-
 <header class="navbar navbar-inverse normal" role="banner">
     <div class="container">
         <div class="navbar-header">
@@ -70,30 +66,29 @@
 </header>
 
 
-
-
-
 <section class="container">
-
 
 
     <?php if(Session::has('good')): ?>
         <div class="alert alert-success text-center container">
-            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
+                        aria-hidden="true">×</span></button>
             <?php echo e(Session::get('good')); ?>
 
         </div>
     <?php endif; ?>
     <?php if(Session::has('danger')): ?>
         <div class="alert alert-danger text-center container">
-            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
+                        aria-hidden="true">×</span></button>
             <?php echo e(Session::get('danger')); ?>
 
         </div>
     <?php endif; ?>
     <?php if(count($errors) > 0): ?>
         <div class="alert alert-danger container">
-            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
+                        aria-hidden="true">×</span></button>
             <ul>
                 <?php foreach($errors->all() as $error): ?>
                     <li><?php echo e($error); ?></li>
@@ -111,7 +106,6 @@
     <?php echo $__env->yieldContent('content'); ?>
 
 </section>
-
 
 
 <?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

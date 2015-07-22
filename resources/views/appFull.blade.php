@@ -48,10 +48,9 @@
 
 
                 <li class="active"><a href="#">Возможности</a></li>
-                <li><a href="/price">Цена</a></li>
-                <li><a href="#">Помощь</a></li>
-                <li><a href="#">Цена</a></li>
-                <li><a href="#">Помощь</a></li>
+                <li><a href="/price">Хостинг</a></li>
+                <li><a href="#">База знаний</a></li>
+                <li><a href="/auth/login">Войти</a></li>
 
 
             </ul>
@@ -72,35 +71,28 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3 copyright">
-                React LLC 2014
+                © 2015 Mautab, Inc.
             </div>
-            <div class="col-sm-6 menu">
+            <div class="col-sm-9 menu">
                 <ul>
                     <li class="active">
-                        <a href="#">Возможности</a>
+                        <a href="#">Конфеденциальность</a>
                     </li>
                     <li>
-                        <a href="#">Оплата</a>
+                        <a href="#">Способы оплаты</a>
                     </li>
                     <li>
-                        <a href="#">Цена</a>
+                        <a href="#">База знаний</a>
                     </li>
                     <li>
-                        <a href="#">Помощь</a>
+                        <a href="#">Разработка сайтов</a>
                     </li>
                     <li>
                         <a href="#">О нас</a>
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-3 social">
-                <a href="features.html#">
-                    <img src="images/social/social-tw.png" alt="twitter"/>
-                </a>
-                <a href="features.html#">
-                    <img src="images/social/social-dbl.png" alt="dribbble"/>
-                </a>
-            </div>
+
         </div>
     </div>
 </div>

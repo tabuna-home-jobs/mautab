@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-md-12">
 
-                            <?php if(count($errors) > 0): ?>
+                        <?php if(count($errors) > 0): ?>
                                 <div class="alert alert-danger">
                                     <strong>Whoops!</strong> There were some problems with your input.<br><br>
                                     <ul>
@@ -33,7 +33,6 @@
                                     </ul>
                                 </div>
                             <?php endif; ?>
-
 
 
                             <form role="form" method="POST" action="<?php echo e(url('/auth/login')); ?>">
@@ -75,7 +74,7 @@
             </div>
             <div class="already-account">
                 <p>
-                <a href="<?php echo e(url('/password/email')); ?>">Забыли пароль?</a></p>
+                    <a href="<?php echo e(url('/password/email')); ?>">Забыли пароль?</a></p>
 
                 <p>У вас нет аккаунта?
                     <a href="<?php echo e(url('/auth/register')); ?>">Зарегистрироваться</a></p>

@@ -141,7 +141,8 @@
                                                         <i class="fa fa-server"></i>
                                                     </a>
 
-                                                    <a href="<?php echo e(URL::route('bd.show', $nameBd)); ?>" class="btn btn-default">
+                                                    <a href="<?php echo e(URL::route('bd.show', $nameBd)); ?>"
+                                                       class="btn btn-default">
                                                         <i class="fa fa-pencil-square-o"></i>
                                                     </a>
 

@@ -25,10 +25,10 @@
             </div>
             <div class="col-sm-3 social">
                 <a href="features.html#">
-                    <img src="images/social/social-tw.png" alt="twitter" />
+                    <img src="images/social/social-tw.png" alt="twitter"/>
                 </a>
                 <a href="features.html#">
-                    <img src="images/social/social-dbl.png" alt="dribbble" />
+                    <img src="images/social/social-dbl.png" alt="dribbble"/>
                 </a>
             </div>
         </div>

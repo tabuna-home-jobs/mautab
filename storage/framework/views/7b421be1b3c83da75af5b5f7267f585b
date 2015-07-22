@@ -15,11 +15,10 @@
                 <div class="row">
                     <div class="col-md-12 tabs-wrapper">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="features.html#home" data-toggle="tab">Upstart your
-                                    development</a></li>
-                            <li><a href="features.html#profile" data-toggle="tab">Get ready in half the time</a></li>
-                            <li><a href="features.html#messages" data-toggle="tab">Collaborate with everyone</a></li>
-                            <li><a href="features.html#settings" data-toggle="tab">Get more done faster</a></li>
+                            <li class="active"><a href="features.html#home" data-toggle="tab">Быстрый старт</a></li>
+                            <li><a href="features.html#profile" data-toggle="tab">Надёжность</a></li>
+                            <li><a href="features.html#messages" data-toggle="tab">Современность</a></li>
+                            <li><a href="features.html#settings" data-toggle="tab">Поддержка</a></li>
                         </ul>
 
                         <div class="tab-content">
@@ -119,33 +118,8 @@
                         <img src="images/feature1.png" class="img-responsive" alt="feature1"/>
                     </div>
                 </div>
-                <div class="row feature backwards">
-                    <div class="col-md-6 info">
-                        <h4>A fully featured well design template that works.</h4>
 
-                        <p>
-                            You have complete control over the look & feel of your website, we offer the best quality so
-                            you take your site up and running in no time.
-                        </p>
-                    </div>
-                    <div class="col-md-6 image">
-                        <img src="images/feature2.png" class="img-responsive" alt="feature2"/>
-                    </div>
-                </div>
-                <div class="row feature last">
-                    <div class="col-md-6 info">
-                        <h4>You don't need to have great technical experience to use your product.</h4>
 
-                        <p>
-                            Whether you want to fill this paragraph with some text like I'm doing right now, this place
-                            is perfect to describe some features or anything you want - React has a complete solution
-                            for you.
-                        </p>
-                    </div>
-                    <div class="col-md-6 image">
-                        <img src="images/feature3.png" class="img-responsive" alt="feature3"/>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -231,28 +205,28 @@
                             <div class="plan-name">Freelance</div>
                             <div class="specs">
                                 <div class="spec">
-                                    <span class="variable">5</span>
-                                    team members
+                                    <span class="variable">3</span>
+                                    домен
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">Digital</span>
-                                    recurring billing
+                                    <span class="variable">1 Gb</span>
+                                    дискового пространства
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">Virtual</span>
-                                    online terminal
+                                    <span class="variable">3</span>
+                                    база данных
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">10</span>
-                                    total products
+                                    <span class="variable">1</span>
+                                    задание
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">1.0%</span>
-                                    Transaction fee
+                                    <span class="variable">24/7</span>
+                                    поддержка
                                 </div>
                             </div>
-                            <a class="btn-signup button-clear" href="signup.html">
-                                <span>Start free trial</span>
+                            <a class="btn btn-blue" href="/auth/register">
+                                <span>Попробывать</span>
                             </a>
                     </div>
                 </div>
@@ -267,28 +241,28 @@
                             <div class="plan-name">Profesional</div>
                             <div class="specs">
                                 <div class="spec">
-                                    <span class="variable">15</span>
-                                    team members
+                                    <span class="variable">3</span>
+                                    домен
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">Digital</span>
-                                    recurring billing
+                                    <span class="variable">1 Gb</span>
+                                    дискового пространства
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">Virtual</span>
-                                    online terminal
+                                    <span class="variable">3</span>
+                                    база данных
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">15</span>
-                                    total products
+                                    <span class="variable">1</span>
+                                    задание
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">0.5%</span>
-                                    Transaction fee
+                                    <span class="variable">24/7</span>
+                                    поддержка
                                 </div>
                             </div>
-                            <a class="btn-signup button-clear" href="signup.html">
-                                <span>Start free trial</span>
+                            <a class="btn btn-blue" href="/auth/register">
+                                <span>Попробывать</span>
                             </a>
                         </div>
                     </div>
@@ -303,28 +277,28 @@
                             <div class="plan-name">Premium</div>
                             <div class="specs">
                                 <div class="spec">
-                                    <span class="variable">Unlimited</span>
-                                    team members
+                                    <span class="variable">3</span>
+                                    домен
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">Digital</span>
-                                    recurring billing
+                                    <span class="variable">1 Gb</span>
+                                    дискового пространства
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">Virtual</span>
-                                    online terminal
+                                    <span class="variable">3</span>
+                                    база данных
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">25</span>
-                                    total products
+                                    <span class="variable">1</span>
+                                    задание
                                 </div>
                                 <div class="spec">
-                                    <span class="variable">No</span>
-                                    Transaction fee
+                                    <span class="variable">24/7</span>
+                                    поддержка
                                 </div>
                             </div>
-                            <a class="btn-signup button-clear" href="signup.html">
-                                <span>Start free trial</span>
+                            <a class="btn btn-blue" href="/auth/register">
+                                <span>Попробывать</span>
                             </a>
                         </div>
                     </div>
