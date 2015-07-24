@@ -39,7 +39,7 @@ class Payments extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['tariff_id', 'count', 'summa', 'users_id', 'value', 'status'];
+	protected $fillable = ['sum', 'status', 'users_id'];
 
 
 }

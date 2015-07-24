@@ -34,8 +34,12 @@ class HomeController extends Controller {
 	{
 		// Информация о пользователе
         $UserInfoLaravel = Auth::User();
+		$Payments = $UserInfoLaravel->getPayments()->simplePaginate(5);
 
-		return view('user/user/home', ['UserInfoLaravel' => $UserInfoLaravel]);
+		return view('user.user.home', [
+			'UserInfoLaravel' => $UserInfoLaravel,
+			'Payments' => $Payments
+		]);
 	}
 
 	public function update(ChangeUserRequest $request)

@@ -193,39 +193,33 @@
                         <table class="table table-condensed table-hover table-striped">
                             <thead>
                             <tr>
-                                <th><?php echo e(Lang::get('tikets.numberTable')); ?></th>
-                                <th><?php echo e(Lang::get('tikets.titleTable')); ?></th>
-                                <th><?php echo e(Lang::get('tikets.statusTable')); ?></th>
-                                <th><?php echo e(Lang::get('tikets.managementTable')); ?></th>
+                                <th>Номер счёта</th>
+                                <th>Сумма</th>
+                                <th>Статус</th>
+                                <th>Дата</th>
+
                             </tr>
                             </thead>
                             <tbody>
+                            <?php foreach($Payments as $pay): ?>
                             <tr>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
+                                <th><?php echo e($pay->id); ?></th>
+                                <th><?php echo e($pay->sum); ?></th>
+
+                                <?php if($pay->status): ?>
+                                    <th>Оплачен</th>
+                                <?php elseif(!$pay->status): ?>
+                                    <th>Ошибка оплаты</th>
+                                <?php else: ?>
+                                    <th>Ожидает</th>
+                                <?php endif; ?>
+                                    <th><?php echo e($pay->created_at); ?></th>
                             </tr>
-                            <tr>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                            </tr>
-                            <tr>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                            </tr>
-                            <tr>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                            </tr>
+                            <?php endforeach; ?>
                             </tbody>
                         </table>
+
+                        <?php echo $Payments->render(); ?>
 
 
                     </div>

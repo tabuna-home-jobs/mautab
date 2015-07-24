@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
-            $table->timestamp('end_of_service');
+            $table->integer('lang')->default('en');
             $table->string('server')->default('151.80.164.81');
             $table->double('balans')->default('0.00');
             $table->integer('package');

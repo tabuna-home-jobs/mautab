@@ -193,40 +193,33 @@
                         <table class="table table-condensed table-hover table-striped">
                             <thead>
                             <tr>
-                                <th>{{Lang::get('tikets.numberTable')}}</th>
-                                <th>{{Lang::get('tikets.titleTable')}}</th>
-                                <th>{{Lang::get('tikets.statusTable')}}</th>
-                                <th>{{Lang::get('tikets.managementTable')}}</th>
+                                <th>Номер счёта</th>
+                                <th>Сумма</th>
+                                <th>Статус</th>
+                                <th>Дата</th>
+
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($Payments as $pay)
                             <tr>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
+                                <th>{{$pay->id}}</th>
+                                <th>{{$pay->sum}}</th>
+
+                                @if($pay->status)
+                                    <th>Зачислен</th>
+                                @elseif(!$pay->status)
+                                    <th>Ошибка</th>
+                                @else
+                                    <th>Ожидает</th>
+                                @endif
+                                <th>{{$pay->created_at}}</th>
                             </tr>
-                            <tr>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                            </tr>
-                            <tr>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                            </tr>
-                            <tr>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                                <th>Тест</th>
-                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
 
+                        {!! $Payments->render() !!}
 
                     </div>
                 </div>
