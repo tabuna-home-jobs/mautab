@@ -34,4 +34,9 @@ class Tariff extends Model
 	protected $fillable = ['name', 'price'];
 
 
+	public function getUser()
+	{
+		return $this->hasMany(\Mautab\Models\User::class, 'package');
+	}
+
 }

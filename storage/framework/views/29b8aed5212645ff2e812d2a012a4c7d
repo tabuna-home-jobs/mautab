@@ -207,13 +207,13 @@
                                 <th><?php echo e($pay->sum); ?></th>
 
                                 <?php if($pay->status): ?>
-                                    <th>Оплачен</th>
+                                    <th>Зачислен</th>
                                 <?php elseif(!$pay->status): ?>
-                                    <th>Ошибка оплаты</th>
+                                    <th>Ошибка</th>
                                 <?php else: ?>
                                     <th>Ожидает</th>
                                 <?php endif; ?>
-                                    <th><?php echo e($pay->created_at); ?></th>
+                                <th><?php echo e($pay->created_at); ?></th>
                             </tr>
                             <?php endforeach; ?>
                             </tbody>

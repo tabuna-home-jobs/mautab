@@ -89,5 +89,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
 
+    public function getPackage()
+    {
+        return $this->belongsTo(\Mautab\Models\Tariff::class, 'package');
+    }
 
 }
