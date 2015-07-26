@@ -94,4 +94,50 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->belongsTo(\Mautab\Models\Tariff::class, 'package');
     }
 
+
+    public function addddRole($role)
+    {
+
+
+        $thisRole = unserialize($this->role);
+
+        if (is_array($thisRole)) {
+            if (!in_array($role, $thisRole))
+                array_push($thisRole, $role);
+            $this->role = serialize($thisRole);
+        } else {
+            $this->role = serialize([$role]);
+        }
+        return $this;
+    }
+
+
+    public function removeRole($role)
+    {
+        $thisRole = unserialize($this->role);
+        if (array_search($role, $thisRole) !== false) {
+            $key = array_search($role, $thisRole);
+            unset($thisRole[$key]);
+            $this->role = serialize($thisRole);
+        }
+        return $this;
+    }
+
+
+    public function checkRole($role)
+    {
+        $thisRole = unserialize($this->role);
+        if (array_search($role, $thisRole) !== false)
+            return true;
+        else
+            return false;
+    }
+
+    public function getRole()
+    {
+        return unserialize($this->role);
+    }
+
+
+
 }

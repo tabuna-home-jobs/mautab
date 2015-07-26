@@ -31,6 +31,7 @@ class Kernel extends HttpKernel {
         'guest' => 'Mautab\Http\Middleware\RedirectIfAuthenticated',
 		'LoginAs' => 'Mautab\Http\Middleware\LoginAsMiddleware',
         'Hosting' => 'Mautab\Http\Middleware\Hosting\Hosting',
+        'UserRole' => \Mautab\Http\Middleware\UserRole::class,
 	];
 
 }

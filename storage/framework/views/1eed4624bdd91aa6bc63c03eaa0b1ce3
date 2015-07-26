@@ -44,7 +44,8 @@
                                         <label class="col-md-4 control-label">Никнейм</label>
 
                                         <div class="col-md-8">
-                                            <input type="text" class="form-control" name="nickname" placeholder="Sheldon"
+                                            <input type="text" class="form-control" name="nickname"
+                                                   placeholder="Sheldon"
                                                    value="<?php echo e(old('nickname')); ?>">
                                         </div>
                                     </div>
@@ -119,7 +120,6 @@
                                         </div>
                                     </div>
                                 </form>
-
 
 
                         </div>

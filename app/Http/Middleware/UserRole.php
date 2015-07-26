@@ -17,7 +17,7 @@ class UserRole
 	 */
 	public function handle($request, Closure $next)
 	{
-		if (Auth::check()) {
+		if (Auth::check() && Auth::user()->checkRole('user')) {
 			View::composer('*', function () {
 				$UserInfo = Vesta::listUserAccount()[Auth::User()->nickname];
 				View::share('UserInfo', $UserInfo);

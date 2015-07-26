@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Models\User;
 use Validator;
+use Vesta;
 
 class AuthController extends Controller
 {
@@ -55,13 +56,14 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'nickname' => $data['nickname'],
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'server' => (string)Config::get('vesta.primary'),
+            'role' => serialize(['user']),
         ]);
 
         /*
@@ -75,11 +77,11 @@ class AuthController extends Controller
                 $data['package'] = $val;
             }
         }
-
-        Vesta::regUser($user->nickname, $user->password, $user->email, 'default', $user->name, $user->lastname);
 */
+        Vesta::regUser($data['nickname'], $data['password'], $data['email'], 'default', $data['nickname'], $data['lastname']);
 
 
+        return $user;
 
     }
 }
