@@ -19,10 +19,6 @@ trait VestaUser
         //if ($Vesta != 0)
         //	return $Vesta;
 
-        //Блокировка пользователя до момента оплаты
-        $Vesta = $this->sendQuery('v-suspend-user', $username, 'no');
-        if ($Vesta != 0)
-            return $Vesta;
 
     }
 
@@ -92,6 +88,15 @@ trait VestaUser
 
         return $this->sendQuery('v-schedule-user-restore', Auth::User()->nickname, $backup, $web, $dns, $mail, $db, $cron, $udir);
     }
+
+
+    public function suspendUser($username)
+    {
+        $Vesta = $this->sendQuery('v-suspend-user', $username, 'no');
+        if ($Vesta != 0)
+            return $Vesta;
+    }
+
 
 
 }

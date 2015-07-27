@@ -2,8 +2,8 @@
 
 namespace Mautab\Http\Requests\Hosting;
 
-use Mautab\Http\Requests\Request;
 use Auth;
+use Mautab\Http\Requests\Request;
 
 class SearchRequest extends Request
 {

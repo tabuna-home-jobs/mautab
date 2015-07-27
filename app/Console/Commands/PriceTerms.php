@@ -3,7 +3,9 @@
 namespace Mautab\Console\Commands;
 
 use Illuminate\Console\Command;
+use Log;
 use Mautab\Models\User;
+use Vesta;
 
 
 class PriceTerms extends Command
@@ -39,13 +41,14 @@ class PriceTerms extends Command
      */
     public function handle()
     {
-        User::where('suspend', 'false')->chunk(200, function ($users) {
-            foreach ($users->with('getPackage')->get() as $user) {
+        User::where('suspend', 'false')->with('getPackage')->chunk(200, function ($users) {
+            foreach ($users as $user) {
 
-                $balans = $user->balans - $user->getPackage()->select('price')->first()->price;
+                $balans = $user->balans - $user->getPackage->price;
 
                 if ($balans < 0) {
                     $user->suspend = true;
+                    Vesta::suspendUser($user->nickname);
                 } else {
                     $user->balans = $balans;
                 }
@@ -56,7 +59,7 @@ class PriceTerms extends Command
         });
 
 
-        $this->info('Я отработала');
+        Log::info('PriceTerms: Функция списания средств отработала');
 
     }
 }

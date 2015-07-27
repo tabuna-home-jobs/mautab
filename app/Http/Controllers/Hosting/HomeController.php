@@ -3,7 +3,6 @@
 use Auth;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\ChangeUserRequest;
-use Mautab\Models\User;
 use Session;
 use Vesta;
 
@@ -33,24 +32,6 @@ class HomeController extends Controller {
 	 */
 	public function Index()
 	{
-
-		User::where('suspend', 'false')->chunk(200, function ($users) {
-			foreach ($users->with('getPackage')->get() as $user) {
-				$balans = $user->balans - $user->getPackage()->select('price')->first()->price;
-
-				if ($balans < 0) {
-					$user->suspend = true;
-				} else {
-					$user->balans = $balans;
-				}
-
-				$user->save();
-			}
-
-		});
-
-
-
 		// Информация о пользователе
         $UserInfoLaravel = Auth::User();
 		$Payments = $UserInfoLaravel->getPayments()->simplePaginate(5);

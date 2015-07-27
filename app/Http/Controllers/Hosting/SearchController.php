@@ -2,10 +2,8 @@
 
 namespace Mautab\Http\Controllers\Hosting;
 
-use Illuminate\Http\Request;
-
-use Mautab\Http\Requests;
 use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests;
 use Mautab\Http\Requests\Hosting\SearchRequest;
 use Vesta;
 
