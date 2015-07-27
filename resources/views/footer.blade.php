@@ -40,9 +40,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
-
-
-
 <!--  TinyMCE -->
 <script src="{{asset('/dist/plugins/tinymce/tinymce.min.js')}}" type="text/javascript"></script>
 
@@ -52,26 +49,26 @@
     $(document).ready(function () {
 
         //Выбор всех чекбоксов в группах
-        $('#check-all-group').click(function() {
-            if(this.checked) {
-                $('.permissGroup input:checkbox').each(function() {
+        $('#check-all-group').click(function () {
+            if (this.checked) {
+                $('.permissGroup input:checkbox').each(function () {
                     this.checked = true;
                 });
-            }else{
-                $('.permissGroup input:checkbox').each(function() {
+            } else {
+                $('.permissGroup input:checkbox').each(function () {
                     this.checked = false;
                 });
             }
         });
 
         //Выбор всех чекбоксов в правах
-        $('#check-all').click(function() {
-            if(this.checked) {
-                $('.premissionCheckbox input:checkbox').each(function() {
+        $('#check-all').click(function () {
+            if (this.checked) {
+                $('.premissionCheckbox input:checkbox').each(function () {
                     this.checked = true;
                 });
-            }else{
-                $('.premissionCheckbox input:checkbox').each(function() {
+            } else {
+                $('.premissionCheckbox input:checkbox').each(function () {
                     this.checked = false;
                 });
             }
@@ -79,25 +76,25 @@
 
 
         //Удаление фтп
-        function deleteFtp(csrf, ddom, ftpUser){
+        function deleteFtp(csrf, ddom, ftpUser) {
 
             $.ajax({
                 url: '/ftp/destroy',
                 type: 'DELETE',
-                data: {domain:ddom, ftpUser:ftpUser},
-                beforeSend: function(request) {
+                data: {domain: ddom, ftpUser: ftpUser},
+                beforeSend: function (request) {
                     request.setRequestHeader('X-CSRF-Token', csrf);
                     $('body').addClass('add-opacity');
                     $('#wath').addClass('load');
                 },
-                success: function(res) {
+                success: function (res) {
                     alert('Удаление прошло успешно');
                 },
-                complete: function(){
+                complete: function () {
                     $('body').removeClass('add-opacity');
                     $('#wath').removeClass('load');
                 },
-                error: function(){
+                error: function () {
                     alert('Ошибка при удалении');
                 }
             });
@@ -105,33 +102,33 @@
 
         //Добавить алиас после ввода домена
         /*
-        $('input[name="v_domain"]').blur(function(){
-            var currVal = $(this).val();
-            var checkSimbl = currVal.indexOf(".") + 1;
-            if(checkSimbl != 0){
-                var arrVal = currVal.split(".");
+         $('input[name="v_domain"]').blur(function(){
+         var currVal = $(this).val();
+         var checkSimbl = currVal.indexOf(".") + 1;
+         if(checkSimbl != 0){
+         var arrVal = currVal.split(".");
 
-                var domain = arrVal[1];
+         var domain = arrVal[1];
 
 
-                var correctDomain = "www." + domain;
-                (arrVal[2]) ? correctDomain += "." + arrVal[2] : correctDomain;
-                $("textarea[name='v_aliases']").val(correctDomain);
-            }else{
-                var correctDomain = "www." + currVal;
-                $("textarea[name='v_aliases']").val(correctDomain);
-            }
-        });*/
+         var correctDomain = "www." + domain;
+         (arrVal[2]) ? correctDomain += "." + arrVal[2] : correctDomain;
+         $("textarea[name='v_aliases']").val(correctDomain);
+         }else{
+         var correctDomain = "www." + currVal;
+         $("textarea[name='v_aliases']").val(correctDomain);
+         }
+         });*/
 
         //Функция добавления FTP
-        function clickAddFtp(elem, num){
+        function clickAddFtp(elem, num) {
             //Форма нового FTP
             var strHtml = '<div class="ftp-groupz"><div class="form-group"><label>FTP#' + num + '<a href="#" class="del-current-ftp"><small>Удалить</small></a></label>            </div><div class="form-group"><label>Аккаунт</label><div><small>Префикс {{(!is_null(Auth::User())) ? Auth::User()->nickname : '' }}_ будет автоматически добавлен к названию аккаунта</small></div><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_new]" value="1"/><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_old]" value="0"/><input type="text" name="v_ftp_user[' + num + '][v_ftp_user]" class="form-control ftp_usr" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"/></div><div class="form-group"><label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>            <input type="text" name="v_ftp_user[' + num + '][v_ftp_password]" id="ftppas" class="form-control" value=""/></div><div class="form-group"><label>Path</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_path]" class="form-control" value=""/></div>            <div class="form-group"><label>Отправить данные FTP аккаунта по адресу</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_email]" class="form-control" value=""/></div</div>';
 
             elem.before(strHtml);
         }
 
-        $('body').on('click','#addFtps',function(){
+        $('body').on('click', '#addFtps', function () {
             //Получаем количество элементов FTP
             var countElems = $(".ftp-groupz").length;
             //Добавляем новый с порядковым номером +1
@@ -140,7 +137,7 @@
         });
 
         //Удаление ненужного фтп
-        $('body').on('click','.del-current-ftp',function(){
+        $('body').on('click', '.del-current-ftp', function () {
 
 
             var obj = $(this);
@@ -200,13 +197,13 @@
         }
 
         //Добавление случайного пароля в инпут
-        $('body').on('click', '.genPass', function(){
+        $('body').on('click', '.genPass', function () {
             var genPas = randWD().toUpperCase();
             $(this).parent().next('input').val(genPas);
             return false;
         });
         //Добавление префикса для юзера фтп
-        $('body').on('blur', '.ftp_usr', function() {
+        $('body').on('blur', '.ftp_usr', function () {
             addPrefix($(this));
         });
 
@@ -216,22 +213,22 @@
             addPrefix($(this));
         });
         //Добаваление префикса для БД когда она добаляется
-        $("input[name='v_dbuser']").blur(function() {
+        $("input[name='v_dbuser']").blur(function () {
             addPrefix($(this));
         });
 
         //Анимация показа форма добавления БД
-        $("#show-add-bd").click(function(){
+        $("#show-add-bd").click(function () {
             var obj = $("#add-shadow");
             var attrExpande = $("#show-add-bd").attr("aria-expanded");
             var heiForm = $("#add-bd");
 
-            if(!heiForm.hasClass('collapsing')){
-                if(attrExpande == 'false'){
-                    $(".btn" ,obj).attr('disabled',true);
+            if (!heiForm.hasClass('collapsing')) {
+                if (attrExpande == 'false') {
+                    $(".btn", obj).attr('disabled', true);
                     obj.addClass('add-opacity');
-                }else{
-                    $(".btn" ,obj).attr('disabled',false);
+                } else {
+                    $(".btn", obj).attr('disabled', false);
                     obj.removeClass('add-opacity');
                 }
             }

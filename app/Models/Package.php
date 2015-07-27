@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Tariff whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Tariff whereUpdatedAt($value)
  */
-class Tariff extends Model
+class Package extends Model
 {
 
 	/**
@@ -24,19 +24,19 @@ class Tariff extends Model
 	 *
 	 * @var string
 	 */
-	protected $table = 'tariff';
+	protected $table = 'packages';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'price'];
+	protected $fillable = ['name', 'price', 'price_day'];
 
 
-	public function getUser()
+	public function getUsers()
 	{
-		return $this->hasMany(\Mautab\Models\User::class, 'package');
+		return $this->hasMany(\Mautab\Models\User::class);
 	}
 
 }

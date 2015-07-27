@@ -62,10 +62,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'end_of_service',
         'server',
         'balans',
-        'package',
+        'package_id',
         'role',
         'email',
-        'password'
+        'password',
+        'suspend'
     ];
 
 
@@ -91,7 +92,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function getPackage()
     {
-        return $this->belongsTo(\Mautab\Models\Tariff::class, 'package');
+        return $this->belongsTo(\Mautab\Models\Package::class, 'package_id');
     }
 
 

@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'Mautab\Console\Commands\Inspire',
-		'Mautab\Console\Commands\PriceTerms',
+		//'Mautab\Console\Commands\PriceTerms',
 		\Mautab\Console\Commands\PriceTerms::class,
 	];
 

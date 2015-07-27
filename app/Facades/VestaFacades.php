@@ -1,11 +1,10 @@
 <?php
-	namespace Mautab\Facades;
+namespace Mautab\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 class VestaFacades extends Facade
-	{
-
+{
 
 
     /**
@@ -13,14 +12,12 @@ class VestaFacades extends Facade
      *
      * @return string
      */
-		protected static function getFacadeAccessor()
-		{
-            return 'Mautab\Services\VestaAPI\Vesta';
+    protected static function getFacadeAccessor()
+    {
+        return 'Mautab\Services\VestaAPI\Vesta';
     }
 
 }
-
-
 
 
 ?>

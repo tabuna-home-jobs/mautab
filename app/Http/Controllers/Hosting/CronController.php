@@ -74,11 +74,8 @@ class CronController extends Controller
 	}
 
 	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int $id
-	 *
-	 * @return Response
+	 * @param CronRequest $request
+	 * @return \Illuminate\Http\RedirectResponse
 	 */
     public function update(CronRequest $request)
 	{

@@ -5,21 +5,34 @@ use Auth;
 trait VestaCron
 {
 
-	//Список КРона
-	public function listCron()
-	{
+    //Список КРона
+    public function listCron()
+    {
         $listDns = $this->sendQuery('v-list-cron-jobs', Auth::User()->nickname, 'json');
-		$data    = json_decode($listDns, TRUE);
+        $data = json_decode($listDns, TRUE);
 
-		return $data;
-	}
+        return $data;
+    }
 
+    /**
+     * @param $v_min
+     * @param $v_hour
+     * @param $v_day
+     * @param $v_month
+     * @param $v_wday
+     * @param $v_cmd
+     * @return mixed
+     */
 
-	public function addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
-	{
+    public function addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
+    {
         return $this->sendQuery('v-add-cron-job', Auth::User()->nickname, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd);
-	}
+    }
 
+    /**
+     * @param $v_job
+     * @return mixed
+     */
 
     public function showCron($v_job)
     {
@@ -28,11 +41,26 @@ trait VestaCron
         return $data;
     }
 
+    /**
+     * @param $v_job
+     * @return mixed
+     */
 
-	public function deleteCron($v_job)
-	{
+    public function deleteCron($v_job)
+    {
         return $this->sendQuery('v-delete-cron-job', Auth::User()->nickname, $v_job);
-	}
+    }
+
+    /**
+     * @param $v_job
+     * @param $v_min
+     * @param $v_hour
+     * @param $v_day
+     * @param $v_month
+     * @param $v_wday
+     * @param $v_cmd
+     * @return mixed
+     */
 
     public function editCron($v_job, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
     {

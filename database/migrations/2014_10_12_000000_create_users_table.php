@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->double('balans')->default('0.00');
             $table->integer('package');
             $table->string('role');
+            $table->boolean('suspend')->default('0');
             $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();
