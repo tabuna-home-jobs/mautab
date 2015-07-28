@@ -26,6 +26,10 @@ class Kernel extends ConsoleKernel {
 	{
 		$schedule->command('inspire')
 				 ->hourly();
+
+		//Списывание средств
+		$schedule->command('mautab:PriceTerms')
+			->daily();
 	}
 
 }
