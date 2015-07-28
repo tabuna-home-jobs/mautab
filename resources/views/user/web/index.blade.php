@@ -125,7 +125,8 @@
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
 
-                    <a href="#" class="btn btn-danger" onclick="delModal('{{$key}}','/hosting/web/destroy');">
+                                            <a href="#" class="btn btn-danger"
+                                               onclick="delModal('{{$key}}', {{URL::route('web.destroy')}});">
                         <i class="fa fa-trash"></i>
                     </a>
                                         </div>
