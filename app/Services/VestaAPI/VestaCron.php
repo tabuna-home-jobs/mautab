@@ -8,9 +8,9 @@ trait VestaCron
     //Список КРона
     public function listCron()
     {
+        $this->vst_returncode = 'no';
         $listDns = $this->sendQuery('v-list-cron-jobs', Auth::User()->nickname, 'json');
         $data = json_decode($listDns, TRUE);
-
         return $data;
     }
 
@@ -36,6 +36,7 @@ trait VestaCron
 
     public function showCron($v_job)
     {
+        $this->vst_returncode = 'no';
         $request = $this->sendQuery('v-list-cron-job', Auth::User()->nickname, $v_job, 'json');
         $data = json_decode($request, TRUE);
         return $data;

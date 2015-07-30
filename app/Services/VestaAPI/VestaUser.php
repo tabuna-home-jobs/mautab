@@ -36,6 +36,7 @@ trait VestaUser
     //List User Account
     public function listUserAccount()
     {
+        $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-user', Auth::User()->nickname, 'json');
         $data = json_decode($answer, TRUE);
         return $data;
@@ -45,6 +46,7 @@ trait VestaUser
 
     public function listUserLog()
     {
+        $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-user-log', Auth::User()->nickname, 'json');
         $data = json_decode($answer, TRUE);
         return $data;
@@ -54,6 +56,7 @@ trait VestaUser
     //List User Backups
     public function listUserBackups()
     {
+        $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-user-backups', Auth::User()->nickname, 'json');
         $data = json_decode($answer, TRUE);
         return $data;
@@ -70,6 +73,7 @@ trait VestaUser
     //Просмотр бекапа
     public function showUserBackup($backup)
     {
+        $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-user-backup', Auth::User()->nickname, $backup, 'json');
         $data = json_decode($answer, TRUE);
         return $data;

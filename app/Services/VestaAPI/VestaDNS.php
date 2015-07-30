@@ -9,16 +9,16 @@ trait VestaDNS
     //Список DNS
     public function listDNS()
     {
+        $this->vst_returncode = 'no';
         $listDns = $this->sendQuery('v-list-dns-domains', Auth::User()->nickname, 'json');
         $data = json_decode($listDns, TRUE);
-
         return $data;
     }
 
     //Список кокретного DNS
     public function listOnlyDNS($dns)
     {
-
+        $this->vst_returncode = 'no';
         $listDNS = $this->sendQuery('v-list-dns-domain', Auth::User()->nickname, $dns, 'json');
         $data = json_decode($listDNS, TRUE);
         return $data;
@@ -60,6 +60,7 @@ trait VestaDNS
 
     public function listDNSRecords($domain)
     {
+        $this->vst_returncode = 'no';
         $data = $this->sendQuery('v-list-dns-records', Auth::User()->nickname, $domain, 'json');
         $data = json_decode($data, TRUE);
         return $data;

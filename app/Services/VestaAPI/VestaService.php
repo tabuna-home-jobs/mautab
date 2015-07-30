@@ -14,6 +14,7 @@ trait VestaService
 
     public function userSearch($query)
     {
+        $this->vst_returncode = 'no';
         return $this->sendQuery('v-search-user-object', Auth::User()->nickname, $query, 'json');
     }
 

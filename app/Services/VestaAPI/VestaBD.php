@@ -8,6 +8,7 @@ trait VestaBD
     //Список БД
     public function listBD()
     {
+        $this->vst_returncode = 'no';
         return json_decode($this->sendQuery('v-list-databases', Auth::User()->nickname, 'json'), TRUE);
     }
 
@@ -32,6 +33,7 @@ trait VestaBD
     //Список кокретной БД
     public function listOnlyBD($database)
     {
+        $this->vst_returncode = 'no';
         $listBd = $this->sendQuery('v-list-database', Auth::User()->nickname, $database, 'json');
         $data = json_decode($listBd, TRUE);
         return $data;

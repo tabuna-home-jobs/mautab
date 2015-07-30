@@ -35,7 +35,7 @@ class HomeController extends Controller {
 
 
 		$test = Vesta::listDirectory('/home/art1st/web');
-		//$test = Vesta::openFile('/home/admin/web/mautab.com/public_html/readme.md');
+
 		dd($test);
 
 		// Информация о пользователе

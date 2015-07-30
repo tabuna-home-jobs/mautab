@@ -13,11 +13,7 @@ class Vesta
     public $vst_username;
     public $vst_password;
     public $vst_server;
-
-    //Для ssh соединения
-    public $VESTA_CMD = '/usr/local/vesta/bin/';
-    public $output;
-
+    public $vst_returncode = 'yes'; // Что будет возвращено no|yes|json
 
     public function __construct()
     {
@@ -50,14 +46,6 @@ class Vesta
 
     public function sendQuery($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL, $arg7 = NULL, $arg8 = NULL, $arg9 = NULL)
     {
-
-        // Проверям, если нам нужен json то выводим его или же код ошибки
-        $argReturnCodeDetector = array($arg1, $arg2, $arg3, $arg4, $arg5, $arg6, $arg7, $arg8, $arg9);
-        if (in_array('json', $argReturnCodeDetector))
-            $this->vst_returncode = 'no';
-        else
-            $this->vst_returncode = 'yes';
-
 
         $postvars = array(
             'hash' => 'VrakEMSQV226ba7p0e09yWOlnDVLkSpX',

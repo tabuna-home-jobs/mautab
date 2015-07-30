@@ -8,6 +8,7 @@ trait VestaWeb
     //List Web Domains
     public function listEditWebDomain($domain)
     {
+        $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-web-domain', Auth::User()->nickname, $domain, 'json');
 
         $data = json_decode($answer, TRUE);
@@ -30,6 +31,7 @@ trait VestaWeb
     //List Web Domains
     public function listWebDomain()
     {
+        $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-web-domains', Auth::User()->nickname, 'json');
         $data = json_decode($answer, TRUE);
         return $data;
@@ -107,9 +109,7 @@ trait VestaWeb
 
     public function changeWebDomain($domain, $v_ftp_username, $v_ftp_path)
     {
-
         return $this->sendQuery('v-change-web-domain-ftp-path', Auth::User()->nickname, $domain, $v_ftp_username, $v_ftp_path);
-
     }
 
     public function changeFtpPassword($domain, $v_ftp_username, $v_password)
