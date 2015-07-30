@@ -32,12 +32,6 @@ class HomeController extends Controller {
 	 */
 	public function Index()
 	{
-
-
-		$test = Vesta::listDirectory('/home/art1st/web');
-
-		dd($test);
-
 		// Информация о пользователе
         $UserInfoLaravel = Auth::User();
 		$Payments = $UserInfoLaravel->getPayments()->simplePaginate(5);

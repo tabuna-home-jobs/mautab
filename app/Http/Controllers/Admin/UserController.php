@@ -103,7 +103,7 @@ class UserController extends Controller
 			$user->permissions = $request->permissions;
 		}else{
 			unset($user->permissions);
-			$user->permissions = array();
+			$user->permissions = [];
 		}
 
 		$user->save();

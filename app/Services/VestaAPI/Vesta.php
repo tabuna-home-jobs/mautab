@@ -47,7 +47,7 @@ class Vesta
     public function sendQuery($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL, $arg7 = NULL, $arg8 = NULL, $arg9 = NULL)
     {
 
-        $postvars = array(
+        $postvars = [
             'hash' => 'VrakEMSQV226ba7p0e09yWOlnDVLkSpX',
             'returncode' => $this->vst_returncode,
             'cmd' => $cmd,
@@ -60,7 +60,7 @@ class Vesta
             'arg7' => $arg7,
             'arg8' => $arg8,
             'arg9' => $arg9,
-        );
+        ];
 
 
         $postdata = http_build_query($postvars);

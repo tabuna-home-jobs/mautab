@@ -132,7 +132,7 @@ trait VestaFileSystem
     {
         $this->vst_returncode = 'no';
         $responseVesta = $this->sendQuery('v-list-fs-directory', Auth::User()->nickname, $path);
-        $this->parseListing($responseVesta);
+        return $this->parseListing($responseVesta);
     }
 
 

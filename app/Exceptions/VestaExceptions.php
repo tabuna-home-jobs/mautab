@@ -9,64 +9,64 @@ class VestaExceptions extends Exception
 
 		switch ($e->message) {
 			case 1:
-				$return = redirect()->back()->withErrors(array('Not enough arguments provided'));
+				$return = redirect()->back()->withErrors(['Not enough arguments provided']);
 				break;
 			case 2:
-				$return = redirect()->back()->withErrors(array('Object or argument is not valid'));
+				$return = redirect()->back()->withErrors(['Object or argument is not valid']);
 				break;
 			case 3:
-				$return = redirect()->back()->withErrors(array("Object doesn't exist"));
+				$return = redirect()->back()->withErrors(["Object doesn't exist"]);
 				break;
 			case 4:
-				$return = redirect()->back()->withErrors(array('Object already exists'));
+				$return = redirect()->back()->withErrors(['Object already exists']);
 				break;
 			case 5:
-				$return = redirect()->back()->withErrors(array('Object is suspended'));
+				$return = redirect()->back()->withErrors(['Object is suspended']);
 				break;
 			case 6:
-				$return = redirect()->back()->withErrors(array('Object is already unsuspended'));
+				$return = redirect()->back()->withErrors(['Object is already unsuspended']);
 				break;
 			case 7:
-				$return = redirect()->back()->withErrors(array("Object can't be deleted because is used by the other object"));
+				$return = redirect()->back()->withErrors(["Object can't be deleted because is used by the other object"]);
 				break;
 			case 8:
-				$return = redirect()->back()->withErrors(array('Object cannot be created because of hosting package limits'));
+				$return = redirect()->back()->withErrors(['Object cannot be created because of hosting package limits']);
 				break;
 			case 9:
-				$return = redirect()->back()->withErrors(array('Wrong password'));
+				$return = redirect()->back()->withErrors(['Wrong password']);
 				break;
 			case 10:
-				$return = redirect()->back()->withErrors(array('Object cannot be accessed be the user'));
+				$return = redirect()->back()->withErrors(['Object cannot be accessed be the user']);
 				break;
 			case 11:
-				$return = redirect()->back()->withErrors(array('Subsystem is disabled'));
+				$return = redirect()->back()->withErrors(['Subsystem is disabled']);
 				break;
 			case 12:
-				$return = redirect()->back()->withErrors(array('Configuration is broken'));
+				$return = redirect()->back()->withErrors(['Configuration is broken']);
 				break;
 			case 13:
-				$return = redirect()->back()->withErrors(array('Not enough disk space to complete the action'));
+				$return = redirect()->back()->withErrors(['Not enough disk space to complete the action']);
 				break;
 			case 14:
-				$return = redirect()->back()->withErrors(array('Server is to busy to complete the action'));
+				$return = redirect()->back()->withErrors(['Server is to busy to complete the action']);
 				break;
 			case 15:
-				$return = redirect()->back()->withErrors(array('Connection failed. Host is unreachable'));
+				$return = redirect()->back()->withErrors(['Connection failed. Host is unreachable']);
 				break;
 			case 16:
-				$return = redirect()->back()->withErrors(array('FTP server is not responding'));
+				$return = redirect()->back()->withErrors(['FTP server is not responding']);
 				break;
 			case 17:
-				$return = redirect()->back()->withErrors(array('Database server is not responding'));
+				$return = redirect()->back()->withErrors(['Database server is not responding']);
 				break;
 			case 18:
-				$return = redirect()->back()->withErrors(array('RRDtool failed to update the database'));
+				$return = redirect()->back()->withErrors(['RRDtool failed to update the database']);
 				break;
 			case 19:
-				$return = redirect()->back()->withErrors(array('Update operation failed'));
+				$return = redirect()->back()->withErrors(['Update operation failed']);
 				break;
 			case 20:
-				$return = redirect()->back()->withErrors(array('Service restart failed'));
+				$return = redirect()->back()->withErrors(['Service restart failed']);
 				break;
 			default:
 				$return = FALSE;
