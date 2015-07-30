@@ -537,8 +537,22 @@ label, strong {
     background-color: #ffffff;
 }
 
-
-.bg-aqua, .callout.callout-info, .alert-info, .label-info, .modal-info .modal-body {
+.bg-aqua {
     background-color: #00c0ef !important;
     color: #fff!important;
+}
+
+.bg-green {
+    background-color: #00a65a !important;
+    color: #fff !important;
+}
+
+.bg-yellow {
+    background-color: #f39c12 !important;
+    color: #fff !important;
+}
+
+.bg-red {
+    background-color: #dd4b39 !important;
+    color: #fff !important;
 }

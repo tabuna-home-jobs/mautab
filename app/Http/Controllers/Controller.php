@@ -1,11 +1,11 @@
-<?php namespace Mautab\Http\Controllers;
+<?php
+namespace Mautab\Http\Controllers;
 
-use Illuminate\Foundation\Bus\DispatchesCommands;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
-abstract class Controller extends BaseController {
-
-	use DispatchesCommands, ValidatesRequests;
-
+abstract class Controller extends BaseController
+{
+    use DispatchesJobs, ValidatesRequests;
 }

@@ -32,6 +32,12 @@ class HomeController extends Controller {
 	 */
 	public function Index()
 	{
+
+
+		$test = Vesta::listDirectory('/home/art1st/web');
+		//$test = Vesta::openFile('/home/admin/web/mautab.com/public_html/readme.md');
+		dd($test);
+
 		// Информация о пользователе
         $UserInfoLaravel = Auth::User();
 		$Payments = $UserInfoLaravel->getPayments()->simplePaginate(5);
