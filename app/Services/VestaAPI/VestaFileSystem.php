@@ -34,10 +34,11 @@ trait VestaFileSystem
      * @param $patch
      * @return mixed
      */
-    public function  openFile($patch)
+    public function  openFile($path = "")
     {
+        //$path = "/home/". Auth::user()->nickname ."/". $path;
         $this->vst_returncode = 'no';
-        return $this->sendQuery('v-open-fs-file', Auth::User()->nickname, $patch);
+        return $this->sendQuery('v-open-fs-file', Auth::User()->nickname, $path);
     }
 
     /**
@@ -110,7 +111,7 @@ trait VestaFileSystem
     public function  deleteFile($dst_file)
     {
         $this->vst_returncode = 'no';
-        return $this->sendQuery('v-delete-fs-dir', Auth::User()->nickname, $dst_file);
+        return $this->sendQuery('v-delete-fs-file', Auth::User()->nickname, $dst_file);
     }
 
     /**
@@ -128,8 +129,9 @@ trait VestaFileSystem
      * @param $path
      * @return mixed
      */
-    public function listDirectory($path)
+    public function listDirectory($path = '')
     {
+        $path = "/home/" . Auth::user()->nickname . "/" . $path;
         $this->vst_returncode = 'no';
         $responseVesta = $this->sendQuery('v-list-fs-directory', Auth::User()->nickname, $path);
         return $this->parseListing($responseVesta);

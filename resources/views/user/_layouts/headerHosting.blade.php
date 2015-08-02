@@ -65,13 +65,13 @@
         <a href="{{URL::route('tikets.index')}}"
            class="{{Active::route('tikets.*')}}">
             <span class="fa fa-life-ring"></span>
-            <h4>{{Lang::get('menu.support')}}</h4>
+            <h4>{{Lang::get('menu.support')}} <span class="badge badge-menu">4</span></h4>
         </a>
         <hr>
 
-        <p class="menu-small"><a href="{{URL::route('log.index')}}">Журнал действий</a></p>
+        <p class="menu-small"><a href="{{URL::route('log.index')}}">{{Lang::get('menu.log')}}</a></p>
 
-        <p class="menu-small"><a href="{{URL::route('backup.index')}}">Резервные копии</a></p>
+        <p class="menu-small"><a href="{{URL::route('backup.index')}}">{{Lang::get('menu.backup')}}</a></p>
     </div>
 
 </section>

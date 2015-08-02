@@ -2,9 +2,10 @@
 
 
 
-        <?php $__empty_1 = true; foreach($Backups as $key =>  $Bakup): $__empty_1 = false; ?>
+    <?php $__empty_1 = true; foreach($Backups as $key =>  $Bakup): $__empty_1 = false; ?>
             <div class="col-xs-12 log-row">
-                <h1 class="col-md-3 col-xs-12 subheaderlog"><a href="<?php echo e(URL::route('hosting.backup.index')); ?>/<?php echo e($key); ?>"> <?php echo e($key); ?></a></h1>
+                <h1 class="col-md-3 col-xs-12 subheaderlog"><a
+                            href="<?php echo e(URL::route('backup.index')); ?>/<?php echo e($key); ?>"> <?php echo e($key); ?></a></h1>
                 <blockquote class="col-md-9 col-xs-12">
                     <p class="question">Веб: <?php echo e($Bakup['WEB']); ?></p>
 
@@ -42,7 +43,7 @@
 
                         </div>
                         <div class="modal-footer">
-                            <form action="<?php echo e(URL::route('hosting.backup.destroy')); ?>" method="post">
+                            <form action="<?php echo e(URL::route('backup.destroy')); ?>" method="post">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                 <button type="submit" class="button-small">Да</button>
                                 <input type="hidden" name="backup" value="<?php echo e($key); ?>"/>

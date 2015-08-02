@@ -90,7 +90,7 @@
                                 <div style="width:  {{$UserInfo['U_BANDWIDTH']/$UserInfo['BANDWIDTH'] * 100  }}%;" class="progress-bar"></div>
                             </div>
                                   <span class="progress-description">
-                                    Траффик
+                                    {{Lang::get('menu.traffic')}}
                                   </span>
                         </div>
                     </div>

@@ -26,4 +26,6 @@
 		"Users"  => "Users",
 		'Groups' => "Groups",
 		'Pages'  => "Pages",
+		'log' => 'Log',
+		'backup' => 'Backups',
 	];

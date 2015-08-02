@@ -123,7 +123,8 @@
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
 
-                    <a href="#" class="btn btn-danger" onclick="delModal('<?php echo e($key); ?>','/hosting/web/destroy');">
+                                            <a href="#" class="btn btn-danger"
+                                               onclick="delModal('<?php echo e($key); ?>', <?php echo e(URL::route('web.destroy')); ?>);">
                         <i class="fa fa-trash"></i>
                     </a>
                                         </div>

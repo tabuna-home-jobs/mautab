@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.6 (LTS) on 2015-07-20.
+ * Generated for Laravel 5.1.8 (LTS) on 2015-08-02.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -185,7 +185,7 @@ namespace {
          * Get the path to the environment file directory.
          *
          * @return string
-         * @static
+         * @static 
          */
         public static function environmentPath()
         {
@@ -197,7 +197,7 @@ namespace {
          *
          * @param string $path
          * @return $this
-         * @static
+         * @static 
          */
         public static function useEnvironmentPath($path)
         {
@@ -434,6 +434,17 @@ namespace {
         }
         
         /**
+         * Determine if middleware has been disabled for the application.
+         *
+         * @return bool
+         * @static
+         */
+        public static function shouldSkipMiddleware()
+        {
+            return \Illuminate\Foundation\Application::shouldSkipMiddleware();
+        }
+
+        /**
          * Determine if the application configuration is cached.
          *
          * @return bool 
@@ -596,7 +607,7 @@ namespace {
          *
          * @param callable $callback
          * @return $this
-         * @static
+         * @static 
          */
         public static function configureMonologUsing($callback)
         {
@@ -607,7 +618,7 @@ namespace {
          * Determine if the application has a custom Monolog configurator.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function hasMonologConfigurator()
         {
@@ -618,7 +629,7 @@ namespace {
          * Get the custom Monolog configurator for the application.
          *
          * @return callable
-         * @static
+         * @static 
          */
         public static function getMonologConfigurator()
         {
@@ -669,9 +680,9 @@ namespace {
         /**
          * Get the application namespace.
          *
-         * @return string
+         * @return string 
          * @throws \RuntimeException
-         * @static
+         * @static 
          */
         public static function getNamespace()
         {
@@ -785,7 +796,7 @@ namespace {
          *
          * @param string $abstract
          * @param \Closure $closure
-         * @return void
+         * @return void 
          * @deprecated since version 5.1. Use singleton instead.
          * @static 
          */
@@ -918,7 +929,7 @@ namespace {
          *
          * @param string $concrete
          * @param array $parameters
-         * @return mixed
+         * @return mixed 
          * @throws \Illuminate\Contracts\Container\BindingResolutionException
          * @static 
          */
@@ -2521,7 +2532,7 @@ namespace {
          * @param string $key
          * @param string $cipher
          * @return bool
-         * @static
+         * @static 
          */
         public static function supported($key, $cipher)
         {
@@ -2842,8 +2853,8 @@ namespace {
          * Execute a Closure within a transaction.
          *
          * @param \Closure $callback
-         * @return mixed 
-         * @throws \Exception
+         * @return mixed
+         * @throws \Throwable
          * @static 
          */
         public static function transaction($callback){
@@ -3310,7 +3321,7 @@ namespace {
          * @param mixed $id
          * @param array $columns
          * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|null
-         * @static
+         * @static 
          */
         public static function find($id, $columns = array())
         {
@@ -3390,13 +3401,13 @@ namespace {
 
         /**
          * Get a single column's value from the first result of a query.
-         *
+         * 
          * This is an alias for the "value" method.
          *
          * @param string $column
-         * @return mixed
+         * @return mixed 
          * @deprecated since version 5.1.
-         * @static
+         * @static 
          */
         public static function pluck($column){
             return \Illuminate\Database\Eloquent\Builder::pluck($column);
@@ -5621,7 +5632,7 @@ namespace {
          * Determine if the given content types match.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function matchesType($actual, $type)
         {
@@ -5653,7 +5664,7 @@ namespace {
          *
          * @param string|array $contentTypes
          * @return bool
-         * @static
+         * @static 
          */
         public static function accepts($contentTypes)
         {
@@ -5665,7 +5676,7 @@ namespace {
          *
          * @param string|array $contentTypes
          * @return string|null
-         * @static
+         * @static 
          */
         public static function prefers($contentTypes)
         {
@@ -5676,7 +5687,7 @@ namespace {
          * Determines whether a request accepts JSON.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function acceptsJson()
         {
@@ -5687,7 +5698,7 @@ namespace {
          * Determines whether a request accepts HTML.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function acceptsHtml()
         {
@@ -6387,12 +6398,12 @@ namespace {
         
         /**
          * Returns the path as relative reference from the current Request path.
-         *
+         * 
          * Only the URIs path component (no schema, host etc.) is relevant and must be given.
          * Both paths must be absolute and not contain relative parts.
          * Relative URLs from one resource to another are useful when generating self-contained downloadable document archives.
          * Furthermore, they can be used to reduce the link size in documents.
-         *
+         * 
          * Example target paths, given a base path of "/a/b/c/d":
          * - "/a/b/c/d"     -> ""
          * - "/a/b/c/"      -> "./"
@@ -6402,7 +6413,7 @@ namespace {
          *
          * @param string $path The target path
          * @return string The relative target path
-         * @static
+         * @static 
          */
         public static function getRelativeUriForPath($path)
         {
@@ -7236,7 +7247,7 @@ namespace {
          * @param string $address
          * @param string|null $name
          * @return void
-         * @static
+         * @static 
          */
         public static function alwaysTo($address, $name = null)
         {
@@ -7655,7 +7666,7 @@ namespace {
          * @param mixed $data
          * @param string $queue
          * @return mixed
-         * @throws \Exception
+         * @throws \Throwable
          * @static 
          */
         public static function push($job, $data = '', $queue = null){
@@ -8346,7 +8357,7 @@ namespace {
          * Determine if the given content types match.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function matchesType($actual, $type)
         {
@@ -8378,7 +8389,7 @@ namespace {
          *
          * @param string|array $contentTypes
          * @return bool
-         * @static
+         * @static 
          */
         public static function accepts($contentTypes)
         {
@@ -8390,7 +8401,7 @@ namespace {
          *
          * @param string|array $contentTypes
          * @return string|null
-         * @static
+         * @static 
          */
         public static function prefers($contentTypes)
         {
@@ -8401,7 +8412,7 @@ namespace {
          * Determines whether a request accepts JSON.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function acceptsJson()
         {
@@ -8412,7 +8423,7 @@ namespace {
          * Determines whether a request accepts HTML.
          *
          * @return bool
-         * @static
+         * @static 
          */
         public static function acceptsHtml()
         {
@@ -9112,12 +9123,12 @@ namespace {
         
         /**
          * Returns the path as relative reference from the current Request path.
-         *
+         * 
          * Only the URIs path component (no schema, host etc.) is relevant and must be given.
          * Both paths must be absolute and not contain relative parts.
          * Relative URLs from one resource to another are useful when generating self-contained downloadable document archives.
          * Furthermore, they can be used to reduce the link size in documents.
-         *
+         * 
          * Example target paths, given a base path of "/a/b/c/d":
          * - "/a/b/c/d"     -> ""
          * - "/a/b/c/"      -> "./"
@@ -9127,7 +9138,7 @@ namespace {
          *
          * @param string $path The target path
          * @return string The relative target path
-         * @static
+         * @static 
          */
         public static function getRelativeUriForPath($path)
         {
@@ -9914,7 +9925,7 @@ namespace {
          *
          * @param $name
          * @return string
-         * @static
+         * @static 
          */
         public static function resolveMiddlewareClassName($name)
         {
@@ -9936,7 +9947,7 @@ namespace {
          * Register a new "before" filter with the router.
          *
          * @param string|callable $callback
-         * @return void
+         * @return void 
          * @deprecated since version 5.1.
          * @static 
          */
@@ -9948,7 +9959,7 @@ namespace {
          * Register a new "after" filter with the router.
          *
          * @param string|callable $callback
-         * @return void
+         * @return void 
          * @deprecated since version 5.1.
          * @static 
          */
@@ -9983,7 +9994,7 @@ namespace {
          *
          * @param string $name
          * @param string|callable $callback
-         * @return void
+         * @return void 
          * @deprecated since version 5.1.
          * @static 
          */
@@ -9997,7 +10008,7 @@ namespace {
          * @param string $pattern
          * @param string $name
          * @param array|null $methods
-         * @return void
+         * @return void 
          * @deprecated since version 5.1.
          * @static 
          */
@@ -10011,7 +10022,7 @@ namespace {
          * @param string $pattern
          * @param string $name
          * @param array|null $methods
-         * @return void
+         * @return void 
          * @deprecated since version 5.1.
          * @static 
          */
@@ -10095,7 +10106,7 @@ namespace {
          * Find the patterned filters matching a request.
          *
          * @param \Illuminate\Http\Request $request
-         * @return array
+         * @return array 
          * @deprecated since version 5.1.
          * @static 
          */
@@ -10109,7 +10120,7 @@ namespace {
          * @param \Illuminate\Routing\Route $route
          * @param \Illuminate\Http\Request $request
          * @param \Illuminate\Http\Response $response
-         * @return mixed
+         * @return mixed 
          * @deprecated since version 5.1.
          * @static 
          */
@@ -10125,7 +10136,7 @@ namespace {
          * @param \Illuminate\Routing\Route $route
          * @param \Illuminate\Http\Request $request
          * @param \Illuminate\Http\Response|null $response
-         * @return mixed
+         * @return mixed 
          * @deprecated since version 5.1.
          * @static 
          */
@@ -10139,7 +10150,7 @@ namespace {
          * @param \Symfony\Component\HttpFoundation\Request $request
          * @param mixed $response
          * @return \Illuminate\Http\Response
-         * @static
+         * @static 
          */
         public static function prepareResponse($request, $response)
         {
@@ -11088,7 +11099,7 @@ namespace {
          *
          * @param array $config
          * @return \Illuminate\Contracts\Filesystem\Filesystem
-         * @static
+         * @static 
          */
         public static function createFtpDriver($config)
         {
@@ -11460,7 +11471,7 @@ namespace {
          * @param string $view
          * @param array $data
          * @param array $mergeData
-         * @return \Illuminate\View\View 
+         * @return \Illuminate\Contracts\View\View 
          * @static 
          */
         public static function make($view, $data = array(), $mergeData = array()){
@@ -11543,13 +11554,13 @@ namespace {
         /**
          * Add a piece of shared data to the environment.
          *
-         * @param string $key
+         * @param array|string $key
          * @param mixed $value
-         * @return void 
+         * @return mixed 
          * @static 
          */
         public static function share($key, $value = null){
-            \Illuminate\View\Factory::share($key, $value);
+            return \Illuminate\View\Factory::share($key, $value);
         }
         
         /**
@@ -11920,19 +11931,22 @@ namespace {
         /**
          * 
          *
+         * @param $cmd
+         * @param null $arg1
+         * @param null $arg2
+         * @param null $arg3
+         * @param null $arg4
+         * @param null $arg5
+         * @param null $arg6
+         * @param null $arg7
+         * @param null $arg8
+         * @param null $arg9
+         * @return mixed
+         * @throws VestaExceptions
          * @static 
          */
         public static function sendQuery($cmd, $arg1 = null, $arg2 = null, $arg3 = null, $arg4 = null, $arg5 = null, $arg6 = null, $arg7 = null, $arg8 = null, $arg9 = null){
             return \Mautab\Services\VestaAPI\Vesta::sendQuery($cmd, $arg1, $arg2, $arg3, $arg4, $arg5, $arg6, $arg7, $arg8, $arg9);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function sendQuery2($cmd, $arg1 = null, $arg2 = null, $arg3 = null, $arg4 = null, $arg5 = null, $arg6 = null){
-            return \Mautab\Services\VestaAPI\Vesta::sendQuery2($cmd, $arg1, $arg2, $arg3, $arg4, $arg5, $arg6);
         }
         
         /**
@@ -11947,6 +11961,9 @@ namespace {
         /**
          * 
          *
+         * @param $database
+         * @param $dbuser
+         * @return mixed 
          * @static 
          */
         public static function changeDbUser($database, $dbuser){
@@ -12072,9 +12089,9 @@ namespace {
         }
 
         /**
+         * 
          *
-         *
-         * @static
+         * @static 
          */
         public static function removeDNSRecord($v_domain, $v_record_id){
             return \Mautab\Services\VestaAPI\Vesta::removeDNSRecord($v_domain, $v_record_id);
@@ -12091,9 +12108,9 @@ namespace {
         }
 
         /**
+         * 
          *
-         *
-         * @static
+         * @static 
          */
         public static function regUser($username, $password, $email, $package, $fist_name, $last_name){
             return \Mautab\Services\VestaAPI\Vesta::regUser($username, $password, $email, $package, $fist_name, $last_name);
@@ -12175,6 +12192,16 @@ namespace {
          * 
          *
          * @static 
+         */
+        public static function suspendUser($username)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::suspendUser($username);
+        }
+
+        /**
+         *
+         *
+         * @static
          */
         public static function listEditWebDomain($domain){
             return \Mautab\Services\VestaAPI\Vesta::listEditWebDomain($domain);
@@ -12346,6 +12373,13 @@ namespace {
         /**
          * 
          *
+         * @param $v_min
+         * @param $v_hour
+         * @param $v_day
+         * @param $v_month
+         * @param $v_wday
+         * @param $v_cmd
+         * @return mixed 
          * @static 
          */
         public static function addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
@@ -12356,6 +12390,8 @@ namespace {
         /**
          * 
          *
+         * @param $v_job
+         * @return mixed 
          * @static 
          */
         public static function showCron($v_job)
@@ -12366,6 +12402,8 @@ namespace {
         /**
          * 
          *
+         * @param $v_job
+         * @return mixed 
          * @static 
          */
         public static function deleteCron($v_job)
@@ -12376,11 +12414,168 @@ namespace {
         /**
          * 
          *
+         * @param $v_job
+         * @param $v_min
+         * @param $v_hour
+         * @param $v_day
+         * @param $v_month
+         * @param $v_wday
+         * @param $v_cmd
+         * @return mixed 
          * @static 
          */
         public static function editCron($v_job, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
         {
             return \Mautab\Services\VestaAPI\Vesta::editCron($v_job, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd);
+        }
+
+        /**
+         *
+         *
+         * @param $src
+         * @param $dst
+         * @return mixed
+         * @static
+         */
+        public static function moveFile($src, $dst)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::moveFile($src, $dst);
+        }
+
+        /**
+         *
+         *
+         * @param $patch
+         * @return mixed
+         * @static
+         */
+        public static function openFile($path = '')
+        {
+            return \Mautab\Services\VestaAPI\Vesta::openFile($path);
+        }
+
+        /**
+         *
+         *
+         * @param $patch
+         * @return mixed
+         * @static
+         */
+        public static function addDir($patch)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::addDir($patch);
+        }
+
+        /**
+         *
+         *
+         * @param $patch
+         * @return mixed
+         * @static
+         */
+        public static function addFile($patch)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::addFile($patch);
+        }
+
+        /**
+         *
+         *
+         * @param $src_file
+         * @param $permissions
+         * @return mixed
+         * @static
+         */
+        public static function changePermission($src_file, $permissions)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::changePermission($src_file, $permissions);
+        }
+
+        /**
+         *
+         *
+         * @param $src_dir
+         * @param $dst_dir
+         * @return mixed
+         * @static
+         */
+        public static function copyDir($src_dir, $dst_dir)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::copyDir($src_dir, $dst_dir);
+        }
+
+        /**
+         *
+         *
+         * @param $src_dir
+         * @param $dst_dir
+         * @return mixed
+         * @static
+         */
+        public static function copyFile($src_dir, $dst_dir)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::copyFile($src_dir, $dst_dir);
+        }
+
+        /**
+         *
+         *
+         * @param $dst_dir
+         * @return mixed
+         * @static
+         */
+        public static function deleteDir($dst_dir)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::deleteDir($dst_dir);
+        }
+
+        /**
+         *
+         *
+         * @param $dst_file
+         * @return mixed
+         * @static
+         */
+        public static function deleteFile($dst_file)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::deleteFile($dst_file);
+        }
+
+        /**
+         *
+         *
+         * @param $src_file
+         * @param $dst_dir
+         * @return mixed
+         * @static
+         */
+        public static function extractArchive($src_file, $dst_dir)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::extractArchive($src_file, $dst_dir);
+        }
+
+        /**
+         *
+         *
+         * @param $path
+         * @return mixed
+         * @static
+         */
+        public static function listDirectory($path = '')
+        {
+            return \Mautab\Services\VestaAPI\Vesta::listDirectory($path);
+        }
+
+        /**
+         *
+         *
+         * @param $raw
+         * @return array
+         * @static
+         */
+        public static function parseListing($raw)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::parseListing($raw);
         }
         
     }

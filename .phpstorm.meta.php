@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2015-07-20.
+    * Generated on 2015-08-02.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -24,7 +24,6 @@ namespace PHPSTORM_META {
             'auth.driver' instanceof \Illuminate\Auth\Guard,
             'illuminate.route.dispatcher' instanceof \Illuminate\Routing\ControllerDispatcher,
             'cookie' instanceof \Illuminate\Cookie\CookieJar,
-            'Illuminate\Database\Eloquent\Factory' instanceof \Illuminate\Database\Eloquent\Factory,
             'Illuminate\Contracts\Queue\EntityResolver' instanceof \Illuminate\Database\Eloquent\QueueEntityResolver,
             'db.factory' instanceof \Illuminate\Database\Connectors\ConnectionFactory,
             'db' instanceof \Illuminate\Database\DatabaseManager,
@@ -137,7 +136,6 @@ namespace PHPSTORM_META {
             'auth.driver' instanceof \Illuminate\Auth\Guard,
             'illuminate.route.dispatcher' instanceof \Illuminate\Routing\ControllerDispatcher,
             'cookie' instanceof \Illuminate\Cookie\CookieJar,
-            'Illuminate\Database\Eloquent\Factory' instanceof \Illuminate\Database\Eloquent\Factory,
             'Illuminate\Contracts\Queue\EntityResolver' instanceof \Illuminate\Database\Eloquent\QueueEntityResolver,
             'db.factory' instanceof \Illuminate\Database\Connectors\ConnectionFactory,
             'db' instanceof \Illuminate\Database\DatabaseManager,
@@ -250,7 +248,6 @@ namespace PHPSTORM_META {
             'auth.driver' instanceof \Illuminate\Auth\Guard,
             'illuminate.route.dispatcher' instanceof \Illuminate\Routing\ControllerDispatcher,
             'cookie' instanceof \Illuminate\Cookie\CookieJar,
-            'Illuminate\Database\Eloquent\Factory' instanceof \Illuminate\Database\Eloquent\Factory,
             'Illuminate\Contracts\Queue\EntityResolver' instanceof \Illuminate\Database\Eloquent\QueueEntityResolver,
             'db.factory' instanceof \Illuminate\Database\Connectors\ConnectionFactory,
             'db' instanceof \Illuminate\Database\DatabaseManager,
@@ -363,7 +360,6 @@ namespace PHPSTORM_META {
             'auth.driver' instanceof \Illuminate\Auth\Guard,
             'illuminate.route.dispatcher' instanceof \Illuminate\Routing\ControllerDispatcher,
             'cookie' instanceof \Illuminate\Cookie\CookieJar,
-            'Illuminate\Database\Eloquent\Factory' instanceof \Illuminate\Database\Eloquent\Factory,
             'Illuminate\Contracts\Queue\EntityResolver' instanceof \Illuminate\Database\Eloquent\QueueEntityResolver,
             'db.factory' instanceof \Illuminate\Database\Connectors\ConnectionFactory,
             'db' instanceof \Illuminate\Database\DatabaseManager,

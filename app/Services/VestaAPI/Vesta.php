@@ -64,6 +64,8 @@ class Vesta
 
 
         $postdata = http_build_query($postvars);
+        $postdata = urldecode($postdata);
+
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, 'https://' . $this->vst_server . ':8083/api/');
@@ -75,12 +77,12 @@ class Vesta
 
         $query = curl_exec($curl);
 
-
         if ($this->vst_returncode == 'yes' && $query != 0)
             throw new VestaExceptions($query);
         else
             return $query;
 
     }
+
 
 }
