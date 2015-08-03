@@ -36,7 +36,7 @@ trait VestaFileSystem
      */
     public function  openFile($path = "")
     {
-        //$path = "/home/". Auth::user()->nickname ."/". $path;
+        $path = "/home/" . Auth::user()->nickname . "/" . $path;
         $this->vst_returncode = 'no';
         return $this->sendQuery('v-open-fs-file', Auth::User()->nickname, $path);
     }
@@ -144,7 +144,6 @@ trait VestaFileSystem
      */
     public function parseListing($raw)
     {
-
         $raw = explode(PHP_EOL, $raw);
         $raw = array_filter($raw);
         $data = [];
@@ -168,12 +167,6 @@ trait VestaFileSystem
 
         return $data;
     }
-
-
-
-
-
-
 
 
 }
