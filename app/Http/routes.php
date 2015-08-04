@@ -26,6 +26,7 @@ Route::group(['middleware' => ['UserRole', 'LoginAs', 'auth'], 'namespace' => 'H
 		Route::resource('backup', 'BackupController', ['only' => ['index', 'store', 'show', 'destroy']]);
 		Route::resource('cron', 'CronController');
 		Route::resource('tikets', 'TiketsController');
+	Route::resource('manager', 'ManagerController');
 		Route::resource('home', 'HomeController', ['only' => ['index', 'update']]);
 	});
 
