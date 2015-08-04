@@ -23,7 +23,15 @@
             <h4><?php echo e(Lang::get('menu.Users')); ?></h4>
         </a>
 
+
         <hr>
+
+        <p class="menu-small">
+            <a href="<?php echo e(URL::route('admin.groups.index')); ?>">
+                <?php echo e(Lang::get('menu.Groups')); ?>
+
+            </a>
+        </p>
 
     </div>
 
