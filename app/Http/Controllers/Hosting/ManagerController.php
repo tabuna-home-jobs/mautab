@@ -5,6 +5,8 @@ namespace Mautab\Http\Controllers\Hosting;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
+use Mautab\Http\Requests\Hosting\ShowFileManager;
+use Session;
 use Vesta;
 
 class ManagerController extends Controller
@@ -14,12 +16,27 @@ class ManagerController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(ShowFileManager $request)
     {
-        $listDirectory = Vesta::listDirectory();
+        if (!is_null($request->name)) {
+            if ($request->name == "../") {
+                $Path = Session::pull('Path', '');
+                $Path = explode('/', $Path);
+                unset($Path[count($Path) - 2]);
+                $Path = implode("/", $Path);
+                Session::put('Path', $Path);
+            } else {
+                Session::put('Path', Session::get('Path', '') . $request->name . '/');
+            }
+
+        }
+
+        $listDirectory = Vesta::listDirectory(Session::get('Path', ''));
         return view('user.user.manager', [
             'listDirectory' => $listDirectory
         ]);
+
+
     }
 
     /**
@@ -49,9 +66,23 @@ class ManagerController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function show($id)
+    public function show($path, ShowFileManager $request)
     {
-        //
+        $type = $request->type;
+
+
+        /*
+         * Если отрыта директория
+         */
+
+        if ($type == 'd') {
+            Session::put('Path', $path . '/');
+            $listDirectory = Vesta::listDirectory($path);
+            return view('user.user.manager', [
+                'listDirectory' => $listDirectory
+            ]);
+        }
+
     }
 
     /**

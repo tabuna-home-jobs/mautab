@@ -33,7 +33,12 @@
                         <td><input type="checkbox" name="1" value="Documents"></td>
 
                         <td colspan="3">
-                            {{$list['name']}}
+                            @if($list['type'] == 'd')
+                                <i class="fa fa-folder-open"></i>  <a
+                                        href="{{URL::route('manager.index',['name' => $list['name']])}}">{{$list['name']}}</a>
+                            @else
+                                {{$list['name']}}
+                            @endif
                         </td>
 
                         <td>
