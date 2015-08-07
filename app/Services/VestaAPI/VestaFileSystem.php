@@ -101,6 +101,7 @@ trait VestaFileSystem
     public function  deleteDir($dst_dir)
     {
         $this->vst_returncode = 'no';
+        $dst_dir = "/home/" . Auth::user()->nickname . "/" . $dst_dir;
         return $this->sendQuery('v-delete-fs-dir', Auth::User()->nickname, $dst_dir);
     }
 
@@ -111,6 +112,7 @@ trait VestaFileSystem
     public function  deleteFile($dst_file)
     {
         $this->vst_returncode = 'no';
+        $dst_file = "/home/" . Auth::user()->nickname . "/" . $dst_file;
         return $this->sendQuery('v-delete-fs-file', Auth::User()->nickname, $dst_file);
     }
 

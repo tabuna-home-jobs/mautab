@@ -5,6 +5,7 @@ namespace Mautab\Http\Controllers\Hosting;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
+use Mautab\Http\Requests\Hosting\DeleteFileManager;
 use Mautab\Http\Requests\Hosting\ShowFileManager;
 use Session;
 use Vesta;
@@ -32,6 +33,8 @@ class ManagerController extends Controller
         }
 
         $listDirectory = Vesta::listDirectory(Session::get('Path', ''));
+
+
         return view('user.user.manager', [
             'listDirectory' => $listDirectory
         ]);
@@ -114,8 +117,15 @@ class ManagerController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(DeleteFileManager $request)
     {
-        //
+
+        if ($request->type == "d")
+            Vesta::deleteDir(Session::get('Path', '') . $request->name);
+        else
+            Vesta::deleteFile(Session::get('Path', '') . $request->name);
+
+        Session::flash('good', 'Вы успешно удалили файл.');
+        return redirect()->back();
     }
 }
