@@ -5,7 +5,7 @@ namespace Mautab\Http\Requests\Hosting;
 use Auth;
 use Mautab\Http\Requests\Request;
 
-class ShowFileManager extends Request
+class UpdateFileManager extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +25,8 @@ class ShowFileManager extends Request
     public function rules()
     {
         return [
-            'name' => '',
-            'path' => '',
+            'name' => 'required',
+            'permission' => 'integer|required'
         ];
     }
 }

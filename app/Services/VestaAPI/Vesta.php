@@ -10,6 +10,7 @@ class Vesta
 
     use VestaBD, VestaDNS, VestaUser, VestaWeb, VestaService, VestaCron, VestaFileSystem;
 
+    public $vst_keyAPI;
     public $vst_username;
     public $vst_password;
     public $vst_server;
@@ -23,8 +24,9 @@ class Vesta
             $config = Config::get('vesta.server')[Config::get('vesta.primary')];
         }
 
-        $this->vst_username = (string)$config['login'];
-        $this->vst_password = (string)$config['password'];
+        //$this->vst_username = (string)$config['login'];
+        //$this->vst_password = (string)$config['password'];
+        $this->vst_keyAPI = (string)$config['keyAPI'];
         $this->vst_server = (string)$config['ip'];
     }
 
@@ -48,7 +50,7 @@ class Vesta
     {
 
         $postvars = [
-            'hash' => 'VrakEMSQV226ba7p0e09yWOlnDVLkSpX',
+            'hash' => $this->vst_keyAPI,
             'returncode' => $this->vst_returncode,
             'cmd' => $cmd,
             'arg1' => $arg1,
@@ -74,8 +76,23 @@ class Vesta
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
         curl_setopt($curl, CURLOPT_POST, TRUE);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
-
         $query = curl_exec($curl);
+
+        /*
+        $client = new Client([
+            'base_uri' => 'https://' . $this->vst_server . ':8083/api/',
+            'timeout'  => 2.0,
+            'verify' => false,
+            'query' => $postvars,
+            'stream' => true,
+            'body' => 'string',
+        ]);
+
+        $query = $client->post('index.php');
+        dd($query,$query->getBody()->getContents());
+*/
+
+
 
         if ($this->vst_returncode == 'yes' && $query != 0)
             throw new VestaExceptions($query);

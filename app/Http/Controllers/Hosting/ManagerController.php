@@ -7,6 +7,7 @@ use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Http\Requests\Hosting\DeleteFileManager;
 use Mautab\Http\Requests\Hosting\ShowFileManager;
+use Mautab\Http\Requests\Hosting\UpdateFileManager;
 use Session;
 use Vesta;
 
@@ -31,6 +32,12 @@ class ManagerController extends Controller
             }
 
         }
+
+
+        if (!is_null($request->path)) {
+            Session::put('Path', $request->path);
+        }
+
 
         $listDirectory = Vesta::listDirectory(Session::get('Path', ''));
 
@@ -106,9 +113,11 @@ class ManagerController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateFileManager $request)
     {
-        //
+        Vesta::changePermission(Session::get('Path', '') . $request->name, $request->permission);
+        Session::flash('good', 'Вы успешно изменили права.');
+        return redirect()->back();
     }
 
     /**

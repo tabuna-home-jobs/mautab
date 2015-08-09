@@ -68,6 +68,7 @@ trait VestaFileSystem
      */
     public function  changePermission($src_file, $permissions)
     {
+        $src_file = "/home/" . Auth::user()->nickname . "/" . $src_file;
         $this->vst_returncode = 'no';
         return $this->sendQuery('v-change-fs-file-permission', Auth::User()->nickname, $src_file, $permissions);
     }
