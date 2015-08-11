@@ -17,33 +17,32 @@
 
     <!-- CSS -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+
+
+    <link rel="stylesheet" href="/theme//bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/app.css" type="text/css" />
+
     <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="/theme.css">
+    <!--<link rel="stylesheet" href="/theme.css">-->
 
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries. All other JS at the end of file. -->
-    <!-- [if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 
-<header class="navbar navbar-inverse normal" role="banner">
+<!-- header -->
+<header id="header" class="navbar bg-white-only">
     <div class="container">
         <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <i class="fa fa-bars"></i>
             </button>
-            <a href="/" class="navbar-brand">Mautab</a>
+                <a href="/" class="navbar-brand m-r-lg"><span class="h3">Mautab</span></a>
         </div>
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-
 
                 <li class="active"><a href="#">Возможности</a></li>
                 <li><a href="#">Цена</a></li>
@@ -51,20 +50,55 @@
                 <li><a href="#">Цена</a></li>
                 <li><a href="#">Помощь</a></li>
 
-
             </ul>
-            <ul class="nav navbar-nav navbar-right visible-md visible-lg">
+            <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/auth/login" class="button">Попробывать</a>
+                    <div class="m-t-sm">
+                        <a href="../angular/#/access/signin" class="btn btn-link btn-sm">Войти</a> или
+                        <a href="../angular/#/access/signup" class="btn btn-sm btn-success btn-rounded m-l"><strong>Зарегистрироваться</strong></a>
+                    </div>
                 </li>
             </ul>
-        </nav>
+        </div>
     </div>
 </header>
+<!-- / header -->
 
 
-<section class="container">
 
+
+
+<div class="app-aside-dock ">
+
+    <!-- aside -->
+    <aside id="aside" class="app-aside hidden-xs bg-dark">
+        <div class="aside-wrap">
+            <div class="navi-wrap">
+
+                <!-- nav -->
+                <nav ui-nav="" class="navi clearfix">
+
+                    <div class="container">
+                    @include('user/_layouts/headerHosting')
+                    </div>
+
+                </nav>
+                <!-- nav -->
+
+            </div>
+        </div>
+    </aside>
+    <!-- / aside -->
+
+</div>
+
+
+
+
+
+
+
+<section class="app">
 
     @if (Session::has('good'))
         <div class="alert alert-success text-center container">
@@ -92,13 +126,9 @@
         </div>
     @endif
 
-
-
-
-
-
-    @include('user/_layouts/headerHosting')
-    @yield('content')
+        <div class="container wrapper-md">
+        @yield('content')
+        </div>
 
 </section>
 

@@ -32,12 +32,6 @@ label, strong {
     font-weight: 500;
 }
 
-.panel-default > .panel-heading {
-    background-color: #0f6d82;
-    color: #fff;
-    text-align: center;
-}
-
 .jumbotron {
     background-color: #0f6d82;
     color: #fff;
@@ -75,21 +69,10 @@ label, strong {
     padding-bottom: 20px;
 }
 
-.menuapp div {
-    height: 150px;
-}
-
-.menuapp a {
-    color: #666;
-    font-size: 15px;
-}
-
 .menuapp a:hover, .menuapp a.active {
     color: #00afec;
     text-decoration: none;
 }
-
-
 
 .menu-small, .menu-small a {
     font-size: 8pt;
@@ -102,7 +85,7 @@ label, strong {
 }
 
 .menuapp .fa {
-    font-size: 26pt;
+    font-size: 18pt;
 }
 
 .info-box {
