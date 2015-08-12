@@ -8,22 +8,27 @@
                     <ul class="list-unstyled">
                         <li><a href="../angular"><i class="fa fa-angle-right m-r-sm"></i>Angular App</a></li>
                         <li><a href="../html"><i class="fa fa-angle-right m-r-sm"></i>Html Template</a></li>
-                        <li><a href="../angular/#music/home"><i class="fa fa-angle-right m-r-sm"></i>Music single page application</a></li>
+                        <li><a href="../angular/#music/home"><i class="fa fa-angle-right m-r-sm"></i>Music single page
+                                application</a></li>
                         <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>App landing page</a></li>
                     </ul>
                     <p class="m-b-xl">More coming...</p>
                 </div>
                 <div class="col-sm-3">
                     <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Find</span> Us</h4>
+
                     <p class="text-sm">23 soe Midlokls <br>
                         120002 Loki — UNITED KINGDOM <br>
                         +333 432 321 322
                     </p>
+
                     <p>Sale: <a href="mailto:hey@example.com">info@example.com</a></p>
+
                     <p class="m-b-xl">Job: <a href="mailto:hey@example.com">job@example.com</a></p>
                 </div>
                 <div class="col-sm-3">
                     <h4 class="text-u-c m-b-xl font-thin"><span class="b-b b-dark font-bold">Follow</span> Us</h4>
+
                     <div class="m-b-xl">
                         <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-twitter"></i></a>
@@ -34,11 +39,14 @@
                 </div>
                 <div class="col-sm-3">
                     <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">News</span> Letter</h4>
+
                     <p>Do not want to miss anything? Subscribe to our newsletter box</p>
+
                     <form class="form-inline m-t m-b text-center m-b-xl">
                         <div class="aside-xl inline">
                             <div class="input-group">
-                                <input type="text" id="address" name="address" class="form-control btn-rounded" placeholder="Your email">
+                                <input type="text" id="address" name="address" class="form-control btn-rounded"
+                                       placeholder="Your email">
                     <span class="input-group-btn">
                       <button class="btn btn-default btn-rounded" type="submit">Subscribe</button>
                     </span>
@@ -69,7 +77,6 @@
     </div>
 </footer>
 <!-- / footer -->
-
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

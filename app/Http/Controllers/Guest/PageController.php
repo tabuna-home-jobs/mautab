@@ -4,7 +4,7 @@
 
 	use Mautab\Http\Controllers\Controller;
 
-    class PageController extends Controller
+	class PageController extends Controller
 	{
 	    /**
 	     * @param Request $request - http запрос

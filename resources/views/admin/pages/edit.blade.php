@@ -21,19 +21,23 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Заголовок</label>
-                            <input class="form-control" type="text" maxlength="255" required name="title" value="{{$Page->title or ''}}">
+                            <input class="form-control" type="text" maxlength="255" required name="title"
+                                   value="{{$Page->title or ''}}">
                         </div>
                         <div class="form-group">
                             <label>Имя</label>
-                            <input class="form-control" type="text" maxlength="255" required name="name" value="{{$Page->name or ''}}">
+                            <input class="form-control" type="text" maxlength="255" required name="name"
+                                   value="{{$Page->name or ''}}">
                         </div>
                         <div class="form-group">
                             <label>Теги</label>
-                            <input class="form-control" type="text" maxlength="255" required name="tag" value="{{$Page->tag or ''}}">
+                            <input class="form-control" type="text" maxlength="255" required name="tag"
+                                   value="{{$Page->tag or ''}}">
                         </div>
                         <div class="form-group">
                             <label>Описание</label>
-                            <input class="form-control" type="text" maxlength="255" required name="descript" value="{{$Page->descript or ''}}">
+                            <input class="form-control" type="text" maxlength="255" required name="descript"
+                                   value="{{$Page->descript or ''}}">
                         </div>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button type="submit" class="btn btn-default">Отправить</button>

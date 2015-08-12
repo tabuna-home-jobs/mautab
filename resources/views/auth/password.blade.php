@@ -18,7 +18,6 @@
                             <h1>Востановление пароля</h1>
 
 
-
                             @if (session('status'))
                                 <div class="alert alert-success">
                                     {{ session('status') }}

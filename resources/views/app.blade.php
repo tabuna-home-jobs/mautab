@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 
 
-    <link rel="stylesheet" href="/theme//bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/css/app.css" type="text/css" />
+    <link rel="stylesheet" href="/theme//bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/css/app.css" type="text/css"/>
 
     <link rel="stylesheet" href="/main.css">
     <!--<link rel="stylesheet" href="/theme.css">-->
@@ -36,10 +36,11 @@
 <header id="header" class="navbar bg-white-only">
     <div class="container">
         <div class="navbar-header">
-            <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse"
+                    data-target=".navbar-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-                <a href="/" class="navbar-brand m-r-lg"><span class="h3">Mautab</span></a>
+            <a href="/" class="navbar-brand m-r-lg"><span class="h3">Mautab</span></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -65,9 +66,6 @@
 <!-- / header -->
 
 
-
-
-
 <div class="app-aside-dock ">
 
     <!-- aside -->
@@ -79,7 +77,7 @@
                 <nav ui-nav="" class="navi clearfix">
 
                     <div class="container">
-                    @include('user/_layouts/headerHosting')
+                        @include('user/_layouts/headerHosting')
                     </div>
 
                 </nav>
@@ -91,11 +89,6 @@
     <!-- / aside -->
 
 </div>
-
-
-
-
-
 
 
 <section class="app">

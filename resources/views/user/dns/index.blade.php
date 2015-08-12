@@ -5,7 +5,8 @@
 
 
     <p class="text-center">
-        <a id="show-add-bd" data-toggle="collapse" href="#add-dns" aria-expanded="false" aria-controls="collapseExample">
+        <a id="show-add-bd" data-toggle="collapse" href="#add-dns" aria-expanded="false"
+           aria-controls="collapseExample">
             <i class="fa fa-plus"></i>Добавить
         </a>
     </p>
@@ -23,7 +24,8 @@
                 <input type="text" class="form-control" name="v_ip" required/>
             </div>
             <p class="text-center">
-                <a id="show-dop-info" data-toggle="collapse" href="#dop-info" aria-expanded="false" aria-controls="collapseExample">
+                <a id="show-dop-info" data-toggle="collapse" href="#dop-info" aria-expanded="false"
+                   aria-controls="collapseExample">
                     <i class="fa fa-plus"></i>Дополнительные опции
                 </a>
             </p>
@@ -33,7 +35,8 @@
                     <label>Зарегистрирован до
                         <small>(ГГГГ-ММ-ДД)</small>
                     </label>
-                    <input type="text" class="form-control" name="v_exp" value="{{date("Y-m-d",time() + 24 * 60 * 60 * 365)}}" required/>
+                    <input type="text" class="form-control" name="v_exp"
+                           value="{{date("Y-m-d",time() + 24 * 60 * 60 * 365)}}" required/>
                 </div>
                 <div class="form-group">
                     <label>TTL</label>
@@ -66,8 +69,10 @@
                     <h3 class="panel-title">Информация:</h3>
                 </div>
                 <div class="panel-body">
-                    <p>DNS - Компьютерная распределённая система для получения информации о доменах. Чаще всего используется для получения IP-адреса по имени хоста
-                       (компьютера или устройства), получения информации о маршрутизации почты, обслуживающих узлах для протоколов в домене (SRV-запись). </p>
+                    <p>DNS - Компьютерная распределённая система для получения информации о доменах. Чаще всего
+                        используется для получения IP-адреса по имени хоста
+                        (компьютера или устройства), получения информации о маршрутизации почты, обслуживающих узлах для
+                        протоколов в домене (SRV-запись). </p>
 
                     <p>Основой DNS является представление об иерархической структуре доменного имени и зонах.
                     </p>
@@ -80,92 +85,99 @@
     </div>
 
 
-        <div class="col-md-12" id="add-shadow">
+    <div class="col-md-12" id="add-shadow">
 
-            @forelse($DnsList as $nameDns => $Dns)
-                    <div class="col-xs-12 col-md-4">
+        @forelse($DnsList as $nameDns => $Dns)
+            <div class="col-xs-12 col-md-4">
 
-                        @if($Dns['SUSPENDED'] != "no")
-                            <div class="panel panel-danger ">
-                    @else
-                                    <div class="panel panel-default ">
-                    @endif
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title"> {{$nameDns}}</h3>
-                            </div>
+                @if($Dns['SUSPENDED'] != "no")
+                    <div class="panel panel-danger ">
+                        @else
+                            <div class="panel panel-default ">
+                                @endif
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"> {{$nameDns}}</h3>
+                                </div>
 
-                                        <ul class="list-group">
-                                            <li class="list-group-item">SOA: <span>{{$Dns['SOA']}}</span></li>
-                                            <li class="list-group-item">TTL: <span>{{$Dns['TTL']}}</span></li>
-                                            <li class="list-group-item">Регистрация до: <span>{{$Dns['EXP']}}</span></li>
-                                        </ul>
-                                        <div class="panel-footer">
+                                <ul class="list-group">
+                                    <li class="list-group-item">SOA: <span>{{$Dns['SOA']}}</span></li>
+                                    <li class="list-group-item">TTL: <span>{{$Dns['TTL']}}</span></li>
+                                    <li class="list-group-item">Регистрация до: <span>{{$Dns['EXP']}}</span></li>
+                                </ul>
+                                <div class="panel-footer">
 
 
-                                            <div class="container-fluid">
-                                                <div class="pull-left">
-                                                    <small>{{$Dns['DATE']}}</small>
+                                    <div class="container-fluid">
+                                        <div class="pull-left">
+                                            <small>{{$Dns['DATE']}}</small>
+                                        </div>
+
+                                        <div class="btn-group pull-right" role="group">
+                                            <a href="{{URL::route('records.show', $nameDns)}}"
+                                               class="btn btn-default">
+                                                <i class="fa fa-server"></i>
+                                            </a>
+
+                                            <a href="{{URL::route('dns.show', $nameDns)}}"
+                                               class="btn btn-default">
+                                                <i class="fa fa-pencil-square-o"></i>
+                                            </a>
+
+                                            <a href="#" data-toggle="modal"
+                                               data-target="#Modal-{{str_replace(".",'',$nameDns)}}"
+                                               class="btn btn-danger">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="Modal-{{str_replace(".",'',$nameDns)}}" tabindex="-1"
+                                         role="dialog" aria-labelledby="myModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close"><span
+                                                                aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Удалить {{$nameDns}}
+                                                        ?</h4>
                                                 </div>
-
-                                                <div class="btn-group pull-right" role="group">
-                                                    <a href="{{URL::route('records.show', $nameDns)}}"
-                                                       class="btn btn-default">
-                                                        <i class="fa fa-server"></i>
-                                                    </a>
-
-                                                    <a href="{{URL::route('dns.show', $nameDns)}}"
-                                                       class="btn btn-default">
-                                                        <i class="fa fa-pencil-square-o"></i>
-                                                    </a>
-
-                                                    <a href="#" data-toggle="modal" data-target="#Modal-{{str_replace(".",'',$nameDns)}}" class="btn btn-danger">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
+                                                <div class="modal-body">
+                                                    Вы действительно хотите удалить {{$nameDns}}
                                                 </div>
-
-
-                                            </div>
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="Modal-{{str_replace(".",'',$nameDns)}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                                 aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                                                        aria-hidden="true">&times;</span></button>
-                                                            <h4 class="modal-title" id="myModalLabel">Удалить {{$nameDns}} ?</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Вы действительно хотите удалить {{$nameDns}}
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <form action="{{URL::route('dns.destroy')}}"
-                                                                  method="post">
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
-                                                                <button type="submit" class="button-small">Да</button>
-                                                                <input type="hidden" name="v_domain" value="{{$nameDns}}"/>
-                                                                <input type="hidden" name="_method" value="DELETE">
-                                                                <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                                            </form>
-                                                        </div>
-                                                    </div>
+                                                <div class="modal-footer">
+                                                    <form action="{{URL::route('dns.destroy')}}"
+                                                          method="post">
+                                                        <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">Нет
+                                                        </button>
+                                                        <button type="submit" class="button-small">Да</button>
+                                                        <input type="hidden" name="v_domain" value="{{$nameDns}}"/>
+                                                        <input type="hidden" name="_method" value="DELETE">
+                                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                             </div>
-                            @empty
-
-                                <div class="jumbotron text-center">
-                                <h1>Пусто!</h1>
-
-                                    <p>Вы ещё не создали ни одной DNS записи</p>
-
-                            </div>
-                            @endforelse
-
                     </div>
-        </div>
+                    @empty
+
+                        <div class="jumbotron text-center">
+                            <h1>Пусто!</h1>
+
+                            <p>Вы ещё не создали ни одной DNS записи</p>
+
+                        </div>
+                    @endforelse
+
+            </div>
+    </div>
 
 @endsection

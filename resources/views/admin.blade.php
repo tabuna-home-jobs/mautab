@@ -86,7 +86,6 @@
 </header>
 
 
-
 @include('admin/_layouts/headerAdmin')
 
 
@@ -94,28 +93,26 @@
 
 
 @if (Session::has('good'))
-        <div class="container">
-            <div class="alert alert-success text-center">{{Session::get('good')}}</div>
+    <div class="container">
+        <div class="alert alert-success text-center">{{Session::get('good')}}</div>
+    </div>
+
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
-
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
     @endif
 
-
+@endif
 
 
 <section class="container app-container">
-@yield('content')
+    @yield('content')
 </section>
 
 @include('footer')

@@ -49,7 +49,7 @@
                                             <input type="text" class="form-control" name="nickname"
                                                    placeholder="Sheldon"
                                                    value="{{ old('nickname') }}">
-                                        </div>
+                                    </div>
                                     </div>
 
 
@@ -59,7 +59,7 @@
                                         <div class="col-md-8">
                                             <input type="text" name="firstname" size="50" value="{{old('firstname')}}"
                                                    class="form-control" placeholder="Sheldon">
-                                        </div>
+                                    </div>
                                     </div>
 
 
@@ -69,7 +69,7 @@
                                         <div class="col-md-8">
                                             <input type="text" name="lastname" size="50" value="{{old('lastname')}}"
                                                    class="form-control" placeholder="Cooper">
-                                        </div>
+                                    </div>
                                     </div>
 
 
@@ -79,7 +79,7 @@
                                         <div class="col-md-8">
                                             <input type="email" class="form-control" name="email"
                                                    placeholder="Sheldon@gmail.com" value="{{ old('email') }}">
-                                        </div>
+                                    </div>
                                     </div>
 
 
@@ -92,7 +92,7 @@
                                                 <option value="1">Профессиональный</option>
                                                 <option value="2">Корпоративный</option>
                                             </select>
-                                        </div>
+                                    </div>
                                     </div>
 
 
@@ -102,7 +102,7 @@
                                         <div class="col-md-8">
                                             <input type="password" class="form-control" placeholder="*******"
                                                    name="password">
-                                        </div>
+                                    </div>
                                     </div>
 
                                     <div class="form-group">
@@ -111,7 +111,7 @@
                                         <div class="col-md-8">
                                             <input type="password" class="form-control" placeholder="*******"
                                                    name="password_confirmation">
-                                        </div>
+                                    </div>
                                     </div>
 
                                     <div class="form-group">
@@ -119,7 +119,7 @@
                                             <button type="submit" class="btn btn-blue">
                                                 Зарегистрироваться
                                             </button>
-                                        </div>
+                                    </div>
                                     </div>
                                 </form>
 

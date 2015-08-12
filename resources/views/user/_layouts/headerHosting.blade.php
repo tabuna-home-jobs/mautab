@@ -9,6 +9,7 @@
         </a>
 
         <p class="menu-small">{{Lang::get('menu.disk')}}: {{ $UserInfo['U_DISK'] }} мб </p>
+
         <p class="menu-small">{{Lang::get('menu.traffic')}}: {{$UserInfo['U_BANDWIDTH'] }} мб </p>
 
     </div>
@@ -19,6 +20,7 @@
             <span class="fa fa-desktop"></span>
             <h4>{{Lang::get('menu.Web')}}</h4>
         </a>
+
         <p class="menu-small"> {{Lang::get('menu.domains')}}: {{$UserInfo['U_WEB_DOMAINS'] }} </p>
 
         <p class="menu-small"> {{Lang::get('menu.aliases')}}: {{$UserInfo['U_WEB_ALIASES'] }} </p>
@@ -31,6 +33,7 @@
             <span class="fa fa-sitemap"></span>
             <h4>{{Lang::get('menu.DNS')}}</h4>
         </a>
+
         <p class="menu-small"> {{Lang::get('menu.domains')}}: {{$UserInfo['U_DNS_DOMAINS'] }} </p>
 
         <p class="menu-small"> {{Lang::get('menu.records')}}: {{$UserInfo['U_DNS_RECORDS'] }} </p>
@@ -42,6 +45,7 @@
             <span class="fa fa-database"></span>
             <h4>{{Lang::get('menu.BD')}}</h4>
         </a>
+
         <p class="menu-small"> {{Lang::get('menu.BD')}}: {{$UserInfo['U_DATABASES'] }} </p>
     </div>
 
@@ -51,6 +55,7 @@
             <span class="fa fa-clock-o"></span>
             <h4>{{Lang::get('menu.Cron')}}</h4>
         </a>
+
         <p class="menu-small"> {{Lang::get('menu.jobs')}}: {{$UserInfo['U_CRON_JOBS'] }} </p>
     </div>
 
@@ -60,7 +65,9 @@
             <span class="fa fa-life-ring"></span>
             <h4>{{Lang::get('menu.support')}} <span class="badge badge-menu">4</span></h4>
         </a>
+
         <p class="menu-small"><a href="{{URL::route('log.index')}}">{{Lang::get('menu.log')}}</a></p>
+
         <p class="menu-small"><a href="{{URL::route('backup.index')}}">{{Lang::get('menu.backup')}}</a></p>
     </div>
 

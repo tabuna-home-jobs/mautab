@@ -4,7 +4,8 @@
 
 
     <div class="panel panel-default">
-        <div class="panel-heading"><small>Записи домена</small>
+        <div class="panel-heading">
+            <small>Записи домена</small>
             <b>{{$domain}}</b>
         </div>
         <div class="panel-body">
@@ -93,42 +94,41 @@
         </div>
 
 
-
         <div id="add-shadow" class="table-responsive">
-                <table class="table table-striped b-t b-light">
-                    <tbody>
+            <table class="table table-striped b-t b-light">
+                <tbody>
 
-                    @foreach($records as $key => $record)
+                @foreach($records as $key => $record)
 
-                        @if($record['SUSPENDED'] == 'no')
-                            <tr>
-                        @else
-                            <tr class="danger">
-                                @endif
+                    @if($record['SUSPENDED'] == 'no')
+                        <tr>
+                    @else
+                        <tr class="danger">
+                            @endif
 
 
-                                <td id=" {{$record['ID']}}">{{$record['RECORD']}}</td>
-                                <td>{{$record['TYPE']}}</td>
-                                <td> {{substr($record['VALUE'],0,30)}}</td>
-                                <td>{{$record['DATE']}} : {{$record['TIME']}}</td>
+                            <td id=" {{$record['ID']}}">{{$record['RECORD']}}</td>
+                            <td>{{$record['TYPE']}}</td>
+                            <td> {{substr($record['VALUE'],0,30)}}</td>
+                            <td>{{$record['DATE']}} : {{$record['TIME']}}</td>
 
-                                <td>
-                                    <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="{{URL::route('records.edit',['domain' => $domain, 'record' => $record['ID']])}}"
-                                           class="btn btn-default">
-                                            <i class="fa fa-pencil-square-o"></i>
-                                        </a>
+                            <td>
+                                <div class="btn-group pull-right" role="group" aria-label="...">
+                                    <a href="{{URL::route('records.edit',['domain' => $domain, 'record' => $record['ID']])}}"
+                                       class="btn btn-default">
+                                        <i class="fa fa-pencil-square-o"></i>
+                                    </a>
 
-                                        <a href="#" class="btn btn-danger"
-                                           onclick="delModal('{{$domain}}','/hosting/records/destroy','{{$record["ID"]}}')">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            @endforeach
-                    </tbody>
-                </table>
+                                    <a href="#" class="btn btn-danger"
+                                       onclick="delModal('{{$domain}}','/hosting/records/destroy','{{$record["ID"]}}')">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                </tbody>
+            </table>
             <script type="text/javascript">
                 //Модалка для удаления
                 /**
@@ -161,8 +161,6 @@
             </script>
 
         </div>
-
-
 
 
     </div>

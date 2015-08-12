@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 
 
-    <link rel="stylesheet" href="/theme//bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/css/app.css" type="text/css" />
+    <link rel="stylesheet" href="/theme//bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/css/app.css" type="text/css"/>
 
     <link rel="stylesheet" href="/main.css">
     <!--<link rel="stylesheet" href="/theme.css">-->
@@ -32,13 +32,15 @@
 </head>
 
 <!-- header -->
-<header id="header" class="navbar navbar-fixed-top bg-white-only padder-v"  data-spy="affix" data-offset-top="1">
+<header id="header" class="navbar navbar-fixed-top bg-white-only padder-v" data-spy="affix" data-offset-top="1">
     <div class="container">
         <div class="navbar-header">
-            <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse"
+                    data-target=".navbar-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a href="#" class="navbar-brand m-r-lg"><img src="img/logo.png" class="m-r-sm hide"><span class="h3 font-bold">Angulr</span></a>
+            <a href="#" class="navbar-brand m-r-lg"><img src="img/logo.png" class="m-r-sm hide"><span
+                        class="h3 font-bold">Angulr</span></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav font-bold">
@@ -59,7 +61,8 @@
                 <li>
                     <div class="m-t-sm">
                         <a href="../angular/#/access/signin" class="btn btn-link btn-sm">Sign in</a> or
-                        <a href="../angular/#/access/signup" class="btn btn-sm btn-success btn-rounded m-l"><strong>Sign up</strong></a>
+                        <a href="../angular/#/access/signup" class="btn btn-sm btn-success btn-rounded m-l"><strong>Sign
+                                up</strong></a>
                     </div>
                 </li>
             </ul>
@@ -69,12 +72,10 @@
 <!-- / header -->
 
 
-
-
 @yield('content')
 
 
-<!-- footer -->
+        <!-- footer -->
 <footer id="footer">
     <div class="bg-info">
         <div class="container">
@@ -83,7 +84,8 @@
                     <h4 class="m-b">Are you ready to enjoy?</h4>
                 </div>
                 <div class="col-sm-6 text-center">
-                    <a href="http://themeforest.net/item/angulr-bootstrap-admin-web-app-with-angularjs/8437259" class="btn btn-lg btn-default btn-rounded">Get Angulr Now</a>
+                    <a href="http://themeforest.net/item/angulr-bootstrap-admin-web-app-with-angularjs/8437259"
+                       class="btn btn-lg btn-default btn-rounded">Get Angulr Now</a>
                 </div>
             </div>
         </div>
@@ -96,22 +98,27 @@
                     <ul class="list-unstyled">
                         <li><a href="../angular"><i class="fa fa-angle-right m-r-sm"></i>Angular App</a></li>
                         <li><a href="../html"><i class="fa fa-angle-right m-r-sm"></i>Html Template</a></li>
-                        <li><a href="../angular/#music/home"><i class="fa fa-angle-right m-r-sm"></i>Music single page application</a></li>
+                        <li><a href="../angular/#music/home"><i class="fa fa-angle-right m-r-sm"></i>Music single page
+                                application</a></li>
                         <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>App landing page</a></li>
                     </ul>
                     <p class="m-b-xl">More coming...</p>
                 </div>
                 <div class="col-sm-3">
                     <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Find</span> Us</h4>
+
                     <p class="text-sm">23 soe Midlokls <br>
                         120002 Loki — UNITED KINGDOM <br>
                         +333 432 321 322
                     </p>
+
                     <p>Sale: <a href="mailto:hey@example.com">info@example.com</a></p>
+
                     <p class="m-b-xl">Job: <a href="mailto:hey@example.com">job@example.com</a></p>
                 </div>
                 <div class="col-sm-3">
                     <h4 class="text-u-c m-b-xl font-thin"><span class="b-b b-dark font-bold">Follow</span> Us</h4>
+
                     <div class="m-b-xl">
                         <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-twitter"></i></a>
@@ -122,11 +129,14 @@
                 </div>
                 <div class="col-sm-3">
                     <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">News</span> Letter</h4>
+
                     <p>Do not want to miss anything? Subscribe to our newsletter box</p>
+
                     <form class="form-inline m-t m-b text-center m-b-xl">
                         <div class="aside-xl inline">
                             <div class="input-group">
-                                <input type="text" id="address" name="address" class="form-control btn-rounded" placeholder="Your email">
+                                <input type="text" id="address" name="address" class="form-control btn-rounded"
+                                       placeholder="Your email">
                     <span class="input-group-btn">
                       <button class="btn btn-default btn-rounded" type="submit">Subscribe</button>
                     </span>
