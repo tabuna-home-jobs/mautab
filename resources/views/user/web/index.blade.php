@@ -94,8 +94,8 @@
                                 <div class="col-xs-12 col-md-4">
 
                                                         <div class="panel b-a">
-                                                            <div class="panel-heading no-border bg-primary">
-                                                                <span class="text-lt"> {{ $key }}</span>
+                                                            <div class="text-center no-border bg-primary">
+                                                                <span class="text-lt">{{ $key }}</span>
                                                             </div>
 
 
