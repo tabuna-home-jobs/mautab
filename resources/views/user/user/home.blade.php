@@ -3,8 +3,11 @@
 @section('content')
 
 
+    <div class="panel panel-default">
+        <div class="panel-heading">Basic form</div>
+        <div class="panel-body">
 
-    <div class="col-xs-12">
+        <div class="col-xs-12">
 
         <div class="row">
 
@@ -79,97 +82,63 @@
             <div class="col-md-4">
 
 
-                <div class="info-box">
-                    <span class="info-box-icon"><i class="fa fa-bolt"></i></span>
 
-                    <div class="info-box-content">
-                        <span class="info-box-text">{{Lang::get('menu.traffic')}}</span>
-                        <span class="info-box-number">{{ $UserInfo['U_BANDWIDTH'] }}</span>
 
-                        <div class="progress">
-                            <div style="width:  {{$UserInfo['U_BANDWIDTH']/$UserInfo['BANDWIDTH'] * 100  }}%;"
-                                 class="progress-bar"></div>
+
+
+                <div class="col wrapper-lg bg-light dk r-r">
+                    <h4 class="font-thin m-t-none m-b"><i class="fa fa-info-circle"></i> Информация</h4>
+
+                    <div class="">
+                        <div class="m-b">
+                            <p class="pull-right text-primary">{{$UserInfo['U_BANDWIDTH']}} из {{$UserInfo['BANDWIDTH']}}</p>
+                            <span>{{Lang::get('menu.traffic')}}</span>
                         </div>
-                                  <span class="progress-description">
-                                    {{Lang::get('menu.traffic')}}
-                                  </span>
-                    </div>
-                </div>
-
-
-                <div class="info-box">
-                    <span class="info-box-icon"><i class="fa fa-hdd-o"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">{{Lang::get('menu.disk')}}</span>
-                        <span class="info-box-number">{{ $UserInfo['U_DISK'] }}</span>
-
-                        <div class="progress">
-                            <div style="width:  {{$UserInfo['U_DISK']/$UserInfo['DISK_QUOTA'] * 100  }}%;"
-                                 class="progress-bar"></div>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-primary" style="width: {{$UserInfo['U_BANDWIDTH']/$UserInfo['BANDWIDTH'] * 100  }}%"> </div>
                         </div>
-                                  <span class="progress-description">
-                                    Общее дисковое пространство
-                                  </span>
-                    </div>
-                </div>
 
-
-                <div class="info-box">
-                    <span class="info-box-icon"><i class="fa fa-desktop"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">{{Lang::get('menu.domains')}}</span>
-                        <span class="info-box-number">{{ $UserInfo['U_WEB_DOMAINS'] }}</span>
-
-                        <div class="progress">
-                            <div style="width:  {{$UserInfo['U_WEB_DOMAINS']/$UserInfo['WEB_DOMAINS'] * 100  }}%;"
-                                 class="progress-bar"></div>
+                        <div class="m-b">
+                            <span class="pull-right text-info">{{$UserInfo['U_DISK']}} из {{$UserInfo['DISK_QUOTA']}}</span>
+                            <span>{{Lang::get('menu.disk')}}</span>
                         </div>
-                                  <span class="progress-description">
-                                <p class="pull-left"> Cоздано {{ $UserInfo['U_WEB_DOMAINS'] }}
-                                    из {{ $UserInfo['WEB_DOMAINS'] }}</p>
-                                      <p class="pull-right">{{ $UserInfo['U_DISK_WEB'] }} мб</p>
-                                  </span>
-                    </div>
-                </div>
-
-
-                <div class="info-box">
-                    <span class="info-box-icon"><i class="fa fa-sitemap"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">{{Lang::get('menu.DNS')}}</span>
-                        <span class="info-box-number">{{ $UserInfo['U_DNS_DOMAINS'] }}</span>
-
-                        <div class="progress">
-                            <div style="width:  {{$UserInfo['U_DNS_DOMAINS']/$UserInfo['DNS_DOMAINS'] * 100  }}%;"
-                                 class="progress-bar"></div>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-info"  style="width: {{$UserInfo['U_DISK']/$UserInfo['DISK_QUOTA'] * 100  }}%"></div>
                         </div>
-                                  <span class="progress-description">
-                                 Cоздано {{ $UserInfo['U_DNS_DOMAINS'] }} из {{ $UserInfo['DNS_DOMAINS'] }}
-                                  </span>
-                    </div>
-                </div>
 
 
-                <div class="info-box">
-                    <span class="info-box-icon"><i class="fa fa-database"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">{{Lang::get('menu.BD')}}</span>
-                        <span class="info-box-number">{{ $UserInfo['U_DATABASES'] }}</span>
-
-                        <div class="progress">
-                            <div style="width:  {{$UserInfo['U_DATABASES']/$UserInfo['DATABASES'] * 100  }}%;"
-                                 class="progress-bar"></div>
+                        <div class="m-b">
+                            <span class="pull-right text-info">{{ $UserInfo['U_WEB_DOMAINS'] }}
+                                из {{ $UserInfo['WEB_DOMAINS'] }}</span>
+                            <span>{{Lang::get('menu.domains')}}</span>
                         </div>
-                                  <span class="progress-description">
-                                <p class="pull-left"> Cоздано {{ $UserInfo['U_DATABASES'] }}
-                                    из {{ $UserInfo['DATABASES'] }}</p>
-                                      <p class="pull-right">{{ $UserInfo['U_DISK_DB'] }} мб</p>
-                                  </span>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-info"  style="width: {{$UserInfo['U_WEB_DOMAINS']/$UserInfo['WEB_DOMAINS'] * 100  }}%"></div>
+                        </div>
+
+
+                        <div class="m-b">
+                            <span class="pull-right text-info">{{ $UserInfo['U_DNS_DOMAINS'] }}
+                                из {{ $UserInfo['DNS_DOMAINS'] }}</span>
+                            <span>{{Lang::get('menu.DNS')}}</span>
+                        </div>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-info" style="width: {{$UserInfo['U_DNS_DOMAINS']/$UserInfo['DNS_DOMAINS'] * 100  }}%"></div>
+                        </div>
+
+
+
+                        <div class="m-b">
+                            <span class="pull-right text-info">{{ $UserInfo['U_DATABASES'] }}
+                                из {{ $UserInfo['DATABASES'] }}</span>
+                            <span>{{Lang::get('menu.BD')}}</span>
+                        </div>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-info" style="width: {{$UserInfo['U_DATABASES']/$UserInfo['DATABASES'] * 100  }}%"></div>
+                        </div>
+
                     </div>
+                    <p class="text-muted">Dales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis</p>
                 </div>
 
 
@@ -308,6 +277,7 @@
 
     </div>
 
-
+</div>
+    </div>
 
 @endsection
