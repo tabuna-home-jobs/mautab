@@ -2,7 +2,9 @@
 
 @section('content')
 
-
+    <div class="panel panel-default">
+        <div class="panel-heading">Basic form</div>
+        <div class="panel-body">
 
     <p class="text-center">
         <a id="show-add-bd" data-toggle="collapse" href="#add-dns" aria-expanded="false"
@@ -179,5 +181,9 @@
 
             </div>
     </div>
+
+    </div>
+    </div>
+
 
 @endsection

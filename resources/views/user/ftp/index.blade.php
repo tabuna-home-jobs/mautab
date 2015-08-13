@@ -3,6 +3,12 @@
 @section('content')
 
 
+    <div class="panel panel-default">
+        <div class="panel-heading">Basic form</div>
+        <div class="panel-body">
+
+
+
     <div class="col-xs-12">
         <form class="col-md-8 col-xs-12" method="post" action="">
             @foreach($ftplist as $domain => $d_val)
@@ -99,5 +105,9 @@
             </div>
         </form>
     </div>
+
+    </div>
+    </div>
+
 
 @endsection

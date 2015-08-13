@@ -2,7 +2,9 @@
 
 @section('content')
 
-
+    <div class="panel panel-default">
+        <div class="panel-heading">Basic form</div>
+        <div class="panel-body">
 
     <div class="col-xs-12">
         <p class="text-center">
@@ -76,12 +78,12 @@
         <hr class="clearfix col-xs-12">
     </div>
 
+    </div>
 
-    <div class="col-xs-12" id="add-shadow">
 
 
-        <div class=" table-responsive">
-            <table class="table table-condensed table-hover table-striped">
+        <div id="add-shadow" class="table-responsive">
+            <table class="table table-striped b-t b-light">
                 <tbody>
                 @forelse($CronList as $key => $job)
                     @if($job['SUSPENDED'] == 'no')

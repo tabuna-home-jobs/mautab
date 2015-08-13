@@ -4,7 +4,9 @@
 
 
 
-
+    <div class="panel panel-default">
+        <div class="panel-heading">Basic form</div>
+        <div class="panel-body">
 
     <div class="col-xs-12">
 
@@ -94,5 +96,11 @@
             <div>Нет данных</div>
         @endif
     </div>
+
+
+    </div>
+
+    </div>
+
 
 @endsection
