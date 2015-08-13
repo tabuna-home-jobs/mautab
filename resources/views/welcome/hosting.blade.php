@@ -33,7 +33,7 @@
                     <a href="../angular" class="wrapper-xl block">
                         <span class="h3 m-t-sm text-black">Angular Version</span>
                         <span class="block m-b-md m-t">Using AngularJS with angular ui. including angular bootstrap directives and other modules.</span>
-                        <i class="icon-arrow-right text-lg"></i>
+                        <i class="fa fa-balance-scale text-lg"></i>
                     </a>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <a href="../html" class="wrapper-xl block">
                         <span class="h3 m-t-sm text-white">Html Version</span>
                         <span class="block m-b-md m-t">Angulr also provide html version for app does not use angular. using jQuery and html5 to build user freindly app.</span>
-                        <i class="icon-arrow-right text-lg"></i>
+                        <i class="fa fa-balance-scale text-lg"></i>
                     </a>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                     <a href="../angular/#music/home" class="wrapper-xl block">
                         <span class="h3 m-t-sm text-black">Music SPA</span>
                         <span class="block m-b-md m-t">With angulr layout options, you can build many other apps, we give a music single page application for example.</span>
-                        <i class="icon-arrow-right text-lg"></i>
+                        <i class="fa fa-balance-scale text-lg"></i>
                     </a>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     <a href="#" class="wrapper-xl block">
                         <span class="h3 m-t-sm text-black">App Landing Page</span>
                         <span class="block m-b-md m-t">You are currently viewing is a app landing page for you fantastic application.</span>
-                        <i class="icon-arrow-right text-lg"></i>
+                        <i class="fa fa-balance-scale text-lg"></i>
                     </a>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                 <p class="text-muted h4 m-b-xl">Build the Single-Page Applications -- SPAs</p>
             </div>
             <div class="row m-t-xl m-b-xl text-center">
-                <div class="col-sm-4 invisible" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
+                <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
                     <p class="h3 m-b-xl inline b b-dark rounded wrapper-lg">
                         <i class="fa w-1x fa-google"></i>
                     </p>
@@ -88,7 +88,7 @@
                             choice!</p>
                     </div>
                 </div>
-                <div class="col-sm-4 invisible" data-ride="animated" data-animation="fadeInLeft" data-delay="600">
+                <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="600">
                     <p class="h3 m-b-xl inline b b-dark rounded wrapper-lg">
                         <i class="fa w-1x fa-gears"></i>
                     </p>
@@ -100,7 +100,7 @@
                             plugins or frameworks are necessary to build a data-driven web application</p>
                     </div>
                 </div>
-                <div class="col-sm-4 invisible" data-ride="animated" data-animation="fadeInLeft" data-delay="900">
+                <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="900">
                     <p class="h3 m-b-xl inline b b-dark rounded wrapper-lg">
                         <i class="fa w-1x fa-clock-o"></i>
                     </p>
@@ -129,7 +129,7 @@
     <div id="features" class="bg-white-only">
         <div class="container">
             <div class="row m-t-xl m-b-xxl">
-                <div class="col-sm-6 invisible" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
+                <div class="col-sm-6" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
                     <div class="m-t-xxl">
                         <div class="m-b">
                             <a href="" class="pull-left thumb-sm avatar"><img src="../html/img/a2.jpg" alt="..."></a>
@@ -186,22 +186,22 @@
                 <div class="col-sm-6 wrapper-xl">
                     <h3 class="text-dark font-bold m-b-lg">Save your time with the great tools</h3>
                     <ul class="list-unstyled  m-t-xl">
-                        <li data-ride="animated" data-animation="fadeInUp" data-delay="600" class="invisible">
-                            <i class="icon-check pull-left text-lg m-r m-t-sm"></i>
+                        <li data-ride="animated" data-animation="fadeInUp" data-delay="600" class="">
+                            <i class="fa fa-balance-scale pull-left text-lg m-r m-t-sm"></i>
 
                             <p class="clear m-b-lg"><strong>Using Less</strong>, Angulr's CSS is built on Less, a
                                 preprocessor with additional functionality like variables, mixins, and functions for
                                 compiling CSS. </p>
                         </li>
-                        <li data-ride="animated" data-animation="fadeInUp" data-delay="900" class="invisible">
-                            <i class="icon-check pull-left text-lg m-r m-t-sm"></i>
+                        <li data-ride="animated" data-animation="fadeInUp" data-delay="900" class="">
+                            <i class="fa fa-balance-scale pull-left text-lg m-r m-t-sm"></i>
 
                             <p class="clear m-b-lg"><strong>Grunt Task</strong>, Angulr using Grunt to automate
                                 development tasks, like compiling less to css, concatenating and minifying js files...
                             </p>
                         </li>
-                        <li data-ride="animated" data-animation="fadeInUp" data-delay="1100" class="invisible">
-                            <i class="icon-check pull-left text-lg m-r m-t-sm"></i>
+                        <li data-ride="animated" data-animation="fadeInUp" data-delay="1100" class="">
+                            <i class="fa fa-balance-scale pull-left text-lg m-r m-t-sm"></i>
 
                             <p class="clear m-b-lg"><strong>Bower Package</strong>, fetching and installing packages
                                 from all over, finding, downloading, and saving the stuff you’re looking for.</p>
@@ -221,48 +221,13 @@
                         responsive, mobile first fluid grid system to target a wide range of devices like desktop,
                         tablets, smart phones etc</p>
                 </div>
-                <div class="col-sm-6 invisible" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
+                <div class="col-sm-6" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
                     <div class="m-t-xxl text-center">
-                        <span class="text-2x text-muted"><i class="icon-screen-smartphone text-2x"></i></span>
+                        <span class="text-2x text-muted"><i class="fa fa-balance-scale text-2x"></i></span>
                         <span class="text-3x text-muted"><span class="text-2x"><i
-                                        class="icon-screen-desktop text-2x"></i></span></span>
-                        <span class="text-3x text-muted"><i class="icon-screen-tablet text-2x"></i></span>
+                                        class="fa fa-balance-scale text-2x"></i></span></span>
+                        <span class="text-3x text-muted"><i class="fa fa-balance-scale text-2x"></i></span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-white-only">
-        <div class="container">
-            <div class="row m-t-xl m-b-xxl">
-                <div class="col-sm-6 invisible" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
-                    <div class="m-t-xxl text-center">
-                        <p>
-                            <a href="http://themeforest.net/user/Flatfull/portfolio?ref=flatfull" target="_blank"
-                               class="text-sm btn btn-lg btn-rounded btn-default m-sm">
-                                <i class="fa fa-apple fa-3x pull-left m-l-sm"></i>
-                <span class="block clear m-t-xs text-left m-r m-l">Available on the <b class="text-lg block font-bold">App
-                        Store</b>
-                </span>
-                            </a>
-                        </p>
-
-                        <p>
-                            <a href="index.html" target="_blank"
-                               class="text-sm btn btn-lg btn-rounded btn-default m-sm">
-                                <i class="fa fa-android fa-3x pull-left m-l-sm"></i>
-                <span class="block clear m-t-xs text-left m-r m-l">Get it on <b class="text-lg block font-bold">Google
-                        Play</b>
-                </span>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-6 wrapper-xl">
-                    <h3 class="text-black font-bold m-b-lg">Build cross-platform apps with HTML5</h3>
-
-                    <p class="h4 l-h-1x">You can build cross-platform apps for iOS, Android, and Windows devices by
-                        using standard web technologies such as HTML, CSS, and JavaScript.</p>
                 </div>
             </div>
         </div>
@@ -286,22 +251,22 @@
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Email preview on air
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Email preview on air
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Spam testing and blocking
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> 100 GB Space
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 100 GB Space
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> 200 user accounts
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 200 user accounts
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-close text-danger m-r-xs"></i> <span class="text-l-t">Free support for two years</span>
+                                <i class="fa fa-balance-scale text-danger m-r-xs"></i> <span class="text-l-t">Free support for two years</span>
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-close text-danger m-r-xs"></i> <span class="text-l-t">Free upgrade for one year</span>
+                                <i class="fa fa-balance-scale text-danger m-r-xs"></i> <span class="text-l-t">Free upgrade for one year</span>
                             </li>
                         </ul>
                         <div class="panel-footer text-center">
@@ -325,22 +290,22 @@
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Email preview on air
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Email preview on air
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Spam testing and blocking
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> 100 GB Space
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 100 GB Space
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> 200 user accounts
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 200 user accounts
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Free support for two years
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Free support for two years
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Free upgrade for one year
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Free upgrade for one year
                             </li>
                         </ul>
                         <div class="panel-footer text-center b-t m-t bg-light lter">
@@ -364,22 +329,22 @@
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Email preview on air
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Email preview on air
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Spam testing and blocking
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> 500 GB Space
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 500 GB Space
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> 1000 user accounts
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 1000 user accounts
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Free support for two years
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Free support for two years
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Free upgrade for one year
+                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Free upgrade for one year
                             </li>
                         </ul>
                         <div class="panel-footer text-center">

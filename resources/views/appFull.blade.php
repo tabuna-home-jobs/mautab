@@ -39,11 +39,11 @@
                     data-target=".navbar-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a href="#" class="navbar-brand m-r-lg"><img src="img/logo.png" class="m-r-sm hide"><span
-                        class="h3 font-bold">Angulr</span></a>
+            <a href="#" class="navbar-brand m-r-lg"><span
+                        class="h3">Mautab</span></a>
         </div>
         <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav font-bold">
+            <ul class="nav navbar-nav">
                 <li>
                     <a href="#what" data-ride="scroll">What is Angulr</a>
                 </li>
@@ -60,9 +60,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <div class="m-t-sm">
-                        <a href="../angular/#/access/signin" class="btn btn-link btn-sm">Sign in</a> or
-                        <a href="../angular/#/access/signup" class="btn btn-sm btn-success btn-rounded m-l"><strong>Sign
-                                up</strong></a>
+                        <a href="/auth/login" class="btn btn-link btn-sm">Войти</a> или
+                        <a href="/auth/register" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Зарегистрироваться</strong></a>
                     </div>
                 </li>
             </ul>
@@ -81,11 +80,11 @@
         <div class="container">
             <div class="row m-t-xl m-b-xl">
                 <div class="col-sm-6 text-white text-center">
-                    <h4 class="m-b">Are you ready to enjoy?</h4>
+                    <h4 class="m-b">Я для себя всё решил!</h4>
                 </div>
                 <div class="col-sm-6 text-center">
-                    <a href="http://themeforest.net/item/angulr-bootstrap-admin-web-app-with-angularjs/8437259"
-                       class="btn btn-lg btn-default btn-rounded">Get Angulr Now</a>
+                    <a href="{{ url('/auth/register') }}"
+                       class="btn btn-lg btn-default btn-rounded">Попробовать</a>
                 </div>
             </div>
         </div>
