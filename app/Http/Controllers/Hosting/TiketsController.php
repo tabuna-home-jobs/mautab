@@ -61,12 +61,12 @@ class TiketsController extends Controller {
 	}
 
 	//Ответ
-	public function update(TiketRequest $request)
+	public function update(TiketRequest $request, $id)
 	{
 
 		//Заполнение модели
 
-        $Tiket = User::find(Auth::User()->id)->tiket()->find($request->id)->subtiket($request->id);
+		$Tiket = User::find(Auth::User()->id)->tiket()->find($id)->subtiket($id);
 		$Tiket->save(new Tiket([
 			'message' => $request->message,
 		]));

@@ -4,60 +4,62 @@
 
 
 
-    <div class="col-md-8 col-xs-12">
 
-        <div class="col-xs-12">
-            <h2 class="text-center">{{$Tiket->title}}</h2>
 
-            <p>{{$Tiket->message}}</p>
-        </div>
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">{{$Tiket->title}}</div>
+        <div class="panel-body">
 
-        <!-- SHARE -->
-        <div class="text-right"><h6>{{Lang::get('tikets.answers')}}</h6></div>
-        <hr>
-        <!-- END OF SHARE -->
-        <!-- AUTHOR BOX -->
-        @foreach ($subTiket as $Tik)
-            <div class="row">
-                <div class="col-xs-12">
-                    <p>
-                        {{$Tik->message}}
-                    </p>
+
+            <blockquote class="col-xs-12">
+                <p>{{$Tiket->message}}</p>
+            </blockquote>
+
+
+            <div class="panel">
+
+
+                <ul class="list-group list-group-lg no-bg auto">
+
+
+                    @foreach ($subTiket as $Tik)
+                        <li class="list-group-item clearfix">
+                    <span class="clear">
+              <span>Chris Fox</span>
+              <small class="text-muted clear">{{$Tik->message}}</small>
+            </span>
+                        </li>
+
+
+                    @endforeach
+
+
+                </ul>
+                <div class="clearfix panel-footer">
+                    <form action="{{URL::route('tikets.update',$Tiket->id)}}" method="POST" id="commentform">
+
+
+                        <div class="input-group">
+                            <input name="message" type="text" placeholder="Сообщение" class="form-control input-sm btn-rounded">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-sm btn-rounded" type="submit"><i class="fa fa-paper-plane-o"></i></button>
+            </span>
                 </div>
-            </div>
-            <hr>
-            @endforeach
-                    <!-- END OF AUTHOR BOX -->
-    </div>
 
-    <!-- COMMENTS -->
-    <div class="commentsform col-md-4 col-xs-12">
-        <div id="addcomments">
-            <div id="respond" class="comment-respond">
-                <h3 id="reply-title" class="comment-reply-title">Ваш ответ</h3>
 
-                <form action="{{URL::route('tikets.update')}}" method="POST" id="commentform"
-                      class="comment-form">
-                    <p class="comment-form-comment">
-                        <label for="comment">Сообщение</label>
-                        <textarea name="message" name="reply" class="form-control" cols="45" rows="8"
-                                  aria-required="true"></textarea></p>
-
-                    <p class="form-submit">
-                        <input name="id" type="hidden" value="{{$Tiket->id}}"/>
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="_method" value="PUT">
-                        <input name="submit" type="submit" class="btn btn-blue" id="submit" value="Ответить"/>
-                    </p>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </form>
             </div>
         </div>
     </div>
-    <!-- END OF COMMENTS -->
 
+    </div>
     </div>
 
 
+
+    </div>
 @endsection
 
 

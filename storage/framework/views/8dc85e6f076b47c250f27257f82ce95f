@@ -7,7 +7,6 @@
             <span class="fa fa-user"></span>
             <h4><?php echo e(Lang::get('menu.user')); ?></h4>
         </a>
-        <hr>
 
         <p class="menu-small"><?php echo e(Lang::get('menu.disk')); ?>: <?php echo e($UserInfo['U_DISK']); ?> мб </p>
 
@@ -21,7 +20,6 @@
             <span class="fa fa-desktop"></span>
             <h4><?php echo e(Lang::get('menu.Web')); ?></h4>
         </a>
-        <hr>
 
         <p class="menu-small"> <?php echo e(Lang::get('menu.domains')); ?>: <?php echo e($UserInfo['U_WEB_DOMAINS']); ?> </p>
 
@@ -35,7 +33,7 @@
             <span class="fa fa-sitemap"></span>
             <h4><?php echo e(Lang::get('menu.DNS')); ?></h4>
         </a>
-        <hr>
+
         <p class="menu-small"> <?php echo e(Lang::get('menu.domains')); ?>: <?php echo e($UserInfo['U_DNS_DOMAINS']); ?> </p>
 
         <p class="menu-small"> <?php echo e(Lang::get('menu.records')); ?>: <?php echo e($UserInfo['U_DNS_RECORDS']); ?> </p>
@@ -47,7 +45,7 @@
             <span class="fa fa-database"></span>
             <h4><?php echo e(Lang::get('menu.BD')); ?></h4>
         </a>
-        <hr>
+
         <p class="menu-small"> <?php echo e(Lang::get('menu.BD')); ?>: <?php echo e($UserInfo['U_DATABASES']); ?> </p>
     </div>
 
@@ -57,7 +55,7 @@
             <span class="fa fa-clock-o"></span>
             <h4><?php echo e(Lang::get('menu.Cron')); ?></h4>
         </a>
-        <hr>
+
         <p class="menu-small"> <?php echo e(Lang::get('menu.jobs')); ?>: <?php echo e($UserInfo['U_CRON_JOBS']); ?> </p>
     </div>
 
@@ -67,7 +65,6 @@
             <span class="fa fa-life-ring"></span>
             <h4><?php echo e(Lang::get('menu.support')); ?> <span class="badge badge-menu">4</span></h4>
         </a>
-        <hr>
 
         <p class="menu-small"><a href="<?php echo e(URL::route('log.index')); ?>"><?php echo e(Lang::get('menu.log')); ?></a></p>
 

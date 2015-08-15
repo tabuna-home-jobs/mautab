@@ -2,9 +2,6 @@
 
 use Auth;
 use Mautab\Http\Controllers\Controller;
-use Mautab\Http\Requests\ChangeUserRequest;
-use Session;
-use Vesta;
 
 class HomeController extends Controller {
 
@@ -40,25 +37,6 @@ class HomeController extends Controller {
 			'UserInfoLaravel' => $UserInfoLaravel,
 			'Payments' => $Payments
 		]);
-	}
-
-	public function update(ChangeUserRequest $request)
-	{
-
-
-		Vesta::changeUserPassword($request->password);
-		Vesta::changeUserEmail($request->email);
-
-		//Смена в Laravel
-        $thisUser = Auth::User();
-		$thisUser->password = $request->password;
-		$thisUser->email    = $request->email;
-		$thisUser->lang = $request->lang;
-		$thisUser->save();
-		Session::flash('good', 'Вы успешно изменили личные данных.');
-
-		return redirect()->route('home.index');
-
 	}
 
 

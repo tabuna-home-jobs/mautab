@@ -35,9 +35,6 @@
 
             <table class="table table-responsive">
 
-
-                <caption>Optional table caption.</caption>
-
                 <thead>
                 <tr>
                     <th>#</th>

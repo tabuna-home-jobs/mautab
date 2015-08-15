@@ -4,79 +4,12 @@
 
 
     <div class="panel panel-default">
-        <div class="panel-heading">Basic form</div>
+        <div class="panel-heading">Информация</div>
         <div class="panel-body">
 
         <div class="col-xs-12">
 
         <div class="row">
-
-            <div class="col-xs-12">
-                <h4 class="pull-left"><i class="fa fa-cog fa-red"></i> {{Lang::get('menu.Info')}}:</h4>
-                <a data-toggle="collapse" href="#editprofile" aria-expanded="false" aria-controls="collapseExample"
-                   class="pull-right">{{Lang::get('menu.Settings')}}</a>
-            </div>
-
-
-            <div class="col-xs-12 collapse" id="editprofile">
-
-                <hr>
-
-                <form class="col-md-12" action="{{URL::route('home.update')}}" method="post">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Аккаунт</label>
-                            <input type="text" class="form-control" disabled value="{{Auth::User()->nickname}} ">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Имя</label>
-                            <input type="text" class="form-control" disabled value="{{ $UserInfo['FNAME'] }} ">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Фамилия</label>
-                            <input type="text" class="form-control" disabled value="{{ $UserInfo['LNAME'] }} ">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email">Электронная почта</label>
-                            <input type="email" name="email" class="form-control" required
-                                   value="{{ Auth::User()->email }} ">
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="password">Пароль</label>
-                            <input type="password" class="form-control" id="password" name="password" required
-                                   pattern=".{8,}"
-                                   title="Пароль должен содержать не менее 8 символов"
-                                   placeholder="Пароль">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password">Язык</label>
-                            <select class="form-control" required name="lang">
-                                <option value="en" @if($UserInfoLaravel->lang == "en") selected @endif >English</option>
-                                <option value="ru" @if($UserInfoLaravel->lang == "ru") selected @endif >Russian</option>
-                            </select>
-                        </div>
-
-
-                        <input type="hidden" name="_method" value="PUT">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="submit" value="Изменить" class="btn btn btn-blue">
-
-                    </div>
-
-                </form>
-
-
-                <hr class="col-xs-12">
-
-            </div>
 
 
             <div class="col-md-4">
@@ -88,6 +21,16 @@
 
                 <div class="col wrapper-lg bg-light dk r-r">
                     <h4 class="font-thin m-t-none m-b"><i class="fa fa-info-circle"></i> Информация</h4>
+
+
+                    <p>Статус :
+                        @if($UserInfo['SUSPENDED'] == "no")
+                            <span class="label label-success">Активен</span>
+                        @else
+                            <span class="label label-danger">Не активен</span>
+                        @endif
+                    </p>
+
 
                     <div class="">
                         <div class="m-b">
@@ -138,6 +81,8 @@
                         </div>
 
                     </div>
+
+
                     <p class="text-muted">Dales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis</p>
                 </div>
 
@@ -162,7 +107,7 @@
                                 <div class="icon">
                                     <i class="fa fa-users"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">Управление профилем <i
+                                <a href="{{URL::route('settings.index')}}" class="small-box-footer">Управление профилем <i
                                             class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -210,7 +155,7 @@
                                 <div class="icon">
                                     <i class="fa fa-file-code-o"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">Перейти <i
+                                <a href="{{URL::route('manager.index')}}" class="small-box-footer">Перейти <i
                                             class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -218,23 +163,6 @@
 
                     </div>
 
-
-                    <p>{{ $UserInfo['FNAME'] }} {{ $UserInfo['LNAME'] }}
-
-
-                        @if($UserInfo['SUSPENDED'] == "no")
-                            <span class="label label-success">Активен</span>
-                        @else
-                            <span class="label label-danger">Не активен</span>
-                        @endif
-
-                    </p>
-
-                    <p>{{Lang::get('menu.balance')}}: {{ $UserInfoLaravel->balans }} руб </p>
-
-                    <p>{{Lang::get('menu.suspended')}}: {{ $UserInfoLaravel->end_of_service }} </p>
-
-                    <p>Тариф: {{ $UserInfo['PACKAGE'] }}  </p>
 
 
                     <table class="table table-condensed table-hover table-striped">

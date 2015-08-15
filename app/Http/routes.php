@@ -27,6 +27,7 @@ Route::group(['middleware' => ['UserRole', 'LoginAs', 'auth'], 'namespace' => 'H
 		Route::resource('cron', 'CronController');
 		Route::resource('tikets', 'TiketsController');
 	Route::resource('manager', 'ManagerController');
+	Route::resource('settings', 'SettingsController');
 		Route::resource('home', 'HomeController', ['only' => ['index', 'update']]);
 	});
 

@@ -1,26 +1,19 @@
-<?php echo $__env->make('header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->startSection('content'); ?>
 
 
-<div class="web-open">
-    <div>
-        <img class="img-responsive" alt="banner" src="/images/background-auth.jpeg">
 
-        <div class="caption">
-            <div class="caption-wrapper">
-                <div class="caption-info">
-
-
-                    <div class="container container-auth">
-
-
-                        <h1>Регистрация</h1>
-
-                        <form action="/auth/register" method="post">
-
+    <div class="container w-xxl w-auto-xs">
+        <a href class="navbar-brand block m-t">Mautab</a>
+        <div class="m-b-lg">
+            <div class="wrapper text-center">
+                <strong>Регистрация для пользования</strong>
+            </div>
+            <form name="form" class="form-validation" role="form" method="POST"
+                  action="<?php echo e(url('/auth/register')); ?>">
 
                 <?php if(count($errors) > 0): ?>
                     <div class="alert alert-danger">
-                        <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
                         <ul>
                             <?php foreach($errors->all() as $error): ?>
                                 <li><?php echo e($error); ?></li>
@@ -29,75 +22,77 @@
                     </div>
                 <?php endif; ?>
 
-
-            <div class="form-group">
-                <?php echo Form::label('name', 'Имя', array('class' => 'control-label')); ?>
-
-                <?php echo Form::text('name', @$name, array('size'=> '50','class' => 'form-control')); ?>
-
-            </div>
-
-            <div class="form-group">
-                <?php echo Form::label('lastname', 'Фамилия', array('class' => 'control-label')); ?>
-
-                <?php echo Form::text('lastname', @$lastname, array('size'=> '50','class' => 'form-control')); ?>
-
-            </div>
+                <div class="list-group list-group-sm">
+                    <div class="list-group-item">
+                        <input  class="form-control no-border" type="text"  name="nickname"
+                                placeholder="Никнейм"
+                                value="<?php echo e(old('nickname')); ?>" required>
+                    </div>
 
 
-            <div class="form-group">
-                <?php echo Form::label('email', 'E-Mail Адрес', array('class' => 'control-label')); ?>
+                    <div class="list-group-item">
+                        <input  class="form-control no-border" type="text" name="firstname" size="50" value="<?php echo e(old('firstname')); ?>"
+                                 placeholder="Имя" required>
+                    </div>
 
-                <?php echo Form::email('email', @$email, array('size'=> '100','class' => 'form-control')); ?>
-
-            </div>
-
-
-            <div class="form-group">
-                <?php echo Form::label('password', 'Пароль', array('class' => 'control-label')); ?>
-
-                <?php echo Form::password('password', array('size'=> '100','class' => 'form-control')); ?>
-
-            </div>
+                    <div class="list-group-item">
+                        <input  class="form-control no-border" type="text" name="lastname" size="50" value="<?php echo e(old('lastname')); ?>"
+                                placeholder="Фамилия" required>
+                    </div>
 
 
-            <div class="form-group">
-                <?php echo Form::label('password_confirmation', 'Повторите пароль', array('class' => 'control-label')); ?>
-
-                <?php echo Form::password('password_confirmation', array('size'=> '100','class' => 'form-control')); ?>
-
-            </div>
+                    <div class="list-group-item">
+                        <input  class="form-control no-border" type="email" name="email"  value="<?php echo e(old('email')); ?>"
+                                placeholder="Email" required>
+                    </div>
 
 
-            <?php echo Form::token();; ?>
-
-            <input type="submit" class="btn btn-blue" value="Зарегистрироваться">
-                        </form>
 
 
+                    <div class="list-group-item">
+                        <select class="form-control no-border" name="package">
+                            <option value="0">Любительский</option>
+                            <option value="1">Профессиональный</option>
+                            <option value="2">Корпоративный</option>
+                        </select>
+                    </div>
+
+
+                    <div class="list-group-item">
+                        <input  class="form-control no-border" type="password" name="password"
+                                placeholder="Пароль" required>
+                    </div>
+
+                    <div class="list-group-item">
+                        <input  class="form-control no-border" type="password" name="password_confirmation"
+                                placeholder="Повторите пароль" required>
                     </div>
 
 
                 </div>
-            </div>
+
+                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Зарегистрироваться</button>
+
+
+                    <div class="line line-dashed"></div>
+                        <p class="text-center"><small>У вас уже есть аккаунт?</small></p>
+                        <a href="<?php echo e(url('/auth/login')); ?>" class="btn btn-lg btn-default btn-block">Войти</a>
+            </form>
+        </div>
+
+        <div class="text-center">
+            <p>
+                <small class="text-muted">Web app framework base on Bootstrap and AngularJS<br>&copy; 2014</small>
+            </p>
         </div>
     </div>
-</div>
-
-
-<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 
 
 
 
+<?php $__env->stopSection(); ?>
 
-
-
-
-
-
-
-
-
+<?php echo $__env->make('_layouts.auth', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
