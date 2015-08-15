@@ -49,8 +49,10 @@
                             <div class="form-group">
                                 <label for="password">Язык</label>
                                 <select class="form-control" required name="lang">
-                                    <option value="en" @if($UserInfoLaravel->lang == "en") selected @endif >English</option>
-                                    <option value="ru" @if($UserInfoLaravel->lang == "ru") selected @endif >Russian</option>
+                                    <option value="en" @if($UserInfoLaravel->lang == "en") selected @endif >English
+                                    </option>
+                                    <option value="ru" @if($UserInfoLaravel->lang == "ru") selected @endif >Russian
+                                    </option>
                                 </select>
                             </div>
 

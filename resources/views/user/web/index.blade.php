@@ -3,10 +3,8 @@
 @section('content')
 
 
-
-
     <div class="panel panel-default">
-        <div class="panel-heading font-bold">Basic form</div>
+        <div class="panel-heading">{{Lang::get('menu.Web')}}</div>
         <div class="panel-body">
 
 
@@ -84,124 +82,111 @@
 
                 </div>
 
-                <hr class="clearfix col-xs-12">
             </div>
 
             <div class="col-md-12" id="add-shadow">
 
-                            @forelse($UserDomain as $key => $Domain)
+                @forelse($UserDomain as $key => $Domain)
 
-                                <div class="col-xs-12 col-md-4">
+                    <div class="col-xs-12 col-md-4">
 
-                                                        <div class="panel b-a">
-                                                            <div class="text-center no-border bg-primary">
-                                                                <span class="text-lt">{{ $key }}</span>
-                                                            </div>
-
-
-                                                            <div class="hbox bg-primary bg">
-                                                                <div class="col wrapper">
-                                                                    <span>Диск</span>
-                                                                    <div class="h1 text-info font-thin">{{ $Domain['U_DISK'] }}</div>
-                                                                </div>
-                                                                <div class="col wrapper bg-info">
-                                                                    <span>Трафик</span>
-                                                                    <div class="h1 text-warning font-thin">{{ $Domain['U_BANDWIDTH'] }}</div>
-                                                                </div>
-                                                            </div>
+                        <div class="panel b-a">
+                            <div class="text-center no-border bg-primary">
+                                <span class="text-lt text-ellipsis p-title">{{ $key }}</span>
+                            </div>
 
 
+                            <div class="hbox bg-primary bg">
+                                <div class="col wrapper">
+                                    <span>Диск</span>
 
-                                                            <div class="hbox text-center b-b b-light text-sm">
-                                                                <a href="{{URL::route('ftp.show', $key)}}" class="col padder-v text-muted b-r b-light">
-                                                                    <i class="fa fa-plus block m-b-xs"></i>
-                                                                    <span>FTP</span>
-                                                                </a>
-                                                                <a href="{{URL::route('web.show', $key)}}" class="col padder-v text-muted b-r b-light">
-                                                                    <i class="fa fa-pencil-square-o block m-b-xs"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                                <a href="" onclick="delModal('{{$key}}', '{{URL::route('web.destroy')}}');" class="col padder-v text-muted">
-                                                                    <i class="fa fa-trash block m-b-xs"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </div>
+                                    <div class="h1 text-info font-thin text-ellipsis">{{ $Domain['U_DISK'] }}</div>
+                                </div>
+                                <div class="col wrapper bg-info">
+                                    <span>Трафик</span>
 
-                                                        </div>
+                                    <div class="h1 text-warning font-thin text-ellipsis">{{ $Domain['U_BANDWIDTH'] }}</div>
+                                </div>
+                            </div>
 
 
-                                                                <script type="text/javascript">
-                                                                    //Модалка для удаления
-                                                                    /**
-                                                                     *
-                                                                     * @param name - имя элемента которы надо удалить
-                                                                     * @param route - используемый роут Например: (/hosting/web/destroy)
-                                                                     * @param id - id записи с которой происходят манипуляции удаления
-                                                                     *
-                                                                     */
-                                                                    function delModal(name, route, id) {
+                            <div class="hbox text-center b-b b-light text-sm">
+                                <a href="{{URL::route('ftp.show', $key)}}" class="col padder-v text-muted b-r b-light">
+                                    <i class="fa fa-plus block m-b-xs"></i>
+                                    <span>FTP</span>
+                                </a>
+                                <a href="{{URL::route('web.show', $key)}}" class="col padder-v text-muted b-r b-light">
+                                    <i class="fa fa-pencil-square-o block m-b-xs"></i>
+                                    <span>Edit</span>
+                                </a>
+                                <a href="" onclick="delModal('{{$key}}', '{{URL::route('web.destroy')}}');"
+                                   class="col padder-v text-muted">
+                                    <i class="fa fa-trash block m-b-xs"></i>
+                                    <span>Delete</span>
+                                </a>
+                            </div>
 
-                                                                        //csfr
-                                                                        var csrf = $('meta[name="csrf-token"]').attr('content');
-
-                                                                        var valueName = name;
-                                                                        //Обрабатываем выходящее значение
-                                                                        var key = name.replace('.', '');
-                                                                        //Формируем модалку
-                                                                        var modalka = ' <div class="modal fade" id="Modal-' + key + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <h4 class="modal-title" id="myModalLabel">Удалить ' + valueName + ' ?</h4></div><div class="modal-body">Вы действительно хотите удалить ' + valueName + '</div><div class="modal-footer"><form action="' + route + '" method="post"><button type="button" class="btn btn-default" data-dismiss="modal">Нет</button><button type="submit" class="btn btn-danger">Да</button><input type="hidden" name="v_domain" value="' + valueName + '"/><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="v_record_id" value="' + id + '" ><input type="hidden" name="_token" value="' + csrf + '"></form></div></div></div></div>';
-
-                                                                        //Добавляем модалку в дом дерево
-                                                                        $('footer').append(modalka);
-                                                                        //Вызываем модалку
-                                                                        $('#Modal-' + key).modal();
-                                                                        //По зыкрытию нашей модалки удаляем её из дома
-                                                                        $('#Modal-' + key).on('hidden.bs.modal', function () {
-                                                                            $('#Modal-' + key).remove();
-                                                                        })
-                                                                    }
-                                                                </script>
-
-                                                                </div>
+                        </div>
 
 
+                        <script type="text/javascript">
+                            //Модалка для удаления
+                            /**
+                             *
+                             * @param name - имя элемента которы надо удалить
+                             * @param route - используемый роут Например: (/hosting/web/destroy)
+                             * @param id - id записи с которой происходят манипуляции удаления
+                             *
+                             */
+                            function delModal(name, route, id) {
 
+                                //csfr
+                                var csrf = $('meta[name="csrf-token"]').attr('content');
 
+                                var valueName = name;
+                                //Обрабатываем выходящее значение
+                                var key = name.replace('.', '');
+                                //Формируем модалку
+                                var modalka = ' <div class="modal fade" id="Modal-' + key + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <h4 class="modal-title" id="myModalLabel">Удалить ' + valueName + ' ?</h4></div><div class="modal-body">Вы действительно хотите удалить ' + valueName + '</div><div class="modal-footer"><form action="' + route + '" method="post"><button type="button" class="btn btn-default" data-dismiss="modal">Нет</button><button type="submit" class="btn btn-danger">Да</button><input type="hidden" name="v_domain" value="' + valueName + '"/><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="v_record_id" value="' + id + '" ><input type="hidden" name="_token" value="' + csrf + '"></form></div></div></div></div>';
 
-
-
-
-
-                                        @empty
-                                            <div class="jumbotron text-center">
-                                                <h1>Пусто!</h1>
-
-                                                <p>У Вас ещё нет ни одного веб-сайта</p>
-
-                                                <p></p>
-                                            </div>
-
-                                        @endforelse
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                //Добавляем модалку в дом дерево
+                                $('footer').append(modalka);
+                                //Вызываем модалку
+                                $('#Modal-' + key).modal();
+                                //По зыкрытию нашей модалки удаляем её из дома
+                                $('#Modal-' + key).on('hidden.bs.modal', function () {
+                                    $('#Modal-' + key).remove();
+                                })
+                            }
+                        </script>
 
                     </div>
+
+
+
+
+
+
+
+
+
+                @empty
+                    <div class="jumbotron text-center">
+                        <h1>Пусто!</h1>
+
+                        <p>У Вас ещё нет ни одного веб-сайта</p>
+
+                        <p></p>
+                    </div>
+
+                @endforelse
+
+
             </div>
-
-
         </div>
+
+
+    </div>
     </div>
 
 

@@ -6,6 +6,7 @@
 
     <div class="container w-xxl w-auto-xs">
         <a href class="navbar-brand block m-t">Mautab</a>
+
         <div class="m-b-lg">
             <div class="wrapper text-center">
                 <strong>Регистрация для пользования</strong>
@@ -26,29 +27,29 @@
 
                 <div class="list-group list-group-sm">
                     <div class="list-group-item">
-                        <input  class="form-control no-border" type="text"  name="nickname"
-                                placeholder="Никнейм"
-                                value="{{ old('nickname') }}" required>
+                        <input class="form-control no-border" type="text" name="nickname"
+                               placeholder="Никнейм"
+                               value="{{ old('nickname') }}" required>
                     </div>
 
 
                     <div class="list-group-item">
-                        <input  class="form-control no-border" type="text" name="firstname" size="50" value="{{old('firstname')}}"
-                                 placeholder="Имя" required>
+                        <input class="form-control no-border" type="text" name="firstname" size="50"
+                               value="{{old('firstname')}}"
+                               placeholder="Имя" required>
                     </div>
 
                     <div class="list-group-item">
-                        <input  class="form-control no-border" type="text" name="lastname" size="50" value="{{old('lastname')}}"
-                                placeholder="Фамилия" required>
+                        <input class="form-control no-border" type="text" name="lastname" size="50"
+                               value="{{old('lastname')}}"
+                               placeholder="Фамилия" required>
                     </div>
 
 
                     <div class="list-group-item">
-                        <input  class="form-control no-border" type="email" name="email"  value="{{old('email')}}"
-                                placeholder="Email" required>
+                        <input class="form-control no-border" type="email" name="email" value="{{old('email')}}"
+                               placeholder="Email" required>
                     </div>
-
-
 
 
                     <div class="list-group-item">
@@ -61,13 +62,13 @@
 
 
                     <div class="list-group-item">
-                        <input  class="form-control no-border" type="password" name="password"
-                                placeholder="Пароль" required>
+                        <input class="form-control no-border" type="password" name="password"
+                               placeholder="Пароль" required>
                     </div>
 
                     <div class="list-group-item">
-                        <input  class="form-control no-border" type="password" name="password_confirmation"
-                                placeholder="Повторите пароль" required>
+                        <input class="form-control no-border" type="password" name="password_confirmation"
+                               placeholder="Повторите пароль" required>
                     </div>
 
 
@@ -78,8 +79,10 @@
 
 
                     <div class="line line-dashed"></div>
-                        <p class="text-center"><small>У вас уже есть аккаунт?</small></p>
-                        <a href="{{ url('/auth/login') }}" class="btn btn-lg btn-default btn-block">Войти</a>
+                    <p class="text-center">
+                        <small>У вас уже есть аккаунт?</small>
+                    </p>
+                    <a href="{{ url('/auth/login') }}" class="btn btn-lg btn-default btn-block">Войти</a>
             </form>
         </div>
 

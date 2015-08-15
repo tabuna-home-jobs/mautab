@@ -88,7 +88,6 @@
 <script src="/theme/js/ui-toggle.js"></script>
 
 
-
 <!--  TinyMCE -->
 <script src="{{asset('/dist/plugins/tinymce/tinymce.min.js')}}" type="text/javascript"></script>
 

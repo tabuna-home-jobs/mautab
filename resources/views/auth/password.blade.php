@@ -6,6 +6,7 @@
 
     <div class="container w-xl w-auto-xs">
         <a href class="navbar-brand block m-t">Mautab</a>
+
         <div class="m-b-lg">
             <div class="wrapper text-center">
                 <strong>Что бы востановить доступ к системе в ведите свой Email</strong>
@@ -32,7 +33,8 @@
                   action="{{ url('/password/email') }}">
                 <div class="list-group list-group-sm">
                     <div class="list-group-item">
-                        <input type="email" placeholder="Email" name="email" value="{{ old('email') }}" class="form-control no-border" required>
+                        <input type="email" placeholder="Email" name="email" value="{{ old('email') }}"
+                               class="form-control no-border" required>
                     </div>
                 </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -40,7 +42,9 @@
             </form>
             <div collapse="isCollapsed" class="m-t">
                 <div class="alert alert-success">
-                    <p>A reset link sent to your email address, please check it in 7 days. <a ui-sref="access.signin" class="btn btn-sm btn-success">Sign in</a></p>
+                    <p>A reset link sent to your email address, please check it in 7 days. <a ui-sref="access.signin"
+                                                                                              class="btn btn-sm btn-success">Sign
+                            in</a></p>
                 </div>
             </div>
         </div>
