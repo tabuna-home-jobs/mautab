@@ -54,10 +54,16 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                    @if(Auth::check())
+                        <div class="m-t-sm">
+                            <a href="/auth/logout" class="btn btn-link btn-sm">Выйти</a>
+                        </div>
+                    @else
                     <div class="m-t-sm">
-                        <a href="../angular/#/access/signin" class="btn btn-link btn-sm">Войти</a> или
-                        <a href="../angular/#/access/signup" class="btn btn-sm btn-success btn-rounded m-l"><strong>Зарегистрироваться</strong></a>
+                        <a href="/auth/login" class="btn btn-link btn-sm">Войти</a> или
+                        <a href="/auth/register" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Зарегистрироваться</strong></a>
                     </div>
+                    @endif
                 </li>
             </ul>
         </div>
