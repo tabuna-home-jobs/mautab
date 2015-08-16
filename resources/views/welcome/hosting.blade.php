@@ -20,8 +20,8 @@
                 <p class="text-center m-b-xxl wrapper">
                     <a href="http://themeforest.net/item/angulr-bootstrap-admin-web-app-with-angularjs/8437259"
                        target="_blank"
-                       class="btn b-2x btn-lg b-black btn-default btn-rounded text-lg font-bold m-b-xxl animated fadeInUpBig">Have
-                        it only $21</a>
+                       class="btn b-2x btn-lg b-black btn-default btn-rounded text-lg font-bold m-b-xxl animated fadeInUpBig">От
+                        100 рублей</a>
                 </p>
             </div>
         </div>
@@ -29,8 +29,8 @@
     <div id="why" class="bg-light">
         <div class="container">
             <div class="m-t-xxl m-b-xl text-center wrapper">
-                <h2 class="text-black font-bold">Why use <span class="b-b b-dark">AngularJS</span> for your next
-                    application?</h2>
+                <h2 class="text-black font-bold">Используйте для всех <span class="b-b b-dark">ваших проектов</span>
+                </h2>
 
                 <p class="text-muted h4 m-b-xl">Build the Single-Page Applications -- SPAs</p>
             </div>
@@ -66,10 +66,10 @@
                     </p>
 
                     <div class="m-b-xl">
-                        <h4 class="m-t-none">Get Started in Minutes</h4>
+                        <h4 class="m-t-none">Начните в пару минут</h4>
 
-                        <p class="text-muted m-t-lg">Getting started with AngularJS is incredibly easy. ou can have a
-                            simple Angular app up in minutes!</p>
+                        <p class="text-muted m-t-lg">Mautab делает использование хостинга интуитивно понятным, что
+                            позволяет экономить ваше время</p>
                     </div>
                 </div>
             </div>
@@ -175,7 +175,7 @@
         <div class="container">
             <div class="row m-t-xl m-b-xxl">
                 <div class="col-sm-6 wrapper-xl">
-                    <h3 class="text-black font-bold m-b-lg">Responsive on all screen</h3>
+                    <h3 class="text-black font-bold m-b-lg">Для всех проектов</h3>
 
                     <p class="h4 l-h-1x">Angulr responsive CSS layout is built on Bootstrap Grid System, includes a
                         responsive, mobile first fluid grid system to target a wide range of devices like desktop,

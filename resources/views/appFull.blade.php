@@ -8,26 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet'
+    <link href='http://fonts.googleapis.com/css?family=Roboto:600,400,500,300&subset=latin,cyrillic' rel='stylesheet'
           type='text/css'>
 
-
     <!-- CSS -->
-
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-
-
     <link rel="stylesheet" href="/theme//bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
     <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css"/>
     <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
     <link rel="stylesheet" href="/theme/css/app.css" type="text/css"/>
 
     <link rel="stylesheet" href="/main.css">
-    <!--<link rel="stylesheet" href="/theme.css">-->
 
 </head>
 
@@ -85,18 +76,17 @@
         <div class="container">
             <div class="row m-t-xl m-b-xl">
                 <div class="col-sm-3">
-                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Version</span> options</h4>
+                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Общая</span> информация</h4>
                     <ul class="list-unstyled">
-                        <li><a href="../angular"><i class="fa fa-angle-right m-r-sm"></i>Angular App</a></li>
-                        <li><a href="../html"><i class="fa fa-angle-right m-r-sm"></i>Html Template</a></li>
-                        <li><a href="../angular/#music/home"><i class="fa fa-angle-right m-r-sm"></i>Music single page
-                                application</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>App landing page</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Политика безопасности</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Политика конфиденциальности</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Правила пользования</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Оплата</a></li>
                     </ul>
                     <p class="m-b-xl">More coming...</p>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Наши</span> контакты</h4>
+                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Наши</span> Контакты</h4>
 
                     <p class="text-sm">23 soe Midlokls <br>
                         120002 Loki — UNITED KINGDOM <br>
@@ -108,7 +98,7 @@
                     <p class="m-b-xl">Job: <a href="mailto:hey@example.com">job@example.com</a></p>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="text-u-c m-b-xl font-thin"><span class="b-b b-dark font-bold">Follow</span> Us</h4>
+                    <h4 class="text-u-c m-b-xl font-thin"><span class="b-b b-dark font-bold">Наши</span> Проекты</h4>
 
                     <div class="m-b-xl">
                         <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-facebook"></i></a>
@@ -121,13 +111,13 @@
                 <div class="col-sm-3">
                     <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Новостная</span> рассылка</h4>
 
-                    <p>Do not want to miss anything? Subscribe to our newsletter box</p>
+                    <p>Не хотите пропустить что-нибудь? Подпишитесь на нашу рассылку</p>
 
                     <form class="form-inline m-t m-b text-center m-b-xl">
                         <div class="aside-xl inline">
                             <div class="input-group">
                                 <input type="text" id="address" name="address" class="form-control btn-rounded"
-                                       placeholder="Your email">
+                                       placeholder="Ваш Email">
                     <span class="input-group-btn">
                       <button class="btn btn-default btn-rounded" type="submit">Подписаться</button>
                     </span>
@@ -143,11 +133,11 @@
             <div class="row padder-v m-t">
                 <div class="col-xs-8">
                     <ul class="list-inline">
-                        <li><a href="#">Sales</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="#">Скидки</a></li>
+                        <li><a href="#">О нас</a></li>
                         <li><a href="#">API</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Job</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Работа</a></li>
                     </ul>
                 </div>
                 <div class="col-xs-4 text-right">

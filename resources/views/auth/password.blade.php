@@ -50,7 +50,7 @@
         </div>
         <div class="text-center">
             <p>
-                <small class="text-muted">Web app framework base on Bootstrap and AngularJS<br>&copy; 2014</small>
+                <small class="text-muted">Mautab &copy; 2015</small>
             </p>
         </div>
     </div>
