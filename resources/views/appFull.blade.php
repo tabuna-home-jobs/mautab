@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+    <meta name="robots" content="nofollow"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="w1-verification" content="122418262209"/>
+    <meta name="w1-verification" content="122418262209">
 
 
     <!-- Fonts -->
