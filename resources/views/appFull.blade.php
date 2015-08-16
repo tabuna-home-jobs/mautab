@@ -44,18 +44,10 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="#what" data-ride="scroll">What is Angulr</a>
-                </li>
-                <li>
-                    <a href="#why" data-ride="scroll">Why</a>
-                </li>
-                <li>
-                    <a href="#features" data-ride="scroll">Features</a>
-                </li>
-                <li>
-                    <a href="http://themeforest.net/item/angulr-bootstrap-admin-web-app-with-angularjs/8437259">Download</a>
-                </li>
+
+                <li class="active"><a href="#">Возможности</a></li>
+                <li><a href="#">Цена</a></li>
+                <li><a href="#">Форум</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -104,7 +96,7 @@
                     <p class="m-b-xl">More coming...</p>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Find</span> Us</h4>
+                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Наши</span> контакты</h4>
 
                     <p class="text-sm">23 soe Midlokls <br>
                         120002 Loki — UNITED KINGDOM <br>
@@ -127,7 +119,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">News</span> Letter</h4>
+                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Новостная</span> рассылка</h4>
 
                     <p>Do not want to miss anything? Subscribe to our newsletter box</p>
 
@@ -137,7 +129,7 @@
                                 <input type="text" id="address" name="address" class="form-control btn-rounded"
                                        placeholder="Your email">
                     <span class="input-group-btn">
-                      <button class="btn btn-default btn-rounded" type="submit">Subscribe</button>
+                      <button class="btn btn-default btn-rounded" type="submit">Подписаться</button>
                     </span>
                             </div>
                         </div>
@@ -159,7 +151,7 @@
                     </ul>
                 </div>
                 <div class="col-xs-4 text-right">
-                    Angulr &copy; 2015
+                    Mautab &copy; 2015
                 </div>
             </div>
         </div>

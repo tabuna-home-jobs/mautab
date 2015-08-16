@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="bg-white-only container">
+    <div class="bg-white-only container h100">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div class="m-t-xxl m-b-xxl padder-v">
@@ -23,46 +23,6 @@
                        class="btn b-2x btn-lg b-black btn-default btn-rounded text-lg font-bold m-b-xxl animated fadeInUpBig">Have
                         it only $21</a>
                 </p>
-            </div>
-        </div>
-    </div>
-    <div id="what" class="container m-b-xxl padder-v">
-        <div class="row no-gutter">
-            <div class="col-md-3 col-sm-6">
-                <div class="bg-light m-r-n-md no-m-xs no-m-sm">
-                    <a href="../angular" class="wrapper-xl block">
-                        <span class="h3 m-t-sm text-black">Angular Version</span>
-                        <span class="block m-b-md m-t">Using AngularJS with angular ui. including angular bootstrap directives and other modules.</span>
-                        <i class="fa fa-balance-scale text-lg"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="bg-black dker m-t-xl m-l-n-md m-r-n-md text-white no-m-xs no-m-sm">
-                    <a href="../html" class="wrapper-xl block">
-                        <span class="h3 m-t-sm text-white">Html Version</span>
-                        <span class="block m-b-md m-t">Angulr also provide html version for app does not use angular. using jQuery and html5 to build user freindly app.</span>
-                        <i class="fa fa-balance-scale text-lg"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="bg-light dker m-t-n m-l-n-md m-r-n-md no-m-xs no-m-sm">
-                    <a href="../angular/#music/home" class="wrapper-xl block">
-                        <span class="h3 m-t-sm text-black">Music SPA</span>
-                        <span class="block m-b-md m-t">With angulr layout options, you can build many other apps, we give a music single page application for example.</span>
-                        <i class="fa fa-balance-scale text-lg"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="bg-white m-t m-l-n-md no-m-xs no-m-sm">
-                    <a href="#" class="wrapper-xl block">
-                        <span class="h3 m-t-sm text-black">App Landing Page</span>
-                        <span class="block m-b-md m-t">You are currently viewing is a app landing page for you fantastic application.</span>
-                        <i class="fa fa-balance-scale text-lg"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -276,10 +236,10 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="panel b-a m-t-n-md m-b-xl">
-                        <div class="panel-heading wrapper-xs bg-warning dker no-border">
+                        <div class="panel-heading wrapper-xs bg-info dker no-border">
 
                         </div>
-                        <div class="wrapper bg-warning text-center m-l-n-xxs m-r-n-xxs">
+                        <div class="wrapper bg-info text-center m-l-n-xxs m-r-n-xxs">
                             <h4 class="text-u-c m-b-none">Premium</h4>
 
                             <h2 class="m-t-none">
@@ -310,7 +270,7 @@
                         </ul>
                         <div class="panel-footer text-center b-t m-t bg-light lter">
                             <div class="m-t-sm">Recommanded for you</div>
-                            <a href="" class="btn btn-warning font-bold m">Start your free trial</a>
+                            <a href="" class="btn btn-info font-bold m">Start your free trial</a>
                         </div>
                     </div>
                 </div>
