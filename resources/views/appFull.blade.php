@@ -6,7 +6,11 @@
     <title>MauTab</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="w1-verification" content="122418262209"/>
+
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:600,400,500,300&subset=latin,cyrillic' rel='stylesheet'
