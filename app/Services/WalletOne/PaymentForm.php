@@ -2,6 +2,8 @@
 
 namespace Mautab\Services\WalletOne;
 
+use Config;
+
 /**
  * Class PaymentForm
  * @package Mautab\Services\WalletOne
@@ -77,9 +79,17 @@ class PaymentForm
     /**
      * @param string $sellerPurse
      */
-    public function __construct($sellerPurse)
+    public function __construct()
     {
-        $this->setSellerPurse($sellerPurse);
+        $config = Config::get('w1');
+        $this->failLink = $config['failLink'];
+        $this->successLink = $config['successLink'];
+        $this->paymentTypeList = $config['paymentTypeList'];
+        $this->signatureMethod = $config['signatureMethod'];
+        $this->sellerPurse = $config['sellerPurse'];
+        $this->secretKey = $config['secretKey'];
+
+
     }
 
     /**

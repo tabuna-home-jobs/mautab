@@ -32,7 +32,6 @@
                                value="{{ old('nickname') }}" required>
                     </div>
 
-
                     <div class="list-group-item">
                         <input class="form-control no-border" type="text" name="firstname" size="50"
                                value="{{old('firstname')}}"

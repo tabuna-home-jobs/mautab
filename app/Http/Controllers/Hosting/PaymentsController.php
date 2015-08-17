@@ -18,44 +18,26 @@ class PaymentsController extends Controller
     {
 
 
-        $sellerPurse = 122418262209;
         $paymentAmount = 1.00;
         $currencyCode = 643;
         $orderId = 1000;
-        $paymentTypeList = array(
-            'LiqPayMoneyRUB',
-            'CreditCardRUB',
-            'BankTransferMDL',
-            'AlfaclickRUB',
-            'RussianPostRUB',
-            'SvyaznoyRUB',
-            'CashTerminalBYR',
-            'YandexMoneyRUB'
-        );
-        $secret = "436d6b6a356850344e686e7c6a413737796e7b4c734e4b707b385d";
-        //$secret = '435c79356c676b51765735534f4d4b664455744945356149573363';
-# Создаем форму
-        $w1Form = new WalletOneForm($sellerPurse);
-# Страницы на которые будут отправлены ответы
-        $w1Form
-            ->setSuccessLink("http://weplay.tv/all/shop_payment/success/{$orderId}/card")
-            ->setFailLink("http://weplay.tv/all/shop_payment/fail/{$orderId}/card");
-# Задаем разрешенные методы оплаты
-        if ($paymentTypeList && is_array($paymentTypeList)) {
-            foreach ($paymentTypeList as $paymentType) {
-                $w1Form->addPaymentType($paymentType);
-            }
-        }
-# Параметры оплаты
+
+        // Создаем форму
+        $w1Form = new WalletOneForm();
+        // Страницы на которые будут отправлены ответы
+        /*
+                $w1Form
+                    ->setSuccessLink("http://weplay.tv/all/shop_payment/success/{$orderId}/card")
+                    ->setFailLink("http://weplay.tv/all/shop_payment/fail/{$orderId}/card");
+        */
+        //Параметры оплаты
         $w1Form
             ->setPaymentAmount($paymentAmount)
             ->setCurrencyCode($currencyCode)
             ->setPaymentId($orderId)
             ->setComment("Оплата заказа #{$orderId}")
-            ->addCustomerValue('orderId', $orderId)
-            ->setSecretKey($secret)
-            ->setSignatureMethod('sha1');
-# Проверяем данные
+            ->addCustomerValue('orderId', $orderId);
+
         if ($w1Form->validateData()) {
             # Сохраняем номер транзакции
             $transactionId = $w1Form->getTransactionId();
