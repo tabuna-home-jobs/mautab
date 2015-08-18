@@ -42,106 +42,119 @@ class WebController extends Controller {
 	//Добавление веб домена
 	public function store(AddWebRequest $request)
 	{
-        $UserIP = (string)Config::get('vesta.server')[Auth::User()->server]['ip'];
 
 
-		//Добавление нового домена
-        Vesta::addWebDomain($request->v_domain, $UserIP);
-
-		//Добавление поддержки днс
-		//if ($request->v_dns == 'on') {
-		// !! Поддержка днс пускай будет по умолчанию  !!
-        Vesta::addDns($request->v_domain, $UserIP);
-		//}
-
-		//Убираем почту до лучших времён
-		//Добавление поддержки мыла
-		//if ($request->v_mail == 'on') {
-		//	Vesta::addMail($request->v_domain);
-		//}
-
-		//Добавление алиасов
-		if (strlen($request->v_aliases) >= 1) {
-			//Распил алиасов
-			$valiases = preg_replace("/\n/", " ", $request->v_aliases);
-			$valiases = preg_replace("/,/", " ", $valiases);
-			$valiases = preg_replace('/\s+/', ' ', $valiases);
-			$valiases = trim($valiases);
-			$aliases  = explode(" ", $valiases);
+		$checkDomain = preg_match('/^([0-9a-z]([0-9a-z\-])*[0-9a-z]\.)+[0-9a-z\-]{1,8}$/i', $request->v_domain);
 
 
-			//Запись алиасов
-			foreach ($aliases as $alias) {
+		if($checkDomain !== 0){
 
-				if ($alias == 'www.' . $request->v_domain) {
-					$www_alias = 'yes';
-				} else {
+			$UserIP = (string)Config::get('vesta.server')[Auth::User()->server]['ip'];
 
-					Vesta::addWebDomainAlias($request->v_domain, $alias);
+			//Обрезка у домена www
+			$request->v_domain = preg_replace('/^[wW]+\./',"",$request->v_domain);
 
-					//if ($request->v_dns == 'on') {
-						Vesta::addDnsAlias($request->v_domain, $alias);
-					//}
-				}
-			}
-		}
+			//Добавление нового домена
+	        Vesta::addWebDomain($request->v_domain, $UserIP);
 
-		if (empty($www_alias)) {
-			$alias = preg_replace("/^www./i", "", $request->v_domain);
-			$alias = 'www.' . $alias;
-			Vesta::deleteWebDomainAlias($request->v_domain, $alias);
-		}
+			//Добавление поддержки днс
+			//if ($request->v_dns == 'on') {
+			// !! Поддержка днс пускай будет по умолчанию  !!
+	        Vesta::addDns($request->v_domain, $UserIP);
+			//}
 
-		if ($request->v_proxy == 'on') {
-			$ext = str_replace(' ', '', $request->v_proxy_ext);
-			Vesta::addDomainProxy($request->v_domain, $ext);
-		}
-
-		/* Пока закрыто всё ето есть в контроллере ФТП
-		//Добавление ФТП
-		if ($request->v_ftp == 'on') {
-
-			foreach ($request->v_ftp_user as $i => $v_ftp_user_data) {
-
-				if ($v_ftp_user_data['is_new'] == 1) {
-
-					$v_ftp_user_data['v_ftp_user'] = preg_replace("/^" . Sentry::getUser()->nickname . "_/i", "", $v_ftp_user_data['v_ftp_user']);
-
-					$v_ftp_username                = $v_ftp_user_data['v_ftp_user'];
-
-					$v_ftp_password                = $v_ftp_user_data['v_ftp_password'];
-					$domain_added                  = 1;
+			//Убираем почту до лучших времён
+			//Добавление поддержки мыла
+			//if ($request->v_mail == 'on') {
+			//	Vesta::addMail($request->v_domain);
+			//}
 
 
-					if ($domain_added) {
-						//Проверяем есть ли первым символом слеш
-						$v_ftp_path = trim($v_ftp_user_data['v_ftp_path']);
-						$pos = strpos($v_ftp_path, '/');
-						($pos === 0) ? $v_ftp_p = $v_ftp_path : $v_ftp_p = '';
+			//Добавление алиасов
+			if (strlen($request->v_aliases) >= 1) {
+				//Распил алиасов
+				$valiases = preg_replace("/\n/", " ", $request->v_aliases);
+				$valiases = preg_replace("/,/", " ", $valiases);
+				$valiases = preg_replace('/\s+/', ' ', $valiases);
+				$valiases = trim($valiases);
+				$aliases  = explode(" ", $valiases);
 
-						//Добавляем данные для фтп
-						Vesta::addFtpDomain($request->v_domain, $v_ftp_username, $v_ftp_password, $v_ftp_p);
 
-						if ((!empty($v_ftp_user_data['v_ftp_email']))) {
-							$mail = $v_ftp_user_data['v_ftp_email'];
+				//Запись алиасов
+				foreach ($aliases as $alias) {
 
-							Mail::raw('Новый фтп', function ($message) use ($mail) {
+					if ($alias == 'www.' . $request->v_domain) {
+						$www_alias = 'yes';
+					} else {
 
-								$message->from('no-reply@cloudme.ru', 'Ларыч');
-								$message->to($mail)->cc($mail);
-							});
-						}
+						Vesta::addWebDomainAlias($request->v_domain, $alias);
+
+						//if ($request->v_dns == 'on') {
+							Vesta::addDnsAlias($request->v_domain, $alias);
+						//}
 					}
-					continue;
 				}
 			}
-		}*/
+
+			if (empty($www_alias)) {
+				$alias = preg_replace("/^www./i", "", $request->v_domain);
+				$alias = 'www.' . $alias;
+				Vesta::deleteWebDomainAlias($request->v_domain, $alias);
+			}
+
+			if ($request->v_proxy == 'on') {
+				$ext = str_replace(' ', '', $request->v_proxy_ext);
+				Vesta::addDomainProxy($request->v_domain, $ext);
+			}
+
+			/* Пока закрыто всё ето есть в контроллере ФТП
+			//Добавление ФТП
+			if ($request->v_ftp == 'on') {
+
+				foreach ($request->v_ftp_user as $i => $v_ftp_user_data) {
+
+					if ($v_ftp_user_data['is_new'] == 1) {
+
+						$v_ftp_user_data['v_ftp_user'] = preg_replace("/^" . Sentry::getUser()->nickname . "_/i", "", $v_ftp_user_data['v_ftp_user']);
+
+						$v_ftp_username                = $v_ftp_user_data['v_ftp_user'];
+
+						$v_ftp_password                = $v_ftp_user_data['v_ftp_password'];
+						$domain_added                  = 1;
+
+
+						if ($domain_added) {
+							//Проверяем есть ли первым символом слеш
+							$v_ftp_path = trim($v_ftp_user_data['v_ftp_path']);
+							$pos = strpos($v_ftp_path, '/');
+							($pos === 0) ? $v_ftp_p = $v_ftp_path : $v_ftp_p = '';
+
+							//Добавляем данные для фтп
+							Vesta::addFtpDomain($request->v_domain, $v_ftp_username, $v_ftp_password, $v_ftp_p);
+
+							if ((!empty($v_ftp_user_data['v_ftp_email']))) {
+								$mail = $v_ftp_user_data['v_ftp_email'];
+
+								Mail::raw('Новый фтп', function ($message) use ($mail) {
+
+									$message->from('no-reply@cloudme.ru', 'Ларыч');
+									$message->to($mail)->cc($mail);
+								});
+							}
+						}
+						continue;
+					}
+				}
+			}*/
 
 
 
-		Session::flash('good', 'Вы успешно добавили Домен.');
-
-		return redirect()->route('web.index');
+			Session::flash('good', 'Вы успешно добавили Домен.');
+			return redirect()->route('web.index');
+		}else{
+			Session::flash('danger', 'Введите валидный домен');
+			return redirect()->route('web.index');
+		}
 	}
 
     public  function getDomain()

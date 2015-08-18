@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" ui-jq="webAdd">
         <div class="panel-heading">{{Lang::get('menu.Web')}}</div>
         <div class="panel-body">
 
@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group supp-niginx">
                             <label>Proxy Extentions</label>
-                            <textarea cols="40" rows="5" name="v_proxy_ext" class="form-control">jpeg, jpg, png, gif, bmp, ico, svg, tif, tiff, css, js, htm, html, ttf, otf, webp, woff, txt, csv, rtf, doc, docx, xls, xlsx, ppt, pptx, odf, odp, ods, odt, pdf, psd, ai, eot, eps, ps, zip, tar, tgz, gz, rar, bz2, 7z, aac, m4a, mp3, mp4, ogg, wav, wma, 3gp, avi, flv, m4v, mkv, mov, mp4, mpeg, mpg, wmv, exe, iso, dmg, swf</textarea>
+                <textarea cols="40" rows="5" name="v_proxy_ext" class="form-control">jpeg, jpg, png, gif, bmp, ico, svg, tif, tiff, css, js, htm, html, ttf, otf, webp, woff, txt, csv, rtf, doc, docx, xls, xlsx, ppt, pptx, odf, odp, ods, odt, pdf, psd, ai, eot, eps, ps, zip, tar, tgz, gz, rar, bz2, 7z, aac, m4a, mp3, mp4, ogg, wav, wma, 3gp, avi, flv, m4v, mkv, mov, mp4, mpeg, mpg, wmv, exe, iso, dmg, swf</textarea>
                         </div>
 
                         <!-- Как пойдёт
@@ -119,7 +119,7 @@
                                     <i class="fa fa-pencil-square-o block m-b-xs"></i>
                                     <span>Edit</span>
                                 </a>
-                                <a href="" onclick="delModal('{{$key}}', '{{URL::route('web.destroy')}}');"
+                                <a href="#" onclick="delModal('{{$key}}', '{{URL::route('web.destroy')}}');"
                                    class="col padder-v text-muted">
                                     <i class="fa fa-trash block m-b-xs"></i>
                                     <span>Delete</span>
@@ -128,47 +128,7 @@
 
                         </div>
 
-
-                        <script type="text/javascript">
-                            //Модалка для удаления
-                            /**
-                             *
-                             * @param name - имя элемента которы надо удалить
-                             * @param route - используемый роут Например: (/hosting/web/destroy)
-                             * @param id - id записи с которой происходят манипуляции удаления
-                             *
-                             */
-                            function delModal(name, route, id) {
-
-                                //csfr
-                                var csrf = $('meta[name="csrf-token"]').attr('content');
-
-                                var valueName = name;
-                                //Обрабатываем выходящее значение
-                                var key = name.replace('.', '');
-                                //Формируем модалку
-                                var modalka = ' <div class="modal fade" id="Modal-' + key + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <h4 class="modal-title" id="myModalLabel">Удалить ' + valueName + ' ?</h4></div><div class="modal-body">Вы действительно хотите удалить ' + valueName + '</div><div class="modal-footer"><form action="' + route + '" method="post"><button type="button" class="btn btn-default" data-dismiss="modal">Нет</button><button type="submit" class="btn btn-danger">Да</button><input type="hidden" name="v_domain" value="' + valueName + '"/><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="v_record_id" value="' + id + '" ><input type="hidden" name="_token" value="' + csrf + '"></form></div></div></div></div>';
-
-                                //Добавляем модалку в дом дерево
-                                $('footer').append(modalka);
-                                //Вызываем модалку
-                                $('#Modal-' + key).modal();
-                                //По зыкрытию нашей модалки удаляем её из дома
-                                $('#Modal-' + key).on('hidden.bs.modal', function () {
-                                    $('#Modal-' + key).remove();
-                                })
-                            }
-                        </script>
-
                     </div>
-
-
-
-
-
-
-
-
 
                 @empty
                     <div class="jumbotron text-center">

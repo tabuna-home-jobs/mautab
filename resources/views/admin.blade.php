@@ -110,7 +110,6 @@
 
 @endif
 
-
 <section class="container app-container">
     @yield('content')
 </section>

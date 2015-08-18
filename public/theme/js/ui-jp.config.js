@@ -41,6 +41,7 @@ var jp_config = {
                       '/theme/bower_components/bootstrap-daterangepicker/daterangepicker.js',
                       '/theme/bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css'],
   tagsinput:      [   '/theme/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
-                      '/theme/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css']
+                      '/theme/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'],
+  webAdd:         [   '/theme/jsController/user/web/index.js']
                       
 };
