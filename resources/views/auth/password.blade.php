@@ -5,7 +5,7 @@
 
 
     <div class="container w-xl w-auto-xs">
-        <a href class="navbar-brand block m-t">Mautab</a>
+        <a href="/" class="navbar-brand block m-t">Mautab</a>
 
         <div class="m-b-lg">
             <div class="wrapper text-center">

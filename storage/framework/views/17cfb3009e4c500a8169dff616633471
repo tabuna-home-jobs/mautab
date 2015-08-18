@@ -1,0 +1,75 @@
+<?php $__env->startSection('content'); ?>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Настройки</div>
+        <div class="panel-body">
+
+            <div class="col-xs-12">
+
+                <div class="row">
+
+
+                    <form class="col-md-12" action="<?php echo e(URL::route('settings.update')); ?>" method="post">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Аккаунт</label>
+                                <input type="text" class="form-control" disabled value="<?php echo e(Auth::User()->nickname); ?> ">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Имя</label>
+                                <input type="text" class="form-control" disabled value="<?php echo e($UserInfo['FNAME']); ?> ">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Фамилия</label>
+                                <input type="text" class="form-control" disabled value="<?php echo e($UserInfo['LNAME']); ?> ">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Электронная почта</label>
+                                <input type="email" name="email" class="form-control" required
+                                       value="<?php echo e(Auth::User()->email); ?> ">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="password">Пароль</label>
+                                <input type="password" class="form-control" id="password" name="password" required
+                                       pattern=".{8,}"
+                                       title="Пароль должен содержать не менее 8 символов"
+                                       placeholder="Пароль">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Язык</label>
+                                <select class="form-control" required name="lang">
+                                    <option value="en" <?php if($UserInfoLaravel->lang == "en"): ?> selected <?php endif; ?> >English</option>
+                                    <option value="ru" <?php if($UserInfoLaravel->lang == "ru"): ?> selected <?php endif; ?> >Russian</option>
+                                </select>
+                            </div>
+
+
+                            <input type="hidden" name="_method" value="PUT">
+                            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                            <input type="submit" value="Изменить" class="btn btn btn-blue">
+
+                        </div>
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

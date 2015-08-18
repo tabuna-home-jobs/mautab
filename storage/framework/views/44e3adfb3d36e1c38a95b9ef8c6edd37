@@ -1,7 +1,9 @@
 <?php $__env->startSection('content'); ?>
 
 
-        <div class="col-xs-12 log-row">
+
+
+    <div class="col-xs-12 log-row">
             <h1 class="col-md-3 col-xs-12 subheaderlog"> <?php echo e($name); ?></h1>
             <blockquote class="col-md-9 col-xs-12">
 
