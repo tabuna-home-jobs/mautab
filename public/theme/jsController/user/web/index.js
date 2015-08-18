@@ -31,23 +31,34 @@ function delModal(name, route, id) {
 
 //Добавляем алиас в textarea
 $("input[name='v_domain']").blur(function(){
+
     var obj = $(this);
+
+    var parenNode = obj.parent('div');
+
+    var childLabel = $(" label",parenNode);
+
     //Шаблон проверки домена
     var pattern = /^([0-9a-z]([0-9a-z\-])*[0-9a-z]\.)+[0-9a-z\-]{1,8}$/i;
+
     var currentValue = obj.val();
+
     if(pattern.exec(currentValue) != null){
+
+        $(" span",childLabel).remove();
+        parenNode.removeClass('has-error');
+
         //Если нормальный дмоен то добавляем его в texarea
         if(currentValue.indexOf('www') != -1){
-            //Если написал с www то срежим эти противные буквы
-            var stripVal = currentValue.replace('www','');
-            $("textarea[name='v_aliases']").text(stripVal);
-        }else{
-            //Иначе оставим как есть
             $("textarea[name='v_aliases']").text(currentValue);
+        }else{
+            $("textarea[name='v_aliases']").text('www.' + currentValue);
         }
     }else{
-        alert('фуфло твой домен');
-    }
 
+        childLabel.append('<span> введен неверно</span>');
+        parenNode.addClass('has-error');
+
+    }
 
 });

@@ -89,11 +89,17 @@ class WebController extends Controller {
 
 						Vesta::addWebDomainAlias($request->v_domain, $alias);
 
-						//if ($request->v_dns == 'on') {
-							Vesta::addDnsAlias($request->v_domain, $alias);
-						//}
+						Vesta::addDnsAlias($request->v_domain, $alias);
 					}
 				}
+			}else{
+
+				$aliaz = 'www1.'.$request->v_domain."\n";
+
+				Vesta::addWebDomainAlias($request->v_domain, $aliaz);
+
+				Vesta::addDnsAlias($request->v_domain, $aliaz);
+
 			}
 
 			if (empty($www_alias)) {

@@ -20,8 +20,9 @@
                 <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('web.store')}}">
 
                     <div class="alert alert-info" role="alert">Добавление домена</div>
+
                     <div class="form-group input-line">
-                        <label>Домен </label>
+                        <label class="control-label">Домен </label>
                         <input type="text" name="v_domain" class="form-control" value="" required/>
                     </div>
 
