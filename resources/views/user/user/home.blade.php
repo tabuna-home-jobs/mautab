@@ -85,8 +85,7 @@
                             </div>
 
 
-                            <p class="text-muted">Dales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
-                                sollicitudin venenatis</p>
+                            <p class="text-muted">Статистические данные обновляються каждые несколько часов</p>
                         </div>
 
 

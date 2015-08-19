@@ -15,11 +15,11 @@
                         <button class="btn btn-default" data-toggle="dropdown" aria-expanded="false"><span
                                     class="caret"></span></button>
                         <ul class="dropdown-menu">
-                            <li><a href="">Action</a></li>
-                            <li><a href="">Another action</a></li>
-                            <li><a href="">Something else here</a></li>
+                            <li><a href="">Копировать</a></li>
+                            <li><a href="">Вырезать</a></li>
+                            <li><a href="">Вставить</a></li>
                             <li class="divider"></li>
-                            <li><a href="">Separated link</a></li>
+                            <li><a href="">Распаковать архив</a></li>
                         </ul>
 
                     </div>
@@ -122,7 +122,7 @@
                                                   method="post">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет
                                                 </button>
-                                                <button type="submit" class="button-small">Да</button>
+                                                <button type="submit" class="btn btn-danger">Да</button>
                                                 <input type="hidden" name="name" value="{{$list['name']}}"/>
                                                 <input type="hidden" name="type" value="{{$list['type']}}">
                                                 <input type="hidden" name="_method" value="DELETE">
@@ -161,7 +161,7 @@
 
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет
                                                 </button>
-                                                <button type="submit" class="button-small">Да</button>
+                                                <button type="submit" class="btn btn-danger">Да</button>
                                                 <input type="hidden" name="name" value="{{$list['name']}}"/>
                                                 <input type="hidden" name="_method" value="PUT">
                                                 <input type="hidden" name="_token" value="{{csrf_token()}}">

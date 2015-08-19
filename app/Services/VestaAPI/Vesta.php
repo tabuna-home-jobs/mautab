@@ -2,19 +2,41 @@
 
 use Auth;
 use Config;
+use GuzzleHttp\Client;
 use Mautab\Exceptions\VestaExceptions;
-use SSH;
+
 
 class Vesta
 {
-
     use VestaBD, VestaDNS, VestaUser, VestaWeb, VestaService, VestaCron, VestaFileSystem;
 
+
+    /**
+     * @var string
+     */
     public $vst_keyAPI;
+
+
+    /**
+     * @var
+     */
     public $vst_username;
+
+    /**
+     * @var
+     */
     public $vst_password;
+
+    /**
+     * @var
+     */
     public $vst_server;
+
+    /**
+     * @var string
+     */
     public $vst_returncode = 'yes'; // Что будет возвращено no|yes|json
+
 
     public function __construct()
     {
@@ -65,33 +87,16 @@ class Vesta
         ];
 
 
-        $postdata = http_build_query($postvars);
-        $postdata = urldecode($postdata);
-
-
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'https://' . $this->vst_server . ':8083/api/');
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
-        curl_setopt($curl, CURLOPT_POST, TRUE);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
-        $query = curl_exec($curl);
-
-        /*
         $client = new Client([
             'base_uri' => 'https://' . $this->vst_server . ':8083/api/',
             'timeout'  => 2.0,
             'verify' => false,
-            'query' => $postvars,
-            'stream' => true,
-            'body' => 'string',
+            'form_params' => $postvars,
         ]);
 
-        $query = $client->post('index.php');
-        dd($query,$query->getBody()->getContents());
-*/
-
+        $query = $client->post('index.php')
+            ->getBody()
+            ->getContents();
 
 
         if ($this->vst_returncode == 'yes' && $query != 0)
