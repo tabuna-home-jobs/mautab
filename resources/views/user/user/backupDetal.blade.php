@@ -4,7 +4,7 @@
 
 
     <div class="panel panel-default">
-        <div class="panel-heading">Basic form</div>
+        <div class="panel-heading">{{ $name  }}</div>
         <div class="panel-body">
 
             <div class="col-xs-12 log-row">
@@ -300,8 +300,6 @@
                     </p>
                 </blockquote>
             </div>
-            <hr class="col-xs-12">
-
 
         </div>
     </div>

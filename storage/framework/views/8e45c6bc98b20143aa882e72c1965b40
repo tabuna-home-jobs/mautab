@@ -4,79 +4,76 @@
         <div class="panel-heading"><?php echo e(Lang::get('menu.Cron')); ?></div>
         <div class="panel-body">
 
-    <div class="col-xs-12">
-        <p class="text-center">
-            <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false"
-               aria-controls="collapseExample">
-                <i class="fa fa-plus"></i>
-            </a>
-        </p>
-    </div>
-
-
-
-
-    <div class="collapse col-xs-12" id="add-bd">
-        <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('cron.store')); ?>">
-
-
-            <div class="form-group input-line">
-                <label>Минута </label>
-                <input type="text" name="v_min" class="form-control" value=""/>
+            <div class="col-xs-12">
+                <p class="text-center">
+                    <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false"
+                       aria-controls="collapseExample">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </p>
             </div>
 
-            <div class="form-group input-line">
-                <label>Час </label>
-                <input type="text" name="v_hour" class="form-control" value=""/>
-            </div>
 
-            <div class="form-group input-line">
-                <label>День </label>
-                <input type="text" name="v_day" class="form-control" value=""/>
-            </div>
-
-            <div class="form-group input-line">
-                <label>Месяц </label>
-                <input type="text" name="v_month" class="form-control" value=""/>
-            </div>
-
-            <div class="form-group input-line">
-                <label>День недели </label>
-                <input type="text" name="v_wday" class="form-control" value=""/>
-            </div>
-
-            <div class="form-group input-line">
-                <label>Команда </label>
-                <input type="text" name="v_cmd" class="form-control" value=""/>
-            </div>
-
-            <div class="form-group">
-                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
-                <input type="submit" value="Отправить" class="btn btn-blue">
-            </div>
-        </form>
-
-        <div class="col-md-4 hidden-sm hidden-xs">
+            <div class="collapse col-xs-12" id="add-bd">
+                <form class="col-md-8 col-xs-12" method="post" action="<?php echo e(URL::route('cron.store')); ?>">
 
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Информация:</h3>
+                    <div class="form-group input-line">
+                        <label>Минута </label>
+                        <input type="text" name="v_min" class="form-control" value=""/>
+                    </div>
+
+                    <div class="form-group input-line">
+                        <label>Час </label>
+                        <input type="text" name="v_hour" class="form-control" value=""/>
+                    </div>
+
+                    <div class="form-group input-line">
+                        <label>День </label>
+                        <input type="text" name="v_day" class="form-control" value=""/>
+                    </div>
+
+                    <div class="form-group input-line">
+                        <label>Месяц </label>
+                        <input type="text" name="v_month" class="form-control" value=""/>
+                    </div>
+
+                    <div class="form-group input-line">
+                        <label>День недели </label>
+                        <input type="text" name="v_wday" class="form-control" value=""/>
+                    </div>
+
+                    <div class="form-group input-line">
+                        <label>Команда </label>
+                        <input type="text" name="v_cmd" class="form-control" value=""/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                        <input type="submit" value="Отправить" class="btn btn-blue">
+                    </div>
+                </form>
+
+                <div class="col-md-4 hidden-sm hidden-xs">
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Информация:</h3>
+                        </div>
+                        <div class="panel-body">
+                            cron — демон-планировщик задач в UNIX-подобных операционных системах, использующийся для
+                            периодического выполнения заданий в определённое время.
+                            Регулярные действия описываются инструкциями, помещенными в файлы crontab и в специальные
+                            директории.
+                        </div>
+                    </div>
+
                 </div>
-                <div class="panel-body">
-                    cron — демон-планировщик задач в UNIX-подобных операционных системах, использующийся для
-                    периодического выполнения заданий в определённое время.
-                    Регулярные действия описываются инструкциями, помещенными в файлы crontab и в специальные
-                    директории.
-                </div>
+
             </div>
 
         </div>
-
-    </div>
-
-    </div>
-
 
 
         <div id="add-shadow" class="table-responsive">
