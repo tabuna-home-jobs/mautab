@@ -48,8 +48,18 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <div class="m-t-sm">
-                        <a href="/auth/login" class="btn btn-link btn-sm">Войти</a> или
-                        <a href="/auth/register" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Зарегистрироваться</strong></a>
+                        @if(Auth::check())
+                            <div class="m-t-sm">
+                                <a href="/auth/logout" class="btn btn-link btn-sm">Выйти</a>
+                                <a href="/home" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Панель
+                                        управления</strong></a>
+                            </div>
+                        @else
+                            <div class="m-t-sm">
+                                <a href="/auth/login" class="btn btn-link btn-sm">Войти</a> или
+                                <a href="/auth/register" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Зарегистрироваться</strong></a>
+                            </div>
+                        @endif
                     </div>
                 </li>
             </ul>

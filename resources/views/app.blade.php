@@ -46,6 +46,8 @@
                     @if(Auth::check())
                         <div class="m-t-sm">
                             <a href="/auth/logout" class="btn btn-link btn-sm">Выйти</a>
+                            <a href="/home" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Панель
+                                    управления</strong></a>
                         </div>
                     @else
                         <div class="m-t-sm">

@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="bg-white-only container h100">
+    <div class="bg-white-only h100">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div class="m-t-xxl m-b-xxl padder-v">
@@ -37,15 +37,14 @@
             <div class="row m-t-xl m-b-xl text-center">
                 <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
                     <p class="h3 m-b-xl inline b b-dark rounded wrapper-lg">
-                        <i class="fa w-1x fa-google"></i>
+                        <i class="fa w-1x fa fa-magic"></i>
                     </p>
 
                     <div class="m-b-xl">
-                        <h4 class="m-t-none">Developed by Google</h4>
+                        <h4 class="m-t-none">Компетентная поддержка</h4>
 
-                        <p class="text-muted m-t-lg">AngularJS is the most popular JavaScript framework created by
-                            Google! If you're looking for a framework with a solid foundation, Angular is your
-                            choice!</p>
+                        <p class="text-muted m-t-lg">Поможет развернуть любую CMS или Framework, а так же ответит на все
+                            возникшие вопросы</p>
                     </div>
                 </div>
                 <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="600">
@@ -54,10 +53,10 @@
                     </p>
 
                     <div class="m-b-xl">
-                        <h4 class="m-t-none">It's Comprehensive</h4>
+                        <h4 class="m-t-none">Современная система</h4>
 
-                        <p class="text-muted m-t-lg">A complete solution for rapid front-end development. No other
-                            plugins or frameworks are necessary to build a data-driven web application</p>
+                        <p class="text-muted m-t-lg">Используйте современные отказоустойчивые системы для своих
+                            проектов</p>
                     </div>
                 </div>
                 <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="900">
@@ -86,112 +85,6 @@
             </div>
         </div>
     </div>
-    <div id="features" class="bg-white-only">
-        <div class="container">
-            <div class="row m-t-xl m-b-xxl">
-                <div class="col-sm-6" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
-                    <div class="m-t-xxl">
-                        <div class="m-b">
-                            <a href="" class="pull-left thumb-sm avatar"><img src="../html/img/a2.jpg" alt="..."></a>
-
-                            <div class="m-l-sm inline">
-                                <div class="pos-rlt wrapper b b-light r r-2x">
-                                    <span class="arrow left pull-up"></span>
-
-                                    <p class="m-b-none">Hey!</p>
-                                </div>
-                                <small class="text-muted"><i class="fa fa-ok text-success"></i> 1 hour ago</small>
-                            </div>
-                        </div>
-                        <div class="m-b text-right">
-                            <a href="" class="pull-right thumb-sm avatar"><img src="../html/img/a3.jpg"
-                                                                               class="img-circle" alt="..."></a>
-
-                            <div class="m-r-sm inline text-left">
-                                <div class="pos-rlt wrapper bg-primary r r-2x">
-                                    <span class="arrow right pull-up arrow-primary"></span>
-
-                                    <p class="m-b-none">Hi John, What's up...</p>
-                                </div>
-                                <small class="text-muted">31 minutes ago</small>
-                            </div>
-                        </div>
-                        <div class="m-b">
-                            <a href="" class="pull-left thumb-sm avatar"><img src="../html/img/a1.jpg" alt="..."></a>
-
-                            <div class="m-l-sm inline">
-                                <div class="pos-rlt wrapper b b-light r r-2x">
-                                    <span class="arrow left pull-up"></span>
-
-                                    <p class="m-b-none">Have been working on the updates for many hours...</p>
-                                </div>
-                                <small class="text-muted"><i class="fa fa-ok text-success"></i> 2 minutes ago</small>
-                            </div>
-                        </div>
-                        <div class="m-b text-right">
-                            <a href="" class="pull-right thumb-sm avatar"><img src="../html/img/a3.jpg"
-                                                                               class="img-circle" alt="..."></a>
-
-                            <div class="m-r-sm inline text-left">
-                                <div class="pos-rlt wrapper bg-info r r-2x">
-                                    <span class="arrow right pull-up arrow-info"></span>
-
-                                    <p class="m-b-none">Can not wait to see it:)</p>
-                                </div>
-                                <small class="text-muted">1 minutes ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 wrapper-xl">
-                    <h3 class="text-dark font-bold m-b-lg">Save your time with the great tools</h3>
-                    <ul class="list-unstyled  m-t-xl">
-                        <li data-ride="animated" data-animation="fadeInUp" data-delay="600" class="">
-                            <i class="fa fa-balance-scale pull-left text-lg m-r m-t-sm"></i>
-
-                            <p class="clear m-b-lg"><strong>Using Less</strong>, Angulr's CSS is built on Less, a
-                                preprocessor with additional functionality like variables, mixins, and functions for
-                                compiling CSS. </p>
-                        </li>
-                        <li data-ride="animated" data-animation="fadeInUp" data-delay="900" class="">
-                            <i class="fa fa-balance-scale pull-left text-lg m-r m-t-sm"></i>
-
-                            <p class="clear m-b-lg"><strong>Grunt Task</strong>, Angulr using Grunt to automate
-                                development tasks, like compiling less to css, concatenating and minifying js files...
-                            </p>
-                        </li>
-                        <li data-ride="animated" data-animation="fadeInUp" data-delay="1100" class="">
-                            <i class="fa fa-balance-scale pull-left text-lg m-r m-t-sm"></i>
-
-                            <p class="clear m-b-lg"><strong>Bower Package</strong>, fetching and installing packages
-                                from all over, finding, downloading, and saving the stuff you’re looking for.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-light">
-        <div class="container">
-            <div class="row m-t-xl m-b-xxl">
-                <div class="col-sm-6 wrapper-xl">
-                    <h3 class="text-black font-bold m-b-lg">Для всех проектов</h3>
-
-                    <p class="h4 l-h-1x">Angulr responsive CSS layout is built on Bootstrap Grid System, includes a
-                        responsive, mobile first fluid grid system to target a wide range of devices like desktop,
-                        tablets, smart phones etc</p>
-                </div>
-                <div class="col-sm-6" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
-                    <div class="m-t-xxl text-center">
-                        <span class="text-2x text-muted"><i class="fa fa-balance-scale text-2x"></i></span>
-                        <span class="text-3x text-muted"><span class="text-2x"><i
-                                        class="fa fa-balance-scale text-2x"></i></span></span>
-                        <span class="text-3x text-muted"><i class="fa fa-balance-scale text-2x"></i></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="testimonial" class="bg-white dker clearfix">
         <div class="container m-t-xxl m-b-xxl padder-v">
 
@@ -204,33 +97,33 @@
                             <h4 class="text-u-c m-b-none">Start</h4>
 
                             <h2 class="m-t-none">
-                                <sup class="pos-rlt" style="top:-22px">$</sup>
+                                <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
                                 <span class="text-2x text-lt">99</span>
-                                <span class="text-xs">/ mo</span>
+                                <span class="text-xs">/ в месяц</span>
                             </h2>
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Email preview on air
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Email preview on air
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Spam testing and blocking
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 100 GB Space
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 100 GB Space
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 200 user accounts
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 200 user accounts
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-danger m-r-xs"></i> <span class="text-l-t">Free support for two years</span>
+                                <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span class="text-l-t">Free support for two years</span>
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-danger m-r-xs"></i> <span class="text-l-t">Free upgrade for one year</span>
+                                <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span class="text-l-t">Free upgrade for one year</span>
                             </li>
                         </ul>
                         <div class="panel-footer text-center">
-                            <a href="" class="btn btn-primary font-bold m">Start your free trial</a>
+                            <a href="" class="btn btn-primary font-bold m">Попробывать</a>
                         </div>
                     </div>
                 </div>
@@ -243,34 +136,34 @@
                             <h4 class="text-u-c m-b-none">Premium</h4>
 
                             <h2 class="m-t-none">
-                                <sup class="pos-rlt" style="top:-22px">$</sup>
+                                <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
                                 <span class="text-2x text-lt">199</span>
-                                <span class="text-xs">/ mo</span>
+                                <span class="text-xs">/ в месяц</span>
                             </h2>
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Email preview on air
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Email preview on air
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Spam testing and blocking
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 100 GB Space
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 100 GB Space
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 200 user accounts
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 200 user accounts
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Free support for two years
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Free support for two years
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Free upgrade for one year
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Free upgrade for one year
                             </li>
                         </ul>
                         <div class="panel-footer text-center b-t m-t bg-light lter">
                             <div class="m-t-sm">Recommanded for you</div>
-                            <a href="" class="btn btn-info font-bold m">Start your free trial</a>
+                            <a href="" class="btn btn-info font-bold m">Попробывать</a>
                         </div>
                     </div>
                 </div>
@@ -282,33 +175,33 @@
                             <h4 class="text-u-c m-b-none">Business</h4>
 
                             <h2 class="m-t-none">
-                                <sup class="pos-rlt" style="top:-22px">$</sup>
+                                <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
                                 <span class="text-2x text-lt">299</span>
-                                <span class="text-xs">/ mo</span>
+                                <span class="text-xs">/ в месяц</span>
                             </h2>
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Email preview on air
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Email preview on air
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Spam testing and blocking
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 500 GB Space
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 500 GB Space
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> 1000 user accounts
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 1000 user accounts
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Free support for two years
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Free support for two years
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-balance-scale text-success m-r-xs"></i> Free upgrade for one year
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Free upgrade for one year
                             </li>
                         </ul>
                         <div class="panel-footer text-center">
-                            <a href="" class="btn btn-primary font-bold m">Start your free trial</a>
+                            <a href="" class="btn btn-primary font-bold m">Попробывать</a>
                         </div>
                     </div>
                 </div>
@@ -321,9 +214,9 @@
                             <h4 class="text-u-c m-b-none">Enterprise</h4>
 
                             <h2 class="m-t-none">
-                                <sup class="pos-rlt" style="top:-22px">$</sup>
+                                <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
                                 <span class="text-2x text-lt">399</span>
-                                <span class="text-xs">/ mo</span>
+                                <span class="text-xs">/ в месяц</span>
                             </h2>
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
@@ -347,7 +240,7 @@
                             </li>
                         </ul>
                         <div class="panel-footer text-center">
-                            <a href="" class="btn btn-primary font-bold m">Start your free trial</a>
+                            <a href="" class="btn btn-primary font-bold m">Попробывать</a>
                         </div>
                     </div>
                 </div>
