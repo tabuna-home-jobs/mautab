@@ -133,6 +133,14 @@
 
 
                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label">Телефон</label>
+
+                                            <div class="col-sm-9"><input type="text" class="form-control"
+                                                                         value=""></div>
+                                        </div>
+
+
+                                        <div class="form-group">
                                             <label class="col-sm-3 control-label" for="email">Электронная почта</label>
 
                                             <div class="col-sm-9"><input type="email" name="email" class="form-control"
@@ -250,6 +258,11 @@
                                             </label>
                                         </div>
 
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                                <button type="submit" class="btn btn-default">Изменить</button>
+                                            </div>
+                                        </div>
 
                                     </div>
 
