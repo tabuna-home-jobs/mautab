@@ -1,7 +1,7 @@
 <?php namespace Mautab\Http\Requests\Admin;
 
+use Auth;
 use Mautab\Http\Requests\Request;
-use Sentry;
 
 class PagesRequest extends Request
 {
@@ -13,7 +13,7 @@ class PagesRequest extends Request
 	 */
 	public function authorize()
 	{
-		return Sentry::check();
+		return Auth::check();
 	}
 
 	/**
