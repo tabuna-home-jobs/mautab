@@ -92,58 +92,172 @@
                     </div>
 
 
-                    <form class="col-md-8" action="{{URL::route('settings.update')}}" method="post">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Аккаунт</label>
-                                <input type="text" class="form-control" disabled value="{{Auth::User()->nickname}} ">
+                    <div class="panel-group col-md-8" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                       aria-expanded="true" aria-controls="collapseOne">
+                                        Личные данные
+                                    </a>
+                                </h4>
                             </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
 
-                            <div class="form-group">
-                                <label>Имя</label>
-                                <input type="text" class="form-control" disabled value="{{ $UserInfo['FNAME'] }} ">
-                            </div>
 
-                            <div class="form-group">
-                                <label>Фамилия</label>
-                                <input type="text" class="form-control" disabled value="{{ $UserInfo['LNAME'] }} ">
+                                    <form class="form-horizontal" action="{{URL::route('settings.update')}}"
+                                          method="post">
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Аккаунт</label>
+
+                                            <div class="col-sm-9"><input type="text" class="form-control" disabled
+                                                                         value="{{Auth::User()->nickname}} "></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Имя</label>
+
+                                            <div class="col-sm-9"><input type="text" class="form-control" disabled
+                                                                         value="{{ $UserInfo['FNAME'] }} "></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Фамилия</label>
+
+                                            <div class="col-sm-9"><input type="text" class="form-control" disabled
+                                                                         value="{{ $UserInfo['LNAME'] }} "></div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label" for="email">Электронная почта</label>
+
+                                            <div class="col-sm-9"><input type="email" name="email" class="form-control"
+                                                                         required
+                                                                         value="{{ Auth::User()->email }} "></div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label" for="password">Пароль</label>
+
+                                            <div class="col-sm-9"><input type="password" class="form-control"
+                                                                         id="password" name="password" required
+                                                                         pattern=".{8,}"
+                                                                         title="Пароль должен содержать не менее 8 символов"
+                                                                         placeholder="Пароль"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label" for="password">Язык</label>
+
+                                            <div class="col-sm-9"><select class="form-control" required name="lang">
+                                                    <option value="en"
+                                                            @if($UserInfoLaravel->lang == "en") selected @endif >English
+                                                    </option>
+                                                    <option value="ru"
+                                                            @if($UserInfoLaravel->lang == "ru") selected @endif >Russian
+                                                    </option>
+                                                </select></div>
+                                        </div>
+
+
+                                        <input type="hidden" name="_method" value="PUT">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                                <input type="submit" value="Изменить" class="btn btn-primary">
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+
+
+                                </div>
                             </div>
                         </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="email">Электронная почта</label>
-                                <input type="email" name="email" class="form-control" required
-                                       value="{{ Auth::User()->email }} ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Безопасность
+                                    </a>
+                                </h4>
                             </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
 
 
-                            <div class="form-group">
-                                <label for="password">Пароль</label>
-                                <input type="password" class="form-control" id="password" name="password" required
-                                       pattern=".{8,}"
-                                       title="Пароль должен содержать не менее 8 символов"
-                                       placeholder="Пароль">
+                                    <form class="form-horizontal" role="form">
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Новый пароль</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Повторите пароль</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                                <button type="submit" class="btn btn-default">Изменить</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+                                </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="password">Язык</label>
-                                <select class="form-control" required name="lang">
-                                    <option value="en" @if($UserInfoLaravel->lang == "en") selected @endif >English
-                                    </option>
-                                    <option value="ru" @if($UserInfoLaravel->lang == "ru") selected @endif >Russian
-                                    </option>
-                                </select>
-                            </div>
-
-
-                            <input type="hidden" name="_method" value="PUT">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="submit" value="Изменить" class="btn btn-primary">
-
                         </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Уведомления
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree">
+                                <div class="panel-body">
 
-                    </form>
+
+                                    <div class="col-sm-12">
+                                        <div class="checkbox">
+                                            <label class="i-checks">
+                                                <input type="checkbox" name="1" value="Documents"><i></i>
+                                                Я хочу получать уведомления по Email
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="i-checks">
+                                                <input type="checkbox" name="1" value="Documents"><i></i>
+                                                Я хочу получать уведомления по Email
+                                            </label>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>
