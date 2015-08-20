@@ -59,7 +59,7 @@ trait VestaWeb
     // Add domain aliases
     public function addWebDomainAlias($domain, $alias)
     {
-        return $this->sendQuery('v-add-web-domain-alias', Auth::User()->nickname, $domain, $alias, 'no');
+        $this->sendQuery('v-add-web-domain-alias', Auth::User()->nickname, $domain, $alias, 'no');
     }
 
     //Поддержка алиасов днс если чек

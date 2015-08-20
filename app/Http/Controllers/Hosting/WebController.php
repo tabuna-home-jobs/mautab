@@ -69,7 +69,6 @@ class WebController extends Controller {
 			//	Vesta::addMail($request->v_domain);
 			//}
 
-
 			//Добавление алиасов
 			if (strlen($request->v_aliases) >= 1) {
 				//Распил алиасов
@@ -94,11 +93,7 @@ class WebController extends Controller {
 				}
 			}else{
 
-				$aliaz = 'www1.'.$request->v_domain."\n";
-
-				Vesta::addWebDomainAlias($request->v_domain, $aliaz);
-
-				Vesta::addDnsAlias($request->v_domain, $aliaz);
+				$www_alias = 'yes';
 
 			}
 
@@ -112,48 +107,6 @@ class WebController extends Controller {
 				$ext = str_replace(' ', '', $request->v_proxy_ext);
 				Vesta::addDomainProxy($request->v_domain, $ext);
 			}
-
-			/* Пока закрыто всё ето есть в контроллере ФТП
-			//Добавление ФТП
-			if ($request->v_ftp == 'on') {
-
-				foreach ($request->v_ftp_user as $i => $v_ftp_user_data) {
-
-					if ($v_ftp_user_data['is_new'] == 1) {
-
-						$v_ftp_user_data['v_ftp_user'] = preg_replace("/^" . Sentry::getUser()->nickname . "_/i", "", $v_ftp_user_data['v_ftp_user']);
-
-						$v_ftp_username                = $v_ftp_user_data['v_ftp_user'];
-
-						$v_ftp_password                = $v_ftp_user_data['v_ftp_password'];
-						$domain_added                  = 1;
-
-
-						if ($domain_added) {
-							//Проверяем есть ли первым символом слеш
-							$v_ftp_path = trim($v_ftp_user_data['v_ftp_path']);
-							$pos = strpos($v_ftp_path, '/');
-							($pos === 0) ? $v_ftp_p = $v_ftp_path : $v_ftp_p = '';
-
-							//Добавляем данные для фтп
-							Vesta::addFtpDomain($request->v_domain, $v_ftp_username, $v_ftp_password, $v_ftp_p);
-
-							if ((!empty($v_ftp_user_data['v_ftp_email']))) {
-								$mail = $v_ftp_user_data['v_ftp_email'];
-
-								Mail::raw('Новый фтп', function ($message) use ($mail) {
-
-									$message->from('no-reply@cloudme.ru', 'Ларыч');
-									$message->to($mail)->cc($mail);
-								});
-							}
-						}
-						continue;
-					}
-				}
-			}*/
-
-
 
 			Session::flash('good', 'Вы успешно добавили Домен.');
 			return redirect()->route('web.index');
@@ -172,7 +125,6 @@ class WebController extends Controller {
     {
         $v_domain = Request::input('v_domain');
         $test = Vesta::addWebDomain($v_domain);
-        dd($test);
         Request::url('/web/domain');
     }
 
