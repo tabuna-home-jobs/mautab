@@ -19,11 +19,11 @@
                             <h4 class="font-thin m-t-none m-b"><i class="fa fa-info-circle"></i> Информация</h4>
 
 
-                            <p>Статус :
+                            <p class="m-b-md">Статус :
                                 @if($UserInfo['SUSPENDED'] == "no")
-                                    <span class="label label-success">Активен</span>
+                                    <span class="label label-success pull-right">Активен</span>
                                 @else
-                                    <span class="label label-danger">Не активен</span>
+                                    <span class="label label-danger pull-right">Не активен</span>
                                 @endif
                             </p>
 

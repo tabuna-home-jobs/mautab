@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
 
-                <li class="active"><a href="#">Возможности</a></li>
+                <li><a href="#">Возможности</a></li>
                 <li><a href="#">Цена</a></li>
                 <li><a href="#">Форум</a></li>
             </ul>
