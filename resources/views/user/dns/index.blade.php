@@ -25,6 +25,11 @@
                         <label>IP адрес</label>
                         <input type="text" class="form-control" name="v_ip" required/>
                     </div>
+
+
+                    <div class="line line-dashed b-b"></div>
+
+
                     <p class="text-center">
                         <a id="show-dop-info" data-toggle="collapse" href="#dop-info" aria-expanded="false"
                            aria-controls="collapseExample">

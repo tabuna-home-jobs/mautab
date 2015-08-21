@@ -26,10 +26,12 @@
                         <input type="text" name="v_domain" class="form-control" value="" required/>
                     </div>
 
-                    <div>
-                        <a id="show-add-options" data-toggle="collapse" href="#options" aria-expanded="false"
+
+                    <div class="line line-dashed b-b"></div>
+
+
+                    <a id="show-add-options" data-toggle="collapse" href="#options" aria-expanded="false"
                            aria-controls="collapseExample">Дополнительные опции</a>
-                    </div>
 
                     <!--Дополнительные опции (по умолчанию скрыт)-->
                     <div class="options collapse" id="options" aria-expanded="false">

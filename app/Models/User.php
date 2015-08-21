@@ -56,7 +56,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['nickname',
+    protected $fillable = [
+        'nickname',
         'first_name',
         'last_name',
         'end_of_service',
@@ -66,7 +67,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'role',
         'email',
         'password',
-        'suspend'
+        'suspend',
+        'phone',
+        'email_notification',
+        'phone_notification',
     ];
 
 
@@ -138,7 +142,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return unserialize($this->role);
     }
-
 
 
 }
