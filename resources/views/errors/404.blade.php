@@ -9,9 +9,13 @@
             <h1 class="text-shadow text-white">404</h1>
         </div>
         <div class="list-group bg-info auto m-b-sm m-b-lg">
-            <a href="#/" class="list-group-item">
+            <a href="/" class="list-group-item">
                 <i class="fa fa-chevron-right text-muted"></i>
-                <i class="fa fa-fw fa-mail-forward m-r-xs"></i> Goto application
+                <i class="fa fa-fw fa-home m-r-xs"></i> На главную
+            </a>
+            <a href="{{ URL::previous() }}" class="list-group-item">
+                <i class="fa fa-chevron-right text-muted"></i>
+                <i class="fa fa-fw fa-mail-forward m-r-xs"></i> Назад
             </a>
         </div>
         <div class="text-center">
