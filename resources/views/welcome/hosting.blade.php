@@ -3,22 +3,25 @@
 @section('content')
 
 
-    <div class="bg-white-only h100">
+    <div class="bg-white-only">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div class="m-t-xxl m-b-xxl padder-v">
                     <h1 class="font-bold l-h-1x m-t-xxl text-black padder-v animated fadeInDown">
-                        AngularJS App, Html/jQuery, Music SPA, and App Landing,
-                        <span class="b-b b-black b-3x">4 in 1</span> ui kits package.
+                        Идейные соображения высшего порядка, а также консультация с широким активом играет важную
+                        роль<span class="b-b b-black b-3x"> играет важную роль</span> в формировании модели развития.
                     </h1>
 
-                    <h3 class="text-muted m-t-xl l-h-1x">Angulr is a <span class="b-b b-2x">Bootstrap</span> based web
-                        ui kits package, Using grunt and bower with Bootstrap and Angular, features <span
-                                class="b-b b-2x">nested views &amp; routing</span> and <span
-                                class="b-b b-2x">lazy load</span> for large project.</h3>
+                    <h3 class="text-muted m-t-xl l-h-1x">
+
+                        Таким образом <span
+                                class="b-b b-2x">дальнейшее развитие</span> различных форм деятельности в значительной
+                        степени обуславливает создание новых предложений.
+
+                    </h3>
                 </div>
                 <p class="text-center m-b-xxl wrapper">
-                    <a href="http://themeforest.net/item/angulr-bootstrap-admin-web-app-with-angularjs/8437259"
+                    <a href="#"
                        target="_blank"
                        class="btn b-2x btn-lg b-black btn-default btn-rounded text-lg font-bold m-b-xxl animated fadeInUpBig">От
                         100 рублей</a>
@@ -32,7 +35,8 @@
                 <h2 class="text-black font-bold">Используйте для всех <span class="b-b b-dark">ваших проектов</span>
                 </h2>
 
-                <p class="text-muted h4 m-b-xl">Build the Single-Page Applications -- SPAs</p>
+                <p class="text-muted h4 m-b-xl">Профессиональный подход, партнерство с проверенными поставщиками и самое
+                    современное оборудование позволяют нам обеспечивать по-настоящему надежный хостинг.</p>
             </div>
             <div class="row m-t-xl m-b-xl text-center">
                 <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
@@ -73,15 +77,16 @@
                 </div>
             </div>
             <div class="m-t-xl m-b-xl text-center wrapper">
-                <p class="h4">You can use it to build your
-                    <span class="text-primary">Content manage system</span>,
-                    <span class="text-primary">Travel app</span>,
-                    <span class="text-primary">Medical app</span>...
+                <p class="h4">Подходит для большинства веб систем:
+                    <span class="text-primary">WordPress</span>,
+                    <span class="text-primary">OpenCard</span>,
+                    <span class="text-primary">Joomla</span>,
+                    <span class="text-primary">Laravel</span>...
                 </p>
 
                 <p class="m-t-xl"><a href="#testimonial" data-ride="scroll"
-                                     class="btn btn-lg btn-white b-2x b-dark btn-rounded bg-empty m-sm">What Clients
-                        Said</a></p>
+                                     class="btn btn-lg btn-white b-2x b-dark btn-rounded bg-empty m-sm">Полный
+                        список</a></p>
             </div>
         </div>
     </div>
@@ -104,22 +109,22 @@
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Email preview on air
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 Веб-сайтов
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 1 GB Пространства
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 100 GB Space
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 Баз данных
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 200 user accounts
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Неограниченно FTP
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span class="text-l-t">Free support for two years</span>
+                                <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span class="text-l-t">Резервные копии</span>
                             </li>
                             <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span class="text-l-t">Free upgrade for one year</span>
+                                <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span class="text-l-t">SSH Доступ</span>
                             </li>
                         </ul>
                         <div class="panel-footer text-center">
@@ -143,26 +148,26 @@
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Email preview on air
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Веб-сайтов
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 GB Пространства
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 100 GB Space
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Баз данных
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 200 user accounts
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Неограниченно FTP
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Free support for two years
+                                <i class="fa fa-times-circle-o text-success m-r-xs"></i> 1 - Резервная копия
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Free upgrade for one year
+                                <i class="fa fa-times-circle-o text-success m-r-xs"></i>SSH Доступ
                             </li>
                         </ul>
                         <div class="panel-footer text-center b-t m-t bg-light lter">
-                            <div class="m-t-sm">Recommanded for you</div>
+                            <div class="m-t-sm">Рекомендуем попробывать</div>
                             <a href="" class="btn btn-info font-bold m">Попробывать</a>
                         </div>
                     </div>
@@ -182,22 +187,22 @@
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Email preview on air
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Веб-сайтов
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 GB Пространства
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 500 GB Space
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Баз данных
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 1000 user accounts
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Неограниченно FTP
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Free support for two years
+                                <i class="fa fa-times-circle-o text-success m-r-xs"></i> 1 - Резервная копия
                             </li>
                             <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Free upgrade for one year
+                                <i class="fa fa-times-circle-o text-success m-r-xs"></i>SSH Доступ
                             </li>
                         </ul>
                         <div class="panel-footer text-center">
@@ -221,22 +226,22 @@
                         </div>
                         <ul class="list-group text-center no-borders m-t-sm">
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Email preview on air
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Веб-сайтов
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Spam testing and blocking
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 GB Пространства
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Unlimited Space
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Баз данных
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Unlimited user accounts
+                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Неограниченно FTP
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Free support for two years
+                                <i class="fa fa-times-circle-o text-success m-r-xs"></i> 1 - Резервная копия
                             </li>
                             <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Free upgrade for one year
+                                <i class="fa fa-times-circle-o text-success m-r-xs"></i>SSH Доступ
                             </li>
                         </ul>
                         <div class="panel-footer text-center">
