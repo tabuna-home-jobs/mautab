@@ -3,7 +3,7 @@
     <div class="col-md-2 col-sm-4 col-xs-6">
 
         <a href="{{route('home.index')}}"
-           class="{{Active::route('home.*')}}">
+           class="{{Active::route(['home.*','settings.*','manager.*'])}}">
             <span class="fa fa-user"></span>
             <h4>{{Lang::get('menu.user')}}</h4>
         </a>
@@ -63,7 +63,7 @@
         <a href="{{route('tikets.index')}}"
            class="{{Active::route('tikets.*')}}">
             <span class="fa fa-life-ring"></span>
-            <h4>{{Lang::get('menu.support')}} <span class="badge badge-menu">4</span></h4>
+            <h4>{{Lang::get('menu.support')}}</h4>
         </a>
 
         <p class="menu-small"><a href="{{route('log.index')}}">{{Lang::get('menu.log')}}</a></p>
