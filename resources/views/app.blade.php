@@ -87,12 +87,11 @@
 
 </div>
 
-
+<!--
 <div class="ng-scope app-aside-dock">
     <aside id="aside" class="app-aside hidden-xs bg-dark">
 
 
-        <!-- nav -->
         <nav class="navi clearfix">
             <ul class="nav">
                 <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
@@ -361,11 +360,10 @@
 
             </ul>
         </nav>
-        <!-- nav -->
 
     </aside>
 </div>
-
+-->
 
 <section class="app">
 
