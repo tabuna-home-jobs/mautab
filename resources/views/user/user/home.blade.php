@@ -109,7 +109,7 @@
                                         <div class="icon">
                                             <i class="fa fa-users"></i>
                                         </div>
-                                        <a href="{{URL::route('settings.index')}}" class="small-box-footer">Управление
+                                        <a href="{{route('settings.index')}}" class="small-box-footer">Управление
                                             профилем <i
                                                     class="fa fa-arrow-circle-right"></i></a>
                                     </div>
@@ -126,7 +126,7 @@
                                         <div class="icon">
                                             <i class="fa fa-money"></i>
                                         </div>
-                                        <a href="{{URL::route('payments.index')}}" class="small-box-footer">Мои счета <i
+                                        <a href="{{route('payments.index')}}" class="small-box-footer">Мои счета <i
                                                     class="fa fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@
                                         <div class="icon">
                                             <i class="fa fa-file-code-o"></i>
                                         </div>
-                                        <a href="{{URL::route('manager.index')}}" class="small-box-footer">Перейти <i
+                                        <a href="{{route('manager.index')}}" class="small-box-footer">Перейти <i
                                                     class="fa fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
@@ -167,7 +167,7 @@
                             </div>
 
 
-                            <form action="{{URL::route('search.index')}}" class="m-b-md">
+                            <form action="{{route('search.index')}}" class="m-b-md">
                                 <div class="input-group">
                                     <input type="text" name="query" class="form-control" placeholder="Поиск...">
       <span class="input-group-btn">

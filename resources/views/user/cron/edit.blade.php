@@ -9,7 +9,7 @@
             <div class="col-xs-12">
 
 
-                <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('cron.update')}}">
+                <form class="col-md-8 col-xs-12" method="post" action="{{route('cron.update')}}">
 
                     <div class="form-group input-line">
                         <label>Минута </label>

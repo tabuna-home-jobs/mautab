@@ -17,7 +17,7 @@
 
 
             <div class="collapse col-xs-12" id="add-bd">
-                <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('web.store')}}">
+                <form class="col-md-8 col-xs-12" method="post" action="{{route('web.store')}}">
 
                     <div class="alert alert-info" role="alert">Добавление домена</div>
 
@@ -114,15 +114,15 @@
 
 
                             <div class="hbox text-center b-b b-light text-sm">
-                                <a href="{{URL::route('ftp.show', $key)}}" class="col padder-v text-muted b-r b-light">
+                                <a href="{{route('ftp.show', $key)}}" class="col padder-v text-muted b-r b-light">
                                     <i class="fa fa-plus block m-b-xs"></i>
                                     <span>FTP</span>
                                 </a>
-                                <a href="{{URL::route('web.show', $key)}}" class="col padder-v text-muted b-r b-light">
+                                <a href="{{route('web.show', $key)}}" class="col padder-v text-muted b-r b-light">
                                     <i class="fa fa-pencil-square-o block m-b-xs"></i>
                                     <span>Edit</span>
                                 </a>
-                                <a href="#" onclick="delModal('{{$key}}', '{{URL::route('web.destroy')}}');"
+                                <a href="#" onclick="delModal('{{$key}}', '{{route('web.destroy')}}');"
                                    class="col padder-v text-muted">
                                     <i class="fa fa-trash block m-b-xs"></i>
                                     <span>Delete</span>

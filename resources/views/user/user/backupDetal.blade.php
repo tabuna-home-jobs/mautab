@@ -42,7 +42,7 @@
                                                         Вы действительно хотите востановить {{$value}} ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <form action="{{route('backup.store')}}" method="post">
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
@@ -89,7 +89,7 @@
                                                         Вы действительно хотите востановить {{$value}} ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <form action="{{route('backup.store')}}" method="post">
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
@@ -134,7 +134,7 @@
                                                         Вы действительно хотите востановить {{$value}} ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <form action="{{route('backup.store')}}" method="post">
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
@@ -179,7 +179,7 @@
                                                         Вы действительно хотите востановить {{$value}} ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <form action="{{route('backup.store')}}" method="post">
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
@@ -224,7 +224,7 @@
                                                         Вы действительно хотите востановить {{$value}} ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <form action="{{route('backup.store')}}" method="post">
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
@@ -269,7 +269,7 @@
                                                         Вы действительно хотите востановить {{$value}} ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="{{URL::route('backup.store')}}" method="post">
+                                                        <form action="{{route('backup.store')}}" method="post">
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>

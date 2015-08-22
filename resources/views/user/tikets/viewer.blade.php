@@ -31,7 +31,7 @@
 
                 </ul>
                 <div class="clearfix panel-footer">
-                    <form action="{{URL::route('tikets.update',$Tiket->id)}}" method="POST" id="commentform">
+                    <form action="{{route('tikets.update',$Tiket->id)}}" method="POST" id="commentform">
 
 
                         <div class="input-group">

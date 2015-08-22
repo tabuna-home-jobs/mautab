@@ -12,7 +12,7 @@
             <div class="col-md-12">
 
                 <div class="wrapper-md">
-                    <form action="{{URL::route('search.index')}}" class="m-b-md">
+                    <form action="{{route('search.index')}}" class="m-b-md">
                         <div class="input-group">
                             <input type="text" name="query" class="form-control input-lg" placeholder="Поиск...">
       <span class="input-group-btn">
@@ -35,13 +35,13 @@
 
                                             <a
                                                     @if($all['TYPE'] == 'bd')
-                                                    href="{{URL::route('bd.show',$all['RESULT'])}}"
+                                                    href="{{route('bd.show',$all['RESULT'])}}"
                                                     @elseif($all['TYPE'] == 'web')
-                                                    href="{{URL::route('web.show',$all['RESULT'])}}"
+                                                    href="{{route('web.show',$all['RESULT'])}}"
                                                     @elseif($all['TYPE'] == 'dns')
-                                                    href="{{URL::route('dns.show',$all['RESULT'])}}"
+                                                    href="{{route('dns.show',$all['RESULT'])}}"
                                                     @elseif($all['TYPE'] == 'cron')
-                                                    href="{{URL::route('cron.show',$all['LINK'])}}"
+                                                    href="{{route('cron.show',$all['LINK'])}}"
                                                     @endif
 
 

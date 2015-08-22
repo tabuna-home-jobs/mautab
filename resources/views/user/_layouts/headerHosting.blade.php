@@ -2,7 +2,7 @@
 
     <div class="col-md-2 col-sm-4 col-xs-6">
 
-        <a href="{{URL::route('home.index')}}"
+        <a href="{{route('home.index')}}"
            class="{{Active::route('home.*')}}">
             <span class="fa fa-user"></span>
             <h4>{{Lang::get('menu.user')}}</h4>
@@ -15,7 +15,7 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('web.index')}}"
+        <a href="{{route('web.index')}}"
            class="{{Active::route('web.*')}}">
             <span class="fa fa-desktop"></span>
             <h4>{{Lang::get('menu.Web')}}</h4>
@@ -28,7 +28,7 @@
 
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('dns.index')}}"
+        <a href="{{route('dns.index')}}"
            class="{{Active::route('dns.*')}}">
             <span class="fa fa-sitemap"></span>
             <h4>{{Lang::get('menu.DNS')}}</h4>
@@ -40,7 +40,7 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('bd.index')}}"
+        <a href="{{route('bd.index')}}"
            class="{{Active::route('bd.*')}}">
             <span class="fa fa-database"></span>
             <h4>{{Lang::get('menu.BD')}}</h4>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('cron.index')}}"
+        <a href="{{route('cron.index')}}"
            class="{{Active::route('cron.*')}}">
             <span class="fa fa-clock-o"></span>
             <h4>{{Lang::get('menu.Cron')}}</h4>
@@ -60,15 +60,15 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('tikets.index')}}"
+        <a href="{{route('tikets.index')}}"
            class="{{Active::route('tikets.*')}}">
             <span class="fa fa-life-ring"></span>
             <h4>{{Lang::get('menu.support')}} <span class="badge badge-menu">4</span></h4>
         </a>
 
-        <p class="menu-small"><a href="{{URL::route('log.index')}}">{{Lang::get('menu.log')}}</a></p>
+        <p class="menu-small"><a href="{{route('log.index')}}">{{Lang::get('menu.log')}}</a></p>
 
-        <p class="menu-small"><a href="{{URL::route('backup.index')}}">{{Lang::get('menu.backup')}}</a></p>
+        <p class="menu-small"><a href="{{route('backup.index')}}">{{Lang::get('menu.backup')}}</a></p>
     </div>
 
 </section>

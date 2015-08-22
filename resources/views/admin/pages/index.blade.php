@@ -17,7 +17,7 @@
                 <div class="box-header">
                     <h3 class="box-title">
                         <h5 class="box-title">
-                            <a href="{{URL::route('admin.pages.create')}}" class="btn btn-link btn-sm"><span
+                            <a href="{{route('admin.pages.create')}}" class="btn btn-link btn-sm"><span
                                         class="fa fa-plus"></span> Добавить новую запись </a>
                         </h5>
                     </h3>
@@ -42,7 +42,7 @@
                                 <td>
 
                                     <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="{{ URL::route('admin.pages.edit',$Page->id) }}"
+                                        <a href="{{ route('admin.pages.edit',$Page->id) }}"
                                            class="btn btn-default"><span class="fa fa-edit"></span> </a>
                                         <a href="#" data-toggle="modal" data-target="#Modal-{{$Page->id}}"
                                            class="btn btn-danger">
@@ -70,7 +70,7 @@
                                             Вы действительно хотите удалить {{$Page->name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="{{URL::route('admin.pages.destroy')}}" method="post">
+                                            <form action="{{route('admin.pages.destroy')}}" method="post">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет
                                                 </button>
                                                 <button type="submit" class="button-small">Да</button>

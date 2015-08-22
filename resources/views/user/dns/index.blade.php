@@ -14,7 +14,7 @@
             </p>
 
             <div class="collapse col-xs-12" id="add-dns">
-                <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('dns.store')}}">
+                <form class="col-md-8 col-xs-12" method="post" action="{{route('dns.store')}}">
 
                     <div class="alert alert-info" role="alert"> Добавление DNS домена</div>
                     <div class="form-group input-line">
@@ -121,12 +121,12 @@
 
 
                             <div class="hbox text-center b-b b-light text-sm">
-                                <a href="{{URL::route('records.show', $nameDns)}}"
+                                <a href="{{route('records.show', $nameDns)}}"
                                    class="col padder-v text-muted b-r b-light">
                                     <i class="fa fa-plus block m-b-xs"></i>
                                     <span>Records</span>
                                 </a>
-                                <a href="{{URL::route('dns.show', $nameDns)}}"
+                                <a href="{{route('dns.show', $nameDns)}}"
                                    class="col padder-v text-muted b-r b-light">
                                     <i class="fa fa-pencil-square-o block m-b-xs"></i>
                                     <span>Edit</span>
@@ -159,7 +159,7 @@
                                         Вы действительно хотите удалить {{$nameDns}}
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="{{URL::route('dns.destroy')}}"
+                                        <form action="{{route('dns.destroy')}}"
                                               method="post">
                                             <button type="button" class="btn btn-default"
                                                     data-dismiss="modal">Нет

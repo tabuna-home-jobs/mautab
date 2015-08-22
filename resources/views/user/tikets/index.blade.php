@@ -29,7 +29,7 @@
                             {{Lang::get('tikets.statusTrue')}}
                         @endif
                     </td>
-                    <td><a href="{{ URL::route('tikets.show', $Tiket->id) }}">{{Lang::get('tikets.viewTable')}}</a></td>
+                    <td><a href="{{ route('tikets.show', $Tiket->id) }}">{{Lang::get('tikets.viewTable')}}</a></td>
                 </tr>
             @endforeach
             </tbody>
@@ -41,7 +41,7 @@
     <div class="col-md-4">
         <h2>Напиши и будет решено</h2>
 
-        <form action="{{URL::route('tikets.store')}}" method="POST">
+        <form action="{{route('tikets.store')}}" method="POST">
             <div class="form-group">
                 <label>Заголовок</label>
                 <input type="text" name="title" class="form-control">
@@ -107,7 +107,7 @@
                                     </div>
                                     <div class="clear">
                                         <div><a class="text-md "
-                                                href="{{ URL::route('tikets.show', $Tiket->id) }}">{{Lang::get('tikets.viewTable')}}
+                                                href="{{ route('tikets.show', $Tiket->id) }}">{{Lang::get('tikets.viewTable')}}
                                                 ">{{ $Tiket->title  }}</a><span class="label bg-light m-l-sm ">
 
 

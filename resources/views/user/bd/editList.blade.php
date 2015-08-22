@@ -9,7 +9,7 @@
 
         @if(!empty($BdList))
             @foreach($BdList as $nameBd => $bd)
-                <form class="col-md-8" method="post" action="{{URL::route('bd.update')}}">
+                <form class="col-md-8" method="post" action="{{route('bd.update')}}">
 
                     <div class="alert alert-info" role="alert"> Префикс {{Auth::User()->nickname }}_ будет
                         автоматически добавлен к БД и пользователю

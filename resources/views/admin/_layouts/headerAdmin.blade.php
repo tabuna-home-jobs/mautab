@@ -2,7 +2,7 @@
 
     <div class="col-md-2 col-sm-4 col-xs-6">
 
-        <a href="{{URL::route('home.index')}}">
+        <a href="{{route('home.index')}}">
             <span class="fa fa-home"></span>
             <h4>{{Lang::get('menu.Panel')}}</h4>
         </a>
@@ -18,7 +18,7 @@
 
     <div class="col-md-2 col-sm-4 col-xs-6">
 
-        <a href="{{URL::route('admin.users.index')}}">
+        <a href="{{route('admin.users.index')}}">
             <span class="fa fa-user"></span>
             <h4>{{Lang::get('menu.Users')}}</h4>
         </a>
@@ -63,22 +63,22 @@
         <p class="menu-small"><a href="#">Категории</a></p>
 
         <p class="menu-small">
-            <a href="{{URL::route('admin.pages.index')}}">
+            <a href="{{route('admin.pages.index')}}">
                 {{Lang::get('menu.Pages')}}
             </a>
         </p>
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="{{URL::route('tikets.index')}}">
+        <a href="{{route('tikets.index')}}">
             <span class="fa fa-life-ring"></span>
             <h4>{{Lang::get('menu.support')}}</h4>
         </a>
         <hr>
 
-        <p class="menu-small"><a href="{{URL::route('log.index')}}">Журнал действий</a></p>
+        <p class="menu-small"><a href="{{route('log.index')}}">Журнал действий</a></p>
 
-        <p class="menu-small"><a href="{{URL::route('backup.index')}}">Резервные копии</a></p>
+        <p class="menu-small"><a href="{{route('backup.index')}}">Резервные копии</a></p>
     </div>
 
 </section>

@@ -6,7 +6,7 @@
         <div class="panel-heading">Basic form</div>
         <div class="panel-body">
 
-            <form action="{{URL::route('manager.index')}}"
+            <form action="{{route('manager.index')}}"
                   method="get" class="col-xs-12" role="form">
 
                 <div class="input-group m-b">
@@ -64,7 +64,7 @@
                         <td colspan="3">
                             @if($list['type'] == 'd')
                                 <i class="fa fa-folder-open"></i>  <a
-                                        href="{{URL::route('manager.index',['name' => $list['name']])}}">{{$list['name']}}</a>
+                                        href="{{route('manager.index',['name' => $list['name']])}}">{{$list['name']}}</a>
                             @else
                                 <i class="fa fa-file-code-o"></i>
                                 {{$list['name']}}
@@ -118,7 +118,7 @@
                                             Вы действительно хотите удалить {{$list['name']}}
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="{{URL::route('manager.destroy')}}"
+                                            <form action="{{route('manager.destroy')}}"
                                                   method="post">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет
                                                 </button>
@@ -151,7 +151,7 @@
                                             Вы действительно хотите изменить права {{$list['name']}}
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="{{URL::route('manager.update')}}"
+                                            <form action="{{route('manager.update')}}"
                                                   method="post">
 
                                                 <div class="form-group">

@@ -100,7 +100,7 @@
                 <div class="panel-body">
 
 
-                    <form class="form-horizontal" action="{{URL::route('settings.update')}}"
+                    <form class="form-horizontal" action="{{route('settings.update')}}"
                           method="post">
 
                         <div class="form-group">
@@ -207,7 +207,7 @@
                 <div class="panel-body">
 
 
-                    <form class="form-horizontal" action="{{URL::route('settings.update')}}"
+                    <form class="form-horizontal" action="{{route('settings.update')}}"
                           method="post">
 
                         <div class="form-group">
@@ -264,7 +264,7 @@
                 <div class="panel-body">
 
 
-                    <form class="form-horizontal" action="{{URL::route('settings.update')}}"
+                    <form class="form-horizontal" action="{{route('settings.update')}}"
                           method="post">
 
                         <div class="col-sm-12">

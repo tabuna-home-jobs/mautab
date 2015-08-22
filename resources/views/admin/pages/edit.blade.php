@@ -15,7 +15,7 @@
             <div class='col-md-12'>
 
 
-                <form action="{{URL::route('admin.pages.update')}}" method="post">
+                <form action="{{route('admin.pages.update')}}" method="post">
 
 
                     <div class="col-md-4">

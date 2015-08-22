@@ -16,12 +16,12 @@
                         <td>{{$User->balans}} руб</td>
                         <td>
                             <div class="btn-group pull-right" role="group" aria-label="...">
-                                <a href="{{URL::route('LoginAs', $User->nickname)}}" class="btn btn-default">
+                                <a href="{{route('LoginAs', $User->nickname)}}" class="btn btn-default">
                                     <i class="fa fa-sign-out"></i>
                                 </a>
 
 
-                                <a href="{{URL::route('admin.users.show', $User->id)}}" class="btn btn-default">
+                                <a href="{{route('admin.users.show', $User->id)}}" class="btn btn-default">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>
 
@@ -47,7 +47,7 @@
                                     Вы действительно хотите удалить {{$User->nickname}}
                                 </div>
                                 <div class="modal-footer">
-                                    <form action="{{URL::route('admin.users.destroy')}}" method="post">
+                                    <form action="{{route('admin.users.destroy')}}" method="post">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                                         <button type="submit" class="button-small">Да</button>
                                         <input type="hidden" name="id" value="{{$User->id}}"/>

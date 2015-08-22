@@ -12,7 +12,7 @@
         <div class='row'>
             <div class='col-md-12'>
 
-                <form action="{{URL::route('admin.pages.store')}}" method="post">
+                <form action="{{route('admin.pages.store')}}" method="post">
 
 
                     <div class="col-md-4">

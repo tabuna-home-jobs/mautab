@@ -16,7 +16,7 @@
 
 
             <div class="collapse col-xs-12" id="add-bd">
-                <form class="col-md-8 col-xs-12" method="post" action="{{URL::route('bd.store')}}">
+                <form class="col-md-8 col-xs-12" method="post" action="{{route('bd.store')}}">
 
                     <div class="alert alert-info" role="alert"> Префикс {{Auth::User()->nickname }}_ будет автоматически
                         добавлен к БД и пользователю БД
@@ -144,7 +144,7 @@
                                     <i class="fa fa-database block m-b-xs"></i>
                                     <span>phpmyadmin</span>
                                 </a>
-                                <a href="{{URL::route('bd.show', $nameBd)}}"
+                                <a href="{{route('bd.show', $nameBd)}}"
                                    class="col padder-v text-muted b-r b-light">
                                     <i class="fa fa-pencil-square-o block m-b-xs"></i>
                                     <span>Edit</span>
@@ -175,7 +175,7 @@
                                         Вы действительно хотите удалить {{$nameBd}}
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="{{URL::route('bd.destroy')}}" method="post">
+                                        <form action="{{route('bd.destroy')}}" method="post">
                                             <button type="button" class="btn btn-default"
                                                     data-dismiss="modal">Нет
                                             </button>
