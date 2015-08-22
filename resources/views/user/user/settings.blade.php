@@ -140,7 +140,8 @@
                             <label class="col-sm-3 control-label">Телефон</label>
 
                             <div class="col-sm-9"><input type="text" class="form-control"
-                                                         value="{{Auth::User()->phone}}"></div>
+                                                         value="{{Auth::User()->phone}}" name="phone"
+                                                         placeholder="Номер телефона"></div>
                         </div>
 
 
@@ -206,8 +207,8 @@
                 <div class="panel-body">
 
 
-                    <form class="form-horizontal" role="form">
-
+                    <form class="form-horizontal" action="{{URL::route('settings.update')}}"
+                          method="post">
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="password">Пароль</label>
@@ -235,6 +236,9 @@
                         </div>
 
 
+                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-9">
                                 <button type="submit" class="btn btn-primary">Изменить</button>
@@ -260,58 +264,69 @@
                 <div class="panel-body">
 
 
-                    <div class="col-sm-12">
+                    <form class="form-horizontal" action="{{URL::route('settings.update')}}"
+                          method="post">
+
+                        <div class="col-sm-12">
 
 
-                        <div class="form-group col-xs-12">
-                            <label class="col-sm-8 control-label">Я хочу получать уведомления по Email</label>
+                            <div class="form-group col-xs-12">
+                                <label class="col-sm-8 control-label">Я хочу получать уведомления по Email</label>
 
-                            <div class="col-sm-4">
-                                <label class="i-switch m-t-xs m-r">
-                                    <input type="radio" name="switch" checked="" value="1">
-                                    <i></i>
-                                </label>
-                                <label class="i-switch bg-danger m-t-xs m-r">
-                                    <input type="radio" name="switch" value="0">
-                                    <i></i>
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <div class="line line-dashed b-b"></div>
-
-
-                        <div class="form-group col-xs-12">
-                            <label class="col-sm-8 control-label">Я хочу получать уведомления по Email</label>
-
-                            <div class="col-sm-4">
-                                <label class="i-switch m-t-xs m-r">
-                                    <input type="radio" name="switch" checked="" value="1">
-                                    <i></i>
-                                </label>
-                                <label class="i-switch bg-danger m-t-xs m-r">
-                                    <input type="radio" name="switch" value="0">
-                                    <i></i>
-                                </label>
-                            </div>
-
-                            <div class="line line-dashed b-b"></div>
-
-                            <div class="form-group">
-                                <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-primary">Изменить</button>
+                                <div class="col-sm-4">
+                                    <label class="i-switch m-t-xs m-r">
+                                        <input type="radio" name="email_notification"
+                                               @if(Auth::user()->email_notification) checked="" @endif value="1">
+                                        <i></i>
+                                    </label>
+                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                        <input type="radio" name="email_notification"
+                                               @if(!Auth::user()->email_notification) checked="" @endif value="0">
+                                        <i></i>
+                                    </label>
                                 </div>
                             </div>
 
 
+                            <div class="line line-dashed b-b"></div>
+
+
+                            <div class="form-group col-xs-12">
+                                <label class="col-sm-8 control-label">Я хочу получать уведомления по Телефону</label>
+
+                                <div class="col-sm-4">
+                                    <label class="i-switch m-t-xs m-r">
+                                        <input type="radio" name="phone_notification"
+                                               @if(Auth::user()->phone_notification) checked="" @endif value="1">
+                                        <i></i>
+                                    </label>
+                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                        <input type="radio" name="phone_notification"
+                                               @if(!Auth::user()->phone_notification) checked="" @endif value="0">
+                                        <i></i>
+                                    </label>
+                                </div>
+
+                                <div class="line line-dashed b-b"></div>
+
+
+                                <input type="hidden" name="_method" value="PUT">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <button type="submit" class="btn btn-primary">Изменить</button>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
+                    </form>
 
-
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 

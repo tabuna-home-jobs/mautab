@@ -51,23 +51,26 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $table = 'users';
 
+    protected $guarded = [
+        'nickname',
+        'first_name',
+        'last_name',
+        'server',
+        'balans',
+        'role',
+        'suspend',
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'nickname',
-        'first_name',
-        'last_name',
-        'end_of_service',
-        'server',
-        'balans',
+        'lang',
         'package_id',
-        'role',
         'email',
         'password',
-        'suspend',
         'phone',
         'email_notification',
         'phone_notification',
