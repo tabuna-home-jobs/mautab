@@ -14,7 +14,8 @@
 
 
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:600,400,500,300&subset=latin,cyrillic' rel='stylesheet'
+    <link href='http://fonts.googleapis.com/css?family=Roboto:700,600,400,500,300&subset=latin,cyrillic'
+          rel='stylesheet'
           type='text/css'>
 
     <!-- CSS -->

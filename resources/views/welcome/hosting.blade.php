@@ -8,8 +8,8 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div class="m-t-xxl m-b-xxl padder-v">
                     <h1 class="font-bold l-h-1x m-t-xxl text-black padder-v animated fadeInDown">
-                        Идейные соображения высшего порядка, а также консультация с широким активом играет важную
-                        роль<span class="b-b b-black b-3x"> играет важную роль</span> в формировании модели развития.
+                        Идейные соображения высшего порядка <span class="b-b b-black b-3x"> играют важную роль</span> в
+                        формировании модели развития.
                     </h1>
 
                     <h3 class="text-muted m-t-xl l-h-1x">

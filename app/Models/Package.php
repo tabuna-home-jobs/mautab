@@ -31,7 +31,22 @@ class Package extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'price', 'price_day'];
+	protected $fillable = [
+		'name',
+		'price',
+		'WebDomains',
+		'WebAliases',
+		'DNSDomains',
+		'DNSAliases',
+		'MailDomains',
+		'MainAccounts',
+		'Databases',
+		'CronJobs',
+		'Backups',
+		'Quota',
+		'Bandwidth',
+		'SSHAccess'
+	];
 
 
 	public function getUsers()
