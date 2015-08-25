@@ -77,34 +77,14 @@
                         <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                             <span>Главное</span>
                         </li>
+
                         <li>
-                            <a href="" class="auto">
-                  <span class="pull-right text-muted">
-                    <i class="fa fa-fw fa-angle-right text"></i>
-                    <i class="fa fa-fw fa-angle-down text-active"></i>
-                  </span>
-                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                            <a href="#">
+                                <i class="fa fa-line-chart text-primary-dker"></i>
                                 <span>Dashboard</span>
                             </a>
-                            <ul class="nav nav-sub dk">
-                                <li class="nav-sub-header">
-                                    <a href="">
-                                        <span>Dashboard</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.html">
-                                        <span>Dashboard v1</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="dashboard.html">
-                                        <b class="label bg-info pull-right">N</b>
-                                        <span>Dashboard v2</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
+
 
                         <li class="{{Active::route('admin.users.*')}}">
                             <a href="{{route('admin.users.index')}}">
@@ -112,13 +92,31 @@
                                 <span>Пользователи</span>
                             </a>
                         </li>
+
+
+                        <li class="line dk"></li>
+
+                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                            <span>Хостинг</span>
+                        </li>
+
+
                         <li>
-                            <a href="mail.html">
-                                <b class="badge bg-info pull-right">9</b>
-                                <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
-                                <span>Email</span>
+                            <a href="#">
+                                <i class="fa fa-server"></i>
+                                <span>Сервер</span>
                             </a>
                         </li>
+
+
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-cubes"></i>
+                                <span>Тарифы</span>
+                            </a>
+                        </li>
+
+
                         <li class="line dk"></li>
 
                         <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
@@ -130,9 +128,8 @@
                     <i class="fa fa-fw fa-angle-right text"></i>
                     <i class="fa fa-fw fa-angle-down text-active"></i>
                   </span>
-                                <b class="badge bg-info pull-right">3</b>
                                 <i class="glyphicon glyphicon-th"></i>
-                                <span>Layout</span>
+                                <span>Контент</span>
                             </a>
                             <ul class="nav nav-sub dk">
                                 <li class="nav-sub-header">
@@ -157,6 +154,15 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="mail.html">
+                                <i class="glyphicon glyphicon-envelope icon"></i>
+                                <span>Email рассылка</span>
+                            </a>
+                        </li>
+
+
                     </ul>
                 </nav>
                 <!-- nav -->
