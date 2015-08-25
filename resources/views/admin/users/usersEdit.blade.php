@@ -3,34 +3,24 @@
 @section('content')
 
 
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">Пользователь</h1>
+    </div>
 
 
-    <div class=" col-xs-12">
-        <form class="col-md-8 col-xs-12" method="post" action="{{route('admin.users.update')}}">
 
-            <div data-example-id="togglable-tabs" role="tabpanel" class="bs-example bs-example-tabs">
-                <ul role="tablist" class="nav nav-tabs" id="myTab">
-                    <li class="active" role="presentation"><a aria-expanded="true" aria-controls="home"
-                                                              data-toggle="tab" role="tab" id="home-tab" href="#home">Основное</a>
-                    </li>
 
-                    <li role="presentation"><a aria-controls="groups" data-toggle="tab" id="groups-tab" role="tab"
-                                               href="#groups">Группы</a></li>
 
-                    <li role="presentation"><a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab"
-                                               href="#profile">Права</a></li>
+    <div class="wrapper-md">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Пользователь
+            </div>
 
-                </ul>
+
+            <form class="panel-body" method="post" action="{{route('admin.users.update')}}">
+
                 <div class="tab-content" id="myTabContent">
                     <div aria-labelledby="home-tab" id="home" class="tab-pane fade in active" role="tabpanel">
 
@@ -78,21 +68,6 @@
                                         Отметить/снять все
                                     </label>
                                 </div>
-                                @foreach($groups as $value)
-                                    <div class="permissGroup col-xs-4">
-                                        <label>
-                                            <input type="checkbox" name="groups[]"
-                                                   value="{{$value->id}}"
-                                                   @foreach($thisgroup as $thisUserGroup)
-                                                   @if($value->id == $thisUserGroup->id)
-                                                   checked
-                                                    @endif
-                                                    @endforeach
-                                                    />
-                                            {{$value->name}}
-                                        </label>
-                                    </div>
-                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -135,30 +110,11 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="submit" value="Отправить" class="btn btn-blue">
                 </div>
-            </div>
-
 
         </form>
 
-        <div class="col-md-4 hidden-sm hidden-xs">
-
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Информация:</h3>
-                </div>
-                <div class="panel-body">
-                    cron — демон-планировщик задач в UNIX-подобных операционных системах, использующийся для
-                    периодического выполнения заданий в определённое время.
-                    Регулярные действия описываются инструкциями, помещенными в файлы crontab и в специальные
-                    директории.
-                </div>
-            </div>
-
-        </div>
-
-        <hr class="clearfix col-xs-12">
     </div>
 
+    </div>
 
 @endsection

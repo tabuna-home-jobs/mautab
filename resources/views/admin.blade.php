@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MauTab</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -13,105 +14,205 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet'
           type='text/css'>
 
-
-    <!-- CSS -->
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/css/app.css" type="text/css"/>
     <link rel="stylesheet" href="/main.css">
 
-
-    <!-- Js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.0/isotope.pkgd.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-
 </head>
-<body>
 
 
-<header>
+<!-- header -->
+<header id="header" class="navbar bg-white-only">
     <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-xs-6 col-sm-3">
-                <a href="/" class="logo">
-                    <img src="/images/logo.png" alt="">
-                </a>
-            </div>
-            <div class="col-md-6 col-xs-6 col-sm-6">
-                <div class="menu">
-                    <nav class="navbar navbar-default" role="navigation">
-                        <div class="container-fluid">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                        data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
+        <div class="navbar-header">
+            <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a href="/" class="navbar-brand m-r-lg"><span class="h3">Mautab</span></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
 
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="/">О нас</a></li>
-                                    <li><a href="/web">Веб студия</a></li>
-                                    <li><a href="/host">Хостинг</a></li>
-                                    <li><a href="/patner">Партнёрам</a></li>
-                                </ul>
+                <li class="active"><a href="#">Возможности</a></li>
+                <li><a href="#">Цена</a></li>
+                <li><a href="#">Форум</a></li>
 
-                            </div>
-                            <!-- /.navbar-collapse -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    @if(Auth::check())
+                        <div class="m-t-sm">
+                            <a href="/auth/logout" class="btn btn-link btn-sm">Выйти</a>
+                            <a href="/home" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Панель
+                                    управления</strong></a>
                         </div>
-                        <!-- /.container-fluid -->
-                    </nav>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-xs-12 col-sm-3">
-                <ul class="social-info">
-                    <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-paper-plane"></i></a></li>
-                    <li><a href="#"><i class="fa fa-phone-square"></i></a></li>
-                </ul>
-            </div>
-
-
+                    @else
+                        <div class="m-t-sm">
+                            <a href="/auth/login" class="btn btn-link btn-sm">Войти</a> или
+                            <a href="/auth/register" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Зарегистрироваться</strong></a>
+                        </div>
+                    @endif
+                </li>
+            </ul>
         </div>
     </div>
 </header>
+<!-- / header -->
 
 
-@include('admin/_layouts/headerAdmin')
+<div class="app">
 
 
+    <!-- aside -->
+    <aside id="aside" class="app-aside hidden-xs bg-dark">
+        <div class="aside-wrap">
+            <div class="navi-wrap">
 
+                <!-- nav -->
+                <nav ui-nav="" class="navi clearfix">
+                    <ul class="nav">
+                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                            <span>Главное</span>
+                        </li>
+                        <li>
+                            <a href="" class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                <span>Dashboard</span>
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li class="nav-sub-header">
+                                    <a href="">
+                                        <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html">
+                                        <span>Dashboard v1</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="dashboard.html">
+                                        <b class="label bg-info pull-right">N</b>
+                                        <span>Dashboard v2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
+                        <li class="{{Active::route('admin.users.*')}}">
+                            <a href="{{route('admin.users.index')}}">
+                                <i class="fa fa-users"></i>
+                                <span>Пользователи</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mail.html">
+                                <b class="badge bg-info pull-right">9</b>
+                                <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
+                                <span>Email</span>
+                            </a>
+                        </li>
+                        <li class="line dk"></li>
 
-@if (Session::has('good'))
-    <div class="container">
-        <div class="alert alert-success text-center">{{Session::get('good')}}</div>
-    </div>
+                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                            <span>Компоненты</span>
+                        </li>
+                        <li>
+                            <a href="" class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                                <b class="badge bg-info pull-right">3</b>
+                                <i class="glyphicon glyphicon-th"></i>
+                                <span>Layout</span>
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li class="nav-sub-header">
+                                    <a href="">
+                                        <span>Контент</span>
+                                    </a>
+                                </li>
+                                <li class="{{Active::route('admin.pages.*')}}">
+                                    <a href="{{route('admin.pages.index')}}">
+                                        <span>Страницы</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="layout_fullwidth.html">
+                                        <span>Full width</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="layout_boxed.html">
+                                        <span>Boxed layout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- nav -->
 
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <strong>Что то пошло не так!</strong> Пожалуйста проверьте вводимые данные.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+            </div>
         </div>
-    @endif
+    </aside>
+    <!-- / aside -->
 
-@endif
 
-<section class="container app-container">
-    @yield('content')
-</section>
+    <!-- content -->
+    <div id="content" class="app-content" role="main">
+        <div class="app-content-body ">
+
+
+            @if (Session::has('good'))
+                <div class="alert alert-success text-center container">
+                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
+                                aria-hidden="true">×</span></button>
+                    {{Session::get('good')}}
+                </div>
+            @endif
+            @if (Session::has('danger'))
+                <div class="alert alert-danger text-center container">
+                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
+                                aria-hidden="true">×</span></button>
+                    {{Session::get('danger')}}
+                </div>
+            @endif
+            @if (count($errors) > 0)
+                <div class="alert alert-danger container">
+                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
+                                aria-hidden="true">×</span></button>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+
+
+
+            @yield('content')
+
+        </div>
+    </div>
+    <!-- /content -->
+</div>
+
+
+
 
 @include('footer')
+
+
+
+

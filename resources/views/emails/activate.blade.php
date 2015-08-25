@@ -3,7 +3,7 @@
         <td align="center" bgcolor="#eff3f8">
 
 
-            <!--[if gte mso 10]>
+            <--[if gte mso 10]>
             <table width="680" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td>

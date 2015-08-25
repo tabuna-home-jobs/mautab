@@ -51,13 +51,11 @@ class UserController extends Controller
 	 */
 	public function show($id)
 	{
-		/*
-		$User = Sentry::findUserById($id);
-        $groups = Sentry::findAllGroups();
-        $thisgroup = $User->getGroups();
 
-		return view('admin/users/usersEdit', ['user' => $User, 'groups' => $groups, 'thisgroup' => $thisgroup]);
-		*/
+		$User = User::find($id);
+
+		return view('admin/users/usersEdit', ['user' => $User]);
+
 	}
 
 	/**
