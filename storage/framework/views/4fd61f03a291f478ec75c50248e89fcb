@@ -1,0 +1,68 @@
+<?php $__env->startSection('content'); ?>
+
+
+
+
+
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Недавние действия</div>
+        <div class="panel-body">
+
+
+            <ul class="timeline">
+
+                <li class="tl-header">
+                    <div class="btn btn-icon btn-rounded btn-default"><i class="fa fa-history"></i></div>
+                </li>
+
+                <?php $__empty_1 = true; foreach($log as $elementlog): $__empty_1 = false; ?>
+
+                    <li class="tl-item">
+                        <div class="tl-wrap b-primary">
+                            <span class="tl-date"><?php echo e($elementlog['TIME']); ?></span>
+
+                            <div class="tl-content panel padder b-a block">
+                                <span class="arrow left pull-up hidden-left"></span>
+                                <span class="arrow right pull-up visible-left"></span>
+
+                                <div class="text-lt"><?php echo e($elementlog['CMD']); ?></div>
+                                <small class="text-right"><?php echo e($elementlog['DATE']); ?></small>
+                            </div>
+                        </div>
+                    </li>
+
+
+                <?php endforeach; if ($__empty_1): ?>
+
+                    <li class="tl-item">
+                        <div class="tl-wrap b-primary">
+                            <span class="tl-date"></span>
+
+                            <div class="tl-content panel padder b-a block">
+                                <span class="arrow left pull-up hidden-left"></span>
+                                <span class="arrow right pull-up visible-left"></span>
+
+                                <div class="text-lt">Лог чист</div>
+                            </div>
+                        </div>
+                    </li>
+                <?php endif; ?>
+
+
+                <li class="tl-header">
+                    <div class="btn btn-icon btn-rounded btn-default"><i class="fa fa-history"></i></div>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </div>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

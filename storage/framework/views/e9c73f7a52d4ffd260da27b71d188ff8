@@ -6,7 +6,7 @@
     <title>MauTab</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -43,18 +43,18 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    @if(Auth::check())
+                    <?php if(Auth::check()): ?>
                         <div class="m-t-sm">
                             <a href="/auth/logout" class="btn btn-link btn-sm">Выйти</a>
                             <a href="/home" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Панель
                                     управления</strong></a>
                         </div>
-                    @else
+                    <?php else: ?>
                         <div class="m-t-sm">
                             <a href="/auth/login" class="btn btn-link btn-sm">Войти</a> или
                             <a href="/auth/register" class="btn btn-sm btn-primary btn-rounded m-l"><strong>Зарегистрироваться</strong></a>
                         </div>
-                    @endif
+                    <?php endif; ?>
                 </li>
             </ul>
         </div>
@@ -79,16 +79,17 @@
                         </li>
 
 
-                        <li class="{{Active::route('admin..*')}}">
-                            <a href="{{route('admin..index')}}">
+
+                        <li class="<?php echo e(Active::route('admin..*')); ?>">
+                            <a href="<?php echo e(route('admin..index')); ?>">
                                 <i class="fa fa-line-chart text-primary-dker"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
 
 
-                        <li class="{{Active::route('admin.users.*')}}">
-                            <a href="{{route('admin.users.index')}}">
+                        <li class="<?php echo e(Active::route('admin.users.*')); ?>">
+                            <a href="<?php echo e(route('admin.users.index')); ?>">
                                 <i class="fa fa-users"></i>
                                 <span>Пользователи</span>
                             </a>
@@ -110,8 +111,8 @@
                         </li>
 
 
-                        <li class="{{Active::route('admin.package.*')}}">
-                            <a href="{{route('admin.package.index')}}">
+                        <li class="<?php echo e(Active::route('admin.package.*')); ?>">
+                            <a href="<?php echo e(route('admin.package.index')); ?>">
                                 <i class="fa fa-cubes"></i>
                                 <span>Тарифы</span>
                             </a>
@@ -138,8 +139,8 @@
                                         <span>Контент</span>
                                     </a>
                                 </li>
-                                <li class="{{Active::route('admin.pages.*')}}">
-                                    <a href="{{route('admin.pages.index')}}">
+                                <li class="<?php echo e(Active::route('admin.pages.*')); ?>">
+                                    <a href="<?php echo e(route('admin.pages.index')); ?>">
                                         <span>Страницы</span>
                                     </a>
                                 </li>
@@ -179,36 +180,38 @@
         <div class="app-content-body ">
 
 
-            @if (Session::has('good'))
+            <?php if(Session::has('good')): ?>
                 <div class="alert alert-success text-center container">
                     <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
                                 aria-hidden="true">×</span></button>
-                    {{Session::get('good')}}
+                    <?php echo e(Session::get('good')); ?>
+
                 </div>
-            @endif
-            @if (Session::has('danger'))
+            <?php endif; ?>
+            <?php if(Session::has('danger')): ?>
                 <div class="alert alert-danger text-center container">
                     <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
                                 aria-hidden="true">×</span></button>
-                    {{Session::get('danger')}}
+                    <?php echo e(Session::get('danger')); ?>
+
                 </div>
-            @endif
-            @if (count($errors) > 0)
+            <?php endif; ?>
+            <?php if(count($errors) > 0): ?>
                 <div class="alert alert-danger container">
                     <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
                                 aria-hidden="true">×</span></button>
                     <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
+                        <?php foreach($errors->all() as $error): ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
-            @endif
+            <?php endif; ?>
 
 
 
 
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
 
         </div>
     </div>
@@ -218,7 +221,7 @@
 
 
 
-@include('footer')
+<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 
