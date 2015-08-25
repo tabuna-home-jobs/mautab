@@ -11,32 +11,10 @@
                     <h1 class="m-n font-thin h3 text-black">Dashboard</h1>
                     <small class="text-muted">Welcome to angulr application</small>
                 </div>
-                <div class="col-sm-6 text-right hidden-xs">
-                    <div class="inline m-r text-left">
-                        <div class="m-b-xs">1290 <span class="text-muted">items</span></div>
-                        <div ng-init="d3_1=[ 106,108,110,105,110,109,105,104,107,109,105,100,105,102,101,99,98 ]"
-                             ui-jq="sparkline"
-                             ui-options="[106,108,110,105,110,109,105,104,107,109,105,100,105,102,101,99,98], {type:'bar', height:20, barWidth:5, barSpacing:1, barColor:'#dce5ec'}"
-                             class="sparkline inline">
-                            <canvas width="101" height="20"
-                                    style="display: inline-block; width: 101px; height: 20px; vertical-align: top;"></canvas>
-                        </div>
-                    </div>
-                    <div class="inline text-left">
-                        <div class="m-b-xs">$30,000 <span class="text-muted">revenue</span></div>
-                        <div ng-init="d3_2=[ 105,102,106,107,105,104,101,99,98,109,105,100,108,110,105,110,109 ]"
-                             ui-jq="sparkline"
-                             ui-options="[105,102,106,107,105,104,101,99,98,109,105,100,108,110,105,110,109], {type:'bar', height:20, barWidth:5, barSpacing:1, barColor:'#dce5ec'}"
-                             class="sparkline inline">
-                            <canvas width="101" height="20"
-                                    style="display: inline-block; width: 101px; height: 20px; vertical-align: top;"></canvas>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <!-- / main header -->
-        <div class="wrapper-md ng-scope" ng-controller="FlotChartDemoCtrl">
+        <div class="wrapper-md">
             <!-- stats -->
             <div class="row">
                 <div class="col-md-5">
@@ -82,12 +60,105 @@
                         <div class="col-xs-12 m-b-md">
                             <div class="r bg-light dker item hbox no-border">
                                 <div class="col w-xs v-middle hidden-md">
-                                    <div ng-init="d3_3=[60,40]" ui-jq="sparkline"
-                                         ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}"
-                                         class="sparkline inline">
-                                        <canvas width="40" height="40"
-                                                style="display: inline-block; width: 40px; height: 40px; vertical-align: top;"></canvas>
+
+                                    <div ui-jq="plot" ui-refresh="showSpline" ui-options="
+              [
+                { data: [ [0,7],[1,6.5],[2,12.5],[3,7],[4,9],[5,6],[6,11],[7,6.5],[8,8],[9,7] ], label:'TV', points: { show: true, radius: 1}, splines: { show: true, tension: 0.4, lineWidth: 1, fill: 0.8 } },
+                { data: [ [0,4],[1,4.5],[2,7],[3,4.5],[4,3],[5,3.5],[6,6],[7,3],[8,4],[9,3] ], label:'Mag', points: { show: true, radius: 1}, splines: { show: true, tension: 0.4, lineWidth: 1, fill: 0.8 } }
+              ],
+              {
+                colors: ['#23b7e5', '#7266ba'],
+                series: { shadowSize: 3 },
+                xaxis:{ font: { color: '#a1a7ac' } },
+                yaxis:{ font: { color: '#a1a7ac' }, max:20 },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                tooltip: true,
+                tooltipOpts: { content: 'Visits of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 10, y: -25 } }
+              }
+            " style="height: 246px; padding: 0px; position: relative;">
+                                        <canvas class="flot-base" width="464" height="246"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 464px; height: 246px;"></canvas>
+                                        <div class="flot-text"
+                                             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+                                            <div class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                                 style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;">
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 14px; text-align: center;">
+                                                    0
+                                                </div>
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 63px; text-align: center;">
+                                                    1
+                                                </div>
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 112px; text-align: center;">
+                                                    2
+                                                </div>
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 162px; text-align: center;">
+                                                    3
+                                                </div>
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 211px; text-align: center;">
+                                                    4
+                                                </div>
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 260px; text-align: center;">
+                                                    5
+                                                </div>
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 310px; text-align: center;">
+                                                    6
+                                                </div>
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 359px; text-align: center;">
+                                                    7
+                                                </div>
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 408px; text-align: center;">
+                                                    8
+                                                </div>
+                                                <div style="position: absolute; max-width: 46px; top: 233px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 458px; text-align: center;">
+                                                    9
+                                                </div>
+                                            </div>
+                                            <div class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                                 style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;">
+                                                <div style="position: absolute; top: 222px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 6px; text-align: right;">
+                                                    0
+                                                </div>
+                                                <div style="position: absolute; top: 166px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 6px; text-align: right;">
+                                                    5
+                                                </div>
+                                                <div style="position: absolute; top: 111px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 0px; text-align: right;">
+                                                    10
+                                                </div>
+                                                <div style="position: absolute; top: 56px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 0px; text-align: right;">
+                                                    15
+                                                </div>
+                                                <div style="position: absolute; top: 1px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 0px; text-align: right;">
+                                                    20
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <canvas class="flot-overlay" width="464" height="246"
+                                                style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 464px; height: 246px;"></canvas>
+                                        <div class="legend">
+                                            <div style="position: absolute; width: 43px; height: 44px; top: 12px; right: 9px; opacity: 0.85; background-color: rgb(255, 255, 255);"></div>
+                                            <table style="position:absolute;top:12px;right:9px;;font-size:smaller;color:#dce5ec">
+                                                <tbody>
+                                                <tr>
+                                                    <td class="legendColorBox">
+                                                        <div style="border:1px solid #ccc;padding:1px">
+                                                            <div style="width:4px;height:0;border:5px solid rgb(35,183,229);overflow:hidden"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="legendLabel">TV</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="legendColorBox">
+                                                        <div style="border:1px solid #ccc;padding:1px">
+                                                            <div style="width:4px;height:0;border:5px solid rgb(114,102,186);overflow:hidden"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="legendLabel">Mag</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
+
                                 </div>
                                 <div class="col dk padder-v r-r">
                                     <div class="text-primary-dk font-thin h1"><span>$12,670</span></div>

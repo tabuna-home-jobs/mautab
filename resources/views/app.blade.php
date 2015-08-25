@@ -71,7 +71,7 @@
             <div class="navi-wrap">
 
                 <!-- nav -->
-                <nav ui-nav="" class="navi clearfix">
+                <nav class="navi clearfix">
 
                     <div class="container">
                         @include('user/_layouts/headerHosting')

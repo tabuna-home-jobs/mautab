@@ -79,7 +79,6 @@
                         </li>
 
 
-
                         <li class="<?php echo e(Active::route('admin..*')); ?>">
                             <a href="<?php echo e(route('admin..index')); ?>">
                                 <i class="fa fa-line-chart text-primary-dker"></i>
