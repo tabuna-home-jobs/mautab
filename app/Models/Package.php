@@ -50,6 +50,10 @@ class Package extends Model
 	];
 
 
+	protected $casts = [
+		'SSHAccess' => 'boolean',
+	];
+
 	public function getUsers()
 	{
 		return $this->hasMany(\Mautab\Models\User::class);

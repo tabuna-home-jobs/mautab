@@ -13,7 +13,7 @@
                         <div class="cell scrollable hover">
                             <div class="cell-inner">
                                 <div class="list-group no-radius no-border no-bg m-b-none">
-                                    <li class="list-group-item b-b" tabindex="0">Тарифы:</li>
+                                    <li class="list-group-item b-b text-center" tabindex="0">Тарифы:</li>
 
 
                                     @foreach($Package as $key => $value)
@@ -32,10 +32,7 @@
                         </div>
                     </div>
                     <div class="wrapper b-t">
-                        <span tooltip="Double click to Edit" class="pull-right text-muted inline wrapper-xs m-r-sm"><i
-                                    class="fa fa-question"></i></span>
-
-                        <a href="{{route('admin.package.create')}}" class="btn btn-sm btn-default" tabindex="0"><i
+                        <a href="{{route('admin.package.index')}}" class="btn btn-sm btn-default" tabindex="0"><i
                                     class="fa fa-plus fa-fw m-r-xs"></i> Новый тариф</a>
                     </div>
                 </div>
@@ -49,6 +46,14 @@
                         <div class="cell">
                             <div class="cell-inner">
                                 <div class="wrapper-lg">
+
+
+                                    <div class="hbox h-auto m-b-lg text-center">
+                                        <div class="col v-middle h1 font-thin">
+                                            <div>{{$SelectPackage->name}}</div>
+                                        </div>
+                                    </div>
+
 
                                     <!-- fields -->
                                     <form class="form-horizontal" method="post"
@@ -120,11 +125,20 @@
                                             </div>
 
 
-                                            <div class="col-sm-offset-4 col-sm-8">
-                                                <div class="checkbox">
-                                                    <label class="i-checks">
-                                                        <input type="checkbox" name="SSHAccess" checked=""><i></i> SSH
-                                                        Access
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">SSH
+                                                    Access</label>
+
+                                                <div class="col-sm-8">
+                                                    <label class="i-switch bg-success m-t-xs m-r">
+                                                        <input type="radio" name="SSHAccess" value="1"
+                                                               @if($SelectPackage->SSHAccess) checked @endif>
+                                                        <i></i>
+                                                    </label>
+                                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                                        <input type="radio" name="SSHAccess" value="0"
+                                                               @if(!$SelectPackage->SSHAccess) checked @endif>
+                                                        <i></i>
                                                     </label>
                                                 </div>
                                             </div>
