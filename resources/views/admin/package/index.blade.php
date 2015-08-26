@@ -76,6 +76,24 @@
 
 
                                             <div class="form-group">
+                                                <label for="Quota" class="col-sm-4 control-label">Quota</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="number" class="form-control" name="Quota">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="Bandwidth" class="col-sm-4 control-label">Bandwidth</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="number" class="form-control" name="Bandwidth">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
                                                 <label for="WebDomains" class="col-sm-4 control-label">Web
                                                     Domains</label>
 
@@ -91,26 +109,6 @@
 
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" name="WebAliases">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label for="DNSDomains" class="col-sm-4 control-label">DNS
-                                                    Domains</label>
-
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" name="DNSDomains">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label for="DNSRecords" class="col-sm-4 control-label">DNS
-                                                    Records</label>
-
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" name="DNSRecords">
                                                 </div>
                                             </div>
 
@@ -132,8 +130,62 @@
                                             </div>
 
 
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">Рекомендованный</label>
+
+                                                <div class="col-sm-8">
+                                                    <label class="i-switch bg-success m-t-xs m-r">
+                                                        <input type="radio" name="Recommended" value="1">
+                                                        <i></i>
+                                                    </label>
+                                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                                        <input type="radio" name="Recommended" value="0"
+                                                               checked>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">Скрытый</label>
+
+                                                <div class="col-sm-8">
+                                                    <label class="i-switch bg-success m-t-xs m-r">
+                                                        <input type="radio" name="Hidden" value="1">
+                                                        <i></i>
+                                                    </label>
+                                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                                        <input type="radio" name="Hidden" value="0" checked>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                         <div class="col-sm-6">
+
+
+                                            <div class="form-group">
+                                                <label for="DNSDomains" class="col-sm-4 control-label">DNS
+                                                    Domains</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="number" class="form-control" name="DNSDomains">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="DNSRecords" class="col-sm-4 control-label">DNS
+                                                    Records</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="number" class="form-control" name="DNSRecords">
+                                                </div>
+                                            </div>
+
 
                                             <div class="form-group">
                                                 <label for="MailDomains" class="col-sm-4 control-label">Mail
@@ -178,24 +230,6 @@
 
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" name="Backups">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label for="Quota" class="col-sm-4 control-label">Quota</label>
-
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" name="Quota">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label for="Bandwidth" class="col-sm-4 control-label">Bandwidth</label>
-
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" name="Bandwidth">
                                                 </div>
                                             </div>
 

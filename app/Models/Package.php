@@ -46,7 +46,9 @@ class Package extends Model
 		'Backups',
 		'Quota',
 		'Bandwidth',
-		'SSHAccess'
+		'SSHAccess',
+		'Recommended',
+		'Hidden'
 	];
 
 

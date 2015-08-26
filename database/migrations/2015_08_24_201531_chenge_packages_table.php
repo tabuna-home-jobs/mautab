@@ -15,6 +15,12 @@ class ChengePackagesTable extends Migration
         Schema::table('packages', function ($table) {
             $table->boolean('Recommended');
         });
+
+        Schema::table('packages', function ($table) {
+            $table->boolean('Hidden');
+        });
+
+
     }
 
     /**
@@ -26,6 +32,10 @@ class ChengePackagesTable extends Migration
     {
         Schema::table('packages', function ($table) {
             $table->dropColumn('Recommended');
+        });
+
+        Schema::table('packages', function ($table) {
+            $table->dropColumn('Hidden');
         });
     }
 }

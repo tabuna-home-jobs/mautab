@@ -41,7 +41,9 @@ class PackageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Package::create($request->all());
+        Session::flash('good', 'Вы создали новый тариф');
+        return redirect()->back();
     }
 
     /**

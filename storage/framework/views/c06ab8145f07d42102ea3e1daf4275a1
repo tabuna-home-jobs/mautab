@@ -11,7 +11,7 @@
                         <div class="cell scrollable hover">
                             <div class="cell-inner">
                                 <div class="list-group no-radius no-border no-bg m-b-none">
-                                    <li class="list-group-item b-b" tabindex="0">Тарифы:</li>
+                                    <li class="list-group-item b-b text-center" tabindex="0">Тарифы:</li>
 
 
                                     <?php foreach($Package as $key => $value): ?>
@@ -30,10 +30,8 @@
                         </div>
                     </div>
                     <div class="wrapper b-t">
-                        <span tooltip="Double click to Edit" class="pull-right text-muted inline wrapper-xs m-r-sm"><i
-                                    class="fa fa-question"></i></span>
-
-                        <a href="<?php echo e(route('admin.package.create')); ?>" class="btn btn-sm btn-default"  tabindex="0"><i class="fa fa-plus fa-fw m-r-xs"></i> Новый тариф</a>
+                        <a href="<?php echo e(route('admin.package.index')); ?>" class="btn btn-sm btn-default" tabindex="0"><i
+                                    class="fa fa-plus fa-fw m-r-xs"></i> Новый тариф</a>
                     </div>
                 </div>
             </div>
@@ -47,8 +45,17 @@
                             <div class="cell-inner">
                                 <div class="wrapper-lg">
 
+
+                                    <div class="hbox h-auto m-b-lg text-center">
+                                        <div class="col v-middle h1 font-thin">
+                                            <div><?php echo e($SelectPackage->name); ?></div>
+                                        </div>
+                                    </div>
+
+
                                     <!-- fields -->
-                                    <form class="form-horizontal" method="post" action="<?php echo e(route('admin.package.update',$SelectPackage->id)); ?>">
+                                    <form class="form-horizontal" method="post"
+                                          action="<?php echo e(route('admin.package.update',$SelectPackage->id)); ?>">
 
                                         <div class="col-sm-6">
 
@@ -70,6 +77,30 @@
                                                            value="<?php echo e($SelectPackage->price); ?>">
                                                 </div>
                                             </div>
+
+
+
+
+                                            <div class="form-group">
+                                                <label for="Quota" class="col-sm-4 control-label">Quota</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="number" class="form-control" name="Quota"
+                                                           value="<?php echo e($SelectPackage->Quota); ?>">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="Bandwidth" class="col-sm-4 control-label">Bandwidth</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="number" class="form-control" name="Bandwidth"
+                                                           value="<?php echo e($SelectPackage->Bandwidth); ?>">
+                                                </div>
+                                            </div>
+
+
 
 
                                             <div class="form-group">
@@ -94,6 +125,78 @@
                                             </div>
 
 
+
+
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">SSH
+                                                    Access</label>
+
+                                                <div class="col-sm-8">
+                                                    <label class="i-switch bg-success m-t-xs m-r">
+                                                        <input type="radio" name="SSHAccess" value="1"
+                                                               <?php if($SelectPackage->SSHAccess): ?> checked <?php endif; ?>>
+                                                        <i></i>
+                                                    </label>
+                                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                                        <input type="radio" name="SSHAccess" value="0"
+                                                               <?php if(!$SelectPackage->SSHAccess): ?> checked <?php endif; ?>>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">Рекомендованный</label>
+
+                                                <div class="col-sm-8">
+                                                    <label class="i-switch bg-success m-t-xs m-r">
+                                                        <input type="radio" name="Recommended" value="1"
+                                                               <?php if($SelectPackage->Recommended): ?> checked <?php endif; ?>>
+                                                        <i></i>
+                                                    </label>
+                                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                                        <input type="radio" name="Recommended" value="0"
+                                                               <?php if(!$SelectPackage->Recommended): ?> checked <?php endif; ?>>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                </div>
+
+
+
+
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">Скрытый</label>
+
+                                                <div class="col-sm-8">
+                                                    <label class="i-switch bg-success m-t-xs m-r">
+                                                        <input type="radio" name="Hidden" value="1"
+                                                               <?php if($SelectPackage->Hidden): ?> checked <?php endif; ?>>
+                                                        <i></i>
+                                                    </label>
+                                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                                        <input type="radio" name="Hidden" value="0"
+                                                               <?php if(!$SelectPackage->Hidden): ?> checked <?php endif; ?>>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                            </div>
+                                        <div class="col-sm-6">
+
+
+
+
+
+
                                             <div class="form-group">
                                                 <label for="DNSDomains" class="col-sm-4 control-label">DNS
                                                     Domains</label>
@@ -116,18 +219,10 @@
                                             </div>
 
 
-                                            <div class="col-sm-offset-4 col-sm-8">
-                                                <div class="checkbox">
-                                                    <label class="i-checks">
-                                                        <input type="checkbox" name="SSHAccess" checked=""><i></i> SSH
-                                                        Access
-                                                    </label>
-                                                </div>
-                                            </div>
 
 
-                                        </div>
-                                        <div class="col-sm-6">
+
+
 
                                             <div class="form-group">
                                                 <label for="MailDomains" class="col-sm-4 control-label">Mail
@@ -181,28 +276,9 @@
                                             </div>
 
 
-                                            <div class="form-group">
-                                                <label for="Quota" class="col-sm-4 control-label">Quota</label>
-
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" name="Quota"
-                                                           value="<?php echo e($SelectPackage->Quota); ?>">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label for="Bandwidth" class="col-sm-4 control-label">Bandwidth</label>
-
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" name="Bandwidth"
-                                                           value="<?php echo e($SelectPackage->Bandwidth); ?>">
-                                                </div>
-                                            </div>
 
 
                                         </div>
-
 
 
                                         <input type="hidden" name="_method" value="PUT">

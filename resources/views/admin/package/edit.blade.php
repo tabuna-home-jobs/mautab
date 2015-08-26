@@ -82,6 +82,26 @@
 
 
                                             <div class="form-group">
+                                                <label for="Quota" class="col-sm-4 control-label">Quota</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="number" class="form-control" name="Quota"
+                                                           value="{{$SelectPackage->Quota}}">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="Bandwidth" class="col-sm-4 control-label">Bandwidth</label>
+
+                                                <div class="col-sm-8">
+                                                    <input type="number" class="form-control" name="Bandwidth"
+                                                           value="{{$SelectPackage->Bandwidth}}">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
                                                 <label for="WebDomains" class="col-sm-4 control-label">Web
                                                     Domains</label>
 
@@ -101,6 +121,67 @@
                                                            value="{{$SelectPackage->WebAliases}}">
                                                 </div>
                                             </div>
+
+
+
+
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">SSH
+                                                    Access</label>
+
+                                                <div class="col-sm-8">
+                                                    <label class="i-switch bg-success m-t-xs m-r">
+                                                        <input type="radio" name="SSHAccess" value="1"
+                                                               @if($SelectPackage->SSHAccess) checked @endif>
+                                                        <i></i>
+                                                    </label>
+                                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                                        <input type="radio" name="SSHAccess" value="0"
+                                                               @if(!$SelectPackage->SSHAccess) checked @endif>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">Рекомендованный</label>
+
+                                                <div class="col-sm-8">
+                                                    <label class="i-switch bg-success m-t-xs m-r">
+                                                        <input type="radio" name="Recommended" value="1"
+                                                               @if($SelectPackage->Recommended) checked @endif>
+                                                        <i></i>
+                                                    </label>
+                                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                                        <input type="radio" name="Recommended" value="0"
+                                                               @if(!$SelectPackage->Recommended) checked @endif>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">Скрытый</label>
+
+                                                <div class="col-sm-8">
+                                                    <label class="i-switch bg-success m-t-xs m-r">
+                                                        <input type="radio" name="Hidden" value="1"
+                                                               @if($SelectPackage->Hidden) checked @endif>
+                                                        <i></i>
+                                                    </label>
+                                                    <label class="i-switch bg-danger m-t-xs m-r">
+                                                        <input type="radio" name="Hidden" value="0"
+                                                               @if(!$SelectPackage->Hidden) checked @endif>
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-sm-6">
 
 
                                             <div class="form-group">
@@ -124,28 +205,6 @@
                                                 </div>
                                             </div>
 
-
-                                            <div class="form-group">
-                                                <label class="col-sm-4 control-label">SSH
-                                                    Access</label>
-
-                                                <div class="col-sm-8">
-                                                    <label class="i-switch bg-success m-t-xs m-r">
-                                                        <input type="radio" name="SSHAccess" value="1"
-                                                               @if($SelectPackage->SSHAccess) checked @endif>
-                                                        <i></i>
-                                                    </label>
-                                                    <label class="i-switch bg-danger m-t-xs m-r">
-                                                        <input type="radio" name="SSHAccess" value="0"
-                                                               @if(!$SelectPackage->SSHAccess) checked @endif>
-                                                        <i></i>
-                                                    </label>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                        <div class="col-sm-6">
 
                                             <div class="form-group">
                                                 <label for="MailDomains" class="col-sm-4 control-label">Mail
@@ -199,24 +258,6 @@
                                             </div>
 
 
-                                            <div class="form-group">
-                                                <label for="Quota" class="col-sm-4 control-label">Quota</label>
-
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" name="Quota"
-                                                           value="{{$SelectPackage->Quota}}">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label for="Bandwidth" class="col-sm-4 control-label">Bandwidth</label>
-
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" name="Bandwidth"
-                                                           value="{{$SelectPackage->Bandwidth}}">
-                                                </div>
-                                            </div>
 
 
                                         </div>

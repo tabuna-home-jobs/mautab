@@ -71,7 +71,7 @@
             <div class="navi-wrap">
 
                 <!-- nav -->
-                <nav ui-nav="" class="navi clearfix">
+                <nav class="navi clearfix">
 
                     <div class="container">
                         <?php echo $__env->make('user/_layouts/headerHosting', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
