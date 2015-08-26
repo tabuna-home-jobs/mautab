@@ -112,7 +112,7 @@
 
                         <li class="{{Active::route('admin.package.*')}}">
                             <a href="{{route('admin.package.index')}}">
-                                <i class="fa fa-cubes"></i>
+                                <i class="fa fa-cubes text-success"></i>
                                 <span>Тарифы</span>
                             </a>
                         </li>

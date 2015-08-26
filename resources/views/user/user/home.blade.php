@@ -142,7 +142,8 @@
                                         <div class="icon">
                                             <i class="fa fa-tachometer"></i>
                                         </div>
-                                        <a href="#" class="small-box-footer">Управление тарифом <i
+                                        <a href="{{route('package.index')}}" class="small-box-footer">Управление тарифом
+                                            <i
                                                     class="fa fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>

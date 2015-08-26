@@ -29,6 +29,7 @@ Route::group(['middleware' => ['UserRole', 'LoginAs', 'auth'], 'namespace' => 'H
     Route::resource('manager', 'ManagerController');
     Route::resource('settings', 'SettingsController');
     Route::resource('payments', 'PaymentsController');
+    Route::resource('package', 'PackageController');
     Route::resource('home', 'HomeController', ['only' => ['index', 'update']]);
 });
 
