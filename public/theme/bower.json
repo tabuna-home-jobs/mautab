@@ -39,6 +39,7 @@
     "flot.tooltip": "~0.8.4",
     "flot.orderbars": "*",
     "bootstrap-daterangepicker": "1.*",
-    "bootstrap-tagsinput": "0.5.*"
+    "bootstrap-tagsinput": "0.5.*",
+    "nanobar": "0.*"
   }
 }

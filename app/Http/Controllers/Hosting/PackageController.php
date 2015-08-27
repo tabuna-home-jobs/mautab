@@ -16,7 +16,7 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $Package = Package::all();
+        $Package = Package::whereHidden('false')->get();
 
         return view('user.user.package', [
             'Package' => $Package

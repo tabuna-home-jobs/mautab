@@ -2,10 +2,10 @@
 
 namespace Mautab\Http\Controllers\Hosting;
 
+use Auth;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
-use Mautab\Services\WalletOne\PaymentForm as WalletOneForm;
 
 class PaymentsController extends Controller
 {
@@ -17,19 +17,19 @@ class PaymentsController extends Controller
     public function index()
     {
 
-
-        $paymentAmount = 1.00;
-        $currencyCode = 643;
-        $orderId = 1000;
-
-        // Создаем форму
-        $w1Form = new WalletOneForm();
-        // Страницы на которые будут отправлены ответы
         /*
-                $w1Form
-                    ->setSuccessLink("http://weplay.tv/all/shop_payment/success/{$orderId}/card")
-                    ->setFailLink("http://weplay.tv/all/shop_payment/fail/{$orderId}/card");
-        */
+                $paymentAmount = 1.00;
+                $currencyCode = 643;
+                $orderId = 1000;
+
+                // Создаем форму
+                $w1Form = new WalletOneForm();
+                // Страницы на которые будут отправлены ответы
+                /*
+                        $w1Form
+                            ->setSuccessLink("http://weplay.tv/all/shop_payment/success/{$orderId}/card")
+                            ->setFailLink("http://weplay.tv/all/shop_payment/fail/{$orderId}/card");
+
         //Параметры оплаты
         $w1Form
             ->setPaymentAmount($paymentAmount)
@@ -38,22 +38,23 @@ class PaymentsController extends Controller
             ->setComment("Оплата заказа #{$orderId}")
             ->addCustomerValue('orderId', $orderId);
 
-        if ($w1Form->validateData()) {
-            # Сохраняем номер транзакции
-            $transactionId = $w1Form->getTransactionId();
-            # Включаем автосабмит формы сразу после загрузки страницы
-            $w1Form->enableFormAutoSubmit();
-            # Выводим форму
-            echo $w1Form->buildFormView();
-        }
+        if ($w1Form->validateData
+        ()) {
+        # Сохраняем номер транзакции
+        $transactionId = $w1Form->getTransactionId();
+        # Включаем автосабмит формы сразу после загрузки страницы
+        $w1Form->enableFormAutoSubmit();
+        # Выводим форму
+        echo $w1Form->buildFormView();
+    }
+         */
 
 
-        /*
                 $Payments = Auth::User()->getPayments()->simplePaginate(5);
                 return view('user.user.payments', [
                     'Payments' => $Payments
                 ]);
-          */
+
     }
 
     /**

@@ -3,143 +3,153 @@
 @section('content')
 
 
-    <div class="panel-group col-md-4" role="tablist" aria-multiselectable="true">
 
-        <div class="panel panel-default">
-            <div class="panel-heading">Информация</div>
-            <div class="panel-body">
+    @foreach($Package as $value)
+
+        <div class="col-md-3 col-sm-6">
+            <div class="panel b-a">
+
+                @if(Auth::user()->package_id == $value->id)
+                    <div class="panel-heading text-center bg-primary no-border">
+                        <span class="text-u-c m-b-none font-bold">Текущий</span>
+                    </div>
+
+                @else
+                    <div class="panel-heading wrapper-xs bg-success no-border">
+                    </div>
+                @endif
 
 
-                <div class="col wrapper-lg bg-light dk r-r">
-                    <h4 class="font-thin m-t-none m-b"><i class="fa fa-info-circle"></i> Информация</h4>
+                <div class="wrapper text-center">
+                    <h4 class="text-u-c m-b-none">{{$value->name}}</h4>
 
-                    <p class="m-b-md">Статус :
-                        @if($UserInfo['SUSPENDED'] == "no")
-                            <span class="label label-success pull-right">Активен</span>
+                    <h2 class="m-t-none">
+                        <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
+                        <span class="text-2x text-lt">{{ ceil( $value->price *30)}}</span>
+                        <span class="text-xs">/ в месяц</span>
+                    </h2>
+                </div>
+                <ul class="list-group">
+
+                    <li class="list-group-item">
+                        <i class="fa fa-check-circle-o text-success m-r-xs"></i>Веб домены <span
+                                class="pull-right">{{$value->WebDomains}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-check-circle-o text-success m-r-xs"></i>Веб алиасы
+                        <small>(на домен)</small>
+                        <span class="pull-right">{{$value->WebAliases}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-check-circle-o text-success m-r-xs"></i>DNS domains <span
+                                class="pull-right">{{$value->DNSDomains}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-check-circle-o text-success m-r-xs"></i>DNS записи
+                        <small>(на домен)</small>
+                        <span class="pull-right">{{$value->DNSRecords}}</span>
+                    </li>
+
+                    <!--
+                    <li class="list-group-item">
+                        <i class="fa fa-check-circle-o text-success m-r-xs"></i>Почтовые домены  {{$value->MailDomains}}
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fa fa-check-circle-o text-success m-r-xs"></i>Почтовые аккаунты <small>(на домен)</small> <span class="pull-right">{{$value->MailAccounts}}</span>
+                    </li>
+                    -->
+
+                    <li class="list-group-item">
+                        <i class="fa fa-check-circle-o text-success m-r-xs"></i>Базы данных <span
+                                class="pull-right">{{$value->Databases}}</span>
+                    </li>
+
+                    <li class="list-group-item">
+                        <i class="fa fa-check-circle-o text-success m-r-xs"></i>Квота
+                        <small>(в мегабайтах)</small>
+                        <span class="pull-right">{{$value->Quota}}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-check-circle-o text-success m-r-xs"></i>Трафик
+                        <small>(в мегабайтах)</small>
+                        <span class="pull-right">{{$value->Bandwidth}}</span>
+                    </li>
+
+
+                    <li class="list-group-item">
+                        @if($value->CronJobs)
+                            <i class="fa fa-check-circle-o text-success m-r-xs"></i>Cron задания  <span
+                                    class="pull-right">{{$value->CronJobs}}</span>
                         @else
-                            <span class="label label-danger pull-right">Не активен</span>
+                            <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span
+                                    class="text-l-t">Cron задания</span>
                         @endif
-                    </p>
+                    </li>
+                    <li class="list-group-item">
+                        @if($value->Backups)
+                            <i class="fa fa-check-circle-o text-success m-r-xs"></i>Резервные копии  <span
+                                    class="pull-right">{{$value->Backups}}</span>
+                        @else
+                            <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span
+                                    class="text-l-t">Резервные копии</span>
+                        @endif
+                    </li>
+
+                    <li class="list-group-item">
+                        @if($value->SSHAccess)
+                            <i class="fa fa-check-circle-o text-success m-r-xs"></i>SSH доступ</span>
+                        @else
+                            <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span
+                                    class="text-l-t">SSH доступ</span>
+                        @endif
+                    </li>
+                </ul>
 
 
-                    <div class="m-b">
-                        <p class="pull-right text-primary">{{$UserInfo['U_BANDWIDTH']}}
-                            из {{$UserInfo['BANDWIDTH']}}</p>
-                        <span>{{Lang::get('menu.traffic')}}</span>
-                    </div>
-                    <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-primary"
-                             style="width: {{$UserInfo['U_BANDWIDTH']/$UserInfo['BANDWIDTH'] * 100  }}%"></div>
-                    </div>
-
-                    <div class="m-b">
-                                    <span class="pull-right text-info">{{$UserInfo['U_DISK']}}
-                                        из {{$UserInfo['DISK_QUOTA']}}</span>
-                        <span>{{Lang::get('menu.disk')}}</span>
-                    </div>
-                    <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-info"
-                             style="width: {{$UserInfo['U_DISK']/$UserInfo['DISK_QUOTA'] * 100  }}%"></div>
-                    </div>
-
-
-                    <div class="m-b">
-                            <span class="pull-right text-info">{{ $UserInfo['U_WEB_DOMAINS'] }}
-                                из {{ $UserInfo['WEB_DOMAINS'] }}</span>
-                        <span>{{Lang::get('menu.domains')}}</span>
-                    </div>
-                    <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-info"
-                             style="width: {{$UserInfo['U_WEB_DOMAINS']/$UserInfo['WEB_DOMAINS'] * 100  }}%"></div>
+                @if(Auth::user()->package_id != $value->id)
+                    <div class="panel-footer text-center">
+                        <button type="button" class="btn btn-success m" data-toggle="modal"
+                                data-target=".modal-{{$value->name}}">Изменить тариф
+                        </button>
                     </div>
 
 
-                    <div class="m-b">
-                            <span class="pull-right text-info">{{ $UserInfo['U_DNS_DOMAINS'] }}
-                                из {{ $UserInfo['DNS_DOMAINS'] }}</span>
-                        <span>{{Lang::get('menu.DNS')}}</span>
-                    </div>
-                    <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-info"
-                             style="width: {{$UserInfo['U_DNS_DOMAINS']/$UserInfo['DNS_DOMAINS'] * 100  }}%"></div>
-                    </div>
+                    <form class="modal fade modal-{{$value->name}}" tabindex="-1" role="dialog"
+                          action="{{route('package.store')}}" method="POST">
+                        <div class="modal-dialog modal-sm">
 
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="gridSystemModalLabel">Подтверждение смены тарифа</h4>
+                            </div>
 
-                    <div class="m-b">
-                            <span class="pull-right text-info">{{ $UserInfo['U_DATABASES'] }}
-                                из {{ $UserInfo['DATABASES'] }}</span>
-                        <span>{{Lang::get('menu.BD')}}</span>
-                    </div>
-                    <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-info"
-                             style="width: {{$UserInfo['U_DATABASES']/$UserInfo['DATABASES'] * 100  }}%"></div>
-                    </div>
+                            <div class="modal-content">
+                                Вы уверены что хотите сменить тариф ?
+                            </div>
 
+                            <div class="modal-footer">
+                                <input type="hidden" name="package" value="{{$value->id}}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                                <button type="submit" class="btn btn-danger">Изменить тариф</button>
+                            </div>
 
-                    <p class="text-muted">Статистические данные обновляються каждые несколько часов</p>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="panel-group col-md-8">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    Тарифные планы
-                </h4>
-            </div>
-            <div class="panel-body">
-
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="panel b-a">
-                        <div class="panel-heading wrapper-xs bg-success no-border">
                         </div>
-                        <div class="wrapper text-center">
-                            <h4 class="text-u-c m-b-none">Bussiness</h4>
+                    </form>
 
-                            <h2 class="m-t-none">
-                                <sup class="pos-rlt" style="top:-22px">$</sup>
-                                <span class="text-2x text-lt">299</span>
-                                <span class="text-xs">/ mo</span>
-                            </h2>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Email preview on air
-                            </li>
-                            <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> Spam testing and blocking
-                            </li>
-                            <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> 100 GB Space
-                            </li>
-                            <li class="list-group-item">
-                                <i class="icon-check text-success m-r-xs"></i> 200 user accounts
-                            </li>
-                            <li class="list-group-item">
-                                <i class="icon-close text-danger m-r-xs"></i> <span class="text-l-t">Free support for two years</span>
-                            </li>
-                            <li class="list-group-item">
-                                <i class="icon-close text-danger m-r-xs"></i> <span class="text-l-t">Free upgrade for one year</span>
-                            </li>
-                        </ul>
-                        <div class="panel-footer text-center">
-                            <a href="" class="btn btn-success m">Start your free trial</a>
-                        </div>
-                    </div>
-                </div>
 
+
+
+
+                @endif
 
             </div>
         </div>
 
-    </div>
-    </div>
+
+    @endforeach
+
 
 
 
