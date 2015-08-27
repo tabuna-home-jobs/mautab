@@ -25,7 +25,8 @@ class PackageRequest extends Request
     public function rules()
     {
         return [
-            'package' => 'required|integer'
+            // Проверка может ли человек сменить тариф на доступный  и вообще есть ли он
+            'package' => 'required|integer|exists:packages,id,Hidden, 0'
         ];
     }
 }

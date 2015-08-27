@@ -102,5 +102,10 @@ trait VestaUser
     }
 
 
+    public function changePackage($package)
+    {
+        return $this->sendQuery('v-suspend-user', Auth::User()->nickname, $package);
+    }
+
 
 }

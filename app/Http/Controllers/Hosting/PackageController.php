@@ -2,10 +2,14 @@
 
 namespace Mautab\Http\Controllers\Hosting;
 
+use Auth;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
+use Mautab\Http\Requests\Hosting\PackageRequest;
 use Mautab\Models\Package;
+use Session;
+use Vesta;
 
 class PackageController extends Controller
 {
@@ -39,9 +43,17 @@ class PackageController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(PackageRequest $request)
     {
-        //
+        $package = Package::findorFail($request->package);
+        Vesta::changePackage($package->name);
+        Auth::user()->fill([
+            'package_id' => $request->package
+        ])->save();
+
+        Session::flash('good', 'Вы успешно изменили Тариф.');
+        return redirect()->back();
+
     }
 
     /**
