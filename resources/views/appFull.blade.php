@@ -99,19 +99,19 @@
                         <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Правила пользования</a></li>
                         <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Оплата</a></li>
                     </ul>
-                    <p class="m-b-xl">More coming...</p>
+                    <p class="m-b-xl">Email: <a href="mailto:support@mautab.com">support@mautab.com</a></p>
+
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Наши</span> Контакты</h4>
+                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Новости</span> Компании</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Политика безопасности</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Политика конфиденциальности</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Правила пользования</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Оплата</a></li>
+                    </ul>
 
-                    <p class="text-sm">23 soe Midlokls <br>
-                        120002 Loki — UNITED KINGDOM <br>
-                        +333 432 321 322
-                    </p>
 
-                    <p>Sale: <a href="mailto:hey@example.com">info@example.com</a></p>
-
-                    <p class="m-b-xl">Job: <a href="mailto:hey@example.com">job@example.com</a></p>
                 </div>
                 <div class="col-sm-3">
                     <h4 class="text-u-c m-b-xl font-thin"><span class="b-b b-dark font-bold">Наши</span> Проекты</h4>
@@ -123,6 +123,8 @@
                         <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-linkedin"></i></a>
                         <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-pinterest"></i></a>
                     </div>
+
+
                 </div>
                 <div class="col-sm-3">
                     <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Новостная</span> рассылка</h4>

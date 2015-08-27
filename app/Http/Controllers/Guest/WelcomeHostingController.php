@@ -26,9 +26,9 @@ class WelcomeHostingController extends Controller
 	public function index()
 	{
 
-		$Package = Package::whereHidden('false')->get();
+		$Package = Package::whereHidden('false')->orderBy('price', 'ASC')->get();
 
-		return view('welcome/hosting', [
+		return view('welcome.hosting', [
 			'Package' => $Package
 		]);
 	}

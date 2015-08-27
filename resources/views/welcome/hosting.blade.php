@@ -94,167 +94,124 @@
         <div class="container m-t-xxl m-b-xxl padder-v">
 
             <div class="row no-gutter">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="panel b-a">
-                        <div class="panel-heading wrapper-xs bg-primary no-border">
-                        </div>
-                        <div class="wrapper text-center b-b b-light">
-                            <h4 class="text-u-c m-b-none">Start</h4>
 
-                            <h2 class="m-t-none">
-                                <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
-                                <span class="text-2x text-lt">99</span>
-                                <span class="text-xs">/ в месяц</span>
-                            </h2>
-                        </div>
-                        <ul class="list-group text-center no-borders m-t-sm">
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 Веб-сайтов
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 1 GB Пространства
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 Баз данных
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Неограниченно FTP
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span class="text-l-t">Резервные копии</span>
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span class="text-l-t">SSH Доступ</span>
-                            </li>
-                        </ul>
-                        <div class="panel-footer text-center">
-                            <a href="" class="btn btn-primary font-bold m">Попробывать</a>
-                        </div>
+                @foreach($Package as $value)
+
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+
+                        @if($value->Recommended)
+
+                            <div class="panel b-a m-t-n-md m-b-xl">
+                                <div class="panel-heading wrapper-xs bg-info dker no-border">
+                                </div>
+                                <div class="wrapper bg-info text-center m-l-n-xxs m-r-n-xxs">
+                                    <h4 class="text-u-c m-b-none">{{$value->name}}</h4>
+
+                                    <h2 class="m-t-none">
+                                        <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
+                                        <span class="text-2x text-lt">{{ ceil( $value->price *30)}}</span>
+                                        <span class="text-xs">/ в месяц</span>
+                                    </h2>
+                                </div>
+                                @else
+                                    <div class="panel b-a">
+
+                                        <div class="panel-heading wrapper-xs bg-primary no-border">
+                                        </div>
+
+                                        <div class="wrapper text-center b-b b-light">
+                                            <h4 class="text-u-c m-b-none">{{$value->name}}</h4>
+
+                                            <h2 class="m-t-none">
+                                                <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
+                                                <span class="text-2x text-lt">{{ ceil( $value->price *30)}}</span>
+                                                <span class="text-xs">/ в месяц</span>
+                                            </h2>
+                                        </div>
+                                        @endif
+                                        <ul class="list-group text-center">
+
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check-circle-o text-success m-r-xs"></i>Веб домены <span
+                                                        class="pull-right">{{$value->WebDomains}}</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check-circle-o text-success m-r-xs"></i>Веб алиасы
+                                                <small>(на домен)</small>
+                                                <span class="pull-right">{{$value->WebAliases}}</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check-circle-o text-success m-r-xs"></i>DNS
+                                                domains <span
+                                                        class="pull-right">{{$value->DNSDomains}}</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check-circle-o text-success m-r-xs"></i>DNS записи
+                                                <small>(на домен)</small>
+                                                <span class="pull-right">{{$value->DNSRecords}}</span>
+                                            </li>
+
+                                            <li class="list-group-item">
+                                                <i class="fa fa-check-circle-o text-success m-r-xs"></i>Базы
+                                                данных <span
+                                                        class="pull-right">{{$value->Databases}}</span>
+                                            </li>
+
+
+                                            <li class="list-group-item">
+                                                @if($value->CronJobs)
+                                                    <i class="fa fa-check-circle-o text-success m-r-xs"></i>Cron задания
+                                                    <span
+                                                            class="pull-right">{{$value->CronJobs}}</span>
+                                                @else
+                                                    <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span
+                                                            class="text-l-t">Cron задания</span>
+                                                @endif
+                                            </li>
+                                            <li class="list-group-item">
+                                                @if($value->Backups)
+                                                    <i class="fa fa-check-circle-o text-success m-r-xs"></i>Резервные
+                                                    копии  <span
+                                                            class="pull-right">{{$value->Backups}}</span>
+                                                @else
+                                                    <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span
+                                                            class="text-l-t">Резервные копии</span>
+                                                @endif
+                                            </li>
+
+                                            <li class="list-group-item">
+                                                @if($value->SSHAccess)
+                                                    <i class="fa fa-check-circle-o text-success m-r-xs"></i>SSH
+                                                    доступ</span>
+                                                @else
+                                                    <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span
+                                                            class="text-l-t">SSH доступ</span>
+                                                @endif
+                                            </li>
+                                        </ul>
+
+                                        @if($value->Recommended)
+                                            <div class="panel-footer text-center b-t m-t bg-light lter">
+                                                <div class="m-t-sm">Рекомендуемый пакет</div>
+                                                <a href="{{url('/auth/register')}}"
+                                                   class="btn btn-info m">Попробывать</a>
+                                            </div>
+                                        @else
+                                            <div class="panel-footer text-center">
+                                                <a href="{{url('/auth/register')}}" class="btn btn-primary m">Попробывать</a>
+                                            </div>
+                                        @endif
+
+                                    </div>
+                            </div>
+
+                            @endforeach
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="panel b-a m-t-n-md m-b-xl">
-                        <div class="panel-heading wrapper-xs bg-info dker no-border">
 
-                        </div>
-                        <div class="wrapper bg-info text-center m-l-n-xxs m-r-n-xxs">
-                            <h4 class="text-u-c m-b-none">Premium</h4>
-
-                            <h2 class="m-t-none">
-                                <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
-                                <span class="text-2x text-lt">199</span>
-                                <span class="text-xs">/ в месяц</span>
-                            </h2>
-                        </div>
-                        <ul class="list-group text-center no-borders m-t-sm">
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Веб-сайтов
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 GB Пространства
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Баз данных
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Неограниченно FTP
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-success m-r-xs"></i> 1 - Резервная копия
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-success m-r-xs"></i>SSH Доступ
-                            </li>
-                        </ul>
-                        <div class="panel-footer text-center b-t m-t bg-light lter">
-                            <div class="m-t-sm">Рекомендуем попробывать</div>
-                            <a href="" class="btn btn-info font-bold m">Попробывать</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="panel b-a">
-                        <div class="panel-heading wrapper-xs bg-primary no-border">
-                        </div>
-                        <div class="wrapper text-center b-b b-light">
-                            <h4 class="text-u-c m-b-none">Business</h4>
-
-                            <h2 class="m-t-none">
-                                <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
-                                <span class="text-2x text-lt">299</span>
-                                <span class="text-xs">/ в месяц</span>
-                            </h2>
-                        </div>
-                        <ul class="list-group text-center no-borders m-t-sm">
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Веб-сайтов
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 GB Пространства
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Баз данных
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Неограниченно FTP
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-success m-r-xs"></i> 1 - Резервная копия
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-success m-r-xs"></i>SSH Доступ
-                            </li>
-                        </ul>
-                        <div class="panel-footer text-center">
-                            <a href="" class="btn btn-primary font-bold m">Попробывать</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 hidden-md">
-                    <div class="panel b-a">
-                        <div class="panel-heading wrapper-xs bg-primary no-border">
-
-                        </div>
-                        <div class="wrapper text-center b-b b-light">
-                            <h4 class="text-u-c m-b-none">Enterprise</h4>
-
-                            <h2 class="m-t-none">
-                                <sup class="pos-rlt" style="top:-22px"><i class="fa fa-rub"></i></sup>
-                                <span class="text-2x text-lt">399</span>
-                                <span class="text-xs">/ в месяц</span>
-                            </h2>
-                        </div>
-                        <ul class="list-group text-center no-borders m-t-sm">
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Веб-сайтов
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 5 GB Пространства
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> 10 Баз данных
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa  fa-check-circle-o text-success m-r-xs"></i> Неограниченно FTP
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-success m-r-xs"></i> 1 - Резервная копия
-                            </li>
-                            <li class="list-group-item">
-                                <i class="fa fa-times-circle-o text-success m-r-xs"></i>SSH Доступ
-                            </li>
-                        </ul>
-                        <div class="panel-footer text-center">
-                            <a href="" class="btn btn-primary font-bold m">Попробывать</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
+
         </div>
-
-
-    </div>
 
     </div>
 

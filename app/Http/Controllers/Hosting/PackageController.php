@@ -20,7 +20,7 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $Package = Package::whereHidden('false')->get();
+        $Package = Package::whereHidden('false')->orderBy('price', 'ASC')->get();
 
         return view('user.user.package', [
             'Package' => $Package
