@@ -1,6 +1,7 @@
 <?php namespace Mautab\Http\Controllers\Guest;
 
 use Mautab\Http\Controllers\Controller;
+use Mautab\Models\Package;
 
 class WelcomeHostingController extends Controller
 {
@@ -24,7 +25,12 @@ class WelcomeHostingController extends Controller
 	 */
 	public function index()
 	{
-		return view('welcome/hosting');
+
+		$Package = Package::whereHidden('false')->get();
+
+		return view('welcome/hosting', [
+			'Package' => $Package
+		]);
 	}
 
 	public function price()
