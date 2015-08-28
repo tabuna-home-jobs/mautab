@@ -4,6 +4,8 @@ namespace Mautab\Http\Requests\Hosting;
 
 use Auth;
 use Mautab\Http\Requests\Request;
+use Mautab\Models\Package;
+use Vesta;
 
 class PackageRequest extends Request
 {
@@ -14,7 +16,11 @@ class PackageRequest extends Request
      */
     public function authorize()
     {
-        return Auth::check();
+        //Проверяем есть ли тариф на которй пользователь хочет перейти на его сервере.
+        $PackageVesta = Vesta::listUserPackages();
+        $PackageLaravel = Package::select('name')->findOrFail($this->package);
+
+        return array_key_exists($PackageLaravel->name, $PackageVesta) && Auth::check();
     }
 
     /**

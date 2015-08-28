@@ -107,5 +107,14 @@ trait VestaUser
         return $this->sendQuery('v-suspend-user', Auth::User()->nickname, $package);
     }
 
+    public function listUserPackages()
+    {
+        $this->vst_returncode = 'no';
+        $answer = $this->sendQuery('v-list-user-packages', 'json');
+        $data = json_decode($answer, TRUE);
+        return $data;
+    }
+
+
 
 }

@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="panel panel-default">
-        <div class="panel-heading">Basic form</div>
+        <div class="panel-heading">Файловый менеджер</div>
         <div class="panel-body">
 
             <form action="{{route('manager.index')}}"
@@ -86,14 +86,12 @@
 
 
                         <td class="actions">
-                            <button type="button" class="btn btn-default"><i class="fa fa-cog"></i></button>
 
                             <a href="#" data-toggle="modal"
                                data-target="#Modal-permission-{{str_replace(".",'',$list['name'])}}"
                                class="btn btn-default">
                                 <i class="fa fa-lock"></i>
                             </a>
-
 
                             <a href="#" data-toggle="modal"
                                data-target="#Modal-delete-{{str_replace(".",'',$list['name'])}}"
@@ -155,8 +153,8 @@
                                                   method="post">
 
                                                 <div class="form-group">
-                                                    <input type="number" class="form-control" name="permission" value="
-                            {{$list['permissions']}}">
+                                                    <input type="number" class="form-control" name="permission"
+                                                           value="{{$list['permissions']}}">
                                                 </div>
 
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет
