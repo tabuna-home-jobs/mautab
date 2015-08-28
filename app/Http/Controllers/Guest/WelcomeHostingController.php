@@ -6,6 +6,7 @@ use Mautab\Models\Package;
 class WelcomeHostingController extends Controller
 {
 
+
 	/*
 	|--------------------------------------------------------------------------
 	| Welcome Controller
@@ -25,7 +26,6 @@ class WelcomeHostingController extends Controller
 	 */
 	public function index()
 	{
-
 		$Package = Package::whereHidden('false')->orderBy('price', 'ASC')->get();
 
 		return view('welcome.hosting', [

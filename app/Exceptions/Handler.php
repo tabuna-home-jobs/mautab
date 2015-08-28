@@ -42,6 +42,9 @@ class Handler extends ExceptionHandler {
 		if ($vesta = VestaExceptions::render($e))
 			return $vesta;
 
+		if ($guzzle = GuzzleExceptions::render($e))
+			return $guzzle;
+
 		return parent::render($request, $e);
 	}
 
