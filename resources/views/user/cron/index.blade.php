@@ -123,7 +123,7 @@
                                             <form action="{{route('cron.destroy')}}" method="post">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет
                                                 </button>
-                                                <button type="submit" class="button-small">Да</button>
+                                                <button type="submit" class="btn btn-danger button-small">Да</button>
                                                 <input type="hidden" name="v_job" value="{{$job['JOB']}}"/>
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <input type="hidden" name="_token" value="{{csrf_token()}}">

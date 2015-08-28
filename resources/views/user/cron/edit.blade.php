@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="panel panel-default">
-        <div class="panel-heading">Basic form</div>
+        <div class="panel-heading">Редактировать задание</div>
         <div class="panel-body">
 
             <div class="col-xs-12">

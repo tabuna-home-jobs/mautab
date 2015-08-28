@@ -223,3 +223,18 @@ label, strong {
 .no-top-0 {
     top: 0;
 }
+
+.container .jumbotron, .container-fluid .jumbotron {
+    border-radius: inherit;
+}
+
+.alert {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    margin-bottom: 10px;
+    width: 15%;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px gray;
+    padding: 10px 30px 10px 10px;
+}
