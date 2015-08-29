@@ -88,6 +88,7 @@ class PaymentForm
         $this->signatureMethod = $config['signatureMethod'];
         $this->sellerPurse = $config['sellerPurse'];
         $this->secretKey = $config['secretKey'];
+        $this->currencyCode = $config['currencyCode'];
 
 
     }

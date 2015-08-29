@@ -228,7 +228,7 @@ label, strong {
     border-radius: inherit;
 }
 
-.alert {
+.notification {
     position: fixed;
     right: 20px;
     bottom: 50px;

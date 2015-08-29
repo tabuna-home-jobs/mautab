@@ -11,8 +11,10 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		'event.name' => [
-			'EventListener',
+		'Mautab\Events\Registration' => [
+			'Mautab\Listeners\Registration\EmailNotification',
+			'Mautab\Listeners\Registration\VestaRegistation',
+			'Mautab\Listeners\Registration\Registation',
 		],
 	];
 

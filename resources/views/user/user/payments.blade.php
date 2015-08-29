@@ -3,17 +3,35 @@
 @section('content')
 
     <div class="panel panel-default">
-        <div class="panel-heading">Basic form</div>
+        <div class="panel-heading">Платежи</div>
         <div class="panel-body">
 
-            <div class="col-xs-12">
-                <p class="text-center">
-                    <a id="show-add-bd" data-toggle="collapse" href="#add-bd" aria-expanded="false"
-                       aria-controls="collapseExample">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </p>
-            </div>
+
+            <form class="form-inline text-right" action="{{route('payments.store')}}" method="POST">
+                <div class="form-group">
+                    <label for="payments" class="text-center">Сколько я хочу положить средств</label>
+                    <input type="number" name="payments" class="form-control" placeholder="Сумма">
+                </div>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <button type="submit" class="btn btn-default">Создать счёт</button>
+            </form>
+
+        </div>
+
+
+        <div class="collapse col-xs-12" id="add-payments">
+            <form class="col-md-offset-3 col-md-4 col-xs-12" method="post" action="{{route('web.store')}}">
+
+                <div class="form-group input-line">
+                    <label class="control-label">Домен </label>
+                    <input type="text" name="v_domain" class="form-control" value="" required/>
+                </div>
+
+
+                <div class="line line-dashed b-b"></div>
+            </form>
+
+
         </div>
 
 
