@@ -9,8 +9,8 @@
 
             <form class="form-inline text-right" action="{{route('payments.store')}}" method="POST">
                 <div class="form-group">
-                    <label for="payments" class="text-center">Сколько я хочу положить средств</label>
-                    <input type="number" name="payments" class="form-control" placeholder="Сумма">
+                    <label for="sum" class="text-center">Сколько я хочу положить средств</label>
+                    <input type="number" name="sum" class="form-control" placeholder="Сумма">
                 </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <button type="submit" class="btn btn-default">Создать счёт</button>
@@ -52,13 +52,12 @@
                     <tr>
                         <th>{{$pay->id}}</th>
                         <th>{{$pay->sum}}</th>
-
-                        @if($pay->status)
-                            <th>Зачислен</th>
-                        @elseif(!$pay->status)
-                            <th>Ошибка</th>
-                        @else
+                        @if($pay->status === null)
                             <th>Ожидает</th>
+                        @elseif($pay->status)
+                            <th>Зачислен</th>
+                        @else
+                            <th>Ошибка</th>
                         @endif
                         <th>{{$pay->created_at}}</th>
                     </tr>
