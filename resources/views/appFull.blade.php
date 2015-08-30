@@ -33,7 +33,7 @@
                     data-target=".navbar-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a href="#" class="navbar-brand m-r-lg"><span
+            <a href="/" class="navbar-brand m-r-lg"><span
                         class="h3">Mautab</span></a>
         </div>
         <div class="collapse navbar-collapse">

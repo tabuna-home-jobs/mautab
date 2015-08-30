@@ -4,8 +4,7 @@
 Route::group(['namespace' => 'Guest'], function () {
     Route::resource('/', 'WelcomeHostingController@index');
     Route::resource('/price', 'WelcomeHostingController@price');
-
-    Route::resource('page', 'PageController');
+	Route::resource('pages', 'PageController');
 });
 
 

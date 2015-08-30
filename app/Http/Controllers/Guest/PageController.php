@@ -11,10 +11,12 @@
 	     *
 	     * @return \Illuminate\View\View - Возращает вьюху по запросу
 	     */
-		public function show($url)
+		public function show($page)
 		{
-			//Передаем часть http запроса для определения запрашиваемой страницы
-			return view('pages/'.$url);
+
+			return view('pages.page', [
+				'page' => $page,
+			]);
 		}
 
 	}
