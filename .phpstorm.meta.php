@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2015-08-02.
+    * Generated on 2015-08-30.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -22,6 +22,7 @@ namespace PHPSTORM_META {
             'Psr\Log\LoggerInterface' instanceof \Monolog\Logger,
             'auth' instanceof \Illuminate\Auth\AuthManager,
             'auth.driver' instanceof \Illuminate\Auth\Guard,
+	        'Illuminate\Contracts\Auth\Access\Gate' instanceof \Illuminate\Auth\Access\Gate,
             'illuminate.route.dispatcher' instanceof \Illuminate\Routing\ControllerDispatcher,
             'cookie' instanceof \Illuminate\Cookie\CookieJar,
             'Illuminate\Contracts\Queue\EntityResolver' instanceof \Illuminate\Database\Eloquent\QueueEntityResolver,
@@ -35,7 +36,6 @@ namespace PHPSTORM_META {
             'session.store' instanceof \Illuminate\Session\EncryptedStore,
             'Illuminate\Session\Middleware\StartSession' instanceof \Illuminate\Session\Middleware\StartSession,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
-            'validator' instanceof \Illuminate\Validation\Factory,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
@@ -58,6 +58,7 @@ namespace PHPSTORM_META {
             'command.listener.make' instanceof \Illuminate\Foundation\Console\ListenerMakeCommand,
             'command.model.make' instanceof \Illuminate\Foundation\Console\ModelMakeCommand,
             'command.optimize' instanceof \Illuminate\Foundation\Console\OptimizeCommand,
+	        'command.policy.make' instanceof \Illuminate\Foundation\Console\PolicyMakeCommand,
             'command.provider.make' instanceof \Illuminate\Foundation\Console\ProviderMakeCommand,
             'command.request.make' instanceof \Illuminate\Foundation\Console\RequestMakeCommand,
             'command.route.cache' instanceof \Illuminate\Foundation\Console\RouteCacheCommand,
@@ -134,6 +135,7 @@ namespace PHPSTORM_META {
             'Psr\Log\LoggerInterface' instanceof \Monolog\Logger,
             'auth' instanceof \Illuminate\Auth\AuthManager,
             'auth.driver' instanceof \Illuminate\Auth\Guard,
+	        'Illuminate\Contracts\Auth\Access\Gate' instanceof \Illuminate\Auth\Access\Gate,
             'illuminate.route.dispatcher' instanceof \Illuminate\Routing\ControllerDispatcher,
             'cookie' instanceof \Illuminate\Cookie\CookieJar,
             'Illuminate\Contracts\Queue\EntityResolver' instanceof \Illuminate\Database\Eloquent\QueueEntityResolver,
@@ -147,7 +149,6 @@ namespace PHPSTORM_META {
             'session.store' instanceof \Illuminate\Session\EncryptedStore,
             'Illuminate\Session\Middleware\StartSession' instanceof \Illuminate\Session\Middleware\StartSession,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
-            'validator' instanceof \Illuminate\Validation\Factory,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
@@ -170,6 +171,7 @@ namespace PHPSTORM_META {
             'command.listener.make' instanceof \Illuminate\Foundation\Console\ListenerMakeCommand,
             'command.model.make' instanceof \Illuminate\Foundation\Console\ModelMakeCommand,
             'command.optimize' instanceof \Illuminate\Foundation\Console\OptimizeCommand,
+	        'command.policy.make' instanceof \Illuminate\Foundation\Console\PolicyMakeCommand,
             'command.provider.make' instanceof \Illuminate\Foundation\Console\ProviderMakeCommand,
             'command.request.make' instanceof \Illuminate\Foundation\Console\RequestMakeCommand,
             'command.route.cache' instanceof \Illuminate\Foundation\Console\RouteCacheCommand,
@@ -246,6 +248,7 @@ namespace PHPSTORM_META {
             'Psr\Log\LoggerInterface' instanceof \Monolog\Logger,
             'auth' instanceof \Illuminate\Auth\AuthManager,
             'auth.driver' instanceof \Illuminate\Auth\Guard,
+	        'Illuminate\Contracts\Auth\Access\Gate' instanceof \Illuminate\Auth\Access\Gate,
             'illuminate.route.dispatcher' instanceof \Illuminate\Routing\ControllerDispatcher,
             'cookie' instanceof \Illuminate\Cookie\CookieJar,
             'Illuminate\Contracts\Queue\EntityResolver' instanceof \Illuminate\Database\Eloquent\QueueEntityResolver,
@@ -259,7 +262,6 @@ namespace PHPSTORM_META {
             'session.store' instanceof \Illuminate\Session\EncryptedStore,
             'Illuminate\Session\Middleware\StartSession' instanceof \Illuminate\Session\Middleware\StartSession,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
-            'validator' instanceof \Illuminate\Validation\Factory,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
@@ -282,6 +284,7 @@ namespace PHPSTORM_META {
             'command.listener.make' instanceof \Illuminate\Foundation\Console\ListenerMakeCommand,
             'command.model.make' instanceof \Illuminate\Foundation\Console\ModelMakeCommand,
             'command.optimize' instanceof \Illuminate\Foundation\Console\OptimizeCommand,
+	        'command.policy.make' instanceof \Illuminate\Foundation\Console\PolicyMakeCommand,
             'command.provider.make' instanceof \Illuminate\Foundation\Console\ProviderMakeCommand,
             'command.request.make' instanceof \Illuminate\Foundation\Console\RequestMakeCommand,
             'command.route.cache' instanceof \Illuminate\Foundation\Console\RouteCacheCommand,
@@ -358,6 +361,7 @@ namespace PHPSTORM_META {
             'Psr\Log\LoggerInterface' instanceof \Monolog\Logger,
             'auth' instanceof \Illuminate\Auth\AuthManager,
             'auth.driver' instanceof \Illuminate\Auth\Guard,
+	        'Illuminate\Contracts\Auth\Access\Gate' instanceof \Illuminate\Auth\Access\Gate,
             'illuminate.route.dispatcher' instanceof \Illuminate\Routing\ControllerDispatcher,
             'cookie' instanceof \Illuminate\Cookie\CookieJar,
             'Illuminate\Contracts\Queue\EntityResolver' instanceof \Illuminate\Database\Eloquent\QueueEntityResolver,
@@ -371,7 +375,6 @@ namespace PHPSTORM_META {
             'session.store' instanceof \Illuminate\Session\EncryptedStore,
             'Illuminate\Session\Middleware\StartSession' instanceof \Illuminate\Session\Middleware\StartSession,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
-            'validator' instanceof \Illuminate\Validation\Factory,
             'view.engine.resolver' instanceof \Illuminate\View\Engines\EngineResolver,
             'view.finder' instanceof \Illuminate\View\FileViewFinder,
             'view' instanceof \Illuminate\View\Factory,
@@ -394,6 +397,7 @@ namespace PHPSTORM_META {
             'command.listener.make' instanceof \Illuminate\Foundation\Console\ListenerMakeCommand,
             'command.model.make' instanceof \Illuminate\Foundation\Console\ModelMakeCommand,
             'command.optimize' instanceof \Illuminate\Foundation\Console\OptimizeCommand,
+	        'command.policy.make' instanceof \Illuminate\Foundation\Console\PolicyMakeCommand,
             'command.provider.make' instanceof \Illuminate\Foundation\Console\ProviderMakeCommand,
             'command.request.make' instanceof \Illuminate\Foundation\Console\RequestMakeCommand,
             'command.route.cache' instanceof \Illuminate\Foundation\Console\RouteCacheCommand,

@@ -2,6 +2,8 @@
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Mautab\Models\Page;
+use Mautab\Observer\SlugGenerateObserver;
 
 class EventServiceProvider extends ServiceProvider {
 
@@ -28,7 +30,8 @@ class EventServiceProvider extends ServiceProvider {
 	{
 		parent::boot($events);
 
-		//
+
+		Page::observe(new SlugGenerateObserver);
 	}
 
 }

@@ -38,9 +38,9 @@
                             <td>
 
                                 <div class="btn-group pull-right" role="group" aria-label="...">
-                                    <a href="{{ route('admin.pages.edit',$Page->id) }}"
+                                    <a href="{{ route('admin.pages.edit',$Page->slug) }}"
                                        class="btn btn-default"><span class="fa fa-edit"></span> </a>
-                                    <a href="#" data-toggle="modal" data-target="#Modal-{{$Page->id}}"
+                                    <a href="#" data-toggle="modal" data-target="#Modal-{{$Page->slug}}"
                                        class="btn btn-danger">
                                         <i class="fa fa-trash"></i>
                                     </a>
@@ -52,7 +52,7 @@
 
 
                         <!-- Modal -->
-                        <div class="modal fade" id="Modal-{{$Page->id}}" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="Modal-{{$Page->slug}}" tabindex="-1" role="dialog"
                              aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">

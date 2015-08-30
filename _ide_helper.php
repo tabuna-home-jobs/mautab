@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.8 (LTS) on 2015-08-02.
+ * Generated for Laravel 5.1.11 (LTS) on 2015-08-30.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -184,27 +184,27 @@ namespace {
         /**
          * Get the path to the environment file directory.
          *
-         * @return string
+         * @return string 
          * @static 
          */
-        public static function environmentPath()
-        {
+	    public static function environmentPath()
+	    {
             return \Illuminate\Foundation\Application::environmentPath();
         }
 
-        /**
+	    /**
          * Set the directory for the environment file.
          *
          * @param string $path
-         * @return $this
+	     *
+	     * @return $this
          * @static 
          */
-        public static function useEnvironmentPath($path)
-        {
+	    public static function useEnvironmentPath($path){
             return \Illuminate\Foundation\Application::useEnvironmentPath($path);
-        }
+	    }
 
-        /**
+	    /**
          * Set the environment file to be loaded during bootstrapping.
          *
          * @param string $file
@@ -437,14 +437,13 @@ namespace {
          * Determine if middleware has been disabled for the application.
          *
          * @return bool
-         * @static
+         * @static 
          */
-        public static function shouldSkipMiddleware()
-        {
+	    public static function shouldSkipMiddleware(){
             return \Illuminate\Foundation\Application::shouldSkipMiddleware();
-        }
+	    }
 
-        /**
+	    /**
          * Determine if the application configuration is cached.
          *
          * @return bool 
@@ -606,37 +605,35 @@ namespace {
          * Define a callback to be used to configure Monolog.
          *
          * @param callable $callback
+         *
          * @return $this
-         * @static 
+         * @static
          */
-        public static function configureMonologUsing($callback)
-        {
+	    public static function configureMonologUsing($callback){
             return \Illuminate\Foundation\Application::configureMonologUsing($callback);
-        }
+	    }
 
-        /**
+	    /**
          * Determine if the application has a custom Monolog configurator.
-         *
-         * @return bool
-         * @static 
-         */
-        public static function hasMonologConfigurator()
-        {
+	     *
+	     * @return bool
+         * @static
+	     */
+	    public static function hasMonologConfigurator(){
             return \Illuminate\Foundation\Application::hasMonologConfigurator();
-        }
+	    }
 
-        /**
+	    /**
          * Get the custom Monolog configurator for the application.
-         *
-         * @return callable
-         * @static 
-         */
-        public static function getMonologConfigurator()
-        {
+	     *
+	     * @return callable
+         * @static
+	     */
+	    public static function getMonologConfigurator(){
             return \Illuminate\Foundation\Application::getMonologConfigurator();
-        }
+	    }
 
-        /**
+	    /**
          * Get the current application locale.
          *
          * @return string 
@@ -682,14 +679,13 @@ namespace {
          *
          * @return string 
          * @throws \RuntimeException
-         * @static 
+         * @static
          */
-        public static function getNamespace()
-        {
+	    public static function getNamespace(){
             return \Illuminate\Foundation\Application::getNamespace();
-        }
+	    }
 
-        /**
+	    /**
          * Define a contextual binding.
          *
          * @param string $concrete
@@ -769,9 +765,10 @@ namespace {
         /**
          * Register a shared binding in the container.
          *
-         * @param string $abstract
+         * @param string|array $abstract
          * @param \Closure|string|null $concrete
-         * @return void 
+         *
+*@return void
          * @static 
          */
         public static function singleton($abstract, $concrete = null){
@@ -1277,7 +1274,7 @@ namespace {
         /**
          * Get the currently authenticated user.
          *
-         * @return \App\User|null 
+         * @return \Mautab\Models\User|null 
          * @static 
          */
         public static function user(){
@@ -1379,7 +1376,8 @@ namespace {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \App\User 
+         *
+         * @return \Mautab\Models\User
          * @static 
          */
         public static function loginUsingId($id, $remember = false){
@@ -1484,7 +1482,7 @@ namespace {
         /**
          * Return the currently cached user.
          *
-         * @return \App\User|null 
+         * @return \Mautab\Models\User|null 
          * @static 
          */
         public static function getUser(){
@@ -1526,7 +1524,7 @@ namespace {
         /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \App\User 
+         * @return \Mautab\Models\User 
          * @static 
          */
         public static function getLastAttempted(){
@@ -1626,10 +1624,9 @@ namespace {
          * Get the extensions used by the compiler.
          *
          * @return array 
-         * @static 
+         * @static
          */
-        public static function getExtensions()
-        {
+	    public static function getExtensions(){
             return \Illuminate\View\Compilers\BladeCompiler::getExtensions();
         }
         
@@ -1638,10 +1635,9 @@ namespace {
          *
          * @param callable $compiler
          * @return void 
-         * @static 
+         * @static
          */
-        public static function extend($compiler)
-        {
+	    public static function extend($compiler){
             \Illuminate\View\Compilers\BladeCompiler::extend($compiler);
         }
         
@@ -1651,21 +1647,30 @@ namespace {
          * @param string $name
          * @param callable $handler
          * @return void 
-         * @static 
+         * @static
          */
-        public static function directive($name, $handler)
-        {
+	    public static function directive($name, $handler){
             \Illuminate\View\Compilers\BladeCompiler::directive($name, $handler);
         }
-        
-        /**
+
+	    /**
+	     * Get the list of custom directives.
+	     *
+	     * @return array
+	     * @static
+	     */
+	    public static function getCustomDirectives()
+	    {
+		    return \Illuminate\View\Compilers\BladeCompiler::getCustomDirectives();
+	    }
+
+	    /**
          * Gets the raw tags used by the compiler.
          *
          * @return array 
-         * @static 
-         */
-        public static function getRawTags()
-        {
+         * @static
+	     */
+	    public static function getRawTags(){
             return \Illuminate\View\Compilers\BladeCompiler::getRawTags();
         }
         
@@ -2531,14 +2536,14 @@ namespace {
          *
          * @param string $key
          * @param string $cipher
+         *
          * @return bool
-         * @static 
+         * @static
          */
-        public static function supported($key, $cipher)
-        {
+	    public static function supported($key, $cipher){
             return \Illuminate\Encryption\McryptEncrypter::supported($key, $cipher);
-        }
-
+	    }
+        
         /**
          * Encrypt the given value.
          *
@@ -2853,6 +2858,7 @@ namespace {
          * Execute a Closure within a transaction.
          *
          * @param \Closure $callback
+         *
          * @return mixed
          * @throws \Throwable
          * @static 
@@ -2943,8 +2949,20 @@ namespace {
             //Method inherited from \Illuminate\Database\Connection            
             \Illuminate\Database\MySqlConnection::listen($callback);
         }
-        
-        /**
+
+	    /**
+	     * Is Doctrine available?
+	     *
+	     * @return bool
+	     * @static
+	     */
+	    public static function isDoctrineAvailable()
+	    {
+		    //Method inherited from \Illuminate\Database\Connection
+		    return \Illuminate\Database\MySqlConnection::isDoctrineAvailable();
+	    }
+
+	    /**
          * Get a Doctrine Schema Column instance.
          *
          * @param string $table
@@ -3320,14 +3338,14 @@ namespace {
          *
          * @param mixed $id
          * @param array $columns
+         *
          * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|null
-         * @static 
+         * @static
          */
-        public static function find($id, $columns = array())
-        {
+	    public static function find($id, $columns = array()){
             return \Illuminate\Database\Eloquent\Builder::find($id, $columns);
-        }
-
+	    }
+        
         /**
          * Find a model by its primary key.
          *
@@ -3392,13 +3410,12 @@ namespace {
          *
          * @param string $column
          * @return mixed 
-         * @static 
+         * @static
          */
-        public static function value($column)
-        {
+	    public static function value($column){
             return \Illuminate\Database\Eloquent\Builder::value($column);
-        }
-
+	    }
+        
         /**
          * Get a single column's value from the first result of a query.
          * 
@@ -3442,13 +3459,16 @@ namespace {
          *
          * @param int $perPage
          * @param array $columns
-         * @param string $pageName
-         * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator 
-         * @static 
+         * @param string   $pageName
+         * @param int|null $page
+         *
+*@return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+         * @throws \InvalidArgumentException
+         * @static
          */
-        public static function paginate($perPage = null, $columns = array(), $pageName = 'page')
-        {
-            return \Illuminate\Database\Eloquent\Builder::paginate($perPage, $columns, $pageName);
+	    public static function paginate($perPage = NULL, $columns = array(), $pageName = 'page', $page = NULL)
+	    {
+		    return \Illuminate\Database\Eloquent\Builder::paginate($perPage, $columns, $pageName, $page);
         }
         
         /**
@@ -3458,10 +3478,9 @@ namespace {
          * @param array $columns
          * @param string $pageName
          * @return \Illuminate\Contracts\Pagination\Paginator 
-         * @static 
+         * @static
          */
-        public static function simplePaginate($perPage = null, $columns = array(), $pageName = 'page')
-        {
+	    public static function simplePaginate($perPage = NULL, $columns = array(), $pageName = 'page'){
             return \Illuminate\Database\Eloquent\Builder::simplePaginate($perPage, $columns, $pageName);
         }
         
@@ -5215,19 +5234,17 @@ namespace {
          * @return string|array
          * @static
          */
-        public static function input($key = null, $default = null)
-        {
+	    public static function input($key = NULL, $default = null){
             return \Illuminate\Http\Request::input($key, $default);
-        }
-
+	    }
+        
         /**
          * Create a new Illuminate HTTP request from server variables.
          *
          * @return static
          * @static
          */
-        public static function capture()
-        {
+	    public static function capture(){
             return \Illuminate\Http\Request::capture();
         }
         
@@ -5237,8 +5254,7 @@ namespace {
          * @return $this
          * @static
          */
-        public static function instance()
-        {
+	    public static function instance(){
             return \Illuminate\Http\Request::instance();
         }
         
@@ -5248,8 +5264,7 @@ namespace {
          * @return string
          * @static
          */
-        public static function method()
-        {
+	    public static function method(){
             return \Illuminate\Http\Request::method();
         }
         
@@ -5259,8 +5274,7 @@ namespace {
          * @return string
          * @static
          */
-        public static function root()
-        {
+	    public static function root(){
             return \Illuminate\Http\Request::root();
         }
         
@@ -5270,8 +5284,7 @@ namespace {
          * @return string
          * @static
          */
-        public static function url()
-        {
+	    public static function url(){
             return \Illuminate\Http\Request::url();
         }
         
@@ -5281,8 +5294,7 @@ namespace {
          * @return string
          * @static
          */
-        public static function fullUrl()
-        {
+	    public static function fullUrl(){
             return \Illuminate\Http\Request::fullUrl();
         }
         
@@ -5292,8 +5304,7 @@ namespace {
          * @return string
          * @static
          */
-        public static function path()
-        {
+	    public static function path(){
             return \Illuminate\Http\Request::path();
         }
         
@@ -5303,8 +5314,7 @@ namespace {
          * @return string
          * @static
          */
-        public static function decodedPath()
-        {
+	    public static function decodedPath(){
             return \Illuminate\Http\Request::decodedPath();
         }
         
@@ -5316,22 +5326,20 @@ namespace {
          * @return string
          * @static
          */
-        public static function segment($index, $default = null)
-        {
+	    public static function segment($index, $default = null){
             return \Illuminate\Http\Request::segment($index, $default);
-        }
-
+	    }
+        
         /**
          * Get all of the segments for the request path.
          *
          * @return array
          * @static
          */
-        public static function segments()
-        {
+	    public static function segments(){
             return \Illuminate\Http\Request::segments();
-        }
-
+	    }
+        
         /**
          * Determine if the current request URI matches a pattern.
          *
@@ -5339,66 +5347,60 @@ namespace {
          * @return bool
          * @static
          */
-        public static function is()
-        {
+	    public static function is(){
             return \Illuminate\Http\Request::is();
-        }
-
+	    }
+        
         /**
          * Determine if the request is the result of an AJAX call.
          *
          * @return bool
          * @static
          */
-        public static function ajax()
-        {
+	    public static function ajax(){
             return \Illuminate\Http\Request::ajax();
-        }
-
+	    }
+        
         /**
          * Determine if the request is the result of an PJAX call.
          *
          * @return bool
          * @static
          */
-        public static function pjax()
-        {
+	    public static function pjax(){
             return \Illuminate\Http\Request::pjax();
-        }
-
+	    }
+        
         /**
          * Determine if the request is over HTTPS.
          *
          * @return bool
          * @static
          */
-        public static function secure()
-        {
+	    public static function secure(){
             return \Illuminate\Http\Request::secure();
-        }
-
+	    }
+        
         /**
          * Returns the client IP address.
          *
          * @return string
          * @static
          */
-        public static function ip()
-        {
+	    public static function ip(){
             return \Illuminate\Http\Request::ip();
-        }
-
+	    }
+        
         /**
          * Returns the client IP addresses.
          *
          * @return array
          * @static
          */
-        public static function ips()
-        {
+	    public static function ips(){
             return \Illuminate\Http\Request::ips();
-        }
-
+	    }
+        
         /**
          * Determine if the request contains a given input item key.
          *
@@ -5406,11 +5408,10 @@ namespace {
          * @return bool
          * @static
          */
-        public static function exists($key)
-        {
+	    public static function exists($key){
             return \Illuminate\Http\Request::exists($key);
-        }
-
+	    }
+        
         /**
          * Determine if the request contains a non-empty value for an input item.
          *
@@ -5418,19 +5419,17 @@ namespace {
          * @return bool
          * @static
          */
-        public static function has($key)
-        {
+	    public static function has($key){
             return \Illuminate\Http\Request::has($key);
-        }
-
+	    }
+        
         /**
          * Get all of the input and files for the request.
          *
          * @return array
          * @static
          */
-        public static function all()
-        {
+	    public static function all(){
             return \Illuminate\Http\Request::all();
         }
         
@@ -5631,14 +5630,13 @@ namespace {
         /**
          * Determine if the given content types match.
          *
-         * @return bool
-         * @static 
+         * @return bool 
+         * @static
          */
-        public static function matchesType($actual, $type)
-        {
+	    public static function matchesType($actual, $type){
             return \Illuminate\Http\Request::matchesType($actual, $type);
-        }
-
+	    }
+        
         /**
          * Determine if the request is sending JSON.
          *
@@ -5663,48 +5661,46 @@ namespace {
          * Determines whether the current requests accepts a given content type.
          *
          * @param string|array $contentTypes
-         * @return bool
-         * @static 
+         *
+*@return bool
+         * @static
          */
-        public static function accepts($contentTypes)
-        {
+	    public static function accepts($contentTypes){
             return \Illuminate\Http\Request::accepts($contentTypes);
-        }
-
+	    }
+        
         /**
          * Return the most suitable content type from the given array based on content negotiation.
          *
          * @param string|array $contentTypes
+         *
          * @return string|null
-         * @static 
+         * @static
          */
-        public static function prefers($contentTypes)
-        {
+	    public static function prefers($contentTypes){
             return \Illuminate\Http\Request::prefers($contentTypes);
         }
-
+        
         /**
          * Determines whether a request accepts JSON.
          *
-         * @return bool
-         * @static 
+         * @return bool 
+         * @static
          */
-        public static function acceptsJson()
-        {
+	    public static function acceptsJson(){
             return \Illuminate\Http\Request::acceptsJson();
         }
-
+        
         /**
          * Determines whether a request accepts HTML.
          *
-         * @return bool
-         * @static 
+         * @return bool 
+         * @static
          */
-        public static function acceptsHtml()
-        {
+	    public static function acceptsHtml(){
             return \Illuminate\Http\Request::acceptsHtml();
         }
-
+        
         /**
          * Get the data format expected in the response.
          *
@@ -5770,10 +5766,9 @@ namespace {
          *
          * @param string|null $param
          * @return object|string 
-         * @static 
+         * @static
          */
-        public static function route($param = null)
-        {
+	    public static function route($param = null){
             return \Illuminate\Http\Request::route($param);
         }
         
@@ -5875,8 +5870,9 @@ namespace {
          * @param array $cookies The COOKIE parameters
          * @param array $files The FILES parameters
          * @param array $server The SERVER parameters
-         * @param string $content The raw body data
-         * @api 
+         * @param string|resource $content The raw body data
+         *
+*@api
          * @static 
          */
         public static function initialize($query = array(), $request = array(), $attributes = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
@@ -6413,14 +6409,13 @@ namespace {
          *
          * @param string $path The target path
          * @return string The relative target path
-         * @static 
+         * @static
          */
-        public static function getRelativeUriForPath($path)
-        {
+	    public static function getRelativeUriForPath($path){
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::getRelativeUriForPath($path);
         }
-
+        
         /**
          * Generates the normalized query string for the Request.
          * 
@@ -7000,7 +6995,7 @@ namespace {
 
 
     class Log extends \Illuminate\Support\Facades\Log{
-
+        
         /**
          * Log a message to the logs.
          *
@@ -7010,11 +7005,10 @@ namespace {
          * @return void
          * @static
          */
-        public static function log($level, $message, $context = array())
-        {
+	    public static function log($level, $message, $context = array()){
             \Illuminate\Log\Writer::log($level, $message, $context);
         }
-
+        
         /**
          * Adds a log record at the DEBUG level.
          *
@@ -7023,11 +7017,10 @@ namespace {
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function debug($message, $context = array())
-        {
+	    public static function debug($message, $context = array()){
             return \Monolog\Logger::debug($message, $context);
         }
-
+        
         /**
          * Adds a log record at the INFO level.
          *
@@ -7036,11 +7029,10 @@ namespace {
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function info($message, $context = array())
-        {
+	    public static function info($message, $context = array()){
             return \Monolog\Logger::info($message, $context);
         }
-
+        
         /**
          * Adds a log record at the NOTICE level.
          *
@@ -7049,11 +7041,10 @@ namespace {
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function notice($message, $context = array())
-        {
+	    public static function notice($message, $context = array()){
             return \Monolog\Logger::notice($message, $context);
         }
-
+        
         /**
          * Adds a log record at the WARNING level.
          *
@@ -7062,11 +7053,10 @@ namespace {
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function warning($message, $context = array())
-        {
+	    public static function warning($message, $context = array()){
             return \Monolog\Logger::warning($message, $context);
         }
-
+        
         /**
          * Adds a log record at the ERROR level.
          *
@@ -7075,11 +7065,10 @@ namespace {
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function error($message, $context = array())
-        {
+	    public static function error($message, $context = array()){
             return \Monolog\Logger::error($message, $context);
         }
-
+        
         /**
          * Adds a log record at the CRITICAL level.
          *
@@ -7088,11 +7077,10 @@ namespace {
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function critical($message, $context = array())
-        {
+	    public static function critical($message, $context = array()){
             return \Monolog\Logger::critical($message, $context);
         }
-
+        
         /**
          * Adds a log record at the ALERT level.
          *
@@ -7101,8 +7089,7 @@ namespace {
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function alert($message, $context = array())
-        {
+	    public static function alert($message, $context = array()){
             return \Monolog\Logger::alert($message, $context);
         }
         
@@ -7114,11 +7101,10 @@ namespace {
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function emergency($message, $context = array())
-        {
+	    public static function emergency($message, $context = array()){
             return \Monolog\Logger::emergency($message, $context);
         }
-
+        
         /**
          * Dynamically pass log calls into the writer.
          *
@@ -7246,14 +7232,14 @@ namespace {
          *
          * @param string $address
          * @param string|null $name
-         * @return void
-         * @static 
+         *
+*@return void
+         * @static
          */
-        public static function alwaysTo($address, $name = null)
-        {
+	    public static function alwaysTo($address, $name = null){
             \Illuminate\Mail\Mailer::alwaysTo($address, $name);
         }
-
+        
         /**
          * Send a new message when only a raw text part.
          *
@@ -7313,8 +7299,25 @@ namespace {
          * @param string|array $view
          * @param array $data
          * @param \Closure|string $callback
-         * @return mixed 
-         * @static 
+         * @return mixed
+         * @static
+         */
+	    public static function onQueue($queue, $view, $data, $callback)
+	    {
+		    return \Illuminate\Mail\Mailer::onQueue($queue, $view, $data, $callback);
+	    }
+
+	    /**
+	     * Queue a new e-mail message for sending on the given queue.
+	     *
+	     * This method didn't match rest of framework's "onQueue" phrasing. Added "onQueue".
+	     *
+	     * @param string          $queue
+	     * @param string|array    $view
+	     * @param array           $data
+	     * @param \Closure|string $callback
+	     * @return mixed
+	     * @static
          */
         public static function queueOn($queue, $view, $data, $callback){
             return \Illuminate\Mail\Mailer::queueOn($queue, $view, $data, $callback);
@@ -7665,7 +7668,8 @@ namespace {
          * @param string $job
          * @param mixed $data
          * @param string $queue
-         * @return mixed
+         *
+*@return mixed
          * @throws \Throwable
          * @static 
          */
@@ -8357,13 +8361,12 @@ namespace {
          * Determine if the given content types match.
          *
          * @return bool
-         * @static 
+         * @static
          */
-        public static function matchesType($actual, $type)
-        {
+	    public static function matchesType($actual, $type){
             return \Illuminate\Http\Request::matchesType($actual, $type);
         }
-
+        
         /**
          * Determine if the request is sending JSON.
          *
@@ -8388,48 +8391,46 @@ namespace {
          * Determines whether the current requests accepts a given content type.
          *
          * @param string|array $contentTypes
-         * @return bool
-         * @static 
+         *
+*@return bool
+         * @static
          */
-        public static function accepts($contentTypes)
-        {
+	    public static function accepts($contentTypes){
             return \Illuminate\Http\Request::accepts($contentTypes);
         }
-
+        
         /**
          * Return the most suitable content type from the given array based on content negotiation.
          *
          * @param string|array $contentTypes
-         * @return string|null
-         * @static 
+         *
+*@return string|null
+         * @static
          */
-        public static function prefers($contentTypes)
-        {
+	    public static function prefers($contentTypes){
             return \Illuminate\Http\Request::prefers($contentTypes);
         }
-
+        
         /**
          * Determines whether a request accepts JSON.
          *
          * @return bool
-         * @static 
+         * @static
          */
-        public static function acceptsJson()
-        {
+	    public static function acceptsJson(){
             return \Illuminate\Http\Request::acceptsJson();
         }
-
+        
         /**
          * Determines whether a request accepts HTML.
          *
          * @return bool
-         * @static 
+         * @static
          */
-        public static function acceptsHtml()
-        {
+	    public static function acceptsHtml(){
             return \Illuminate\Http\Request::acceptsHtml();
         }
-
+        
         /**
          * Get the data format expected in the response.
          *
@@ -8494,11 +8495,10 @@ namespace {
          * Get the route handling the request.
          *
          * @param string|null $param
-         * @return object|string 
-         * @static 
+         * @return object|string
+         * @static
          */
-        public static function route($param = null)
-        {
+	    public static function route($param = null){
             return \Illuminate\Http\Request::route($param);
         }
         
@@ -8599,9 +8599,10 @@ namespace {
          * @param array $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
          * @param array $cookies The COOKIE parameters
          * @param array $files The FILES parameters
-         * @param array $server The SERVER parameters
-         * @param string $content The raw body data
-         * @api 
+         * @param array           $server  The SERVER parameters
+         * @param string|resource $content The raw body data
+         *
+*@api
          * @static 
          */
         public static function initialize($query = array(), $request = array(), $attributes = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
@@ -9138,14 +9139,13 @@ namespace {
          *
          * @param string $path The target path
          * @return string The relative target path
-         * @static 
+         * @static
          */
-        public static function getRelativeUriForPath($path)
-        {
+	    public static function getRelativeUriForPath($path){
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::getRelativeUriForPath($path);
         }
-
+        
         /**
          * Generates the normalized query string for the Request.
          * 
@@ -9924,14 +9924,14 @@ namespace {
          * Resolve the middleware name to a class name preserving passed parameters.
          *
          * @param $name
-         * @return string
-         * @static 
+         *
+*@return string
+         * @static
          */
-        public static function resolveMiddlewareClassName($name)
-        {
+	    public static function resolveMiddlewareClassName($name){
             return \Illuminate\Routing\Router::resolveMiddlewareClassName($name);
         }
-
+        
         /**
          * Register a route matched event listener.
          *
@@ -10148,15 +10148,15 @@ namespace {
          * Create a response instance from the given value.
          *
          * @param \Symfony\Component\HttpFoundation\Request $request
-         * @param mixed $response
-         * @return \Illuminate\Http\Response
-         * @static 
+         * @param mixed                                     $response
+         *
+         *@return \Illuminate\Http\Response
+         * @static
          */
-        public static function prepareResponse($request, $response)
-        {
+	    public static function prepareResponse($request, $response){
             return \Illuminate\Routing\Router::prepareResponse($request, $response);
         }
-
+        
         /**
          * Determine if the router currently has a group stack.
          *
@@ -11098,14 +11098,14 @@ namespace {
          * Create an instance of the ftp driver.
          *
          * @param array $config
+         *
          * @return \Illuminate\Contracts\Filesystem\Filesystem
-         * @static 
+         * @static
          */
-        public static function createFtpDriver($config)
-        {
+	    public static function createFtpDriver($config){
             return \Illuminate\Filesystem\FilesystemManager::createFtpDriver($config);
         }
-
+        
         /**
          * Create an instance of the Amazon S3 driver.
          *
@@ -11921,12 +11921,11 @@ namespace {
         public static function getNames(){
             return \Illuminate\View\Factory::getNames();
         }
-        
+
     }
 
 
-    class Vesta extends \Mautab\Facades\VestaFacades
-    {
+	class Vesta extends \Mautab\Facades\VestaFacades{
         
         /**
          * 
@@ -11941,7 +11940,8 @@ namespace {
          * @param null $arg7
          * @param null $arg8
          * @param null $arg9
-         * @return mixed
+         *
+*@return mixed
          * @throws VestaExceptions
          * @static 
          */
@@ -12079,15 +12079,14 @@ namespace {
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority)
-        {
+		public static function changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority){
             return \Mautab\Services\VestaAPI\Vesta::changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority);
         }
-
+        
         /**
          * 
          *
@@ -12098,15 +12097,14 @@ namespace {
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function addDNSRecord($v_domain, $v_rec, $v_type, $v_val, $v_priority)
-        {
+		public static function addDNSRecord($v_domain, $v_rec, $v_type, $v_val, $v_priority){
             return \Mautab\Services\VestaAPI\Vesta::addDNSRecord($v_domain, $v_rec, $v_type, $v_val, $v_priority);
         }
-
+        
         /**
          * 
          *
@@ -12189,19 +12187,38 @@ namespace {
         }
         
         /**
-         * 
-         *
-         * @static 
-         */
-        public static function suspendUser($username)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::suspendUser($username);
-        }
-
-        /**
          *
          *
          * @static
+         */
+		public static function suspendUser($username){
+            return \Mautab\Services\VestaAPI\Vesta::suspendUser($username);
+		}
+
+		/**
+		 *
+		 *
+		 * @static
+		 */
+		public static function changePackage($package)
+		{
+			return \Mautab\Services\VestaAPI\Vesta::changePackage($package);
+		}
+
+		/**
+		 *
+		 *
+		 * @static
+		 */
+		public static function listUserPackages()
+		{
+			return \Mautab\Services\VestaAPI\Vesta::listUserPackages();
+		}
+
+		/**
+		 *
+		 *
+         * @static 
          */
         public static function listEditWebDomain($domain){
             return \Mautab\Services\VestaAPI\Vesta::listEditWebDomain($domain);
@@ -12271,102 +12288,92 @@ namespace {
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path)
-        {
+		public static function addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path){
             return \Mautab\Services\VestaAPI\Vesta::addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path);
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function addDomainProxy($domain, $ext)
-        {
+		public static function addDomainProxy($domain, $ext){
             return \Mautab\Services\VestaAPI\Vesta::addDomainProxy($domain, $ext);
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function deleteDomain($domain)
-        {
+		public static function deleteDomain($domain){
             return \Mautab\Services\VestaAPI\Vesta::deleteDomain($domain);
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function changeWebDomainIp($domain, $ip)
-        {
+		public static function changeWebDomainIp($domain, $ip){
             return \Mautab\Services\VestaAPI\Vesta::changeWebDomainIp($domain, $ip);
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function deleteWebDomain($domain, $v_ftp_username)
-        {
+		public static function deleteWebDomain($domain, $v_ftp_username){
             return \Mautab\Services\VestaAPI\Vesta::deleteWebDomain($domain, $v_ftp_username);
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function changeWebDomain($domain, $v_ftp_username, $v_ftp_path)
-        {
+		public static function changeWebDomain($domain, $v_ftp_username, $v_ftp_path){
             return \Mautab\Services\VestaAPI\Vesta::changeWebDomain($domain, $v_ftp_username, $v_ftp_path);
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function changeFtpPassword($domain, $v_ftp_username, $v_password)
-        {
+		public static function changeFtpPassword($domain, $v_ftp_username, $v_password){
             return \Mautab\Services\VestaAPI\Vesta::changeFtpPassword($domain, $v_ftp_username, $v_password);
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function restartDNSServer()
-        {
+		public static function restartDNSServer(){
             return \Mautab\Services\VestaAPI\Vesta::restartDNSServer();
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function userSearch($query)
-        {
+		public static function userSearch($query){
             return \Mautab\Services\VestaAPI\Vesta::userSearch($query);
         }
         
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function listCron()
-        {
+		public static function listCron(){
             return \Mautab\Services\VestaAPI\Vesta::listCron();
         }
         
@@ -12379,11 +12386,10 @@ namespace {
          * @param $v_month
          * @param $v_wday
          * @param $v_cmd
-         * @return mixed 
-         * @static 
+         * @return mixed
+         * @static
          */
-        public static function addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
-        {
+		public static function addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd){
             return \Mautab\Services\VestaAPI\Vesta::addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd);
         }
         
@@ -12391,11 +12397,10 @@ namespace {
          * 
          *
          * @param $v_job
-         * @return mixed 
-         * @static 
+         * @return mixed
+         * @static
          */
-        public static function showCron($v_job)
-        {
+		public static function showCron($v_job){
             return \Mautab\Services\VestaAPI\Vesta::showCron($v_job);
         }
         
@@ -12403,11 +12408,10 @@ namespace {
          * 
          *
          * @param $v_job
-         * @return mixed 
-         * @static 
+         * @return mixed
+         * @static
          */
-        public static function deleteCron($v_job)
-        {
+		public static function deleteCron($v_job){
             return \Mautab\Services\VestaAPI\Vesta::deleteCron($v_job);
         }
         
@@ -12421,177 +12425,175 @@ namespace {
          * @param $v_month
          * @param $v_wday
          * @param $v_cmd
-         * @return mixed 
-         * @static 
+         * @return mixed
+         * @static
          */
-        public static function editCron($v_job, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
-        {
+		public static function editCron($v_job, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd){
             return \Mautab\Services\VestaAPI\Vesta::editCron($v_job, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd);
-        }
-
+		}
+        
         /**
-         *
+         * 
          *
          * @param $src
          * @param $dst
-         * @return mixed
+         *
+*@return mixed
          * @static
          */
-        public static function moveFile($src, $dst)
-        {
+		public static function moveFile($src, $dst){
             return \Mautab\Services\VestaAPI\Vesta::moveFile($src, $dst);
         }
-
+        
         /**
          *
          *
          * @param $patch
-         * @return mixed
+         *
+*@return mixed
          * @static
          */
-        public static function openFile($path = '')
-        {
+		public static function openFile($path = ''){
             return \Mautab\Services\VestaAPI\Vesta::openFile($path);
         }
-
+        
         /**
          *
          *
          * @param $patch
-         * @return mixed
+         *
+*@return mixed
          * @static
          */
-        public static function addDir($patch)
-        {
+		public static function addDir($patch){
             return \Mautab\Services\VestaAPI\Vesta::addDir($patch);
         }
-
+        
         /**
          *
          *
          * @param $patch
+         *
          * @return mixed
          * @static
          */
-        public static function addFile($patch)
-        {
+        public static function addFile($patch){
             return \Mautab\Services\VestaAPI\Vesta::addFile($patch);
         }
-
+        
         /**
-         *
+         * 
          *
          * @param $src_file
          * @param $permissions
+         *
          * @return mixed
          * @static
          */
-        public static function changePermission($src_file, $permissions)
-        {
+		public static function changePermission($src_file, $permissions){
             return \Mautab\Services\VestaAPI\Vesta::changePermission($src_file, $permissions);
         }
-
+        
         /**
-         *
+         * 
          *
          * @param $src_dir
          * @param $dst_dir
+         *
          * @return mixed
          * @static
          */
-        public static function copyDir($src_dir, $dst_dir)
-        {
+		public static function copyDir($src_dir, $dst_dir){
             return \Mautab\Services\VestaAPI\Vesta::copyDir($src_dir, $dst_dir);
         }
-
+        
         /**
-         *
+         * 
          *
          * @param $src_dir
          * @param $dst_dir
+         *
          * @return mixed
          * @static
          */
-        public static function copyFile($src_dir, $dst_dir)
-        {
+		public static function copyFile($src_dir, $dst_dir){
             return \Mautab\Services\VestaAPI\Vesta::copyFile($src_dir, $dst_dir);
         }
 
-        /**
-         *
-         *
-         * @param $dst_dir
-         * @return mixed
-         * @static
-         */
-        public static function deleteDir($dst_dir)
-        {
+		/**
+		 *
+		 *
+		 * @param $dst_dir
+		 *
+		 * @return mixed
+		 * @static
+		 */
+        public static function deleteDir($dst_dir){
             return \Mautab\Services\VestaAPI\Vesta::deleteDir($dst_dir);
         }
 
-        /**
-         *
-         *
-         * @param $dst_file
-         * @return mixed
-         * @static
-         */
-        public static function deleteFile($dst_file)
-        {
+		/**
+		 *
+		 *
+		 * @param $dst_file
+		 *
+		 * @return mixed
+		 * @static
+		 */
+        public static function deleteFile($dst_file){
             return \Mautab\Services\VestaAPI\Vesta::deleteFile($dst_file);
         }
-
+        
         /**
          *
          *
          * @param $src_file
          * @param $dst_dir
+         *
          * @return mixed
          * @static
          */
-        public static function extractArchive($src_file, $dst_dir)
-        {
+		public static function extractArchive($src_file, $dst_dir){
             return \Mautab\Services\VestaAPI\Vesta::extractArchive($src_file, $dst_dir);
         }
 
-        /**
-         *
-         *
-         * @param $path
-         * @return mixed
-         * @static
-         */
-        public static function listDirectory($path = '')
-        {
+		/**
+		 *
+		 *
+		 * @param $path
+		 *
+		 * @return mixed
+		 * @static
+		 */
+        public static function listDirectory($path = ''){
             return \Mautab\Services\VestaAPI\Vesta::listDirectory($path);
         }
 
-        /**
-         *
-         *
-         * @param $raw
-         * @return array
-         * @static
-         */
-        public static function parseListing($raw)
-        {
+		/**
+		 *
+		 *
+		 * @param $raw
+		 *
+		 * @return array
+		 * @static
+		 */
+        public static function parseListing($raw){
             return \Mautab\Services\VestaAPI\Vesta::parseListing($raw);
         }
-        
-    }
+
+	}
 
 
-    class Image extends \Intervention\Image\Facades\Image
-    {
+    class Image extends \Intervention\Image\Facades\Image{
         
         /**
          * Overrides configuration settings
          *
          * @param array $config
-         * @static 
+         *
+         * @static
          */
-        public static function configure($config = array())
-        {
+        public static function configure($config = array()){
             return \Intervention\Image\ImageManager::configure($config);
         }
         
@@ -12599,11 +12601,11 @@ namespace {
          * Initiates an Image instance from different input types
          *
          * @param mixed $data
-         * @return \Intervention\Image\Image 
+         *
+         * @return \Intervention\Image\Image
          * @static 
          */
-        public static function make($data)
-        {
+        public static function make($data){
             return \Intervention\Image\ImageManager::make($data);
         }
         
@@ -12613,11 +12615,10 @@ namespace {
          * @param integer $width
          * @param integer $height
          * @param mixed $background
-         * @return \Intervention\Image\Image 
-         * @static 
+         * @return \Intervention\Image\Image
+         * @static
          */
-        public static function canvas($width, $height, $background = null)
-        {
+	    public static function canvas($width, $height, $background = null){
             return \Intervention\Image\ImageManager::canvas($width, $height, $background);
         }
         
@@ -12628,30 +12629,28 @@ namespace {
          * @param \Closure $callback
          * @param integer $lifetime
          * @param boolean $returnObj
-         * @return \Intervention\Image\Image 
-         * @static 
+         * @return \Intervention\Image\Image
+         * @static
          */
-        public static function cache($callback, $lifetime = null, $returnObj = false)
-        {
+	    public static function cache($callback, $lifetime = null, $returnObj = false){
             return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
-        }
+	    }
 
     }
 
 
-    class Active extends \Watson\Active\Facades\Active
-    {
+    class Active extends \Watson\Active\Facades\Active{
         
         /**
          * Return active class if paths are matched.
          *
          * @param mixed $paths
          * @param string $class
-         * @return mixed 
-         * @static 
+         *
+         * @return mixed
+         * @static
          */
-        public static function path($paths, $class = 'active')
-        {
+        public static function path($paths, $class = 'active'){
             return \Watson\Active\Active::path($paths, $class);
         }
         
@@ -12660,11 +12659,11 @@ namespace {
          *
          * @param mixed $routes
          * @param string $class
-         * @return mixed 
-         * @static 
+         *
+         * @return mixed
+         * @static
          */
-        public static function route($routes, $class = 'active')
-        {
+        public static function route($routes, $class = 'active'){
             return \Watson\Active\Active::route($routes, $class);
         }
         
@@ -12675,11 +12674,10 @@ namespace {
          * @param string $identifier
          * @param string $attribute
          * @param string $class
-         * @return mixed 
-         * @static 
+         * @return mixed
+         * @static
          */
-        public static function resource($route, $identifier, $attribute = 'id', $class = 'active')
-        {
+	    public static function resource($route, $identifier, $attribute = 'id', $class = 'active'){
             return \Watson\Active\Active::resource($route, $identifier, $attribute, $class);
         }
         

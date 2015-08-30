@@ -2,7 +2,7 @@
 
 	use Illuminate\Database\Migrations\Migration;
 
-	class CreateSlugPageTable extends Migration
+	class CreateTemplatePageTable extends Migration
 	{
 		/**
 		 * Run the migrations.
@@ -12,7 +12,7 @@
 		public function up()
 		{
 			Schema::table('pages', function ($table) {
-				$table->string('slug');
+				$table->string('template');
 			});
 		}
 
@@ -24,7 +24,7 @@
 		public function down()
 		{
 			Schema::table('pages', function ($table) {
-				$table->dropColumn('slug');
+				$table->dropColumn('template');
 			});
 		}
 	}

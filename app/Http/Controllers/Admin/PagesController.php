@@ -12,9 +12,11 @@ class PagesController extends Controller
 
 	public function index()
 	{
-		$PageList = Page::paginate(15);
-
-		return view("admin/pages/index", ['PageList' => $PageList]);
+		return view("admin/pages/index",
+			[
+				'PageList' => Page::paginate(15)
+			]
+		);
 	}
 
 	public function create()
@@ -22,10 +24,8 @@ class PagesController extends Controller
 		return view("admin/pages/create");
 	}
 
-	public function edit($id)
+	public function edit($page)
 	{
-		$page = Page::find($id);
-
 		return view("admin/pages/edit", ['Page' => $page]);
 	}
 
@@ -33,43 +33,26 @@ class PagesController extends Controller
 	//Добовление и изменение данных
 	public function store(PagesRequest $request)
 	{
-		$page = new Page([
-			'title'    => $request->title,
-			'name'     => $request->name,
-			'content'  => $request->cont,
-			'tag'      => $request->tag,
-			'descript' => $request->descript,
-		]);
+		$page = new Page($request->all());
 		$page->save();
-
-		//Флеш сообщение
 		Session::flash('good', 'Вы успешно изменили значения');
-
 		return redirect()->route('admin.pages.index');
 	}
 
 
-	public function update(PagesRequest $request)
+	public function update($page, PagesRequest $request)
 	{
-		$page           = Page::find($request->id)->firstOrFail();
-		$page->title    = $request->title;
-		$page->name     = $request->name;
-		$page->content  = $request->cont;
-		$page->tag      = $request->tag;
-		$page->descript = $request->descrip;
-		$page->save();
+		$page->fill($request->all())->save();
 		Session::flash('good', 'Вы успешно изменили значения');
-
 		return redirect()->route('admin.pages.index');
 	}
 
 
 	//Удаление
-	public function destroy(PagesRequest $request)
+	public function destroy($page)
 	{
-		$page = Page::find($request->id)->delete();
+		$page->delete();
 		Session::flash('good', 'Вы успешно удалили значения');
-
 		return redirect()->route('admin.pages.index');
 	}
 
