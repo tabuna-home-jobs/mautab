@@ -40,13 +40,6 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Отправить</button>
             </form>
-            <div collapse="isCollapsed" class="m-t">
-                <div class="alert alert-success">
-                    <p>A reset link sent to your email address, please check it in 7 days. <a ui-sref="access.signin"
-                                                                                              class="btn btn-sm btn-success">Sign
-                            in</a></p>
-                </div>
-            </div>
         </div>
         <div class="text-center">
             <p>
