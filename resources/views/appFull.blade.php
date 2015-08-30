@@ -19,12 +19,9 @@
           type='text/css'>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/theme//bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
     <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="/build/css/app.css" type="text/css"/>
 
-    <link rel="stylesheet" href="/main.css">
 
 </head>
 
@@ -166,8 +163,10 @@
     </div>
 </footer>
 <!-- / footer -->
-<script src="/theme/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="/theme/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/theme/bower_components/jquery_appear/jquery.appear.js"></script>
+
+
+<script src="{{asset('/build/js/app.js')}}" type="text/javascript"></script>
+
+
 </body>
 </html>

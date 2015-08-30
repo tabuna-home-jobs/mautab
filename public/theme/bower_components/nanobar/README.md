@@ -1,7 +1,7 @@
-![nanobar](https://raw.githubusercontent.com/jacoborus/nanobar/master/brand/nanobar.png 'nanobar logo')
-=======================================================================================================
+nanobar
+=======
 
-Very lightweight progress bars (~630 bytes gzipped). No jQuery needed.
+Very very lightweight progress bars (~630 bytes gzipped). No jQuery needed.
 
 Compatibility: iE7+ and the rest of the world
 
@@ -12,12 +12,6 @@ See [nanobar.micronube.com](http://nanobar.micronube.com)
 ## Installation
 
 Download and extract the last release from [here](https://github.com/jacoborus/nanobar/archive/master.zip) or install with package manager:
-
-[component(1)](http://component.io):
-
-```
-$ component install jacoborus/nanobar
-```
 
 [Bower](http://bower.io/):
 
@@ -42,7 +36,7 @@ Link `nanobar.js` from your html file
 <script src="path/to/nanobar.min.js"></script>
 ```
 
-or require it with [Browserify](http://browserify.org/) or [Component](http://component.io):
+or require it with [Browserify](http://browserify.org/):
 
 ```js
 var Nanobar = require('path/to/nanobar');

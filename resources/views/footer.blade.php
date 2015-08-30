@@ -80,13 +80,7 @@
 <!-- / footer -->
 
 
-<script src="/theme/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="/theme/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/theme/js/ui-load.js"></script>
-<script src="/theme/js/ui-jp.config.js"></script>
-<script src="/theme/js/ui-jp.js"></script>
-<script src="/theme/js/ui-nav.js"></script>
-<script src="/theme/js/ui-toggle.js"></script>
+<script src="{{asset('/build/js/app.js')}}" type="text/javascript"></script>
 
 
 <!--  TinyMCE -->
