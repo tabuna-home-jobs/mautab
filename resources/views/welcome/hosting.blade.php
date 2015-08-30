@@ -200,7 +200,7 @@
                                         @else
                                             <div class="panel-footer text-center">
                                                 <a href="{{url('/auth/register')}}" class="btn btn-primary m">Попробывать</a>
-                                            </div>a
+                                            </div>
                                         @endif
 
                                     </div>
