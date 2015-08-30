@@ -2,18 +2,25 @@
 
 @section('content')
 
-    <section class="content-header">
-        <h1 class="text-center">
-            {{ $Page->name or 'Новая страница' }}
-        </h1>
-    </section>
 
-    <!-- Main content -->
-    <section class="content">
 
-        <div class='row'>
-            <div class='col-md-12'>
 
+
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">  {{ $Page->name or 'Новая страница' }}</h1>
+    </div>
+
+    <div class="wrapper-md">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+                {{ $Page->name or 'Новая страница' }}
+
+            </div>
+
+
+            <div class="panel-body">
 
                 <form action="{{route('admin.pages.update')}}" method="post">
 
@@ -46,7 +53,7 @@
                     <div class="col-md-8">
                         <div class="form-group">
                             <label>Содержание</label>
-                                    <textarea class="textarea form-control textareaedit" name="cont" rows="20">
+                                    <textarea class="textarea form-control textareaedit" name="cont" rows="30">
                                         {!! $Page->content or '' !!}
                                     </textarea>
                         </div>
@@ -57,11 +64,8 @@
 
 
                 </form>
-            </div>
         </div>
-        </div><!-- /.col-->
-        </div><!-- ./row -->
-
-    </section><!-- /.content -->
+        </div>
+    </div>
 
 @endsection

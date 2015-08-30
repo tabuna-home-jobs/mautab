@@ -14,11 +14,8 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet'
           type='text/css'>
 
-    <link rel="stylesheet" href="/theme/bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/css/app.css" type="text/css"/>
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="{{asset('/build/css/app.css')}}" type="text/css"/>
+
 
 </head>
 
@@ -124,7 +121,7 @@
                             <span>Компоненты</span>
                         </li>
                         <li>
-                            <a href="" class="auto">
+                            <a href="#" class="auto">
                   <span class="pull-right text-muted">
                     <i class="fa fa-fw fa-angle-right text"></i>
                     <i class="fa fa-fw fa-angle-down text-active"></i>
