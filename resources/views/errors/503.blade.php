@@ -1,41 +1,32 @@
-<html>
-<head>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+@extends('_layouts.auth')
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            color: #B0BEC5;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
-        }
+@section('content')
 
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
-        }
 
-        .content {
-            text-align: center;
-            display: inline-block;
-        }
 
-        .title {
-            font-size: 72px;
-            margin-bottom: 40px;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="content">
-        <div class="title">Be right back.</div>
+    <div class="container w-xxl w-auto-xs">
+        <div class="text-center m-b-lg">
+            <h1 class="text-shadow text-white">503</h1>
+            <strong>Мы скоро вернёмся</strong>
+        </div>
+        <div class="list-group bg-info auto m-b-sm m-b-lg">
+            <a href="/" class="list-group-item">
+                <i class="fa fa-chevron-right text-muted"></i>
+                <i class="fa fa-fw fa-home m-r-xs"></i> На главную
+            </a>
+            <a href="{{ URL::previous() }}" class="list-group-item">
+                <i class="fa fa-chevron-right text-muted"></i>
+                <i class="fa fa-fw fa-mail-forward m-r-xs"></i> Назад
+            </a>
+        </div>
+        <div class="text-center">
+            <p>
+                <small class="text-muted">Mautab &copy; 2015</small>
+            </p>
+        </div>
     </div>
-</div>
-</body>
-</html>
+
+
+
+
+@endsection

@@ -6,7 +6,11 @@
 
     <div class="container w-xxl w-auto-xs">
         <div class="text-center m-b-lg">
-            <h1 class="text-shadow text-white">404</h1>
+            <h1 class="text-shadow text-white">403</h1>
+
+            <div class="wrapper text-center">
+                <strong>Хакер что ли?</strong>
+            </div>
         </div>
         <div class="list-group bg-info auto m-b-sm m-b-lg">
             <a href="/" class="list-group-item">
