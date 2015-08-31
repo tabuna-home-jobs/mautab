@@ -39,6 +39,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('users', 'UserController');
     Route::resource('pages', 'PagesController');
     Route::resource('package', 'PackageController');
+    Route::resource('server', 'ServerController');
+    Route::resource('serverstats', 'ServerStatsController');
     Route::controller('LoginAs', 'LoginAsController', [
         'getLoginAs' => 'LoginAs',
         'getExit' => 'ExitAs',

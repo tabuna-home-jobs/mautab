@@ -12,6 +12,11 @@ class Vesta
 
 
     /**
+     * @var Выбранный сервер для некоторых запросов
+     */
+    public $SelectServer;
+
+    /**
      * @var string
      */
     public $vst_keyAPI;
@@ -40,7 +45,9 @@ class Vesta
 
     public function __construct()
     {
-        if (Auth::check()) {
+        if ($this->SelectServer) {
+            $config = Config::get('vesta.server')[$this->SelectServer];
+        } elseif (Auth::check()) {
             $config = Config::get('vesta.server')[Auth::User()->server];
         } else {
             $config = Config::get('vesta.server')[Config::get('vesta.primary')];

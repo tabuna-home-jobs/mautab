@@ -99,8 +99,8 @@
                         </li>
 
 
-                        <li>
-                            <a href="#">
+                        <li class="{{Active::route(['admin.server.*','admin.serverstats.*'])}}">
+                            <a href="{{route('admin.server.index')}}">
                                 <i class="fa fa-server"></i>
                                 <span>Сервер</span>
                             </a>

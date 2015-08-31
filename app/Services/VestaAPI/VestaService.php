@@ -19,4 +19,26 @@ trait VestaService
     }
 
 
+    public function listStats($server)
+    {
+        $this->vst_returncode = 'no';
+        $this->SelectServer = $server;
+        $data = json_decode($this->sendQuery('v-list-users-stats', 'json'), TRUE);
+        return array_reverse($data, true);
+    }
+
+
+    /**
+     * @param $server
+     * @return mixed
+     * Самая бесполезная функция
+     */
+    public function listRRD($server)
+    {
+        $this->vst_returncode = 'no';
+        $this->SelectServer = $server;
+        return json_decode($this->sendQuery('v-list-sys-rrd', 'json'), TRUE);;
+    }
+
+
 }
