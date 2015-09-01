@@ -41,6 +41,8 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
+
+
         return Validator::make($data, [
             'nickname' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
@@ -56,7 +58,8 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
+        //dd($data);
+        $user = new User([
             'nickname' => $data['nickname'],
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
@@ -65,6 +68,14 @@ class AuthController extends Controller
             'server' => (string)Config::get('vesta.primary'),
             'role' => serialize(['user']),
         ]);
+
+
+        $user->nickname = $data['nickname'];
+        $user->first_name = $data['firstname'];
+        $user->last_name = $data['lastname'];
+        $user->server = (string)Config::get('vesta.primary');
+        $user->role = serialize(['user']);
+        $user->save();
 
         /*
         $def_package = array(0 => 'starter',
@@ -78,7 +89,10 @@ class AuthController extends Controller
             }
         }
 */
-        Vesta::regUser($data['nickname'], $data['password'], $data['email'], 'default', $data['nickname'], $data['lastname']);
+
+        // dd($data['nickname'], $data['password'], $data['email'], 'default', $data['firstname'], $data['lastname']);
+
+        Vesta::regUser($data['nickname'], $data['password'], $data['email'], 'default', $data['firstname'], $data['lastname']);
 
 
         return $user;
