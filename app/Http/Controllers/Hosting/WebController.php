@@ -131,7 +131,20 @@ class WebController extends Controller {
 	public function destroy(RemoveWebRequest $request)
 	{
 
+		//Получаем список всех алиасов
+		$listWebDom = Vesta::listEditWebDomain($request->v_domain);
+		$listAliases = $listWebDom[$request->v_domain]['ALIAS'];
+
+		$aliArr = explode(',', $listAliases);
+
+
 		Vesta::deleteDomain($request->v_domain);
+
+		//Удаляем его алиасы
+		for($i = 0; $i < count($aliArr); $i++){
+			Vesta::deleteDNDDomain($aliArr[$i]);
+		}
+
 		Session::flash('good', 'Вы успешно удалили веб домен.');
 
 		return redirect()->route('web.index');
