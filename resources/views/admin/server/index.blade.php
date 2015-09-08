@@ -53,7 +53,8 @@
                                             <i class="fa fa-shield"></i> Фаервол
                                         </a>
 
-                                        <a href="#" class="btn m-b-xs btn-sm btn-danger btn-addon">
+                                        <a href="{{route('admin.serverservice.show',$key)}}"
+                                           class="btn m-b-xs btn-sm btn-danger btn-addon">
                                             <i class="fa fa-bolt"></i> Процессы
                                         </a>
                                     </p>

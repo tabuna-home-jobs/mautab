@@ -11,13 +11,11 @@ trait VestaService
         return $this->sendQuery('v-restart-dns');
     }
 
-
     public function userSearch($query)
     {
         $this->vst_returncode = 'no';
         return json_decode($this->sendQuery('v-search-user-object', Auth::User()->nickname, $query, 'json'), TRUE);
     }
-
 
     public function listStats($server)
     {
@@ -37,7 +35,40 @@ trait VestaService
     {
         $this->vst_returncode = 'no';
         $this->SelectServer = $server;
-        return json_decode($this->sendQuery('v-list-sys-rrd', 'json'), TRUE);;
+        return json_decode($this->sendQuery('v-list-sys-rrd', 'json'), TRUE);
+    }
+
+    public function listSysInfo($server)
+    {
+        $this->vst_returncode = 'no';
+        $this->SelectServer = $server;
+        return json_decode($this->sendQuery('v-list-sys-info', 'json'), TRUE);
+    }
+
+
+    public function listSysService($server)
+    {
+        $this->vst_returncode = 'no';
+        $this->SelectServer = $server;
+        return json_decode($this->sendQuery('v-list-sys-services', 'json'), TRUE);
+    }
+
+    public function restartService($server, $service)
+    {
+        $this->SelectServer = $server;
+        return $this->sendQuery('v-restart-service', $service);
+    }
+
+    public function startService($server, $service)
+    {
+        $this->SelectServer = $server;
+        return $this->sendQuery('v-start-service', $service);
+    }
+
+    public function stopService($server, $service)
+    {
+        $this->SelectServer = $server;
+        return $this->sendQuery('v-stop-service', $service);
     }
 
 
