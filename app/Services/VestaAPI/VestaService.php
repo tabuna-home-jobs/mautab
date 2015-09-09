@@ -72,4 +72,19 @@ trait VestaService
     }
 
 
+    public function listIp($server)
+    {
+        $this->vst_returncode = 'no';
+        $this->SelectServer = $server;
+        return json_decode($this->sendQuery('v-list-sys-ips', 'json'), TRUE);
+    }
+
+    public function getIp($server, $ip)
+    {
+        $this->vst_returncode = 'no';
+        $this->SelectServer = $server;
+        return json_decode($this->sendQuery('v-list-sys-ip', $ip, 'json'), TRUE);
+    }
+
+
 }

@@ -1,30 +1,23 @@
 <?php
 
-namespace Mautab\Http\Controllers\Admin;
+namespace Mautab\Http\Controllers\Guest;
 
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
-use Vesta;
+use Mautab\Http\Requests\Guest\WhoIsRequest;
+use Mautab\Services\Whois\Whois;
 
-class ServerServiceController extends Controller
+class WhoIsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index()
     {
-
-        if ($request->action == 'start')
-            Vesta::startService($request->serverName, $request->service);
-        elseif ($request->action == 'stop')
-            Vesta::stopService($request->serverName, $request->service);
-        elseif ($request->action == 'restart')
-            Vesta::restartService($request->serverName, $request->service);
-
-        return redirect()->back();
+        return view('welcome.whois');
     }
 
     /**
@@ -38,14 +31,25 @@ class ServerServiceController extends Controller
     }
 
     /**
-     * Store a newly crea   ted resource in storage.
+     * Store a newly created resource in storage.
      *
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(WhoIsRequest $request)
     {
+        $domain = parse_url($request->webdomain)['host'];
+        $WhoIsDomain = new Whois($domain);
 
+        if ($WhoIsDomain->isAvailable())
+            $info = 'Домен не занят';
+        else
+            $info = $WhoIsDomain->Info();
+
+        return view('welcome.whois', [
+            'domain' => $domain,
+            'info' => $info
+        ]);
     }
 
     /**
@@ -54,17 +58,9 @@ class ServerServiceController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function show($server)
+    public function show($id)
     {
-        $SystemInfo = Vesta::listSysInfo($server);
-        $SystemService = Vesta::listSysService($server);
-
-        return view("admin.server.service", [
-            'ServerName' => $server,
-            'SystemInfo' => $SystemInfo['sysinfo'],
-            'SystemService' => $SystemService,
-        ]);
-
+        //
     }
 
     /**

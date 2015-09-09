@@ -4,7 +4,8 @@
 Route::group(['namespace' => 'Guest'], function () {
     Route::resource('/', 'WelcomeHostingController@index');
     Route::resource('/price', 'WelcomeHostingController@price');
-	Route::resource('pages', 'PageController');
+    Route::resource('pages', 'PageController');
+    Route::resource('whois', 'WhoIsController');
 });
 
 
@@ -34,7 +35,7 @@ Route::group(['middleware' => ['UserRole', 'LoginAs', 'auth'], 'namespace' => 'H
 
 
 // Всё для администратора
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['AdminRole']], function () {
     Route::resource('/', 'HomeAdminController', ['only' => 'index']);
     Route::resource('users', 'UserController');
     Route::resource('pages', 'PagesController');
@@ -42,6 +43,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('server', 'ServerController');
     Route::resource('serverstats', 'ServerStatsController');
     Route::resource('serverservice', 'ServerServiceController');
+    Route::resource('serverip', 'ServerIPController');
 
 
     Route::controller('LoginAs', 'LoginAsController', [

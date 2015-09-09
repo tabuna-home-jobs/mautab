@@ -32,6 +32,7 @@ class Kernel extends HttpKernel {
 		'LoginAs' => 'Mautab\Http\Middleware\LoginAsMiddleware',
         'Hosting' => 'Mautab\Http\Middleware\Hosting\Hosting',
         'UserRole' => \Mautab\Http\Middleware\UserRole::class,
+        'AdminRole' => \Mautab\Http\Middleware\AdminRole::class,
 	];
 
 }

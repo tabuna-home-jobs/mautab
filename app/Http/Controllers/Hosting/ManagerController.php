@@ -135,6 +135,8 @@ class ManagerController extends Controller
             Vesta::deleteFile(Session::get('Path', '') . $request->name);
 
         Session::flash('good', 'Вы успешно удалили файл.');
-        return redirect()->back();
+        return redirect()->route('manager.index', [
+            'path' => Session::get('Path', '')
+        ]);
     }
 }

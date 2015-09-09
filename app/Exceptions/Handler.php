@@ -3,7 +3,6 @@
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
-
 class Handler extends ExceptionHandler {
 
 	/**
@@ -44,7 +43,6 @@ class Handler extends ExceptionHandler {
 
 		if ($guzzle = GuzzleExceptions::render($e))
 			return $guzzle;
-
 
 		return parent::render($request, $e);
 	}

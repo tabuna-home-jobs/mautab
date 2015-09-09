@@ -7,24 +7,16 @@ use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Vesta;
 
-class ServerServiceController extends Controller
+class ServerIPController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index()
     {
 
-        if ($request->action == 'start')
-            Vesta::startService($request->serverName, $request->service);
-        elseif ($request->action == 'stop')
-            Vesta::stopService($request->serverName, $request->service);
-        elseif ($request->action == 'restart')
-            Vesta::restartService($request->serverName, $request->service);
-
-        return redirect()->back();
     }
 
     /**
@@ -38,14 +30,14 @@ class ServerServiceController extends Controller
     }
 
     /**
-     * Store a newly crea   ted resource in storage.
+     * Store a newly created resource in storage.
      *
      * @param  Request $request
      * @return Response
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -56,14 +48,12 @@ class ServerServiceController extends Controller
      */
     public function show($server)
     {
-        $SystemInfo = Vesta::listSysInfo($server);
-        $SystemService = Vesta::listSysService($server);
-
-        return view("admin.server.service", [
+        $ListIp = Vesta::listIp($server);
+        return view('admin.server.ip', [
             'ServerName' => $server,
-            'SystemInfo' => $SystemInfo['sysinfo'],
-            'SystemService' => $SystemService,
+            'ListIp' => $ListIp,
         ]);
+
 
     }
 
@@ -73,9 +63,12 @@ class ServerServiceController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($Ip, Request $request)
     {
-        //
+        $test = Vesta::getIp($request->serverName, $Ip);
+        dd($test);
+
+
     }
 
     /**

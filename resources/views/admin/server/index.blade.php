@@ -29,7 +29,8 @@
                                             <i class="fa fa-cube"></i> Пакеты
                                         </a>
 
-                                        <a href="#" class="btn m-b-xs btn-sm btn-primary btn-addon">
+                                        <a href="{{route('admin.serverip.show',$key)}}"
+                                           class="btn m-b-xs btn-sm btn-primary btn-addon">
                                             <i class="fa fa-plug"></i> IP
                                         </a>
 
