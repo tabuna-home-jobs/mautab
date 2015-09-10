@@ -63,30 +63,23 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 
 
 
 
+<script>
+    var conn = new WebSocket('ws://localhost:8990');
+    conn.onopen = function(e) {
 
+        console.log('Соединение успешно установлено');
+    };
+
+    conn.onmessage = function(e) {
+        console.log(e.data);
+    };
+</script>
 
 
 
