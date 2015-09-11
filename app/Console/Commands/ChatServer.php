@@ -16,7 +16,7 @@ class ChatServer extends Command
      *
      * @var string
      */
-    protected $signature = 'ticket:serve';
+    protected $signature = 'socket:serve';
 
     /**
      * The console command description.

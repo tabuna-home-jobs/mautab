@@ -6,15 +6,24 @@ use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
 use Mautab\Services\Socket\Base\BaseSocket;
-
+use Mautab\Http\Controllers\Hosting\TiketsController;
+use Mautab\Models\User;
 class ChatSocket extends BaseSocket {
 
 	protected $clients;
 
+
+	protected $user;
+
+
 	public function __construct() {
 
 		$this->clients = new \SplObjectStorage;
+		$this->user = new User();
 	}
+
+
+
 
 	public function onOpen(ConnectionInterface $conn) {
 		// Store the new connection to send messages to later
@@ -24,6 +33,16 @@ class ChatSocket extends BaseSocket {
 	}
 
 	public function onMessage(ConnectionInterface $from, $msg) {
+
+		//Декодим массив клиента
+		$mess = json_decode($msg, true);
+		//Берем юзера
+		$user = $this->user->findOrFail($mess['user_id']);
+
+		dd($user->nickname);
+
+		TiketsController::storeBySocket($mess);
+
 		$numRecv = count($this->clients) - 1;
 		echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
 			, $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');

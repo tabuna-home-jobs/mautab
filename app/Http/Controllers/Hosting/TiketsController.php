@@ -25,7 +25,10 @@ class TiketsController extends Controller {
 	 *
 	 * @return void
 	 */
-
+		public function __construct()
+		{
+			$this->user = User::class;
+		}
 
 	/**
 	 * Show the application dashboard to the user.
@@ -37,6 +40,14 @@ class TiketsController extends Controller {
         $Tikets = User::find(Auth::User()->id)->tiket()->where('tikets_id', 0)->orderBy('id', 'desc')->simplePaginate(15);
 
 		return view('user/tikets/index', ['Tikets' => $Tikets]);
+	}
+
+	public static function storeBySocket($mess){
+		//$user = $this->user;
+
+
+		$user = Auth::User()->id;
+		dd($mess, $user);
 	}
 
 	//Новая заявка

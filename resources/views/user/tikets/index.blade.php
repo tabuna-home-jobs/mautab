@@ -70,15 +70,26 @@
 
 
 <script>
+    var user = "{{Auth::user()->id}}";
     var conn = new WebSocket('ws://localhost:8990');
     conn.onopen = function(e) {
+
+        var mess = JSON.stringify({
+            "msg" : 'Hello World!',
+            "user_id": user
+        });
+        conn.send(mess);
 
         console.log('Соединение успешно установлено');
     };
 
+
+
     conn.onmessage = function(e) {
         console.log(e.data);
     };
+
+
 </script>
 
 
