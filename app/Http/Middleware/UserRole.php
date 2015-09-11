@@ -1,10 +1,7 @@
 <?php namespace Mautab\Http\Middleware;
 
 use Auth;
-use Cache;
 use Closure;
-use Vesta;
-use View;
 
 class UserRole
 {
@@ -20,13 +17,6 @@ class UserRole
 	{
 
 		if (Auth::check() && Auth::user()->checkRole('user')) {
-			View::composer('*', function () {
-				$UserInfo = Cache::remember(Auth::User()->nickname . '-info', 1, function () {
-					return Vesta::listUserAccount()[Auth::User()->nickname];
-				});
-
-				View::share('UserInfo', $UserInfo);
-			});
 			return $next($request);
 		} else
 			abort(404);

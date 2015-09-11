@@ -2,12 +2,11 @@
 
 namespace Mautab\Services\Socket;
 
-use Ratchet\MessageComponentInterface;
-use Ratchet\ConnectionInterface;
-
-use Mautab\Services\Socket\Base\BaseSocket;
 use Mautab\Http\Controllers\Hosting\TiketsController;
 use Mautab\Models\User;
+use Mautab\Services\Socket\Base\BaseSocket;
+use Ratchet\ConnectionInterface;
+
 class ChatSocket extends BaseSocket {
 
 	protected $clients;

@@ -2,9 +2,8 @@
 
 namespace Mautab\Console\Commands;
 
-use Mautab\Services\Socket\ChatSocket;
 use Illuminate\Console\Command;
-
+use Mautab\Services\Socket\ChatSocket;
 use Ratchet\Http\HttpServer;
 use Ratchet\Server\IoServer;
 use Ratchet\WebSocket\WsServer;
@@ -23,7 +22,7 @@ class ChatServer extends Command
      *
      * @var string
      */
-    protected $description = 'Command description.';
+    protected $description = 'Запустить Web Soket Server.';
 
     /**
      * Create a new command instance.

@@ -139,6 +139,7 @@ return [
 		Mautab\Providers\AppServiceProvider::class,
 		Mautab\Providers\EventServiceProvider::class,
 		Mautab\Providers\RouteServiceProvider::class,
+		Mautab\Providers\ComposerServiceProvider::class,
 
 		/*
 		 * Я добавил
