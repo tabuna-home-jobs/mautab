@@ -150,6 +150,7 @@ return [
         //Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 		Watson\Active\ActiveServiceProvider::class,
+		Laracasts\Flash\FlashServiceProvider::class,
 	],
 
 	/*
@@ -208,6 +209,7 @@ return [
         //'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Image' => Intervention\Image\Facades\Image::class,
 		'Active' => Watson\Active\Facades\Active::class,
+		'Flash' => Laracasts\Flash\Flash::class,
 	],
 
 ];

@@ -34,4 +34,10 @@ return [
 		'secret' => '',
 	],
 
+	'sms' => [
+		'login' => 'tatu',
+		'apikey' => '',
+		'sender' => 'Octavian',
+		'userAgent' => 'Octavian',
+	],
 ];

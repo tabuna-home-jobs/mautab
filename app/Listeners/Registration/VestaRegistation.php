@@ -3,6 +3,7 @@
 namespace Mautab\Listeners\Registration;
 
 use Mautab\Events\Registration;
+use Vesta;
 
 class VestaRegistation
 {
@@ -24,6 +25,14 @@ class VestaRegistation
      */
     public function handle(Registration $event)
     {
-        //
+        Vesta::regUser(
+            $event->user->nickname,
+            $event->user->password,
+            $event->user->email,
+            'default',
+            $event->user->first_name,
+            $event->user->last_name
+        );
+
     }
 }

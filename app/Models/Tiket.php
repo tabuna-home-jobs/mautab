@@ -53,12 +53,12 @@ class Tiket extends Model {
 
 	public function user()
 	{
-		return $this->belongsTo('Mautab\Models\User');
+		return $this->belongsTo(User::class);
 	}
 
 	public function subtiket()
 	{
-		return $this->hasMany('Mautab\Models\Tiket', 'tikets_id');
+		return $this->hasMany(Tiket::class, 'tikets_id');
 	}
 
 

@@ -58,7 +58,7 @@ class Package extends Model
 
 	public function getUsers()
 	{
-		return $this->hasMany(\Mautab\Models\User::class);
+		return $this->hasMany(User::class);
 	}
 
 }

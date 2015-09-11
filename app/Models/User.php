@@ -87,19 +87,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function tiket()
     {
-        return $this->hasMany('Mautab\Models\Tiket');
+        return $this->hasMany(Tiket::class);
     }
 
 
     public function getPayments()
     {
-        return $this->hasMany(\Mautab\Models\Payments::class, 'users_id');
+        return $this->hasMany(Payments::class, 'users_id');
     }
 
 
     public function getPackage()
     {
-        return $this->belongsTo(\Mautab\Models\Package::class, 'package_id');
+        return $this->belongsTo(Package::class, 'package_id');
     }
 
 

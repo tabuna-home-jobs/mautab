@@ -24,6 +24,6 @@ class Registation
      */
     public function handle(Registration $event)
     {
-        //
+        $event->user->save();
     }
 }

@@ -4,10 +4,10 @@ namespace Mautab\Http\Controllers\Auth;
 use Config;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Mautab\Events\Registration;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Models\User;
 use Validator;
-use Vesta;
 
 class AuthController extends Controller
 {
@@ -58,44 +58,24 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        //dd($data);
         $user = new User([
             'nickname' => $data['nickname'],
-            'firstname' => $data['firstname'],
-            'lastname' => $data['lastname'],
+            'first_name' => $data['firstname'],
+            'last_name' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'server' => (string)Config::get('vesta.primary'),
             'role' => serialize(['user']),
         ]);
 
-
         $user->nickname = $data['nickname'];
         $user->first_name = $data['firstname'];
         $user->last_name = $data['lastname'];
         $user->server = (string)Config::get('vesta.primary');
         $user->role = serialize(['user']);
-        $user->save();
-
-        /*
-        $def_package = array(0 => 'starter',
-            1 => 'professional',
-            2 => 'enterprice');
 
 
-        foreach ($def_package as $key => $val) {
-            if ($key == $request->package) {
-                $data['package'] = $val;
-            }
-        }
-*/
-
-        // dd($data['nickname'], $data['password'], $data['email'], 'default', $data['firstname'], $data['lastname']);
-
-        Vesta::regUser($data['nickname'], $data['password'], $data['email'], 'default', $data['firstname'], $data['lastname']);
-
-
+        event(new Registration($user));
         return $user;
-
     }
 }
