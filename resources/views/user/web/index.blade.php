@@ -31,7 +31,7 @@
 
 
                     <a id="show-add-options" data-toggle="collapse" href="#options" aria-expanded="false"
-                           aria-controls="collapseExample">Дополнительные опции</a>
+                       aria-controls="collapseExample">Дополнительные опции</a>
 
                     <!--Дополнительные опции (по умолчанию скрыт)-->
                     <div class="options collapse" id="options" aria-expanded="false">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group supp-niginx">
                             <label>Proxy Extentions</label>
-                <textarea cols="40" rows="5" name="v_proxy_ext" class="form-control">jpeg, jpg, png, gif, bmp, ico, svg, tif, tiff, css, js, htm, html, ttf, otf, webp, woff, txt, csv, rtf, doc, docx, xls, xlsx, ppt, pptx, odf, odp, ods, odt, pdf, psd, ai, eot, eps, ps, zip, tar, tgz, gz, rar, bz2, 7z, aac, m4a, mp3, mp4, ogg, wav, wma, 3gp, avi, flv, m4v, mkv, mov, mp4, mpeg, mpg, wmv, exe, iso, dmg, swf</textarea>
+                            <textarea cols="40" rows="5" name="v_proxy_ext" class="form-control">jpeg, jpg, png, gif, bmp, ico, svg, tif, tiff, css, js, htm, html, ttf, otf, webp, woff, txt, csv, rtf, doc, docx, xls, xlsx, ppt, pptx, odf, odp, ods, odt, pdf, psd, ai, eot, eps, ps, zip, tar, tgz, gz, rar, bz2, 7z, aac, m4a, mp3, mp4, ogg, wav, wma, 3gp, avi, flv, m4v, mkv, mov, mp4, mpeg, mpg, wmv, exe, iso, dmg, swf</textarea>
                         </div>
 
                         <!-- Как пойдёт

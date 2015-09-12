@@ -4,7 +4,8 @@ use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\RedirectResponse;
 
-class RedirectIfAuthenticated {
+class RedirectIfAuthenticated
+{
 
     /**
      * The Guard implementation.
@@ -24,21 +25,20 @@ class RedirectIfAuthenticated {
         $this->auth = $auth;
     }
 
-	/**
-	 * Handle an incoming request.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \Closure  $next
-	 * @return mixed
-	 */
-	public function handle($request, Closure $next)
-	{
-        if ($this->auth->check())
-		{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        if ($this->auth->check()) {
             return new RedirectResponse(url('/home'));
-		}
+        }
 
-		return $next($request);
-	}
+        return $next($request);
+    }
 
 }

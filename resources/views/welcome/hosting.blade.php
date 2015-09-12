@@ -24,7 +24,7 @@
                     <a href="#"
                        target="_blank"
                        class="btn b-2x btn-lg b-black btn-default btn-rounded text-lg font-bold m-b-xxl animated fadeInUpBig">От
-                                                                                                                              100 рублей</a>
+                        100 рублей</a>
                 </p>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 </h2>
 
                 <p class="text-muted h4 m-b-xl">Профессиональный подход, партнерство с проверенными поставщиками и самое
-                                                современное оборудование позволяют нам обеспечивать по-настоящему надежный хостинг.</p>
+                    современное оборудование позволяют нам обеспечивать по-настоящему надежный хостинг.</p>
             </div>
             <div class="row m-t-xl m-b-xl text-center">
                 <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="300">
@@ -48,7 +48,7 @@
                         <h4 class="m-t-none">Компетентная поддержка</h4>
 
                         <p class="text-muted m-t-lg">Поможет развернуть любую CMS или Framework, а так же ответит на все
-                                                     возникшие вопросы</p>
+                            возникшие вопросы</p>
                     </div>
                 </div>
                 <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="600">
@@ -60,7 +60,7 @@
                         <h4 class="m-t-none">Современная система</h4>
 
                         <p class="text-muted m-t-lg">Используйте современные отказоустойчивые системы для своих
-                                                     проектов</p>
+                            проектов</p>
                     </div>
                 </div>
                 <div class="col-sm-4" data-ride="animated" data-animation="fadeInLeft" data-delay="900">
@@ -72,7 +72,7 @@
                         <h4 class="m-t-none">Начните в пару минут</h4>
 
                         <p class="text-muted m-t-lg">Mautab делает использование хостинга интуитивно понятным, что
-                                                     позволяет экономить ваше время</p>
+                            позволяет экономить ваше время</p>
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
 
                 <p class="m-t-xl"><a href="#testimonial" data-ride="scroll"
                                      class="btn btn-lg btn-white b-2x b-dark btn-rounded bg-empty m-sm">Полный
-                                                                                                        список</a></p>
+                        список</a></p>
             </div>
         </div>
     </div>
@@ -142,7 +142,7 @@
                                             </li>
                                             <li class="list-group-item">
                                                 <i class="fa fa-check-circle-o text-success m-r-xs"></i>DNS
-                                                                                                        domains <span
+                                                domains <span
                                                         class="pull-right">{{$value->DNSDomains}}</span>
                                             </li>
                                             <li class="list-group-item">
@@ -153,7 +153,7 @@
 
                                             <li class="list-group-item">
                                                 <i class="fa fa-check-circle-o text-success m-r-xs"></i>Базы
-                                                                                                        данных <span
+                                                данных <span
                                                         class="pull-right">{{$value->Databases}}</span>
                                             </li>
 
@@ -171,7 +171,7 @@
                                             <li class="list-group-item">
                                                 @if($value->Backups)
                                                     <i class="fa fa-check-circle-o text-success m-r-xs"></i>Резервные
-                                                                                                            копии  <span
+                                                    копии  <span
                                                             class="pull-right">{{$value->Backups}}</span>
                                                 @else
                                                     <i class="fa fa-times-circle-o text-danger m-r-xs"></i> <span

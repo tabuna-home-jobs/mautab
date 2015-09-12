@@ -3,42 +3,39 @@
 use Auth;
 use Mautab\Http\Controllers\Controller;
 
-class HomeController extends Controller {
+class HomeController extends Controller
+{
 
-	/*
-	|--------------------------------------------------------------------------
-	| Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders your application's "dashboard" for users that
-	| are authenticated. Of course, you are free to change or remove the
-	| controller as you wish. It is just here to get your app started!
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Home Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller renders your application's "dashboard" for users that
+    | are authenticated. Of course, you are free to change or remove the
+    | controller as you wish. It is just here to get your app started!
+    |
+    */
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
 
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
-	public function Index()
-	{
-		// Информация о пользователе
+    /**
+     * Show the application dashboard to the user.
+     *
+     * @return Response
+     */
+    public function Index()
+    {
+        // Информация о пользователе
         $UserInfoLaravel = Auth::User();
-		return view('user.user.home', [
-			'UserInfoLaravel' => $UserInfoLaravel
-		]);
-	}
-
-
-
-
+        return view('user.user.home', [
+            'UserInfoLaravel' => $UserInfoLaravel
+        ]);
+    }
 
 
 }

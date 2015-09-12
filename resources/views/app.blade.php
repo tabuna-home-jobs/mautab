@@ -8,14 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet'
           type='text/css'>
 
-   <link rel="stylesheet" href="{{asset('/build/css/app.css')}}" type="text/css"/>
-
+    <link rel="stylesheet" href="{{asset('/build/css/app.css')}}" type="text/css"/>
 
 
 </head>

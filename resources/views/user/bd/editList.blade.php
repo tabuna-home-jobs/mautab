@@ -12,8 +12,8 @@
                     <form class="col-md-8" method="post" action="{{route('bd.update')}}">
 
                         <div class="alert alert-info" role="alert"> Префикс {{Auth::User()->nickname }}_ будет
-                                                                    автоматически добавлен к БД и пользователю
-                                                                    БД
+                            автоматически добавлен к БД и пользователю
+                            БД
                         </div>
                         <div class="form-group">
                             <label>База данных </label>

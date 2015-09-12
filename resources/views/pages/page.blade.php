@@ -25,19 +25,24 @@
 
 
                                 <p class=" pull-right">
-                                    <a class="btn btn-icon btn-rounded btn-dark" href="http://www.facebook.com/sharer.php?u={{Request::url()}}" target="_blank"><i
+                                    <a class="btn btn-icon btn-rounded btn-dark"
+                                       href="http://www.facebook.com/sharer.php?u={{Request::url()}}" target="_blank"><i
                                                 class="fa fa-facebook"></i></a>
 
-                                    <a class="btn btn-icon btn-rounded btn-dark" href="https://twitter.com/share?url={{Request::url()}}" target="_blank"><i
+                                    <a class="btn btn-icon btn-rounded btn-dark"
+                                       href="https://twitter.com/share?url={{Request::url()}}" target="_blank"><i
                                                 class="fa fa-twitter"></i></a>
 
-                                    <a class="btn btn-icon btn-rounded btn-dark" href="https://plus.google.com/share?url={{Request::url()}}" target="_blank"><i
+                                    <a class="btn btn-icon btn-rounded btn-dark"
+                                       href="https://plus.google.com/share?url={{Request::url()}}" target="_blank"><i
                                                 class="fa fa-google-plus"></i></a>
 
-                                    <a class="btn btn-icon btn-rounded btn-dark" href="http://vkontakte.ru/share.php?url={{Request::url()}}" target="_blank"><i
+                                    <a class="btn btn-icon btn-rounded btn-dark"
+                                       href="http://vkontakte.ru/share.php?url={{Request::url()}}" target="_blank"><i
                                                 class="fa fa-vk"></i></a>
 
-                                    <a class="btn btn-icon btn-rounded btn-dark" href="http://www.ok.ru/dk?st.cmd=addShare&st.s=1&st._surl={{Request::url()}}"
+                                    <a class="btn btn-icon btn-rounded btn-dark"
+                                       href="http://www.ok.ru/dk?st.cmd=addShare&st.s=1&st._surl={{Request::url()}}"
                                        target="_blank"><i class="fa fa-odnoklassniki"></i></a>
                                 </p>
 
@@ -80,8 +85,11 @@
                     </li>
                 </ul>
                 <div class="tags m-b-lg l-h-2x">
-                    <a class="label bg-primary" href="">Bootstrap</a> <a class="label bg-primary" href="">Application</a> <a class="label bg-primary" href="">Apple</a> <a
-                            class="label bg-primary" href="">Less</a> <a class="label bg-primary" href="">Theme</a> <a class="label bg-primary" href="">Wordpress</a>
+                    <a class="label bg-primary" href="">Bootstrap</a> <a class="label bg-primary"
+                                                                         href="">Application</a> <a
+                            class="label bg-primary" href="">Apple</a> <a
+                            class="label bg-primary" href="">Less</a> <a class="label bg-primary" href="">Theme</a> <a
+                            class="label bg-primary" href="">Wordpress</a>
                 </div>
             </div>
 

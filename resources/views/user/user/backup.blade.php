@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="panel panel-default">
-        <div class="panel-heading">Basic form</div>
+        <div class="panel-heading">Резервные копии</div>
         <div class="panel-body">
 
             @forelse($Backups as $key =>  $Bakup)

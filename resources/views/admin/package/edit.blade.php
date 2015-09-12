@@ -123,8 +123,6 @@
                                             </div>
 
 
-
-
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label">SSH
                                                     Access</label>
@@ -256,8 +254,6 @@
                                                            value="{{$SelectPackage->Backups}}">
                                                 </div>
                                             </div>
-
-
 
 
                                         </div>

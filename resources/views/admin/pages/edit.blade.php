@@ -49,7 +49,8 @@
 
                         <div class="form-group">
                             <label>Теги</label>
-                            <input ui-jq="tagsinput" ui-options="" class="form-control w-md" data-role="tagsinput" type="text" maxlength="255"
+                            <input ui-jq="tagsinput" ui-options="" class="form-control w-md" data-role="tagsinput"
+                                   type="text" maxlength="255"
                                    required name="tag" value="{{$Page->tag or ''}}">
                         </div>
 
@@ -57,7 +58,8 @@
                         <div class="form-group">
                             <label>Описание</label>
 
-                            <textarea class="form-control" rows="7" maxlength="255" required name="descript">{{$Page->descript or ''}}</textarea>
+                            <textarea class="form-control" rows="7" maxlength="255" required
+                                      name="descript">{{$Page->descript or ''}}</textarea>
                         </div>
 
 
@@ -68,7 +70,7 @@
 
 
                 </form>
-        </div>
+            </div>
         </div>
     </div>
 

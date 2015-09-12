@@ -57,7 +57,8 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close"><span
                                                     aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title" id="myModalLabel">Удалить
                                             {{$Page->name}}?</h4>
@@ -86,7 +87,8 @@
             <footer class="panel-footer">
                 <div class="row">
                     <div class="col-sm-offset-4 col-sm-4 text-center">
-                        <small class="text-muted inline m-t-sm m-b-sm">Всего элементов: {!! $PageList->count() !!}</small>
+                        <small class="text-muted inline m-t-sm m-b-sm">Всего
+                            элементов: {!! $PageList->count() !!}</small>
                     </div>
                     <div class="col-sm-4 text-right text-center-xs">
                         {!! $PageList->render() !!}

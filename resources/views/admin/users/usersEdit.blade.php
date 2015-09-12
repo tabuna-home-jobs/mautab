@@ -111,9 +111,9 @@
                     <input type="submit" value="Отправить" class="btn btn-blue">
                 </div>
 
-        </form>
+            </form>
 
-    </div>
+        </div>
 
     </div>
 
