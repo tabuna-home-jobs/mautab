@@ -242,3 +242,7 @@ label, strong {
 .app-fixed-body {
     margin-top: 100px;
 }
+
+.bootstrap-tagsinput {
+    width: 100% !important;
+}
