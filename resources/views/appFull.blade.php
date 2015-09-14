@@ -14,13 +14,18 @@
 
 
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:700,600,400,500,300&subset=latin,cyrillic'
-          rel='stylesheet'
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet'
           type='text/css'>
 
-    <!-- CSS -->
+    <link rel="stylesheet" href="/theme//bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
     <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css"/>
-    <link rel="stylesheet" href="/build/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/css/app.css" type="text/css"/>
+
+    <link rel="stylesheet" href="/main.css">
+
+
+    <link rel="stylesheet" href="{{asset('/build/css/app.css')}}" type="text/css"/>
 
 
 </head>
@@ -164,6 +169,9 @@
 </footer>
 <!-- / footer -->
 
+
+<script src="/theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/theme/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
 <script src="{{asset('/build/js/app.js')}}" type="text/javascript"></script>
 

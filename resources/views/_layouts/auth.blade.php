@@ -27,6 +27,5 @@
 
 <script src="/theme/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="/theme/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/theme/bower_components/jquery_appear/jquery.appear.js"></script>
 </body>
 </html>
