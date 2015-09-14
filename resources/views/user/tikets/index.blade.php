@@ -25,7 +25,7 @@
                         <th>{{Lang::get('tikets.managementTable')}}</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="ticketBody">
                     @foreach ($Tikets as $Tiket)
                         <tr>
                             <td>{{ $Tiket->id }}</td>
@@ -49,7 +49,7 @@
             <div class="col-md-4">
                 <h2>Напиши и будет решено</h2>
 
-                <form action="{{route('tikets.store')}}" method="POST">
+                <form>
                     <div class="form-group">
                         <label>Заголовок</label>
                         <input type="text" name="title" class="form-control">
@@ -59,7 +59,7 @@
                         <textarea name="message" cols="5" class="form-control"></textarea>
                     </div>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="submit" class="btn btn-blue" value="Войти">
+                    <button class="btn btn-primary" id="submitTicket">Отправить</button>
                 </form>
             </div>
 
@@ -71,23 +71,45 @@
 
 
     <script>
+        //Текущий пользователь
         var user = "{{Auth::user()->id}}";
-        var conn = new WebSocket('ws://localhost:8990');
-        conn.onopen = function (e) {
 
+
+
+        $("body").on('click','#submitTicket',function(){
+            var obj = $(this);
+            var parentForm = obj.parent();
+
+            //Получаем все данные отправляемого тикета
+            var tiketTitle = $("input[name='title']",parentForm).val();
+            var messTitle = $("textarea[name='message']",parentForm).val();
+            var csrf = $("input[name='_token']",parentForm).val();
+
+            //Формируем данные
             var mess = JSON.stringify({
-                "msg": 'Hello World!',
-                "user_id": user
+                "title"   : tiketTitle,
+                "message" : messTitle,
+                "csrf"    : csrf,
+                "user_id" : user
             });
-            conn.send(mess);
 
-            console.log('Соединение успешно установлено');
-        };
+            //Создаем подключение
+            var conn = new WebSocket('ws://localhost:8990');
+            //Отправляем данные
+            conn.onopen = function (e) {
+                conn.send(mess);
+                console.log('Соединение успешно установлено');
+            };
 
 
-        conn.onmessage = function (e) {
-            console.log(e.data);
-        };
+            conn.onmessage = function (e) {
+
+                console.log(e.data);
+            };
+
+            return false;
+
+        });
 
 
     </script>

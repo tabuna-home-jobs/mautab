@@ -3,7 +3,6 @@
 namespace Mautab\Services\Socket;
 
 use Mautab\Http\Controllers\Hosting\TiketsController;
-use Mautab\Models\User;
 use Mautab\Services\Socket\Base\BaseSocket;
 use Ratchet\ConnectionInterface;
 
@@ -11,14 +10,9 @@ class ChatSocket extends BaseSocket {
 
 	protected $clients;
 
-
-	protected $user;
-
-
 	public function __construct() {
 
 		$this->clients = new \SplObjectStorage;
-		$this->user = new User();
 	}
 
 
@@ -33,24 +27,17 @@ class ChatSocket extends BaseSocket {
 
 	public function onMessage(ConnectionInterface $from, $msg) {
 
-		//Декодим массив клиента
-		$mess = json_decode($msg, true);
-		//Берем юзера
-		$user = $this->user->findOrFail($mess['user_id']);
-
-		dd($user->nickname);
-
-		TiketsController::storeBySocket($mess);
+		//Отдаем на запись в тикет
+		TiketsController::storeBySocket($msg);
 
 		$numRecv = count($this->clients) - 1;
 		echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
 			, $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
 		foreach ($this->clients as $client) {
-			if ($from !== $client) {
-				// The sender is not the receiver, send to each client connected
-				$client->send($msg);
-			}
+
+			// Отправляем сообщение всем
+			$client->send($msg);
 		}
 	}
 

@@ -31,13 +31,26 @@ class TiketsController extends Controller
         $this->user = User::class;
     }
 
-    public static function storeBySocket($mess)
+    public static function storeBySocket($msg)
     {
-        //$user = $this->user;
 
+	    //Декодим массив клиента
+	    $mess = json_decode($msg, true);
+	    //Берем юзера
+	    $user = User::find($mess['user_id']);
 
-        $user = Auth::User()->id;
-        dd($mess, $user);
+/*
+	    $tiket = new Tiket([
+		   'title'    => $mess['title'],
+		   'message'  => $mess['message'],
+		   'complete' => 0
+	    ]);
+
+	    $user->tiket()->save($tiket);*/
+
+	    $Tikets = Tiket::where('tikets_id', 0)->orderBy('updated_at')->get();
+
+	    return $Tikets;
     }
 
     /**
