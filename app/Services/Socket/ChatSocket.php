@@ -28,7 +28,7 @@ class ChatSocket extends BaseSocket {
 	public function onMessage(ConnectionInterface $from, $msg) {
 
 		//Отдаем на запись в тикет
-		TiketsController::storeBySocket($msg);
+		$backmess = TiketsController::storeBySocket($msg);
 
 		$numRecv = count($this->clients) - 1;
 		echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
@@ -37,7 +37,7 @@ class ChatSocket extends BaseSocket {
 		foreach ($this->clients as $client) {
 
 			// Отправляем сообщение всем
-			$client->send($msg);
+			$client->send($backmess);
 		}
 	}
 

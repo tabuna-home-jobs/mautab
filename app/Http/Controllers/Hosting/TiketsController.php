@@ -48,7 +48,8 @@ class TiketsController extends Controller
 
 	    $user->tiket()->save($tiket);*/
 
-	    $Tikets = Tiket::where('tikets_id', 0)->orderBy('updated_at')->get();
+	    $Tikets = Tiket::where('tikets_id', 0)->orderBy('updated_at','desc')->take(1)->get();
+
 
 	    return $Tikets;
     }
