@@ -69,13 +69,43 @@
 
 
 
-
     <script>
+        //Функция добавления ответа во вьюху пользователя
+        function addNewMessage(obj){
+            //Формируем дом эелемент
+            var strokeResponse = "<tr class='hotBlock'>";
+            strokeResponse += "<td>"+obj.id+"</td>";
+            strokeResponse += "<td>"+obj.title+"</td>";
+            strokeResponse += "<td>хз пока что</td>";
+            strokeResponse += "<td>хз пока</td>";
+            strokeResponse += "</tr>";
+
+            $("#ticketBody").append(strokeResponse);
+            $('tr.hotBlock').show('slow');
+        }
+
+        //Создаем подключение
+        var conn = new WebSocket('ws://localhost:8990');
+        //Обозначаем подключение
+        conn.onopen = function (e) {
+            console.log('Соединение успешно установлено');
+            };
+
+        //Получаем сообщение с того конца провода
+        conn.onmessage = function (e) {
+            //Парсим ответ
+            var parseObj = JSON.parse(e.data);
+
+            //Отдаем в функцию объект
+            addNewMessage(parseObj[0]);
+        };
+
+
         //Текущий пользователь
         var user = "{{Auth::user()->id}}";
 
 
-
+        //Обрабатываем клик по кнопке формы
         $("body").on('click','#submitTicket',function(){
             var obj = $(this);
             var parentForm = obj.parent();
@@ -93,24 +123,11 @@
                 "user_id" : user
             });
 
-            //Создаем подключение
-            var conn = new WebSocket('ws://localhost:8990');
+
             //Отправляем данные
-            conn.onopen = function (e) {
-                conn.send(mess);
-                console.log('Соединение успешно установлено');
-            };
-
-
-            conn.onmessage = function (e) {
-
-                console.log(e);
-
-
-            };
+            conn.send(mess);
 
             return false;
-
         });
 
 
