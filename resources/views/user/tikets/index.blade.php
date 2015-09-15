@@ -80,7 +80,7 @@
             strokeResponse += "<td>хз пока</td>";
             strokeResponse += "</tr>";
 
-            $("#ticketBody").append(strokeResponse);
+            $("#ticketBody").prepend(strokeResponse);
             $('tr.hotBlock').show('slow');
         }
 
