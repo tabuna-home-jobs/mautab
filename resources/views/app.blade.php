@@ -22,7 +22,7 @@
 
     <link rel="stylesheet" href="{{asset('/build/css/app.css')}}" type="text/css"/>
 
-    <script src="/theme/bower_components/jquery/dist/jquery.min.js"></script>
+
 </head>
 
 

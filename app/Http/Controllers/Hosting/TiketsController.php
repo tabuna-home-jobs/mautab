@@ -39,14 +39,14 @@ class TiketsController extends Controller
 	    //Берем юзера
 	    $user = User::find($mess['user_id']);
 
-
+/*
 	    $tiket = new Tiket([
 		   'title'    => $mess['title'],
 		   'message'  => $mess['message'],
 		   'complete' => 0
 	    ]);
 
-	    $user->tiket()->save($tiket);
+	    $user->tiket()->save($tiket);*/
 
 
 	    $Tikets = Tiket::whereRaw('tikets_id = 0 and user_id = ?', [$user->id])->orderBy('updated_at','desc')->take(1)->get();

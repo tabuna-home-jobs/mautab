@@ -34,4 +34,18 @@ elixir(function(mix) {
  mix.copy('./vendor/bower_components/bootstrap/dist/fonts/', 'public/build/fonts');
  mix.copy('./vendor/bower_components/font-awesome/fonts/', 'public/build/fonts');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
