@@ -1,7 +1,7 @@
 <?php namespace Mautab\Providers;
 
 use App;
-use Carbon;
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
