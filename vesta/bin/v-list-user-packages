@@ -1,0 +1,92 @@
+#!/bin/bash
+# info: list user packages
+# options: [FORMAT]
+#
+# The function for obtaining the list of available hosting packages.
+
+
+#----------------------------------------------------------#
+#                    Variable&Function                     #
+#----------------------------------------------------------#
+
+# Argument defenition
+format=${1-shell}
+
+# Includes
+source $VESTA/func/main.sh
+
+# Json function
+json_list_pkgs() {
+    echo '{'
+    fileds_count=$(echo "$fields" | wc -w)
+    for package in $(ls  --sort=time  $VESTA/data/packages |grep .pkg); do
+        PACKAGE=${package/.pkg/}
+        pkg_data=$(cat $VESTA/data/packages/$package)
+        eval $pkg_data
+        if [ -n "$data" ]; then
+            echo -e '        },'
+        fi
+        i=1
+        for field in $fields; do
+            eval value=$field
+            if [ $i -eq 1 ]; then
+                (( ++i))
+                echo -e "\t\"$value\": {"
+            else
+                if [ $i -lt $fileds_count ]; then
+                    (( ++i))
+                    echo -e "\t\t\"${field//$/}\": \"${value//,/, }\","
+                else
+                    echo -e "\t\t\"${field//$/}\": \"${value//,/, }\""
+                    data=1
+                fi
+            fi
+        done
+    done
+    if [ -n "$data" ]; then
+        echo -e '        }'
+    fi
+    echo -e '}'
+}
+
+# Shell fnction
+shell_list_pkgs() {
+    for package in $(ls -t $VESTA/data/packages |grep .pkg); do
+        PACKAGE=${package/.pkg/}
+        pkg_descr=$(cat $VESTA/data/packages/$package)
+        eval $pkg_descr
+        if [ -z "$nohead" ]; then
+            echo '----------'
+        fi
+        for field in $fields; do
+            eval value=$field
+            echo -e "${field//$/}: $value"
+        done
+    done
+}
+
+
+#----------------------------------------------------------#
+#                       Action                             #
+#----------------------------------------------------------#
+
+# Defining fields
+fields='$PACKAGE $WEB_TEMPLATE $BACKEND_TEMPLATE $PROXY_TEMPLATE
+    $DNS_TEMPLATE $WEB_DOMAINS $WEB_ALIASES $DNS_DOMAINS $DNS_RECORDS
+    $MAIL_DOMAINS $MAIL_ACCOUNTS $DATABASES $CRON_JOBS $DISK_QUOTA $BANDWIDTH
+    $NS $SHELL $BACKUPS $TIME $DATE'
+
+# Listing domains
+case $format in
+    json)   json_list_pkgs ;;
+    plain)  nohead=1; shell_list_pkgs ;;
+    shell)  shell_list_pkgs | column -t ;;
+    *)      check_args '1' '0' '[FORMAT]'
+esac
+
+
+#----------------------------------------------------------#
+#                       Vesta                              #
+#----------------------------------------------------------#
+
+exit

@@ -1,0 +1,54 @@
+#!/bin/bash
+# info: list mail domain accounts
+# options: USER DOMAIN [FORMAT]
+#
+# The function of obtaining the list of all user domains.
+
+
+#----------------------------------------------------------#
+#                    Variable&Function                     #
+#----------------------------------------------------------#
+
+# Argument defenition
+user=$1
+domain=$2
+format=${3-shell}
+
+# Includes
+source $VESTA/func/main.sh
+
+
+#----------------------------------------------------------#
+#                    Verifications                         #
+#----------------------------------------------------------#
+
+check_args '2' "$#" 'USER DOMAIN [FORMAT]'
+validate_format 'user' 'domain'
+is_object_valid 'user' 'USER' "$user"
+is_object_valid 'mail' 'DOMAIN' "$domain"
+
+
+#----------------------------------------------------------#
+#                       Action                             #
+#----------------------------------------------------------#
+
+# Defining fileds to select
+conf=$USER_DATA/mail/$domain.conf
+fields="\$ACCOUNT \$ALIAS \$FWD \$FWD_ONLY \$QUOTA \$AUTOREPLY \$U_DISK"
+fields="$fields \$SUSPENDED \$TIME \$DATE"
+
+# Listing domain accounts
+case $format in 
+    json)  json_list ;;
+    plain) nohead=1; shell_list ;;
+    shell) fields='$ACCOUNT $AUTOREPLY $QUOTA $U_DISK $SUSPENDED $TIME $DATE';
+           shell_list | column -t ;;
+    *)     check_args '1' '0' 'USER [FORMAT]'
+esac
+
+
+#----------------------------------------------------------#
+#                       Vesta                              #
+#----------------------------------------------------------#
+
+exit

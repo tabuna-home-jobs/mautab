@@ -1,0 +1,102 @@
+#!/bin/bash
+# info: list dns template
+# options: TEMPLATE [FORMAT]
+#
+# The function for obtaining the DNS template parameters.
+
+
+#----------------------------------------------------------#
+#                    Variable&Function                     #
+#----------------------------------------------------------#
+
+# Argument defenition
+template=$1
+format=${2-shell}
+
+# Includes
+source $VESTA/func/main.sh
+source $VESTA/func/domain.sh
+
+# Json func
+json_list_dns() {
+    echo '{'
+    fileds_count=$(echo $fields| wc -w )
+    while read line; do
+        IFS=$'\n'
+        eval $line
+        if [ -n "$data" ]; then
+            echo -e '        },'
+        fi
+        i=1
+        IFS=' '
+        for field in $fields; do
+            eval value=\"$field\"
+            value=$(echo "$value" | sed -e 's/"/\\"/g' -e "s/%quote%/'/g")
+            if [ $i -eq 1 ]; then
+                (( ++i))
+                echo -e "\t\"$value\": {"
+            else
+                if [ $i -lt $fileds_count ]; then
+                    (( ++i))
+                    echo -e "\t\t\"${field//$/}\": \"${value//,/, }\","
+                else
+                    echo -e "\t\t\"${field//$/}\": \"${value//,/, }\""
+                    data=1
+                fi
+            fi
+        done
+    done < $conf
+    if [ -n "$data" ]; then
+        echo -e '        }'
+    fi
+    echo -e '}'
+}
+
+# Shell function
+shell_list_dns() {
+    if [ -z "$nohead" ] ; then
+        echo "${fields//$/}"
+        for a in $fields; do
+            echo -e "------ \c"
+        done
+        echo
+    fi
+
+    while read line ; do
+        eval $line
+        eval echo "$fields" | sed "s/%quote%/'/g"
+    done < $conf
+}
+
+
+#----------------------------------------------------------#
+#                    Verifications                         #
+#----------------------------------------------------------#
+
+check_args '1' "$#" 'TEMPLATE [FORMAT]'
+validate_format 'template'
+is_dns_template_valid
+
+
+#----------------------------------------------------------#
+#                       Action                             #
+#----------------------------------------------------------#
+
+# Defining config and fields
+conf=$DNSTPL/$template.tpl
+fields='$RECORD $TYPE $PRIORITY $VALUE'
+
+# Listing templates
+case $format in 
+    json)   json_list_dns ;;
+    plain)  nohead=1; shell_list_dns ;;
+    shell)  shell_list_dns | column -t ;;
+    *)      check_args '1' '0' 'TEMPLATE [FORMAT]';;
+esac
+
+
+#----------------------------------------------------------#
+#                       Vesta                              #
+#----------------------------------------------------------#
+
+exit

@@ -1,0 +1,88 @@
+#!/bin/bash
+# info: list database server
+# options: TYPE HOST [FORMAT]
+#
+# The function for obtaining database server parameters.
+
+
+#----------------------------------------------------------#
+#                    Variable&Function                     #
+#----------------------------------------------------------#
+
+# Argument defenition
+type=$1
+host=$2
+format=${3-shell}
+
+# Includes
+source $VESTA/func/main.sh
+
+# Json function
+json_list_dbhost() {
+    i=1
+    fields_count=$(echo "$fields" | wc -w)
+    line=$(grep "HOST='$host'" $conf)
+    echo '{'
+    eval $line
+    for field in $fields; do
+        eval value=$field
+        if [ "$i" -eq 1 ]; then
+            echo -e "\t\"$value\": {"
+        else
+            if [ "$fields_count" -eq "$i" ]; then
+                echo -e "\t\t\"${field//$/}\": \"${value//,/, }\""
+            else
+                echo -e "\t\t\"${field//$/}\": \"${value//,/, }\","
+            fi
+        fi
+        (( ++i))
+    done
+    if [ -n "$value" ]; then
+        echo -e "\t}"
+    fi
+    echo -e "}"
+}
+
+# Shell function
+shell_list_dbhost() {
+    line=$(grep "HOST='$host'" $conf)
+    eval $line
+    for field in $fields; do
+        eval key="$field"
+        echo "${field//$/}: $key"
+    done
+}
+
+
+#----------------------------------------------------------#
+#                    Verifications                         #
+#----------------------------------------------------------#
+
+check_args '2' "$#" 'TYPE HOST [FORMAT]'
+validate_format 'host'
+is_object_valid "../../conf/$type" 'HOST' "$host"
+
+
+#----------------------------------------------------------#
+#                       Action                             #
+#----------------------------------------------------------#
+
+# Defining fileds to select
+conf=$VESTA/conf/$type.conf
+fields='$HOST $CHARSETS $MAX_DB $U_SYS_USERS $U_DB_BASES $TPL $SUSPENDED'
+fields="$fields \$TIME \$DATE"
+
+# Listing database
+case $format in 
+    json)   json_list_dbhost ;;
+    plain)  nohead=1; shell_list_dbhost ;;
+    shell)  shell_list_dbhost | column -t;;
+    *)      check_args '2' '0' 'TYPE HOST [FORMAT]'
+esac
+
+
+#----------------------------------------------------------#
+#                       Vesta                              #
+#----------------------------------------------------------#
+
+exit

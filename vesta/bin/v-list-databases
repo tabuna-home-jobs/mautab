@@ -1,0 +1,51 @@
+#!/bin/bash
+# info: listing databases
+# options: USER [FORMAT]
+#
+# The function for obtaining the list of all user's databases.
+
+
+#----------------------------------------------------------#
+#                    Variable&Function                     #
+#----------------------------------------------------------#
+
+# Argument defenition
+user=$1
+format=${2-shell}
+
+# Includes
+source $VESTA/func/main.sh
+
+
+#----------------------------------------------------------#
+#                    Verifications                         #
+#----------------------------------------------------------#
+
+check_args '1' "$#" 'USER [FORMAT]'
+validate_format 'user'
+is_object_valid 'user' 'USER' "$user"
+
+
+#----------------------------------------------------------#
+#                       Action                             #
+#----------------------------------------------------------#
+
+# Defining fileds to select
+conf=$USER_DATA/db.conf
+fields='$DB $DBUSER $HOST $TYPE $CHARSET $U_DISK $SUSPENDED $TIME $DATE'
+
+# Listing databases
+case $format in 
+    json)   json_list ;;
+    plain)  nohead=1; shell_list ;;
+    shell)  fields='$DB $DBUSER $HOST $TYPE $U_DISK $DATE';
+            shell_list | column -t ;;
+    *)      check_args '1' '0' 'USER [FORMAT]'
+esac
+
+
+#----------------------------------------------------------#
+#                       Vesta                              #
+#----------------------------------------------------------#
+
+exit

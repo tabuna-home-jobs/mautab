@@ -1,0 +1,50 @@
+#!/bin/bash
+# info: change ip name
+# options: IP NAME
+#
+# The function for changing dns domain associated with ip.
+
+
+#----------------------------------------------------------#
+#                    Variable&Function                     #
+#----------------------------------------------------------#
+
+# Argument defenition
+ip=$1
+ip_name=$2
+
+# Includes
+source $VESTA/func/main.sh
+source $VESTA/func/ip.sh
+source $VESTA/conf/vesta.conf
+
+
+#----------------------------------------------------------#
+#                    Verifications                         #
+#----------------------------------------------------------#
+
+check_args '2' "$#" 'IP IP_NAME'
+validate_format 'ip'
+if [ ! -z "$ip_name" ]; then
+    validate_format 'ip_name'
+fi
+is_ip_valid
+
+
+#----------------------------------------------------------#
+#                       Action                             #
+#----------------------------------------------------------#
+
+# Changing ip name
+update_ip_value '$NAME' "$ip_name"
+
+
+#----------------------------------------------------------#
+#                       Vesta                              #
+#----------------------------------------------------------#
+
+# Logging
+log_history "changed associated dns on $ip to $domain" '' 'admin'
+log_event "$OK" "$EVENT"
+
+exit

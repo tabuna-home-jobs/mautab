@@ -1,5 +1,7 @@
 <?php namespace Mautab\Providers;
 
+use App;
+use Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
@@ -11,7 +13,8 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		//Устанавливаем локализацию для формитирования дат
+		Carbon::setLocale(App::getLocale());
 	}
 
 	/**

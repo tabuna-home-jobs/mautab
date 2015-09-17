@@ -1,0 +1,73 @@
+#!/bin/bash
+# info: list mail domain dkim
+# options: USER DOMAIN [FORMAT]
+#
+# The function of obtaining domain dkim files.
+
+
+#----------------------------------------------------------#
+#                    Variable&Function                     #
+#----------------------------------------------------------#
+
+# Argument defenition
+user=$1
+domain=$2
+format=${3-shell}
+
+# Includes
+source $VESTA/func/main.sh
+
+# Json function
+json_list_ssl() {
+    echo '{'
+    echo -e "\t\"$domain\": {"
+    echo "        \"PEM\": \"$pem\","
+    echo "        \"PUB\": \"$pub\","
+    echo -e "\t}\n}"
+}
+
+# Shell function
+shell_list_ssl() {
+    if [ ! -z "$pem" ]; then
+        echo -e "$pem"
+    fi
+    if [ ! -z "$pub" ]; then
+        echo -e "\n$pub"
+    fi
+}
+
+
+#----------------------------------------------------------#
+#                    Verifications                         #
+#----------------------------------------------------------#
+
+check_args '2' "$#" 'USER DOMAIN [FORMAT]'
+is_object_valid 'user' 'USER' "$user"
+is_object_valid 'mail' 'DOMAIN' "$domain"
+
+
+#----------------------------------------------------------#
+#                       Action                             #
+#----------------------------------------------------------#
+if [ -e "$USER_DATA/mail/$domain.pem" ]; then
+    pem=$(cat $USER_DATA/mail/$domain.pem | sed ':a;N;$!ba;s/\n/\\n/g')
+fi
+
+if [ -e "$USER_DATA/mail/$domain.pub" ]; then
+    pub=$(cat $USER_DATA/mail/$domain.pub | sed ':a;N;$!ba;s/\n/\\n/g')
+fi
+
+# Listing domains
+case $format in
+    json)   json_list_ssl ;;
+    plain)  nohead=1; shell_list_ssl ;;
+    shell)  shell_list_ssl ;;
+    *)      check_args '1' '0' '[FORMAT]'
+esac
+
+
+#----------------------------------------------------------#
+#                       Vesta                              #
+#----------------------------------------------------------#
+
+exit
