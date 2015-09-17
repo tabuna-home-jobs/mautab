@@ -16,7 +16,7 @@ function addNewMessage(obj){
 var conn = new WebSocket('ws://localhost:8990');
 //Обозначаем подключение
 conn.onopen = function (e) {
-    console.log(e);
+
 };
 
 //Получаем сообщение с того конца провода
@@ -29,10 +29,6 @@ conn.onmessage = function (e) {
 };
 
 
-//Текущий пользователь
-var user = "{{Auth::user()->id}}";
-
-
 //Обрабатываем клик по кнопке формы
 $("body").on('click','#submitTicket',function(){
     var obj = $(this);
@@ -41,14 +37,15 @@ $("body").on('click','#submitTicket',function(){
     //Получаем все данные отправляемого тикета
     var tiketTitle = $("input[name='title']",parentForm).val();
     var messTitle = $("textarea[name='message']",parentForm).val();
-    var csrf = $("input[name='_token']",parentForm).val();
+
+    //Обнуляем inputы
+    $("input[name='title']",parentForm).val('');
+    $("textarea[name='message']",parentForm).val('');
 
     //Формируем данные
     var mess = JSON.stringify({
         "title"   : tiketTitle,
-        "message" : messTitle,
-        "csrf"    : csrf,
-        "user_id" : user
+        "message" : messTitle
     });
 
 

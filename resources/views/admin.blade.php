@@ -168,6 +168,12 @@
                                 <span>Email рассылка</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.tikets.index')}}">
+                                <i class="fa fa-question text-info"></i>
+                                <span>Тикеты</span>
+                            </a>
+                        </li>
 
 
                     </ul>

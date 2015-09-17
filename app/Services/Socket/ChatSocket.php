@@ -23,10 +23,8 @@ class ChatSocket extends BaseSocket {
 		$this->clients = new \SplObjectStorage;
 	}
 
+	public function getUserFromSession($conn){
 
-	public function onOpen(ConnectionInterface $conn) {
-
-		$this->clients->attach($conn);
 		// Create a new session handler for this client
 		$session = (new SessionManager(App::getInstance()))->driver();
 		// Get the cookies
@@ -42,7 +40,18 @@ class ChatSocket extends BaseSocket {
 
 		$conn->session->start();
 		//Берем юзера из сессии
-        $userId = $conn->session->get(Auth::getName());
+		$userId = $conn->session->get(Auth::getName());
+
+		return $userId;
+
+	}
+
+	public function onOpen(ConnectionInterface $conn) {
+
+		$this->clients->attach($conn);
+
+		//Берем user id
+		$userId = $this->getUserFromSession($conn);
 
 		//Создаем список юзеров подключенных к серверу
 		array_push($this->userList, $userId);
@@ -53,9 +62,12 @@ class ChatSocket extends BaseSocket {
 
 	public function onMessage(ConnectionInterface $from, $msg) {
 
+		//Берем user id того кто послал
+		$userId = $this->getUserFromSession($from);
 
 		//Отдаем на запись в тикет
-		$backmess = TiketsController::storeBySocket($msg);
+		$backmess = TiketsController::storeBySocket($msg, $userId);
+
 
 		$numRecv = count($this->clients) - 1;
 
@@ -63,11 +75,16 @@ class ChatSocket extends BaseSocket {
 			, $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
 
+		//Объект последниего сообщения
+		$lastMess = json_decode($backmess);
+
 
 		foreach ($this->clients as $client) {
 
-			// Отправляем сообщение всем
-			$client->send($backmess);
+			// Отправляем сообщение только тому кто его послал
+			if($this->getUserFromSession($client) == $lastMess[0]->user_id){
+				$client->send($backmess);
+			}
 		}
 	}
 
@@ -75,22 +92,8 @@ class ChatSocket extends BaseSocket {
 		// The connection is closed, remove it, as we can no longer send it messages
 		$this->clients->detach($conn);
 
-		$session = (new SessionManager(App::getInstance()))->driver();
-		// Get the cookies
-		$cookies = $conn->WebSocket->request->getCookies();
-		// Get the laravel's one
-		$laravelCookie = urldecode($cookies[Config::get('session.cookie')]);
-		// get the user session id from it
-		$idSession = Crypt::decrypt($laravelCookie);
-		// Set the session id to the session handler
-		$session->setId($idSession);
-		// Bind the session handler to the client connection
-		$conn->session = $session;
-
-		$conn->session->start();
-
-		//Берем бзера из сессии
-		$userId = $conn->session->get(Auth::getName());
+		//Берем user id
+		$userId = $this->getUserFromSession($conn);
 
 		//Ищем юзера у которого дисконект
 		$needleElem = array_search($userId, $this->userList);
