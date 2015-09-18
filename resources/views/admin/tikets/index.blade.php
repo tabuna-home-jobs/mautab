@@ -19,13 +19,21 @@
                         <tr>
                             <th>#</th>
                             <th>Название</th>
+                            <th>Сообщение</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($tiketList as $tiket)
                             <tr>
                                 <td>{{$tiket->id}}</td>
-                                <td>{{$tiket->title}}</td>
+                                <td>
+                                    <a href="{{ route('admin.tikets.show', $tiket->id) }}">
+                                        {{$tiket->title}}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{str_limit(strip_tags($tiket->message), $limit = 100, $end = '...')}}
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

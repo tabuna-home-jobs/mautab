@@ -246,3 +246,16 @@ label, strong {
 .bootstrap-tagsinput {
     width: 100% !important;
 }
+.i-switch i:before {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    content: "";
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}

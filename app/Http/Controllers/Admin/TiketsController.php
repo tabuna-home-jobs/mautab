@@ -51,7 +51,10 @@ class TiketsController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $currentTiket = Tiket::findOrFail($id);
+
+        return view('admin/tikets/viewer',['tiket' => $currentTiket]);
     }
 
     /**

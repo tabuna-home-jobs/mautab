@@ -5177,3 +5177,6 @@ a.text-#000000:hover {
 .hotBlock{
   display: none;
 }
+.close-title{
+  padding-top: 5px;
+}
