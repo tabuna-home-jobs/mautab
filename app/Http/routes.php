@@ -39,6 +39,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['Adm
     Route::resource('/', 'HomeAdminController', ['only' => 'index']);
     Route::resource('users', 'UserController');
     Route::resource('pages', 'PagesController');
+    Route::resource('news', 'NewsController');
     Route::resource('package', 'PackageController');
     Route::resource('server', 'ServerController');
     Route::resource('serverstats', 'ServerStatsController');
