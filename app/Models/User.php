@@ -90,6 +90,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany(Tiket::class);
     }
 
+	public function getNickname(){
+
+		return $this->nickname;
+	}
+
 
     public function getPayments()
     {

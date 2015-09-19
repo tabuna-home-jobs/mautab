@@ -45,6 +45,7 @@ var jp_config = {
     webAdd:         [   '/theme/jsController/user/web/index.js'],
     tiketSocketConn: [ '/theme/jsController/user/tikets/index.js'],
     adminTiketIndex: [ '/theme/jsController/admin/tikets/index.js'],
-    adminTiketView: [ '/theme/jsController/admin/tikets/viewer.js']
+    adminTiketView: [ '/theme/jsController/admin/tikets/viewer.js'],
+    userTiketView: [ '/theme/jsController/user/tikets/viewer.js']
 
 };

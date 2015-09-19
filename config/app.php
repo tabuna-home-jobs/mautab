@@ -210,6 +210,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
 		'Active' => Watson\Active\Facades\Active::class,
 		'Flash' => Laracasts\Flash\Flash::class,
+		'User' => \Mautab\Models\User::class,
 	],
 
 ];

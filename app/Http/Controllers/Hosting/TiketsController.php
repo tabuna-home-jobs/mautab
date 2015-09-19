@@ -6,6 +6,7 @@ use Mautab\Http\Requests\TiketRequest;
 use Mautab\Models\Tiket;
 use Mautab\Models\User;
 use Session;
+use DB;
 
 class TiketsController extends Controller
 {
@@ -36,6 +37,7 @@ class TiketsController extends Controller
 
 	    //Декодим массив клиента
 	    $mess = json_decode($msg, true);
+
 	    //Берем юзера
 	    $user = User::find($userId);
 
@@ -48,7 +50,14 @@ class TiketsController extends Controller
 	    $user->tiket()->save($tiket);
 
 
-	    $Tikets = Tiket::whereRaw('tikets_id = 0 and user_id = ?', [$user->id])->orderBy('updated_at','desc')->take(1)->get();
+	   // $Tikets = Tiket::whereRaw('tikets_id = 0 and user_id = ?', [$user->id])->orderBy('updated_at','desc')->take(1)->get();
+
+	    $Tikets = DB::table('tikets')
+		    ->leftJoin('users', 'users.id', '=', 'tikets.user_id')
+		    ->where('tikets.tikets_id', "=" ,$msg['tikets_id'])
+		    ->orderBy('tikets.updated_at','desc')
+		    ->take(1)
+		    ->get();
 
 	    return $Tikets;
     }
@@ -67,22 +76,39 @@ class TiketsController extends Controller
 
     //Новая заявка
 
-    public function store(TiketRequest $request)
+    public function store($msg, $userId)
     {
-        $tiket = new Tiket([
-            'title' => $request->title,
-            'message' => $request->message,
-            'complete' => 0,
-        ]);
-        User::find(Auth::User()->id)->tiket()->save($tiket);
-        Session::flash('good', 'Вы успешно создали тикет!');
-        return redirect()->back();
+	    $msg = json_decode($msg, TRUE);
+
+	    //Берем юзера
+	    $user = User::findOrFail($userId);
+
+	    $tiket = new Tiket([
+		    'message'   => $msg['message'],
+		    'tikets_id' => $msg['tikets_id']
+	    ]);
+
+	    $user->tiket()->save($tiket);
+
+
+	    $Tikets = DB::table('tikets')
+		    ->leftJoin('users', 'users.id', '=', 'tikets.user_id')
+		    ->where('tikets.tikets_id', "=" ,$msg['tikets_id'])
+		    ->orderBy('tikets.updated_at','desc')
+		    ->take(1)
+		    ->get();
+
+	   // $Tikets = User::find($userId)->tiket()->find($msg['tikets_id'])->orderBy('id', 'desc')->take(1)->get();
+
+	    //$Tikets = Tiket::whereRaw('tikets_id = ?', [$msg['tikets_id']])->orderBy('updated_at','desc')->take(1)->get();
+
+	    return $Tikets[0];
     }
 
     public function show($id)
     {
         $Tiket = User::find(Auth::User()->id)->tiket()->find($id);
-        $subTiket = User::find(Auth::User()->id)->tiket()->find($id)->subtiket($id)->simplePaginate(15);
+        $subTiket = User::find(Auth::User()->id)->tiket()->find($id)->subtiket($id)->orderBy('id','desc')->simplePaginate(15);
 
         return view('user/tikets/viewer', ['Tiket' => $Tiket, 'subTiket' => $subTiket]);
     }

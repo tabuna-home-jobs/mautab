@@ -8,6 +8,7 @@ use Mautab\Http\Controllers\Controller;
 use Mautab\Models\Tiket;
 use Mautab\Http\Requests\TiketRequest;
 use Mautab\Models\User;
+use DB;
 
 class TiketsController extends Controller
 {
@@ -18,7 +19,7 @@ class TiketsController extends Controller
      */
     public function index()
     {
-        $tiketsList = Tiket::whereRaw('complete = 0')->orderBy('id','desc')->simplePaginate(15);
+        $tiketsList = Tiket::whereRaw('complete = 0 AND tikets_id = 0')->orderBy('id','desc')->simplePaginate(15);
 
 	    return view('admin/tikets/index',['tiketList' => $tiketsList]);
     }
@@ -50,9 +51,16 @@ class TiketsController extends Controller
 
         $user->tiket()->save($tiket);
 
-        $Tikets = Tiket::whereRaw('tikets_id = ?', [$msg['tikets_id']])->orderBy('updated_at','desc')->take(1)->get();
+        //$Tikets = Tiket::whereRaw('tikets_id = ?', [$msg['tikets_id']])->orderBy('updated_at','desc')->take(1)->get();
 
-        return $Tikets;
+	    $Tikets = DB::table('tikets')
+		    ->leftJoin('users', 'users.id', '=', 'tikets.user_id')
+		    ->where('tikets.tikets_id', "=" ,$msg['tikets_id'])
+		    ->orderBy('tikets.updated_at','desc')
+		    ->take(1)
+		    ->get();
+
+        return $Tikets[0];
     }
 
     /**

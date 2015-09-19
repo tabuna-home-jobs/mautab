@@ -61,6 +61,7 @@ class ChatSocket extends BaseSocket {
 	public function getAutorMess($tikets_id){
 
 		$tik = Tiket::findOrFail($tikets_id);
+
 		//Вернем id автора
 		return $tik->user_id;
 	}
@@ -98,13 +99,36 @@ class ChatSocket extends BaseSocket {
 			if (!$valid->fails()) {
 				$backmess = AdminTiketsFacades::store($msg, $userId);
 			}else{
-				$backmess = false;
+				$backmess = null;
 			}
 
 		}else{
 
-			//Отдаем на запись в тикет
-			$backmess = TiketsController::storeBySocket($msg, $userId);
+			//Валидируем все переданное дело
+			$valid = \Validator::make(json_decode($msg, TRUE),[
+				'message'   => 'required',
+				'complete'  => 'integer|sometimes',
+				'tikets_id' => 'integer|sometimes'
+			]);
+
+
+			//Если всё хорошо то создаем запись
+			if (!$valid->fails()) {
+
+				//Проверяем беседа ли это
+				$checkIntreview = json_decode($msg, TRUE);
+
+				if($checkIntreview['interview']){
+					//Добавляем тикет в беседу
+					$addTiket = new TiketsController();
+					$backmess = $addTiket->store($msg, $userId);
+				}else{
+					//Отдаем на запись в тикет
+					$backmess = TiketsController::storeBySocket($msg, $userId);
+				}
+			}else{
+				$backmess = null;
+			}
 
 		}
 
@@ -115,19 +139,15 @@ class ChatSocket extends BaseSocket {
 			, $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
 
-		//Объект последниего сообщения
-		$lastMess = json_decode($backmess);
-
-
 
 		foreach ($this->clients as $client) {
 
-			// Отправляем сообщение только тому кто его послал или админу
-			if(($this->getUserFromSession($client) == $lastMess[0]->user_id) ||
+			// Отправляем сообщение только тому кто его послал или админу или кто тому кто создал главный тикет
+			if(($this->getUserFromSession($client) == $backmess->user_id) ||
 				($this->checkCurrentUserRole($this->getUserFromSession($client),'admin')) ||
-				($this->getUserFromSession($client) == $this->getAutorMess($lastMess[0]->tikets_id))){
+				($this->getUserFromSession($client) == $this->getAutorMess($backmess->tikets_id))){
 
-				$client->send($backmess);
+				$client->send(json_encode($backmess));
 
 			}
 		}
