@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Mautab\Http\Requests;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Models\Tiket;
-
+use Mautab\Http\Requests\TiketRequest;
+use Mautab\Models\User;
 
 class TiketsController extends Controller
 {
@@ -38,9 +39,20 @@ class TiketsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($msg, $userId)
     {
-        //
+        $msg = json_decode($msg, TRUE);
+
+        //Берем юзера
+        $user = User::findOrFail($userId);
+
+        $tiket = new Tiket($msg);
+
+        $user->tiket()->save($tiket);
+
+        $Tikets = Tiket::whereRaw('tikets_id = ?', [$msg['tikets_id']])->orderBy('updated_at','desc')->take(1)->get();
+
+        return $Tikets;
     }
 
     /**
@@ -52,7 +64,7 @@ class TiketsController extends Controller
     public function show($id)
     {
 
-        $currentTiket = Tiket::findOrFail($id);
+        $currentTiket = Tiket::with('subtiket')->findOrFail($id);
 
         return view('admin/tikets/viewer',['tiket' => $currentTiket]);
     }

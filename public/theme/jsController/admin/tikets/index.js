@@ -1,10 +1,30 @@
+//Функция добавления ответа во вьюху
+function addNewMessage(obj){
 
-//Отправляем форму
-$("#submitTicket").click(function(){
+    //Формируем дом эелемент
+    var strokeResponse = "<tr class='hotBlock'>";
+    strokeResponse += "<td>"+obj.id+"</td>";
+    strokeResponse += "<td><a href='tikets/"+obj.id+"'>"+obj.title+"</a></td>";
+    strokeResponse += "<td>"+obj.message.substr(0,100)+"</td>";
+    strokeResponse += "</tr>";
 
-    var mess = $("#answerTiket textarea[name='message']").val();
-    var close = $("#answerTiket input[name='close']:checked").val();
+    $("#ticketBody").prepend(strokeResponse);
+    $('tr.hotBlock').show('slow');
 
-    alert(close);
-    return false;
-});
+}
+
+//Создаем подключение
+var conn = new WebSocket('ws://localhost:8990');
+//Обозначаем подключение
+conn.onopen = function (e) {
+    console.log('Админ подключился!!!');
+};
+//Получаем сообщение с того конца провода
+conn.onmessage = function (e) {
+    //Парсим ответ
+    var parseObj = JSON.parse(e.data);
+
+    //Отдаем в функцию объект
+    addNewMessage(parseObj[0]);
+};
+

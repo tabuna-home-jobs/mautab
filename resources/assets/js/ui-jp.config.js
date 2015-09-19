@@ -44,6 +44,7 @@ var jp_config = {
         '/theme/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'],
     webAdd:         [   '/theme/jsController/user/web/index.js'],
     tiketSocketConn: [ '/theme/jsController/user/tikets/index.js'],
-    adminTiketIndex: [ '/theme/jsController/admin/tikets/index.js']
+    adminTiketIndex: [ '/theme/jsController/admin/tikets/index.js'],
+    adminTiketView: [ '/theme/jsController/admin/tikets/viewer.js']
 
 };

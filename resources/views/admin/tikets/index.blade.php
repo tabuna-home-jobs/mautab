@@ -8,7 +8,7 @@
         <h1 class="m-n font-thin h3">Список не отвеченных тикетов</h1>
     </div>
 
-    <div class="wrapper-md">
+    <div class="wrapper-md" ui-jq="adminTiketIndex">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Тикеты
@@ -22,7 +22,7 @@
                             <th>Сообщение</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="ticketBody">
                         @foreach($tiketList as $tiket)
                             <tr>
                                 <td>{{$tiket->id}}</td>
