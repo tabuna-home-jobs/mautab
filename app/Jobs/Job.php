@@ -1,5 +1,5 @@
 <?php
-	namespace App\Jobs;
+namespace Mautab\Jobs;
 
 	use Illuminate\Bus\Queueable;
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Mautab\Models\CMS;
 use Mautab\Models\News;
 use Mautab\Models\Page;
 use Mautab\Observer\SlugGenerateObserver;
@@ -34,6 +35,7 @@ class EventServiceProvider extends ServiceProvider {
 
 		Page::observe(new SlugGenerateObserver);
 		News::observe(new SlugGenerateObserver);
+		CMS::observe(new SlugGenerateObserver);
 	}
 
 }

@@ -151,6 +151,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
 		Watson\Active\ActiveServiceProvider::class,
 		Laracasts\Flash\FlashServiceProvider::class,
+		Collective\Remote\RemoteServiceProvider::class,
 	],
 
 	/*
@@ -205,12 +206,13 @@ return [
 		 */
 		'Vesta'     => Mautab\Facades\VestaFacades::class,
         'Whois' => Mautab\Facades\WhoisFacades::class,
-        //'SSH'       => Collective\Remote\RemoteFacade::class,
         //'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Image' => Intervention\Image\Facades\Image::class,
 		'Active' => Watson\Active\Facades\Active::class,
 		'Flash' => Laracasts\Flash\Flash::class,
 		'User' => \Mautab\Models\User::class,
+		'SSH' => Collective\Remote\RemoteFacade::class,
+
 	],
 
 ];
