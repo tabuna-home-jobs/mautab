@@ -1,7 +1,8 @@
 //Функция добавления ответа во вьюху
 function addNewMessage(obj){
 
-    //Формируем дом эелемент
+    console.log(obj);
+    //Формируем дом элемент
     var strokeResponse = "<tr class='hotBlock'>";
     strokeResponse += "<td>"+obj.id+"</td>";
     strokeResponse += "<td><a href='tikets/"+obj.id+"'>"+obj.title+"</a></td>";
@@ -25,6 +26,6 @@ conn.onmessage = function (e) {
     var parseObj = JSON.parse(e.data);
 
     //Отдаем в функцию объект
-    addNewMessage(parseObj[0]);
+    addNewMessage(parseObj);
 };
 

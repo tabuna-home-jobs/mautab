@@ -25,7 +25,7 @@ conn.onmessage = function (e) {
     var parseObj = JSON.parse(e.data);
 
     //Отдаем в функцию объект
-    addNewMessage(parseObj[0]);
+    addNewMessage(parseObj);
 };
 
 

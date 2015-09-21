@@ -53,13 +53,15 @@ class TiketsController extends Controller
 	   // $Tikets = Tiket::whereRaw('tikets_id = 0 and user_id = ?', [$user->id])->orderBy('updated_at','desc')->take(1)->get();
 
 	    $Tikets = DB::table('tikets')
+            ->select('tikets.*, users.*, tikets.id as tiketid')
 		    ->leftJoin('users', 'users.id', '=', 'tikets.user_id')
-		    ->where('tikets.tikets_id', "=" ,$msg['tikets_id'])
 		    ->orderBy('tikets.updated_at','desc')
 		    ->take(1)
 		    ->get();
 
-	    return $Tikets;
+        dd($Tikets);
+
+	    return $Tikets[0];
     }
 
     /**

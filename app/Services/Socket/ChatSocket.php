@@ -118,7 +118,8 @@ class ChatSocket extends BaseSocket {
 				//Проверяем беседа ли это
 				$checkIntreview = json_decode($msg, TRUE);
 
-				if($checkIntreview['interview']){
+
+				if(isset($checkIntreview['interview'])){
 					//Добавляем тикет в беседу
 					$addTiket = new TiketsController();
 					$backmess = $addTiket->store($msg, $userId);
@@ -137,8 +138,6 @@ class ChatSocket extends BaseSocket {
 
 		echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
 			, $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
-
-
 
 		foreach ($this->clients as $client) {
 
