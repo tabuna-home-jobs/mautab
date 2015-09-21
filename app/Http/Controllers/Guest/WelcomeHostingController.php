@@ -29,7 +29,7 @@ class WelcomeHostingController extends Controller
     {
 
         $Package = Package::whereHidden('false')->orderBy('price', 'ASC')->get();
-        $News = News::paginate(3);
+        $News = News::paginate(4);
         return view('welcome.hosting', [
             'Package' => $Package,
             'News' => $News

@@ -36,7 +36,7 @@
                             <td>
 
                                 <div class="btn-group pull-right" role="group" aria-label="...">
-                                    <a href="{{ route('admin.pages.edit',$news->slug) }}"
+                                    <a href="{{ route('admin.news.edit',$news->slug) }}"
                                        class="btn btn-default"><span class="fa fa-edit"></span> </a>
                                     <a href="#" data-toggle="modal" data-target="#Modal-{{$news->slug}}"
                                        class="btn btn-danger">

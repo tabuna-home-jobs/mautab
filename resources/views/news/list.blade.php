@@ -8,15 +8,18 @@
             <div class="col-sm-8">
                 <div class="blog-post">
                     <div class="panel">
-                        @foreach($news as $value)
+
                         <div class="wrapper-lg">
-                            <h2 class="m-t-none"><a href="/news/{{$value->slug}}">{{$value->title}}</a></h2>
+                            <h2 class="m-t-none">Новости</h2>
 
                             <div class="line line-lg b-b b-light"></div>
+                            @foreach($news as $value)
                             <div>
 
+                                <div class="news-heder"><a title="Подробнее" class="text-black font-bold" href="/news/{{$value->slug}}">{{$value->title}}</a></div>
+                                <div class="news-date text-muted ">{{ $value->created_at->diffForHumans() }}</div>
+                                <div class="news-desript m-b">{{str_limit( strip_tags($value->content), 100, '...' )}}</div>
 
-                                {!!$value->content!!}
 
                             </div>
                             @endforeach

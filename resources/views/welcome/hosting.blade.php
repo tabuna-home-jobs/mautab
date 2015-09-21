@@ -214,19 +214,25 @@
         <!--Новости -->
             <div class="container m-t-xxl m-b-xxl padder-v">
                 <div class="row">
-                    <div class="col-md-12 h-center"><h2>Новости</h2></div>
+                    <div class="col-md-12 text-center  m-t-xl m-b-xl"><h2><span class="h2-hr-centr"></span><span class="h2-span">Новости</span></h2></div>
                     @foreach($News as $new)
-                        <div class="col-md-3">
-                            <div class="news-heder"><a href="/news/{{$new->slug}}">{{$new->title}}</a></div>
-                            <div class="news-desript">{{$new->descript}}</div>
-                            <div class="news-date">{{$new->created_at}}</div>
+                        <div class="col-md-3 text-center ">
+                            <div class="news-heder m-b"><a class="text-black font-bold" href="/news/{{$new->slug}}">{{$new->title}}</a></div>
+                            <div class="news-desript m-b">{{str_limit( strip_tags($new->content), 100, '<a>Читать далее</a>' )}}</div>
+                            <div class="news-date text-muted ">{{ $new->created_at->diffForHumans() }}</div>
                         </div>
                     @endforeach
+
+                    <div class="m-t-xl text-center col-xs-12">
+                        <a href="/news"  class="btn btn-lg btn-white b-2x b-dark btn-rounded bg-empty m-sm">Все новости</a>
+                    </div>
                 </div>
+
             </div>
             <!--end Новости -->
 
         </div>
 
 
-@endsection
+            @endsection
+        </div>
