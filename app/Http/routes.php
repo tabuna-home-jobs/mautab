@@ -5,6 +5,7 @@ Route::group(['namespace' => 'Guest'], function () {
     Route::resource('/', 'WelcomeHostingController@index');
     Route::resource('/price', 'WelcomeHostingController@price');
     Route::resource('pages', 'PageController');
+    Route::resource('news', 'NewsController');
     Route::resource('whois', 'WhoIsController');
 });
 
