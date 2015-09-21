@@ -1,4 +1,6 @@
 var elixir = require('laravel-elixir');
+var gulp = require('gulp');
+var uncss = require('gulp-uncss');
 
 /*
  |--------------------------------------------------------------------------
@@ -45,17 +47,18 @@ elixir(function (mix) {
  mix.copy('./vendor/bower_components', 'public/bower_components');
 
 
-
-
-
-
-
-
-
-
-
-
-
+ /**
+  * Тут должны быть удаление тех стилей которые не используються
+ elixir.extend("message", function (message) {
+  gulp.task('default', function () {
+   return gulp.src('public/build/css/app.css')
+       .pipe(uncss({
+        html: ['/', '*', 'http://localhost:8000']
+       }))
+       .pipe(gulp.dest('public/build/css/out.css'));
+  });
+ });
+*/
 
 
 });

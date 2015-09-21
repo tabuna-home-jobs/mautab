@@ -43,6 +43,9 @@ var jp_config = {
     tagsinput: ['/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
         '/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'],
 
+    prism: ['/bower_components/prism/prism.js'],
+
+
     webAdd: ['/build/js/controller/user/web/index.js'],
     tiketSocketConn: ['/build/js/controller/user/tikets/index.js'],
     adminTiketIndex: ['/build/js/controller/admin/tikets/index.js'],

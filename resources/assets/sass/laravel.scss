@@ -1,5 +1,12 @@
 @charset "utf-8";
 
-@import "core/settings";
-@import "components/prism";
-@import "components/windows";
+// base
+@import "core/settings";        // color + font variables
+
+@import "core/mixins";          // utilities
+// third party components
+@import "components/prism";     // code highlighting
+
+// content components
+@import "components/panels";    // homepage blocks
+@import "components/windows";   // browser + terminal containers
