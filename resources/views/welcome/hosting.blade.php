@@ -211,6 +211,20 @@
 
             </div>
 
+        <!--Новости -->
+            <div class="container m-t-xxl m-b-xxl padder-v">
+                <div class="row">
+                    <div class="col-md-12 h-center"><h2>Новости</h2></div>
+                    @foreach($News as $new)
+                        <div class="col-md-3">
+                            <div class="news-heder"><a href="/news/{{$new->slug}}">{{$new->title}}</a></div>
+                            <div class="news-desript">{{$new->descript}}</div>
+                            <div class="news-date">{{$new->created_at}}</div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <!--end Новости -->
 
         </div>
 

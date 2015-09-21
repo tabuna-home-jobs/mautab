@@ -10,7 +10,7 @@
                     <div class="panel">
                         @foreach($news as $value)
                         <div class="wrapper-lg">
-                            <h2 class="m-t-none"><a href="{{$value->slug}}">{{$value->title}}</a></h2>
+                            <h2 class="m-t-none"><a href="/news/{{$value->slug}}">{{$value->title}}</a></h2>
 
                             <div class="line line-lg b-b b-light"></div>
                             <div>
