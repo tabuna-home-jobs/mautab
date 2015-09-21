@@ -2,6 +2,7 @@
 
 use Mautab\Http\Controllers\Controller;
 use Mautab\Models\Package;
+use Mautab\Models\News;
 
 class WelcomeHostingController extends Controller
 {
@@ -28,8 +29,10 @@ class WelcomeHostingController extends Controller
     {
 
         $Package = Package::whereHidden('false')->orderBy('price', 'ASC')->get();
+        $News = News::paginate(3);
         return view('welcome.hosting', [
-            'Package' => $Package
+            'Package' => $Package,
+            'News' => $News
         ]);
     }
 
