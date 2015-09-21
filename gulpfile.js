@@ -12,13 +12,20 @@ var elixir = require('laravel-elixir');
  */
 
 
+
+
 //Сдандартные компоненты
-elixir(function(mix) {
+elixir(function (mix) {
+ /*
+  mix.sass('laravel.scss', 'resources/assets/css/sass.css');
+  */
+
  mix.styles([
   "./vendor/bower_components/bootstrap/dist/css/bootstrap.min.css",
   "./vendor/bower_components/font-awesome/css/font-awesome.min.css",
   "app.css",
   "main.css",
+  //"sass.css"
  ], 'public/build/css/app.css');
 
  mix.scripts([

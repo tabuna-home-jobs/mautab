@@ -17,7 +17,7 @@ class NewsController extends Controller
 
         $news = News::orderBy('id', 'ASC')->get();
 
-        return view('News.list', [
+        return view('news.list', [
             'news' => $news
         ]);
     }
@@ -25,7 +25,8 @@ class NewsController extends Controller
     public function show($news)
     {
 
-        return view('News.view', [
+        dd($news);
+        return view('news.view', [
             'news' => $news,
         ]);
     }

@@ -2,24 +2,61 @@
 
 @section('content')
 
+
+
     <div class="container app-fixed-body">
         <div class="wrapper-md">
+
+
+            <section class="panel statement light">
+
+                <div class='browser-window'>
+                    <div class='top-bar'>
+                        <div class='circles'>
+                            <div class="circle circle-red"></div>
+                            <div class="circle circle-yellow"></div>
+                            <div class="circle circle-green"></div>
+                        </div>
+                    </div>
+                    <div class='window-content'>
+				<pre class="line-numbers"><code class="language-php">
+                        &lt;?php
+
+
+                        class Idea extends Eloquent {
+
+                        /**
+                        * Dreaming of something more?
+                        *
+                        * @with Laravel
+                        */
+                        public function create()
+                        {
+                        // Have a fresh start...
+                        }
+
+                        }
+
+                    </code></pre>
+                    </div>
+                </div>
+
+
+            </section>
+
 
             <div class="col-sm-8">
                 <div class="blog-post">
                     <div class="panel">
-                        @foreach($news as $value)
+
                         <div class="wrapper-lg">
-                            <h2 class="m-t-none"><a href="">{{$value->title}}</a></h2>
+                            <h2 class="m-t-none"><a href=""></a></h2>
 
                             <div class="line line-lg b-b b-light"></div>
                             <div>
 
 
-                                {!!$value->content!!}
-
                             </div>
-                            @endforeach
                             <div class="line line-lg b-b b-light"></div>
                             <div class="text-muted">
                                 <i class="fa fa-clock-o text-muted"></i> Feb 20, 2013
