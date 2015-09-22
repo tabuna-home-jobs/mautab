@@ -51,6 +51,15 @@ class TiketsController extends Controller
 
         $user->tiket()->save($tiket);
 
+        //Если админ завершил беседу то обновляем эту таблицу
+        if($msg['complete'] == '1'){
+
+            DB::table('tikets')
+                ->where('id', $msg['tikets_id'])
+                ->update(['complete' => $msg['complete']]);
+        }
+
+
         //$Tikets = Tiket::whereRaw('tikets_id = ?', [$msg['tikets_id']])->orderBy('updated_at','desc')->take(1)->get();
 
 	    $Tikets = DB::table('tikets')

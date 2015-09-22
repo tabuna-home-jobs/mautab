@@ -17,11 +17,14 @@
 				</p>
 
 				<div class="clearfix"></div>
-				<ul id="messages">
+				<ul class="list-group list-group-lg no-bg auto" id="messages">
 					@foreach($tiket->subtiket as $val)
-
-						<li>{{$val->message}}</li>
-
+						<li class="list-group-item clearfix">
+                            <span class="clear">
+                                <span>{{User::findOrFail($val->user_id)->getNickname()}}</span>
+                                <small class="text-muted clear">{{$val->message}}</small>
+                            </span>
+						</li>
 					@endforeach
 				</ul>
 			</div>
