@@ -50,7 +50,7 @@ class InstallCMSJob extends Job implements SelfHandling
     {
         //Пример установки cms, у меня заработал хорошо, но на сервере не проверял
         SSH::into($this->user->server)->run([
-            'cd /home/tabuna/web/mydomain/public_html', //Тут надо брать путь
+            'cd /home/tabuna/web/test.mautab.com/public_html', //Тут надо брать путь
             'wget ' . $this->cms->last_version,
             'unzip master.zip',
         ]);
