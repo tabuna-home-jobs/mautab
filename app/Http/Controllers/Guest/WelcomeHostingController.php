@@ -1,8 +1,11 @@
 <?php namespace Mautab\Http\Controllers\Guest;
 
+use Carbon\Carbon;
 use Mautab\Http\Controllers\Controller;
-use Mautab\Models\Package;
+use Mautab\Jobs\TestJob;
 use Mautab\Models\News;
+use Mautab\Models\Package;
+use Queue;
 
 class WelcomeHostingController extends Controller
 {
@@ -27,6 +30,14 @@ class WelcomeHostingController extends Controller
      */
     public function index()
     {
+
+
+        $date = Carbon::now()->addMinutes(2);
+        Queue::later($date, new TestJob());
+        dd($date, Carbon::now());
+
+        // Queue::pushOn('test', new TestJob());
+
 
         $Package = Package::whereHidden('false')->orderBy('price', 'ASC')->get();
         $News = News::paginate(3);
