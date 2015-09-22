@@ -3,22 +3,44 @@
 @section('content')
 
 
-
-    <div class="container app-fixed-body">
+<!--
+    <div class="container app-fixed-body" ui-jq="prism">
         <div class="wrapper-md">
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             <section class="panel statement light">
-
-                <div class='browser-window'>
-                    <div class='top-bar'>
-                        <div class='circles'>
-                            <div class="circle circle-red"></div>
-                            <div class="circle circle-yellow"></div>
-                            <div class="circle circle-green"></div>
+                <div class="content">
+                    <h1>Love beautiful code? We do too.</h1>
+                    <p>The PHP Framework For Web Artisans</p>
+                    <div class='browser-window'>
+                        <div class='top-bar'>
+                            <div class='circles'>
+                                <div class="circle circle-red"></div>
+                                <div class="circle circle-yellow"></div>
+                                <div class="circle circle-green"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class='window-content'>
+                        <div class='window-content'>
 				<pre class="line-numbers"><code class="language-php">
                         &lt;?php
 
@@ -38,103 +60,133 @@
                         }
 
                     </code></pre>
-                    </div>
-                </div>
-
-
-            </section>
-
-
-            <div class="col-sm-8">
-                <div class="blog-post">
-                    <div class="panel">
-
-                        <div class="wrapper-lg">
-                            <h2 class="m-t-none"><a href=""></a></h2>
-
-                            <div class="line line-lg b-b b-light"></div>
-                            <div>
-
-
-                            </div>
-                            <div class="line line-lg b-b b-light"></div>
-                            <div class="text-muted">
-                                <i class="fa fa-clock-o text-muted"></i> Feb 20, 2013
-
-
-                                <p class=" pull-right">
-                                    <a class="btn btn-icon btn-rounded btn-dark"
-                                       href="http://www.facebook.com/sharer.php?u={{Request::url()}}" target="_blank"><i
-                                                class="fa fa-facebook"></i></a>
-
-                                    <a class="btn btn-icon btn-rounded btn-dark"
-                                       href="https://twitter.com/share?url={{Request::url()}}" target="_blank"><i
-                                                class="fa fa-twitter"></i></a>
-
-                                    <a class="btn btn-icon btn-rounded btn-dark"
-                                       href="https://plus.google.com/share?url={{Request::url()}}" target="_blank"><i
-                                                class="fa fa-google-plus"></i></a>
-
-                                    <a class="btn btn-icon btn-rounded btn-dark"
-                                       href="http://vkontakte.ru/share.php?url={{Request::url()}}" target="_blank"><i
-                                                class="fa fa-vk"></i></a>
-
-                                    <a class="btn btn-icon btn-rounded btn-dark"
-                                       href="http://www.ok.ru/dk?st.cmd=addShare&st.s=1&st._surl={{Request::url()}}"
-                                       target="_blank"><i class="fa fa-odnoklassniki"></i></a>
-                                </p>
-
-
-                            </div>
-
-
                         </div>
                     </div>
+
                 </div>
-            </div>
+        </section>
+
+        <section class="panel features dark" id="features">
+            <h1>Did someone say rapid?</h1>
+            <p>Elegant applications delivered at warp speed.</p>
+            <div class="blocks stacked">
+                <div class="block odd">
+                    <div class="text">
+                        <h2>Expressive, beautiful syntax.</h2>
+                        <p>Value elegance, simplicity, and readability? You’ll fit right in. Laravel is designed for people just like you. If you need help getting started, check out <a href="https://laracasts.com">Laracasts</a> and our <a href="/docs">great documentation</a>.</p>
+                    </div>
+                    <div class="media">
+
+                        <div class='browser-window'>
+                            <div class='top-bar'>
+                                <div class='circles'>
+                                    <div class="circle circle-red"></div>
+                                    <div class="circle circle-yellow"></div>
+                                    <div class="circle circle-green"></div>
+                                </div>
+                            </div>
+                            <div class='window-content'>
+							<pre class="line-numbers"><code class="language-php">
+                                    class Purchase implements ShouldQueue {
+
+                                    /**
+                                    * Purchase a new podcast.
+                                    */
+                                    public function handle(Repository $repo)
+                                    {
+                                    foreach ($this->purchases as $purchase)
+                                    {
+                                    //
+                                    }
+                                    }
+                                </code></pre>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- /.block -->
+                <div class="block even">
+                    <div class="text">
+                        <h2>Tailored for your team.</h2>
+                        <p>Whether you're a solo developer or a 20 person team, Laravel is a breath of fresh air. Keep everyone in sync using Laravel's database agnostic <a href="/docs/migrations">migrations</a> and <a href="/docs/migrations">schema builder</a>.</p>
+                    </div>
+                    <div class="media">
+                        <div class="terminal-window">
+                            <div class='top-bar'></div>
+                            <div class='window-content'>
+                                <div class="dark-code">
+							<pre><code class="language-bash">
+                                    ~/Apps $ php artisan make:migration create_users_table
+                                    Migration created successfully!
+
+                                    ~/Apps $ php artisan migrate --seed
+                                    Migrated: 2015_01_12_000000_create_users_table
+                                    Migrated: 2015_01_12_100000_create_password_resets_table
+                                    Migrated: 2015_01_13_162500_create_projects_table
+                                    Migrated: 2015_01_13_162508_create_servers_table
+                                </code></pre></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.block -->
+                <div class="block odd">
+                    <div class="text">
+                        <h2>Modern toolkit. Pinch of magic.</h2>
+                        <p>An <a href="/docs/eloquent">amazing ORM</a>, painless <a href="/docs/routing">routing</a>, powerful <a href="/docs/queues">queue library</a>, and <a href="/docs/authentication">simple authentication</a> give you the tools you need for modern, maintainable PHP. We sweat the small stuff to help you deliver amazing applications.
+                    </div>
+                    <div class="media">
+
+                        <div class='browser-window'>
+                            <div class='top-bar'>
+                                <div class='circles'>
+                                    <div class="circle circle-red"></div>
+                                    <div class="circle circle-yellow"></div>
+                                    <div class="circle circle-green"></div>
+                                </div>
+                            </div>
+                            <div class='window-content'>
+							<pre class="line-numbers"><code class="language-php">
+                                    Route::resource('photos', 'PhotoController');
+
+                                    /**
+                                    * Retrieve A User...
+                                    */
+                                    Route::get('/user/{id}', function($id)
+                                    {
+                                    return User::with('posts')->firstOrFail($id);
+                                    })
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div><!-- /.block -->
+                </div>
+                </div>
+        </section>
 
 
-            <div class="col-sm-3">
-                <h5 class="font-bold">Categories</h5>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <a href="">
-                            <span class="badge pull-right">15</span>
-                            Photograph
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="">
-                            <span class="badge pull-right">30</span>
-                            Life style
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="">
-                            <span class="badge pull-right">9</span>
-                            Food
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="">
-                            <span class="badge pull-right">4</span>
-                            Travel world
-                        </a>
-                    </li>
-                </ul>
-                <div class="tags m-b-lg l-h-2x">
-                    <a class="label bg-primary" href="">Bootstrap</a> <a class="label bg-primary"
-                                                                         href="">Application</a> <a
-                            class="label bg-primary" href="">Apple</a> <a
-                            class="label bg-primary" href="">Less</a> <a class="label bg-primary" href="">Theme</a> <a
-                            class="label bg-primary" href="">Wordpress</a>
-                </div>
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 
 
         </div>
     </div>
-
+-->
 
 
 

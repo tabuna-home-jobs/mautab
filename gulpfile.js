@@ -1,4 +1,6 @@
 var elixir = require('laravel-elixir');
+var gulp = require('gulp');
+var uncss = require('gulp-uncss');
 
 /*
  |--------------------------------------------------------------------------
@@ -16,16 +18,16 @@ var elixir = require('laravel-elixir');
 
 //Сдандартные компоненты
 elixir(function (mix) {
- /*
-  mix.sass('laravel.scss', 'resources/assets/css/sass.css');
-  */
+
+ mix.sass('laravel.scss', 'resources/assets/css/sass.css');
+
 
  mix.styles([
   "./vendor/bower_components/bootstrap/dist/css/bootstrap.min.css",
   "./vendor/bower_components/font-awesome/css/font-awesome.min.css",
   "app.css",
   "main.css",
-  //"sass.css"
+  "sass.css"
  ], 'public/build/css/app.css');
 
  mix.scripts([
@@ -40,19 +42,23 @@ elixir(function (mix) {
 
  mix.copy('./vendor/bower_components/bootstrap/dist/fonts/', 'public/build/fonts');
  mix.copy('./vendor/bower_components/font-awesome/fonts/', 'public/build/fonts');
+ mix.copy('./resources/assets/js/controller', 'public/build/js/controller');
+ mix.copy('./vendor/bower_components', 'public/bower_components');
+ mix.copy('./vendor/bower_components', 'public/bower_components');
 
 
-
-
-
-
-
-
-
-
-
-
-
+ /**
+  * Тут должны быть удаление тех стилей которые не используються
+ elixir.extend("message", function (message) {
+  gulp.task('default', function () {
+   return gulp.src('public/build/css/app.css')
+       .pipe(uncss({
+        html: ['/', '*', 'http://localhost:8000']
+       }))
+       .pipe(gulp.dest('public/build/css/out.css'));
+  });
+ });
+*/
 
 
 });

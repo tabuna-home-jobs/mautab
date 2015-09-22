@@ -1,36 +1,12 @@
 @charset "utf-8";
 
 // base
-@import "core/settings";
-// color + font variables
-@import "core/normalize";
-// css reset
-@import "core/fonts";
-// fonts
-@import "core/mixins";
-// utilities
-@import "core/base";
-// base helpers and typographical styles
+@import "core/settings";        // color + font variables
+
+@import "core/mixins";          // utilities
 // third party components
-@import "components/bootstrap";
-// buttons + dropdowns
-@import "components/prism";
-// code highlighting
-@import "components/slide-menu";
-// sliding sidebar nav
+@import "components/prism";     // code highlighting
+
 // content components
-@import "components/buttons";
-// modified bootstrap buttons
-@import "components/footer";
-// the footer
-@import "components/nav";
-// top nav
-@import "components/panels";
-// homepage blocks
-@import "components/sidebar";
-// docs side nav
-@import "components/windows";
-// browser + terminal containers
-// content
-@import "content/docs";
-@import "content/404";
+@import "components/panels";    // homepage blocks
+@import "components/windows";   // browser + terminal containers
