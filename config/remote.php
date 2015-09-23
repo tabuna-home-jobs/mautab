@@ -10,7 +10,7 @@
 		| in the server list. Each connection will be manually accessible.
 		|
 		*/
-		'default'     => 'production',
+		'default' => 'testVDS',
 		/*
 		|--------------------------------------------------------------------------
 		| Remote Server Connections
@@ -22,10 +22,10 @@
 		|
 		*/
 		'connections' => [
-			'production' => [
-				'host'     => '151.80.164.81',
-				'username' => 'root',
-				'password' => 'mC9u51o3YNrr',
+			'testVDS' => [
+				'host' => '193.111.141.198',
+				'username' => 'admin',
+				'password' => '03af4dE1',
 				//'key'       => '',
 				//'keytext'   => '',
 				//'keyphrase' => '',
@@ -43,6 +43,6 @@
 		|
 		*/
 		'groups'      => [
-			'web' => ['production']
+			'testVDS' => ['production']
 		],
 	];

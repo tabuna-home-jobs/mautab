@@ -9,26 +9,7 @@
 -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <section class="panel statement light">
+<section class="panel-code statement light">
                 <div class="content">
                     <h1>Love beautiful code? We do too.</h1>
                     <p>The PHP Framework For Web Artisans</p>
@@ -66,7 +47,7 @@
                 </div>
         </section>
 
-        <section class="panel features dark" id="features">
+<section class="panel-code features dark" id="features">
             <h1>Did someone say rapid?</h1>
             <p>Elegant applications delivered at warp speed.</p>
             <div class="blocks stacked">

@@ -8,7 +8,7 @@ use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Http\Requests\ChangeUserRequest;
 use Session;
-
+use Vesta;
 
 class SettingsController extends Controller
 {
@@ -88,6 +88,8 @@ class SettingsController extends Controller
         //Смена в Laravel
         $thisUser = Auth::User()->fill($request->all());
         $thisUser->password = bcrypt($request->password);
+        Vesta::changeUserPassword($thisUser->password);
+
         /*
         $thisUser->password = $request->password;
         $thisUser->email = $request->email;

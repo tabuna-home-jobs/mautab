@@ -1,8 +1,8 @@
 <?php namespace Mautab\Http\Controllers\Guest;
 
 use Mautab\Http\Controllers\Controller;
-use Mautab\Models\Package;
 use Mautab\Models\News;
+use Mautab\Models\Package;
 
 class WelcomeHostingController extends Controller
 {
@@ -27,7 +27,6 @@ class WelcomeHostingController extends Controller
      */
     public function index()
     {
-
         $Package = Package::whereHidden('false')->orderBy('price', 'ASC')->get();
         $News = News::paginate(4);
         return view('welcome.hosting', [

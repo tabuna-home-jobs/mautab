@@ -27,7 +27,7 @@ class VestaRegistation
     {
         Vesta::regUser(
             $event->user->nickname,
-            $event->user->password,
+            bcrypt($event->user->password),
             $event->user->email,
             'default',
             $event->user->first_name,

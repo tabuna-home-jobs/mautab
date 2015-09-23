@@ -1,4 +1,4 @@
-.panel {
+.panel-code {
 	position: relative;
 	padding: 0 20px;
 
@@ -206,26 +206,26 @@
 }
 
 @media (max-width:980px) {
-	.panel .next-up {
+  .panel-code .next-up {
 		right: auto;
 		left: 50%;
 		margin-left: -150px;
 	}
 
-	.panel.features {
+  .panel-code.features {
 		padding: 75px 0;
 	}
 }
 
 @media (max-width:760px) {
-	.panel.statement h1 {
+  .panel-code.statement h1 {
 		font-size: 42px;
 		line-height: 1.2;
 		+ p {
 			font-size: 21px;
 		}
 	}
-	.panel.ecosystem {
+  .panel-code.ecosystem {
 		.forge {
 			text-align: center;
 			padding: 0 50px;
@@ -249,7 +249,7 @@
 			}
 		}
 	}
-	.panel.features .blocks .block .text {
+  .panel-code.features .blocks .block .text {
 		padding: 15px;
 		p {
 			margin-bottom: 0;
@@ -258,13 +258,13 @@
 }
 
 @media (max-width:620px) {
-	.panel.statement .browser-window {
+  .panel-code.statement .browser-window {
 		width: 100%;
 	}
 }
 
 @media (max-width: 580px) {
-	.panel.features .blocks .block {
+  .panel-code.features .blocks .block {
 		height: 410px;
 		.text {
 			width: 100%;
