@@ -60,11 +60,20 @@
     </div>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
+
+        @if(Auth::user()->checkRole('admin'))
+            <a href="{{route('admin..index')}}"
+               class="{{Active::route('admin.*')}}">
+                <span class="fa fa-server text-success"></span>
+                <h4>Dashboard</h4>
+            </a>
+        @else
         <a href="{{route('tikets.index')}}"
            class="{{Active::route('tikets.*')}}">
             <span class="fa fa-life-ring"></span>
             <h4>{{Lang::get('menu.support')}}</h4>
         </a>
+        @endif
 
         <p class="menu-small"><a href="{{route('log.index')}}">{{Lang::get('menu.log')}}</a></p>
 
