@@ -1,10 +1,15 @@
 <?php
 
-namespace Mautab\Http\Controllers\Guest;
+namespace Mautab\Http\Controllers\Hosting;
 
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
+use Mautab\Http\Requests\Hosting\InstallCMSRequest;
+use Mautab\Jobs\CMS\InstallCMSJob;
+use Mautab\Models\CMS;
+use Session;
+use Vesta;
 
 
 class CMSController extends Controller
@@ -16,7 +21,14 @@ class CMSController extends Controller
      */
     public function index()
     {
-        return view('pages.cms');
+        $Domains = Vesta::listWebDomain();
+        $CMSList = CMS::all();
+
+        return view('user.user.cmsInstall', [
+            'Domains' => $Domains,
+            'CMSList' => $CMSList,
+        ]);
+
     }
 
     /**
@@ -35,9 +47,18 @@ class CMSController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InstallCMSRequest $request)
     {
-        //
+
+        $test = new InstallCMSJob(
+            $request->user(),
+            $request->domain,
+            CMS::find($request->cms)->firstOrFail()
+        );
+        $test->handle();
+
+        Session::flash('good', 'Вы успешно установили систему.');
+        return redirect()->route('home.index');
     }
 
     /**

@@ -33,6 +33,7 @@ Route::group(['middleware' => ['UserRole', 'LoginAs', 'auth'], 'namespace' => 'H
     Route::resource('settings', 'SettingsController');
     Route::resource('payments', 'PaymentsController');
     Route::resource('package', 'PackageController');
+    Route::resource('install', 'CMSController');
     Route::resource('home', 'HomeController', ['only' => ['index', 'update']]);
 });
 

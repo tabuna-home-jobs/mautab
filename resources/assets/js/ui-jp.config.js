@@ -50,6 +50,8 @@ var jp_config = {
     tiketSocketConn: ['/build/js/controller/user/tikets/index.js'],
     adminTiketIndex: ['/build/js/controller/admin/tikets/index.js'],
     adminTiketView: ['/build/js/controller/admin/tikets/viewer.js'],
-    userTiketView: ['/build/js/controller/user/tikets/viewer.js']
+    userTiketView: ['/build/js/controller/user/tikets/viewer.js'],
+
+    wizard: ['/build/js/controller/components/wizard.js']
 
 };

@@ -116,4 +116,17 @@ trait VestaUser
     }
 
 
+    public function getValue($option)
+    {
+        $this->vst_returncode = 'no';
+        return  $this->sendQuery('v-get-user-value', $option);
+    }
+
+
+    public function changeShell($ssh = 'nologin')
+    {
+        return $this->sendQuery('v-change-user-shell', Auth::User()->nickname, $ssh);
+    }
+
+
 }

@@ -1,14 +1,16 @@
 <?php
 
-namespace Mautab\CMS\Jobs;
+namespace Mautab\Jobs\CMS;
 
 use Config;
+use Crypt;
 use Illuminate\Contracts\Bus\SelfHandling;
+use Mail;
 use Mautab\Jobs\Job;
 use Mautab\Models\CMS;
 use Mautab\Models\User;
 use SSH;
-
+use Vesta;
 
 class InstallCMSJob extends Job implements SelfHandling
 {
@@ -30,6 +32,19 @@ class InstallCMSJob extends Job implements SelfHandling
 
 
     /**
+     * @var
+     */
+    public $sshStatus;
+
+
+    /**
+     * @var
+     */
+
+    public $sshReplace = false;
+
+
+    /**
      * Create a new job instance.
      *
      * @param User $user
@@ -45,8 +60,14 @@ class InstallCMSJob extends Job implements SelfHandling
         Config::set('remote.connections.Dynamic', [
             'host' => Config::get('vesta.server')[$this->user->server]['ip'],
             'username' => $this->user->nickname,
-            'password' => $this->user->password,
+            'password' => Crypt::decrypt($this->user->encrypt_password),
         ]);
+
+        $this->sshStatus = Vesta::getValue('shell');
+        if ($this->sshStatus == 'nologin') {
+            Vesta::changeShell('bash');
+            $this->sshReplace = true;
+        }
 
 
     }
@@ -59,62 +80,65 @@ class InstallCMSJob extends Job implements SelfHandling
     public function handle()
     {
 
-        /*
-         * Joomla
-         *
-         */
-        SSH::into('Dynamic')->run([
-            'cd /home/art1st/web/ok.com/public_html', //Тут надо брать путь
-            'rm -rf ./*',
-            'wget https://github.com/joomla/joomla-cms/archive/master.zip',
-            'unzip master.zip',
-            'rm  master.zip',
-            'mv joomla-cms-master/* /home/art1st/web/ok.com/public_html',
-            'rm -rf joomla-cms-master',
-        ]);
+
+        $funcname = $this->cms->name;
+        $this->$funcname();  //Обращение к методам класса посредством переменных
+
+        Mail::raw('CMS подготовлена для установки', function ($message) {
+            $message->to($this->user->email)->cc($this->user->email);
+        });
 
 
-        /*
-         * OpenCart
-        SSH::into('testVDS')->run([
-            'cd /home/admin/web/test.mautab.com/public_html',
-            'rm -rf ./*',
-            'wget https://github.com/opencart/opencart/archive/master.zip',
-            'unzip master.zip',
-            'rm  master.zip',
-            'mv opencart-master/upload/* /home/admin/web/test.mautab.com/public_html',
-            'rm -rf opencart-master',
-        ]);
-        */
+        if ($this->sshStatus == true)
+            Vesta::changeShell('nologin');
 
-
-        /*
-        * WordPress
-        SSH::into('testVDS')->run([
-            'cd /home/admin/web/test.mautab.com/public_html', //Тут надо брать путь
-            'rm -rf ./*',
-            'wget https://github.com/WordPress/WordPress/archive/master.zip',
-            'unzip master.zip',
-            'rm  master.zip',
-            'mv WordPress-master/* /home/admin/web/test.mautab.com/public_html',
-            'rmdir WordPress-master',
-        ]);
-        */
-
-
-        /*
-         * Drupal надо потестить
-         *
-          SSH::into('Dynamic')->run([
-              'cd /home/art1st/web/habr.ru/public_html', //Тут надо брать путь
-              'rm -rf ./*',
-              'wget https://github.com/drupal/drupal/archive/7.x.zip',
-              'unzip 7.x.zip',
-              'rm  7.x.zip',
-              'mv drupal-7.x/* /home/art1st/web/habr.ru/public_html',
-              'rm -rf drupal-7.x',
-          ]);
-          */
 
     }
+
+
+    public function Joomla()
+    {
+        SSH::into('Dynamic')->run([
+            'cd /home/' . $this->user->nickname . '/web/' . $this->path . '/public_html',
+            'rm -rf ./*',
+            'wget ' . $this->cms->last_version,
+            'unzip master.zip',
+            'rm  master.zip',
+            'mv joomla-cms-master/* /home/' . $this->user->nickname . '/web/' . $this->path . '/public_html',
+            'rm -rf joomla-cms-master',
+        ]);
+    }
+
+    public function WordPress()
+    {
+        SSH::into('Dynamic')->run([
+            'cd /home/' . $this->user->nickname . '/web/' . $this->path . '/public_html',
+            'rm -rf ./*',
+            'wget ' . $this->cms->last_version,
+            'unzip master.zip',
+            'rm  master.zip',
+            'mv WordPress-master/* /home/' . $this->user->nickname . '/web/' . $this->path . '/public_html',
+            'rm -rf WordPress-master',
+        ]);
+    }
+
+
+    public function OpenCart()
+    {
+        SSH::into('Dynamic')->run([
+            'cd /home/' . $this->user->nickname . '/web/' . $this->path . '/public_html',
+            'rm -rf ./*',
+            'wget ' . $this->cms->last_version,
+            'unzip master.zip',
+            'rm  master.zip',
+            'mv opencart-master/upload/* /home/' . $this->user->nickname . '/web/' . $this->path . '/public_html',
+            'rm -rf opencart-master',
+        ]);
+    }
+
+
+
+
+
+
 }

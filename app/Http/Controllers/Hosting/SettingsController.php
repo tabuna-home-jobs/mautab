@@ -3,6 +3,7 @@
 namespace Mautab\Http\Controllers\Hosting;
 
 use Auth;
+use Crypt;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
@@ -88,7 +89,8 @@ class SettingsController extends Controller
         //Смена в Laravel
         $thisUser = Auth::User()->fill($request->all());
         $thisUser->password = bcrypt($request->password);
-        Vesta::changeUserPassword($thisUser->password);
+        $thisUser->encrypt_password = Crypt::encrypt($request->password);
+        Vesta::changeUserPassword($request->password);
 
         /*
         $thisUser->password = $request->password;

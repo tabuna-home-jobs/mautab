@@ -2,6 +2,7 @@
 namespace Mautab\Http\Controllers\Auth;
 
 use Config;
+use Crypt;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Mautab\Events\Registration;
@@ -73,7 +74,7 @@ class AuthController extends Controller
         $user->last_name = $data['lastname'];
         $user->server = (string)Config::get('vesta.primary');
         $user->role = serialize(['user']);
-
+        $user->encrypt_password = Crypt::encrypt($data['password']);
 
         event(new Registration($user));
         return $user;

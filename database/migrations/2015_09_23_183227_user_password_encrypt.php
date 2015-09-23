@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class EditTableNews extends Migration
+class UserPasswordEncrypt extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class EditTableNews extends Migration
      */
     public function up()
     {
-        Schema::table('news', function (Blueprint $table) {
-            $table->text('preview');
+        Schema::table('users', function (Blueprint $table) {
+            $table->text('encrypt_password');
         });
     }
 
@@ -24,8 +24,8 @@ class EditTableNews extends Migration
      */
     public function down()
     {
-        Schema::table('news', function (Blueprint $table) {
-            $table->dropColumn('preview');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('encrypt_password');
         });
     }
 }
