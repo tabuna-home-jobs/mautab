@@ -24,7 +24,7 @@
 
                 <form action="{{route('admin.pages.update', $Page->slug)}}" method="post">
 
-
+                    <div class="row">
                     <div class="col-md-8">
                         <div class="form-group">
                             <label>Содержание</label>
@@ -68,7 +68,7 @@
                         <button type="submit" class="btn btn-primary">Отправить</button>
                     </div>
 
-
+            </div>
                 </form>
             </div>
         </div>

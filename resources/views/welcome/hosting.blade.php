@@ -218,8 +218,8 @@
                     @foreach($News as $new)
                         <div class="col-md-3 text-center ">
                             <div class="news-heder m-b"><a class="text-black font-bold" href="/news/{{$new->slug}}">{{$new->title}}</a></div>
-                            <div class="news-desript m-b">{{str_limit( strip_tags($new->content), 100, '<a>Читать далее</a>' )}}</div>
-                            <div class="news-date text-muted ">{{ $new->created_at->diffForHumans() }}</div>
+                            <div class="news-desript m-b">{{str_limit( strip_tags($new->preview), 100, '...' )}}<br><a href="/news/{{$new->slug}} ">Читать далее</a></div>
+                            <div class="news-date text-muted ">Опубликовано: {{ $new->created_at->diffForHumans() }}</div>
                         </div>
                     @endforeach
 

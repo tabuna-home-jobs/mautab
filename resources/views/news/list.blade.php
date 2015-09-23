@@ -18,7 +18,7 @@
 
                                 <div class="news-heder"><a title="Подробнее" class="text-black font-bold" href="/news/{{$value->slug}}">{{$value->title}}</a></div>
                                 <div class="news-date text-muted ">{{ $value->created_at->diffForHumans() }}</div>
-                                <div class="news-desript m-b">{{str_limit( strip_tags($value->content), 100, '...' )}}</div>
+                                <div class="news-desript m-b">{{str_limit( strip_tags($value->preview), 100, '...' )}}</div>
 
 
                             </div>

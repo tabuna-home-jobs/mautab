@@ -18,6 +18,7 @@ class CreateTableNews extends Migration
             $table->string('keywords');
             $table->string('descript');
             $table->text('content');
+            $table->text('preview');
             $table->string('slug');
             $table->timestamps();
         });

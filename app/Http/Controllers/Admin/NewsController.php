@@ -63,9 +63,9 @@ class NewsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($page)
+    public function edit($news)
     {
-        return view("admin/news/edit", ['Page' => $page]);
+        return view("admin/news/edit", ['News' => $news]);
     }
 
     /**
@@ -75,9 +75,9 @@ class NewsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update($page, NewsRequest $request)
+    public function update($news, NewsRequest $request)
     {
-        $page->fill($request->all())->save();
+        $news->fill($request->all())->save();
         Session::flash('good', 'Вы успешно изменили значения');
         return redirect()->route('admin.news.index');
     }

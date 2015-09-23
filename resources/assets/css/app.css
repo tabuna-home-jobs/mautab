@@ -5177,14 +5177,3 @@ a.text-#000000:hover {
     background-color: #7266ba;
   }
 }
-
-/*Новости*/
-.h2-hr-centr {
-  display: block;
-  border-bottom: 1px solid rgba(88, 102, 110, 0.32);
-  margin-bottom: -17px;
-}
-.h2-span {
-  background-color: white;
-  padding: 15px;
-}

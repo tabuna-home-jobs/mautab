@@ -37,6 +37,10 @@
                             <label>Содержание</label>
                             <textarea class="textarea form-control textareaedit" name="content" rows="20"></textarea>
                         </div>
+                        <div class="form-group">
+                            <label>Превью</label>
+                            <textarea class="textarea form-control" name="preview" rows="20"></textarea>
+                        </div>
                     </div>
                 </form>
             </div>
