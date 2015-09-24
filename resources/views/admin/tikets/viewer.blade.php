@@ -10,11 +10,16 @@
 		<div class="panel-body">
 
 			<div class="col-md-8">
-				<h3 class="text-center">{{$tiket->title}}</h3>
+                <div>
+                    <span class="title-name">{{User::findOrFail($tiket->user_id)->getNickname()}}</span>
+                    говорит: <cite>{{$tiket->title}}</cite>
+                </div>
 
-				<p>
-					{{$tiket->message}}
-				</p>
+                <blockquote class="col-xs-12">
+                    <p>
+                        {{$tiket->message}}
+                    </p>
+                </blockquote>
 
 				<div class="clearfix"></div>
 				<ul class="list-group list-group-lg no-bg auto" id="messages">

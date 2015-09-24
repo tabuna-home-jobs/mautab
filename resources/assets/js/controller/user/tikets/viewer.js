@@ -11,6 +11,20 @@ function addNewMessage(obj){
     $("#bodyChat").prepend(strokeResponse);
     $('.hotBlock').show('slow');
 
+
+     if(obj.complete == 1){
+
+         var themeClose = '<div class="alert-danger alert hotBlock">';
+         themeClose += 'Тема закрыта';
+         themeClose += '</div>';
+
+         $("#commentform").hide('1000', function(){
+             $(this).remove();
+             $(".panel-footer").html(themeClose);
+             $(".alert").show('1000');
+         });
+     }
+
 }
 
 //Создаем подключение
