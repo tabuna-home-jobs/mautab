@@ -29,10 +29,11 @@ class TiketsController extends Controller
      */
     public function __construct()
     {
+	    /*
         $this->user = User::class;
 
         if(Auth::user()->checkRole('admin'))
-             abort(404);
+             abort(404);*/
     }
 
     public static function storeBySocket($msg, $userId)
@@ -82,6 +83,7 @@ class TiketsController extends Controller
     public function store($msg, $userId)
     {
 	    $msg = json_decode($msg, TRUE);
+
 
 	    //Берем юзера
 	    $user = User::findOrFail($userId);

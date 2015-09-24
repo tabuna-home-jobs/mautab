@@ -5177,3 +5177,12 @@ a.text-#000000:hover {
     background-color: #7266ba;
   }
 }
+
+.hotBlock{
+    display: none;
+    list-style-type: none;
+}
+.title-name{
+    text-transform: capitalize;
+    font-weight: bold;
+}

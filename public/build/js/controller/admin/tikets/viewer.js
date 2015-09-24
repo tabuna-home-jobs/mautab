@@ -1,12 +1,16 @@
 //Функция добавления ответа во вьюху
 function addNewMessage(obj){
 
-    var strokeResponse = "<li class='hotBlock'>";
-    strokeResponse += obj.message;
+    var strokeResponse = "<li class='list-group-item clearfix hotBlock'>";
+    strokeResponse += "<span class='clear'>";
+    strokeResponse += "<span>"+obj.nickname+"</span>";
+    strokeResponse += "<small class='text-muted clear'>"+obj.message+"</small>";
+    strokeResponse += "</span>";
     strokeResponse += "</li>";
 
     $("#messages").prepend(strokeResponse);
     $('.hotBlock').show('slow');
+
 
 }
 

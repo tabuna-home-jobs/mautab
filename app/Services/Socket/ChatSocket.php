@@ -118,8 +118,8 @@ class ChatSocket extends BaseSocket {
 				//Проверяем беседа ли это
 				$checkIntreview = json_decode($msg, TRUE);
 
-
 				if(isset($checkIntreview['interview'])){
+
 					//Добавляем тикет в беседу
 					$addTiket = new TiketsController();
 					$backmess = $addTiket->store($msg, $userId);

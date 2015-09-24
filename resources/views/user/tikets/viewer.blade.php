@@ -23,7 +23,11 @@
                         </li>
                     @endforeach
                 </ul>
+
+
                 <div class="clearfix panel-footer">
+
+                    @if($Tiket->complete != 1)
                     <form id="commentform">
 
                         <div class="input-group">
@@ -36,8 +40,12 @@
                               </button>
                             </span>
                         </div>
-
                     </form>
+                    @else
+                        <div class="alert-danger alert">
+                            Тема закрыта
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
