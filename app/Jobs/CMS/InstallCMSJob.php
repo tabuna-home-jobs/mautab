@@ -44,6 +44,10 @@ class InstallCMSJob extends Job implements SelfHandling
 
     public $sshReplace = false;
 
+    /**
+     * @var array
+     */
+    public $connect = [];
 
     /**
      * Create a new job instance.
@@ -58,11 +62,11 @@ class InstallCMSJob extends Job implements SelfHandling
         $this->path = $path;
         $this->cms = $cms;
 
-        Config::set('remote.connections.Dynamic', [
+        $this->connect = [
             'host' => Config::get('vesta.server')[$this->user->server]['ip'],
             'username' => $this->user->nickname,
             'password' => Crypt::decrypt($this->user->encrypt_password),
-        ]);
+        ];
 
         $this->sshStatus = trim(Vesta::getValue('shell'));
 
@@ -70,6 +74,7 @@ class InstallCMSJob extends Job implements SelfHandling
             Vesta::changeShell('bash');
             $this->sshReplace = true;
         }
+
 
     }
 
@@ -81,6 +86,7 @@ class InstallCMSJob extends Job implements SelfHandling
     public function handle()
     {
 
+        Config::set('remote.connections.Dynamic', $this->connect);
 
         $funcname = $this->cms->name;
         $this->$funcname();  //Обращение к методам класса посредством переменных
@@ -89,8 +95,7 @@ class InstallCMSJob extends Job implements SelfHandling
             $message->to($this->user->email)->cc($this->user->email);
         });
 
-
-        if ($this->sshStatus == true)
+        if ($this->sshReplace == true)
             Vesta::changeShell('nologin');
 
 

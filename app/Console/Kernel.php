@@ -14,8 +14,7 @@ class Kernel extends ConsoleKernel {
 		\Mautab\Console\Commands\ChatServer::class,
 		\Mautab\Console\Commands\Inspire::class,
 		\Mautab\Console\Commands\PriceTerms::class,
-		\Mautab\Console\Commands\StatusProcess::class
-
+		\Mautab\Console\Commands\ServiceForever::class,
 	];
 
 	/**
@@ -32,6 +31,14 @@ class Kernel extends ConsoleKernel {
 		//Списывание средств
 		$schedule->command('mautab:PriceTerms')
 			->daily();
+
+
+		$schedule->command('mautab:forever')
+			->everyFiveMinutes();
+
+
+
+
 	}
 
 }
