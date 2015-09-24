@@ -12,8 +12,9 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		\Mautab\Console\Commands\ChatServer::class,
-		'Mautab\Console\Commands\Inspire',
+		\Mautab\Console\Commands\Inspire::class,
 		\Mautab\Console\Commands\PriceTerms::class,
+		\Mautab\Console\Commands\StatusProcess::class
 
 	];
 

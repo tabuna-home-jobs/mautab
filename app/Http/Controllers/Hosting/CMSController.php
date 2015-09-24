@@ -8,6 +8,7 @@ use Mautab\Http\Requests;
 use Mautab\Http\Requests\Hosting\InstallCMSRequest;
 use Mautab\Jobs\CMS\InstallCMSJob;
 use Mautab\Models\CMS;
+use Queue;
 use Session;
 use Vesta;
 
@@ -49,14 +50,13 @@ class CMSController extends Controller
      */
     public function store(InstallCMSRequest $request)
     {
-        $test = new InstallCMSJob(
+        Queue::push(new InstallCMSJob(
             $request->user(),
             $request->domain,
             CMS::findOrFail($request->cms)
-        );
-        $test->handle();
+        ));
 
-        Session::flash('good', 'Вы успешно установили систему.');
+        Session::flash('good', 'Вы успешно начали установку системы, по завершению вы получите email уведомление, обычно установка занимает около 5 минут');
         return redirect()->route('home.index');
     }
 

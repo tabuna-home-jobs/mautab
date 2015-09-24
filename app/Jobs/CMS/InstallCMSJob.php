@@ -12,6 +12,7 @@ use Mautab\Models\User;
 use SSH;
 use Vesta;
 
+
 class InstallCMSJob extends Job implements SelfHandling
 {
     /**
@@ -94,6 +95,15 @@ class InstallCMSJob extends Job implements SelfHandling
 
 
     }
+
+    public function failed()
+    {
+        Mail::raw('Хьюстон у нас проблемы, на сервере заданий', function ($message) {
+            $message->to('bliz48rus@gmail.com')->cc('bliz48rus@gmail.com');
+        });
+    }
+
+
 
 
     public function Joomla()
