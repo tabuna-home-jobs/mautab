@@ -49,11 +49,10 @@ class CMSController extends Controller
      */
     public function store(InstallCMSRequest $request)
     {
-
         $test = new InstallCMSJob(
             $request->user(),
             $request->domain,
-            CMS::find($request->cms)->firstOrFail()
+            CMS::findOrFail($request->cms)
         );
         $test->handle();
 

@@ -119,7 +119,7 @@ trait VestaUser
     public function getValue($option)
     {
         $this->vst_returncode = 'no';
-        return  $this->sendQuery('v-get-user-value', $option);
+        return $this->sendQuery('v-get-user-value', Auth::User()->nickname, $option);
     }
 
 

@@ -63,12 +63,12 @@ class InstallCMSJob extends Job implements SelfHandling
             'password' => Crypt::decrypt($this->user->encrypt_password),
         ]);
 
-        $this->sshStatus = Vesta::getValue('shell');
+        $this->sshStatus = trim(Vesta::getValue('shell'));
+
         if ($this->sshStatus == 'nologin') {
             Vesta::changeShell('bash');
             $this->sshReplace = true;
         }
-
 
     }
 

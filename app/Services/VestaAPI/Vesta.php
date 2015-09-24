@@ -96,7 +96,7 @@ class Vesta
 
         $client = new Client([
             'base_uri' => 'https://' . $this->vst_server . ':8083/api/',
-            'timeout' => 2.0,
+            'timeout' => 10.0,
             'verify' => false,
             'form_params' => $postvars,
         ]);
