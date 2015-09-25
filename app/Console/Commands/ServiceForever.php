@@ -61,7 +61,7 @@ class ServiceForever extends Command
 
     public function checkProcess($process)
     {
-        exec("ps ax | grep 'php artisan'", $out, $error);
+        exec("ps ax | grep php | grep 'artisan'", $out, $error);
         $result = false;
 
         //процес запущен если возвратиться true
