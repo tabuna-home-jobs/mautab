@@ -4,7 +4,11 @@
 
 
 
-    <div class="bg-light lter b-b wrapper-md">
+
+    <div class="app-content-body">
+
+
+        <div class="bg-light lter b-b wrapper-md">
         <h1 class="m-n font-thin h3">Пользователи</h1>
     </div>
 
@@ -74,7 +78,7 @@
 
                     @endforeach
                     </tbody>
-                    {!! $Users->render(); !!}
+                    {!! $Users->render() !!}
                 </table>
 
 
@@ -82,7 +86,7 @@
         </div>
     </div>
 
-
+    </div>
 
 
 @endsection

@@ -2,9 +2,12 @@
 
 @section('content')
 
-    <div class="app-content-full h-full no-top-0">
 
-        <div class="hbox hbox-auto-xs hbox-auto-sm bg-light">
+    <div class="app-content-body  app-content-full">
+
+        <div class="h-full no-top-0">
+
+            <div class="hbox hbox-auto-xs hbox-auto-sm bg-light">
 
             <!-- column -->
             <div class="col w b-r">
@@ -280,5 +283,5 @@
             <!-- /column -->
         </div>
     </div>
-
+    </div>
 @endsection
