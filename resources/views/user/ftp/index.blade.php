@@ -2,18 +2,15 @@
 
 @section('content')
 
+    @foreach($ftplist as $domain => $d_val)
 
     <div class="panel panel-default">
-        <div class="panel-heading">Basic form</div>
+        <div class="panel-heading">Добавление и редактирование FTP для домена {{$domain}}</div>
         <div class="panel-body">
 
 
             <div class="col-xs-12">
                 <form class="col-md-8 col-xs-12" method="post" action="">
-                    @foreach($ftplist as $domain => $d_val)
-                        <div class="alert alert-info" role="alert">
-                            Добавление и редактирование FTP для домена {{$domain}}
-                        </div>
 
                         @if(isset($d_val['FTP_USER']) && is_array($d_val['FTP_USER']))
                             @foreach($d_val['FTP_USER'] as $key => $ftpU)
@@ -100,7 +97,7 @@
                                 </div>
                             </div>
                         @endif
-                    @endforeach
+
                     <a href="#" id="addFtps">Добавить FTP</a>
 
                     <div class="form-group">
@@ -110,10 +107,39 @@
                         <input type="hidden" name="_method" value="PUT">
                     </div>
                 </form>
+
+
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Информация:</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Общая информация, а тут какой то текст, на сколько важна эта информация!</p>
+
+                        </div>
+
+                        <ul class="list-group">
+
+                            <li class="list-group-item"> Статус:
+                            </li>
+                        </ul>
+
+
+                        <div class="panel-footer">
+                            <p>
+                                <small class="pull-right">Дата</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
         </div>
     </div>
 
+    @endforeach
 
 @endsection

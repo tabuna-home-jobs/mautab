@@ -11,14 +11,22 @@
                 @foreach($BdList as $nameBd => $bd)
                     <form class="col-md-8" method="post" action="{{route('bd.update')}}">
 
-                        <div class="alert alert-info" role="alert"> Префикс {{Auth::User()->nickname }}_ будет
+
+                        <small class="pull-right"> Префикс {{Auth::User()->nickname }}_ будет
                             автоматически добавлен к БД и пользователю
                             БД
-                        </div>
+                        </small>
+
                         <div class="form-group">
                             <label>База данных </label>
                             <input type="text" class="form-control" value="{{$nameBd}}" disabled/>
                         </div>
+
+                        <small class="pull-right"> Префикс {{Auth::User()->nickname }}_ будет
+                            автоматически добавлен к БД и пользователю
+                            БД
+                        </small>
+
                         <div class="form-group">
                             <label>Пользователь</label>
                             <input type="text" class="form-control" name="user_bd" required value="{{$bd['DBUSER']}}"/>

@@ -4,17 +4,14 @@
 
 
 
+    @forelse($webList as $domain => $d_val)
+
     <div class="panel panel-default">
-        <div class="panel-heading"> Редактирование домена</div>
+        <div class="panel-heading"> Редактирование домена {{$domain}}</div>
         <div class="panel-body">
 
             <div class="col-xs-12">
 
-                @forelse($webList as $domain => $d_val)
-
-                    <div class="alert alert-info" role="alert">
-                        Редактирование домена {{$domain}}
-                    </div>
                     <form class="col-md-8 col-xs-12" method="post" action="">
 
                         <div class="form-group input-line">
@@ -33,11 +30,13 @@
                         <textarea cols="40" rows="5" class="form-control"
                                   name="v_aliases">{{$d_val['ALIAS']}}</textarea>
                         </div>
+
                         <div class="form-group checkbox">
-                            <label>
-                                <input type="checkbox" name="v_proxy" checked/>Поддержка Nginx
+                            <label class="i-checks">
+                                <input type="checkbox" name="v_proxy" checked><i></i>Поддержка Nginx
                             </label>
                         </div>
+
                         <div class="form-group supp-niginx">
                             <label>Proxy Extentions</label>
                         <textarea cols="40" rows="5" name="v_proxy_ext"
@@ -87,9 +86,6 @@
                     </div>
 
 
-                @empty
-                    <div>Нет данных</div>
-                @endforelse
             </div>
 
 
@@ -97,5 +93,10 @@
 
     </div>
 
+
+    @empty
+
+        <div>Нет данных</div>
+    @endforelse
 
 @endsection

@@ -22,11 +22,9 @@
 
 
             <div class="collapse col-xs-12" id="add-records">
-                <form class="col-md-8" method="post" action="{{route('records.store')}}">
 
-                    <div class="alert alert-info" role="alert">
-                        Изменения записей для домена {{$domain}}
-                    </div>
+            <form class="col-md-8" method="post" action="{{route('records.store')}}">
+
                     <div class="form-group">
                         <label>Домен </label>
                         <input type="text" class="form-control" value="{{$domain}}" name="v_domain" readonly/>
@@ -88,8 +86,8 @@
 
                 </div>
 
-                <hr class="clearfix col-xs-12">
             </div>
+
 
         </div>
 

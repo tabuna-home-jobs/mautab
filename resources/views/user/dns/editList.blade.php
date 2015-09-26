@@ -2,21 +2,21 @@
 
 @section('content')
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Basic form</div>
+
+
+
+    @foreach($DnsList as $nameDNS => $dns)
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Изменения для домена {{$nameDNS}}</div>
         <div class="panel-body">
 
 
             <div class="col-xs-12">
 
-                @if(!empty($DnsList))
-                    @foreach($DnsList as $nameDNS => $dns)
-
                         <form class="col-md-8" method="post" action="">
 
-                            <div class="alert alert-info" role="alert">
-                                Изменения для домена {{$nameDNS}}
-                            </div>
                             <div class="form-group">
                                 <label>Домен </label>
                                 <input type="text" class="form-control" value="{{$nameDNS}}" name="dns" readonly/>
@@ -74,15 +74,13 @@
                             </div>
                         </div>
 
-                    @endforeach
-                @else
-                    <div>Нет данных</div>
-                @endif
+
             </div>
 
 
         </div>
     </div>
+    @endforeach
 
 
 @endsection
