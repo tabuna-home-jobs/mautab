@@ -46,7 +46,7 @@
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
-                                                            <button type="submit" class="button-small">Да</button>
+                                                            <button type="submit" class="btn btn-danger">Да</button>
                                                             <input type="hidden" name="object" value="{{$value}}"/>
                                                             <input type="hidden" name="type" value="web">
                                                             <input type="hidden" name="backup" value="{{$name}}">
@@ -93,7 +93,7 @@
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
-                                                            <button type="submit" class="button-small">Да</button>
+                                                            <button type="submit" class="btn btn-danger">Да</button>
                                                             <input type="hidden" name="object" value="{{$value}}"/>
                                                             <input type="hidden" name="type" value="dns">
                                                             <input type="hidden" name="backup" value="{{$name}}">
@@ -138,7 +138,7 @@
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
-                                                            <button type="submit" class="button-small">Да</button>
+                                                            <button type="submit" class="btn btn-danger">Да</button>
                                                             <input type="hidden" name="object" value="{{$value}}"/>
                                                             <input type="hidden" name="type" value="mail">
                                                             <input type="hidden" name="backup" value="{{$name}}">
@@ -183,7 +183,7 @@
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
-                                                            <button type="submit" class="button-small">Да</button>
+                                                            <button type="submit" class="btn btn-danger">Да</button>
                                                             <input type="hidden" name="object" value="{{$value}}"/>
                                                             <input type="hidden" name="type" value="db">
                                                             <input type="hidden" name="backup" value="{{$name}}">
@@ -228,7 +228,7 @@
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
-                                                            <button type="submit" class="button-small">Да</button>
+                                                            <button type="submit" class="btn btn-danger">Да</button>
                                                             <input type="hidden" name="object" value="{{$value}}"/>
                                                             <input type="hidden" name="type" value="cron">
                                                             <input type="hidden" name="backup" value="{{$name}}">
@@ -273,7 +273,7 @@
                                                             <button type="button" class="btn btn-default"
                                                                     data-dismiss="modal">Нет
                                                             </button>
-                                                            <button type="submit" class="button-small">Да</button>
+                                                            <button type="submit" class="btn btn-danger">Да</button>
                                                             <input type="hidden" name="object" value="{{$value}}"/>
                                                             <input type="hidden" name="type" value="udir">
                                                             <input type="hidden" name="backup" value="{{$name}}">

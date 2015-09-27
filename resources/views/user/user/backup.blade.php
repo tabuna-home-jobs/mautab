@@ -49,7 +49,7 @@
                             <div class="modal-footer">
                                 <form action="{{route('backup.destroy')}}" method="post">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
-                                    <button type="submit" class="button-small">Да</button>
+                                    <button type="submit" class="btn btn-danger">Да</button>
                                     <input type="hidden" name="backup" value="{{$key}}"/>
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
