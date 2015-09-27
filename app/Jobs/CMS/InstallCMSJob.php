@@ -58,6 +58,7 @@ class InstallCMSJob extends Job implements SelfHandling
      */
     public function __construct(User $user, $path, CMS $cms)
     {
+
         $this->user = $user;
         $this->path = $path;
         $this->cms = $cms;
@@ -74,7 +75,6 @@ class InstallCMSJob extends Job implements SelfHandling
             Vesta::changeShell('bash');
             $this->sshReplace = true;
         }
-
 
     }
 

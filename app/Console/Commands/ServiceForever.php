@@ -52,7 +52,7 @@ class ServiceForever extends Command
                 '--tries' => '3'
             ]);
             */
-            exec('php artisan queue:work connection --daemon --sleep=3 --tries=3');
+            exec('php artisan queue:work --daemon --sleep=3 --tries=3');
 
         }
 
