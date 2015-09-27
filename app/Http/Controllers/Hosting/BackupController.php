@@ -1,10 +1,10 @@
 <?php namespace Mautab\Http\Controllers\Hosting;
 
 
+use Flash;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\BackupRequest;
 use Mautab\Http\Requests\RestoreBackup;
-use Session;
 use Vesta;
 
 class BackupController extends Controller
@@ -17,9 +17,9 @@ class BackupController extends Controller
      */
     public function index()
     {
-        $Backups = Vesta::listUserBackups();
-
-        return view('user/user/backup', ['Backups' => $Backups]);
+        return view('user/user/backup', [
+            'Backups' => Vesta::listUserBackups()
+        ]);
     }
 
     /**
@@ -43,8 +43,8 @@ class BackupController extends Controller
             $request->type => $request->object,
             "backup" => $request->backup,
         ]);
-        Session::flash('good', 'Востановление резервной копии началось, это может занять некоторое время.');
 
+        Flash::success('Востановление резервной копии началось, это может занять некоторое время.');
         return redirect()->route('backup.index');
     }
 
@@ -58,8 +58,10 @@ class BackupController extends Controller
     public function show($backup)
     {
         $backupDetal = Vesta::showUserBackup($backup)["$backup"];
-
-        return view('user/user/backupDetal', ['Backup' => $backupDetal, 'name' => $backup]);
+        return view('user/user/backupDetal', [
+            'Backup' => $backupDetal,
+            'name' => $backup
+        ]);
     }
 
     /**
@@ -96,8 +98,7 @@ class BackupController extends Controller
     public function destroy(BackupRequest $backup)
     {
         Vesta::deleteUserBackup($backup->backup);
-        Session::flash('good', 'Вы успешно удалили резервную копию.');
-
+        Flash::success('Вы успешно удалили резервную копию.');
         return redirect()->route('backup.index');
     }
 

@@ -23,7 +23,7 @@
 
             <div class="collapse col-xs-12" id="add-records">
 
-            <form class="col-md-8" method="post" action="{{route('records.store')}}">
+                <form class="col-md-8" method="post" action="{{route('records.store')}}">
 
                     <div class="form-group">
                         <label>Домен </label>

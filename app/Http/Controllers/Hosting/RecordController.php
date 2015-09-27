@@ -1,9 +1,9 @@
 <?php namespace Mautab\Http\Controllers\Hosting;
 
+use Flash;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\DomainRecordRequest;
 use Mautab\Http\Requests\RemoveDNSRecordRequest;
-use Session;
 use Vesta;
 
 class RecordController extends Controller
@@ -43,8 +43,7 @@ class RecordController extends Controller
             $request->v_val,
             $request->v_priority
         );
-        Session::flash('good', 'Вы успешно изменили запись.');
-
+        Flash::success('Вы успешно изменили запись.');
         return redirect()->route('records.show', $request->v_domain);
     }
 
@@ -57,9 +56,10 @@ class RecordController extends Controller
      */
     public function show($domain)
     {
-        $records = Vesta::listDNSRecords($domain);
-
-        return view('user/dns/records', ['records' => $records, 'domain' => $domain]);
+        return view('user/dns/records', [
+            'records' => Vesta::listDNSRecords($domain),
+            'domain' => $domain
+        ]);
     }
 
     /**
@@ -71,10 +71,10 @@ class RecordController extends Controller
      */
     public function edit($domain, DomainRecordRequest $request)
     {
-        $record = Vesta::listDNSRecords($domain)[$request->record];
-
-        return view('user/dns/editRecord', ['record' => $record, 'domain' => $domain]);
-
+        return view('user/dns/editRecord', [
+            'record' => Vesta::listDNSRecords($domain)[$request->record],
+            'domain' => $domain
+        ]);
     }
 
     /**
@@ -90,9 +90,9 @@ class RecordController extends Controller
             $domain,
             $request->record,
             $request->v_val,
-            (int)$request->v_priority);
-        Session::flash('good', 'Вы успешно изменили запись.');
-
+            (int)$request->v_priority
+        );
+        Flash::success('Вы успешно изменили запись.');
         return redirect()->route('records.show', $domain);
     }
 
@@ -106,8 +106,7 @@ class RecordController extends Controller
     public function destroy(RemoveDNSRecordRequest $request)
     {
         Vesta::removeDNSRecord($request->v_domain, $request->v_record_id);
-        Session::flash('good', 'Вы успешно удалили запись.');
-
+        Flash::success('Вы успешно удалили запись.');
         return redirect()->route('records.show', $request->v_domain);
     }
 

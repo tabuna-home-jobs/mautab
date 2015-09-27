@@ -1,10 +1,10 @@
 <?php namespace Mautab\Http\Controllers\Hosting;
 
+use Flash;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\AddDNSRequest;
 use Mautab\Http\Requests\ChangeDNSRequest;
 use Mautab\Http\Requests\RemoveDNSRequest;
-use Session;
 use Vesta;
 
 class DnsController extends Controller
@@ -14,21 +14,23 @@ class DnsController extends Controller
     public function Index()
     {
         $DnsList = Vesta::listDNS();
-
-        return view('user/dns/index', ['DnsList' => $DnsList]);
+        return view('user/dns/index', [
+            'DnsList' => $DnsList
+        ]);
     }
 
     public function show($name)
     {
-        return view('user/dns/editList', ['DnsList' => Vesta::listOnlyDNS($name)]);
+        return view('user/dns/editList', [
+            'DnsList' => Vesta::listOnlyDNS($name)
+        ]);
     }
 
     public function update(ChangeDNSRequest $request)
     {
         Vesta::changeDNSDomainExp($request->dns, $request->exp);
         Vesta::changeDNSDomainTtl($request->dns, $request->ttl);
-        Session::flash('good', 'Вы успешно изменили ДНС.');
-
+        Flash::success('Вы успешно изменили ДНС.');
         return redirect()->route('dns.index');
 
     }
@@ -43,17 +45,14 @@ class DnsController extends Controller
             $request->v_ns2
         );
 
-        Session::flash('good', 'Вы успешно добавили DNS.');
-
+        Flash::success('Вы успешно добавили DNS.');
         return redirect()->route('dns.index');
     }
 
     public function destroy(RemoveDNSRequest $request)
     {
-
         Vesta::deleteDNDDomain($request->v_domain);
-        Session::flash('good', 'Вы успешно удалили Домен.');
-
+        Flash::success('Вы успешно удалили Домен.');
         return redirect()->route('dns.index');
     }
 

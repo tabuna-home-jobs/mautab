@@ -2,6 +2,7 @@
 
 namespace Mautab\Http\Controllers\Hosting;
 
+use Flash;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
@@ -116,7 +117,7 @@ class ManagerController extends Controller
     public function update(UpdateFileManager $request)
     {
         Vesta::changePermission(Session::get('Path', '') . $request->name, $request->permission);
-        Session::flash('good', 'Вы успешно изменили права.');
+        Flash::success('Вы успешно изменили права.');
         return redirect()->back();
     }
 
@@ -134,7 +135,7 @@ class ManagerController extends Controller
         else
             Vesta::deleteFile(Session::get('Path', '') . $request->name);
 
-        Session::flash('good', 'Вы успешно удалили файл.');
+        Flash::success('Вы успешно удалили файл.');
         return redirect()->route('manager.index', [
             'path' => Session::get('Path', '')
         ]);

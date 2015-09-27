@@ -2,6 +2,7 @@
 
 namespace Mautab\Http\Controllers\Hosting;
 
+use Flash;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
@@ -9,7 +10,6 @@ use Mautab\Http\Requests\Hosting\InstallCMSRequest;
 use Mautab\Jobs\CMS\InstallCMSJob;
 use Mautab\Models\CMS;
 use Queue;
-use Session;
 use Vesta;
 
 
@@ -67,7 +67,7 @@ class CMSController extends Controller
             CMS::findOrFail($request->cms)
         ));
 
-        Session::flash('good', 'Вы успешно начали установку системы, по завершению вы получите email уведомление, обычно установка занимает около 5 минут');
+        Flash::success('Вы успешно начали установку системы, по завершению вы получите email уведомление, обычно установка занимает около 5 минут');
         return redirect()->route('home.index');
     }
 

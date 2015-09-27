@@ -1,10 +1,10 @@
 <?php namespace Mautab\Http\Controllers\Hosting;
 
 use Auth;
+use Flash;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\ChangeFtpRequest;
 use Mautab\Http\Requests\RemoveFtpRequest;
-use Session;
 use Vesta;
 
 class FtpController extends Controller
@@ -50,7 +50,9 @@ class FtpController extends Controller
      */
     public function show($name)
     {
-        return view('user/ftp/index', ['ftplist' => Vesta::listEditWebDomain($name)]);
+        return view('user/ftp/index', [
+            'ftplist' => Vesta::listEditWebDomain($name)
+        ]);
     }
 
     /**
@@ -74,8 +76,7 @@ class FtpController extends Controller
     {
 
         if (!is_array($request->v_ftp_user)) {
-            Session::flash('danger', 'Ничего не изменено.');
-
+            Flash::error('Ничего не изменено.');
             return redirect()->route('web.index');
         }
 
@@ -131,9 +132,7 @@ class FtpController extends Controller
             }
         }
 
-
-        Session::flash('good', 'Вы успешно добавили/обновили FTP.');
-
+        Flash::success('Вы успешно добавили/обновили FTP.');
         return redirect()->route('web.index');
     }
 

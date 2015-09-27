@@ -358,24 +358,6 @@
                 <!-- / user -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <!-- nav -->
                 <nav ui-nav class="navi clearfix">
 
@@ -801,36 +783,36 @@
     <!-- content -->
     <div id="content" class="app-content" role="main">
 
-            @if (Session::has('good'))
-                <div class="alert notification alert-success text-center container">
-                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
-                                aria-hidden="true">×</span></button>
-                    {{Session::get('good')}}
-                </div>
-            @endif
-            @if (Session::has('danger'))
-                <div class="alert notification alert-danger text-center container">
-                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
-                                aria-hidden="true">×</span></button>
-                    {{Session::get('danger')}}
-                </div>
-            @endif
-            @if (count($errors) > 0)
-                <div class="alert notification alert-danger container">
-                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
-                                aria-hidden="true">×</span></button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+        @if (Session::has('good'))
+            <div class="alert notification alert-success text-center container">
+                <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
+                            aria-hidden="true">×</span></button>
+                {{Session::get('good')}}
+            </div>
+        @endif
+        @if (Session::has('danger'))
+            <div class="alert notification alert-danger text-center container">
+                <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
+                            aria-hidden="true">×</span></button>
+                {{Session::get('danger')}}
+            </div>
+        @endif
+        @if (count($errors) > 0)
+            <div class="alert notification alert-danger container">
+                <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
+                            aria-hidden="true">×</span></button>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
 
 
 
-            @yield('content')
+        @yield('content')
 
     </div>
     <!-- /content -->

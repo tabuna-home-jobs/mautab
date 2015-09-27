@@ -34,7 +34,8 @@
                         </div>
                         <div class="form-group">
                             <label>Превью</label>
-                            <textarea class="textarea form-control" name="preview" rows="20">{!! $News->preview or '' !!}</textarea>
+                            <textarea class="textarea form-control" name="preview"
+                                      rows="20">{!! $News->preview or '' !!}</textarea>
 
 
                         </div>
@@ -54,11 +55,6 @@
                             <input class="form-control" type="text" maxlength="255" required name="keywords"
                                    value="{{$News->keywords or ''}}">
                         </div>
-
-
-
-
-
 
 
                         <div class="form-group">

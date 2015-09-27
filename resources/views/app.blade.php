@@ -86,22 +86,10 @@
 
 <section class="app">
 
-    @if (Session::has('good'))
-        <div class="alert notification alert-success text-center container">
-            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
-                        aria-hidden="true">×</span></button>
-            {{Session::get('good')}}
-        </div>
-    @endif
-    @if (Session::has('danger'))
-        <div class="alert notification alert-danger text-center container">
-            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
-                        aria-hidden="true">×</span></button>
-            {{Session::get('danger')}}
-        </div>
-    @endif
+    @include('_layouts.message')
+
     @if (count($errors) > 0)
-        <div class="alert notification alert-danger container">
+        <div class="alert notification alert-danger">
             <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
                         aria-hidden="true">×</span></button>
             <ul>
@@ -112,9 +100,9 @@
         </div>
     @endif
 
-        <div class="container wrapper-md">
+    <div class="container wrapper-md">
         @yield('content')
-        </div>
+    </div>
 
 </section>
 

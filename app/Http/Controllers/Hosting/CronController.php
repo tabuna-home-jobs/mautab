@@ -1,9 +1,9 @@
 <?php namespace Mautab\Http\Controllers\Hosting;
 
+use Flash;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\CronDeleteRequest;
 use Mautab\Http\Requests\CronRequest;
-use Session;
 use Vesta;
 
 class CronController extends Controller
@@ -16,7 +16,9 @@ class CronController extends Controller
      */
     public function index()
     {
-        return view('user/cron/index', ['CronList' => Vesta::listCron()]);
+        return view('user/cron/index', [
+            'CronList' => Vesta::listCron()
+        ]);
     }
 
     /**
@@ -44,8 +46,7 @@ class CronController extends Controller
             $request->v_wday,
             $request->v_cmd
         );
-        Session::flash('good', 'Вы успешно добавили задание.');
-
+        Flash::success('Вы успешно добавили задание.');
         return redirect()->route('cron.index');
     }
 
@@ -58,7 +59,10 @@ class CronController extends Controller
      */
     public function show($v_job)
     {
-        return view('user/cron/edit', ['Cron' => Vesta::showCron($v_job)[$v_job], 'name' => $v_job]);
+        return view('user/cron/edit', [
+            'Cron' => Vesta::showCron($v_job)[$v_job],
+            'name' => $v_job
+        ]);
     }
 
     /**
@@ -88,8 +92,7 @@ class CronController extends Controller
             $request->v_wday,
             $request->v_cmd
         );
-        Session::flash('good', 'Вы успешно изменили задание.');
-
+        Flash::success('Вы успешно изменили задание.');
         return redirect()->route('cron.index');
     }
 
@@ -103,8 +106,7 @@ class CronController extends Controller
     public function destroy(CronDeleteRequest $request)
     {
         Vesta::deleteCron($request->v_job);
-        Session::flash('good', 'Вы успешно добавили задание.');
-
+        Flash::success('Вы успешно добавили задание.');
         return redirect()->route('cron.index');
     }
 

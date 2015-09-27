@@ -28,19 +28,20 @@
                 <div class="clearfix panel-footer">
 
                     @if($Tiket->complete != 1)
-                    <form id="commentform">
+                        <form id="commentform">
 
-                        <div class="input-group">
-                            <input name="message" type="text" placeholder="Сообщение"  class="form-control input-sm btn-rounded">
-                            <input type="hidden" name="tikets_id" value="{{$Tiket->id}}">
-                            <input type="hidden" name="interview" value="1">
+                            <div class="input-group">
+                                <input name="message" type="text" placeholder="Сообщение"
+                                       class="form-control input-sm btn-rounded">
+                                <input type="hidden" name="tikets_id" value="{{$Tiket->id}}">
+                                <input type="hidden" name="interview" value="1">
                             <span class="input-group-btn">
                               <button class="btn btn-default btn-sm btn-rounded" id="subAnwerUser">
                                   <i class="fa fa-paper-plane-o"></i>
                               </button>
                             </span>
-                        </div>
-                    </form>
+                            </div>
+                        </form>
                     @else
                         <div class="alert-danger alert">
                             Тема закрыта

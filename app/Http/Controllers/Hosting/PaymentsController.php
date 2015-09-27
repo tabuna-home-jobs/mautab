@@ -9,7 +9,6 @@ use Mautab\Http\Requests;
 use Mautab\Models\Payments;
 use Mautab\Services\WalletOne\PaymentForm as WalletOneForm;
 
-;
 
 class PaymentsController extends Controller
 {

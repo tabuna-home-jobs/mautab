@@ -14,14 +14,16 @@
 
                             <div class="line line-lg b-b b-light"></div>
                             @foreach($news as $value)
-                            <div>
+                                <div>
 
-                                <div class="news-heder"><a title="Подробнее" class="text-black font-bold" href="/news/{{$value->slug}}">{{$value->title}}</a></div>
-                                <div class="news-date text-muted ">{{ $value->created_at->diffForHumans() }}</div>
-                                <div class="news-desript m-b">{{str_limit( strip_tags($value->preview), 100, '...' )}}<a href="/news/{{$value->slug}} ">Читать далее</a></div>
+                                    <div class="news-heder"><a title="Подробнее" class="text-black font-bold"
+                                                               href="/news/{{$value->slug}}">{{$value->title}}</a></div>
+                                    <div class="news-date text-muted ">{{ $value->created_at->diffForHumans() }}</div>
+                                    <div class="news-desript m-b">{{str_limit( strip_tags($value->preview), 100, '...' )}}
+                                        <a href="/news/{{$value->slug}} ">Читать далее</a></div>
 
 
-                            </div>
+                                </div>
                             @endforeach
                             <div class="line line-lg b-b b-light"></div>
                             <div class="text-muted">

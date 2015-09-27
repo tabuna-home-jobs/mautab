@@ -2,27 +2,17 @@
 
 use Auth;
 use Config;
+use Flash;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\AddWebRequest;
 use Mautab\Http\Requests\ChangeWebRequest;
 use Mautab\Http\Requests\RemoveWebRequest;
 use Request;
-use Session;
 use Vesta;
+
 
 class WebController extends Controller
 {
-
-    /*
-    |--------------------------------------------------------------------------
-    | Home Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller renders your application's "dashboard" for users that
-    | are authenticated. Of course, you are free to change or remove the
-    | controller as you wish. It is just here to get your app started!
-    |
-    */
 
     /**
      * Create a new controller instance.
@@ -37,7 +27,9 @@ class WebController extends Controller
      */
     public function index()
     {
-        return view('user/web/index', ["UserDomain" => Vesta::listWebDomain()]);
+        return view('user/web/index', [
+            "UserDomain" => Vesta::listWebDomain()
+        ]);
     }
 
     //Добавление веб домена
@@ -88,7 +80,6 @@ class WebController extends Controller
                     } else {
 
                         Vesta::addWebDomainAlias($request->v_domain, $alias);
-
                         Vesta::addDnsAlias($request->v_domain, $alias);
                     }
                 }
@@ -109,10 +100,10 @@ class WebController extends Controller
                 Vesta::addDomainProxy($request->v_domain, $ext);
             }
 
-            Session::flash('good', 'Вы успешно добавили Домен.');
+            Flash::success('Вы успешно добавили Домен.');
             return redirect()->route('web.index');
         } else {
-            Session::flash('danger', 'Введите валидный домен');
+            Flash::error('Введите валидный домен');
             return redirect()->route('web.index');
         }
     }
@@ -135,10 +126,7 @@ class WebController extends Controller
         //Получаем список всех алиасов
         $listWebDom = Vesta::listEditWebDomain($request->v_domain);
         $listAliases = $listWebDom[$request->v_domain]['ALIAS'];
-
         $aliArr = explode(',', $listAliases);
-
-
         Vesta::deleteDomain($request->v_domain);
 
         //Удаляем его алиасы
@@ -146,24 +134,23 @@ class WebController extends Controller
             Vesta::deleteDNDDomain($aliArr[$i]);
         }
 
-        Session::flash('good', 'Вы успешно удалили веб домен.');
-
+        Flash::success('Вы успешно удалили веб домен.');
         return redirect()->route('web.index');
 
     }
 
     public function show($name)
     {
-        return view('user/web/editList', ['webList' => Vesta::listEditWebDomain($name)]);
+        return view('user/web/editList', [
+            'webList' => Vesta::listEditWebDomain($name)
+        ]);
     }
 
     public function update(ChangeWebRequest $request)
     {
         //Изменение IP
         Vesta::changeWebDomainIp($request->v_domain, $request->v_ip);
-
-        Session::flash('good', 'Обновление прошло успешно');
-
+        Flash::success('Обновление прошло успешно.');
         return redirect()->route('web.index');
     }
 

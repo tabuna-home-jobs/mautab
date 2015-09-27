@@ -237,16 +237,11 @@
                     <!--end Новости -->
 
 
-
-
-
-
             </div>
 
 
-
         </div>
 
 
-            @endsection
-        </div>
+        @endsection
+    </div>

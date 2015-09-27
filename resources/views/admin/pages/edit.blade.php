@@ -25,50 +25,50 @@
                 <form action="{{route('admin.pages.update', $Page->slug)}}" method="post">
 
                     <div class="row">
-                    <div class="col-md-8">
-                        <div class="form-group">
-                            <label>Содержание</label>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Содержание</label>
                                     <textarea class="textarea form-control textareaedit" name="cont" rows="30">
                                         {!! $Page->content or '' !!}
                                     </textarea>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Заголовок</label>
-                            <input class="form-control" type="text" maxlength="255" required name="title"
-                                   value="{{$Page->title or ''}}">
-                        </div>
-                        <div class="form-group">
-                            <label>Имя</label>
-                            <input class="form-control" type="text" maxlength="255" required name="name"
-                                   value="{{$Page->name or ''}}">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Теги</label>
-                            <input ui-jq="tagsinput" ui-options="" class="form-control w-md" data-role="tagsinput"
-                                   type="text" maxlength="255"
-                                   required name="tag" value="{{$Page->tag or ''}}">
+                            </div>
                         </div>
 
 
-                        <div class="form-group">
-                            <label>Описание</label>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Заголовок</label>
+                                <input class="form-control" type="text" maxlength="255" required name="title"
+                                       value="{{$Page->title or ''}}">
+                            </div>
+                            <div class="form-group">
+                                <label>Имя</label>
+                                <input class="form-control" type="text" maxlength="255" required name="name"
+                                       value="{{$Page->name or ''}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Теги</label>
+                                <input ui-jq="tagsinput" ui-options="" class="form-control w-md" data-role="tagsinput"
+                                       type="text" maxlength="255"
+                                       required name="tag" value="{{$Page->tag or ''}}">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Описание</label>
 
                             <textarea class="form-control" rows="7" maxlength="255" required
                                       name="descript">{{$Page->descript or ''}}</textarea>
+                            </div>
+
+
+                            <input type="hidden" name="_method" value="PUT">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-primary">Отправить</button>
                         </div>
 
-
-                        <input type="hidden" name="_method" value="PUT">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button type="submit" class="btn btn-primary">Отправить</button>
                     </div>
-
-            </div>
                 </form>
             </div>
         </div>

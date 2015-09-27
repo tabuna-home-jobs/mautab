@@ -2,13 +2,12 @@
 
 namespace Mautab\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-use Mautab\Http\Requests;
-use Mautab\Http\Controllers\Controller;
-use Mautab\Models\Tiket;
-use Mautab\Http\Requests\TiketRequest;
-use Mautab\Models\User;
 use DB;
+use Illuminate\Http\Request;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests;
+use Mautab\Models\Tiket;
+use Mautab\Models\User;
 
 class TiketsController extends Controller
 {
@@ -19,9 +18,9 @@ class TiketsController extends Controller
      */
     public function index()
     {
-        $tiketsList = Tiket::whereRaw('complete = 0 AND tikets_id = 0')->orderBy('id','desc')->simplePaginate(15);
+        $tiketsList = Tiket::whereRaw('complete = 0 AND tikets_id = 0')->orderBy('id', 'desc')->simplePaginate(15);
 
-	    return view('admin/tikets/index',['tiketList' => $tiketsList]);
+        return view('admin/tikets/index', ['tiketList' => $tiketsList]);
     }
 
     /**
@@ -37,7 +36,7 @@ class TiketsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store($msg, $userId)
@@ -52,7 +51,7 @@ class TiketsController extends Controller
         $user->tiket()->save($tiket);
 
         //Если админ завершил беседу то обновляем эту таблицу
-        if($msg['complete'] == '1'){
+        if ($msg['complete'] == '1') {
 
             DB::table('tikets')
                 ->where('id', $msg['tikets_id'])
@@ -62,13 +61,13 @@ class TiketsController extends Controller
 
         //$Tikets = Tiket::whereRaw('tikets_id = ?', [$msg['tikets_id']])->orderBy('updated_at','desc')->take(1)->get();
 
-	    $Tikets = DB::table('tikets')
-		    ->select('*','tikets.id as tiketid')
-		    ->leftJoin('users', 'users.id', '=', 'tikets.user_id')
-		    ->where('tikets.tikets_id', "=" ,$msg['tikets_id'])
-		    ->orderBy('tikets.updated_at','desc')
-		    ->take(1)
-		    ->get();
+        $Tikets = DB::table('tikets')
+            ->select('*', 'tikets.id as tiketid')
+            ->leftJoin('users', 'users.id', '=', 'tikets.user_id')
+            ->where('tikets.tikets_id', "=", $msg['tikets_id'])
+            ->orderBy('tikets.updated_at', 'desc')
+            ->take(1)
+            ->get();
 
         return $Tikets[0];
     }
@@ -76,7 +75,7 @@ class TiketsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -84,13 +83,13 @@ class TiketsController extends Controller
 
         $currentTiket = Tiket::with('subtiket')->findOrFail($id);
 
-        return view('admin/tikets/viewer',['tiket' => $currentTiket]);
+        return view('admin/tikets/viewer', ['tiket' => $currentTiket]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -101,8 +100,8 @@ class TiketsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -113,7 +112,7 @@ class TiketsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -6,11 +6,11 @@
 
     @forelse($webList as $domain => $d_val)
 
-    <div class="panel panel-default">
-        <div class="panel-heading"> Редактирование домена {{$domain}}</div>
-        <div class="panel-body">
+        <div class="panel panel-default">
+            <div class="panel-heading"> Редактирование домена {{$domain}}</div>
+            <div class="panel-body">
 
-            <div class="col-xs-12">
+                <div class="col-xs-12">
 
                     <form class="col-md-8 col-xs-12" method="post" action="">
 
@@ -86,12 +86,12 @@
                     </div>
 
 
+                </div>
+
+
             </div>
 
-
         </div>
-
-    </div>
 
 
     @empty

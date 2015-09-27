@@ -2,7 +2,6 @@
 
 namespace Mautab\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Http\Requests\Admin\NewsRequest;

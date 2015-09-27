@@ -16,11 +16,8 @@ class SearchController extends Controller
      */
     public function index(SearchRequest $request)
     {
-        $search = Vesta::userSearch($request->query('query'));
-
-
         return view('user.search.index', [
-            'Search' => $search,
+            'Search' => Vesta::userSearch($request->query('query')),
         ]);
 
 

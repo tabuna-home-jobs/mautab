@@ -237,6 +237,7 @@ label, strong {
     border-radius: 4px;
     box-shadow: 1px 1px 3px gray;
     padding: 10px 30px 10px 10px;
+    z-index: 5000;
 }
 
 .app-fixed-body {
@@ -320,4 +321,14 @@ label, strong {
     font-size: 12px;
     line-height: 1.428571429;
     border-radius: 15px;
+}
+
+.hotBlock {
+    display: none;
+    list-style-type: none;
+}
+
+.title-name {
+    text-transform: capitalize;
+    font-weight: bold;
 }

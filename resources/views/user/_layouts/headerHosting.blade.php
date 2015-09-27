@@ -68,11 +68,11 @@
                 <h4>Dashboard</h4>
             </a>
         @else
-        <a href="{{route('tikets.index')}}"
-           class="{{Active::route('tikets.*')}}">
-            <span class="fa fa-life-ring"></span>
-            <h4>{{Lang::get('menu.support')}}</h4>
-        </a>
+            <a href="{{route('tikets.index')}}"
+               class="{{Active::route('tikets.*')}}">
+                <span class="fa fa-life-ring"></span>
+                <h4>{{Lang::get('menu.support')}}</h4>
+            </a>
         @endif
 
         <p class="menu-small"><a href="{{route('log.index')}}">{{Lang::get('menu.log')}}</a></p>

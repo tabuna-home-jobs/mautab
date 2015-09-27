@@ -1,11 +1,11 @@
 <?php namespace Mautab\Http\Controllers\Hosting;
 
 use Auth;
+use Flash;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests\AddBDRequest;
 use Mautab\Http\Requests\ChangeBDRequest;
 use Mautab\Http\Requests\RemoveBDRequest;
-use Session;
 use Vesta;
 
 
@@ -15,23 +15,25 @@ class BdController extends Controller
 
     public function Index()
     {
-        return view('user/bd/index', ['BdList' => Vesta::listBD()]);
+        return view('user/bd/index', [
+            'BdList' => Vesta::listBD()
+        ]);
     }
 
     public function show($name)
     {
-        return view('user/bd/editList', ['BdList' => Vesta::listOnlyBD($name)]);
+        return view('user/bd/editList', [
+            'BdList' => Vesta::listOnlyBD($name)
+        ]);
     }
 
     public function update(ChangeBDRequest $request)
     {
-
         //Обрезаем префикс
         $request->user_bd = preg_replace("/^" . Auth::User()->nickname . "_/", "", $request->user_bd);
         Vesta::changeDbUser($request->bd, $request->user_bd);
         Vesta::changeDbPassword($request->bd, $request->password_bd);
-        Session::flash('good', 'Вы успешно изменили базу данных.');
-
+        Flash::success('Вы успешно изменили базу данных.');
         return redirect()->route('bd.index');
     }
 
@@ -46,24 +48,20 @@ class BdController extends Controller
             'mysql', // По умолчанию MySQL
             $request->v_charset);
 
-        Session::flash('good', 'Вы успешно добавили базу данных.');
-
+        Flash::success('Вы успешно добавили базу данных.');
         return redirect()->route('bd.index');
     }
 
     public function destroy(RemoveBDRequest $request)
     {
         Vesta::deleteDateBase($request->v_database);
-        Session::flash('good', 'Вы успешно удалили базу данных.');
-
+        Flash::success('Вы успешно удалили базу данных.');
         return redirect()->route('bd.index');
     }
 
     public function create()
     {
-
         return view('user/bd/create');
-
     }
 
 
