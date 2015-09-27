@@ -18,7 +18,7 @@ class TiketsController extends Controller
      */
     public function index()
     {
-        $tiketsList = Tiket::whereRaw('complete = 0 AND tikets_id = 0')->orderBy('id', 'desc')->simplePaginate(15);
+        $tiketsList = Tiket::whereRaw('tikets_id = 0')->orderBy('id', 'desc')->simplePaginate(15);
 
         return view('admin/tikets/index', ['tiketList' => $tiketsList]);
     }

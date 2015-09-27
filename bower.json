@@ -33,6 +33,7 @@
     "font-awesome": "4.*",
     "footable": "~2.0.*",
     "jquery": "2.*",
+    "jquery-ui": "1.11.*",
     "jquery.easy-pie-chart": "~2.1.6",
     "moment": "~2.*",
     "nanobar": "0.*",

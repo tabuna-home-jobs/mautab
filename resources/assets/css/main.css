@@ -332,3 +332,9 @@ label, strong {
     text-transform: capitalize;
     font-weight: bold;
 }
+.tab-pane{
+    padding: 10px;
+}
+.nav-admin-tabs{
+    padding: 10px 0 0 5px;
+}

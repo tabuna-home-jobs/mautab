@@ -13,31 +13,77 @@
             <div class="panel-heading">
                 Тикеты
             </div>
+            <ul class="nav nav-tabs nav-admin-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#open" aria-controls="open" role="tab" data-toggle="tab">Открытые вопросы</a>
+                </li>
+                <li role="presentation">
+                    <a href="#closed" aria-controls="closed" role="tab" data-toggle="tab">Закрытые</a>
+                </li>
+            </ul>
+
             <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Название</th>
-                        <th>Сообщение</th>
-                    </tr>
-                    </thead>
-                    <tbody id="ticketBody">
-                    @foreach($tiketList as $tiket)
-                        <tr>
-                            <td>{{$tiket->id}}</td>
-                            <td>
-                                <a href="{{ route('admin.tikets.show', $tiket->id) }}">
-                                    {{$tiket->title}}
-                                </a>
-                            </td>
-                            <td>
-                                {{str_limit(strip_tags($tiket->message), $limit = 100, $end = '...')}}
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="open">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Название</th>
+                                <th>Сообщение</th>
+                            </tr>
+                            </thead>
+                            <tbody id="ticketBody">
+
+                            @foreach($tiketList as $tiket)
+                                @if($tiket->complete == 0)
+                                <tr>
+                                    <td>{{$tiket->id}}</td>
+                                    <td>
+                                        <a href="{{ route('admin.tikets.show', $tiket->id) }}">
+                                            {{$tiket->title}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {{str_limit(strip_tags($tiket->message), $limit = 100, $end = '...')}}
+                                    </td>
+                                </tr>
+                                @endif
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="closed">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Название</th>
+                                <th>Сообщение</th>
+                            </tr>
+                            </thead>
+                            <tbody id="ticketBody">
+
+                            @foreach($tiketList as $tiket)
+                                @if($tiket->complete == 1)
+                                    <tr>
+                                        <td>{{$tiket->id}}</td>
+                                        <td>
+                                            <a href="{{ route('admin.tikets.show', $tiket->id) }}">
+                                                {{$tiket->title}}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{str_limit(strip_tags($tiket->message), $limit = 100, $end = '...')}}
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 {!! $tiketList->render() !!}
             </div>
         </div>
