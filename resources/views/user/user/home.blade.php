@@ -165,6 +165,27 @@
                                 </div>
                                 <!-- ./col -->
 
+
+                                <div class="col-lg-6 col-xs-12">
+                                    <!-- small box -->
+                                    <div class="small-box bg-red">
+                                        <div class="inner">
+                                            <h3>CMS</h3>
+
+                                            <p>Помощник в установки</p>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-wordpress"></i>
+                                        </div>
+                                        <a href="{{route('install.index')}}" class="small-box-footer">Перейти <i
+                                                    class="fa fa-arrow-circle-right"></i></a>
+                                    </div>
+                                </div>
+                                <!-- ./col -->
+
+
+
+
                             </div>
 
 
