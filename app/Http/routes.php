@@ -59,3 +59,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['Adm
     ]);
 });
 
+
+// API
+Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
+    Route::resource('/payments', 'PaymentsController');
+});
+
+
+
+
+
+
+
