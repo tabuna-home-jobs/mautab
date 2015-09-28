@@ -38,8 +38,7 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-
-        $payments = Payments::findOrFail($request->WMI_PAYMENT_NO);
+        $payments = Payments::find($request->WMI_PAYMENT_NO);
         $w1Verify = new WalletOneVerify();
 
         # Загружаем данные
