@@ -47,6 +47,13 @@ class PaymentsController extends Controller
 
         # Проверяем номер транзакции и статус оплаты
         if ($w1Verify->getTransactionId() === $payments->w1_id && $w1Verify->isPaymentAccepted()) {
+
+            $user = $payments->getUser();
+            $user->balans = $user->balans + $payments->sum;
+            $user->save();
+            $payments->status = true;
+            $payments->save();
+
             # Успешно
             echo 'WMI_RESULT=OK';
         } else {

@@ -42,4 +42,9 @@ class Payments extends Model
 	protected $fillable = ['sum', 'status', 'users_id'];
 
 
+	public function getUser()
+	{
+		return $this->belongsTo(User::class);
+	}
+
 }
