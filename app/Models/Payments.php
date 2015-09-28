@@ -44,7 +44,7 @@ class Payments extends Model
 
 	public function getUser()
 	{
-		return $this->belongsTo(User::class);
+		return $this->belongsTo(User::class, 'user_id');
 	}
 
 }
