@@ -1,6 +1,6 @@
 <?php
 
-namespace Mautab\Services\Helper\WalletOne;
+namespace Mautab\Services\WalletOne\Helper;
 
 /**
  * Class ResponseCustomerFields
