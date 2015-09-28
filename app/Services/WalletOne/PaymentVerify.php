@@ -2,7 +2,8 @@
 
 namespace Mautab\Services\WalletOne;
 
-//use Mautab\Services\Helper;
+use Mautab\Services\WalletOne\Helper\ResponseCustomerFields;
+use Mautab\Services\WalletOne\Helper\ResponseDataLoader;
 
 /**
  * Class PaymentVerify
@@ -10,9 +11,8 @@ namespace Mautab\Services\WalletOne;
  */
 class PaymentVerify
 {
-
-    use Mautab\Services\Helper\ResponseDataLoader;
-    use Mautab\Services\Helper\ResponseCustomerFields;
+    use ResponseDataLoader;
+    use ResponseCustomerFields;
 
     /**
      * @var array
