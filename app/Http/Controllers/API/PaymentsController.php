@@ -39,7 +39,7 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-        Log::error('Что-то действительно идёт не так.', $request);
+        Log::info('Что-то действительно идёт не так.', $request);
 
 
         $payments = Payments::where('w1_id', $request->WMI_ORDER_ID)->findOrFail();
