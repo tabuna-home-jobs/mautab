@@ -18,8 +18,8 @@ return [
      * на которые будет отправлен покупатель после успешной или неуспешной оплаты.
      */
 
-    'successLink' => 'http://mautab.com/',
-    'failLink' => 'http://mautab.com/',
+    'successLink' => 'http://mautab.com/api/payments',
+    'failLink' => 'http://mautab.com/api/payments',
 
 
     // Разрешить платёжные системы (По умолчанию все возможные)
