@@ -15,14 +15,12 @@
           type='text/css'>
 
 
-    <link rel="stylesheet" href="/theme/bower_components/animate.css/animate.css" type="text/css"/>
-    <link rel="stylesheet" href="/theme/bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
     <link rel="stylesheet" href="{{asset('/build/css/app.css')}}" type="text/css"/>
 
 
 </head>
 
-<div class="app app-header-fixed  app-aside-fixed ">
+<div class="app app-header-fixed app-aside-fixed app-aside-folded">
 
 
     <header id="header" class="app-header navbar" role="menu">
@@ -814,18 +812,19 @@
 
         @yield('content')
 
+
+            <footer id="footer" class="app-footer" role="footer">
+                <div class="wrapper b-t bg-light">
+        <span class="pull-right">2.0.1 <a href="" ui-scroll="app" class="m-l-sm text-muted"><i
+                        class="fa fa-long-arrow-up"></i></a></span>
+                    © 2015 Copyright.
+                </div>
+            </footer>
+
+
     </div>
     <!-- /content -->
 </div>
-
-
-<footer id="footer" class="app-footer" role="footer">
-    <div class="wrapper b-t bg-light">
-        <span class="pull-right">2.0.1 <a href="" ui-scroll="app" class="m-l-sm text-muted"><i
-                        class="fa fa-long-arrow-up"></i></a></span>
-        © 2015 Copyright.
-    </div>
-</footer>
 
 
 <script src="{{asset('/build/js/app.js')}}" type="text/javascript"></script>
