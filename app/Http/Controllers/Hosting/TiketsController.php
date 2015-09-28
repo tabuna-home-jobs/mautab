@@ -97,6 +97,7 @@ class TiketsController extends Controller
 
 
         $Tikets = DB::table('tikets')
+	        ->select('*', 'tikets.id as tiketid')
             ->leftJoin('users', 'users.id', '=', 'tikets.user_id')
             ->where('tikets.tikets_id', "=", $msg['tikets_id'])
             ->orderBy('tikets.updated_at', 'desc')
