@@ -7,6 +7,7 @@ use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Models\Payments;
 use Mautab\Services\WalletOne\PaymentVerify as WalletOneVerify;
+use Storage;
 
 class PaymentsController extends Controller
 {
@@ -38,6 +39,10 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
+        Storage::put('requst.txt', $request);
+
+
+
         $payments = Payments::where('w1_id', $request->WMI_ORDER_ID)->findOrFail();
         $w1Verify = new WalletOneVerify();
 
