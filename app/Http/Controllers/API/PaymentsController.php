@@ -40,7 +40,9 @@ class PaymentsController extends Controller
     {
         //Log::info('Что-то действительно идёт не так.', $request);
 
-        $payments = Payments::find($request->CUSTOMER_orderId)->where('status', '!=', true);
+        $payments = Payments::find($request->CUSTOMER_orderId)
+            ->where('status', '!=', true)
+            ->firstOrFail();
         $w1Verify = new WalletOneVerify();
 
         # Загружаем данные
