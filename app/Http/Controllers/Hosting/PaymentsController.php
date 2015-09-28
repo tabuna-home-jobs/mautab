@@ -46,7 +46,7 @@ class PaymentsController extends Controller
     {
         $order = new Payments([
             'sum' => $request->sum,
-            'users_id' => Auth::user()->id,
+            'user_id' => Auth::user()->id,
             'status' => null
         ]);
         $order->save();
