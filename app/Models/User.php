@@ -98,7 +98,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function getPayments()
     {
-        return $this->hasMany(Payments::class, 'users_id');
+        return $this->hasMany(Payments::class);
     }
 
 
@@ -108,7 +108,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
 
-    public function addddRole($role)
+    public function addRole($role)
     {
 
 

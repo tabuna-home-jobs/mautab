@@ -3,7 +3,6 @@
 namespace Mautab\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-use Log;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Models\Payments;
@@ -18,7 +17,7 @@ class PaymentsController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -39,10 +38,9 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-        Log::error('Что-то действительно идёт не так.', $request);
+        //Log::info('Что-то действительно идёт не так.', $request);
 
-
-        $payments = Payments::where('w1_id', $request->WMI_ORDER_ID)->findOrFail();
+        $payments = Payments::find($request->CUSTOMER_orderId)->where('status', true);
         $w1Verify = new WalletOneVerify();
 
         # Загружаем данные
@@ -51,7 +49,7 @@ class PaymentsController extends Controller
         # Проверяем номер транзакции и статус оплаты
         if ($w1Verify->getTransactionId() === $payments->w1_id && $w1Verify->isPaymentAccepted()) {
 
-            $user = $payments->getUser();
+            $user = $payments->getUser()->firstOrFail();
             $user->balans = $user->balans + $payments->sum;
             $user->save();
             $payments->status = true;

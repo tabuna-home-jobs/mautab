@@ -39,12 +39,12 @@ class Payments extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['sum', 'status', 'users_id', 'w1_id'];
+	protected $fillable = ['sum', 'status', 'user_id', 'w1_id'];
 
 
 	public function getUser()
 	{
-		return $this->belongsTo(User::class);
+		return $this->belongsTo(User::class, 'user_id');
 	}
 
 }
