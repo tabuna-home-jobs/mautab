@@ -32,6 +32,7 @@
                                 <th>#</th>
                                 <th>Название</th>
                                 <th>Сообщение</th>
+                                <th class="text-right">Действие</th>
                             </tr>
                             </thead>
                             <tbody id="ticketBody">
@@ -48,6 +49,19 @@
                                     <td>
                                         {{str_limit(strip_tags($tiket->message), $limit = 100, $end = '...')}}
                                     </td>
+                                    <td>
+                                        <div class="btn-group pull-right" role="group" aria-label="...">
+                                            <a href="{{route('admin.tikets.show', $tiket->id)}}"
+                                               class="btn btn-info">
+                                                <i class="fa fa-search"></i>
+                                            </a>
+
+                                            <a href="#" class="btn btn-danger"
+                                               onclick="">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
                                 @endif
                             @endforeach
@@ -61,9 +75,10 @@
                                 <th>#</th>
                                 <th>Название</th>
                                 <th>Сообщение</th>
+                                <th class="text-right">Действие</th>
                             </tr>
                             </thead>
-                            <tbody id="ticketBody">
+                            <tbody id="ticketBody-close">
 
                             @foreach($tiketList as $tiket)
                                 @if($tiket->complete == 1)
@@ -76,6 +91,19 @@
                                         </td>
                                         <td>
                                             {{str_limit(strip_tags($tiket->message), $limit = 100, $end = '...')}}
+                                        </td>
+                                        <td>
+                                            <div class="btn-group pull-right" role="group" aria-label="...">
+                                                <a href="{{route('admin.tikets.show', $tiket->id)}}"
+                                                   class="btn btn-info">
+                                                    <i class="fa fa-search"></i>
+                                                </a>
+
+                                                <a href="#" class="btn btn-danger"
+                                                   onclick="">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endif
