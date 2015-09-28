@@ -3,7 +3,6 @@
 namespace Mautab\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-use Log;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Models\Payments;
@@ -39,10 +38,7 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-        Log::info('Что-то действительно идёт не так.', $request);
-
-
-        $payments = Payments::where('w1_id', $request->WMI_ORDER_ID)->findOrFail();
+        $payments = Payments::where('w1_id', $request->WMI_ORDER_ID)->firstOrFail();
         $w1Verify = new WalletOneVerify();
 
         # Загружаем данные
