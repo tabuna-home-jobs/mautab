@@ -15,7 +15,7 @@ function addNewMessage(obj){
 }
 
 //Создаем подключение
-var conn = new WebSocket('ws://localhost:8990');
+var conn = new WebSocket('ws://localhost:8990/socket/admin/tikets');
 //Обозначаем подключение
 conn.onopen = function (e) {
     console.log('Админ подключился!!!');
@@ -28,4 +28,3 @@ conn.onmessage = function (e) {
     //Отдаем в функцию объект
     addNewMessage(parseObj);
 };
-

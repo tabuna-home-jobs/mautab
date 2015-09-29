@@ -69,5 +69,3 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 
 
 
-
-
