@@ -8,15 +8,15 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div class="m-t-xxl m-b-xxl padder-v">
                     <h1 class="font-bold l-h-1x m-t-xxl text-black padder-v animated fadeInDown">
-                        Идейные соображения высшего порядка <span class="b-b b-black b-3x"> играют важную роль</span> в
-                        формировании модели развития.
+                        Современный хостинг для <span class="b-b b-black b-3x">Вашего</span> проекта
                     </h1>
 
                     <h3 class="text-muted m-t-xl l-h-1x">
 
-                        Таким образом <span
-                                class="b-b b-2x">дальнейшее развитие</span> различных форм деятельности в значительной
-                        степени обуславливает создание новых предложений.
+
+                        Mautab идеально подходит для  <span
+                                class="b-b b-2x">сайтов компаний и персональных страниц, а также блогов, форумов, и галерей.</span>
+
 
                     </h3>
                 </div>
