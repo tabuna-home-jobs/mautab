@@ -3,7 +3,7 @@ function addNewMessage(obj){
 
     var strokeResponse = "<li class='list-group-item clearfix hotBlock'>";
     strokeResponse += "<span class='clear'>";
-    strokeResponse += "<span>"+obj.nickname+"</span>";
+    strokeResponse += "<span class='text-black'>"+obj.nickname+"</span>";
     strokeResponse += "<small class='text-muted clear'>"+obj.message+"</small>";
     strokeResponse += "</span>";
     strokeResponse += "</li>";
@@ -18,10 +18,10 @@ function addNewMessage(obj){
          themeClose += 'Тема закрыта';
          themeClose += '</div>';
 
-         $("#commentform").hide('1000', function(){
+         $("#commentform").hide('slide',{direction:"up"},500, function(){
              $(this).remove();
-             $(".panel-footer").html(themeClose);
-             $(".alert").show('1000');
+             $(".mess-window").html(themeClose);
+             $(".alert").show('slide',{direction:"up",easing:'easeOutBounce'},1000);
          });
      }
 
@@ -47,12 +47,12 @@ conn.onmessage = function (e) {
 $("body").on('click','#subAnwerUser', function(){
 
     //Берем данные
-    var mess = $("#commentform input[name='message']").val();
+    var mess = $("#commentform textarea[name='message']").val();
     var tiket_id = $("#commentform input[name='tikets_id']").val();
     var interview = $("#commentform input[name='interview']").val();
 
     //Обнуляем поля в форме
-    $("#commentform input[name='message']").val('');
+    $("#commentform textarea[name='message']").val('');
 
 
     //Формируем данные

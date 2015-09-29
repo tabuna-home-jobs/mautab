@@ -41,7 +41,7 @@
                 <form id="answerTiket">
                     <div class="form-group">
                         <label>Сообщение</label>
-                        <textarea name="message" cols="5" rows="15" class="form-control"></textarea>
+                        <textarea name="message" cols="5" rows="5" class="form-control"></textarea>
                     </div>
                     <input type="hidden" value="{{$tiket->id}}" name="tikets_id">
 
@@ -68,9 +68,9 @@
                                 </label>
                                 <label class="i-switch bg-danger m-t-xs m-r">
                                     @if($tiket->complete == 0)
-                                    <input type="radio" name="complete" value="" checked="">
+                                    <input type="radio" name="complete" value="0" checked="">
                                     @elseif($tiket->complete == 1)
-                                    <input type="radio" name="complete" value="">
+                                    <input type="radio" name="complete" value="0">
                                     @endif
                                     <i></i>
                                 </label>

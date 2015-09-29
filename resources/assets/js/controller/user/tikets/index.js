@@ -6,7 +6,6 @@ function addNewMessage(obj){
     strokeResponse += "<td>"+obj.title+"</td>";
     strokeResponse += "<td>considered</td>";
     strokeResponse += "<td><a href='tikets/"+obj.tiketid+"'>View</a></td>";
-    strokeResponse += "<td><a href='tikets/"+obj.tiketid+"' class='btn btn-info'><i class='fa fa-search'></i></a><a href='#' class='btn btn-danger'onclick=''><i class='fa fa-trash'></i></a></td>";
     strokeResponse += "</tr>";
 
     $("#ticketBody").prepend(strokeResponse);

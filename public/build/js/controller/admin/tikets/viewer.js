@@ -15,7 +15,7 @@ function addNewMessage(obj){
 }
 
 //Создаем подключение
-var conn = new WebSocket('ws://localhost:8990/socket/admin/tikets');
+var conn = new WebSocket('ws://mautab.com:8990');
 //Обозначаем подключение
 conn.onopen = function (e) {
     console.log('Админ вступил в беседу');

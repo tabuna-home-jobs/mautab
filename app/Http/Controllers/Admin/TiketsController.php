@@ -41,6 +41,9 @@ class TiketsController extends Controller
      */
     public function store($msg, $userId)
     {
+
+
+
         $msg = json_decode($msg, TRUE);
 
         //Берем юзера
@@ -50,8 +53,15 @@ class TiketsController extends Controller
 
         $user->tiket()->save($tiket);
 
+
         //Если админ завершил беседу то обновляем эту таблицу
-        if ($msg['complete'] == '1') {
+        if ($msg['complete'] == 1) {
+
+            DB::table('tikets')
+                ->where('id', $msg['tikets_id'])
+                ->update(['complete' => $msg['complete']]);
+        //Если админ открыл вновь тему то обновим тикеты на ноль
+        }elseif($msg['complete'] == 0){
 
             DB::table('tikets')
                 ->where('id', $msg['tikets_id'])
@@ -59,17 +69,14 @@ class TiketsController extends Controller
         }
 
 
-        //$Tikets = Tiket::whereRaw('tikets_id = ?', [$msg['tikets_id']])->orderBy('updated_at','desc')->take(1)->get();
-
         $Tikets = DB::table('tikets')
             ->select('*', 'tikets.id as tiketid')
             ->leftJoin('users', 'users.id', '=', 'tikets.user_id')
             ->where('tikets.tikets_id', "=", $msg['tikets_id'])
             ->orderBy('tikets.updated_at', 'desc')
-            ->take(1)
-            ->get();
+            ->first();
 
-        return $Tikets[0];
+        return $Tikets;
     }
 
     /**

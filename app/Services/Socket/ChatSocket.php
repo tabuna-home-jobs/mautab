@@ -2,203 +2,176 @@
 
 namespace Mautab\Services\Socket;
 
+use Mautab\Http\Controllers\Hosting\TiketsController;
+use Mautab\Facades\AdminTiketsFacades;
+use Mautab\Services\Socket\Base\BaseSocket;
+use Ratchet\ConnectionInterface;
+use Mautab\Models\Tiket;
 use App;
 use Auth;
 use Config;
 use Crypt;
-use Illuminate\Session\SessionManager;
-use Mautab\Facades\AdminTiketsFacades;
-use Mautab\Http\Controllers\Hosting\TiketsController;
-use Mautab\Models\Tiket;
 use Mautab\Models\User;
-use Mautab\Services\Socket\Base\BaseSocket;
-use Ratchet\ConnectionInterface;
-use Request;
-use Route;
+use Illuminate\Session\SessionManager;
+
 
 class ChatSocket extends BaseSocket {
 
-    public $request;
-    protected $clients;
-    protected $clientsId;
-    protected $userList = array();
-    protected $adminList = array();
+	protected $clients;
+	protected $clientsId;
+	protected $userList = array();
+	protected $adminList = array();
 
-    public function __construct() {
-        $this->clients = new \SplObjectStorage;
-    }
+	public function __construct() {
+		$this->clients = new \SplObjectStorage;
+	}
 
-    public function onOpen(ConnectionInterface $conn) {
+	public function getUserFromSession($conn){
 
-        // Реквест гуизлы
-        $request =$conn->WebSocket->request;
+		// Create a new session handler for this client
+		$session = (new SessionManager(App::getInstance()))->driver();
+		// Get the cookies
+		$cookies = $conn->WebSocket->request->getCookies();
+		// Get the laravel's one
+		$laravelCookie = urldecode($cookies[Config::get('session.cookie')]);
+		// get the user session id from it
+		$idSession = Crypt::decrypt($laravelCookie);
+		// Set the session id to the session handler
+		$session->setId($idSession);
+		// Bind the session handler to the client connection
+		$conn->session = $session;
 
-        /**
-         * Преобразовываем в реквест laravel
-         * Принимает параметры
-         * $uri, $method = 'GET', $parameters = array(), $cookies = array(), $files = array(), $server = array(), $content = null
-         */
-        $this->request = Request::create(
-            $request->getUrl(),
-            $request->getMethod()
-        );
+		$conn->session->start();
+		//Берем юзера из сессии
+		$userId = $conn->session->get(Auth::getName());
 
+		return $userId;
 
+	}
 
+	//Проверка юзера на роль
+	public function checkCurrentUserRole($userId, $role){
 
+		//Проверяем роль текущего пользователя
+		return User::findOrFail($userId)->checkRole($role);
 
-        $this->clients->attach($conn);
+	}
 
-        //Берем user id
-        $userId = $this->getUserFromSession($conn);
+	//Берем автора главного сообщения
+	public function getAutorMess($tikets_id){
 
-        //Создаем список юзеров подключенных к серверу
-        array_push($this->userList, $userId);
+		$tik = Tiket::findOrFail($tikets_id);
 
-        //Рассказываем всё что произошло
-        echo "New connection! user_id = ({$userId})\n";
-    }
+		//Вернем id автора
+		return $tik->user_id;
+	}
 
-    //Проверка юзера на роль
+	public function onOpen(ConnectionInterface $conn) {
 
-    public function getUserFromSession($conn){
+		$this->clients->attach($conn);
 
-        // Create a new session handler for this client
-        $session = (new SessionManager(App::getInstance()))->driver();
-        // Get the cookies
-        $cookies = $conn->WebSocket->request->getCookies();
-        // Get the laravel's one
-        $laravelCookie = urldecode($cookies[Config::get('session.cookie')]);
-        // get the user session id from it
-        $idSession = Crypt::decrypt($laravelCookie);
-        // Set the session id to the session handler
-        $session->setId($idSession);
-        // Bind the session handler to the client connection
-        $conn->session = $session;
+		//Берем user id
+		$userId = $this->getUserFromSession($conn);
 
-        $conn->session->start();
-        //Берем юзера из сессии
-        $userId = $conn->session->get(Auth::getName());
+		//Создаем список юзеров подключенных к серверу
+		array_push($this->userList, $userId);
 
-        return $userId;
+		//Рассказываем всё что произошло
+		echo "New connection! user_id = ({$userId})\n";
+	}
 
-    }
+	public function onMessage(ConnectionInterface $from, $msg) {
 
-    //Берем автора главного сообщения
+		//Берем user id того кто послал
+		$userId = $this->getUserFromSession($from);
 
-    public function onMessage(ConnectionInterface $from, $msg) {
+		//Если отдал админ сообщение то использум его контроллер
+		if($this->checkCurrentUserRole($userId, 'admin')){
 
-        /**
-         * Подгрузка роута и его обработка
-         */
-        require app_path('Http/SocketRoutes.php');
-        Route::dispatch($this->request);
+			//Валидируем все переданное дело
+			$valid = \Validator::make(json_decode($msg, TRUE),[
+				'message' => 'sometimes|required',
+				'complete'=> 'integer|sometimes',
+				'tikets_id' => 'integer|sometimes'
+			]);
 
+			//Если всё хорошо то создаем запись
+			if (!$valid->fails()) {
+				$backmess = AdminTiketsFacades::store($msg, $userId);
+			}else{
+				$backmess = null;
+			}
 
-        //Берем user id того кто послал
-        $userId = $this->getUserFromSession($from);
+		}else{
 
-        //Если отдал админ сообщение то использум его контроллер
-        if($this->checkCurrentUserRole($userId, 'admin')){
-
-            //Валидируем все переданное дело
-            $valid = \Validator::make(json_decode($msg, TRUE),[
-                'message' => 'required',
-                'complete'=> 'integer|sometimes',
-                'tikets_id' => 'integer|sometimes'
-            ]);
-
-            //Если всё хорошо то создаем запись
-            if (!$valid->fails()) {
-                $backmess = AdminTiketsFacades::store($msg, $userId);
-            }else{
-                $backmess = null;
-            }
-
-        }else{
-
-            //Валидируем все переданное дело
-            $valid = \Validator::make(json_decode($msg, TRUE),[
-                'message'   => 'required',
-                'complete'  => 'integer|sometimes',
-                'tikets_id' => 'integer|sometimes'
-            ]);
+			//Валидируем все переданное дело
+			$valid = \Validator::make(json_decode($msg, TRUE),[
+				'message'   => 'required',
+				'complete'  => 'integer|sometimes',
+				'tikets_id' => 'integer|sometimes'
+			]);
 
 
-            //Если всё хорошо то создаем запись
-            if (!$valid->fails()) {
+			//Если всё хорошо то создаем запись
+			if (!$valid->fails()) {
 
-                //Проверяем беседа ли это
-                $checkIntreview = json_decode($msg, TRUE);
+				//Проверяем беседа ли это
+				$checkIntreview = json_decode($msg, TRUE);
 
-                if(isset($checkIntreview['interview'])){
+				if(isset($checkIntreview['interview'])){
 
-                    //Добавляем тикет в беседу
-                    $addTiket = new TiketsController();
-                    $backmess = $addTiket->store($msg, $userId);
-                }else{
-                    //Отдаем на запись в тикет
-                    $backmess = TiketsController::storeBySocket($msg, $userId);
-                }
-            }else{
-                $backmess = null;
-            }
+					//Добавляем тикет в беседу
+					$addTiket = new TiketsController();
+					$backmess = $addTiket->store($msg, $userId);
+				}else{
+					//Отдаем на запись в тикет
+					$backmess = TiketsController::storeBySocket($msg, $userId);
+				}
+			}else{
+				$backmess = null;
+			}
 
-        }
+		}
 
 
-        $numRecv = count($this->clients) - 1;
+		$numRecv = count($this->clients) - 1;
 
-        echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
-            , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
+		echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
+			, $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
-        foreach ($this->clients as $client) {
+		foreach ($this->clients as $client) {
 
-            // Отправляем сообщение только тому кто его послал или админу или кто тому кто создал главный тикет
-            if(($this->getUserFromSession($client) == $backmess->user_id) ||
-                ($this->checkCurrentUserRole($this->getUserFromSession($client),'admin')) ||
-                ($this->getUserFromSession($client) == $this->getAutorMess($backmess->tikets_id))){
+			// Отправляем сообщение только тому кто его послал или админу или кто тому кто создал главный тикет
+			if(($this->getUserFromSession($client) == $backmess->user_id) ||
+				($this->checkCurrentUserRole($this->getUserFromSession($client),'admin')) ||
+				($this->getUserFromSession($client) == $this->getAutorMess($backmess->tikets_id))){
 
-                $client->send(json_encode($backmess));
+				$client->send(json_encode($backmess));
 
-            }
-        }
+			}
+		}
 
-    }
+	}
 
-    public function checkCurrentUserRole($userId, $role){
 
-        //Проверяем роль текущего пользователя
-        return User::findOrFail($userId)->checkRole($role);
+	public function onClose(ConnectionInterface $conn) {
+		// The connection is closed, remove it, as we can no longer send it messages
+		$this->clients->detach($conn);
 
-    }
+		//Берем user id
+		$userId = $this->getUserFromSession($conn);
 
-    public function getAutorMess($tikets_id){
+		//Ищем юзера у которого дисконект
+		$needleElem = array_search($userId, $this->userList);
+		//Удаляем из массива юзера у которого дисконект
+		unset($this->userList[$needleElem]);
+		//Рассказываем всем что произошло
+		echo "User with id ({$userId}) has disconnected\n";
+	}
 
-        $tik = Tiket::findOrFail($tikets_id);
+	public function onError(ConnectionInterface $conn, \Exception $e) {
+		echo "An error has occurred: {$e->getMessage()}\n";
 
-        //Вернем id автора
-        return $tik->user_id;
-    }
-
-    public function onClose(ConnectionInterface $conn) {
-        // The connection is closed, remove it, as we can no longer send it messages
-        $this->clients->detach($conn);
-
-        //Берем user id
-        $userId = $this->getUserFromSession($conn);
-
-        //Ищем юзера у которого дисконект
-        $needleElem = array_search($userId, $this->userList);
-        //Удаляем из массива юзера у которого дисконект
-        unset($this->userList[$needleElem]);
-        //Рассказываем всем что произошло
-        echo "User with id ({$userId}) has disconnected\n";
-    }
-
-    public function onError(ConnectionInterface $conn, \Exception $e) {
-        echo "An error has occurred: {$e->getMessage()}\n";
-
-        $conn->close();
-    }
+		$conn->close();
+	}
 }
