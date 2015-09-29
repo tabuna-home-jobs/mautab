@@ -49,8 +49,10 @@ var jp_config = {
     webAdd: ['/build/js/controller/user/web/index.js'],
     tiketSocketConn: ['/build/js/controller/user/tikets/index.js'],
     adminTiketIndex: ['/build/js/controller/admin/tikets/index.js'],
-    adminTiketView: ['/build/js/controller/admin/tikets/viewer.js'],
-    userTiketView: ['/build/js/controller/user/tikets/viewer.js'],
+    adminTiketView: ['/build/js/controller/admin/tikets/viewer.js',
+                    '/bower_components/jquery-ui/jquery-ui.js'],
+    userTiketView: ['/build/js/controller/user/tikets/viewer.js',
+                    '/bower_components/jquery-ui/jquery-ui.js'],
 
     wizard: ['/build/js/controller/components/wizard.js']
 
