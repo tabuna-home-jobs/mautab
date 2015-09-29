@@ -29,6 +29,18 @@ conn.onmessage = function (e) {
     addNewMessage(parseObj);
 };
 
+//Делаем текстовую переключалку для кнопки
+$("body").on('click','input[name="complete"]', function(){
+    var obj = $(this);
+    var currVal = obj.val();
+    var statusInterview = $(".close-title");
+
+    if(currVal == 1){
+        statusInterview.html('Закрыто');
+    }else{
+        statusInterview.html('Открыто');
+    }
+});
 //Отправляем форму
 $("body").on('click','#submitTicket', function(){
 

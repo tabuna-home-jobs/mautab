@@ -15,7 +15,7 @@ function addNewMessage(obj){
 }
 
 //Создаем подключение
-var conn = new WebSocket('ws://mautab.com:8990');
+var conn = new WebSocket('ws://localhost:8990');
 //Обозначаем подключение
 conn.onopen = function (e) {
     console.log('Админ вступил в беседу');
@@ -29,6 +29,18 @@ conn.onmessage = function (e) {
     addNewMessage(parseObj);
 };
 
+//Делаем текстовую переключалку для кнопки
+$("body").on('click','input[name="complete"]', function(){
+    var obj = $(this);
+    var currVal = obj.val();
+    var statusInterview = $(".close-title");
+
+    if(currVal == 1){
+        statusInterview.html('Закрыто');
+    }else{
+        statusInterview.html('Открыто');
+    }
+});
 //Отправляем форму
 $("body").on('click','#submitTicket', function(){
 

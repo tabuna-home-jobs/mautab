@@ -90,7 +90,7 @@ class ChatSocket extends BaseSocket {
 
 			//Валидируем все переданное дело
 			$valid = \Validator::make(json_decode($msg, TRUE),[
-				'message' => 'sometimes|required',
+				'message' => 'sometimes',
 				'complete'=> 'integer|sometimes',
 				'tikets_id' => 'integer|sometimes'
 			]);

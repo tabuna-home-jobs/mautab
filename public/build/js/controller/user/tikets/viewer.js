@@ -11,18 +11,40 @@ function addNewMessage(obj){
     $("#bodyChat").prepend(strokeResponse);
     $('.hotBlock').show('slow');
 
-
+    //Скрытые формы юзера (закрытие темы)
      if(obj.complete == 1){
 
          var themeClose = '<div class="alert-danger alert hotBlock">';
          themeClose += 'Тема закрыта';
          themeClose += '</div>';
 
-         $("#commentform").hide('slide',{direction:"up"},500, function(){
+         $("#commentform").hide('drop',{direction:"up"},500, function(){
              $(this).remove();
              $(".mess-window").html(themeClose);
-             $(".alert").show('slide',{direction:"up",easing:'easeOutBounce'},1000);
+             $(".alert").show('drop',{direction:"up",easing:'easeOutBounce'},1000);
          });
+     //Появление формы у юзера (открытие темы)
+     }else if(obj.complete == 0){
+
+         var formCommunicate = '<form id="commentform" class="hotBlock">';
+             formCommunicate += '<div class="form-group">';
+             formCommunicate += '<label>Сообщение</label>';
+             formCommunicate += '<textarea name="message" cols="5" rows="5" class="form-control"></textarea>'
+             formCommunicate += '</div>';
+             formCommunicate += '<input type="hidden" value="'+obj.tikets_id+'" name="tikets_id">';
+             formCommunicate += '<input type="hidden" name="interview" value="1">';
+             formCommunicate += '<div class="col-sm-4">';
+             formCommunicate += '<button class="btn btn-primary" id="subAnwerUser">Ответить</button>'
+             formCommunicate += '</div>';
+             formCommunicate += '</form>';
+
+         $('div.alert').hide('drop', {direction:"up"}, 500, function(){
+             $(this).remove();
+             $(".mess-window").html(formCommunicate);
+             $("#commentform").show('drop',{direction: "up", easing: "easeOutBounce"}, 1000);
+         });
+        //mess-window
+
      }
 
 }

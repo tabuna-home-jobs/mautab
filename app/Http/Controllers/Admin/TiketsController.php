@@ -42,9 +42,14 @@ class TiketsController extends Controller
     public function store($msg, $userId)
     {
 
-
-
         $msg = json_decode($msg, TRUE);
+
+        //Если админ шлёт пустое сообщение (обычно открыл или закрыл беседу)
+        if((strlen($msg['message']) <= 1) && ($msg['complete'] == 1)){
+            $msg['message'] = 'Закрыл беседу';
+        }elseif((strlen($msg['message']) <= 1) && ($msg['complete'] == 0)){
+            $msg['message'] = 'Открыл беседу';
+        }
 
         //Берем юзера
         $user = User::findOrFail($userId);
@@ -88,7 +93,11 @@ class TiketsController extends Controller
     public function show($id)
     {
 
-        $currentTiket = Tiket::with('subtiket')->findOrFail($id);
+        $currentTiket = Tiket::with(['subtiket' =>function($query){
+
+            $query->orderBy('id', 'desc');
+
+        }])->findOrFail($id);
 
         return view('admin/tikets/viewer', ['tiket' => $currentTiket]);
     }

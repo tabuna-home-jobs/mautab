@@ -28,3 +28,4 @@ conn.onmessage = function (e) {
     //Отдаем в функцию объект
     addNewMessage(parseObj);
 };
+

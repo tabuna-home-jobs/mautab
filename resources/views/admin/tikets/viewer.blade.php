@@ -54,7 +54,7 @@
                                 @if($tiket->complete == 1)
                                     Закрыто
                                 @else
-                                    Закрыть:
+                                    Открыто
                                 @endif
                             </div>
                             <div class="col-sm-8">
