@@ -341,3 +341,14 @@ label, strong {
 .text-black{
     color:#000;
 }
+.hotalert{
+    height:50px;
+}
+.errormess{
+    position: absolute;
+    top: 88px;
+    right: 15px;
+    height: 162px !important;
+    display: none;
+    width: 326px !important;
+}

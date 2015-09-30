@@ -9,12 +9,12 @@ function addNewMessage(obj){
     strokeResponse += "</li>";
 
     $("#bodyChat").prepend(strokeResponse);
-    $('.hotBlock').show('slow');
+    $('.hotBlock').show('slide',{direction:"up", easing: "easeOutCirc"},500);
 
     //Скрытые формы юзера (закрытие темы)
      if(obj.complete == 1){
 
-         var themeClose = '<div class="alert-danger alert hotBlock">';
+         var themeClose = '<div class="alert-danger alert hotBlock hotalert">';
          themeClose += 'Тема закрыта';
          themeClose += '</div>';
 
@@ -26,24 +26,27 @@ function addNewMessage(obj){
      //Появление формы у юзера (открытие темы)
      }else if(obj.complete == 0){
 
-         var formCommunicate = '<form id="commentform" class="hotBlock">';
-             formCommunicate += '<div class="form-group">';
-             formCommunicate += '<label>Сообщение</label>';
-             formCommunicate += '<textarea name="message" cols="5" rows="5" class="form-control"></textarea>'
-             formCommunicate += '</div>';
-             formCommunicate += '<input type="hidden" value="'+obj.tikets_id+'" name="tikets_id">';
-             formCommunicate += '<input type="hidden" name="interview" value="1">';
-             formCommunicate += '<div class="col-sm-4">';
-             formCommunicate += '<button class="btn btn-primary" id="subAnwerUser">Ответить</button>'
-             formCommunicate += '</div>';
-             formCommunicate += '</form>';
+         //Проверяем есть ли такая форма и если есть то ненадо добавлять эту
+        if(!$("#commentform").length > 0){
+             var formCommunicate = '<form id="commentform" class="hotBlock">';
+                 formCommunicate += '<div class="form-group">';
+                 formCommunicate += '<label>Сообщение</label>';
+                 formCommunicate += '<textarea name="message" cols="5" rows="7" class="form-control"></textarea>'
+                 formCommunicate += '</div>';
+                 formCommunicate += '<input type="hidden" value="'+obj.tikets_id+'" name="tikets_id">';
+                 formCommunicate += '<input type="hidden" name="interview" value="1">';
+                 formCommunicate += '<div class="col-sm-4">';
+                 formCommunicate += '<button class="btn btn-primary" id="subAnwerUser">Ответить</button>'
+                 formCommunicate += '</div>';
+                 formCommunicate += '</form>';
 
-         $('div.alert').hide('drop', {direction:"up"}, 500, function(){
-             $(this).remove();
-             $(".mess-window").html(formCommunicate);
-             $("#commentform").show('drop',{direction: "up", easing: "easeOutBounce"}, 1000);
-         });
-        //mess-window
+             $('div.alert').hide('drop', {direction:"up"}, 500, function(){
+                 $(this).remove();
+                 $(".mess-window").html(formCommunicate);
+                 $("#commentform").show('drop',{direction: "up", easing: "easeOutBounce"}, 1000);
+             });
+            //mess-window
+        }
 
      }
 
@@ -73,20 +76,33 @@ $("body").on('click','#subAnwerUser', function(){
     var tiket_id = $("#commentform input[name='tikets_id']").val();
     var interview = $("#commentform input[name='interview']").val();
 
-    //Обнуляем поля в форме
-    $("#commentform textarea[name='message']").val('');
 
+    if(mess.length < 3){
+        $(".errormess").show('drop',{direction: "up", easing: "easeOutCirc"},1000, function(){
+            $(this).addClass('in');
+        });
+        return false;
+    }else{
 
-    //Формируем данные
-    var data = JSON.stringify({
-        "message"   : mess,
-        "tikets_id" : tiket_id,
-        "interview" : interview
-    });
+        //Обнуляем поля в форме
+        $("#commentform textarea[name='message']").val('');
 
+        //Формируем данные
+        var data = JSON.stringify({
+            "message"   : mess,
+            "tikets_id" : tiket_id,
+            "interview" : interview
+        });
 
-    //Отправляем данные
-    conn.send(data);
+        //Отправляем данные
+        conn.send(data);
 
-    return false;
+        return false;
+    }
 });
+$("#cloz").click(function(){
+    $('.errormess').hide('drop',{direction: "up"},1000, function(){
+        $(this).removeClass('in');
+    });
+});
+

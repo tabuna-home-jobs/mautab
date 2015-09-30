@@ -128,10 +128,11 @@ class ChatSocket extends BaseSocket {
 					$backmess = TiketsController::storeBySocket($msg, $userId);
 				}
 			}else{
-				$backmess = null;
+				$backmess = '{"message":"Пустое сообщение"}';
 			}
 
 		}
+
 
 
 		$numRecv = count($this->clients) - 1;

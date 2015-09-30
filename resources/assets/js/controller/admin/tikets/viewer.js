@@ -9,7 +9,7 @@ function addNewMessage(obj){
     strokeResponse += "</li>";
 
     $("#messages").prepend(strokeResponse);
-    $('.hotBlock').show('slow');
+    $('.hotBlock').show('slide',{direction:"up", easing: "easeOutCirc"},500);
 
 
 }
