@@ -14,21 +14,22 @@ function addNewMessage(obj){
     //Скрытые формы юзера (закрытие темы)
      if(obj.complete == 1){
 
-         var themeClose = '<div class="alert-danger alert hotBlock hotalert">';
+         var themeClose = '<div class="alert-danger alert hotBlock hotalert closeTheme">';
          themeClose += 'Тема закрыта';
          themeClose += '</div>';
 
          $("#commentform").hide('drop',{direction:"up"},500, function(){
              $(this).remove();
              $(".mess-window").html(themeClose);
-             $(".alert").show('drop',{direction:"up",easing:'easeOutBounce'},1000);
+             $(".closeTheme").show('drop',{direction:"up",easing:'easeOutBounce'},1000);
          });
      //Появление формы у юзера (открытие темы)
      }else if(obj.complete == 0){
 
          //Проверяем есть ли такая форма и если есть то ненадо добавлять эту
         if(!$("#commentform").length > 0){
-             var formCommunicate = '<form id="commentform" class="hotBlock">';
+             var formCommunicate =  '<h2>Спрашивай</h2>';
+                 formCommunicate += '<form id="commentform" class="hotBlock">';
                  formCommunicate += '<div class="form-group">';
                  formCommunicate += '<label>Сообщение</label>';
                  formCommunicate += '<textarea name="message" cols="5" rows="7" class="form-control"></textarea>'
@@ -40,7 +41,7 @@ function addNewMessage(obj){
                  formCommunicate += '</div>';
                  formCommunicate += '</form>';
 
-             $('div.alert').hide('drop', {direction:"up"}, 500, function(){
+             $('.closeTheme').hide('drop', {direction:"up"}, 500, function(){
                  $(this).remove();
                  $(".mess-window").html(formCommunicate);
                  $("#commentform").show('drop',{direction: "up", easing: "easeOutBounce"}, 1000);
@@ -53,7 +54,7 @@ function addNewMessage(obj){
 }
 
 //Создаем подключение
-var conn = new WebSocket('ws://mautab.com:8990');
+    var conn = new WebSocket('ws://mautab.com:8990');
 //Обозначаем подключение
 conn.onopen = function (e) {
     console.log('Пользователь вступил в беседу');
