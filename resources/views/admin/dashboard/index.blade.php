@@ -62,14 +62,14 @@
                 <div class="col-md-7">
                     <div class="panel wrapper">
 
-                        </div>
                     </div>
                 </div>
             </div>
-            <!-- / stats -->
-
-
         </div>
+        <!-- / stats -->
+
+
+    </div>
     </div>
 
 

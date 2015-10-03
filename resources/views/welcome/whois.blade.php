@@ -29,14 +29,15 @@
                     </div>
                 </div>
                 <div class="col-sm-6 wrapper-xl">
-                    <h3 class="text-dark font-bold m-b-lg">Save your time with the great tools</h3>
+                    <h3 class="text-dark font-bold m-b-lg">Whois — это сервис для проверки доменов.</h3>
                     <ul class="list-unstyled  m-t-xl">
                         <li data-ride="animated" data-animation="fadeInUp" data-delay="600" class="fadeInUp animated">
                             <i class="icon-check pull-left text-lg m-r m-t-sm"></i>
 
-                            <p class="clear m-b-lg"><strong>Using Less</strong>, Angulr's CSS is built on Less, a
-                                preprocessor with additional functionality like variables, mixins, and functions for
-                                compiling CSS. </p>
+                            <p class="clear m-b-lg"><strong>Введите любое имя сайта</strong>
+                                в поисковую строку, и узнаете, свободен домен или занят. Если доменное имя уже занято,
+                                можно узнать, кто его владелец и как с ним связаться.
+                            </p>
                         </li>
                         <li data-ride="animated" data-animation="fadeInUp" data-delay="900" class="fadeInUp animated">
                             <i class="icon-check pull-left text-lg m-r m-t-sm"></i>

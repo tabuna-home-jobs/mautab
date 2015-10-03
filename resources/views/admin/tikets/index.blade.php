@@ -39,30 +39,30 @@
 
                             @foreach($tiketList as $tiket)
                                 @if($tiket->complete == 0)
-                                <tr>
-                                    <td>{{$tiket->id}}</td>
-                                    <td>
-                                        <a href="{{ route('admin.tikets.show', $tiket->id) }}">
-                                            {{$tiket->title}}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        {{str_limit(strip_tags($tiket->message), $limit = 100, $end = '...')}}
-                                    </td>
-                                    <td>
-                                        <div class="btn-group pull-right" role="group" aria-label="...">
-                                            <a href="{{route('admin.tikets.show', $tiket->id)}}"
-                                               class="btn btn-info">
-                                                <i class="fa fa-search"></i>
+                                    <tr>
+                                        <td>{{$tiket->id}}</td>
+                                        <td>
+                                            <a href="{{ route('admin.tikets.show', $tiket->id) }}">
+                                                {{$tiket->title}}
                                             </a>
+                                        </td>
+                                        <td>
+                                            {{str_limit(strip_tags($tiket->message), $limit = 100, $end = '...')}}
+                                        </td>
+                                        <td>
+                                            <div class="btn-group pull-right" role="group" aria-label="...">
+                                                <a href="{{route('admin.tikets.show', $tiket->id)}}"
+                                                   class="btn btn-info">
+                                                    <i class="fa fa-search"></i>
+                                                </a>
 
-                                            <a href="#" class="btn btn-danger"
-                                               onclick="">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                                <a href="#" class="btn btn-danger"
+                                                   onclick="">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 @endif
                             @endforeach
                             </tbody>

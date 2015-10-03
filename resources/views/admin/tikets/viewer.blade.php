@@ -60,17 +60,17 @@
                             <div class="col-sm-8">
                                 <label class="i-switch bg-success m-t-xs m-r">
                                     @if($tiket->complete == 0)
-                                    <input type="radio" name="complete" value="1">
+                                        <input type="radio" name="complete" value="1">
                                     @elseif($tiket->complete == 1)
-                                    <input type="radio" name="complete" value="1" checked>
+                                        <input type="radio" name="complete" value="1" checked>
                                     @endif
                                     <i></i>
                                 </label>
                                 <label class="i-switch bg-danger m-t-xs m-r">
                                     @if($tiket->complete == 0)
-                                    <input type="radio" name="complete" value="0" checked="">
+                                        <input type="radio" name="complete" value="0" checked="">
                                     @elseif($tiket->complete == 1)
-                                    <input type="radio" name="complete" value="0">
+                                        <input type="radio" name="complete" value="0">
                                     @endif
                                     <i></i>
                                 </label>

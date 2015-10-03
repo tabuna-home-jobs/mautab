@@ -35,9 +35,16 @@ class RouteServiceProvider extends ServiceProvider {
 			return \Mautab\Models\Package::findOrFail($value);
 		});
 
-			$router->bind('news', function ($value) {
-				return \Mautab\Models\News::where('slug', $value)->firstOrFail();
-			});
+		$router->bind('news', function ($value) {
+			return \Mautab\Models\News::where('slug', $value)->firstOrFail();
+		});
+
+
+		$router->bind('users', function ($value) {
+			return \Mautab\Models\User::findOrFail($value);
+		});
+
+
 
 	}
 

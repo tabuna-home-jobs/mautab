@@ -1,9 +1,9 @@
 <?php namespace Mautab\Http\Controllers\Admin;
 
-use Auth;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Http\Requests\Admin\UserRequest;
+use Mautab\Models\Package;
 use Mautab\Models\User;
 use Session;
 
@@ -49,13 +49,13 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function show($id)
+    public function show($User)
     {
-
-        $User = User::find($id);
-
-        return view('admin/users/usersEdit', ['user' => $User]);
-
+        $packages = Package::all();
+        return view('admin/users/usersEdit', [
+            'user' => $User,
+            'packages' => $packages
+        ]);
     }
 
     /**
@@ -77,35 +77,14 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function update(UserRequest $request)
+    public function update(UserRequest $request, User $user)
     {
-        $user = Auth::User();
         $user->email = $request->email;
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
 
-        //Удаление групп
-        foreach ($user->groups as $groupz) {
-            $user->removeGroup($groupz);
-        }
-
-        //Запись новых групп
-        foreach ($request->groups as $value) {
-            $groupz = User::find($value);
-            $user->addGroup($groupz);
-        }
-
-        //Запись/обновление отдельных прав пользователя
-        if (!is_null($request->permissions)) {
-            unset($user->permissions);
-            $user->permissions = $request->permissions;
-        } else {
-            unset($user->permissions);
-            $user->permissions = [];
-        }
-
         $user->save();
-        return redirect()->route('admin.users.index');
+        return redirect()->back();
 
     }
 
@@ -116,9 +95,8 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function destroy(UserRequest $request)
+    public function destroy(UserRequest $request, User $user)
     {
-        $user = User::find($request->id);
         $user->delete();
         Session::flash('good', 'Вы удалили пользователя.');
         return redirect()->route('admin.users.index');

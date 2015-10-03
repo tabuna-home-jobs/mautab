@@ -11,11 +11,11 @@
                     <h1 class="col-md-3 col-xs-12 subheaderlog"><a
                                 href="{{route('backup.index')}}/{{ $key  }}"> {{ $key  }}</a></h1>
                     <blockquote class="col-md-9 col-xs-12">
-                        <p>Веб: {{ $Bakup['WEB']}}</p>
+                        <p class="font-thin text-ellipsis">Веб: {{ $Bakup['WEB']}}</p>
 
-                        <p>ДНС: {{ $Bakup['DNS']}}</p>
+                        <p class="font-thin text-ellipsis">ДНС: {{ $Bakup['DNS']}}</p>
 
-                        <p>БД: {{ $Bakup['DB']}}</p>
+                        <p class="font-thin text-ellipsis">БД: {{ $Bakup['DB']}}</p>
                         <!--  <p class="question">Почта: {{ $Bakup['MAIL']}}</p>
                     <p class="question">Крон: {{ $Bakup['CRON']}}</p> -->
                         <p class="text-right">

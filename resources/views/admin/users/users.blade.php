@@ -13,17 +13,51 @@
                 <div class="panel-heading">
                     Пользователи
                 </div>
+
+
+                <div class="row wrapper">
+                    <div class="col-sm-5 m-b-xs">
+                        <select class="input-sm form-control w-sm inline v-middle" name="action">
+                            <option value="rebuild">пересоздать</option>
+                            <option value="rebuild web">пересоздать WEB</option>
+                            <option value="rebuild dns">пересоздать DNS</option>
+                            <option value="rebuild mail">пересоздать MAIL</option>
+                            <option value="rebuild db">пересоздать DB</option>
+                            <option value="rebuild cron">пересоздать CRON</option>
+                            <option value="update counters">пересчитать счетчики</option>
+                            <option value="suspend">заблокировать</option>
+                            <option value="unsuspend">активировать</option>
+                            <option value="delete">удалить</option>
+                        </select>
+                        <button class="btn btn-sm btn-default">Приминить</button>
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="input-group">
+                            <input type="text" class="input-sm form-control" placeholder="Поиск ...">
+          <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" type="button">Найти!</button>
+          </span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="table-responsive">
-
-
                     <table class="table table-striped b-t b-light table-condensed table-hover">
 
                         <thead>
                         <tr>
+                            <th width="10px">
+                                <label class="i-checks m-b-none">
+                                    <input type="checkbox" name="SelectID" value=""><i></i>
+                                </label>
+                            </th>
                             <th>@sortablelink ('id','#')</th>
                             <th>@sortablelink ('nickname','NickName')</th>
                             <th>@sortablelink ('email','Email')</th>
                             <th>@sortablelink ('balans','Баланс')</th>
+                            <th>@sortablelink ('server','Сервер')</th>
                             <th>@sortablelink ('created_at','Создание')</th>
                             <th>Управление</th>
                         </tr>
@@ -33,10 +67,19 @@
                         <tbody>
                         @foreach($Users as $key => $User)
                             <tr>
+
+                                <td>
+
+                                    <label class="i-checks m-b-none">
+                                        <input type="checkbox" name="SelectID" value="{{$User->id}}"><i></i>
+                                    </label>
+                                </td>
+
                                 <td>{{$User->id}}</td>
                                 <td>{{$User->nickname}}</td>
                                 <td>{{$User->email}}</td>
                                 <td>{{$User->balans}} руб</td>
+                                <td>{{$User->server}}</td>
 
                                 <td>{{$User->created_at}}</td>
                                 <td>
@@ -89,7 +132,6 @@
                         @endforeach
                         </tbody>
                     </table>
-
 
 
                 </div>
