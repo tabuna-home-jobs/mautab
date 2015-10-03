@@ -15,7 +15,21 @@
                 </div>
                 <div class="table-responsive">
 
-                    <table class="table table-condensed table-hover table-striped">
+
+                    <table class="table table-striped b-t b-light table-condensed table-hover">
+
+                        <thead>
+                        <tr>
+                            <th>@sortablelink ('id','#')</th>
+                            <th>@sortablelink ('nickname','NickName')</th>
+                            <th>@sortablelink ('email','Email')</th>
+                            <th>@sortablelink ('balans','Баланс')</th>
+                            <th>@sortablelink ('created_at','Создание')</th>
+                            <th>Управление</th>
+                        </tr>
+                        </thead>
+
+
                         <tbody>
                         @foreach($Users as $key => $User)
                             <tr>
@@ -23,6 +37,8 @@
                                 <td>{{$User->nickname}}</td>
                                 <td>{{$User->email}}</td>
                                 <td>{{$User->balans}} руб</td>
+
+                                <td>{{$User->created_at}}</td>
                                 <td>
                                     <div class="btn-group pull-right" role="group" aria-label="...">
                                         <a href="{{route('LoginAs', $User->nickname)}}" class="btn btn-default">
@@ -72,11 +88,26 @@
 
                         @endforeach
                         </tbody>
-                        {!! $Users->render() !!}
                     </table>
 
 
+
                 </div>
+
+
+                <footer class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-6 text-center">
+                            <small class="text-muted inline m-t-sm m-b-sm">
+                                Элементов: {!! $Users->count() !!} из {!! $Users->total() !!}</small>
+                        </div>
+                        <div class="col-sm-6 text-right text-center-xs">
+                            {!! $Users->appends(\Input::except('page'))->render() !!}
+                        </div>
+                    </div>
+                </footer>
+
+
             </div>
         </div>
 

@@ -5,6 +5,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 /**
  * Mautab\Models\User
@@ -42,7 +43,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
 
-    use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword, Sortable;
 
     /**
      * The database table used by the model.
@@ -50,6 +51,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var string
      */
     protected $table = 'users';
+
+
+    protected $sortable = [
+        'id',
+        'nickname',
+        'email',
+        'balans',
+        'server',
+        'created_at',
+        'updated_at'
+    ];
 
     protected $guarded = [
         'nickname',

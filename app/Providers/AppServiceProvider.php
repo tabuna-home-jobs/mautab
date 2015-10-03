@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		//Устанавливаем локализацию для формитирования дат
 		Carbon::setLocale(App::getLocale());
+
 	}
 
 	/**
