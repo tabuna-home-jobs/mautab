@@ -19,11 +19,6 @@
 
                         <p>Веб-сайт</p>
                     </div>
-                    <div class="stepwizard-step">
-                        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-
-                        <p>Установка</p>
-                    </div>
                 </div>
             </div>
             <form role="form" action="{{route('install.store')}}" method="post">
@@ -56,41 +51,23 @@
                     <div class="col-xs-12">
 
 
-                        @foreach($Domains as $name => $domain)
+                        <ul class="list-group">
 
-                            <div class="radio">
-                                <label class="i-checks i-checks-sm">
-                                    <input type="radio" required name="domain" value="{{$name}}">
-                                    <i></i> {{$name}}
-                                </label>
-                            </div>
-
-                        @endforeach
+                            @foreach($Domains as $name => $domain)
 
 
-                        <button class="btn btn-primary nextBtn pull-right" type="button">Далее</button>
+                                <li class="list-group-item">
+                                    <div class="radio">
+                                        <label class="i-checks i-checks-sm">
+                                            <input type="radio" required name="domain" value="{{$name}}">
+                                            <i></i> {{$name}}
+                                        </label>
+                                    </div>
 
+                                </li>
 
-                    </div>
-                </div>
-                <div class="row setup-content" id="step-3">
-                    <div class="col-xs-12">
-                        <h3> АВТОМАТИЧЕСКАЯ УСТАНОВКА ВЕБ-СКРИПТОВ (CMS, ПРИЛОЖЕНИЙ И ДР.)
-                        </h3>
-
-                        <p>
-                            Для простоты и удобства мы снабдили все наши хостинг тарифы (включая "демо") системой
-                            автоматической установки веб-скриптов (приложений, CMS, движков и др.).
-                            Каждому клиенту абсолютно бесплатно предоставляется более 300 веб-скриптов: от самых
-                            популярных до узкоспециальных. Не нужно иметь навыков PHP, MySQL и системного
-                            администрирования для того, что бы установить и начать пользоваться CMS, достаточно просто
-                            зайти в раздел "Автоматическая установка скриптов" в вашей панели управления хостингом и
-                            выбрать нужную вам CMS. Наша автоматическая система самостоятельно установит и настроит
-                            скрипт (CMS) для начала вашего использования.
-                            Для опытных веб-мастеров данный функционал так же будет полезен за счет экономии времени на
-                            установке/разворачивании систем управления (drupal, modx и др.) и фреймворков (yii, symfony
-                            и др.).
-                        </p>
+                            @endforeach
+                        </ul>
 
 
                         <!-- Button trigger modal -->
@@ -126,6 +103,7 @@
 
                     </div>
                 </div>
+
             </form>
 
 
