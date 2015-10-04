@@ -40,7 +40,6 @@ trait VestaUser
         $answer = $this->sendQuery('v-list-user', Auth::User()->nickname, 'json');
         $data = json_decode($answer, TRUE);
         return $data;
-
     }
 
 
@@ -127,6 +126,36 @@ trait VestaUser
     {
         return $this->sendQuery('v-change-user-shell', Auth::User()->nickname, $ssh);
     }
+
+
+    public function adminListUserAccount($user)
+    {
+        $this->vst_returncode = 'no';
+        $this->server = $user->server;
+        $answer = $this->sendQuery('v-list-user', $user->nickname, 'json');
+        $data = json_decode($answer, TRUE);
+        return $data;
+    }
+
+
+    public function adminListUserPackages($user)
+    {
+        $this->vst_returncode = 'no';
+        $this->server = $user->server;
+        $answer = $this->sendQuery('v-list-user-packages', 'json');
+        $data = json_decode($answer, TRUE);
+        return $data;
+    }
+
+    public function adminListUserShell($user)
+    {
+        $this->vst_returncode = 'no';
+        $this->server = $user->server;
+        $answer = $this->sendQuery('v-list-sys-shells', 'json');
+        $data = json_decode($answer, TRUE);
+        return $data;
+    }
+
 
 
 }

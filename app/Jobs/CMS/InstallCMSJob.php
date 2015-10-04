@@ -152,6 +152,19 @@ class InstallCMSJob extends Job implements SelfHandling
     }
 
 
+    public function October()
+    {
+        SSH::into('Dynamic')->run([
+            'cd /home/' . $this->user->nickname . '/web/' . $this->path . '/public_html',
+            'rm -rf ./*',
+            'wget ' . $this->cms->last_version,
+            'unzip master.zip',
+            'rm  master.zip',
+            'mv install-master/* /home/' . $this->user->nickname . '/web/' . $this->path . '/public_html',
+            'rm -rf install-master',
+        ]);
+    }
+
 
 
 

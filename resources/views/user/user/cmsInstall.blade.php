@@ -34,7 +34,7 @@
                                 <label class="i-checks i-checks-sm">
                                     <input type="radio" name="cms" required value="{{$cms->id}}">
                                     <i></i>
-                                    <img src="{{$cms->avatar}}" height="200px" alt="{{$cms->name}}">
+                                    <img src="{{$cms->avatar}}" class="img-responsive" alt="{{$cms->name}}">
 
                                     <p>{{$cms->name}}</p>
                                 </label>

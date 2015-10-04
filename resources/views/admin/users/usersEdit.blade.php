@@ -9,7 +9,10 @@
     </div>
 
 
-    <div class="col-md-6">
+    <form method="post" action="{{route('admin.users.update',$user->id)}}">
+
+
+        <div class="col-md-6">
 
     <div class="wrapper-md">
 
@@ -19,7 +22,7 @@
             </div>
 
 
-            <form class="panel-body" method="post" action="{{route('admin.users.update',$user->id)}}">
+            <div class="panel-body">
 
 
                 <div class="form-group">
@@ -58,7 +61,7 @@
                         </div>
 
 
-            </form>
+            </div>
 
         </div>
 
@@ -85,7 +88,7 @@
                 </div>
 
 
-                <form class="panel-body" method="post" action="{{route('admin.users.update',$user->id)}}">
+                <div class="panel-body">
 
 
                     <div class="form-group">
@@ -96,39 +99,6 @@
                                         @if($user->id == $value->id)selected @endif>{{$value->name}}</option>
                             @endforeach
                         </select>
-                    </div>
-
-
-                    <div class="line line-dashed b-b line-lg"></div>
-
-
-                    <div class="form-group">
-                        <label>Язык</label>
-                        <select class="form-control" name="v_language">
-                            <option value="ar">ar</option>
-                            <option value="bs">bs</option>
-                            <option value="cn">cn</option>
-                            <option value="cz">cz</option>
-                            <option value="de">de</option>
-                            <option value="el">el</option>
-                            <option value="en">en</option>
-                            <option value="es">es</option>
-                            <option value="fi">fi</option>
-                            <option value="fr">fr</option>
-                            <option value="hu">hu</option>
-                            <option value="id">id</option>
-                            <option value="it">it</option>
-                            <option value="nl">nl</option>
-                            <option value="no">no</option>
-                            <option value="pt">pt</option>
-                            <option value="ro">ro</option>
-                            <option value="ru" selected="">ru</option>
-                            <option value="se">se</option>
-                            <option value="tr">tr</option>
-                            <option value="tw">tw</option>
-                            <option value="ua">ua</option>
-                        </select>
-
                     </div>
 
 
@@ -184,13 +154,13 @@
                         <input type="submit" value="Отправить" class="btn btn-primary">
                     </div>
 
-                </form>
+                </div>
 
             </div>
 
         </div>
     </div>
-
+    </form>
 
 
 

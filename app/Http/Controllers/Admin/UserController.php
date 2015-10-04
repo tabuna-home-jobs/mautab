@@ -6,6 +6,7 @@ use Mautab\Http\Requests\Admin\UserRequest;
 use Mautab\Models\Package;
 use Mautab\Models\User;
 use Session;
+use Vesta;
 
 class UserController extends Controller
 {
@@ -51,7 +52,14 @@ class UserController extends Controller
      */
     public function show($User)
     {
+        $InfoUserVesta = Vesta::adminListUserAccount($User);
+        $InfoPackagesVesta = Vesta::adminListUserPackages($User);
+        $InfoSSHVesta = Vesta::adminListUserShell($User);
+
         $packages = Package::all();
+
+        dd($InfoUserVesta, $InfoPackagesVesta, $InfoSSHVesta);
+
         return view('admin/users/usersEdit', [
             'user' => $User,
             'packages' => $packages
