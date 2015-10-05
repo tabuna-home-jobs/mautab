@@ -14,7 +14,8 @@
 
 
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300&subset=latin,cyrillic' rel='stylesheet'
+    <link href='http://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700,800&subset=latin,cyrillic'
+          rel='stylesheet'
           type='text/css'>
 
     <link rel="stylesheet" href="/bower_components/animate.css/animate.css" type="text/css"/>
