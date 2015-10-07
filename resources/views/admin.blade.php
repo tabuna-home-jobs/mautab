@@ -26,7 +26,7 @@
 
     <header id="header" class="app-header navbar" role="menu">
         <!-- navbar header -->
-        <div class="navbar-header bg-dark">
+        <div class="navbar-header bg-black">
             <button class="pull-right visible-xs dk" ui-toggle="show" target=".navbar-collapse">
                 <i class="glyphicon glyphicon-cog"></i>
             </button>
@@ -297,349 +297,9 @@
     </header>
 
     <!-- aside -->
-    <aside id="aside" class="app-aside hidden-xs bg-dark">
+    <aside id="aside" class="app-aside hidden-xs bg-dark  dk">
         <div class="aside-wrap">
-            <div class="navi-wrap">
-
-                <!-- nav -->
-                <nav ui-nav class="navi clearfix">
-
-                    <ul class="nav">
-
-
-                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                            <span>Главное</span>
-                        </li>
-
-
-                        <li class="{{Active::route('admin..*')}}">
-                            <a href="{{route('admin..index')}}">
-                                <i class="fa fa-line-chart text-primary-dker"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-
-
-                        <li class="{{Active::route('admin.users.*')}}">
-                            <a href="{{route('admin.users.index')}}">
-                                <i class="fa fa-users"></i>
-                                <span>Пользователи</span>
-                            </a>
-                        </li>
-
-
-                        <li class="line dk"></li>
-
-                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                            <span>Хостинг</span>
-                        </li>
-
-
-                        <li class="{{Active::route(['admin.server.*','admin.serverstats.*'])}}">
-                            <a href="{{route('admin.server.index')}}">
-                                <i class="fa fa-server"></i>
-                                <span>Сервер</span>
-                            </a>
-                        </li>
-
-
-                        <li class="{{Active::route('admin.package.*')}}">
-                            <a href="{{route('admin.package.index')}}">
-                                <i class="fa fa-cubes text-success"></i>
-                                <span>Тарифы</span>
-                            </a>
-                        </li>
-
-                        <li class="{{Active::route('admin.cms.*')}}">
-                            <a href="{{route('admin.cms.index')}}">
-                                <i class="fa fa-wordpress icon text-primary"></i>
-                                <span>Support CMS</span>
-                            </a>
-                        </li>
-
-
-                        <li class="line dk"></li>
-
-                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                            <span>Компоненты</span>
-                        </li>
-                        <li>
-                            <a href="#" class="auto">
-                  <span class="pull-right text-muted">
-                    <i class="fa fa-fw fa-angle-right text"></i>
-                    <i class="fa fa-fw fa-angle-down text-active"></i>
-                  </span>
-                                <i class="glyphicon glyphicon-th"></i>
-                                <span>Контент</span>
-                            </a>
-                            <ul class="nav nav-sub dk">
-                                <li class="nav-sub-header">
-                                    <a href="">
-                                        <span>Контент</span>
-                                    </a>
-                                </li>
-                                <li class="{{Active::route('admin.pages.*')}}">
-                                    <a href="{{route('admin.pages.index')}}">
-                                        <span>Страницы</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="layout_fullwidth.html">
-                                        <span>Full width</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="layout_boxed.html">
-                                        <span>Boxed layout</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li>
-                            <a href="mail.html">
-                                <i class="glyphicon glyphicon-envelope icon"></i>
-                                <span>Email рассылка</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.tikets.index')}}">
-                                <i class="fa fa-question text-info"></i>
-                                <span>Тикеты</span>
-                            </a>
-                        </li>
-
-
-                        <li class="line dk"></li>
-
-                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                            <span>Components</span>
-                        </li>
-                        <li>
-                            <a href class="auto">
-                  <span class="pull-right text-muted">
-                    <i class="fa fa-fw fa-angle-right text"></i>
-                    <i class="fa fa-fw fa-angle-down text-active"></i>
-                  </span>
-                                <b class="badge bg-info pull-right">3</b>
-                                <i class="glyphicon glyphicon-th"></i>
-                                <span>Layout</span>
-                            </a>
-                            <ul class="nav nav-sub dk">
-                                <li class="nav-sub-header">
-                                    <a href>
-                                        <span>Layout</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="layout_app.html">
-                                        <span>Application</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="layout_fullwidth.html">
-                                        <span>Full width</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="layout_boxed.html">
-                                        <span>Boxed layout</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href class="auto">
-                  <span class="pull-right text-muted">
-                    <i class="fa fa-fw fa-angle-right text"></i>
-                    <i class="fa fa-fw fa-angle-down text-active"></i>
-                  </span>
-                                <i class="glyphicon glyphicon-briefcase icon"></i>
-                                <span>UI Kits</span>
-                            </a>
-                            <ul class="nav nav-sub dk">
-                                <li class="nav-sub-header">
-                                    <a href>
-                                        <span>UI Kits</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui_button.html">
-                                        <span>Buttons</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui_icon.html">
-                                        <b class="badge bg-info pull-right">3</b>
-                                        <span>Icons</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui_grid.html">
-                                        <span>Grid</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui_widget.html">
-                                        <b class="badge bg-success pull-right">13</b>
-                                        <span>Widgets</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui_sortable.html">
-                                        <span>Sortable</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui_portlet.html">
-                                        <span>Portlet</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui_timeline.html">
-                                        <span>Timeline</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui_jvectormap.html">
-                                        <span>Vector Map</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href class="auto">
-                  <span class="pull-right text-muted">
-                    <i class="fa fa-fw fa-angle-right text"></i>
-                    <i class="fa fa-fw fa-angle-down text-active"></i>
-                  </span>
-                                <b class="label bg-primary pull-right">2</b>
-                                <i class="glyphicon glyphicon-list"></i>
-                                <span>Table</span>
-                            </a>
-                            <ul class="nav nav-sub dk">
-                                <li class="nav-sub-header">
-                                    <a href>
-                                        <span>Table</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="table_static.html">
-                                        <span>Table static</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="table_datatable.html">
-                                        <span>Datatable</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="table_footable.html">
-                                        <span>Footable</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href class="auto">
-                  <span class="pull-right text-muted">
-                    <i class="fa fa-fw fa-angle-right text"></i>
-                    <i class="fa fa-fw fa-angle-down text-active"></i>
-                  </span>
-                                <i class="glyphicon glyphicon-edit"></i>
-                                <span>Form</span>
-                            </a>
-                            <ul class="nav nav-sub dk">
-                                <li class="nav-sub-header">
-                                    <a href>
-                                        <span>Form</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form_element.html">
-                                        <span>Form elements</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="ui_chart.html">
-                                <i class="glyphicon glyphicon-signal"></i>
-                                <span>Chart</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href class="auto">
-                  <span class="pull-right text-muted">
-                    <i class="fa fa-fw fa-angle-right text"></i>
-                    <i class="fa fa-fw fa-angle-down text-active"></i>
-                  </span>
-                                <i class="glyphicon glyphicon-file icon"></i>
-                                <span>Pages</span>
-                            </a>
-                            <ul class="nav nav-sub dk">
-                                <li class="nav-sub-header">
-                                    <a href>
-                                        <span>Pages</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_profile.html">
-                                        <span>Profile</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_post.html">
-                                        <span>Post</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_search.html">
-                                        <span>Search</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_invoice.html">
-                                        <span>Invoice</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_price.html">
-                                        <span>Price</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_lockme.html">
-                                        <span>Lock screen</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_signin.html">
-                                        <span>Signin</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_signup.html">
-                                        <span>Signup</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_forgotpwd.html">
-                                        <span>Forgot password</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="page_404.html">
-                                        <span>404</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </nav>
-                <!-- nav -->
+            <div class="app-aside-footer">
 
                 <!-- aside footer -->
                 <div class="wrapper m-t">
@@ -661,8 +321,81 @@
                     </div>
                 </div>
                 <!-- / aside footer -->
+
             </div>
-        </div>
+            <div class="navi-wrap">
+                <!-- nav -->
+                <nav ui-nav="" class="navi clearfix">
+                    <!-- list -->
+                    <ul class="nav">
+                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                            <span>Главное</span>
+                        </li>
+
+                        <li class="{{Active::route('admin..*')}}">
+                            <a href="{{route('admin..index')}}">
+                                <i class="fa fa-line-chart text-primary-dker"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+
+
+                        <li class="{{Active::route(['admin.server.*','admin.serverstats.*'])}}">
+                            <a href="{{route('admin.server.index')}}">
+                                <i class="fa fa-server"></i>
+                                <span>Сервер</span>
+                            </a>
+                        </li>
+
+
+                        <li class="{{Active::route('admin.users.*')}}">
+                            <a href="{{route('admin.users.index')}}">
+                                <i class="fa fa-users"></i>
+                                <span>Пользователи</span>
+                            </a>
+                        </li>
+
+                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                            <span>Компоненты</span>
+                        </li>
+
+
+                        <li class="{{Active::route('admin.pages.*')}}">
+                            <a href="{{route('admin.pages.index')}}">
+                                <i class="fa fa-folder-open"></i>
+                                <span>Страницы</span>
+                            </a>
+                        </li>
+
+
+                        <li class="{{Active::route('admin.package.*')}}">
+                            <a href="{{route('admin.package.index')}}">
+                                <i class="fa fa-cubes text-success"></i>
+                                <span>Тарифы</span>
+                            </a>
+                        </li>
+
+                        <li class="{{Active::route('admin.cms.*')}}">
+                            <a href="{{route('admin.cms.index')}}">
+                                <i class="fa fa-wordpress icon text-primary"></i>
+                                <span>Support CMS</span>
+                            </a>
+                        </li>
+
+                        <li class="{{Active::route('admin.tikets.*')}}">
+                            <a href="{{route('admin.tikets.index')}}">
+                                <i class="fa fa-question text-info"></i>
+                                <span>Тикеты</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                    <!-- / list -->
+                </nav>
+                <!-- nav -->
+                </div>
+            </div>
     </aside>
     <!-- / aside -->
 

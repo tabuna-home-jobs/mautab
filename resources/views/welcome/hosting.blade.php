@@ -265,9 +265,9 @@
                         <div class="col-sm-6 fadeInLeft animated" data-ride="animated" data-animation="fadeInLeft"
                              data-delay="300">
                             <div class="m-t-xxl text-center">
-                                <span class="text-2x text-muted"><i class="fa fa-server text-2x"></i></span>
+                                <span class="text-2x text-muted"><i class="fa fa-tablet text-2x"></i></span>
                                 <span class="text-3x text-muted"><span class="text-2x"><i
-                                                class="fa fa-server text-2x"></i></span></span>
+                                                class="fa fa-desktop text-2x"></i></span></span>
                                 <span class="text-3x text-muted"><i class="fa fa-server text-2x"></i></span>
                             </div>
                         </div>
