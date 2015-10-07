@@ -352,3 +352,14 @@ label, strong {
     display: none;
     width: 326px !important;
 }
+.del-group{
+    width: 76px;
+}
+.del-group form{
+    display: inline-block;
+}
+.del-group form .btn-danger{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+

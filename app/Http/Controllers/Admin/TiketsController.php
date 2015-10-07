@@ -131,8 +131,9 @@ class TiketsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tiket $tiket)
     {
-        //
+        $tiket->delete();
+        return redirect()->route('admin.tikets.index');
     }
 }

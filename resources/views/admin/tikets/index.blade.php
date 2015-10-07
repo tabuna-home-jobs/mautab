@@ -55,11 +55,6 @@
                                                    class="btn btn-info">
                                                     <i class="fa fa-search"></i>
                                                 </a>
-
-                                                <a href="#" class="btn btn-danger"
-                                                   onclick="">
-                                                    <i class="fa fa-trash"></i>
-                                                </a>
                                             </div>
                                         </td>
                                     </tr>
@@ -93,16 +88,22 @@
                                             {{str_limit(strip_tags($tiket->message), $limit = 100, $end = '...')}}
                                         </td>
                                         <td>
-                                            <div class="btn-group pull-right" role="group" aria-label="...">
+                                            <div class="btn-group pull-right del-group" role="group" aria-label="...">
                                                 <a href="{{route('admin.tikets.show', $tiket->id)}}"
                                                    class="btn btn-info">
                                                     <i class="fa fa-search"></i>
                                                 </a>
 
-                                                <a href="#" class="btn btn-danger"
-                                                   onclick="">
-                                                    <i class="fa fa-trash"></i>
-                                                </a>
+                        <form action="{{route('admin.tikets.destroy', $tiket->id)}}" method="post">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        </form>
+
+
+
                                             </div>
                                         </td>
                                     </tr>

@@ -45,6 +45,12 @@ class RouteServiceProvider extends ServiceProvider {
 		});
 
 
+		$router->bind('tikets', function ($value) {
+			return \Mautab\Models\Tiket::findOrFail($value);
+		});
+
+
+
 
 	}
 
