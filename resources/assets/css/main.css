@@ -363,3 +363,11 @@ label, strong {
     border-top-left-radius: 0;
 }
 
+.bg-img-header {
+    background: url("/img/header-bg.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.main-slider .carousel-control {
+    background: inherit;
+}

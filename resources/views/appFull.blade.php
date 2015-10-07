@@ -37,10 +37,9 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a class="{{Active::route('whois.index')}}" href="{{route('whois.index')}}">WhoIs</a></li>
+                <li><a class="{{Active::route('whois.index')}}" href="{{route('whois.index')}}">Who is</a></li>
                 <li><a href="#">Возможности</a></li>
                 <li><a href="#">Цена</a></li>
-                <li><a href="#">Форум</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -71,19 +70,6 @@
 
         <!-- footer -->
 <footer id="footer">
-    <div class="bg-info">
-        <div class="container">
-            <div class="row m-t-xl m-b-xl">
-                <div class="col-sm-6 text-white text-center">
-                    <h4 class="m-b">Я для себя всё решил!</h4>
-                </div>
-                <div class="col-sm-6 text-center">
-                    <a href="{{ url('/auth/register') }}"
-                       class="btn btn-lg btn-default btn-rounded">Попробовать</a>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="bg-white">
         <div class="container">
             <div class="row m-t-xl m-b-xl">
