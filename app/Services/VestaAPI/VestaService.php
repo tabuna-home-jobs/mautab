@@ -1,6 +1,7 @@
 <?php namespace Mautab\Services\VestaAPI;
 
 use Auth;
+use Mautab\Models\User;
 
 trait VestaService
 {
@@ -84,6 +85,80 @@ trait VestaService
         $this->vst_returncode = 'no';
         $this->SelectServer = $server;
         return json_decode($this->sendQuery('v-list-sys-ip', $ip, 'json'), TRUE);
+    }
+
+
+    /**
+     * @param User $user
+     * @param string $restart
+     * @return mixed
+     */
+    public function rebuildWebDomains(User $user, $restart = 'no')
+    {
+        $this->SelectServer = $user->server;
+        return $this->sendQuery('v-rebuild-web-domains', $user->nickname);
+    }
+
+    /**
+     * @param User $user
+     * @param string $restart
+     * @return mixed
+     */
+    public function rebuildDNSDomains(User $user, $restart = 'no')
+    {
+        $this->SelectServer = $user->server;
+        return $this->sendQuery('v-rebuild-dns-domains', $user->nickname);
+    }
+
+    /**
+     * @param User $user
+     * @return mixed
+     */
+    public function rebuildMailDomains(User $user)
+    {
+        $this->SelectServer = $user->server;
+        return $this->sendQuery('v-rebuild-mail-domains', $user->nickname);
+    }
+
+
+    /**
+     * @param User $user
+     * @return mixed
+     */
+    public function rebuildDataBases(User $user)
+    {
+        $this->SelectServer = $user->server;
+        return $this->sendQuery('v-rebuild-databases', $user->nickname);
+    }
+
+
+    /**
+     * @param User $user
+     * @param string $restart
+     * @return mixed
+     */
+    public function rebuildCronJobs(User $user, $restart = 'no')
+    {
+        $this->SelectServer = $user->server;
+        return $this->sendQuery('v-rebuild-cron-jobs', $user->nickname);
+    }
+
+
+    /**
+     * @param User $user
+     * @return mixed
+     */
+    public function updateUserCounters(User $user)
+    {
+        $this->SelectServer = $user->server;
+        return $this->sendQuery('v-update-user-counters', $user->nickname);
+    }
+
+
+    public function updateSysVesta($server, $package)
+    {
+        $this->SelectServer = $server;
+        return $this->sendQuery('v-update-sys-vesta', $package);
     }
 
 
