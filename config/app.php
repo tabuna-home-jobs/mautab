@@ -110,6 +110,10 @@ return [
 
 	'providers' => [
 
+
+		/*
+         * Laravel Framework Service Providers...
+         */
 		Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
 		Illuminate\Auth\AuthServiceProvider::class,
 		Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -133,10 +137,13 @@ return [
 		Illuminate\Translation\TranslationServiceProvider::class,
 		Illuminate\Validation\ValidationServiceProvider::class,
 		Illuminate\View\ViewServiceProvider::class,
+
 		/*
-		 * Application Service Providers...
-		 */
+         * Application Service Providers...
+         */
+
 		Mautab\Providers\AppServiceProvider::class,
+		Mautab\Providers\AuthServiceProvider::class,
 		Mautab\Providers\EventServiceProvider::class,
 		Mautab\Providers\RouteServiceProvider::class,
 		Mautab\Providers\ComposerServiceProvider::class,
@@ -181,6 +188,7 @@ return [
 		'Eloquent'  => Illuminate\Database\Eloquent\Model::class,
 		'Event'     => Illuminate\Support\Facades\Event::class,
 		'File'      => Illuminate\Support\Facades\File::class,
+		'Gate' => Illuminate\Support\Facades\Gate::class,
 		'Hash'      => Illuminate\Support\Facades\Hash::class,
 		'Input'     => Illuminate\Support\Facades\Input::class,
 		'Inspiring' => Illuminate\Foundation\Inspiring::class,
