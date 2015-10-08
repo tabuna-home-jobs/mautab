@@ -14,12 +14,12 @@ class Options extends Model
         'value',
     ];
 
-    public function findOption($name)
+    public function get($name)
     {
         return $this->where('name', $name)->first();
     }
 
-    public function findOptionSerialize($name)
+    public function getSerialize($name)
     {
         $options = $this->where('name', $name)->first();
         return $options ? json_decode($options, true) : [];
