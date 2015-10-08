@@ -8,7 +8,9 @@ class Roles extends Model
 {
 
     protected static $usersModel = User::class;
+
     protected $table = 'roles';
+
     protected $fillable = [
         'name',
         'slug',

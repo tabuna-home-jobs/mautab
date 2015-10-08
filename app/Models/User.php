@@ -110,10 +110,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * @deprecated deprecated since version 2.0
      */
-	public function getNickname(){
+    public function getNickname()
+    {
 
-		return $this->nickname;
-	}
+        return $this->nickname;
+    }
 
     public function getPayments()
     {
@@ -124,6 +125,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->belongsTo(Package::class, 'package_id');
     }
+
+
+
+
+
+
+
+    /*
+     * Права
+     */
 
     /**
      * @deprecated deprecated since version 2.0
@@ -158,19 +169,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this;
     }
 
-
-
-
-
-
-
-    /*
-     * Права
-     */
-
-    /**
-     * @deprecated deprecated since version 2.0
-     */
     public function checkRole($role)
     {
         $thisRole = unserialize($this->role);
@@ -180,9 +178,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             return false;
     }
 
-    /**
-     * @deprecated deprecated since version 2.0
-     */
     public function getRole()
     {
         return unserialize($this->role);
@@ -207,7 +202,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->roles;
     }
-
 
 
 
