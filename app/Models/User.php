@@ -45,14 +45,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     use Authenticatable, CanResetPassword, Sortable;
 
+    protected static $rolesModel = RoleUsers::class;
     /**
      * The database table used by the model.
      *
      * @var string
      */
     protected $table = 'users';
-
-
     protected $sortable = [
         'id',
         'nickname',
@@ -62,7 +61,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'created_at',
         'updated_at'
     ];
-
     protected $guarded = [
         'nickname',
         'first_name',
@@ -72,7 +70,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'role',
         'suspend',
     ];
-
     /**
      * The attributes that are mass assignable.
      *
@@ -86,9 +83,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'phone',
         'email_notification',
         'phone_notification',
+        'permissions',
     ];
-
-
     /**
      * The attributes excluded from the model's JSON form.
      *
@@ -96,30 +92,42 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token', 'encrypt_password'];
 
+    public static function getRolesModel()
+    {
+        return static::$rolesModel;
+    }
+
+    public static function setRolesModel($rolesModel)
+    {
+        static::$rolesModel = $rolesModel;
+    }
 
     public function tiket()
     {
         return $this->hasMany(Tiket::class);
     }
 
+    /**
+     * @deprecated deprecated since version 2.0
+     */
 	public function getNickname(){
 
 		return $this->nickname;
 	}
-
 
     public function getPayments()
     {
         return $this->hasMany(Payments::class);
     }
 
-
     public function getPackage()
     {
         return $this->belongsTo(Package::class, 'package_id');
     }
 
-
+    /**
+     * @deprecated deprecated since version 2.0
+     */
     public function addRole($role)
     {
 
@@ -136,7 +144,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this;
     }
 
-
+    /**
+     * @deprecated deprecated since version 2.0
+     */
     public function removeRole($role)
     {
         $thisRole = unserialize($this->role);
@@ -149,6 +159,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
 
+
+
+
+
+
+    /*
+     * Права
+     */
+
+    /**
+     * @deprecated deprecated since version 2.0
+     */
     public function checkRole($role)
     {
         $thisRole = unserialize($this->role);
@@ -158,10 +180,35 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             return false;
     }
 
+    /**
+     * @deprecated deprecated since version 2.0
+     */
     public function getRole()
     {
         return unserialize($this->role);
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(static::$rolesModel, 'role_users', 'user_id', 'role_id')->withTimestamps();
+    }
+
+    public function getPermissionsAttribute($permissions)
+    {
+        return $permissions ? json_decode($permissions, true) : [];
+    }
+
+    public function setPermissionsAttribute(array $permissions)
+    {
+        $this->attributes['permissions'] = $permissions ? json_encode($permissions) : '';
+    }
+
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+
 
 
 }

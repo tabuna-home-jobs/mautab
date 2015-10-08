@@ -2,6 +2,7 @@
 namespace Mautab\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use Mautab\Services\VestaAPI\Vesta;
 
 class VestaFacades extends Facade
 {
@@ -14,7 +15,7 @@ class VestaFacades extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'Mautab\Services\VestaAPI\Vesta';
+        return Vesta::class;
     }
 
 }

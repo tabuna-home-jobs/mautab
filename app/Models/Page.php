@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Mautab\Models\Page
- *
+ * @deprecated deprecated since version 2.0
  * @property integer $id
  * @property string $title
  * @property string $name
