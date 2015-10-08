@@ -49,7 +49,6 @@ class Tiket extends Model {
 	 *
 	 * @var array
 	 */
-//	protected $hidden = [''];
 
 	public function user()
 	{

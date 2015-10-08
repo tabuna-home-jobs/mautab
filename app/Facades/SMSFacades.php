@@ -1,13 +1,10 @@
-<?php
-namespace Mautab\Facades;
+<?php namespace Mautab\Facades;
 
+use App\Services\SMS\IntisSMS;
 use Illuminate\Support\Facades\Facade;
-use Mautab\Services\VestaAPI\Vesta;
 
-class VestaFacades extends Facade
+class IntisSMSFacades extends Facade
 {
-
-
     /**
      * Получить зарегистрированное имя компонента.
      *
@@ -15,10 +12,6 @@ class VestaFacades extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return Vesta::class;
+        return IntisSMS::class;
     }
-
 }
-
-
-?>

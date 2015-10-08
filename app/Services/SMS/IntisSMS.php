@@ -1,21 +1,31 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\SMS;
+
+use Config;
 
 class IntisSMS
 {
     /**
      * @var string Логин пользователя
      */
-    public static $login = 'tatu';
+    public $login;
     /**
      * @var string Ключ API
      */
-    public static $apikey = '1271a2420038d3f7451fe0db73a1db77f8c4e37d';
+    public $apikey;
     /**
      * @var string Идентификатор отправителя (одобренный)
      */
-    public static $sender = 'Octavian';
+    public $sender;
+
+    public function __construct()
+    {
+        $this->login = Config::get('services.sms.login');
+        $this->apikey = Config::get('services.sms.apikey');
+        $this->sender = Config::get('services.sms.sender');
+    }
+
 
     /**
      * Метод инициализации
