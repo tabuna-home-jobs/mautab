@@ -104,19 +104,20 @@ class TiketsController extends Controller
             ->take(1)
             ->get();
 
-        // $Tikets = User::find($userId)->tiket()->find($msg['tikets_id'])->orderBy('id', 'desc')->take(1)->get();
-
-        //$Tikets = Tiket::whereRaw('tikets_id = ?', [$msg['tikets_id']])->orderBy('updated_at','desc')->take(1)->get();
 
         return $Tikets[0];
     }
 
-    public function show($id)
+    public function show(Tiket $tiket)
     {
-        $Tiket = User::find(Auth::User()->id)->tiket()->find($id);
-        $subTiket = User::find(Auth::User()->id)->tiket()->find($id)->subtiket($id)->orderBy('id', 'desc')->simplePaginate(15);
+	    $currentTiket = $tiket->with(['subtiket' =>function($query){
 
-        return view('user/tikets/viewer', ['Tiket' => $Tiket, 'subTiket' => $subTiket]);
+		    $query->orderBy('id', 'desc');
+
+	    }])->findOrFail($tiket->id);
+
+
+        return view('user/tikets/viewer', ['tiket' => $currentTiket]);
     }
 
     //Ответ

@@ -15,7 +15,7 @@ function addNewMessage(obj){
 }
 
 //Создаем подключение
-var conn = new WebSocket('ws://mautab.com:8990');
+var conn = new WebSocket('ws://localhost:8990');
 //Обозначаем подключение
 conn.onopen = function (e) {
     console.log('Админ вступил в беседу');
@@ -31,8 +31,10 @@ conn.onmessage = function (e) {
 
 //Делаем текстовую переключалку для кнопки
 $("body").on('click','input[name="complete"]', function(){
-    var obj = $(this);
-    var currVal = obj.val();
+
+    var currVal = this.defaultValue;
+
+
     var statusInterview = $(".close-title");
 
     if(currVal == 1){
@@ -45,13 +47,13 @@ $("body").on('click','input[name="complete"]', function(){
 $("body").on('click','#submitTicket', function(){
 
     //Берем данные
-    var mess = $("#answerTiket textarea[name='message']").val();
+    var mess = $("#answerTiket input[name='message']").val();
     var close = $("#answerTiket input[name='complete']:checked").val();
     var tiket_id = $("#answerTiket input[name='tikets_id']").val();
 
     //Обнуляем поля в форме
-    $("#answerTiket textarea[name='message']").val('');
-    $("#answerTiket input[name='complete']:checked").val('');
+    $("#answerTiket input[name='message']").val('');
+
 
     //Формируем данные
     var data = JSON.stringify({

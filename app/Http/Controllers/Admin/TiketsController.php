@@ -90,14 +90,15 @@ class TiketsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Tiket $tiket)
     {
 
-        $currentTiket = Tiket::with(['subtiket' =>function($query){
+	    $currentTiket = $tiket->with(['subtiket' =>function($query){
 
             $query->orderBy('id', 'desc');
 
-        }])->findOrFail($id);
+        }])->findOrFail($tiket->id);
+
 
         return view('admin/tikets/viewer', ['tiket' => $currentTiket]);
     }

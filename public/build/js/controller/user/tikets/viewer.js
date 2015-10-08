@@ -9,7 +9,8 @@ function addNewMessage(obj){
     strokeResponse += "</li>";
 
     $("#bodyChat").prepend(strokeResponse);
-    $('.hotBlock').show('slide',{direction:"up", easing: "easeOutCirc"},500);
+    $('.hotBlock').show('drop',{direction:"up", easing: "easeInOutQuint"},500);
+
 
     //Скрытые формы юзера (закрытие темы)
      if(obj.complete == 1){
@@ -18,33 +19,35 @@ function addNewMessage(obj){
          themeClose += 'Тема закрыта';
          themeClose += '</div>';
 
-         $("#commentform").hide('drop',{direction:"up"},500, function(){
+         $("#commentform").hide('drop',{direction:"left",easing: "easeInBack"},500, function(){
              $(this).remove();
              $(".mess-window").html(themeClose);
-             $(".closeTheme").show('drop',{direction:"up",easing:'easeOutBounce'},1000);
+             $(".closeTheme").show('drop',{direction:"right",easing: "easeInOutBack"},1000);
          });
      //Появление формы у юзера (открытие темы)
      }else if(obj.complete == 0){
 
+
          //Проверяем есть ли такая форма и если есть то ненадо добавлять эту
         if(!$("#commentform").length > 0){
-             var formCommunicate =  '<h2>Спрашивай</h2>';
-                 formCommunicate += '<form id="commentform" class="hotBlock">';
-                 formCommunicate += '<div class="form-group">';
-                 formCommunicate += '<label>Сообщение</label>';
-                 formCommunicate += '<textarea name="message" cols="5" rows="7" class="form-control"></textarea>'
+             var formCommunicate =  '<form id="commentform" class="hotBlock">';
+                 formCommunicate += '<div class="input-group">';
+                 formCommunicate += '<input name="message" type="text" placeholder="Сообщение" class="form-control input-sm btn-rounded">';
+                 formCommunicate += '<span class="input-group-btn">';
+                 formCommunicate += '<button class="btn btn-default btn-sm btn-rounded" id="subAnwerUser">'
+                 formCommunicate += '<i class="fa fa-paper-plane-o"></i>';
+                 formCommunicate += '</button>';
+                 formCommunicate += '</span>';
                  formCommunicate += '</div>';
-                 formCommunicate += '<input type="hidden" value="'+obj.tikets_id+'" name="tikets_id">';
                  formCommunicate += '<input type="hidden" name="interview" value="1">';
-                 formCommunicate += '<div class="col-sm-4">';
-                 formCommunicate += '<button class="btn btn-primary" id="subAnwerUser">Ответить</button>'
-                 formCommunicate += '</div>';
+                 formCommunicate += '<input type="hidden" value="'+obj.tikets_id+'" name="tikets_id">';
                  formCommunicate += '</form>';
 
-             $('.closeTheme').hide('drop', {direction:"up"}, 500, function(){
+
+             $('.closeTheme').hide('drop', {direction:"left",easing: "easeInBack"}, 500, function(){
                  $(this).remove();
                  $(".mess-window").html(formCommunicate);
-                 $("#commentform").show('drop',{direction: "up", easing: "easeOutBounce"}, 1000);
+                 $("#commentform").show('drop',{direction: "right", easing: "easeInOutBack"}, 1000);
              });
             //mess-window
         }
@@ -54,7 +57,7 @@ function addNewMessage(obj){
 }
 
 //Создаем подключение
-    var conn = new WebSocket('ws://mautab.com:8990');
+    var conn = new WebSocket('ws://localhost:8990');
 //Обозначаем подключение
 conn.onopen = function (e) {
     console.log('Пользователь вступил в беседу');
@@ -73,7 +76,7 @@ conn.onmessage = function (e) {
 $("body").on('click','#subAnwerUser', function(){
 
     //Берем данные
-    var mess = $("#commentform textarea[name='message']").val();
+    var mess = $("#commentform input[name='message']").val();
     var tiket_id = $("#commentform input[name='tikets_id']").val();
     var interview = $("#commentform input[name='interview']").val();
 
@@ -86,7 +89,7 @@ $("body").on('click','#subAnwerUser', function(){
     }else{
 
         //Обнуляем поля в форме
-        $("#commentform textarea[name='message']").val('');
+        $("#commentform input[name='message']").val('');
 
         //Формируем данные
         var data = JSON.stringify({

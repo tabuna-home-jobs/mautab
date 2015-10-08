@@ -342,7 +342,7 @@ label, strong {
     color:#000;
 }
 .hotalert{
-    height:50px;
+    height:50px !important;
 }
 .errormess{
     position: absolute;
@@ -370,4 +370,15 @@ label, strong {
 
 .main-slider .carousel-control {
     background: inherit;
+}
+.panel-view-tiket{
+    overflow: hidden;
+    display: block;
+}
+.panel-scroll-tiket{
+    height: 550px;
+    overflow-x: hidden;
+    display: block;
+    overflow-y: scroll;
+    position: relative;
 }
