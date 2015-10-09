@@ -7,27 +7,26 @@
         <div class="row">
 
             <div class="col-md-8 col-md-offset-2 text-center">
-            <div class="m-t-xxl m-b-xxl padder-v">
-                <h1 class="font-bold l-h-1x m-t-xxl text-white padder-v animated fadeInDown">
-                    Современный хостинг для <span class="b-b b-black b-3x">Вашего</span> проекта
-                </h1>
+                <div class="m-t-xxl m-b-xxl padder-v">
+                    <h1 class="font-bold l-h-1x m-t-xxl text-white padder-v animated fadeInDown">
+                        Современный хостинг для <span class="b-b b-black b-3x">Вашего</span> проекта
+                    </h1>
 
-                <h3 class="text-muted m-t-xl l-h-1x">
-                    Mautab идеально подходит для  <span
-                            class="b-b b-2x">сайтов компаний и персональных страниц, а также блогов, форумов, и галерей.</span>
-                </h3>
+                    <h3 class="text-muted m-t-xl l-h-1x">
+                        Mautab идеально подходит для  <span
+                                class="b-b b-2x">сайтов компаний и персональных страниц, а также блогов, форумов, и галерей.</span>
+                    </h3>
+                </div>
+                <p class="text-center m-b-xxl wrapper">
+                    <a href="#"
+                       target="_blank"
+                       class="btn b-2x btn-lg b-black btn-default btn-rounded text-lg font-bold m-b-xxl animated fadeInUpBig">От
+                        100 рублей</a>
+                </p>
             </div>
-            <p class="text-center m-b-xxl wrapper">
-                <a href="#"
-                   target="_blank"
-                   class="btn b-2x btn-lg b-black btn-default btn-rounded text-lg font-bold m-b-xxl animated fadeInUpBig">От
-                    100 рублей</a>
-            </p>
+
+
         </div>
-
-
-
-            </div>
 
     </div>
 
@@ -274,7 +273,6 @@
                     </div>
                 </div>
             </div>
-
 
 
             <!--Новости -->

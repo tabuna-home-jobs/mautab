@@ -394,8 +394,8 @@
                     <!-- / list -->
                 </nav>
                 <!-- nav -->
-                </div>
             </div>
+        </div>
     </aside>
     <!-- / aside -->
 

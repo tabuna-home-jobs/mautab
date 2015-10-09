@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
+use Mautab\Manager\Access\PermissionsUser;
 
 /**
  * Mautab\Models\User
@@ -43,9 +44,10 @@ use Kyslik\ColumnSortable\Sortable;
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
 
-    use Authenticatable, CanResetPassword, Sortable;
+    use Authenticatable, CanResetPassword, Sortable, PermissionsUser;
 
-    protected static $rolesModel = RoleUsers::class;
+
+    protected static $rolesModel = Roles::class;
     /**
      * The database table used by the model.
      *
@@ -91,16 +93,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token', 'encrypt_password'];
-
-    public static function getRolesModel()
-    {
-        return static::$rolesModel;
-    }
-
-    public static function setRolesModel($rolesModel)
-    {
-        static::$rolesModel = $rolesModel;
-    }
 
     public function tiket()
     {
@@ -169,6 +161,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this;
     }
 
+
+    /**
+     * @deprecated deprecated since version 2.0
+     */
     public function checkRole($role)
     {
         $thisRole = unserialize($this->role);
@@ -178,29 +174,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             return false;
     }
 
+
+    /**
+     * @deprecated deprecated since version 2.0
+     */
     public function getRole()
     {
         return unserialize($this->role);
-    }
-
-    public function roles()
-    {
-        return $this->belongsToMany(static::$rolesModel, 'role_users', 'user_id', 'role_id')->withTimestamps();
-    }
-
-    public function getPermissionsAttribute($permissions)
-    {
-        return $permissions ? json_decode($permissions, true) : [];
-    }
-
-    public function setPermissionsAttribute(array $permissions)
-    {
-        $this->attributes['permissions'] = $permissions ? json_encode($permissions) : '';
-    }
-
-    public function getRoles()
-    {
-        return $this->roles;
     }
 
 

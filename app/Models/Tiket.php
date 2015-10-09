@@ -27,38 +27,39 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Tiket whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Tiket whereDeletedAt($value)
  */
-class Tiket extends Model {
+class Tiket extends Model
+{
 
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'tikets';
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'tikets';
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = ['id', 'user_id', 'tikets_id', 'title', 'message', 'complete'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['id', 'user_id', 'tikets_id', 'title', 'message', 'complete'];
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
+    /**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
 
-	public function user()
-	{
-		return $this->belongsTo(User::class);
-	}
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
-	public function subtiket()
-	{
-		return $this->hasMany(Tiket::class, 'tikets_id');
-	}
+    public function subtiket()
+    {
+        return $this->hasMany(Tiket::class, 'tikets_id');
+    }
 
 
 }

@@ -8,7 +8,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
 /* Изменения бутстрапа */
 a {
     outline: none !important;
@@ -39,7 +38,6 @@ label, strong {
 
 /* !Изменения бутстрапа */
 
-
 .btn-blue {
     border: none;
     border-radius: 0;
@@ -57,7 +55,6 @@ label, strong {
     border: 1px solid #00afec;
 }
 
-
 /* menuapp */
 
 .menuapp {
@@ -74,7 +71,6 @@ label, strong {
     font-size: 8pt;
     margin: 0px;
 }
-
 
 .menuapp h4 {
     font-weight: 300;
@@ -95,7 +91,6 @@ label, strong {
     font-weight: 200;
 }
 
-
 /*
  * Component: Small Box
  * --------------------
@@ -107,9 +102,11 @@ label, strong {
     margin-bottom: 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
+
 .small-box > .inner {
     padding: 10px;
 }
+
 .small-box > .small-box-footer {
     position: relative;
     text-align: center;
@@ -121,10 +118,12 @@ label, strong {
     background: rgba(0, 0, 0, 0.1);
     text-decoration: none;
 }
+
 .small-box > .small-box-footer:hover {
     color: #fff;
     background: rgba(0, 0, 0, 0.15);
 }
+
 .small-box h3 {
     font-size: 38px;
     font-weight: bold;
@@ -132,19 +131,23 @@ label, strong {
     white-space: nowrap;
     padding: 0;
 }
+
 .small-box p {
     font-size: 15px;
 }
+
 .small-box p > small {
     display: block;
     color: #f9f9f9;
     font-size: 13px;
     margin-top: 5px;
 }
+
 .small-box h3,
 .small-box p {
     z-index: 5;
 }
+
 .small-box .icon {
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
@@ -156,20 +159,25 @@ label, strong {
     font-size: 90px;
     color: rgba(0, 0, 0, 0.15);
 }
+
 .small-box:hover {
     text-decoration: none;
     color: #f9f9f9;
 }
+
 .small-box:hover .icon {
     font-size: 95px;
 }
+
 @media (max-width: 767px) {
     .small-box {
         text-align: center;
     }
+
     .small-box .icon {
         display: none;
     }
+
     .small-box p {
         font-size: 12px;
     }
@@ -177,7 +185,7 @@ label, strong {
 
 .bg-aqua {
     background-color: #00c0ef !important;
-    color: #fff!important;
+    color: #fff !important;
 }
 
 .bg-green {
@@ -207,8 +215,7 @@ label, strong {
     background: #00afec;
 }
 
-
-.tl-date > small{
+.tl-date > small {
 
 }
 
@@ -247,6 +254,7 @@ label, strong {
 .bootstrap-tagsinput {
     width: 100% !important;
 }
+
 .i-switch i:before {
     position: absolute;
     top: -1px;
@@ -267,6 +275,7 @@ label, strong {
     border-bottom: 1px solid rgba(88, 102, 110, 0.32);
     margin-bottom: -17px;
 }
+
 .h2-span {
     background-color: white;
     padding: 15px;
@@ -332,19 +341,24 @@ label, strong {
     text-transform: capitalize;
     font-weight: bold;
 }
-.tab-pane{
+
+.tab-pane {
     padding: 10px;
 }
-.nav-admin-tabs{
+
+.nav-admin-tabs {
     padding: 10px 0 0 5px;
 }
-.text-black{
-    color:#000;
+
+.text-black {
+    color: #000;
 }
-.hotalert{
-    height:50px !important;
+
+.hotalert {
+    height: 50px !important;
 }
-.errormess{
+
+.errormess {
     position: absolute;
     top: 88px;
     right: 15px;
@@ -352,13 +366,16 @@ label, strong {
     display: none;
     width: 326px !important;
 }
-.del-group{
+
+.del-group {
     width: 76px;
 }
-.del-group form{
+
+.del-group form {
     display: inline-block;
 }
-.del-group form .btn-danger{
+
+.del-group form .btn-danger {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -371,11 +388,13 @@ label, strong {
 .main-slider .carousel-control {
     background: inherit;
 }
-.panel-view-tiket{
+
+.panel-view-tiket {
     overflow: hidden;
     display: block;
 }
-.panel-scroll-tiket{
+
+.panel-scroll-tiket {
     height: 550px;
     overflow-x: hidden;
     display: block;

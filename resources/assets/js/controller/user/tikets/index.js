@@ -1,11 +1,11 @@
 //Функция добавления ответа во вьюху пользователя
-function addNewMessage(obj){
+function addNewMessage(obj) {
     //Формируем дом эелемент
     var strokeResponse = "<tr class='hotBlock'>";
-    strokeResponse += "<td>"+obj.tiketid+"</td>";
-    strokeResponse += "<td>"+obj.title+"</td>";
+    strokeResponse += "<td>" + obj.tiketid + "</td>";
+    strokeResponse += "<td>" + obj.title + "</td>";
     strokeResponse += "<td>considered</td>";
-    strokeResponse += "<td><a href='tikets/"+obj.tiketid+"'>View</a></td>";
+    strokeResponse += "<td><a href='tikets/" + obj.tiketid + "'>View</a></td>";
     strokeResponse += "</tr>";
 
     $("#ticketBody").prepend(strokeResponse);
@@ -30,22 +30,22 @@ conn.onmessage = function (e) {
 
 
 //Обрабатываем клик по кнопке формы
-$("body").on('click','#submitTicket',function(){
+$("body").on('click', '#submitTicket', function () {
     var obj = $(this);
     var parentForm = obj.parent();
 
     //Получаем все данные отправляемого тикета
-    var tiketTitle = $("input[name='title']",parentForm).val();
-    var messTitle = $("textarea[name='message']",parentForm).val();
+    var tiketTitle = $("input[name='title']", parentForm).val();
+    var messTitle = $("textarea[name='message']", parentForm).val();
 
     //Обнуляем inputы
-    $("input[name='title']",parentForm).val('');
-    $("textarea[name='message']",parentForm).val('');
+    $("input[name='title']", parentForm).val('');
+    $("textarea[name='message']", parentForm).val('');
 
     //Формируем данные
     var mess = JSON.stringify({
-        "title"   : tiketTitle,
-        "message" : messTitle
+        "title": tiketTitle,
+        "message": messTitle
     });
 
 

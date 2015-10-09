@@ -30,31 +30,31 @@ function delModal(name, route, id) {
 }
 
 //Добавляем алиас в textarea
-$("input[name='v_domain']").blur(function(){
+$("input[name='v_domain']").blur(function () {
 
     var obj = $(this);
 
     var parenNode = obj.parent('div');
 
-    var childLabel = $(" label",parenNode);
+    var childLabel = $(" label", parenNode);
 
     //Шаблон проверки домена
     var pattern = /^([0-9a-z]([0-9a-z\-])*[0-9a-z]\.)+[0-9a-z\-]{1,8}$/i;
 
     var currentValue = obj.val();
 
-    if(pattern.exec(currentValue) != null){
+    if (pattern.exec(currentValue) != null) {
 
-        $(" span",childLabel).remove();
+        $(" span", childLabel).remove();
         parenNode.removeClass('has-error');
 
         //Если нормальный дмоен то добавляем его в texarea
-        if(currentValue.indexOf('www') != -1){
+        if (currentValue.indexOf('www') != -1) {
             $("textarea[name='v_aliases']").text(currentValue);
-        }else{
+        } else {
             $("textarea[name='v_aliases']").text('www.' + currentValue);
         }
-    }else{
+    } else {
 
         childLabel.append('<span> введен неверно</span>');
         parenNode.addClass('has-error');

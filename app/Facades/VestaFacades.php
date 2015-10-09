@@ -19,6 +19,3 @@ class VestaFacades extends Facade
     }
 
 }
-
-
-?>
