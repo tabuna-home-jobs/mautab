@@ -183,32 +183,8 @@ label, strong {
     }
 }
 
-.bg-aqua {
-    background-color: #00c0ef !important;
-    color: #fff !important;
-}
 
-.bg-green {
-    background-color: #00a65a !important;
-    color: #fff !important;
-}
 
-.bg-yellow {
-    background-color: #f39c12 !important;
-    color: #fff !important;
-}
-
-.bg-red {
-    background-color: #dd4b39 !important;
-    color: #fff !important;
-}
-
-.badge-menu {
-    font-size: 8pt;
-    padding: 1px 3px;
-    vertical-align: top;
-    font-weight: 300;
-}
 
 .menuapp a:hover > h4 > .badge-menu, .menuapp a.active > h4 > .badge-menu {
     color: #fff;

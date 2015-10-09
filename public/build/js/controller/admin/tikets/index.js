@@ -1,12 +1,12 @@
 //Функция добавления ответа во вьюху
-function addNewMessage(obj){
+function addNewMessage(obj) {
 
     //Формируем дом элемент
     var strokeResponse = "<tr class='hotBlock'>";
-    strokeResponse += "<td>"+obj.tiketid+"</td>";
-    strokeResponse += "<td><a href='tikets/"+obj.tiketid+"'>"+obj.title+"</a></td>";
-    strokeResponse += "<td>"+obj.message.substr(0,100)+"</td>";
-    strokeResponse += "<td><div class='btn-group pull-right' role='group' aria-label='...'><a href='tikets/"+obj.tiketid+"' class='btn btn-info'><i class='fa fa-search'></i></a></div></td>";
+    strokeResponse += "<td>" + obj.tiketid + "</td>";
+    strokeResponse += "<td><a href='tikets/" + obj.tiketid + "'>" + obj.title + "</a></td>";
+    strokeResponse += "<td>" + obj.message.substr(0, 100) + "</td>";
+    strokeResponse += "<td><div class='btn-group pull-right' role='group' aria-label='...'><a href='tikets/" + obj.tiketid + "' class='btn btn-info'><i class='fa fa-search'></i></a></div></td>";
     strokeResponse += "</tr>";
 
     $("#ticketBody").prepend(strokeResponse);

@@ -1,15 +1,15 @@
 //Функция добавления ответа во вьюху
-function addNewMessage(obj){
+function addNewMessage(obj) {
 
     var strokeResponse = "<li class='list-group-item clearfix hotBlock'>";
     strokeResponse += "<span class='clear'>";
-    strokeResponse += "<span>"+obj.nickname+"</span>";
-    strokeResponse += "<small class='text-muted clear'>"+obj.message+"</small>";
+    strokeResponse += "<span>" + obj.nickname + "</span>";
+    strokeResponse += "<small class='text-muted clear'>" + obj.message + "</small>";
     strokeResponse += "</span>";
     strokeResponse += "</li>";
 
     $("#messages").prepend(strokeResponse);
-    $('.hotBlock').show('slide',{direction:"up", easing: "easeOutCirc"},500);
+    $('.hotBlock').show('slide', {direction: "up", easing: "easeOutCirc"}, 500);
 
 
 }
@@ -30,21 +30,21 @@ conn.onmessage = function (e) {
 };
 
 //Делаем текстовую переключалку для кнопки
-$("body").on('click','input[name="complete"]', function(){
+$("body").on('click', 'input[name="complete"]', function () {
 
     var currVal = this.defaultValue;
 
 
     var statusInterview = $(".close-title");
 
-    if(currVal == 1){
+    if (currVal == 1) {
         statusInterview.html('Закрыто');
-    }else{
+    } else {
         statusInterview.html('Открыто');
     }
 });
 //Отправляем форму
-$("body").on('click','#submitTicket', function(){
+$("body").on('click', '#submitTicket', function () {
 
     //Берем данные
     var mess = $("#answerTiket input[name='message']").val();
@@ -57,9 +57,9 @@ $("body").on('click','#submitTicket', function(){
 
     //Формируем данные
     var data = JSON.stringify({
-        "message"   : mess,
-        "complete" : close,
-        "tikets_id" : tiket_id
+        "message": mess,
+        "complete": close,
+        "tikets_id": tiket_id
     });
 
     //Отправляем данные

@@ -100,7 +100,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-xs-12">
                                     <!-- small box -->
-                                    <div class="small-box bg-aqua">
+                                    <div class="small-box bg-primary">
                                         <div class="inner">
                                             <h3>{{ $UserInfoLaravel->nickname }}</h3>
 
@@ -117,7 +117,7 @@
                                 <!-- ./col -->
                                 <div class="col-lg-6 col-xs-12">
                                     <!-- small box -->
-                                    <div class="small-box bg-green">
+                                    <div class="small-box bg-success">
                                         <div class="inner">
                                             <h3>{{Lang::get('menu.balance')}}</h3>
 
@@ -133,7 +133,7 @@
                                 <!-- ./col -->
                                 <div class="col-lg-6 col-xs-12">
                                     <!-- small box -->
-                                    <div class="small-box bg-yellow">
+                                    <div class="small-box bg-warning">
                                         <div class="inner">
                                             <h3>Тариф</h3>
 
@@ -150,7 +150,7 @@
                                 <!-- ./col -->
                                 <div class="col-lg-6 col-xs-12">
                                     <!-- small box -->
-                                    <div class="small-box bg-red">
+                                    <div class="small-box bg-danger">
                                         <div class="inner">
                                             <h3>Файлы</h3>
 
@@ -168,7 +168,7 @@
 
                                 <div class="col-lg-6 col-xs-12">
                                     <!-- small box -->
-                                    <div class="small-box bg-red">
+                                    <div class="small-box bg-black">
                                         <div class="inner">
                                             <h3>CMS</h3>
 
