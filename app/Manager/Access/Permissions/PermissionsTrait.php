@@ -63,9 +63,7 @@ trait PermissionsTrait
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+
     public function hasAccess($permissions)
     {
         if (is_string($permissions)) {
@@ -83,11 +81,6 @@ trait PermissionsTrait
         return true;
     }
 
-    /**
-     * Lazily grab the prepared permissions.
-     *
-     * @return array
-     */
     protected function getPreparedPermissions()
     {
         if ($this->preparedPermissions === null) {
