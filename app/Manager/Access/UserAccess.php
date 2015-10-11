@@ -138,17 +138,11 @@ trait UserAccess
         $this->attributes['permissions'] = $permissions ? json_encode($permissions) : '';
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRoles()
     {
         return $this->roles;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function inRole($role)
     {
         $role = array_first($this->roles, function ($index, $instance) use ($role) {
@@ -166,89 +160,56 @@ trait UserAccess
         return $role !== null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function generatePersistenceCode()
     {
         return str_random(32);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getUserId()
     {
         return $this->getKey();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getPersistableId()
     {
         return $this->getKey();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getPersistableKey()
     {
         return $this->persistableKey;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setPersistableKey($key)
     {
         $this->persistableKey = $key;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setPersistableRelationship($persistableRelationship)
     {
         $this->persistableRelationship = $persistableRelationship;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getPersistableRelationship()
     {
         return $this->persistableRelationship;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getUserLogin()
     {
         return $this->getAttribute($this->getUserLoginName());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getUserLoginName()
     {
         return reset($this->loginNames);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getUserPassword()
     {
         return $this->password;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function delete()
     {
         if ($this->exists) {
@@ -262,81 +223,43 @@ trait UserAccess
         parent::delete();
     }
 
-    /**
-     * Returns the activations relationship.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function activations()
     {
         return $this->hasMany(static::$activationsModel, 'user_id');
     }
 
-    /**
-     * Returns the persistences relationship.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function persistences()
     {
         return $this->hasMany(static::$persistencesModel, 'user_id');
     }
 
-    /**
-     * Returns the reminders relationship.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function reminders()
     {
         return $this->hasMany(static::$remindersModel, 'user_id');
     }
 
-    /**
-     * Returns the roles relationship.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
     public function roles()
     {
         return $this->belongsToMany(static::$rolesModel, 'role_users', 'user_id', 'role_id')->withTimestamps();
     }
 
-    /**
-     * Returns the throttle relationship.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function throttle()
     {
         return $this->hasMany(static::$throttlingModel, 'user_id');
     }
 
-    /**
-     * Dynamically pass missing methods to the user.
-     *
-     * @param  string $method
-     * @param  array $parameters
-     * @return mixed
-     */
     public function __call($method, $parameters)
     {
         $methods = ['hasAccess', 'hasAnyAccess'];
 
         if (in_array($method, $methods)) {
             $permissions = $this->getPermissionsInstance();
-
             return call_user_func_array([$permissions, $method], $parameters);
         }
 
         return parent::__call($method, $parameters);
     }
 
-    /**
-     * Creates a permissions object.
-     *
-     * @return \Mautab\Manager\Access\Permissions\PermissionsInterface
-     */
     protected function createPermissions()
     {
         $userPermissions = $this->permissions;

@@ -50,6 +50,8 @@ trait PermissionsTrait
      * @param  array $secondaryPermissions
      * @return void
      */
+
+
     public function __construct(array $permissions = null, array $secondaryPermissions = null)
     {
         if (isset($permissions)) {

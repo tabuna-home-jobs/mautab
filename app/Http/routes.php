@@ -18,7 +18,7 @@ Route::controllers([
 ]);
 
 // Хостинг
-Route::group(['middleware' => ['UserRole', 'LoginAs', 'auth'], 'namespace' => 'Hosting'], function () {
+Route::group(['middleware' => ['Access', 'UserRole', 'LoginAs', 'auth'], 'namespace' => 'Hosting'], function () {
     Route::resource('search', 'SearchController');
     Route::resource('web', 'WebController');
     Route::resource('ftp', 'FtpController');

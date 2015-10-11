@@ -18,7 +18,6 @@ class Kernel extends HttpKernel
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \Mautab\Http\Middleware\VerifyCsrfToken::class,
         \Mautab\Http\Middleware\Localization::class,
-
     ];
 
     /**
@@ -34,6 +33,7 @@ class Kernel extends HttpKernel
         'Hosting' => 'Mautab\Http\Middleware\Hosting\Hosting',
         'UserRole' => \Mautab\Http\Middleware\UserRole::class,
         'AdminRole' => \Mautab\Http\Middleware\AdminRole::class,
+        'Access' => \Mautab\Manager\Access\Middleware\AccessMiddleware::class,
     ];
 
 }
