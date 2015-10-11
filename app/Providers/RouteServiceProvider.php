@@ -50,6 +50,10 @@ class RouteServiceProvider extends ServiceProvider {
 		});
 
 
+		$router->bind('roles', function ($value) {
+			return \Mautab\Models\Roles::where('slug', $value)->firstOrFail();
+		});
+
 
 
 	}

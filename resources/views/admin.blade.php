@@ -21,7 +21,7 @@
 
 </head>
 
-<div class="app app-header-fixed app-aside-fixed app-aside-folded">
+<div class="app app-header-fixed app-aside-fixed">
 
 
     <header id="header" class="app-header navbar" role="menu">
@@ -299,30 +299,6 @@
     <!-- aside -->
     <aside id="aside" class="app-aside hidden-xs bg-dark  dk">
         <div class="aside-wrap">
-            <div class="app-aside-footer">
-
-                <!-- aside footer -->
-                <div class="wrapper m-t">
-                    <div class="text-center-folded">
-                        <span class="pull-right pull-none-folded">60%</span>
-                        <span class="hidden-folded">Milestone</span>
-                    </div>
-                    <div class="progress progress-xxs m-t-sm dk">
-                        <div class="progress-bar progress-bar-info" style="width: 60%;">
-                        </div>
-                    </div>
-                    <div class="text-center-folded">
-                        <span class="pull-right pull-none-folded">35%</span>
-                        <span class="hidden-folded">Release</span>
-                    </div>
-                    <div class="progress progress-xxs m-t-sm dk">
-                        <div class="progress-bar progress-bar-primary" style="width: 35%;">
-                        </div>
-                    </div>
-                </div>
-                <!-- / aside footer -->
-
-            </div>
             <div class="navi-wrap">
                 <!-- nav -->
                 <nav ui-nav="" class="navi clearfix">
@@ -355,6 +331,15 @@
                             </a>
                         </li>
 
+
+                        <li class="{{Active::route('admin.roles.*')}}">
+                            <a href="{{route('admin.roles.index')}}">
+                                <i class="fa fa-lock"></i>
+                                <span>Роли</span>
+                            </a>
+                        </li>
+
+
                         <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                             <span>Компоненты</span>
                         </li>
@@ -364,6 +349,14 @@
                             <a href="{{route('admin.pages.index')}}">
                                 <i class="fa fa-folder-open"></i>
                                 <span>Страницы</span>
+                            </a>
+                        </li>
+
+
+                        <li class="{{Active::route('admin.news.*')}}">
+                            <a href="{{route('admin.news.index')}}">
+                                <i class="fa fa-newspaper-o"></i>
+                                <span>Новости</span>
                             </a>
                         </li>
 
@@ -395,6 +388,34 @@
                 </nav>
                 <!-- nav -->
             </div>
+
+
+            <div class="app-aside-footer">
+
+                <!-- aside footer -->
+                <div class="wrapper m-t">
+                    <div class="text-center-folded">
+                        <span class="pull-right pull-none-folded">60%</span>
+                        <span class="hidden-folded">Milestone</span>
+                    </div>
+                    <div class="progress progress-xxs m-t-sm dk">
+                        <div class="progress-bar progress-bar-info" style="width: 60%;">
+                        </div>
+                    </div>
+                    <div class="text-center-folded">
+                        <span class="pull-right pull-none-folded">35%</span>
+                        <span class="hidden-folded">Release</span>
+                    </div>
+                    <div class="progress progress-xxs m-t-sm dk">
+                        <div class="progress-bar progress-bar-primary" style="width: 35%;">
+                        </div>
+                    </div>
+                </div>
+                <!-- / aside footer -->
+
+            </div>
+
+
         </div>
     </aside>
     <!-- / aside -->

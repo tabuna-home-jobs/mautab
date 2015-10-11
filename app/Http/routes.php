@@ -51,6 +51,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['Adm
     Route::resource('serverip', 'ServerIPController');
 	Route::resource('tikets', 'TiketsController');
     Route::resource('cms', 'CMSController');
+    Route::resource('roles', 'RolesController');
 
 
     Route::controller('LoginAs', 'LoginAsController', [
