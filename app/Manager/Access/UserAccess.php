@@ -87,6 +87,11 @@ trait UserAccess
         return $this->belongsToMany(static::$rolesModel, 'role_users', 'user_id', 'role_id')->withTimestamps();
     }
 
+    public function addRole($Role)
+    {
+        $this->roles()->save($Role);
+    }
+
     protected function createPermissions()
     {
         $userPermissions = $this->permissions;

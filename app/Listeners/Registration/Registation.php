@@ -3,6 +3,7 @@
 namespace Mautab\Listeners\Registration;
 
 use Mautab\Events\Registration;
+use Mautab\Models\Roles;
 
 class Registation
 {
@@ -11,9 +12,12 @@ class Registation
      *
      * @return void
      */
+
+    protected $role;
+
     public function __construct()
     {
-        //
+        $this->role = Roles::where('slug', 'User')->firstOrFail();
     }
 
     /**
@@ -25,5 +29,6 @@ class Registation
     public function handle(Registration $event)
     {
         $event->user->save();
+        $event->user->addRole($this->role);
     }
 }

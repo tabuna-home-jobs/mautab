@@ -18,7 +18,7 @@ Route::controllers([
 ]);
 
 // Хостинг
-Route::group(['middleware' => ['Access', 'UserRole', 'LoginAs', 'auth'], 'namespace' => 'Hosting'], function () {
+Route::group(['middleware' => ['Access', 'LoginAs', 'auth'], 'namespace' => 'Hosting'], function () {
     Route::resource('search', 'SearchController');
     Route::resource('web', 'WebController');
     Route::resource('ftp', 'FtpController');
@@ -39,7 +39,7 @@ Route::group(['middleware' => ['Access', 'UserRole', 'LoginAs', 'auth'], 'namesp
 
 
 // Всё для администратора
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['AdminRole']], function () {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('/', 'HomeAdminController', ['only' => 'index']);
     Route::resource('users', 'UserController');
     Route::resource('pages', 'PagesController');

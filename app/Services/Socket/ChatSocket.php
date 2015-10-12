@@ -2,17 +2,17 @@
 
 namespace Mautab\Services\Socket;
 
-use Mautab\Http\Controllers\Hosting\TiketsController;
-use Mautab\Facades\AdminTiketsFacades;
-use Mautab\Services\Socket\Base\BaseSocket;
-use Ratchet\ConnectionInterface;
-use Mautab\Models\Tiket;
 use App;
 use Auth;
 use Config;
 use Crypt;
-use Mautab\Models\User;
 use Illuminate\Session\SessionManager;
+use Mautab\Facades\AdminTiketsFacades;
+use Mautab\Http\Controllers\Hosting\TiketsController;
+use Mautab\Models\Tiket;
+use Mautab\Models\User;
+use Mautab\Services\Socket\Base\BaseSocket;
+use Ratchet\ConnectionInterface;
 
 
 class ChatSocket extends BaseSocket {
@@ -26,7 +26,25 @@ class ChatSocket extends BaseSocket {
 		$this->clients = new \SplObjectStorage;
 	}
 
-	public function getUserFromSession($conn){
+	public function onOpen(ConnectionInterface $conn)
+	{
+
+		$this->clients->attach($conn);
+
+		//Берем user id
+		$userId = $this->getUserFromSession($conn);
+
+		//Создаем список юзеров подключенных к серверу
+		array_push($this->userList, $userId);
+
+		//Рассказываем всё что произошло
+		echo "New connection! user_id = ({$userId})\n";
+	}
+
+	//Проверка юзера на роль
+
+	public function getUserFromSession($conn)
+	{
 
 		// Create a new session handler for this client
 		$session = (new SessionManager(App::getInstance()))->driver();
@@ -49,65 +67,37 @@ class ChatSocket extends BaseSocket {
 
 	}
 
-	//Проверка юзера на роль
-	public function checkCurrentUserRole($userId, $role){
-
-		//Проверяем роль текущего пользователя
-		return User::findOrFail($userId)->checkRole($role);
-
-	}
-
 	//Берем автора главного сообщения
-	public function getAutorMess($tikets_id){
 
-		$tik = Tiket::findOrFail($tikets_id);
-
-		//Вернем id автора
-		return $tik->user_id;
-	}
-
-	public function onOpen(ConnectionInterface $conn) {
-
-		$this->clients->attach($conn);
-
-		//Берем user id
-		$userId = $this->getUserFromSession($conn);
-
-		//Создаем список юзеров подключенных к серверу
-		array_push($this->userList, $userId);
-
-		//Рассказываем всё что произошло
-		echo "New connection! user_id = ({$userId})\n";
-	}
-
-	public function onMessage(ConnectionInterface $from, $msg) {
+	public function onMessage(ConnectionInterface $from, $msg)
+	{
 
 		//Берем user id того кто послал
 		$userId = $this->getUserFromSession($from);
 
 		//Если отдал админ сообщение то использум его контроллер
-		if($this->checkCurrentUserRole($userId, 'admin')){
+		if ($this->checkCurrentUserRole($userId, 'admin')) {
 
 			//Валидируем все переданное дело
-			$valid = \Validator::make(json_decode($msg, TRUE),[
+			$valid = \Validator::make(json_decode($msg, TRUE), [
 				'message' => 'sometimes',
-				'complete'=> 'integer|sometimes',
+				'complete' => 'integer|sometimes',
 				'tikets_id' => 'integer|sometimes'
 			]);
 
 			//Если всё хорошо то создаем запись
 			if (!$valid->fails()) {
 				$backmess = AdminTiketsFacades::store($msg, $userId);
-			}else{
+			} else {
 				$backmess = null;
 			}
 
-		}else{
+		} else {
 
 			//Валидируем все переданное дело
-			$valid = \Validator::make(json_decode($msg, TRUE),[
-				'message'   => 'required',
-				'complete'  => 'integer|sometimes',
+			$valid = \Validator::make(json_decode($msg, TRUE), [
+				'message' => 'required',
+				'complete' => 'integer|sometimes',
 				'tikets_id' => 'integer|sometimes'
 			]);
 
@@ -118,21 +108,20 @@ class ChatSocket extends BaseSocket {
 				//Проверяем беседа ли это
 				$checkIntreview = json_decode($msg, TRUE);
 
-				if(isset($checkIntreview['interview'])){
+				if (isset($checkIntreview['interview'])) {
 
 					//Добавляем тикет в беседу
 					$addTiket = new TiketsController();
 					$backmess = $addTiket->store($msg, $userId);
-				}else{
+				} else {
 					//Отдаем на запись в тикет
 					$backmess = TiketsController::storeBySocket($msg, $userId);
 				}
-			}else{
+			} else {
 				$backmess = '{"message":"Пустое сообщение"}';
 			}
 
 		}
-
 
 
 		$numRecv = count($this->clients) - 1;
@@ -143,9 +132,10 @@ class ChatSocket extends BaseSocket {
 		foreach ($this->clients as $client) {
 
 			// Отправляем сообщение только тому кто его послал или админу или кто тому кто создал главный тикет
-			if(($this->getUserFromSession($client) == $backmess->user_id) ||
-				($this->checkCurrentUserRole($this->getUserFromSession($client),'admin')) ||
-				($this->getUserFromSession($client) == $this->getAutorMess($backmess->tikets_id))){
+			if (($this->getUserFromSession($client) == $backmess->user_id) ||
+				($this->checkCurrentUserRole($this->getUserFromSession($client), 'admin')) ||
+				($this->getUserFromSession($client) == $this->getAutorMess($backmess->tikets_id))
+			) {
 
 				$client->send(json_encode($backmess));
 
@@ -154,6 +144,22 @@ class ChatSocket extends BaseSocket {
 
 	}
 
+	public function checkCurrentUserRole($userId, $role)
+	{
+
+		//Проверяем роль текущего пользователя
+		return User::findOrFail($userId)->inRole($role);
+
+	}
+
+	public function getAutorMess($tikets_id)
+	{
+
+		$tik = Tiket::findOrFail($tikets_id);
+
+		//Вернем id автора
+		return $tik->user_id;
+	}
 
 	public function onClose(ConnectionInterface $conn) {
 		// The connection is closed, remove it, as we can no longer send it messages

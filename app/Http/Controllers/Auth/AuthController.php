@@ -66,14 +66,12 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'server' => (string)Config::get('vesta.primary'),
-            'role' => serialize(['user']),
         ]);
 
         $user->nickname = $data['nickname'];
         $user->first_name = $data['firstname'];
         $user->last_name = $data['lastname'];
         $user->server = (string)Config::get('vesta.primary');
-        $user->role = serialize(['user']);
         $user->encrypt_password = Crypt::encrypt($data['password']);
 
         event(new Registration($user));
