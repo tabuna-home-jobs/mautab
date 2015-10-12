@@ -2,12 +2,8 @@
 
 namespace Mautab\Manager\Access;
 
-use Mautab\Manager\Access\Permissions\PermissibleTrait;
-
 trait RoleAccess
 {
-
-    use PermissibleTrait;
 
     /**
      * {@inheritDoc}
@@ -81,31 +77,4 @@ trait RoleAccess
         return $this->users;
     }
 
-    /**
-     * Dynamically pass missing methods to the permissions.
-     *
-     * @param  string $method
-     * @param  array $parameters
-     * @return mixed
-     */
-    public function __call($method, $parameters)
-    {
-        $methods = ['hasAccess', 'hasAnyAccess'];
-
-        if (in_array($method, $methods)) {
-            $permissions = $this->getPermissionsInstance();
-
-            return call_user_func_array([$permissions, $method], $parameters);
-        }
-
-        return parent::__call($method, $parameters);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function createPermissions()
-    {
-        return new static::$permissionsClass($this->permissions);
-    }
 }
