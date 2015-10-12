@@ -61,7 +61,7 @@
 
     <div class="col-md-2 col-sm-4 col-xs-6">
 
-        @if(Auth::user()->inRole('admin'))
+        @if(Auth::user()->inRole('Admin'))
             <a href="{{route('admin..index')}}"
                class="{{Active::route('admin.*')}}">
                 <span class="fa fa-server text-success"></span>
