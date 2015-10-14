@@ -13,6 +13,8 @@
             <div class="panel-heading">
                 Тикеты
             </div>
+
+            <div class="panel-body">
             <ul class="nav nav-tabs nav-admin-tabs" role="tablist">
                 <li role="presentation" class="active">
                     <a href="#open" aria-controls="open" role="tab" data-toggle="tab">Открытые вопросы</a>
@@ -113,6 +115,7 @@
                         </table>
                     </div>
                 </div>
+            </div>
                 {!! $tiketList->render() !!}
             </div>
         </div>

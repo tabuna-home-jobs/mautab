@@ -51,7 +51,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected static $rolesModel = Roles::class;
 
 
-    protected static $postModel = Post::class;
+    //protected static $postModel = Post::class;
 
     /**
      * The database table used by the model.

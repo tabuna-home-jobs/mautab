@@ -13,8 +13,6 @@ return [
         ],
 
     ],
-
-
     //По умолчанию
     'primary' => 'testVDS',
 

@@ -14,7 +14,6 @@ return [
     */
 
     'default' => env('BROADCAST_DRIVER', 'pusher'),
-
     /*
     |--------------------------------------------------------------------------
     | Broadcast Connections
@@ -37,12 +36,10 @@ return [
                 //
             ],
         ],
-
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
         ],
-
         'log' => [
             'driver' => 'log',
         ],

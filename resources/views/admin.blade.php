@@ -192,6 +192,7 @@
             </ul>
             <!-- / link and dropdown -->
 
+
             <!-- search form -->
             <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo"
                   data-target=".navbar-collapse" role="search" ng-controller="TypeaheadDemoCtrl">
@@ -211,6 +212,49 @@
 
             <!-- nabar right -->
             <ul class="nav navbar-nav navbar-right">
+
+
+                <li class="#">
+                    <a href="#">
+                        <span class="hidden-sm hidden-md"><i class="fa fa-briefcase icon"></i></span>
+                        <span class="visible-xs-inline">Категории</span>
+                    </a>
+                </li>
+
+
+                <li class="#">
+                    <a href="#">
+                        <span class="hidden-sm hidden-md"><i class="fa fa-book icon"></i></span>
+                        <span class="visible-xs-inline">Языки в заказе</span>
+                    </a>
+                </li>
+
+
+                <li class="#">
+                    <a href="#">
+                        <span class="hidden-sm hidden-md"><i class="fa fa-users icon"></i></span>
+                        <span class="visible-xs-inline">Пользователи</span>
+                    </a>
+                </li>
+
+
+                <li class="#">
+                    <a href="#">
+                        <span class="hidden-sm hidden-md"><i class="fa fa-user icon"></i></span>
+                        <span class="visible-xs-inline">Редакторы</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="/auth/logout">
+                        <span class="hidden-sm hidden-md"><i class="fa fa-sign-out"></i> </span>
+                        <span class="visible-xs-inline">Выйти</span>
+
+                    </a>
+                </li>
+
+
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                         <i class="fa fa-send fa-fw"></i>
@@ -225,9 +269,6 @@
                             </div>
                             <div class="list-group">
                                 <a href="" class="media list-group-item">
-                    <span class="pull-left thumb-sm">
-                      <img src="/images/testimonials/testimonial8.jpg" alt="..." class="img-circle">
-                    </span>
                     <span class="media-body block m-b-none">
                       Use awesome animate.css<br>
                       <small class="text-muted">10 minutes ago</small>
@@ -247,47 +288,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- / dropdown -->
-                </li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle clear">
-              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="/images/testimonials/testimonial8.jpg" alt="...">
-                <i class="on md b-white bottom"></i>
-              </span>
-                        <span class="hidden-sm hidden-md">{{Auth::user()->first_name}}</span> <b class="caret"></b>
-                    </a>
-                    <!-- dropdown -->
-                    <ul class="dropdown-menu animated fadeInRight w">
-                        <li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
-                            <div>
-                                <p>300mb of 500mb used</p>
-                            </div>
-                            <div class="progress progress-xs m-b-none dker">
-                                <div class="progress-bar progress-bar-info" data-toggle="tooltip"
-                                     data-original-title="50%" style="width: 50%"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span class="badge bg-danger pull-right">30%</span>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a ui-sref="app.page.profile">Profile</a>
-                        </li>
-                        <li>
-                            <a ui-sref="app.docs">
-                                <span class="label bg-info pull-right">new</span>
-                                Help
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="/auth/logout">Выйти</a>
-                        </li>
-                    </ul>
                     <!-- / dropdown -->
                 </li>
             </ul>
@@ -345,16 +345,16 @@
                         </li>
 
 
-                        <li class="{{Active::route('admin.pages.*')}}">
-                            <a href="{{route('admin.pages.index')}}">
+                        <li class="#">
+                            <a href="#">
                                 <i class="fa fa-folder-open"></i>
                                 <span>Страницы</span>
                             </a>
                         </li>
 
 
-                        <li class="{{Active::route('admin.news.*')}}">
-                            <a href="{{route('admin.news.index')}}">
+                        <li class="#">
+                            <a href="#">
                                 <i class="fa fa-newspaper-o"></i>
                                 <span>Новости</span>
                             </a>
