@@ -54,7 +54,7 @@ trait ResponseDataLoader
         if ($valueName && isset($this->responseData[$valueName])) {
             return $this->responseData[$valueName];
         }
-        return NULL;
+        return null;
     }
 
 }

@@ -67,8 +67,9 @@ class ServiceForever extends Command
         //процес запущен если возвратиться true
         if ($error == 0) {
             foreach ($out as $value) {
-                if (strpos($value, $process) !== false)
+                if (strpos($value, $process) !== false) {
                     $result = true;
+                }
             }
         }
 

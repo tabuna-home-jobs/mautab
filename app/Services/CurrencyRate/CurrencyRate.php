@@ -57,7 +57,7 @@ class CurrencyRate
 
         $xml = simplexml_load_string($query);
         $json = json_encode($xml);
-        $array = json_decode($json, TRUE);
+        $array = json_decode($json, true);
 
         Cache::put('ValCurs-' . $this->VAL_NM_RQ, $array, Carbon::now()->addMinutes(60));
 

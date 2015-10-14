@@ -2,11 +2,11 @@
 
 use Auth;
 
-
 trait VestaFileSystem
 {
 
     protected $delimeter = '|';
+
     protected $info_positions = [
         'TYPE' => 0,
         'PERMISSIONS' => 1,

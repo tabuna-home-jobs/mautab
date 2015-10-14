@@ -11,7 +11,7 @@ trait VestaWeb
         $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-web-domain', Auth::User()->nickname, $domain, 'json');
 
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
 
         $ftpU = strpos($data[$domain]['FTP_USER'], ":");
         $ftpPath = strpos($data[$domain]['FTP_PATH'], ":");
@@ -33,7 +33,7 @@ trait VestaWeb
     {
         $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-web-domains', Auth::User()->nickname, 'json');
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
         return $data;
     }
 
@@ -78,7 +78,8 @@ trait VestaWeb
     public function addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path)
     {
 
-        return $this->sendQuery('v-add-web-domain-ftp', Auth::User()->nickname, $domain, $ftp_username, $ftp_password, $ftp_path);
+        return $this->sendQuery('v-add-web-domain-ftp', Auth::User()->nickname, $domain, $ftp_username, $ftp_password,
+            $ftp_path);
     }
 
     // Add proxy support
@@ -109,13 +110,15 @@ trait VestaWeb
 
     public function changeWebDomain($domain, $v_ftp_username, $v_ftp_path)
     {
-        return $this->sendQuery('v-change-web-domain-ftp-path', Auth::User()->nickname, $domain, $v_ftp_username, $v_ftp_path);
+        return $this->sendQuery('v-change-web-domain-ftp-path', Auth::User()->nickname, $domain, $v_ftp_username,
+            $v_ftp_path);
     }
 
     public function changeFtpPassword($domain, $v_ftp_username, $v_password)
     {
 
-        return $this->sendQuery('v-change-web-domain-ftp-password', Auth::User()->nickname, $domain, $v_ftp_username, $v_password);
+        return $this->sendQuery('v-change-web-domain-ftp-password', Auth::User()->nickname, $domain, $v_ftp_username,
+            $v_password);
 
     }
 

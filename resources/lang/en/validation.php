@@ -73,7 +73,6 @@ return [
     "unique" => "The :attribute has already been taken.",
     "url" => "The :attribute format is invalid.",
     "timezone" => "The :attribute must be a valid zone.",
-
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -90,7 +89,6 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes

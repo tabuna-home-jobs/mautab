@@ -15,14 +15,14 @@ trait VestaService
     public function userSearch($query)
     {
         $this->vst_returncode = 'no';
-        return json_decode($this->sendQuery('v-search-user-object', Auth::User()->nickname, $query, 'json'), TRUE);
+        return json_decode($this->sendQuery('v-search-user-object', Auth::User()->nickname, $query, 'json'), true);
     }
 
     public function listStats($server)
     {
         $this->vst_returncode = 'no';
         $this->SelectServer = $server;
-        $data = json_decode($this->sendQuery('v-list-users-stats', 'json'), TRUE);
+        $data = json_decode($this->sendQuery('v-list-users-stats', 'json'), true);
         return array_reverse($data, true);
     }
 
@@ -36,14 +36,14 @@ trait VestaService
     {
         $this->vst_returncode = 'no';
         $this->SelectServer = $server;
-        return json_decode($this->sendQuery('v-list-sys-rrd', 'json'), TRUE);
+        return json_decode($this->sendQuery('v-list-sys-rrd', 'json'), true);
     }
 
     public function listSysInfo($server)
     {
         $this->vst_returncode = 'no';
         $this->SelectServer = $server;
-        return json_decode($this->sendQuery('v-list-sys-info', 'json'), TRUE);
+        return json_decode($this->sendQuery('v-list-sys-info', 'json'), true);
     }
 
 
@@ -51,7 +51,7 @@ trait VestaService
     {
         $this->vst_returncode = 'no';
         $this->SelectServer = $server;
-        return json_decode($this->sendQuery('v-list-sys-services', 'json'), TRUE);
+        return json_decode($this->sendQuery('v-list-sys-services', 'json'), true);
     }
 
     public function restartService($server, $service)
@@ -77,14 +77,14 @@ trait VestaService
     {
         $this->vst_returncode = 'no';
         $this->SelectServer = $server;
-        return json_decode($this->sendQuery('v-list-sys-ips', 'json'), TRUE);
+        return json_decode($this->sendQuery('v-list-sys-ips', 'json'), true);
     }
 
     public function getIp($server, $ip)
     {
         $this->vst_returncode = 'no';
         $this->SelectServer = $server;
-        return json_decode($this->sendQuery('v-list-sys-ip', $ip, 'json'), TRUE);
+        return json_decode($this->sendQuery('v-list-sys-ip', $ip, 'json'), true);
     }
 
 

@@ -17,16 +17,15 @@ class TiketRequest extends Request
 
     /**
      * Get the validation rules that apply to the request.
-
      * @return array
      */
     public function rules()
     {
         dd('stop rules');
         return [
-                'id' => 'sometimes|required|integer',
-                'title' => 'sometimes|required|max:255',
-                'message' => 'required'
+            'id' => 'sometimes|required|integer',
+            'title' => 'sometimes|required|max:255',
+            'message' => 'required'
         ];
     }
 

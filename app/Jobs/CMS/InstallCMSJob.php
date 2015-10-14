@@ -95,8 +95,9 @@ class InstallCMSJob extends Job implements SelfHandling
             $message->to($this->user->email)->cc($this->user->email);
         });
 
-        if ($this->sshReplace == true)
+        if ($this->sshReplace == true) {
             Vesta::changeShell('nologin');
+        }
 
 
     }
@@ -107,8 +108,6 @@ class InstallCMSJob extends Job implements SelfHandling
             $message->to('bliz48rus@gmail.com')->cc('bliz48rus@gmail.com');
         });
     }
-
-
 
 
     public function Joomla()
@@ -164,9 +163,6 @@ class InstallCMSJob extends Job implements SelfHandling
             'rm -rf install-master',
         ]);
     }
-
-
-
 
 
 }

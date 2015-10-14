@@ -23,8 +23,9 @@ class Whois
         ) {
             $this->subDomain = $matches[1];
             $this->TLDs = $matches[2];
-        } else
+        } else {
             throw new \InvalidArgumentException("Invalid $domain syntax");
+        }
         // setup whois servers array from json file
         $this->servers = json_decode(file_get_contents(__DIR__ . '/whois.servers.json'), true);
     }

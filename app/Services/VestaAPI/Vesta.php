@@ -21,7 +21,6 @@ class Vesta
      */
     public $vst_keyAPI;
 
-
     /**
      * @var
      */
@@ -75,8 +74,18 @@ class Vesta
      * @throws VestaExceptions
      */
 
-    public function sendQuery($cmd, $arg1 = NULL, $arg2 = NULL, $arg3 = NULL, $arg4 = NULL, $arg5 = NULL, $arg6 = NULL, $arg7 = NULL, $arg8 = NULL, $arg9 = NULL)
-    {
+    public function sendQuery(
+        $cmd,
+        $arg1 = null,
+        $arg2 = null,
+        $arg3 = null,
+        $arg4 = null,
+        $arg5 = null,
+        $arg6 = null,
+        $arg7 = null,
+        $arg8 = null,
+        $arg9 = null
+    ) {
 
         $postvars = [
             'hash' => $this->vst_keyAPI,
@@ -106,10 +115,11 @@ class Vesta
             ->getContents();
 
 
-        if ($this->vst_returncode == 'yes' && $query != 0)
+        if ($this->vst_returncode == 'yes' && $query != 0) {
             throw new VestaExceptions($query);
-        else
+        } else {
             return $query;
+        }
 
     }
 

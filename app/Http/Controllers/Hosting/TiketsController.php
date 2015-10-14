@@ -73,7 +73,8 @@ class TiketsController extends Controller
      */
     public function index()
     {
-        $Tikets = User::find(Auth::User()->id)->tiket()->where('tikets_id', 0)->orderBy('id', 'desc')->simplePaginate(15);
+        $Tikets = User::find(Auth::User()->id)->tiket()->where('tikets_id', 0)->orderBy('id',
+            'desc')->simplePaginate(15);
 
         return view('user/tikets/index', ['Tikets' => $Tikets]);
     }
@@ -82,7 +83,7 @@ class TiketsController extends Controller
 
     public function store($msg, $userId)
     {
-        $msg = json_decode($msg, TRUE);
+        $msg = json_decode($msg, true);
 
 
         //Берем юзера
@@ -97,7 +98,7 @@ class TiketsController extends Controller
 
 
         $Tikets = DB::table('tikets')
-	        ->select('*', 'tikets.id as tiketid')
+            ->select('*', 'tikets.id as tiketid')
             ->leftJoin('users', 'users.id', '=', 'tikets.user_id')
             ->where('tikets.tikets_id', "=", $msg['tikets_id'])
             ->orderBy('tikets.updated_at', 'desc')
@@ -110,11 +111,13 @@ class TiketsController extends Controller
 
     public function show(Tiket $tiket)
     {
-	    $currentTiket = $tiket->with(['subtiket' =>function($query){
+        $currentTiket = $tiket->with([
+            'subtiket' => function ($query) {
 
-		    $query->orderBy('id', 'desc');
+                $query->orderBy('id', 'desc');
 
-	    }])->findOrFail($tiket->id);
+            }
+        ])->findOrFail($tiket->id);
 
 
         return view('user/tikets/viewer', ['tiket' => $currentTiket]);

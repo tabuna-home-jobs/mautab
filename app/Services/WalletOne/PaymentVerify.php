@@ -103,22 +103,24 @@ class PaymentVerify
      * Если это поправят - отпишите мне и уберите этот комментарий коммитом, буду признателен.
      *
      */
-    public function checkSignature($signatureMethod = NULL, $secret = NULL, $encoding = 'UTF-8')
+    public function checkSignature($signatureMethod = null, $secret = null, $encoding = 'UTF-8')
     {
 
         if (is_null($signatureMethod)) {
-            return TRUE;
+            return true;
         }
 
         if (($signatureMethod == 'md5' OR $signatureMethod == 'sha1') AND !is_null($secret)) {
 
             $fields = $_POST;
             if (!is_array($fields) or !isset($fields) or is_null($fields)) {
-                return FALSE;
+                return false;
             }
 
             foreach ($fields as $name => $value) {
-                if ($name != "WMI_SIGNATURE") $params[$name] = $value;
+                if ($name != "WMI_SIGNATURE") {
+                    $params[$name] = $value;
+                }
             }
 
             uksort($params, "strcasecmp");
@@ -145,10 +147,10 @@ class PaymentVerify
             }
 
             if ($signature == $fields["WMI_SIGNATURE"]) {
-                return TRUE;
+                return true;
             }
         }
-        return FALSE;
+        return false;
     }
 
 

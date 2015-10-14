@@ -13,7 +13,7 @@ class GuzzleExceptions extends Exception
                 $return = redirect()->back()->withErrors([$e->message]);
                 break;
             default:
-                $return = FALSE;
+                $return = false;
         }
         return $return;
     }

@@ -11,7 +11,7 @@ trait VestaDNS
     {
         $this->vst_returncode = 'no';
         $listDns = $this->sendQuery('v-list-dns-domains', Auth::User()->nickname, 'json');
-        $data = json_decode($listDns, TRUE);
+        $data = json_decode($listDns, true);
         return $data;
     }
 
@@ -20,7 +20,7 @@ trait VestaDNS
     {
         $this->vst_returncode = 'no';
         $listDNS = $this->sendQuery('v-list-dns-domain', Auth::User()->nickname, $dns, 'json');
-        $data = json_decode($listDNS, TRUE);
+        $data = json_decode($listDNS, true);
         return $data;
     }
 
@@ -39,9 +39,10 @@ trait VestaDNS
 
 
     //Add DNS domain Для добовления домена!
-    public function addDNSDomain($domain, $v_ip, $v_ns1, $v_ns2, $v_ns3 = NULL, $v_ns4 = NULL)
+    public function addDNSDomain($domain, $v_ip, $v_ns1, $v_ns2, $v_ns3 = null, $v_ns4 = null)
     {
-        return $this->sendQuery('v-add-dns-domain', Auth::User()->nickname, $domain, $v_ip, $v_ns1, $v_ns2, $v_ns3, $v_ns4, 'no');
+        return $this->sendQuery('v-add-dns-domain', Auth::User()->nickname, $domain, $v_ip, $v_ns1, $v_ns2, $v_ns3,
+            $v_ns4, 'no');
     }
 
     // Set expiriation date
@@ -62,14 +63,15 @@ trait VestaDNS
     {
         $this->vst_returncode = 'no';
         $data = $this->sendQuery('v-list-dns-records', Auth::User()->nickname, $domain, 'json');
-        $data = json_decode($data, TRUE);
+        $data = json_decode($data, true);
         return $data;
     }
 
 
     public function changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority)
     {
-        return $this->sendQuery('v-change-dns-record', Auth::User()->nickname, $v_domain, $v_record_id, $v_val, $v_priority);
+        return $this->sendQuery('v-change-dns-record', Auth::User()->nickname, $v_domain, $v_record_id, $v_val,
+            $v_priority);
     }
 
 

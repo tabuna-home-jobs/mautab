@@ -183,9 +183,6 @@ label, strong {
     }
 }
 
-
-
-
 .menuapp a:hover > h4 > .badge-menu, .menuapp a.active > h4 > .badge-menu {
     color: #fff;
     background: #00afec;

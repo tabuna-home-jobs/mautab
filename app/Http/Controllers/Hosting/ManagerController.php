@@ -130,10 +130,11 @@ class ManagerController extends Controller
     public function destroy(DeleteFileManager $request)
     {
 
-        if ($request->type == "d")
+        if ($request->type == "d") {
             Vesta::deleteDir(Session::get('Path', '') . $request->name);
-        else
+        } else {
             Vesta::deleteFile(Session::get('Path', '') . $request->name);
+        }
 
         Flash::success('Вы успешно удалили файл.');
         return redirect()->route('manager.index', [

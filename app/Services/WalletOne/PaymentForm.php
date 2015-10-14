@@ -99,7 +99,7 @@ class PaymentForm
      *
      * @return $this
      */
-    public function addCustomerValue($valueName, $valueData = NULL)
+    public function addCustomerValue($valueName, $valueData = null)
     {
         if (is_array($valueName)) {
             $this->addCustomerValues($valueName);
@@ -160,7 +160,7 @@ class PaymentForm
      */
     public function enableFormAutoSubmit()
     {
-        $this->formAutoSubmit = TRUE;
+        $this->formAutoSubmit = true;
         return $this;
     }
 
@@ -169,7 +169,7 @@ class PaymentForm
      */
     public function disableFormAutoSubmit()
     {
-        $this->formAutoSubmit = FALSE;
+        $this->formAutoSubmit = false;
         return $this;
     }
 
@@ -179,21 +179,21 @@ class PaymentForm
     public function validateData()
     {
         if (preg_match('/^\d{10,16}$/iu', $this->getSellerPurse()) !== 1) {
-            return FALSE;
+            return false;
         }
         if ($this->getPaymentAmount() <= 0) {
-            return FALSE;
+            return false;
         }
         if (!$this->getComment()) {
-            return FALSE;
+            return false;
         }
         if (!$this->getCurrencyCode()) {
-            return FALSE;
+            return false;
         }
         if ($this->getSignatureMethod() and !$this->getSecretKey()) {
-            return FALSE;
+            return false;
         }
-        return TRUE;
+        return true;
     }
 
     /**
@@ -317,7 +317,7 @@ class PaymentForm
      */
     public function buildFormView($encoding = 'UTF-8')
     {
-        $formTagId = (!is_null($this->getFormTagId())) ? "id=\"{$this->getFormTagId()}\"" : NULL;
+        $formTagId = (!is_null($this->getFormTagId())) ? "id=\"{$this->getFormTagId()}\"" : null;
         $fields = array();
         $fields['WMI_MERCHANT_ID'] = $this->getSellerPurse();
         $fields['WMI_PAYMENT_AMOUNT'] = $this->getPaymentAmount();
@@ -468,7 +468,8 @@ class PaymentForm
     public function getTransactionId()
     {
         if (is_null($this->transactionId)) {
-            $this->transactionId = 'W1-' . $this->paymentId . '-' . date('ymdHis') . str_replace('.', '', (float)$this->getPaymentAmount()) . rand(100, 999);
+            $this->transactionId = 'W1-' . $this->paymentId . '-' . date('ymdHis') . str_replace('.', '',
+                    (float)$this->getPaymentAmount()) . rand(100, 999);
         }
         return $this->transactionId;
     }

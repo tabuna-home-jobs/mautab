@@ -11,8 +11,9 @@ trait VestaUser
 
         //Добовление пользователя в систему
         $Vesta = $this->sendQuery('v-add-user', $username, $password, $email, $package, $fist_name, $last_name);
-        if ($Vesta != 0)
+        if ($Vesta != 0) {
             return $Vesta;
+        }
 
         //Локализация панели для пользователя
         //$Vesta = $this->sendQuery('v-change-user-language', $username, 'ru');
@@ -38,7 +39,7 @@ trait VestaUser
     {
         $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-user', Auth::User()->nickname, 'json');
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
         return $data;
     }
 
@@ -47,7 +48,7 @@ trait VestaUser
     {
         $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-user-log', Auth::User()->nickname, 'json');
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
         return $data;
     }
 
@@ -57,7 +58,7 @@ trait VestaUser
     {
         $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-user-backups', Auth::User()->nickname, 'json');
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
         return $data;
     }
 
@@ -74,7 +75,7 @@ trait VestaUser
     {
         $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-user-backup', Auth::User()->nickname, $backup, 'json');
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
         return $data;
     }
 
@@ -89,15 +90,17 @@ trait VestaUser
         $udir = 'no';
         extract($arg, EXTR_OVERWRITE);
 
-        return $this->sendQuery('v-schedule-user-restore', Auth::User()->nickname, $backup, $web, $dns, $mail, $db, $cron, $udir);
+        return $this->sendQuery('v-schedule-user-restore', Auth::User()->nickname, $backup, $web, $dns, $mail, $db,
+            $cron, $udir);
     }
 
 
     public function suspendUser($username)
     {
         $Vesta = $this->sendQuery('v-suspend-user', $username, 'no');
-        if ($Vesta != 0)
+        if ($Vesta != 0) {
             return $Vesta;
+        }
     }
 
 
@@ -110,7 +113,7 @@ trait VestaUser
     {
         $this->vst_returncode = 'no';
         $answer = $this->sendQuery('v-list-user-packages', 'json');
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
         return $data;
     }
 
@@ -133,7 +136,7 @@ trait VestaUser
         $this->vst_returncode = 'no';
         $this->server = $user->server;
         $answer = $this->sendQuery('v-list-user', $user->nickname, 'json');
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
         return $data;
     }
 
@@ -143,7 +146,7 @@ trait VestaUser
         $this->vst_returncode = 'no';
         $this->server = $user->server;
         $answer = $this->sendQuery('v-list-user-packages', 'json');
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
         return $data;
     }
 
@@ -152,10 +155,9 @@ trait VestaUser
         $this->vst_returncode = 'no';
         $this->server = $user->server;
         $answer = $this->sendQuery('v-list-sys-shells', 'json');
-        $data = json_decode($answer, TRUE);
+        $data = json_decode($answer, true);
         return $data;
     }
-
 
 
 }

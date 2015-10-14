@@ -9,7 +9,7 @@ trait VestaBD
     public function listBD()
     {
         $this->vst_returncode = 'no';
-        return json_decode($this->sendQuery('v-list-databases', Auth::User()->nickname, 'json'), TRUE);
+        return json_decode($this->sendQuery('v-list-databases', Auth::User()->nickname, 'json'), true);
     }
 
     //Изменить имя пользователя
@@ -35,7 +35,7 @@ trait VestaBD
     {
         $this->vst_returncode = 'no';
         $listBd = $this->sendQuery('v-list-database', Auth::User()->nickname, $database, 'json');
-        $data = json_decode($listBd, TRUE);
+        $data = json_decode($listBd, true);
         return $data;
     }
 
@@ -43,7 +43,8 @@ trait VestaBD
     //Добавить базу данных
     public function  addDateBase($v_database, $v_dbuser, $v_password, $v_type = "mysql", $v_charset)
     {
-        return $this->sendQuery('v-add-database', Auth::User()->nickname, $v_database, $v_dbuser, $v_password, $v_type, 'localhost', $v_charset);
+        return $this->sendQuery('v-add-database', Auth::User()->nickname, $v_database, $v_dbuser, $v_password, $v_type,
+            'localhost', $v_charset);
     }
 
 

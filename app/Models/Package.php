@@ -19,46 +19,46 @@ use Illuminate\Database\Eloquent\Model;
 class Package extends Model
 {
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'packages';
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'packages';
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = [
-		'name',
-		'price',
-		'WebDomains',
-		'WebAliases',
-		'DNSDomains',
-		'DNSAliases',
-		'DNSRecords',
-		'MailDomains',
-		'MailAccounts',
-		'Databases',
-		'CronJobs',
-		'Backups',
-		'Quota',
-		'Bandwidth',
-		'SSHAccess',
-		'Recommended',
-		'Hidden'
-	];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'price',
+        'WebDomains',
+        'WebAliases',
+        'DNSDomains',
+        'DNSAliases',
+        'DNSRecords',
+        'MailDomains',
+        'MailAccounts',
+        'Databases',
+        'CronJobs',
+        'Backups',
+        'Quota',
+        'Bandwidth',
+        'SSHAccess',
+        'Recommended',
+        'Hidden'
+    ];
 
 
-	protected $casts = [
-		'SSHAccess' => 'boolean',
-	];
+    protected $casts = [
+        'SSHAccess' => 'boolean',
+    ];
 
-	public function getUsers()
-	{
-		return $this->hasMany(User::class);
-	}
+    public function getUsers()
+    {
+        return $this->hasMany(User::class);
+    }
 
 }

@@ -17,9 +17,7 @@ class UserInfoComposer
 
     /**
      * Create a new profile composer.
-     *
-     * @param  UserRepository $users
-     * @return void
+     * @param Guard $user
      */
     public function __construct(Guard $user)
     {

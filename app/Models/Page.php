@@ -28,20 +28,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Page extends Model
 {
 
-	use SoftDeletes;
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'pages';
+    use SoftDeletes;
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'pages';
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = ['title', 'name', 'content', 'tag', 'descript', 'slug', 'template'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['title', 'name', 'content', 'tag', 'descript', 'slug', 'template'];
 
 
 }

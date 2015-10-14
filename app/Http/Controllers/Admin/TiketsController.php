@@ -42,12 +42,12 @@ class TiketsController extends Controller
     public function store($msg, $userId)
     {
 
-        $msg = json_decode($msg, TRUE);
+        $msg = json_decode($msg, true);
 
         //Если админ шлёт пустое сообщение (обычно открыл или закрыл беседу)
-        if((strlen($msg['message']) <= 1) && ($msg['complete'] == 1)){
+        if ((strlen($msg['message']) <= 1) && ($msg['complete'] == 1)) {
             $msg['message'] = 'Закрыл беседу';
-        }elseif((strlen($msg['message']) <= 1) && ($msg['complete'] == 0)){
+        } elseif ((strlen($msg['message']) <= 1) && ($msg['complete'] == 0)) {
             $msg['message'] = 'Открыл беседу';
         }
 
@@ -65,8 +65,8 @@ class TiketsController extends Controller
             DB::table('tikets')
                 ->where('id', $msg['tikets_id'])
                 ->update(['complete' => $msg['complete']]);
-        //Если админ открыл вновь тему то обновим тикеты на ноль
-        }elseif($msg['complete'] == 0){
+            //Если админ открыл вновь тему то обновим тикеты на ноль
+        } elseif ($msg['complete'] == 0) {
 
             DB::table('tikets')
                 ->where('id', $msg['tikets_id'])
@@ -93,11 +93,13 @@ class TiketsController extends Controller
     public function show(Tiket $tiket)
     {
 
-	    $currentTiket = $tiket->with(['subtiket' =>function($query){
+        $currentTiket = $tiket->with([
+            'subtiket' => function ($query) {
 
-            $query->orderBy('id', 'desc');
+                $query->orderBy('id', 'desc');
 
-        }])->findOrFail($tiket->id);
+            }
+        ])->findOrFail($tiket->id);
 
 
         return view('admin/tikets/viewer', ['tiket' => $currentTiket]);

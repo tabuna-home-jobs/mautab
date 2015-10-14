@@ -22,7 +22,7 @@ trait ResponseCustomerFields
                 return $this->responseData[$valueName];
             }
         }
-        return NULL;
+        return null;
     }
 
 }

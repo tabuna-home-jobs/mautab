@@ -86,7 +86,8 @@ class FtpController extends Controller
             if (empty($v_ftp_user_data['v_ftp_user']) && empty($v_ftp_user_data['v_ftp_password'])) {
                 continue;
             }
-            $v_ftp_user_data['v_ftp_user'] = preg_replace("/^" . Auth::User()->nickname . "_/i", "", $v_ftp_user_data['v_ftp_user']);
+            $v_ftp_user_data['v_ftp_user'] = preg_replace("/^" . Auth::User()->nickname . "_/i", "",
+                $v_ftp_user_data['v_ftp_user']);
 
             if ($v_ftp_user_data['is_new'] == 1) {
 

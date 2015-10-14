@@ -17,12 +17,13 @@ class ServerServiceController extends Controller
     public function index(Request $request)
     {
 
-        if ($request->action == 'start')
+        if ($request->action == 'start') {
             Vesta::startService($request->serverName, $request->service);
-        elseif ($request->action == 'stop')
+        } elseif ($request->action == 'stop') {
             Vesta::stopService($request->serverName, $request->service);
-        elseif ($request->action == 'restart')
+        } elseif ($request->action == 'restart') {
             Vesta::restartService($request->serverName, $request->service);
+        }
 
         return redirect()->back();
     }

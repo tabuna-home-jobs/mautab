@@ -41,10 +41,11 @@ class WhoIsController extends Controller
         $domain = parse_url($request->webdomain)['host'];
         $WhoIsDomain = new Whois($domain);
 
-        if ($WhoIsDomain->isAvailable())
+        if ($WhoIsDomain->isAvailable()) {
             $info = 'Домен не занят';
-        else
+        } else {
             $info = $WhoIsDomain->Info();
+        }
 
         return view('welcome.whois', [
             'domain' => $domain,

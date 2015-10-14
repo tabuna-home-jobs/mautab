@@ -43,14 +43,14 @@ class ChatServer extends Command
     {
         $this->info("Start server");
 
-	    $server = IoServer::factory(
-		    new HttpServer(
-			    new WsServer(
-				    new ChatSocket()
-			    )
-		    ),8990
-	    );
+        $server = IoServer::factory(
+            new HttpServer(
+                new WsServer(
+                    new ChatSocket()
+                )
+            ), 8990
+        );
 
-	    $server->run();
+        $server->run();
     }
 }

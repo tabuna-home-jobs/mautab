@@ -1,20 +1,25 @@
 <?php
 namespace Mautab\Services\Socket\Base;
 
-use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
+use Ratchet\MessageComponentInterface;
 
-class BaseSocket implements MessageComponentInterface {
+class BaseSocket implements MessageComponentInterface
+{
 
-	public function onOpen(ConnectionInterface $conn) {
-	}
+    public function onOpen(ConnectionInterface $conn)
+    {
+    }
 
-	public function onMessage(ConnectionInterface $from, $msg) {
-	}
+    public function onMessage(ConnectionInterface $from, $msg)
+    {
+    }
 
-	public function onClose(ConnectionInterface $conn) {
-	}
+    public function onClose(ConnectionInterface $conn)
+    {
+    }
 
-	public function onError(ConnectionInterface $conn, \Exception $e) {
-	}
+    public function onError(ConnectionInterface $conn, \Exception $e)
+    {
+    }
 }

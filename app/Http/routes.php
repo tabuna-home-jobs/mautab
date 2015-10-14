@@ -49,7 +49,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('serverstats', 'ServerStatsController');
     Route::resource('serverservice', 'ServerServiceController');
     Route::resource('serverip', 'ServerIPController');
-	Route::resource('tikets', 'TiketsController');
+    Route::resource('tikets', 'TiketsController');
     Route::resource('cms', 'CMSController');
     Route::resource('roles', 'RolesController');
 

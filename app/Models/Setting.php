@@ -18,6 +18,4 @@ class Options extends Model
     ];
 
 
-
-
 }
