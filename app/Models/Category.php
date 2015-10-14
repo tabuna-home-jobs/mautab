@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
 
+    protected static $categoryModel = Category::class;
     protected $table = 'category';
-
     protected $fillable = [
         'name',
         'slug',
@@ -33,7 +33,7 @@ class Category extends Model
      */
     public function sub()
     {
-        return $this->hasMany(Category::class);
+        return $this->hasMany(static::$categoryModel);
     }
 
     /**
@@ -42,19 +42,10 @@ class Category extends Model
      */
     public function parent()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(static::$categoryModel);
     }
 
 
-    public function getSub()
-    {
-
-    }
-
-    public function getParent()
-    {
-
-    }
 
 
 }

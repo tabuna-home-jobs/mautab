@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
 use Mautab\Manager\Access\UserAccess;
+use Mautab\Models\Post;
 
 /**
  * Mautab\Models\User
@@ -48,6 +49,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 
     protected static $rolesModel = Roles::class;
+
+
+    protected static $postModel = Post::class;
+
     /**
      * The database table used by the model.
      *

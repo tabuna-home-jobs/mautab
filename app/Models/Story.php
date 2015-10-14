@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Story extends Model
 {
+    protected static $seoModel = Seo::class;
+    protected static $postModel = Post::class;
     protected $table = 'story';
-
     protected $fillable = [
         'name',
         'content',
