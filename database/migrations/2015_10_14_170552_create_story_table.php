@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateOptionsTable extends Migration
+class CreateStoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,15 @@ class CreateOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::create('story', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('slug')->unique();
-            $table->text('value');
+            $table->string('name');
+            $table->text('content');
+            $table->text('image');
+            $table->integer('post_id');
+            $table->integer('lang_id');
+            $table->integer('seo_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -29,6 +31,6 @@ class CreateOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('settings');
+        Schema::drop('story');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTableNews extends Migration
+class CreateSeoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,11 @@ class CreateTableNews extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('seo', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('descriptions');
             $table->string('keywords');
-            $table->string('descript');
-            $table->text('content');
-            $table->text('preview');
-            $table->string('slug');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateTableNews extends Migration
      */
     public function down()
     {
-        Schema::drop('news');
+        Schema::drop('seo');
     }
 }

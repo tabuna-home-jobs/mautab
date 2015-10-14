@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class EditTableNews extends Migration
+class CreateCategoryPostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,11 @@ class EditTableNews extends Migration
      */
     public function up()
     {
-        Schema::table('news', function (Blueprint $table) {
-            $table->text('preview');
+        Schema::create('category_post', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('category_id');
+            $table->integer('post_id');
+            $table->timestamps();
         });
     }
 
@@ -24,8 +27,6 @@ class EditTableNews extends Migration
      */
     public function down()
     {
-        Schema::table('news', function (Blueprint $table) {
-            $table->dropColumn('preview');
-        });
+        Schema::drop('category_post');
     }
 }
