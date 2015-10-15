@@ -54,6 +54,9 @@ var jp_config = {
     userTiketView: ['/build/js/controller/user/tikets/viewer.js',
         '/bower_components/jquery-ui/jquery-ui.js'],
 
-    wizard: ['/build/js/controller/components/wizard.js']
+    wizard: ['/build/js/controller/components/wizard.js'],
+    dnsIndex: ['/build/js/controller/user/dns/index.js'],
+    ibdexBd: ['/build/js/controller/user/bd/index.js']
+
 
 };

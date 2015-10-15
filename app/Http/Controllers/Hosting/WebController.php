@@ -37,6 +37,7 @@ class WebController extends Controller
     {
 
 
+
         $checkDomain = preg_match('/^([0-9a-z]([0-9a-z\-])*[0-9a-z]\.)+[0-9a-z\-]{1,8}$/i', $request->v_domain);
 
 
@@ -95,10 +96,12 @@ class WebController extends Controller
                 Vesta::deleteWebDomainAlias($request->v_domain, $alias);
             }
 
+
+	        /*
             if ($request->v_proxy == 'on') {
                 $ext = str_replace(' ', '', $request->v_proxy_ext);
                 Vesta::addDomainProxy($request->v_domain, $ext);
-            }
+            }*/
 
             Flash::success('Вы успешно добавили Домен.');
             return redirect()->route('web.index');

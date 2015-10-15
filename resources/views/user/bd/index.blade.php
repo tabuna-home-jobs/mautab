@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" ui-jq="ibdexBd">
         <div class="panel-heading">{{Lang::get('menu.BD')}}</div>
         <div class="panel-body">
 
@@ -149,44 +149,13 @@
                                     <i class="fa fa-pencil-square-o block m-b-xs"></i>
                                     <span>Edit</span>
                                 </a>
-                                <a href="#" data-toggle="modal"
-                                   data-target="#Modal-{{$nameBd}}"
+                                <a href="#" onclick="delModal('{{$nameBd}}', '{{route('bd.destroy')}}');"
                                    class="col padder-v text-muted">
                                     <i class="fa fa-trash block m-b-xs"></i>
                                     <span>Delete</span>
                                 </a>
                             </div>
 
-                        </div>
-
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="Modal-{{$nameBd}}" tabindex="-1" role="dialog"
-                             aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close"><span
-                                                    aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Удалить {{$nameBd}} ?</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        Вы действительно хотите удалить {{$nameBd}}
-                                    </div>
-                                    <div class="modal-footer">
-                                        <form action="{{route('bd.destroy')}}" method="post">
-                                            <button type="button" class="btn btn-default"
-                                                    data-dismiss="modal">Нет
-                                            </button>
-                                            <button type="submit" class="btn btn-danger">Да</button>
-                                            <input type="hidden" name="v_database" value="{{$nameBd}}"/>
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
 
