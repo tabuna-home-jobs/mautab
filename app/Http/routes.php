@@ -52,6 +52,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('tikets', 'TiketsController');
     Route::resource('cms', 'CMSController');
     Route::resource('roles', 'RolesController');
+    Route::resource('settings', 'SettingsController');
 
 
     Route::controller('LoginAs', 'LoginAsController', [

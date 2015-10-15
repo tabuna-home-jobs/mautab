@@ -5,7 +5,7 @@ namespace Mautab\Models;
 use Illuminate\Database\Eloquent\Model;
 use Mautab\Manager\Setting\SettingTrait;
 
-class Options extends Model
+class Setting extends Model
 {
     use SettingTrait;
 

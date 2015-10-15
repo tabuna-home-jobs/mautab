@@ -230,18 +230,18 @@
                 </li>
 
 
-                <li class="#">
-                    <a href="#">
-                        <span class="hidden-sm hidden-md"><i class="fa fa-users icon"></i></span>
-                        <span class="visible-xs-inline">Пользователи</span>
+                <li class="{{Active::route('admin.roles.*')}}">
+                    <a href="{{route('admin.roles.index')}}">
+                        <span class="hidden-sm hidden-md"><i class="fa fa-lock"></i></span>
+                        <span class="visible-xs-inline">Роли</span>
                     </a>
                 </li>
 
 
-                <li class="#">
-                    <a href="#">
-                        <span class="hidden-sm hidden-md"><i class="fa fa-user icon"></i></span>
-                        <span class="visible-xs-inline">Редакторы</span>
+                <li class="{{Active::route('admin.settings.*')}}">
+                    <a href="{{route('admin.settings.index')}}">
+                        <span class="hidden-sm hidden-md"><i class="fa fa-cog icon"></i></span>
+                        <span class="visible-xs-inline">Настроки</span>
                     </a>
                 </li>
 
@@ -332,10 +332,10 @@
                         </li>
 
 
-                        <li class="{{Active::route('admin.roles.*')}}">
-                            <a href="{{route('admin.roles.index')}}">
-                                <i class="fa fa-lock"></i>
-                                <span>Роли</span>
+                        <li class="#">
+                            <a href="#">
+                                <i class="fa fa-folder-open"></i>
+                                <span>Страницы</span>
                             </a>
                         </li>
 
@@ -345,12 +345,6 @@
                         </li>
 
 
-                        <li class="#">
-                            <a href="#">
-                                <i class="fa fa-folder-open"></i>
-                                <span>Страницы</span>
-                            </a>
-                        </li>
 
 
                         <li class="#">
