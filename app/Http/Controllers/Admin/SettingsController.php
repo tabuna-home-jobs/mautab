@@ -31,20 +31,89 @@ class SettingsController extends Controller
      */
     public function create()
     {
-        return view('admin.settings.index', [
-            'Settings' => Setting::paginate(15)
+        return view('admin.settings.create', [
+            'Settings' => Setting::sortable()->select('name', 'slug', 'updated_at')->paginate(15)
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  SettingsRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(SettingsRequest $request)
     {
-        $data = $request->except('_token');
+        if (isset($request->action)) {
+            $action = $request->action;
+            $this->$action($request);
+        } else {
+            Setting::create($request->all());
+            Flash::success('Вы успешно создали параметры настройки.');
+        }
+
+        return redirect()->back();
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  Setting $setting
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Setting $setting)
+    {
+        dd($setting);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  Setting $setting
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Setting $setting)
+    {
+        return view('admin.settings.edit', [
+            'Setting' => $setting
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  Setting $setting
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Setting $setting)
+    {
+        $setting->fill($request->all())->save();
+        Flash::success('Вы успешно изменили настройку.');
+        return redirect()->route('admin.settings.create');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  Setting $setting
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Setting $setting)
+    {
+        $setting->delete();
+        Flash::success('Вы успешно удалили настройку.');
+        return redirect()->back();
+    }
+
+
+    /**
+     * Обработчик стандартного редактирования параметров
+     * @param SettingsRequest $request
+     */
+    protected function standard(SettingsRequest $request)
+    {
+        $data = $request->except('_token', 'action');
         foreach ($data as $key => $value) {
             Setting::firstOrCreate([
                 'slug' => $key,
@@ -56,53 +125,8 @@ class SettingsController extends Controller
                 ])
                 ->save();
         }
-
         Flash::success('Вы успешно изменили настройки.');
-        return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

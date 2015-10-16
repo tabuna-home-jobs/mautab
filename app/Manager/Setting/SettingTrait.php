@@ -14,6 +14,22 @@ trait SettingTrait
         return $this->where('name', $name)->first();
     }
 
+
+    /**
+     * Возвращаем значения настройки по slug
+     * @param $slug
+     * @return string
+     */
+    public function getValueSlug($slug)
+    {
+        $query = $this->where('slug', $slug)->first();
+        if (is_null($query))
+            return '';
+        else
+            return $query->value;
+    }
+
+
     /**
      * Берет настроку по Slug
      * @param $slug

@@ -205,6 +205,14 @@ return [
         'Flash' => Laracasts\Flash\Flash::class,
         'User' => \Mautab\Models\User::class,
         'SSH' => Collective\Remote\RemoteFacade::class,
+
+
+        /*
+         * Фасады платформы Mautab
+         */
+
+        'Settings' => \Mautab\Facades\SettingsFacades::class,
+
     ],
 
 ];
