@@ -54,6 +54,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('roles', 'RolesController');
     Route::resource('settings', 'SettingsController');
 
+    Route::resource('type', 'TypeController');
+
 
     Route::controller('LoginAs', 'LoginAsController', [
         'getLoginAs' => 'LoginAs',

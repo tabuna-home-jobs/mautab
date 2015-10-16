@@ -52,15 +52,6 @@
 
 
                     <div class="list-group-item">
-                        <select class="form-control no-border" name="package">
-                            <option value="0">Любительский</option>
-                            <option value="1">Профессиональный</option>
-                            <option value="2">Корпоративный</option>
-                        </select>
-                    </div>
-
-
-                    <div class="list-group-item">
                         <input class="form-control no-border" type="password" name="password"
                                placeholder="Пароль" required>
                     </div>

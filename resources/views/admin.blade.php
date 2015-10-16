@@ -166,29 +166,6 @@
                         </div>
                     </div>
                 </li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                        <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
-                        <span translate="header.navbar.new.NEW">New</span> <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#" translate="header.navbar.new.PROJECT">Projects</a></li>
-                        <li>
-                            <a href="">
-                                <span class="badge bg-info pull-right">5</span>
-                                <span translate="header.navbar.new.TASK">Task</span>
-                            </a>
-                        </li>
-                        <li><a href="" translate="header.navbar.new.USER">User</a></li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="">
-                                <span class="badge bg-danger pull-right">4</span>
-                                <span translate="header.navbar.new.EMAIL">Email</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
             </ul>
             <!-- / link and dropdown -->
 
@@ -224,8 +201,16 @@
 
                 <li class="#">
                     <a href="#">
-                        <span class="hidden-sm hidden-md"><i class="fa fa-book icon"></i></span>
-                        <span class="visible-xs-inline">Языки в заказе</span>
+                        <span class="hidden-sm hidden-md"><i class="fa fa-wrench"></i></span>
+                        <span class="visible-xs-inline">Типы виджетов</span>
+                    </a>
+                </li>
+
+
+                <li class="#">
+                    <a href="#">
+                        <span class="hidden-sm hidden-md"><i class="fa fa-tags"></i></span>
+                        <span class="visible-xs-inline">База тегов</span>
                     </a>
                 </li>
 
@@ -257,7 +242,7 @@
 
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                        <i class="fa fa-send fa-fw"></i>
+                        <i class="fa fa-bell fa-fw"></i>
                         <span class="visible-xs-inline">Notifications</span>
                         <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
                     </a>
@@ -316,13 +301,6 @@
                         </li>
 
 
-                        <li class="{{Active::route(['admin.server.*','admin.serverstats.*'])}}">
-                            <a href="{{route('admin.server.index')}}">
-                                <i class="fa fa-server"></i>
-                                <span>Сервер</span>
-                            </a>
-                        </li>
-
 
                         <li class="{{Active::route('admin.users.*')}}">
                             <a href="{{route('admin.users.index')}}">
@@ -332,10 +310,27 @@
                         </li>
 
 
+
+                        <li class="#">
+                            <a href="#">
+                                <i class="fa fa-bars"></i>
+                                <span>Меню</span>
+                            </a>
+                        </li>
+
+
                         <li class="#">
                             <a href="#">
                                 <i class="fa fa-folder-open"></i>
-                                <span>Страницы</span>
+                                <span>Контент</span>
+                            </a>
+                        </li>
+
+
+                        <li class="#">
+                            <a href="#">
+                                <i class="fa fa-cubes"></i>
+                                <span>Виджеты</span>
                             </a>
                         </li>
 
@@ -345,19 +340,17 @@
                         </li>
 
 
-
-
-                        <li class="#">
-                            <a href="#">
-                                <i class="fa fa-newspaper-o"></i>
-                                <span>Новости</span>
+                        <li class="{{Active::route(['admin.server.*','admin.serverstats.*'])}}">
+                            <a href="{{route('admin.server.index')}}">
+                                <i class="fa fa-server"></i>
+                                <span>Сервер</span>
                             </a>
                         </li>
 
 
                         <li class="{{Active::route('admin.package.*')}}">
                             <a href="{{route('admin.package.index')}}">
-                                <i class="fa fa-cubes text-success"></i>
+                                <i class="fa fa-credit-card text-success"></i>
                                 <span>Тарифы</span>
                             </a>
                         </li>

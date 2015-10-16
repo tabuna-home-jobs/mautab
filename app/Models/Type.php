@@ -3,9 +3,12 @@
 namespace Mautab\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Type extends Model
 {
+    use Sortable;
+
     protected $table = 'tag';
 
     protected $fillable = [
