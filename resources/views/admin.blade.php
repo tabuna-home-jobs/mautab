@@ -412,7 +412,7 @@
     <div id="content" class="app-content" role="main">
 
         @if (Session::has('good'))
-            <div class="alert notification alert-success text-center container">
+            <div class="alert notification alert-success text-center container ">
                 <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
                             aria-hidden="true">×</span></button>
                 {{Session::get('good')}}
