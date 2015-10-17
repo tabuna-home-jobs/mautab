@@ -16,6 +16,8 @@
 
         <div class="panel panel-default">
             <div class="panel-heading font-bold">Системные параметры</div>
+
+
             <div class="panel-body">
                 <form class="form-horizontal" action="{{route('admin.settings.store')}}" method="post">
 
@@ -72,6 +74,26 @@
 
         <div class="panel panel-default">
             <div class="panel-heading font-bold">Системные параметры</div>
+
+
+            <div class="row wrapper">
+                <div class="col-sm-5 m-b-xs">
+                </div>
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-3">
+                    <form action="{{route('admin.settings.create')}}">
+                        <div class="input-group">
+                            <input type="text" class="input-sm form-control" name="search" placeholder="Поиск ...">
+          <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" type="submit">Найти!</button>
+          </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
             <div class="panel-body">
 
                 <div class="table-responsive">

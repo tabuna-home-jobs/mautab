@@ -29,10 +29,11 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('admin.settings.create', [
-            'Settings' => Setting::sortable()->select('name', 'slug', 'updated_at')->paginate(15)
+            'Settings' => Setting::search($request->search)->sortable()->select('name', 'slug',
+                'updated_at')->paginate(15)
         ]);
     }
 
