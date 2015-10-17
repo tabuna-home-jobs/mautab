@@ -199,10 +199,10 @@
                 </li>
 
 
-                <li class="#">
-                    <a href="#">
+                <li class="{{Active::route('admin.type.*')}}">
+                    <a href="{{route('admin.type.index')}}">
                         <span class="hidden-sm hidden-md"><i class="fa fa-wrench"></i></span>
-                        <span class="visible-xs-inline">Типы виджетов</span>
+                        <span class="visible-xs-inline">Типы</span>
                     </a>
                 </li>
 
@@ -327,8 +327,8 @@
                         </li>
 
 
-                        <li class="#">
-                            <a href="#">
+                        <li class="{{Active::route('admin.block.*')}}">
+                            <a href="{{route('admin.block.index')}}">
                                 <i class="fa fa-cubes"></i>
                                 <span>Виджеты</span>
                             </a>

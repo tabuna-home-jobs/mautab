@@ -15,4 +15,10 @@ class Block extends Model
     ];
 
 
+    public function type()
+    {
+        return $this->belongsTo(static::$typeModel);
+    }
+
+
 }

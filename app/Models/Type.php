@@ -9,8 +9,8 @@ class Type extends Model
 {
     use Sortable;
 
-    protected $table = 'tag';
-
+    protected static $blockModel = Block::class;
+    protected $table = 'type';
     protected $fillable = [
         'name',
         'slug',
@@ -20,6 +20,12 @@ class Type extends Model
     protected $casts = [
         'is_block' => 'boolean',
     ];
+
+
+    public function block()
+    {
+        return $this->hasMany(static::$blockModel);
+    }
 
 
 }
