@@ -6,6 +6,7 @@
 
     <div class="bg-light lter b-b wrapper-md">
         <h1 class="m-n font-thin h3">Список не отвеченных тикетов</h1>
+        <small class="text-muted">Обращения пользователей что нибудь</small>
     </div>
 
     <div class="wrapper-md tab-container" ui-jq="adminTiketIndex">

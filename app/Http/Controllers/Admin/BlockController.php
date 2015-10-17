@@ -18,10 +18,11 @@ class BlockController extends Controller
     public function index(Request $request)
     {
         $Types = Type::where('is_block', true)->get();
-        $Blocks = [];
 
         if (!is_null($request->type)) {
             $Blocks = $Types->find($request->type)->block()->get();
+        } else {
+            $Blocks = Block::orderBy('updated_at', 'DESC')->limit(10)->get();
         }
 
         return view('admin.block.index', [
@@ -37,7 +38,10 @@ class BlockController extends Controller
      */
     public function create()
     {
-        //
+        $Types = Type::where('is_block', true)->get();
+        return view('admin.block.create', [
+            'Types' => $Types,
+        ]);
     }
 
     /**

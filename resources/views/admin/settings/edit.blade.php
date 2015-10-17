@@ -6,6 +6,7 @@
 
     <div class="bg-light lter b-b wrapper-md">
         <h1 class="m-n font-thin h3">Редактирование системного параметра {{$Setting->slug}}</h1>
+        <small class="text-muted">Будьте осторожны при изменении</small>
     </div>
 
 
