@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
 use Mautab\Manager\Access\UserAccess;
 use Mautab\Models\Post;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 /**
  * Mautab\Models\User
@@ -45,7 +46,7 @@ use Mautab\Models\Post;
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
 
-    use Authenticatable, CanResetPassword, Sortable, UserAccess;
+    use Authenticatable, CanResetPassword, Sortable, UserAccess, SearchableTrait;
 
 
     protected static $rolesModel = Roles::class;
@@ -59,6 +60,25 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var string
      */
     protected $table = 'users';
+
+
+    /**
+     * Searchable rules.
+     *
+     * @var array
+     */
+    protected $searchable = [
+        'columns' => [
+            'id' => 100,
+            'nickname' => 50,
+            'email' => 50,
+            'first_name' => 10,
+            'last_name' => 10,
+            'server' => 10,
+        ],
+    ];
+
+
     protected $sortable = [
         'id',
         'nickname',
