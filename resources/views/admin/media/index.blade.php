@@ -10,44 +10,45 @@
                 <h1 class="m-n font-thin h3">Медиа</h1>
             </div>
             <div class="col-xs-9">
-            <div class="control-toolbar toolbar-padded">
-                <div class="toolbar-item toolbar-primary">
-                    <div class="panelko">
+                <div class="control-toolbar toolbar-padded">
+                    <div class="toolbar-item toolbar-primary">
+                        <div class="panelko">
 
-                        <form enctype="multipart/form-data" action="{{route('admin.media.store')}}" method="post" id="sendFile">
-                            <button type="button" class="btn btn-primary upthis">
-                                <i class="fa fa-upload"></i> Загрузить
+                            <form enctype="multipart/form-data" action="{{route('admin.media.store')}}" method="post"
+                                  id="sendFile">
+                                <button type="button" class="btn btn-primary upthis">
+                                    <i class="fa fa-upload"></i> Загрузить
+                                </button>
+
+                                <div style="display: none;">
+                                    <input type="file" id="uploadthis" name="fileUpload">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                </div>
+
+                            </form>
+
+                            <button type="button" class="btn btn-primary">
+                                <i class="fa fa-folder"></i> Создать папку
                             </button>
 
-                            <div style="display: none;">
-                                <input type="file" id="uploadthis" name="fileUpload">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            </div>
-
-                        </form>
-
-                        <button type="button" class="btn btn-primary">
-                            <i class="fa fa-folder"></i> Создать папку
-                        </button>
-
-                        <button type="button" class="btn btn-default">
-                            <i class="fa fa-refresh"></i>
-                        </button>
+                            <button type="button" class="btn btn-default">
+                                <i class="fa fa-refresh"></i>
+                            </button>
 
 
-                        <button type="button" class="btn btn-default">
-                            <i class="fa fa-reply-all"></i> Переместить
-                        </button>
+                            <button type="button" class="btn btn-default">
+                                <i class="fa fa-reply-all"></i> Переместить
+                            </button>
 
-                        <button type="button" class="btn btn-default">
-                            <i class="fa fa-trash"></i> Удалить
-                        </button>
+                            <button type="button" class="btn btn-default">
+                                <i class="fa fa-trash"></i> Удалить
+                            </button>
 
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 
@@ -80,9 +81,9 @@
                     </tr>
                     <tr>
                         <td>
-                           <a href="#">
-                               <i class="fa fa-photo"></i> Фотография некая
-                           </a>
+                            <a href="#">
+                                <i class="fa fa-photo"></i> Фотография некая
+                            </a>
                         </td>
                         <td>3.11 KB</td>
                         <td>Oct 18, 2015</td>

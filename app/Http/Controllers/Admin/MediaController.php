@@ -2,11 +2,11 @@
 
 namespace Mautab\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-use Mautab\Http\Requests;
-use Mautab\Http\Controllers\Controller;
-use Storage;
 use File;
+use Illuminate\Http\Request;
+use Mautab\Http\Controllers\Controller;
+use Mautab\Http\Requests;
+use Storage;
 
 class MediaController extends Controller
 {
