@@ -374,3 +374,19 @@ label, strong {
     overflow-y: scroll;
     position: relative;
 }
+.text-yelllow{
+    color: yellow;
+}
+.media-body-tbl a{
+    display: block;
+}
+.table-hover>tbody>tr:hover{
+    background: #4da7e8;
+    color:#fff;
+}
+.table-hover>tbody>tr:hover a{
+    color:#fff;
+}
+.panelko form{
+    display: inline-block;
+}
