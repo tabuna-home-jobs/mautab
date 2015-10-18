@@ -23,10 +23,11 @@ trait SettingTrait
     public function getValueSlug($slug)
     {
         $query = $this->where('slug', $slug)->first();
-        if (is_null($query))
+        if (is_null($query)) {
             return '';
-        else
+        } else {
             return $query->value;
+        }
     }
 
 

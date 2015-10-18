@@ -309,14 +309,12 @@
                         </li>
 
 
-
                         <li class="{{Active::route('admin.users.*')}}">
                             <a href="{{route('admin.users.index')}}">
                                 <i class="fa fa-users"></i>
                                 <span>Пользователи</span>
                             </a>
                         </li>
-
 
 
                         <li class="#">
@@ -455,7 +453,6 @@
 
 
         @yield('content')
-
 
 
     </div>

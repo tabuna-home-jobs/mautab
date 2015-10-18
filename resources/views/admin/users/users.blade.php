@@ -36,12 +36,12 @@
                     </div>
                     <div class="col-sm-3">
                         <form action="{{route('admin.users.index')}}">
-                        <div class="input-group">
-                            <input type="text" class="input-sm form-control" name="search" placeholder="Поиск ...">
+                            <div class="input-group">
+                                <input type="text" class="input-sm form-control" name="search" placeholder="Поиск ...">
           <span class="input-group-btn">
             <button class="btn btn-sm btn-default" type="submit">Найти!</button>
           </span>
-                        </div>
+                            </div>
                         </form>
                     </div>
                 </div>

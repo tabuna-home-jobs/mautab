@@ -37,7 +37,6 @@ class WebController extends Controller
     {
 
 
-
         $checkDomain = preg_match('/^([0-9a-z]([0-9a-z\-])*[0-9a-z]\.)+[0-9a-z\-]{1,8}$/i', $request->v_domain);
 
 
@@ -97,7 +96,7 @@ class WebController extends Controller
             }
 
 
-	        /*
+            /*
             if ($request->v_proxy == 'on') {
                 $ext = str_replace(' ', '', $request->v_proxy_ext);
                 Vesta::addDomainProxy($request->v_domain, $ext);
