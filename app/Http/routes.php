@@ -54,6 +54,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('roles', 'RolesController');
     Route::resource('settings', 'SettingsController');
 
+
+    Route::resource('language', 'LanguageController');
     Route::resource('block', 'BlockController');
     Route::resource('type', 'TypeController');
 

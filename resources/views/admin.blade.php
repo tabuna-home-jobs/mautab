@@ -215,8 +215,8 @@
                 </li>
 
 
-                <li class="#">
-                    <a href="#">
+                <li class="{{Active::route('admin.language.*')}}">
+                    <a href="{{route('admin.language.index')}}">
                         <span class="hidden-sm hidden-md"><i class="fa fa-language"></i></span>
                         <span class="visible-xs-inline">Локализация</span>
                     </a>
