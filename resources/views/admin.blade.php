@@ -199,10 +199,10 @@
                 </li>
 
 
-                <li class="#">
-                    <a href="#">
+                <li class="{{Active::route('admin.type.*')}}">
+                    <a href="{{route('admin.type.index')}}">
                         <span class="hidden-sm hidden-md"><i class="fa fa-wrench"></i></span>
-                        <span class="visible-xs-inline">Типы виджетов</span>
+                        <span class="visible-xs-inline">Типы</span>
                     </a>
                 </li>
 
@@ -211,6 +211,14 @@
                     <a href="#">
                         <span class="hidden-sm hidden-md"><i class="fa fa-tags"></i></span>
                         <span class="visible-xs-inline">База тегов</span>
+                    </a>
+                </li>
+
+
+                <li class="{{Active::route('admin.language.*')}}">
+                    <a href="{{route('admin.language.index')}}">
+                        <span class="hidden-sm hidden-md"><i class="fa fa-language"></i></span>
+                        <span class="visible-xs-inline">Локализация</span>
                     </a>
                 </li>
 
@@ -254,13 +262,13 @@
                             </div>
                             <div class="list-group">
                                 <a href="" class="media list-group-item">
-                    <span class="media-body block m-b-none">
+                    <span class="media-body">
                       Use awesome animate.css<br>
                       <small class="text-muted">10 minutes ago</small>
                     </span>
                                 </a>
                                 <a href="" class="media list-group-item">
-                    <span class="media-body block m-b-none">
+                    <span class="media-body">
                       1.0 initial released<br>
                       <small class="text-muted">1 hour ago</small>
                     </span>
@@ -327,10 +335,10 @@
                         </li>
 
 
-                        <li class="#">
-                            <a href="#">
+                        <li class="{{Active::route('admin.block.*')}}">
+                            <a href="{{route('admin.block.index')}}">
                                 <i class="fa fa-cubes"></i>
-                                <span>Виджеты</span>
+                                <span>Блоки</span>
                             </a>
                         </li>
 
@@ -418,7 +426,7 @@
     <div id="content" class="app-content" role="main">
 
         @if (Session::has('good'))
-            <div class="alert notification alert-success text-center container">
+            <div class="alert notification alert-success text-center container ">
                 <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span
                             aria-hidden="true">×</span></button>
                 {{Session::get('good')}}
@@ -449,17 +457,20 @@
         @yield('content')
 
 
-            <footer id="footer" class="app-footer" role="footer">
-                <div class="wrapper b-t bg-light">
-        <span class="pull-right">2.0.1 <a href="" ui-scroll="app" class="m-l-sm text-muted"><i
-                        class="fa fa-long-arrow-up"></i></a></span>
-                    © 2015 Copyright.
-                </div>
-            </footer>
-
 
     </div>
     <!-- /content -->
+
+
+    <footer id="footer" class="app-footer" role="footer">
+        <div class="wrapper b-t bg-light">
+            <span class="pull-right">2.0.3 <a href="" ui-scroll="app" class="m-l-sm text-muted"><i
+                            class="fa fa-long-arrow-up"></i></a></span>
+            © 2015 Copyright.
+        </div>
+    </footer>
+
+
 </div>
 
 

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5625a704eca40671130775f43d86e819",
-    "content-hash": "4625032d155b43f3ce8219a0c5045abf",
+    "hash": "f082b8b94d89ab13544aff494a3431be",
+    "content-hash": "3b63cfb46fa94884ec6610e9747c3cfd",
     "packages": [
         {
             "name": "cboden/ratchet",
@@ -887,16 +887,16 @@
         },
         {
             "name": "kyslik/column-sortable",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kyslik/column-sortable.git",
-                "reference": "46baa8c0af6a5f766b22865a6dd3e6a514723f25"
+                "reference": "da71081d3fec5875d9466bcd92307e769326f595"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kyslik/column-sortable/zipball/46baa8c0af6a5f766b22865a6dd3e6a514723f25",
-                "reference": "46baa8c0af6a5f766b22865a6dd3e6a514723f25",
+                "url": "https://api.github.com/repos/Kyslik/column-sortable/zipball/da71081d3fec5875d9466bcd92307e769326f595",
+                "reference": "da71081d3fec5875d9466bcd92307e769326f595",
                 "shasum": ""
             },
             "require": {
@@ -927,7 +927,7 @@
                 "sortable",
                 "sorting"
             ],
-            "time": "2015-09-28 16:39:31"
+            "time": "2015-10-17 15:18:26"
         },
         {
             "name": "laracasts/flash",
@@ -1407,6 +1407,52 @@
             "time": "2015-06-25 04:19:39"
         },
         {
+            "name": "nicolaslopezj/searchable",
+            "version": "1.5.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nicolaslopezj/searchable.git",
+                "reference": "bf47a9055cd873f06ac9ff32534d56a98953198f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/bf47a9055cd873f06ac9ff32534d56a98953198f",
+                "reference": "bf47a9055cd873f06ac9ff32534d56a98953198f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "illuminate/database": "4.2.x|~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nicolaslopezj\\Searchable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Lopez",
+                    "email": "nicolaslopezj@me.com"
+                }
+            ],
+            "description": "Eloquent model search trait.",
+            "keywords": [
+                "database",
+                "eloquent",
+                "laravel",
+                "model",
+                "search",
+                "searchable"
+            ],
+            "time": "2015-09-20 14:21:52"
+        },
+        {
             "name": "nikic/php-parser",
             "version": "v1.4.1",
             "source": {
@@ -1453,16 +1499,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.0.6",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "9a0ce69360aa22413a96f2bf93f61235e2c18486"
+                "reference": "df1207683dfbd1399f0fa931a368082a28fed50b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/9a0ce69360aa22413a96f2bf93f61235e2c18486",
-                "reference": "9a0ce69360aa22413a96f2bf93f61235e2c18486",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/df1207683dfbd1399f0fa931a368082a28fed50b",
+                "reference": "df1207683dfbd1399f0fa931a368082a28fed50b",
                 "shasum": ""
             },
             "require": {
@@ -1494,7 +1540,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2015-10-16 03:43:13"
+            "time": "2015-10-16 14:10:15"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -3304,16 +3350,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.13",
+            "version": "4.8.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "be067d6105286b74272facefc2697038f8807b77"
+                "reference": "b4900675926860bef091644849305399b986efa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be067d6105286b74272facefc2697038f8807b77",
-                "reference": "be067d6105286b74272facefc2697038f8807b77",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b4900675926860bef091644849305399b986efa2",
+                "reference": "b4900675926860bef091644849305399b986efa2",
                 "shasum": ""
             },
             "require": {
@@ -3372,7 +3418,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-14 13:49:40"
+            "time": "2015-10-17 15:03:30"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

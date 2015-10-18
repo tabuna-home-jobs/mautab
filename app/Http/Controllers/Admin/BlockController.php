@@ -2,23 +2,32 @@
 
 namespace Mautab\Http\Controllers\Admin;
 
-use Flash;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
+use Mautab\Models\Block;
 use Mautab\Models\Type;
 
-class TypeController extends Controller
+class BlockController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.type.index', [
-            'Types' => Type::sortable()->paginate(15),
+        $Types = Type::where('is_block', true)->get();
+
+        if (!is_null($request->type)) {
+            $Blocks = $Types->find($request->type)->block()->get();
+        } else {
+            $Blocks = Block::orderBy('updated_at', 'DESC')->limit(10)->get();
+        }
+
+        return view('admin.block.index', [
+            'Types' => $Types,
+            'Blocks' => $Blocks
         ]);
     }
 
@@ -29,8 +38,9 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('admin.type.create', [
-
+        $Types = Type::where('is_block', true)->get();
+        return view('admin.block.create', [
+            'Types' => $Types,
         ]);
     }
 
@@ -42,31 +52,31 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        Type::create($request->all());
-        Flash::success('Вы успешно создали сиистемный тип.');
-        return redirect()->route('admin.type.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  Type $type
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Type $type)
+    public function show($id)
     {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Type $type
+     * @param  string $type
      * @return \Illuminate\Http\Response
      */
-    public function edit(Type $type)
+    public function edit($type)
     {
-        return view('admin.type.edit', [
-            'Type' => $type
+        return view('admin.block.edit', [
+            'Types' => Type::where('is_block', true)->get(),
+            'Block' => Block::where('type_id', $type)->paginate(15),
         ]);
     }
 
@@ -74,26 +84,22 @@ class TypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Type $type
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Type $type)
+    public function update(Request $request, $id)
     {
-        $type->fill($request->all())->save();
-        Flash::success('Вы успешно изменили сиистемный тип.');
-        return redirect()->route('admin.type.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Type $type
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Type $type)
+    public function destroy($id)
     {
-        $type->delete('cascade');
-        Flash::success('Вы успешно удалили сиистемный тип.');
-        return redirect()->route('admin.type.index');
+        //
     }
 }

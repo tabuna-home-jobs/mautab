@@ -1,7 +1,7 @@
 <?php namespace Mautab\Http\Controllers\Admin;
 
+use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
-use Mautab\Http\Requests;
 use Mautab\Http\Requests\Admin\UserRequest;
 use Mautab\Models\Package;
 use Mautab\Models\Roles;
@@ -15,13 +15,12 @@ class UserController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
-     * @return Response
+     * @param Requests $requests
+     * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $Users = User::sortable()->paginate(15);
-
+        $Users = User::search($request->search)->sortable()->paginate(15);
         return view('admin/users/users', ['Users' => $Users]);
     }
 

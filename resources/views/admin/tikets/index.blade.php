@@ -6,16 +6,13 @@
 
     <div class="bg-light lter b-b wrapper-md">
         <h1 class="m-n font-thin h3">Список не отвеченных тикетов</h1>
+        <small class="text-muted">Обращения пользователей что нибудь</small>
     </div>
 
-    <div class="wrapper-md" ui-jq="adminTiketIndex">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Тикеты
-            </div>
+    <div class="wrapper-md tab-container" ui-jq="adminTiketIndex">
 
-            <div class="panel-body">
-            <ul class="nav nav-tabs nav-admin-tabs" role="tablist">
+
+        <ul class="nav nav-tabs nav-justified" role="tablist">
                 <li role="presentation" class="active">
                     <a href="#open" aria-controls="open" role="tab" data-toggle="tab">Открытые вопросы</a>
                 </li>
@@ -24,7 +21,8 @@
                 </li>
             </ul>
 
-            <div class="table-responsive">
+
+        <div class="table-responsive wile">
 
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="open">
@@ -118,8 +116,6 @@
             </div>
                 {!! $tiketList->render() !!}
             </div>
-        </div>
-    </div>
 
 
 

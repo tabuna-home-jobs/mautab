@@ -60,6 +60,11 @@ class RouteServiceProvider extends ServiceProvider
             return \Mautab\Models\Setting::where('slug', $value)->firstOrFail();
         });
 
+        $router->bind('type', function ($value) {
+            return \Mautab\Models\Type::where('slug', $value)->firstOrFail();
+        });
+
+
 
     }
 

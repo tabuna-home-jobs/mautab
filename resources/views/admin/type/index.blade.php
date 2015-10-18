@@ -6,6 +6,7 @@
 
     <div class="bg-light lter b-b wrapper-md">
         <h1 class="m-n font-thin h3">Системные типы</h1>
+        <small class="text-muted">Типы - это главные критерии для работы с контентом</small>
     </div>
 
 

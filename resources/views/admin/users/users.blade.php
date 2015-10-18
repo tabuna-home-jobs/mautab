@@ -5,6 +5,7 @@
     <div class="app-content-body">
         <div class="bg-light lter b-b wrapper-md">
             <h1 class="m-n font-thin h3">Пользователи</h1>
+            <small class="text-muted">Системные активные аккаунты</small>
         </div>
 
 
@@ -34,12 +35,14 @@
                     <div class="col-sm-4">
                     </div>
                     <div class="col-sm-3">
+                        <form action="{{route('admin.users.index')}}">
                         <div class="input-group">
-                            <input type="text" class="input-sm form-control" placeholder="Поиск ...">
+                            <input type="text" class="input-sm form-control" name="search" placeholder="Поиск ...">
           <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Найти!</button>
+            <button class="btn btn-sm btn-default" type="submit">Найти!</button>
           </span>
                         </div>
+                        </form>
                     </div>
                 </div>
 

@@ -4,14 +4,14 @@ namespace Mautab\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
-use Mautab\Manager\Setting\SettingTrait;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
-class Setting extends Model
+class Language extends Model
 {
-    use SettingTrait, Sortable, SearchableTrait;
+    use Sortable, SearchableTrait;
 
-    protected $table = 'settings';
+
+    protected $table = 'language';
 
 
     /**
@@ -21,17 +21,22 @@ class Setting extends Model
      */
     protected $searchable = [
         'columns' => [
-            'name' => 5,
-            'slug' => 5,
-            'value' => 20,
+            'name' => 3,
+            'code' => 1,
         ],
     ];
 
 
     protected $fillable = [
         'name',
-        'slug',
-        'value',
+        'code',
+        'sort',
+        'status',
+    ];
+
+
+    protected $casts = [
+        'status' => 'boolean',
     ];
 
 

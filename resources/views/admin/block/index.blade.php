@@ -1,46 +1,68 @@
-@extends('admin')
-
-@section('content')
+@extends('admin._layouts.twoColumnsContainer')
 
 
 
-    <div class="bg-light lter b-b wrapper-md">
-        <h1 class="m-n font-thin h3">Страницы</h1>
+
+@section('firstContent')
+
+    <div class="list-group no-radius no-border no-bg m-b-none">
+        <li class="list-group-item b-b text-center" tabindex="0">Типы:</li>
+
+
+        @foreach($Types as $value)
+
+            <a href="{{route('admin.block.index',['type'=>$value->id])}}"
+               class="list-group-item m-l hover-anchor b-a" tabindex="0">
+                                            <span class="pull-right text-muted hover-action" role="button" tabindex="0"><i
+                                                        class="fa fa-eye"></i></span>
+                <span class="block m-l-n">{{$value->name}}</span>
+            </a>
+
+        @endforeach
+
     </div>
 
-    <div class="wrapper-md">
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-
-                <a href="{{route('admin.pages.create')}}" class="btn btn-link btn-sm"><span
-                            class="fa fa-plus"></span> Добавить новую запись </a>
+@endsection
 
 
-            </div>
+@section('secondContent')
+
+
+
+    <div class="panel panel-default">
+
+
+        <div class="panel-heading">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="{{route('admin.block.create')}}">Создать <i class="fa fa-plus"></i></a></li>
+            </ul>
+            Блоки
+        </div>
+
+
+        <div class="panel-body">
 
             <div class="table-responsive">
                 <table class="table table-striped b-t b-light">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Имя</th>
-                        <th>Заголовок</th>
+                        <th>Slug</th>
+                        <th>Последние изменение</th>
                         <th>Управление</th>
+
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($PageList as $Page)
+                    @foreach ($Blocks as $block)
                         <tr>
-                            <td>{{ $Page->id }}</td>
-                            <td>{{ $Page->name }}</td>
-                            <td>{{ $Page->title }}</td>
+                            <td>{{ $block->slug }}</td>
+                            <td>{{ $block->updated_at }}</td>
                             <td>
 
                                 <div class="btn-group pull-right" role="group" aria-label="...">
-                                    <a href="{{ route('admin.pages.edit',$Page->slug) }}"
+                                    <a href="{{ route('admin.block.edit',$block->slug) }}"
                                        class="btn btn-default"><span class="fa fa-edit"></span> </a>
-                                    <a href="#" data-toggle="modal" data-target="#Modal-{{$Page->slug}}"
+                                    <a href="#" data-toggle="modal" data-target="#Modal-{{$type->slug}}"
                                        class="btn btn-danger">
                                         <i class="fa fa-trash"></i>
                                     </a>
@@ -52,7 +74,7 @@
 
 
                         <!-- Modal -->
-                        <div class="modal fade" id="Modal-{{$Page->slug}}" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="Modal-{{$type->slug}}" tabindex="-1" role="dialog"
                              aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -61,17 +83,17 @@
                                                 aria-label="Close"><span
                                                     aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title" id="myModalLabel">Удалить
-                                            {{$Page->name}}?</h4>
+                                            {{$block->slug}}?</h4>
                                     </div>
                                     <div class="modal-body">
-                                        Вы действительно хотите удалить {{$Page->name}}
+                                        Вы действительно хотите удалить {{$block->slug}}
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="{{route('admin.pages.destroy')}}" method="post">
+                                        <form action="{{route('admin.block.destroy',$block->slug)}}"
+                                              method="post">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Нет
                                             </button>
                                             <button type="submit" class="btn btn-danger">Да</button>
-                                            <input type="hidden" name="id" value="{{$Page->id}}"/>
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                                         </form>
@@ -84,19 +106,12 @@
                     </tbody>
                 </table>
             </div>
-            <footer class="panel-footer">
-                <div class="row">
-                    <div class="col-sm-offset-4 col-sm-4 text-center">
-                        <small class="text-muted inline m-t-sm m-b-sm">Всего
-                            элементов: {!! $PageList->count() !!}</small>
-                    </div>
-                    <div class="col-sm-4 text-right text-center-xs">
-                        {!! $PageList->render() !!}
-                    </div>
-                </div>
-            </footer>
+
         </div>
+
+
     </div>
 
-    s
+
+
 @endsection

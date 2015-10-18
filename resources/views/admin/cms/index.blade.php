@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="app-content-full h-full no-top-0">
+    <div class="app-content-full">
 
         <div class="hbox hbox-auto-xs hbox-auto-sm bg-light">
 

@@ -6,6 +6,7 @@
 
     <div class="bg-light lter b-b wrapper-md">
         <h1 class="m-n font-thin h3">Системные параметры</h1>
+        <small class="text-muted">Это переменные среды хранящиеся в базе данных</small>
     </div>
 
 
