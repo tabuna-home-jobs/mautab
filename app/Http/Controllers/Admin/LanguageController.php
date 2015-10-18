@@ -2,11 +2,11 @@
 
 namespace Mautab\Http\Controllers\Admin;
 
+use Flash;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Models\Language;
-
 
 class LanguageController extends Controller
 {
@@ -18,7 +18,7 @@ class LanguageController extends Controller
     public function index(Request $request)
     {
         return view('admin.language.index', [
-            'Languages' => Language::search($request->search)->sortable()->paginate(15)
+            'Languages' => Language::search($request->search)->sortable()->orderBy('status', 'Desc')->paginate(15)
         ]);
     }
 
@@ -29,7 +29,7 @@ class LanguageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.language.create');
     }
 
     /**
@@ -40,7 +40,9 @@ class LanguageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Language::create($request->all());
+        Flash::success('Вы успешно создали локализацию.');
+        return redirect()->route('admin.language.index');
     }
 
     /**
@@ -62,7 +64,9 @@ class LanguageController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.language.edit', [
+            'Language' => Language::findOrFail($id)
+        ]);
     }
 
     /**
@@ -74,7 +78,9 @@ class LanguageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Language::findOrFail($id)->fill($request->all())->save();
+        Flash::success('Вы успешно изменили локализацию.');
+        return redirect()->route('admin.language.index');
     }
 
     /**
@@ -85,6 +91,8 @@ class LanguageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Language::findOrFail($id)->delete('cascade');
+        Flash::success('Вы успешно удалили локализацию.');
+        return redirect()->route('admin.language.index');
     }
 }

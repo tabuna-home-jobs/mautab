@@ -32,6 +32,7 @@ class Block extends Model
      * @var array
      */
     protected $fillable = [
+        'name',
         'slug',
         'type_id',
         'story_id',

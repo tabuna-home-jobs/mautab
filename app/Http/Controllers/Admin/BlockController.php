@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Models\Block;
+use Mautab\Models\Language;
 use Mautab\Models\Type;
 
 class BlockController extends Controller
@@ -39,8 +40,10 @@ class BlockController extends Controller
     public function create()
     {
         $Types = Type::where('is_block', true)->get();
+        $Languages = Language::where('status', true)->get();
         return view('admin.block.create', [
             'Types' => $Types,
+            'Languages' => $Languages
         ]);
     }
 

@@ -46,16 +46,15 @@
                 <table class="table table-striped b-t b-light">
                     <thead>
                     <tr>
-                        <th>Slug</th>
+                        <th>Название</th>
                         <th>Последние изменение</th>
                         <th>Управление</th>
-
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($Blocks as $block)
                         <tr>
-                            <td>{{ $block->slug }}</td>
+                            <td>{{ $block->name }}</td>
                             <td>{{ $block->updated_at }}</td>
                             <td>
 

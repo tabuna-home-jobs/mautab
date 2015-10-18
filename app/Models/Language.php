@@ -30,7 +30,6 @@ class Language extends Model
     protected $fillable = [
         'name',
         'code',
-        'sort',
         'status',
     ];
 

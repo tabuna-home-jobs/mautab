@@ -44,6 +44,18 @@
 
 
                 <div class="form-group">
+                    <label class="col-lg-2 control-label">Название</label>
+
+                    <div class="col-lg-10">
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                </div>
+
+
+                <div class="line line-dashed b-b line-lg"></div>
+
+
+                <div class="form-group">
                     <label class="col-lg-2 control-label">Slug</label>
 
                     <div class="col-lg-10">
@@ -72,46 +84,61 @@
                 <div class="line line-dashed b-b line-lg"></div>
 
 
-                <div class="form-group">
-                    <label class="col-lg-2 control-label">Имя</label>
+                <div class="row">
+                    <ul id="LanguageTabs" class="nav nav-tabs nav-justified" role="tablist">
+                        @foreach($Languages as $lang)
+                            <li role="presentation" @if ($lang == $Languages->first()) class="active" @endif>
+                                <a href="#lang-{{$lang->code}}" role="tab" data-toggle="tab"
+                                   aria-expanded="true">{{$lang->name}}</a>
 
-                    <div class="col-lg-10">
-                        <input type="text" name="name" class="form-control" required>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <div id="LanguageTabsContent" class="tab-content">
+
+                        @foreach($Languages as $lang)
+                            <div role="tabpanel"
+                                 class="tab-pane fade in @if ($lang == $Languages->first()) active @endif"
+                                 id="lang-{{$lang->code}}" aria-labelledby="lang-{{$lang->code}}">
+
+
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Имя</label>
+
+                                    <div class="col-lg-10">
+                                        <input type="text" name="name[{{$lang->id}}]" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="line line-dashed b-b line-lg"></div>
+
+
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Контент</label>
+
+                                    <div class="col-lg-10">
+                                        <textarea name="content[{{$lang->id}}]" class="form-control"
+                                                  required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="line line-dashed b-b line-lg"></div>
+
+
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Изображение</label>
+
+                                    <div class="col-lg-10">
+                                        <input type="text" name="image[{{$lang->id}}]" class="form-control" required>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 
-                <div class="line line-dashed b-b line-lg"></div>
-
-
-                <div class="form-group">
-                    <label class="col-lg-2 control-label">Контент</label>
-
-                    <div class="col-lg-10">
-                        <textarea name="content" class="form-control" required></textarea>
-                    </div>
-                </div>
-
-                <div class="line line-dashed b-b line-lg"></div>
-
-
-                <div class="form-group">
-                    <label class="col-lg-2 control-label">Изображение</label>
-
-                    <div class="col-lg-10">
-                        <input type="text" name="name" class="form-control" required>
-                    </div>
-                </div>
-
-                <div class="line line-dashed b-b line-lg"></div>
-
-
-                <div class="form-group">
-                    <label class="col-lg-2 control-label">Язык</label>
-
-                    <div class="col-lg-10">
-                        <input type="text" name="name" class="form-control" required>
-                    </div>
-                </div>
 
                 <div class="line line-dashed b-b line-lg"></div>
 
