@@ -56,7 +56,8 @@ var jp_config = {
 
     wizard: ['/build/js/controller/components/wizard.js'],
     dnsIndex: ['/build/js/controller/user/dns/index.js'],
-    ibdexBd: ['/build/js/controller/user/bd/index.js']
+    ibdexBd: ['/build/js/controller/user/bd/index.js'],
+    ibdexMedia: ['/build/js/controller/admin/media/index.js']
 
 
 };
