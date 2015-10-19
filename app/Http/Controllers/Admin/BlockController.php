@@ -2,11 +2,13 @@
 
 namespace Mautab\Http\Controllers\Admin;
 
+use Flash;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Models\Block;
 use Mautab\Models\Language;
+use Mautab\Models\Story;
 use Mautab\Models\Type;
 
 class BlockController extends Controller
@@ -55,7 +57,23 @@ class BlockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Block = new Block(
+            $request->all()
+        );
+
+        $Storys = collect();
+
+        foreach ($request->story as $key => $value) {
+            $story = new Story($value);
+            $story->lang_id = $key;
+            $Storys->prepend($story);
+        }
+
+        $Block->save();
+        $Block->story()->saveMany($Storys);
+
+        Flash::success('Вы успешно создали блок.');
+        return redirect()->route('admin.block.index');
     }
 
     /**
@@ -75,11 +93,12 @@ class BlockController extends Controller
      * @param  string $type
      * @return \Illuminate\Http\Response
      */
-    public function edit($type)
+    public function edit(Block $block)
     {
         return view('admin.block.edit', [
             'Types' => Type::where('is_block', true)->get(),
-            'Block' => Block::where('type_id', $type)->paginate(15),
+            'Block' => Block::with('story')->firstOrFail(),
+            'Languages' => Language::where('status', true)->get()
         ]);
     }
 
@@ -101,8 +120,10 @@ class BlockController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Block $block)
     {
-        //
+        $block->delete('cascade');
+        Flash::success('Вы успешно удалили блок.');
+        return redirect()->route('admin.block.index');
     }
 }

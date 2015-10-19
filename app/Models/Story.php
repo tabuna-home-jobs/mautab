@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Story extends Model
 {
+
     protected static $seoModel = Seo::class;
     protected static $postModel = Post::class;
     protected $table = 'story';
@@ -16,5 +17,6 @@ class Story extends Model
         'post_id',
         'lang_id',
         'seo_id',
+        'block_id'
     ];
 }

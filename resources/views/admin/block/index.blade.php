@@ -54,14 +54,14 @@
                     <tbody>
                     @foreach ($Blocks as $block)
                         <tr>
-                            <td>{{ $block->name }}</td>
+                            <td>{{ $block->title }}</td>
                             <td>{{ $block->updated_at }}</td>
                             <td>
 
                                 <div class="btn-group pull-right" role="group" aria-label="...">
                                     <a href="{{ route('admin.block.edit',$block->slug) }}"
                                        class="btn btn-default"><span class="fa fa-edit"></span> </a>
-                                    <a href="#" data-toggle="modal" data-target="#Modal-{{$type->slug}}"
+                                    <a href="#" data-toggle="modal" data-target="#Modal-{{$block->slug}}"
                                        class="btn btn-danger">
                                         <i class="fa fa-trash"></i>
                                     </a>
@@ -73,7 +73,7 @@
 
 
                         <!-- Modal -->
-                        <div class="modal fade" id="Modal-{{$type->slug}}" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="Modal-{{$block->slug}}" tabindex="-1" role="dialog"
                              aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">

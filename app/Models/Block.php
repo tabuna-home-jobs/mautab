@@ -8,6 +8,7 @@ use Kyslik\ColumnSortable\Sortable;
 class Block extends Model
 {
     use Sortable;
+
     /**
      * @var
      */
@@ -32,10 +33,9 @@ class Block extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'title',
         'slug',
         'type_id',
-        'story_id',
     ];
 
 
@@ -52,7 +52,7 @@ class Block extends Model
 
     public function story()
     {
-        return $this->hasOne(static::$storyModel);
+        return $this->hasMany(static::$storyModel);
     }
 
 

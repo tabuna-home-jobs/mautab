@@ -148,6 +148,10 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
+        'Way\Generators\GeneratorsServiceProvider',
+        'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
+
+
     ],
     /*
     |--------------------------------------------------------------------------

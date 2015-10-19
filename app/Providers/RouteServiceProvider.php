@@ -65,6 +65,11 @@ class RouteServiceProvider extends ServiceProvider
         });
 
 
+        $router->bind('block', function ($value) {
+            return \Mautab\Models\Block::where('slug', $value)->firstOrFail();
+        });
+
+
     }
 
     /**

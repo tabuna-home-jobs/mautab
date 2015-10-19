@@ -40,14 +40,14 @@
         <div class="panel-body">
 
 
-            <form class="form-horizontal" method="post" action="{{route('admin.type.store')}}">
+            <form class="form-horizontal" method="post" action="{{route('admin.block.store')}}">
 
 
                 <div class="form-group">
                     <label class="col-lg-2 control-label">Название</label>
 
                     <div class="col-lg-10">
-                        <input type="text" name="name" class="form-control" required>
+                        <input type="text" name="title" class="form-control" required>
                     </div>
                 </div>
 
@@ -106,7 +106,8 @@
                                     <label class="col-lg-2 control-label">Имя</label>
 
                                     <div class="col-lg-10">
-                                        <input type="text" name="name[{{$lang->id}}]" class="form-control" required>
+                                        <input type="text" name="story[{{$lang->id}}][name]" class="form-control"
+                                               required>
                                     </div>
                                 </div>
 
@@ -117,7 +118,7 @@
                                     <label class="col-lg-2 control-label">Контент</label>
 
                                     <div class="col-lg-10">
-                                        <textarea name="content[{{$lang->id}}]" class="form-control"
+                                        <textarea name="story[{{$lang->id}}][content]" class="form-control"
                                                   required></textarea>
                                     </div>
                                 </div>
@@ -129,10 +130,10 @@
                                     <label class="col-lg-2 control-label">Изображение</label>
 
                                     <div class="col-lg-10">
-                                        <input type="text" name="image[{{$lang->id}}]" class="form-control" required>
+                                        <input type="text" name="story[{{$lang->id}}][image]" class="form-control"
+                                               required>
                                     </div>
                                 </div>
-
 
                             </div>
                         @endforeach
