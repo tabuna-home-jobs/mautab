@@ -44,7 +44,10 @@ var jp_config = {
         '/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'],
 
     prism: ['/bower_components/prism/prism.js'],
-
+    uploadWidget: ['/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js'],
+    uploadFile: ['/bower_components/blueimp-file-upload/js/jquery.fileupload.js'],
+    jqueryxdr: ['/bower_components/blueimp-file-upload/js/cors/jquery.xdr-transport.js'],
+    jquerypostmess: ['/bower_components/blueimp-file-upload/js/cors/jquery.postmessage-transport.js'],
 
     webAdd: ['/build/js/controller/user/web/index.js'],
     tiketSocketConn: ['/build/js/controller/user/tikets/index.js'],
