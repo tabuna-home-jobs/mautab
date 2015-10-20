@@ -90,7 +90,6 @@
                             <li role="presentation" @if ($lang == $Languages->first()) class="active" @endif>
                                 <a href="#lang-{{$lang->code}}" role="tab" data-toggle="tab"
                                    aria-expanded="true">{{$lang->name}}</a>
-
                             </li>
                         @endforeach
                     </ul>

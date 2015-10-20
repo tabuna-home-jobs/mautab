@@ -122,7 +122,7 @@ class BlockController extends Controller
      */
     public function destroy(Block $block)
     {
-        $block->delete('cascade');
+        $block->delete();
         Flash::success('Вы успешно удалили блок.');
         return redirect()->route('admin.block.index');
     }
