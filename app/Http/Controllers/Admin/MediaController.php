@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Storage;
+use Response;
 
 class MediaController extends Controller
 {

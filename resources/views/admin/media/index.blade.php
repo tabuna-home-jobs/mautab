@@ -70,11 +70,16 @@
                     <div class="row fileupload-buttonbar">
                         <div class="col-lg-7">
                             <!-- The fileinput-button span is used to style the file input field as button -->
-                <span class="btn btn-success fileinput-button">
+                <span class="btn btn-success fileinput-button" id="addFile">
                     <i class="glyphicon glyphicon-plus"></i>
                     <span>Add files...</span>
-                    <input type="file" name="fileUpload" multiple="">
+
                 </span>
+
+                            <div class="hide-item">
+                                <input type="file" name="fileUpload" multiple="">
+                            </div>
+
                             <button type="submit" class="btn btn-primary start">
                                 <i class="glyphicon glyphicon-upload"></i>
                                 <span>Start upload</span>
@@ -91,6 +96,8 @@
                             <!-- The global file processing state -->
                             <span class="fileupload-process"></span>
                         </div>
+
+
                         <!-- The global progress state -->
                         <div class="col-lg-5 fileupload-progress fade">
                             <!-- The global progress bar -->
@@ -106,7 +113,12 @@
                         <tbody class="files">
                         </tbody>
                     </table>
-                    <div class="alert alert-danger">Upload server currently unavailable - Tue Oct 20 2015 21:45:08 GMT+0300 (MSK)</div></form>
+                </form>
+                <div class="clearfix"></div>
+                <div id="progress">
+                    <div class="bar" style="width: 0%;"></div>
+                </div>
+                <div class="proc"></div>
 
             </div>
 

@@ -11,14 +11,36 @@ $("#uploadthis").change(function () {
 
 });
 
+//Выбор файла
+$("#addFile").click(function(){
+
+    $(".hide-item input").click();
+
+});
+
 
 $(function () {
     $('#fileupload').fileupload({
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .bar').css(
+                'width',
+                progress + '%'
+            );
+        },
         dataType: 'json',
+        add: function (e, data) {
+
+            data.context = $('.btn.start span').text('Upload')
+                //.appendTo(document.body)
+                .click(function () {
+                    data.context = $('div.proc').text('Uploading...').replaceAll($(this));
+                    data.submit();
+                });
+        },
         done: function (e, data) {
-            $.each(data.result.files, function (index, file) {
-                $('<p/>').text(file.name).appendTo(document.body);
-            });
+            alert('hey!');
+            data.context.text('Upload finished.');
         }
     });
 });
