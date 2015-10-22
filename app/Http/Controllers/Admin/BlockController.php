@@ -82,9 +82,9 @@ class BlockController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Block $block)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -97,7 +97,7 @@ class BlockController extends Controller
     {
         return view('admin.block.edit', [
             'Types' => Type::where('is_block', true)->get(),
-            'Block' => Block::with('story')->firstOrFail(),
+            'Block' => $block->with('story')->findOrFail($block->id),
             'Languages' => Language::where('status', true)->get()
         ]);
     }
@@ -106,18 +106,33 @@ class BlockController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  Block $block
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Block $block)
     {
-        //
+        $block->fill($request->all())->save();
+
+        foreach ($request->story as $key => $value) {
+            $story = new Story($value);
+            $story->lang_id = $key;
+
+            $block->story()->updateOrCreate([
+                'id' => $value['id']
+            ],
+                $story->attributesToArray()
+            );
+        }
+
+        Flash::success('Вы успешно изменили блок.');
+        return redirect()->route('admin.block.index');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  Block $block
      * @return \Illuminate\Http\Response
      */
     public function destroy(Block $block)

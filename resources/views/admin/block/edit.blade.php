@@ -40,7 +40,7 @@
         <div class="panel-body">
 
 
-            <form class="form-horizontal" method="post" action="{{route('admin.block.update')}}">
+            <form class="form-horizontal" method="post" action="{{route('admin.block.update',$Block->slug)}}">
 
 
                 <div class="form-group">
@@ -108,6 +108,7 @@
                                     <label class="col-lg-2 control-label">Имя</label>
 
                                     <div class="col-lg-10">
+
                                         <input type="text" name="story[{{$lang->id}}][name]" class="form-control"
                                                value="{{$Block->story->where('lang_id',$lang->id)->first()->name or ''}}"
                                                required>
@@ -139,6 +140,11 @@
                                     </div>
                                 </div>
 
+
+                                <input type="hidden" name="story[{{$lang->id}}][id]" class="form-control"
+                                       value="{{$Block->story->where('lang_id',$lang->id)->first()->id or ''}}"
+                                       required>
+
                             </div>
                         @endforeach
                     </div>
@@ -151,6 +157,7 @@
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                         {!!  csrf_field() !!}
+                        <input type="hidden" name="_method" value="PUT">
                         <button type="submit" class="btn btn-sm btn-info">Обновить</button>
                     </div>
                 </div>
