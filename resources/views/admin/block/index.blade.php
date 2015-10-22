@@ -59,8 +59,19 @@
                             <td>
 
                                 <div class="btn-group pull-right" role="group" aria-label="...">
+
+
+                                    <a href="{{route('admin.block.element.create',$block->slug)}}"
+                                       class="btn btn-default"><i class="fa fa-plus"></i> </a>
+
+
+                                    <a href="{{route('admin.block.element.index',$block->slug)}}"
+                                       class="btn btn-default"><i class="fa fa-bars"></i>
+                                    </a>
+
                                     <a href="{{ route('admin.block.edit',$block->slug) }}"
-                                       class="btn btn-default"><span class="fa fa-edit"></span> </a>
+                                       class="btn btn-default"><i class="fa fa-edit"></i>
+                                    </a>
                                     <a href="#" data-toggle="modal" data-target="#Modal-{{$block->slug}}"
                                        class="btn btn-danger">
                                         <i class="fa fa-trash"></i>

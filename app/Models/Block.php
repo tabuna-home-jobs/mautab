@@ -47,7 +47,7 @@ class Block extends Model
 
     public function element()
     {
-        return $this->one(static::$elementModel);
+        return $this->hasMany(static::$elementModel);
     }
 
     public function story()
