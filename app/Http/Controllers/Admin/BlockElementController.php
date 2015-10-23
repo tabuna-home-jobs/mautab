@@ -11,13 +11,15 @@ class BlockElementController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param Block $block
+     * @return \Illuminate\View\View
      */
     public function index(Block $block)
     {
-
-        dd($block, $block->element()->paginate(15));
+        return view('admin.block.elementIndex', [
+            'Block' => $block,
+            'Elements' => $block->element()->with('story')->paginate(15)
+        ]);
     }
 
     /**

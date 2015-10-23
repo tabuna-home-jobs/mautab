@@ -3,9 +3,13 @@
 namespace Mautab\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
+
 
 class Element extends Model
 {
+
+    use Sortable;
 
     protected static $blockModel = Block::class;
     protected static $storyModel = Story::class;
@@ -15,4 +19,19 @@ class Element extends Model
         'story_id',
         'sort',
     ];
+
+
+    protected $searchable = [
+        'columns' => [
+            'block_id' => 1,
+            'story_id' => 1,
+        ],
+    ];
+
+
+    public function story()
+    {
+        return $this->hasMany(static::$storyModel);
+    }
+
 }
