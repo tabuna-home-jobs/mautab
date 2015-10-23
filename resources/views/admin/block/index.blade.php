@@ -64,7 +64,6 @@
                                     <a href="{{route('admin.block.element.create',$block->slug)}}"
                                        class="btn btn-default"><i class="fa fa-plus"></i> </a>
 
-
                                     <a href="{{route('admin.block.element.index',$block->slug)}}"
                                        class="btn btn-default"><i class="fa fa-bars"></i>
                                     </a>
