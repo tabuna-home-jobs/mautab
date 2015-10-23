@@ -398,3 +398,10 @@ label, strong {
 .panelko form {
     display: inline-block;
 }
+.hide-item{
+    display: none;
+}
+.bar {
+    height: 18px;
+    background: green;
+}
