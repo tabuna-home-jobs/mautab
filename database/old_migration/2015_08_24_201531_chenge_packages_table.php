@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Migrations\Migration;
 
-class ChengePackagesTable extends Migration
+    class ChengePackagesTable extends Migration
 {
     /**
      * Run the migrations.

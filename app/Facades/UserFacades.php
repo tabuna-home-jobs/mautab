@@ -2,10 +2,10 @@
 namespace Mautab\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Mautab\Http\Controllers\Admin\UserController;
+    use Mautab\Http\Controllers\Admin\UserController;
 
 
-class UserFacades extends Facade
+    class UserFacades extends Facade
 {
 
 

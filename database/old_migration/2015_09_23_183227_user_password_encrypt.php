@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
 
-class UserPasswordEncrypt extends Migration
+    class UserPasswordEncrypt extends Migration
 {
     /**
      * Run the migrations.

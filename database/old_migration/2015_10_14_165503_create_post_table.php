@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
 
-class CreatePostTable extends Migration
+    class CreatePostTable extends Migration
 {
     /**
      * Run the migrations.

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Migrations\Migration;
 
-class CreateNewColumsUsersTable extends Migration
+    class CreateNewColumsUsersTable extends Migration
 {
     /**
      * Run the migrations.

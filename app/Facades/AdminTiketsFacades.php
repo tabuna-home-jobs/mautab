@@ -2,9 +2,9 @@
 namespace Mautab\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Mautab\Http\Controllers\Admin\TiketsController;
+    use Mautab\Http\Controllers\Admin\TiketsController;
 
-class AdminTiketsFacades extends Facade
+    class AdminTiketsFacades extends Facade
 {
 
     protected static function getFacadeAccessor()
