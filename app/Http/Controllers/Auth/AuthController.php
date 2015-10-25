@@ -45,7 +45,7 @@ class AuthController extends Controller
 
 
         return Validator::make($data, [
-            'nickname' => 'required|max:255|unique:users',
+            'nickname' => 'required|max:10|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);

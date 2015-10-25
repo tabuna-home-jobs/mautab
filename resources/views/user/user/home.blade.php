@@ -147,24 +147,6 @@
                                                     class="fa fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
-                                <!-- ./col -->
-                                <div class="col-lg-6 col-xs-12">
-                                    <!-- small box -->
-                                    <div class="small-box bg-danger">
-                                        <div class="inner">
-                                            <h3>Файлы</h3>
-
-                                            <p>Менеджер файлов</p>
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-file-code-o"></i>
-                                        </div>
-                                        <a href="{{route('manager.index')}}" class="small-box-footer">Перейти <i
-                                                    class="fa fa-arrow-circle-right"></i></a>
-                                    </div>
-                                </div>
-                                <!-- ./col -->
-
 
                                 <div class="col-lg-6 col-xs-12">
                                     <!-- small box -->

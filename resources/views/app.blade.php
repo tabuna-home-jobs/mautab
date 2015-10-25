@@ -34,9 +34,6 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a class="{{Active::route('whois.index')}}" href="{{route('whois.index')}}">Who is</a></li>
-                <li class="active"><a href="#">Возможности</a></li>
-                <li><a href="#">Цена</a></li>
-
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>

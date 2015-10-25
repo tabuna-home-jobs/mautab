@@ -30,15 +30,11 @@
 
 
         Schema::table('story', function (Blueprint $table) {
-
-
             $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
             $table->foreign('lang_id')->references('id')->on('language')->onDelete('cascade');
             $table->foreign('seo_id')->references('id')->on('seo')->onDelete('cascade');
             $table->foreign('block_id')->references('id')->on('block')->onDelete('cascade');
             $table->foreign('element_id')->references('id')->on('element')->onDelete('cascade');
-
-
         });
 
 
