@@ -17,6 +17,7 @@ class Story extends Model
         'post_id',
         'lang_id',
         'seo_id',
-        'block_id'
+        'block_id',
+        'element_id',
     ];
 }

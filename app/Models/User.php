@@ -7,7 +7,6 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
 use Mautab\Manager\Access\UserAccess;
-use Mautab\Models\Post;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 /**
@@ -88,6 +87,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'created_at',
         'updated_at'
     ];
+
     protected $guarded = [
         'nickname',
         'first_name',

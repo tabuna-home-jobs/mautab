@@ -5,7 +5,7 @@
 
     <div class="bg-light lter b-b wrapper-md">
         <h1 class="m-n font-thin h3">Элементы</h1>
-        <small class="text-muted">Языки поддерживаемые системой</small>
+        <small class="text-muted">Элементы относящиеся к данному блоку</small>
     </div>
 
 
@@ -14,12 +14,12 @@
 
 
         <div class="panel panel-default">
-            <div class="panel-heading font-bold">Языки</div>
+            <div class="panel-heading font-bold">Элементы</div>
 
 
             <div class="row wrapper">
                 <div class="col-sm-4">
-                    <a href="{{route('admin.language.create')}}" class="btn btn-sm btn-default">Создать</a>
+                    <a href="{{URL::previous()}}" class="btn btn-sm btn-default">Назад</a>
                 </div>
                 <div class="col-sm-4">
                     <form action="{{route('admin.language.index')}}">
@@ -32,6 +32,9 @@
                     </form>
                 </div>
                 <div class="col-sm-4">
+                    <p class="pull-right">
+                        <a href="{{route('admin.block.element.create',$block->slug)}}" class="btn btn-sm btn-default">Создать</a>
+                    </p>
                 </div>
             </div>
 
@@ -42,27 +45,27 @@
                     <table class="table table-striped b-t b-light">
                         <thead>
                         <tr>
-                            <th>@sortablelink ('name','Имя')</th>
-                            <th>@sortablelink ('code','Код')</th>
-                            <th>@sortablelink ('status','Статус')</th>
+                            <th>@sortablelink ('id','#')</th>
+                            <th>@sortablelink ('name','Название')</th>
+                            <th>@sortablelink ('sort','Порядок')</th>
                             <th>@sortablelink ('updated_at','Последние изменение')</th>
                             <th>Управление</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($Elements as $lang)
+                        @foreach ($Elements as $element)
 
                             <tr>
-                                <td>{{ $lang->name }}</td>
-                                <td>{{ $lang->code }}</td>
-                                <td>@if($lang->status) Активен @else Не активен @endif</td>
-                                <td>{{ $lang->updated_at }}</td>
+                                <td>{{ $element->name }}</td>
+                                <td>{{ $element->code }}</td>
+                                <td>{{ $element->sort }}</td>
+                                <td>{{ $element->updated_at }}</td>
                                 <td>
 
                                     <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="{{ route('admin.language.edit',$lang->id) }}"
+                                        <a href="{{ route('admin.language.edit',$element->id) }}"
                                            class="btn btn-default"><span class="fa fa-edit"></span> </a>
-                                        <a href="#" data-toggle="modal" data-target="#Modal-{{$lang->id}}"
+                                        <a href="#" data-toggle="modal" data-target="#Modal-{{$element->id}}"
                                            class="btn btn-danger">
                                             <i class="fa fa-trash"></i>
                                         </a>
@@ -74,7 +77,7 @@
 
 
                             <!-- Modal -->
-                            <div class="modal fade" id="Modal-{{$lang->id}}" tabindex="-1" role="dialog"
+                            <div class="modal fade" id="Modal-{{$element->id}}" tabindex="-1" role="dialog"
                                  aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -83,13 +86,13 @@
                                                     aria-label="Close"><span
                                                         aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title" id="myModalLabel">Удалить
-                                                {{$lang->name}}?</h4>
+                                                {{$element->name}}?</h4>
                                         </div>
                                         <div class="modal-body">
-                                            Вы действительно хотите удалить {{$lang->name}}
+                                            Вы действительно хотите удалить {{$element->name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="{{route('admin.language.destroy',$lang->id)}}"
+                                            <form action="{{route('admin.language.destroy',$element->id)}}"
                                                   method="post">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет
                                                 </button>
