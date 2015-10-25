@@ -44,10 +44,30 @@ var jp_config = {
         '/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'],
 
     prism: ['/bower_components/prism/prism.js'],
-    uploadWidget: ['/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js'],
-    uploadFile: ['/bower_components/blueimp-file-upload/js/jquery.fileupload.js'],
-    jqueryxdr: ['/bower_components/blueimp-file-upload/js/cors/jquery.xdr-transport.js'],
-    jquerypostmess: ['/bower_components/blueimp-file-upload/js/cors/jquery.postmessage-transport.js'],
+
+
+
+    fileuploadz: [
+        '/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js',
+        '/bower_components/blueimp-tmpl/js/tmpl.min.js',
+        '/bower_components/blueimp-load-image/js/load-image.all.min.js',
+        '/bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js',
+        '/bower_components/blueimp-file-upload/js/jquery.fileupload.js',
+        '/bower_components/blueimp-file-upload/js/cors/jquery.postmessage-transport.js',
+        '/bower_components/blueimp-file-upload/js/jquery.iframe-transport.js',
+        '/bower_components/blueimp-file-upload/js/jquery.fileupload-process.js',
+        '/bower_components/blueimp-file-upload/js/jquery.fileupload-image.js',
+        '/bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js',
+        '/bower_components/blueimp-file-upload/js/jquery.fileupload-video.js',
+        '/bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js',
+        '/bower_components/blueimp-file-upload/js/jquery.fileupload-ui.js',
+        '/bower_components/blueimp-file-upload/js/cors/jquery.xdr-transport.js',
+        '/bower_components/blueimp-file-upload/css/jquery.fileupload.css',
+        '/bower_components/blueimp-file-upload/css/jquery.fileupload-ui.css',
+        '/bower_components/blueimp-file-upload/css/jquery.fileupload-noscript.css',
+        '/bower_components/blueimp-file-upload/css/jquery.fileupload-ui-noscript.css',
+        '/build/js/controller/admin/media/index.js'],
+
 
     webAdd: ['/build/js/controller/user/web/index.js'],
     tiketSocketConn: ['/build/js/controller/user/tikets/index.js'],
@@ -61,6 +81,7 @@ var jp_config = {
     dnsIndex: ['/build/js/controller/user/dns/index.js'],
     ibdexBd: ['/build/js/controller/user/bd/index.js'],
     ibdexMedia: ['/build/js/controller/admin/media/index.js']
+
 
 
 };

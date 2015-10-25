@@ -39,9 +39,21 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->file('fileUpload');
-        $extension = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename() . '.' . $extension, File::get($file));
+
+
+        $files = $request->file('files');
+
+	    foreach($files as $file){
+
+		    $extension = $file->getClientOriginalExtension();
+
+		    $fileCurrent = Storage::disk('local')->put($file->getFilename() . '.' . $extension, File::get($file));
+
+		    if($fileCurrent){
+
+			    return Response::json($file->getFilename().".".$extension);
+		    }
+	    }
 
         /*
         Storage::put($request->file('fileUpload')->getClientOriginalName(), $request->file('fileUpload'));
