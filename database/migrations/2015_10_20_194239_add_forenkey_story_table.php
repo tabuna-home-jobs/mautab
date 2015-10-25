@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
 
-class AddForenkeyStoryTable extends Migration
+    class AddForenkeyStoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -25,6 +25,7 @@ class AddForenkeyStoryTable extends Migration
             $table->unsignedInteger('lang_id')->nullable();
             $table->unsignedInteger('seo_id')->nullable();
             $table->unsignedInteger('block_id')->nullable();
+            $table->unsignedInteger('element_id')->nullable();
         });
 
 
@@ -35,6 +36,8 @@ class AddForenkeyStoryTable extends Migration
             $table->foreign('lang_id')->references('id')->on('language')->onDelete('cascade');
             $table->foreign('seo_id')->references('id')->on('seo')->onDelete('cascade');
             $table->foreign('block_id')->references('id')->on('block')->onDelete('cascade');
+            $table->foreign('element_id')->references('id')->on('element')->onDelete('cascade');
+
 
         });
 

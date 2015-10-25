@@ -17,8 +17,8 @@ class BlockElementController extends Controller
     public function index(Block $block)
     {
         return view('admin.block.elementIndex', [
-            'Block' => $block,
-            'Elements' => $block->element()->with('story')->paginate(15)
+            'block'    => $block,
+            'Elements' => $block->element()->sortable()->paginate(15),
         ]);
     }
 
