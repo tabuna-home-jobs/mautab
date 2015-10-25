@@ -84,7 +84,7 @@ $(function () {
             dataType: 'json',
             context: $('#fileupload')[0]
         }).always(function () {
-            
+
             $(this).removeClass('fileupload-processing');
         }).done(function (result) {
 
