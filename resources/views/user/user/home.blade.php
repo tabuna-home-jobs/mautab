@@ -12,7 +12,7 @@
                 <div class="row">
 
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
 
 
                         <div class="col wrapper-lg bg-light dk r-r">
@@ -92,14 +92,27 @@
                     </div>
 
 
-                    <div class="col-md-8">
+                    <div class="col-md-6">
 
                         <div class="col-md-12">
 
 
+                            <form action="{{route('search.index')}}" class="m-b-md">
+                                <div class="input-group">
+                                    <input type="text" name="query" class="form-control" placeholder="Поиск...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Поиск</button>
+      </span>
+                                </div>
+                            </form>
+
+
                             <div class="row">
-                                <div class="col-lg-6 col-xs-12">
-                                    <!-- small box -->
+
+
+                                <div class="col-xs-12">
+
+                                <!-- small box -->
                                     <div class="small-box bg-primary">
                                         <div class="inner">
                                             <h3>{{ $UserInfoLaravel->nickname }}</h3>
@@ -115,7 +128,7 @@
                                     </div>
                                 </div>
                                 <!-- ./col -->
-                                <div class="col-lg-6 col-xs-12">
+                                <div class=" col-xs-12">
                                     <!-- small box -->
                                     <div class="small-box bg-success">
                                         <div class="inner">
@@ -131,7 +144,7 @@
                                     </div>
                                 </div>
                                 <!-- ./col -->
-                                <div class="col-lg-6 col-xs-12">
+                                <div class="col-xs-12">
                                     <!-- small box -->
                                     <div class="small-box bg-warning">
                                         <div class="inner">
@@ -148,35 +161,10 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-xs-12">
-                                    <!-- small box -->
-                                    <div class="small-box bg-black">
-                                        <div class="inner">
-                                            <h3>CMS</h3>
-
-                                            <p>Помощник в установки</p>
-                                        </div>
-                                        <div class="icon">
-                                            <i class="fa fa-wordpress"></i>
-                                        </div>
-                                        <a href="{{route('install.index')}}" class="small-box-footer">Перейти <i
-                                                    class="fa fa-arrow-circle-right"></i></a>
-                                    </div>
-                                </div>
-                                <!-- ./col -->
 
 
                             </div>
 
-
-                            <form action="{{route('search.index')}}" class="m-b-md">
-                                <div class="input-group">
-                                    <input type="text" name="query" class="form-control" placeholder="Поиск...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="submit">Поиск</button>
-      </span>
-                                </div>
-                            </form>
 
 
                         </div>

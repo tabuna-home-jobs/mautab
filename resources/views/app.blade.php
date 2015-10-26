@@ -81,7 +81,10 @@
 
 </div>
 
+<!--
 <section class="app">
+-->
+<section>
 
     @include('_layouts.message')
 

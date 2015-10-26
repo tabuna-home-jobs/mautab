@@ -25,7 +25,7 @@
 </head>
 
 <!-- header -->
-<header id="header" class="navbar navbar-fixed-top bg-white-only padder-v" data-spy="affix" data-offset-top="1">
+<header id="header" class="navbar navbar-fixed-top bg-white-only" data-spy="affix" data-offset-top="1">
     <div class="container">
         <div class="navbar-header">
             <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse"

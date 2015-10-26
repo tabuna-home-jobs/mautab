@@ -19,22 +19,6 @@
         </div>
 
 
-        <div class="collapse col-xs-12" id="add-payments">
-            <form class="col-md-offset-3 col-md-4 col-xs-12" method="post" action="{{route('web.store')}}">
-
-                <div class="form-group input-line">
-                    <label class="control-label">Домен </label>
-                    <input type="text" name="v_domain" class="form-control" value="" required/>
-                </div>
-
-
-                <div class="line line-dashed b-b"></div>
-            </form>
-
-
-        </div>
-
-
         <div class="table-responsive">
             <table class="table table-striped b-t b-light">
                 <tbody>

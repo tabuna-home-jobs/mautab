@@ -93,55 +93,42 @@
 
             </div>
 
+        </div>
 
-            <div class="col-md-12" id="add-shadow">
 
+        <div id="add-shadow" class="table-responsive">
+            <table class="table table-striped b-t b-light">
+                <tbody>
                 @forelse($DnsList as $nameDns => $Dns)
 
-                    <div class="col-xs-12 col-md-4">
+                    <tr>
+                        <td>{{$nameDns}}</td>
 
-                        <div class="panel b-a">
-                            <div class="text-center no-border bg-primary">
-                                <span class="text-lt text-ellipsis p-title">{{$nameDns}}</span>
-                            </div>
+                        <td>{{$Dns['SOA']}}</td>
+                        <td>{{$Dns['TTL']}}</td>
+                        <td>
 
+                            <div class="btn-group pull-right" role="group" aria-label="...">
 
-                            <div class="hbox bg-primary bg">
-                                <div class="col wrapper">
-                                    <span>SOA</span>
-
-                                    <div class="h1 text-info font-thin text-ellipsis">{{$Dns['SOA']}}</div>
-                                </div>
-                                <div class="col wrapper bg-info">
-                                    <span>TTL</span>
-
-                                    <div class="h1 text-warning font-thin text-ellipsis">{{$Dns['TTL']}}</div>
-                                </div>
-                            </div>
-
-
-                            <div class="hbox text-center b-b b-light text-sm">
                                 <a href="{{route('records.show', $nameDns)}}"
-                                   class="col padder-v text-muted b-r b-light">
+                                   class="btn btn-default">
                                     <i class="fa fa-plus block m-b-xs"></i>
-                                    <span>Records</span>
                                 </a>
                                 <a href="{{route('dns.show', $nameDns)}}"
-                                   class="col padder-v text-muted b-r b-light">
+                                   class="btn btn-default">
                                     <i class="fa fa-pencil-square-o block m-b-xs"></i>
-                                    <span>Edit</span>
                                 </a>
 
                                 <a href="#" onclick="delModal('{{$nameDns}}', '{{route('dns.destroy')}}');"
-                                   class="col padder-v text-muted">
+                                   class="btn btn-danger">
                                     <i class="fa fa-trash block m-b-xs"></i>
-                                    <span>Delete</span>
                                 </a>
                             </div>
 
-                        </div>
+                        </td>
 
-                    </div>
+                    </tr>
+
 
 
                 @empty
@@ -153,11 +140,10 @@
 
                     </div>
                 @endforelse
-
+                </tbody>
+            </table>
             </div>
         </div>
-
-    </div>
     </div>
 
 
