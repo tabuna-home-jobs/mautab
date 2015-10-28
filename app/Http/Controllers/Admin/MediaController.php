@@ -47,17 +47,27 @@ class MediaController extends Controller
 
 		    $extension = $file->getClientOriginalExtension();
 
-		    $fileCurrent = Storage::disk('local')->put($file->getFilename() . '.' . $extension, File::get($file));
+		    $fileCurrent = Storage::put($file->getFilename() . '.' . $extension, File::get($file));
 
 		    if($fileCurrent){
 
-			    return Response::json($file->getFilename().".".$extension);
+                $res = array(
+                    "files" => array(
+                        0 => array(
+                            "deleteType" => "DELETE",
+                            "deleteUrl"  => route('admin.media.destroy',$file->getClientOriginalName()),
+                            "name" => $file->getClientOriginalName(),
+                            "size" => $file->getClientSize(),
+                            "thumbnailUrl" => route('admin.media.show', $file->getFilename() . '.' . $extension),
+                            "type" => $file->getClientMimeType(),
+                            "url" => route('admin.media.show',$file->getClientOriginalName())
+                        )
+                    )
+                );
+			    return Response::json($res);
 		    }
 	    }
 
-        /*
-        Storage::put($request->file('fileUpload')->getClientOriginalName(), $request->file('fileUpload'));
-        Storage::disk('local')->put($file->getFilename().'.'.$extension,  File::get($file));*/
 
     }
 
@@ -67,9 +77,9 @@ class MediaController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($name)
     {
-        //
+        return response()->download( storage_path("app/".$name));
     }
 
     /**
