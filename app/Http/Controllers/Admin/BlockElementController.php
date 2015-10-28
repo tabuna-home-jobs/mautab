@@ -2,10 +2,14 @@
 
 namespace Mautab\Http\Controllers\Admin;
 
+use Flash;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Mautab\Models\Block;
+use Mautab\Models\Element;
+use Mautab\Models\Language;
+use Mautab\Models\Story;
 
 class BlockElementController extends Controller
 {
@@ -27,9 +31,14 @@ class BlockElementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Block $block)
     {
-        //
+        $Languages = Language::where('status', true)->get();
+
+        return view('admin.block.elementCreate', [
+            'Block'     => $block,
+            'Languages' => $Languages,
+        ]);
     }
 
     /**
@@ -38,9 +47,26 @@ class BlockElementController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Block $block, Request $request)
     {
-        //
+        $element = new Element($request->all());
+        $element->block_id = $block->id;
+
+
+        $Storys = collect();
+
+        foreach ($request->story as $key => $value) {
+            $story = new Story($value);
+            $story->lang_id = $key;
+            $Storys->prepend($story);
+        }
+
+        $element->save();
+        $element->story()->saveMany($Storys);
+
+        Flash::success('Вы успешно создали блок.');
+
+        return redirect()->route('admin.block.element.index', $block->slug);
     }
 
     /**
@@ -60,9 +86,13 @@ class BlockElementController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Block $block, Element $element)
     {
-        //
+        return view('admin.block.elementEdit', [
+            'Block'     => $block,
+            'Element'   => $element->with('story')->findOrFail($element->id),
+            'Languages' => Language::where('status', true)->get(),
+        ]);
     }
 
     /**
@@ -72,9 +102,26 @@ class BlockElementController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Block $block, Element $element)
     {
-        //
+        $element->fill($request->all())->save();
+
+        foreach ($request->story as $key => $value) {
+            $story = new Story($value);
+            $story->lang_id = $key;
+
+            $element->story()->updateOrCreate([
+                'id' => $value['id'],
+            ],
+                $story->attributesToArray()
+            );
+        }
+
+        Flash::success('Вы успешно изменили элемент');
+
+        return redirect()->route('admin.block.element.index', $block->slug);
+
+
     }
 
     /**
@@ -83,8 +130,11 @@ class BlockElementController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Block $block, Element $element)
     {
-        //
+        $element->delete();
+        Flash::success('Вы успешно удалили элемент.');
+
+        return redirect()->route('admin.block.element.index', $block->slug);
     }
 }

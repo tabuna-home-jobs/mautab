@@ -45,7 +45,6 @@
                     <table class="table table-striped b-t b-light">
                         <thead>
                         <tr>
-                            <th>@sortablelink ('id','#')</th>
                             <th>@sortablelink ('name','Название')</th>
                             <th>@sortablelink ('sort','Порядок')</th>
                             <th>@sortablelink ('updated_at','Последние изменение')</th>
@@ -57,13 +56,12 @@
 
                             <tr>
                                 <td>{{ $element->name }}</td>
-                                <td>{{ $element->code }}</td>
                                 <td>{{ $element->sort }}</td>
                                 <td>{{ $element->updated_at }}</td>
                                 <td>
 
                                     <div class="btn-group pull-right" role="group" aria-label="...">
-                                        <a href="{{ route('admin.language.edit',$element->id) }}"
+                                        <a href="{{ route('admin.block.element.edit',[$block->slug,$element->id]) }}"
                                            class="btn btn-default"><span class="fa fa-edit"></span> </a>
                                         <a href="#" data-toggle="modal" data-target="#Modal-{{$element->id}}"
                                            class="btn btn-danger">
@@ -92,7 +90,7 @@
                                             Вы действительно хотите удалить {{$element->name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="{{route('admin.language.destroy',$element->id)}}"
+                                            <form action="{{route('admin.block.element.destroy',[$block->slug,$element->id])}}"
                                                   method="post">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Нет
                                                 </button>

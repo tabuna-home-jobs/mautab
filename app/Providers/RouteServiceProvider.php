@@ -70,6 +70,11 @@ class RouteServiceProvider extends ServiceProvider
         });
 
 
+        $router->bind('element', function ($value) {
+            return \Mautab\Models\Element::findOrFail($value);
+        });
+
+
     }
 
     /**
