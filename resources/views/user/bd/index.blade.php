@@ -109,71 +109,73 @@
                 <hr class="clearfix col-xs-12">
             </div>
 
+        </div>
 
-            <div class="col-md-12" id="add-shadow">
+        <div class="table-responsive" id="add-shadow">
 
+            @if(count($BdList) > 0)
+                <table class="table table-striped b-t b-light">
 
-                @forelse($BdList as $nameBd => $bd)
+                    <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Пользователь</th>
+                        <th>Диск</th>
+                        <th class="text-right">Управление</th>
+                    </tr>
+                    </thead>
 
-                    <div class="col-xs-12 col-md-4">
+                    <tbody>
 
-                        <div class="panel b-a">
-                            <div class="text-center no-border bg-primary">
-                                <span class="text-lt text-ellipsis p-title">{{$nameBd}}</span>
-                            </div>
+                    @endif
 
+                    @forelse($BdList as $nameBd => $bd)
+                        <tr>
+                            <td>{{$nameBd}}</td>
 
-                            <div class="hbox bg-primary bg">
-                                <div class="col wrapper">
-                                    <span>Диск</span>
+                            <td>{{$bd['DBUSER']}}</td>
+                            <td>{{$bd['U_DISK']}}</td>
+                            <td>
+                                <div class="btn-group pull-right" role="group" aria-label="...">
 
-                                    <div class="h1 text-info font-thin text-ellipsis">{{$bd['U_DISK']}}</div>
+                                    <a href="http://{{(string)Config::get('vesta.server')[Auth::User()->server]['ip'] }}/phpmyadmin"
+                                       target="_blank"
+                                       class="btn btn-default">
+                                        <i class="fa fa-database block m-b-xs"></i>
+                                    </a>
+                                    <a href="{{route('bd.show', $nameBd)}}"
+                                       class="btn btn-default">
+                                        <i class="fa fa-pencil-square-o block m-b-xs"></i>
+                                    </a>
+                                    <a href="#" onclick="delModal('{{$nameBd}}', '{{route('bd.destroy')}}');"
+                                       class="btn btn-danger">
+                                        <i class="fa fa-trash block m-b-xs"></i>
+                                    </a>
                                 </div>
-                                <div class="col wrapper bg-info">
-                                    <span>Пользователь</span>
 
-                                    <div class="h1 text-warning font-thin text-ellipsis">{{$bd['DBUSER']}}</div>
-                                </div>
-                            </div>
+                            </td>
+                        </tr>
 
 
-                            <div class="hbox text-center b-b b-light text-sm">
-                                <a href="http://{{(string)Config::get('vesta.server')[Auth::User()->server]['ip'] }}/phpmyadmin"
-                                   target="_blank"
-                                   class="col padder-v text-muted b-r b-light">
-                                    <i class="fa fa-database block m-b-xs"></i>
-                                    <span>phpmyadmin</span>
-                                </a>
-                                <a href="{{route('bd.show', $nameBd)}}"
-                                   class="col padder-v text-muted b-r b-light">
-                                    <i class="fa fa-pencil-square-o block m-b-xs"></i>
-                                    <span>Edit</span>
-                                </a>
-                                <a href="#" onclick="delModal('{{$nameBd}}', '{{route('bd.destroy')}}');"
-                                   class="col padder-v text-muted">
-                                    <i class="fa fa-trash block m-b-xs"></i>
-                                    <span>Delete</span>
-                                </a>
-                            </div>
+
+
+                    @empty
+                        <div class="jumbotron text-center">
+                            <h1>Пусто!</h1>
+
+                            <p>Вы ещё не создали ни одной базы данных</p>
 
                         </div>
 
+                    @endforelse
 
-                    </div>
 
-                @empty
-                    <div class="jumbotron text-center">
-                        <h1>Пусто!</h1>
+                    @if(count($BdList) > 0)
+                    </tbody>
+                </table>
+            @endif
 
-                        <p>Вы ещё не создали ни одной базы данных</p>
-
-                    </div>
-
-                @endforelse
-            </div>
         </div>
-
-
     </div>
 
     </div>

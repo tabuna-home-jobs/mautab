@@ -12,28 +12,36 @@ class Localization
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \Closure $next
+     * @param  \Closure                 $next
      *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
 
+        /**
+         * Вроде лучше, но в нимание обратить стоит, скорее всего проблема будет
+         * так как нет смены языка. так же, мне кажеться можно как то упрастить,
+         * что бы не создавать лишние классы
+         */
 
-        if (Auth::check()) {
+        $lang = Session::get('lang', null);
+
+
+        if (!is_null($lang)) {
+            App::setLocale($lang);
+
+        } elseif (Auth::check()) {
+            Session::put('lang', Auth::User()->lang);
             App::setLocale(Auth::User()->lang);
-
             return $next($request);
-        } else {
-            if (Session::has('lang')) {
-                App::setLocale(Session::get('lang'));
 
-                return $next($request);
-            } else {
-                App::setLocale('en');
-                return $next($request);
-            }
+        } elseif (!is_null($request->server->get('HTTP_ACCEPT_LANGUAGE'))) {
+            $langRequest = substr($request->server->get('HTTP_ACCEPT_LANGUAGE'), 0, 2);
+            Session::put('lang', $langRequest);
+            App::setLocale($langRequest);
         }
+
     }
 
 }

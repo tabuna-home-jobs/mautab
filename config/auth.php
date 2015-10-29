@@ -27,7 +27,7 @@ return [
     |
     */
 
-    'model' => 'Mautab\Models\User',
+    'model' => Mautab\Models\User::class,
     /*
     |--------------------------------------------------------------------------
     | Authentication Table

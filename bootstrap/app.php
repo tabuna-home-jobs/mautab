@@ -27,18 +27,18 @@ $app = new Illuminate\Foundation\Application(
 */
 
 $app->singleton(
-	'Illuminate\Contracts\Http\Kernel',
-	'Mautab\Http\Kernel'
+	Illuminate\Contracts\Http\Kernel::class,
+	Mautab\Http\Kernel::class
 );
 
 $app->singleton(
-	'Illuminate\Contracts\Console\Kernel',
-	'Mautab\Console\Kernel'
+	Illuminate\Contracts\Console\Kernel::class,
+	Mautab\Console\Kernel::class
 );
 
 $app->singleton(
-	'Illuminate\Contracts\Debug\ExceptionHandler',
-	'Mautab\Exceptions\Handler'
+	Illuminate\Contracts\Debug\ExceptionHandler::class,
+	Mautab\Exceptions\Handler::class
 );
 
 /*

@@ -376,7 +376,7 @@
                         </li>
                         <li class="{{Active::route('admin.media.*')}}">
                             <a href="{{route('admin.media.index')}}">
-                                <i class="fa fa-folder text-yelllow"></i>
+                                <i class="fa fa-picture-o text-yelllow"></i>
                                 <span>Медиа</span>
                             </a>
                         </li>
