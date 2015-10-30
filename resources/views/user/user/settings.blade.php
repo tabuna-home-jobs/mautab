@@ -107,7 +107,7 @@
                             <label class="col-sm-3 control-label">Аккаунт</label>
 
                             <div class="col-sm-9"><input type="text" class="form-control" disabled
-                                                         value="{{Auth::User()->nickname}} "></div>
+                                                         value="{{Auth::User()->nickname}}"></div>
                         </div>
 
 
@@ -118,7 +118,7 @@
                             <label class="col-sm-3 control-label">Имя</label>
 
                             <div class="col-sm-9"><input type="text" class="form-control" disabled
-                                                         value="{{ $UserInfo['FNAME'] }} "></div>
+                                                         value="{{ $UserInfo['FNAME'] }}"></div>
                         </div>
 
 
@@ -129,7 +129,7 @@
                             <label class="col-sm-3 control-label">Фамилия</label>
 
                             <div class="col-sm-9"><input type="text" class="form-control" disabled
-                                                         value="{{ $UserInfo['LNAME'] }} "></div>
+                                                         value="{{ $UserInfo['LNAME'] }}"></div>
                         </div>
 
 
@@ -153,7 +153,7 @@
 
                             <div class="col-sm-9"><input type="email" name="email" class="form-control"
                                                          required
-                                                         value="{{ Auth::User()->email }} "></div>
+                                                         value="{{ Auth::User()->email }}"></div>
                         </div>
 
 

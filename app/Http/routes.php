@@ -1,6 +1,5 @@
 <?php
 
-
 Route::group(['namespace' => 'Guest'], function () {
     Route::resource('/', 'WelcomeHostingController@index');
     Route::resource('/price', 'WelcomeHostingController@price');
@@ -18,7 +17,7 @@ Route::controllers([
 ]);
 
 // Хостинг
-    Route::group(['middleware' => ['auth', 'Access', 'LoginAs'], 'namespace' => 'Hosting'], function () {
+Route::group(['middleware' => ['auth', 'Access', 'LoginAs'], 'namespace' => 'Hosting'], function () {
     Route::resource('search', 'SearchController');
     Route::resource('web', 'WebController');
     Route::resource('ftp', 'FtpController');
@@ -39,14 +38,14 @@ Route::controllers([
 
 
 // Всё для администратора
-    Route::group(['middleware' => ['auth', 'Access'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['auth', 'Access'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('/', 'HomeAdminController', ['only' => 'index']);
-    Route::resource('users', 'UserController');
-    Route::resource('pages', 'PagesController');
-    Route::resource('news', 'NewsController');
-    Route::resource('package', 'PackageController');
-    Route::resource('server', 'ServerController');
-    Route::resource('serverstats', 'ServerStatsController');
+    Route::resource('users', UserController::class);
+    Route::resource('pages', PagesController::class);
+    Route::resource('news', NewsController::class);
+    Route::resource('package', PackageController::class);
+    Route::resource('server', ServerController::class);
+    Route::resource('serverstats', ServerStatsController::class);
     Route::resource('serverservice', 'ServerServiceController');
     Route::resource('serverip', 'ServerIPController');
     Route::resource('tikets', 'TiketsController');
@@ -72,8 +71,3 @@ Route::controllers([
 Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
     Route::resource('/payments', 'PaymentsController');
 });
-
-
-
-
-

@@ -21,7 +21,7 @@ class AccessMiddleware
 
     public function handle($request, Closure $next)
     {
-        if ($this->auth->user()->hasAccess($this->routeActive)) {
+        if ($this->auth->check() && $this->auth->user()->hasAccess($this->routeActive)) {
             return $next($request);
         } else {
             abort(404);
