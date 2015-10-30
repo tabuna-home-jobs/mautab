@@ -34,7 +34,6 @@ class Localization
         } elseif (Auth::check()) {
             Session::put('lang', Auth::User()->lang);
             App::setLocale(Auth::User()->lang);
-            return $next($request);
 
         } elseif (!is_null($request->server->get('HTTP_ACCEPT_LANGUAGE'))) {
             $langRequest = substr($request->server->get('HTTP_ACCEPT_LANGUAGE'), 0, 2);
@@ -42,6 +41,8 @@ class Localization
             App::setLocale($langRequest);
         }
 
+
+        return $next($request);
     }
 
 }
