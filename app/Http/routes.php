@@ -57,6 +57,8 @@ Route::group(['middleware' => ['auth', 'Access'], 'namespace' => 'Admin', 'prefi
     Route::resource('block', 'BlockController');
     Route::resource('block.element', 'BlockElementController');
 
+    Route::resource('category', 'CategoryController');
+
     Route::resource('type', 'TypeController');
     Route::resource('media', 'MediaController');
 

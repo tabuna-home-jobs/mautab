@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d1dbb471590d948a89237a43b15fa74b",
-    "content-hash": "0f383d85ec50976be1974ade44b11f9a",
+    "hash": "b0ff6ab1769fce40d2ff1b16d79fd92b",
+    "content-hash": "32f657f6f38d18f701a17e0487d37a43",
     "packages": [
         {
             "name": "cboden/ratchet",
@@ -884,6 +884,52 @@
                 "tokenizer"
             ],
             "time": "2015-03-11 20:06:43"
+        },
+        {
+            "name": "kalnoy/nestedset",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lazychaser/laravel-nestedset.git",
+                "reference": "2d779aca90f296c3e04620ec3590172083d0dd95"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lazychaser/laravel-nestedset/zipball/2d779aca90f296c3e04620ec3590172083d0dd95",
+                "reference": "2d779aca90f296c3e04620ec3590172083d0dd95",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.1.0",
+                "illuminate/events": "~5.1.0",
+                "illuminate/support": "~5.1.0",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kalnoy\\Nestedset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kalnoy",
+                    "email": "lazychaser@gmail.com"
+                }
+            ],
+            "description": "Nested Set Model for Laravel 4",
+            "keywords": [
+                "database",
+                "hierarchy",
+                "laravel",
+                "nested sets",
+                "nsm"
+            ],
+            "time": "2015-09-10 05:40:54"
         },
         {
             "name": "kyslik/column-sortable",

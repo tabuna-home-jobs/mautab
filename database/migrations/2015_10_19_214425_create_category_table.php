@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
 
-class CreateCategoryTable extends Migration
+    class CreateCategoryTable extends Migration
 {
 
     /**
@@ -17,7 +17,6 @@ class CreateCategoryTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug')->unique();
-            $table->integer('category_id');
             $table->timestamps();
         });
     }

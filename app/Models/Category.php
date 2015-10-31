@@ -2,13 +2,18 @@
 
 namespace Mautab\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\Node;
+use Kyslik\ColumnSortable\Sortable;
 
-class Category extends Model
+class Category extends Node
 {
 
+    use Sortable;
+
     protected static $categoryModel = Category::class;
+
     protected $table = 'category';
+
     protected $fillable = [
         'name',
         'slug',
@@ -31,7 +36,7 @@ class Category extends Model
      * Отношение, что категория имеет подкатегории
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function sub()
+    public function children()
     {
         return $this->hasMany(static::$categoryModel);
     }

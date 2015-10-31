@@ -191,8 +191,8 @@
             <ul class="nav navbar-nav navbar-right">
 
 
-                <li class="#">
-                    <a href="#">
+                <li class="{{Active::route('admin.category.*')}}">
+                    <a href="{{route('admin.category.index')}}">
                         <span class="hidden-sm hidden-md"><i class="fa fa-briefcase icon"></i></span>
                         <span class="visible-xs-inline">Категории</span>
                     </a>

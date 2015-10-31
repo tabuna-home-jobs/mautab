@@ -5,7 +5,7 @@ namespace Mautab\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
-
+use Mautab\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -16,7 +16,32 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+
+        /*
+                $result = Category::first();
+
+                $result->saveAsRoot();
+                $result->makeRoot()->save();
+
+
+                $sum = Category::find(2);
+
+                $sum->parent()->associate($result)->save();
+
+                $sec = Category::find(3);
+
+                $sec->parent()->associate($sum)->save();
+
+
+                dd($result,$sum,$sec);
+        */
+
+
+        $categories = Category::sortable()->paginate(15);
+
+        return view('admin.category.index', [
+            'Categories' => $categories
+        ]);
     }
 
     /**

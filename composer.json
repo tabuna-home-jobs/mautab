@@ -14,7 +14,8 @@
 	  "nesbot/carbon": "^1.20",
 	  "laravelcollective/remote": "5.1.*",
 	  "kyslik/column-sortable": "~3.0.0",
-	  "nicolaslopezj/searchable": "1.*"
+	  "nicolaslopezj/searchable": "1.*",
+	  "kalnoy/nestedset": "^3.1"
 	},
 	"require-dev": {
       "phpunit/phpunit": "~4.0",
