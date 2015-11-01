@@ -63,13 +63,13 @@ label, strong {
 }
 
 .menuapp a:hover, .menuapp a.active {
-    color: #00afec;
+    color: #23b7e5;
     text-decoration: none;
 }
 
 .menu-small, .menu-small a {
     font-size: 8pt;
-    margin: 0px;
+    margin: 0;
 }
 
 .menuapp h4 {
@@ -185,7 +185,7 @@ label, strong {
 
 .menuapp a:hover > h4 > .badge-menu, .menuapp a.active > h4 > .badge-menu {
     color: #fff;
-    background: #00afec;
+    background: #23b7e5;
 }
 
 .tl-date > small {

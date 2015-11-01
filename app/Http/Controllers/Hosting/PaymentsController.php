@@ -19,7 +19,7 @@ class PaymentsController extends Controller
      */
     public function index()
     {
-        $Payments = Auth::User()->getPayments()->orderBy('id', 'Desc')->simplePaginate(15);
+        $Payments = Auth::User()->getPayments()->sortable()->orderBy('id', 'Desc')->simplePaginate(15);
         return view('user.user.payments', [
             'Payments' => $Payments
         ]);

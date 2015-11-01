@@ -1,6 +1,7 @@
 <?php namespace Mautab\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 /**
  * Mautab\Models\Payments
@@ -27,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
 class Payments extends Model
 {
 
+    use Sortable;
+
     /**
      * The database table used by the model.
      *
@@ -39,7 +42,15 @@ class Payments extends Model
      *
      * @var array
      */
-    protected $fillable = ['sum', 'status', 'user_id', 'w1_id'];
+    protected $fillable = ['sum', 'status', 'user_id', 'w1_id', 'created_at', 'updated_at',];
+
+
+    protected $sortable = [
+        'id',
+        'status',
+        'created_at',
+        'updated_at',
+    ];
 
 
     public function getUser()

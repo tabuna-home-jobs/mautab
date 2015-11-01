@@ -9,7 +9,7 @@
 
             <form class="form-inline text-right" action="{{route('payments.store')}}" method="POST">
                 <div class="form-group">
-                    <label for="sum" class="text-center">Сколько я хочу положить средств</label>
+                    <label for="sum" class="text-center">Я хочу положить средств</label>
                     <input type="number" name="sum" class="form-control" placeholder="Сумма">
                 </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -40,33 +40,32 @@
                 <tbody>
                 <thead>
                 <tr>
-                    <th>Номер счёта</th>
-                    <th>Сумма</th>
-                    <th>Статус</th>
-                    <th>Дата</th>
-
+                    <th class="text-center" width="20%">@sortablelink ('id','Номер счёта')</th>
+                    <th class="text-center">@sortablelink ('sum','Сумма')</th>
+                    <th class="text-center">@sortablelink ('updated_at','Дата')</th>
+                    <th class="text-center">@sortablelink ('status','Статус')</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($Payments as $pay)
                     <tr>
-                        <th>{{$pay->id}}</th>
-                        <th>{{$pay->sum}}</th>
+                        <th class="text-center">{{$pay->id}}</th>
+                        <th class="text-center">{{$pay->sum}} <i class="fa fa-rub"></i></th>
+                        <th class="text-center">{{$pay->updated_at->toDateString()}}</th>
                         @if($pay->status === null)
-                            <th>Ожидает</th>
+                            <th class="text-center"><i class="fa fa-refresh fa-spin"></i></th>
                         @elseif($pay->status)
-                            <th>Зачислен</th>
+                            <th class="text-center"><i class="text-success fa fa-check"></i></th>
                         @else
-                            <th>Ошибка</th>
+                            <th class="text-center"><i class="text-danger fa fa-times"></i></th>
                         @endif
-                        <th>{{$pay->created_at}}</th>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
 
 
-            {!! $Payments->render() !!}
+            {!! $Payments->appends(\Input::except('page'))->render() !!}
 
         </div>
 
