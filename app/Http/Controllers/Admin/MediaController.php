@@ -49,18 +49,19 @@ class MediaController extends Controller
 
 		    $fileCurrent = Storage::put($file->getFilename() . '.' . $extension, File::get($file));
 
+		    $fileOndDisk = $file->getFilename() . "." . $extension;
 		    if($fileCurrent){
 
                 $res = array(
                     "files" => array(
                         0 => array(
                             "deleteType" => "DELETE",
-                            "deleteUrl"  => route('admin.media.destroy',$file->getClientOriginalName()),
+                            "deleteUrl"  => route('admin.media.destroy', $fileOndDisk),
                             "name" => $file->getClientOriginalName(),
                             "size" => $file->getClientSize(),
-                            "thumbnailUrl" => route('admin.media.show', $file->getFilename() . '.' . $extension),
+                            "thumbnailUrl" => route('admin.media.show', $fileOndDisk),
                             "type" => $file->getClientMimeType(),
-                            "url" => route('admin.media.show',$file->getClientOriginalName())
+                            "url" => route('admin.media.show', $fileOndDisk)
                         )
                     )
                 );

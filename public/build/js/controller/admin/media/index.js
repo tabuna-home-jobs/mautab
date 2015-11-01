@@ -95,6 +95,10 @@ $(function () {
 
 });
 
+$(".fileinput-button").click(function(){
+    $("#inputupload").click();
+});
+
 /*
 $(function () {
     $('#fileupload').fileupload({

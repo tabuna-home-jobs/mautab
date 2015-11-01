@@ -9,46 +9,6 @@
             <div class="col-xs-3">
                 <h1 class="m-n font-thin h3">Медиа</h1>
             </div>
-            <div class="col-xs-9">
-                <div class="control-toolbar toolbar-padded">
-                    <div class="toolbar-item toolbar-primary">
-                        <div class="panelko">
-
-                            <form enctype="multipart/form-data" action="{{route('admin.media.store')}}" method="post"
-                                  id="sendFile">
-                                <button type="button" class="btn btn-primary upthis">
-                                    <i class="fa fa-upload"></i> Загрузить
-                                </button>
-
-                                <div style="display: none;">
-                                    <input type="file" id="uploadthis" name="fileUpload">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                </div>
-
-                            </form>
-
-                            <button type="button" class="btn btn-primary">
-                                <i class="fa fa-folder"></i> Создать папку
-                            </button>
-
-                            <button type="button" class="btn btn-default">
-                                <i class="fa fa-refresh"></i>
-                            </button>
-
-
-                            <button type="button" class="btn btn-default">
-                                <i class="fa fa-reply-all"></i> Переместить
-                            </button>
-
-                            <button type="button" class="btn btn-default">
-                                <i class="fa fa-trash"></i> Удалить
-                            </button>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -72,8 +32,10 @@
                 <span class="btn btn-success fileinput-button">
                     <i class="glyphicon glyphicon-plus"></i>
                     <span>Add files...</span>
-                    <input type="file" name="files[]" multiple>
+
                 </span>
+
+                <input id="inputupload" type="file" name="files[]" multiple>
                 <button type="submit" class="btn btn-primary start">
                     <i class="glyphicon glyphicon-upload"></i>
                     <span>Start upload</span>
@@ -167,6 +129,8 @@
                     <i class="glyphicon glyphicon-trash"></i>
                     <span>Delete</span>
                 </button>
+                <input type="hidden" name="_method" value="DELETE">
+
                 <input type="checkbox" name="delete" value="1" class="toggle">
             {% } else { %}
                 <button class="btn btn-warning cancel">
