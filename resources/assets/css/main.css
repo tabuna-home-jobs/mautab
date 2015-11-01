@@ -405,3 +405,14 @@ label, strong {
     height: 18px;
     background: green;
 }
+tr.template-download a img{
+
+    width: 100px;
+
+}
+.fileinput-button span, i{
+    display: inline-block !important;
+}
+#inputupload{
+    display: none;
+}
