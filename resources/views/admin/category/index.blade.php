@@ -48,7 +48,7 @@
                         </thead>
                         <tbody>
                                 @foreach ($Categories->toTree() as $category)
-                                    @include('admin._partials.category', $category)
+                                    @include('admin.category._partials.category', $category)
                                 @endforeach
                         </tbody>
                     </table>

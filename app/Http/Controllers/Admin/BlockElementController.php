@@ -63,9 +63,7 @@ class BlockElementController extends Controller
 
         $element->save();
         $element->story()->saveMany($Storys);
-
         Flash::success('Вы успешно создали блок.');
-
         return redirect()->route('admin.block.element.index', $block->slug);
     }
 
@@ -134,7 +132,6 @@ class BlockElementController extends Controller
     {
         $element->delete();
         Flash::success('Вы успешно удалили элемент.');
-
         return redirect()->route('admin.block.element.index', $block->slug);
     }
 }

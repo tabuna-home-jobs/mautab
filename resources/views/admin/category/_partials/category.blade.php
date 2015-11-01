@@ -1,7 +1,7 @@
 <tr>
     <td>
         @if ($category->parent)
-            @include('admin._partials.categoryName',['parent'=>$category->parent])
+            @include('admin.category._partials.categoryName',['parent'=>$category->parent])
         @endif
         {{$category->name}}
     </td>
@@ -9,7 +9,7 @@
     <td>
 
         <div class="btn-group pull-right" role="group" aria-label="...">
-            <a href="{{ route('admin.type.edit',$category->slug) }}"
+            <a href="{{ route('admin.category.edit',$category->slug) }}"
                class="btn btn-default"><span class="fa fa-edit"></span> </a>
             <a href="#" data-toggle="modal" data-target="#Modal-{{$category->slug}}"
                class="btn btn-danger">
@@ -56,6 +56,6 @@
 
 @if (count($category->children) > 0)
     @foreach($category->children as $category)
-        @include('admin._partials.category', $category)
+        @include('admin.category._partials.category', $category)
     @endforeach
 @endif
