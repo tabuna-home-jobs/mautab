@@ -29,9 +29,9 @@ $(function () {
             });
         }
         /*
-        external_filemanager_path: "/dist/filemanager/",
-        filemanager_title: "Файловый менеджер",
-        external_plugins: {"filemanager": "/dist/filemanager/plugin.min.js"}
+         external_filemanager_path: "/dist/filemanager/",
+         filemanager_title: "Файловый менеджер",
+         external_plugins: {"filemanager": "/dist/filemanager/plugin.min.js"}
          */
     });
 });

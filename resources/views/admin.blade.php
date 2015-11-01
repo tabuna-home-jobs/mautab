@@ -473,10 +473,6 @@
 
 <script src="{{asset('/build/js/app.js')}}" type="text/javascript"></script>
 
-
-<!--  TinyMCE -->
-<script src="{{asset('/dist/plugins/tinymce/tinymce.min.js')}}" type="text/javascript"></script>
-
 <!-- Процесс регистрации-->
 
 <script type="text/javascript">
