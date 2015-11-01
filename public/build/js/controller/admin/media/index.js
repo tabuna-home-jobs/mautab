@@ -95,7 +95,7 @@ $(function () {
 
 });
 
-$(".fileinput-button").click(function(){
+$(".fileinput-button").click(function () {
     $("#inputupload").click();
 });
 

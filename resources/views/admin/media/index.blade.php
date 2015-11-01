@@ -35,7 +35,7 @@
 
                 </span>
 
-                <input id="inputupload" type="file" name="files[]" multiple>
+                            <input id="inputupload" type="file" name="files[]" multiple>
                 <button type="submit" class="btn btn-primary start">
                     <i class="glyphicon glyphicon-upload"></i>
                     <span>Start upload</span>
