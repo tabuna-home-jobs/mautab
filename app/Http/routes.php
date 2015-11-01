@@ -59,6 +59,10 @@ Route::group(['middleware' => ['auth', 'Access'], 'namespace' => 'Admin', 'prefi
 
     Route::resource('category', 'CategoryController');
 
+
+    Route::resource('post', 'PostController');
+
+
     Route::resource('type', 'TypeController');
     Route::resource('media', 'MediaController');
 

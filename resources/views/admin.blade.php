@@ -325,8 +325,8 @@
                         </li>
 
 
-                        <li class="#">
-                            <a href="#">
+                        <li class="{{Active::route('admin.post.*')}}">
+                            <a href="{{route('admin.post.index')}}">
                                 <i class="fa fa-folder-open"></i>
                                 <span>Контент</span>
                             </a>
