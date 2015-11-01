@@ -81,17 +81,6 @@
                                     </div>
                                 </div>
 
-                                <div class="line line-dashed b-b line-lg"></div>
-
-
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">Контент</label>
-
-                                    <div class="col-lg-10">
-                                        <textarea name="story[{{$lang->id}}][content]" class="form-control"
-                                                  required></textarea>
-                                    </div>
-                                </div>
 
                                 <div class="line line-dashed b-b line-lg"></div>
 
@@ -104,6 +93,20 @@
                                                required>
                                     </div>
                                 </div>
+
+                                <div class="line line-dashed b-b line-lg"></div>
+
+
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Контент</label>
+
+                                    <div class="col-lg-10">
+                                        <textarea ui-jq="tinymce" rows="30" name="story[{{$lang->id}}][content]"
+                                                  class="tinymce form-control"
+                                                  required></textarea>
+                                    </div>
+                                </div>
+
 
                             </div>
                         @endforeach
