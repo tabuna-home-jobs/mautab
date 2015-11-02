@@ -98,7 +98,7 @@
                         <label class="col-lg-2 control-label">Роль нового пользователя</label>
 
                         <div class="col-lg-10">
-                            <select class="form-control" name="site_default_role">
+                            <select ui-jq="chosen" class="chosen-select form-control" name="site_default_role">
                                 <option value="">Без роли</option>
                                 @foreach($Roles as $key => $value)
                                     <option @if(Settings::getValueSlug('site_default_role') == $key) selected

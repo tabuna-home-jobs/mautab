@@ -10,6 +10,8 @@ class Type extends Model
     use Sortable;
 
     protected static $blockModel = Block::class;
+    protected static $postModel = Post::class;
+
     protected $table = 'type';
     protected $fillable = [
         'name',
@@ -25,6 +27,11 @@ class Type extends Model
     public function block()
     {
         return $this->hasMany(static::$blockModel);
+    }
+
+    public function post()
+    {
+        return $this->hasMany(static::$postModel);
     }
 
 

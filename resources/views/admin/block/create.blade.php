@@ -72,7 +72,7 @@
                     <label class="col-lg-2 control-label">Тип</label>
 
                     <div class="col-lg-10">
-                        <select class="form-control" name="type_id">
+                        <select ui-jq="chosen" class="chosen-select form-control" name="type_id">
                             @foreach($Types as $value)
                                 <option value="{{$value->id}}">{{$value->name}}</option>
                             @endforeach

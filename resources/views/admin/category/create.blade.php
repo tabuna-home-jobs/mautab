@@ -45,7 +45,7 @@
 
 
                         <div class="col-lg-10">
-                            <select class="form-control w-full" name="parent_id">
+                            <select ui-jq="chosen" class="chosen-select form-control w-full" name="parent_id">
                                 <option value="0">Без отношения</option>
                                 @foreach($Categories as $cat)
                                     <option value="{{$cat->id}}">{{$cat->name}}</option>

@@ -11,7 +11,7 @@
 
         @foreach($Types as $value)
 
-            <a href="{{route('admin.block.index',['type'=>$value->id])}}"
+            <a href="{{route('admin.post.index',['type'=>$value->id])}}"
                class="list-group-item m-l hover-anchor b-a" tabindex="0">
                                             <span class="pull-right text-muted hover-action" role="button" tabindex="0"><i
                                                         class="fa fa-eye"></i></span>
