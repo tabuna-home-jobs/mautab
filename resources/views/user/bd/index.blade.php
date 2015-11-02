@@ -114,13 +114,13 @@
         <div class="table-responsive" id="add-shadow">
 
             @if(count($BdList) > 0)
-                <table class="table table-striped b-t b-light">
+                <table class="table table-striped b-t b-light text-center">
 
                     <thead>
                     <tr>
-                        <th>Имя</th>
-                        <th>Пользователь</th>
-                        <th>Диск</th>
+                        <th class="text-center">Имя</th>
+                        <th class="text-center">Пользователь</th>
+                        <th class="text-center">Диск</th>
                         <th class="text-right">Управление</th>
                     </tr>
                     </thead>
@@ -134,7 +134,7 @@
                             <td>{{$nameBd}}</td>
 
                             <td>{{$bd['DBUSER']}}</td>
-                            <td>{{$bd['U_DISK']}}</td>
+                            <td>{{$bd['U_DISK']}} Mb</td>
                             <td>
                                 <div class="btn-group pull-right" role="group" aria-label="...">
 

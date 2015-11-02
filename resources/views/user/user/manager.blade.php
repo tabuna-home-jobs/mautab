@@ -37,12 +37,12 @@
 
                 <thead>
                 <tr>
-                    <th>#</th>
-                    <th colspan="3">Название</th>
+                    <th class="text-center" width="5%">#</th>
+                    <th colspan="3" width="50%">Название</th>
                     <th>Вес</th>
                     <th>Права</th>
                     <th>Дата</th>
-                    <th>Управление</th>
+                    <th class="text-right" width="10%">Управление</th>
                 </tr>
                 </thead>
 
@@ -52,7 +52,7 @@
                 @foreach($listDirectory as $list)
                     <tr>
 
-                        <td>
+                        <td class="text-center">
                             <div class="checkbox">
                                 <label class="i-checks">
                                     <input type="checkbox" name="1" value="Documents"><i></i>
@@ -85,7 +85,7 @@
                         </td>
 
 
-                        <td class="actions">
+                        <td class="actions text-right">
 
                             <a href="#" data-toggle="modal"
                                data-target="#Modal-permission-{{str_replace(".",'',$list['name'])}}"

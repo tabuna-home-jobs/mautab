@@ -93,9 +93,19 @@
 
 
         <div id="add-shadow" class="table-responsive">
-            <table class="table table-striped b-t b-light">
-                <tbody>
+            <table class="table table-striped b-t b-light text-center">
 
+                <thead>
+                <tr>
+                    <th class="text-center">Запись / Поддомен</th>
+                    <th class="text-center">Тип</th>
+                    <th class="text-center">IP адрес или значение</th>
+                    <th class="text-center">Дата создания</th>
+                    <th class="text-right">Управление</th>
+                </tr>
+                </thead>
+
+                <tbody>
                 @foreach($records as $key => $record)
 
                     @if($record['SUSPENDED'] == 'no')

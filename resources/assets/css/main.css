@@ -416,3 +416,7 @@ tr.template-download a img {
 #inputupload {
     display: none;
 }
+
+.table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: middle;
+}

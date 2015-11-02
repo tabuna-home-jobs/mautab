@@ -80,6 +80,17 @@
 
         <div id="add-shadow" class="table-responsive">
             <table class="table table-striped b-t b-light">
+
+
+                <thead>
+                <tr>
+                    <th>Команда</th>
+                    <th>Расписание</th>
+                    <th>Дата создания</th>
+                    <th class="text-right">Управление</th>
+                </tr>
+                </thead>
+
                 <tbody>
                 @forelse($CronList as $key => $job)
                     @if($job['SUSPENDED'] == 'no')

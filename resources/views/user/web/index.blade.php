@@ -29,10 +29,11 @@
 
                     <div class="line line-dashed b-b"></div>
 
-
+                    <p class="text-center">
                     <a id="show-add-options" data-toggle="collapse" href="#options" aria-expanded="false"
-                       aria-controls="collapseExample">Дополнительные опции</a>
-
+                       aria-controls="collapseExample">
+                        <i class="fa fa-plus"></i>Дополнительные опции</a>
+                    </p>
                     <!--Дополнительные опции (по умолчанию скрыт)-->
                     <div class="options collapse" id="options" aria-expanded="false">
                         <div class="form-group">

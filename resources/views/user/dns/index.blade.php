@@ -97,7 +97,17 @@
 
 
         <div id="add-shadow" class="table-responsive">
-            <table class="table table-striped b-t b-light">
+            <table class="table table-striped b-t b-light text-center">
+
+                <thead>
+                <tr>
+                    <th class="text-center">DNS</th>
+                    <th class="text-center">SOA</th>
+                    <th class="text-center">TTL</th>
+                    <th class="text-right">Управление</th>
+                </tr>
+                </thead>
+
                 <tbody>
                 @forelse($DnsList as $nameDns => $Dns)
 
