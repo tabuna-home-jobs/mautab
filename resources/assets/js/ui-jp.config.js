@@ -48,6 +48,16 @@ var jp_config = {
         '/build/js/plugins/tinymce.js'],
 
 
+    dropzone:[
+        '/bower_components/dropzone/dist/min/dropzone.min.css',
+        '/bower_components/dropzone/dist/min/basic.min.css',
+        '/bower_components/dropzone/dist/min/dropzone.min.js',
+        '/build/js/plugins/dropzone.js'
+    ],
+
+
+
+
     fileuploadz: [
         '/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js',
         '/bower_components/blueimp-tmpl/js/tmpl.min.js',

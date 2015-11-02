@@ -8,6 +8,7 @@ use Mautab\Http\Controllers\Controller;
 use Mautab\Http\Requests;
 use Response;
 use Storage;
+use Illuminate\Support\Str;
 
 class MediaController extends Controller
 {
@@ -28,7 +29,7 @@ class MediaController extends Controller
      */
     public function create()
     {
-        return view('admin/media/create');
+        return view('admin.media.create');
     }
 
     /**
@@ -40,7 +41,7 @@ class MediaController extends Controller
     public function store(Request $request)
     {
 
-
+/*
         $files = $request->file('files');
 
 	    foreach($files as $file){
@@ -68,6 +69,16 @@ class MediaController extends Controller
 			    return Response::json($res);
 		    }
 	    }
+*/
+
+
+       if($request->hasFile('file'))
+       {
+           $file = $request->file('file');
+           $file->move(storage_path() . '/app/', Str::ascii(time() . '-' . $file->getClientOriginalName()));
+           return abort(200);
+       }
+
 
 
     }
