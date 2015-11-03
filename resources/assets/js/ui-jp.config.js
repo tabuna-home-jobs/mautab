@@ -18,9 +18,13 @@ var jp_config = {
     filestyle: ['/bower_components/bootstrap-filestyle/src/bootstrap-filestyle.js'],
     slider: ['/bower_components/bootstrap-slider/bootstrap-slider.js',
         '/bower_components/bootstrap-slider/bootstrap-slider.css'],
+
+
     chosen: ['/bower_components/chosen/chosen.jquery.min.js',
-        '/bower_components/bootstrap-chosen/bootstrap-chosen.css',
-        '/build/js/plugins/chosen.js'],
+        '/build/js/plugins/chosen/bootstrap-chosen.css',
+        '/build/js/plugins/chosen/chosen.js'],
+
+
     TouchSpin: ['/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
         '/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'],
     wysiwyg: ['/bower_components/bootstrap-wysiwyg/bootstrap-wysiwyg.js',
@@ -53,10 +57,16 @@ var jp_config = {
         '/bower_components/dropzone/dist/min/dropzone.min.css',
         '/bower_components/dropzone/dist/min/basic.min.css',
         '/bower_components/dropzone/dist/min/dropzone.min.js',
-        '/build/js/plugins/dropzone.js'
+        '/build/js/plugins/dropzone/dropzone.js'
     ],
 
-
+    datetimepicker:[
+        '/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
+        '/bower_components/moment/min/moment.min.js',
+        '/bower_components/moment/min/locales.min.js',
+        '/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+        '/build/js/plugins/datetimepicker/datetimepicker.js'
+    ],
 
 
     fileuploadz: [

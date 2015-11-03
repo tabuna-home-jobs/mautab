@@ -81,6 +81,7 @@
                 </div>
 
 
+                <div class="line line-dashed b-b line-lg"></div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Категории</label>
@@ -92,6 +93,25 @@
                         </select>
                     </div>
                 </div>
+
+
+                <div class="line line-dashed b-b line-lg"></div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Дата публикации</label>
+                        <div class="col-sm-10">
+                            <div ui-jq="datetimepicker" class='input-group date datetimepicker'>
+                                <input type='text' name="publish" class="form-control"/>
+
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+
+                            </div>
+                        </div>
+                </div>
+
 
 
 

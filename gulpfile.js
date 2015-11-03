@@ -44,4 +44,7 @@ elixir(function (mix) {
  mix.copy('./vendor/bower_components', 'public/bower_components');
 
 
+
+
+
 });
