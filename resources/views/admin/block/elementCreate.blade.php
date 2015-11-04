@@ -102,8 +102,7 @@
 
                                     <div class="col-lg-10">
                                         <textarea ui-jq="tinymce" rows="30" name="story[{{$lang->id}}][content]"
-                                                  class="tinymce form-control"
-                                                  required></textarea>
+                                                  class="tinymce form-control"></textarea>
                                     </div>
                                 </div>
 
