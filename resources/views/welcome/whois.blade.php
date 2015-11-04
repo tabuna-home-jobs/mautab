@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 wrapper-xl">
-                    <h3 class="text-dark font-bold m-b-lg">Whois — это сервис для проверки доменов.</h3>
+                    <h3 class="text-dark font-bold m-b-lg">Сервис для проверки доменов.</h3>
                     <ul class="list-unstyled  m-t-xl">
                         <li data-ride="animated" data-animation="fadeInUp" data-delay="600" class="fadeInUp animated">
                             <i class="icon-check pull-left text-lg m-r m-t-sm"></i>

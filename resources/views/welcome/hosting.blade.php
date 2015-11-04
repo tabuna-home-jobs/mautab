@@ -87,9 +87,6 @@
                     <span class="text-primary">Laravel</span>...
                 </p>
 
-                <p class="m-t-xl"><a href="#testimonial" data-ride="scroll"
-                                     class="btn btn-lg btn-white b-2x b-dark btn-rounded bg-empty m-sm">Полный
-                        список</a></p>
             </div>
         </div>
     </div>

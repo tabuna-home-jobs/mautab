@@ -6,8 +6,6 @@ Route::group(['namespace' => 'Guest'], function () {
     Route::resource('pages', 'PageController');
     Route::resource('news', 'NewsController');
     Route::resource('whois', 'WhoIsController');
-    Route::resource('cms', 'CMSController');
-
 });
 
 
