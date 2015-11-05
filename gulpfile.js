@@ -44,6 +44,10 @@ elixir(function (mix) {
  mix.copy('./vendor/bower_components', 'public/bower_components');
 
 
+ //Темы и плагины для tinymce
+ mix.copy('./resources/assets/js/plugins/tinymce', 'public/bower_components/tinymce');
+
+
 
 
 

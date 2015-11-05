@@ -106,7 +106,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Контент</label>
 
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-12">
                                         <textarea ui-jq="tinymce" rows="30" name="story[{{$lang->id}}][content]"
                                                   class="tinymce form-control"
                                                   required>{{$Element->story->where('lang_id',$lang->id)->first()->content  or ''}}</textarea>

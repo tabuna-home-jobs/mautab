@@ -49,8 +49,9 @@ var jp_config = {
         '/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'],
 
     prism: ['/bower_components/prism/prism.js'],
-    tinymce: ['/bower_components/tinymce/tinymce.jquery.min.js',
-        '/build/js/plugins/tinymce.js'],
+
+    tinymce: ['/bower_components/tinymce/tinymce.min.js',
+        '/build/js/plugins/tinymce/tinymce.js'],
 
 
     dropzone:[

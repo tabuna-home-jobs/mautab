@@ -1,9 +1,9 @@
 //Визуальный редактор
 $(function () {
     tinymce.init({
-        //theme: "modern",
-        //skin: 'light',
-        //language: 'ru',
+        theme: "modern",
+        skin: 'light',
+        language: 'ru',
         selector: "textarea.tinymce",
         extended_valid_elements: "img[class=img-responsive|!src|border:0|alt|title|width|height|style]",
         //plugins: "image,code,link,preview,hr,media,responsivefilemanager",
@@ -11,6 +11,7 @@ $(function () {
         //toolbar: "styleselect | fontsizeselect   | bullist numlist outdent indent | link image media  | preview code | more  ",
         //menu: "false",
         //statusbar: false,
+        height: "600",
 
         plugins: [
             "advlist autolink lists link image charmap print preview anchor",
