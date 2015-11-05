@@ -216,7 +216,7 @@ return [
          */
 
         'Settings' => \Mautab\Facades\SettingsFacades::class,
-
+        'Block' => \Mautab\Facades\BlockFacades::class,
     ],
 
 ];

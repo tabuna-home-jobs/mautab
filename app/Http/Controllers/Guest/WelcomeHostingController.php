@@ -1,9 +1,8 @@
 <?php namespace Mautab\Http\Controllers\Guest;
 
+use Block;
 use Mautab\Http\Controllers\Controller;
 use Mautab\Models\Package;
-
-//use Mautab\Models\News;
 
 class WelcomeHostingController extends Controller
 {

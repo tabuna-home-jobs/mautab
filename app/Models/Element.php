@@ -2,6 +2,7 @@
 
 namespace Mautab\Models;
 
+use App;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
 use Nicolaslopezj\Searchable\SearchableTrait;
@@ -42,6 +43,15 @@ class Element extends Model
     public function story()
     {
         return $this->hasMany(static::$storyModel);
+    }
+
+
+    public function storyLang()
+    {
+        $langId = Language::where('code', App::getLocale())->firstOrFail()->id;
+
+        return $this->hasMany(static::$storyModel)
+            ->where('lang_id', $langId);
     }
 
 }
