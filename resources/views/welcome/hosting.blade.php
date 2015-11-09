@@ -282,66 +282,8 @@
 
 
 
-    <div class="bg-dark main-slider clearfix">
-        <div class="container m-t-xxl m-b-xxl padder-v">
-            <div class="carousel auto slide clearfix" id="b-slide" data-interval="6000">
-                <ol class="carousel-indicators">
-                    <li data-target="#b-slide" data-slide-to="0" class=""></li>
-                    <li data-target="#b-slide" data-slide-to="1" class="active"></li>
-                    <li data-target="#b-slide" data-slide-to="2" class=""></li>
-                </ol>
-                <div class="carousel-inner text-center m-t-xl m-b-xl">
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-sm-6 col-sm-offset-3 m-b-xl">
-                                <h4 class="font-thin l-h-2x text-white m-b-lg"><em>“Vestibulum ullamcorper sodales nisi
-                                        nec condimentum. Mauris convallis mauris at pellentesque volutpat. Phasellus at
-                                        dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam
-                                        sollicitudin venenatis ipsum ac feugiat. Vestibul ultricies neque, quis
-                                        malesuada augue. Donec eleifend condimentum.”</em></h4>
 
-                                <p class="text-muted">- Suzanne Oliver, Chief Learning Officer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item active">
-                        <div class="row">
-                            <div class="col-sm-6 col-sm-offset-3  m-b-xl">
-                                <h4 class="font-thin l-h-2x text-white m-b-lg"><em>"Integer eleifend, nisl venenatis
-                                        consequat iaculis Duis non malesuada est, quis congue nibh. Pellentesque et
-                                        netus et malesuada fames ac turpis malesuada est, quis congue nibh. Pellentesque
-                                        habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                        egestas.”</em></h4>
-
-                                <p class="text-muted">- Leah Tate, PM</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-sm-6 col-sm-offset-3  m-b-xl">
-                                <h4 class="font-thin l-h-2x text-white m-b-lg"><em>“Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis
-                                        ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris
-                                        convallis mauris at pellentesque volutpat. Phasellus at ultricies neque, quis
-                                        malesuada augue.”</em></h4>
-
-                                <p class="text-muted">- Chapman, Employee Development Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a class="left carousel-control" href="#b-slide" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                </a>
-                <a class="right carousel-control" href="#b-slide" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
+    {!! Block::widget('answer','template.block.answer') !!}
 
 
 

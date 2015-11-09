@@ -41,6 +41,26 @@ use Nicolaslopezj\Searchable\SearchableTrait;
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User whereRememberToken($value)
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User whereUpdatedAt($value)
+ * @property integer $package_id
+ * @property string  $lang
+ * @property boolean $suspend
+ * @property string  $phone
+ * @property boolean $email_notification
+ * @property boolean $phone_notification
+ * @property string  $encrypt_password
+ * @property string  $permissions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\static::$rolesModel[] $roles
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User wherePackageId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User whereLang($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User whereSuspend($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User wherePhone($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User whereEmailNotification($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User wherePhoneNotification($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User whereEncryptPassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User wherePermissions($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User sortable($default = null)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User search($search, $threshold = null, $entireText = false)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\User searchRestricted($search, $restriction, $threshold = null, $entireText = false)
  */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {

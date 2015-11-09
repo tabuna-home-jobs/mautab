@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.17 (LTS) on 2015-09-24.
+ * Generated for Laravel 5.1.23 (LTS) on 2015-11-09.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -606,11 +606,11 @@ namespace {
          * Define a callback to be used to configure Monolog.
          *
          * @param callable $callback
+         *
          * @return $this
          * @static 
          */
-        public static function configureMonologUsing($callback)
-        {
+        public static function configureMonologUsing($callback){
             return \Illuminate\Foundation\Application::configureMonologUsing($callback);
         }
 
@@ -618,10 +618,9 @@ namespace {
          * Determine if the application has a custom Monolog configurator.
          *
          * @return bool
-         * @static
+         * @static 
          */
-        public static function hasMonologConfigurator()
-        {
+        public static function hasMonologConfigurator(){
             return \Illuminate\Foundation\Application::hasMonologConfigurator();
         }
 
@@ -629,10 +628,9 @@ namespace {
          * Get the custom Monolog configurator for the application.
          *
          * @return callable
-         * @static
+         * @static 
          */
-        public static function getMonologConfigurator()
-        {
+        public static function getMonologConfigurator(){
             return \Illuminate\Foundation\Application::getMonologConfigurator();
         }
 
@@ -684,8 +682,7 @@ namespace {
          * @throws \RuntimeException
          * @static 
          */
-        public static function getNamespace()
-        {
+        public static function getNamespace(){
             return \Illuminate\Foundation\Application::getNamespace();
         }
 
@@ -745,11 +742,13 @@ namespace {
          * @param string $concrete
          * @param string $abstract
          * @param \Closure|string $implementation
+         *
+         * @return void
          * @static 
          */
         public static function addContextualBinding($concrete, $abstract, $implementation){
             //Method inherited from \Illuminate\Container\Container            
-            return \Illuminate\Foundation\Application::addContextualBinding($concrete, $abstract, $implementation);
+            \Illuminate\Foundation\Application::addContextualBinding($concrete, $abstract, $implementation);
         }
         
         /**
@@ -1160,9 +1159,9 @@ namespace {
             //Method inherited from \Illuminate\Foundation\Console\Kernel            
             return \Mautab\Console\Kernel::output();
         }
-        
+
         /**
-         * Bootstrap the application for HTTP requests.
+         * Bootstrap the application for artisan commands.
          *
          * @return void 
          * @static 
@@ -1625,11 +1624,10 @@ namespace {
         /**
          * Get the extensions used by the compiler.
          *
-         * @return array
-         * @static 
+         * @return array 
+         * @static
          */
-        public static function getExtensions()
-        {
+        public static function getExtensions(){
             return \Illuminate\View\Compilers\BladeCompiler::getExtensions();
         }
         
@@ -1637,11 +1635,11 @@ namespace {
          * Register a custom Blade compiler.
          *
          * @param callable $compiler
+         *
          * @return void
-         * @static 
+         * @static
          */
-        public static function extend($compiler)
-        {
+        public static function extend($compiler){
             \Illuminate\View\Compilers\BladeCompiler::extend($compiler);
         }
         
@@ -1650,11 +1648,11 @@ namespace {
          *
          * @param string $name
          * @param callable $handler
+         *
          * @return void
-         * @static 
+         * @static
          */
-        public static function directive($name, $handler)
-        {
+        public static function directive($name, $handler){
             \Illuminate\View\Compilers\BladeCompiler::directive($name, $handler);
         }
 
@@ -1664,8 +1662,7 @@ namespace {
          * @return array
          * @static
          */
-        public static function getCustomDirectives()
-        {
+        public static function getCustomDirectives(){
             return \Illuminate\View\Compilers\BladeCompiler::getCustomDirectives();
         }
 
@@ -1675,8 +1672,7 @@ namespace {
          * @return array
          * @static
          */
-        public static function getRawTags()
-        {
+        public static function getRawTags(){
             return \Illuminate\View\Compilers\BladeCompiler::getRawTags();
         }
         
@@ -2504,10 +2500,13 @@ namespace {
          * Remove a cookie from the queue.
          *
          * @param string $name
+         *
+         * @return void
          * @static 
          */
-        public static function unqueue($name){
-            return \Illuminate\Cookie\CookieJar::unqueue($name);
+        public static function unqueue($name)
+        {
+            \Illuminate\Cookie\CookieJar::unqueue($name);
         }
         
         /**
@@ -2542,11 +2541,11 @@ namespace {
          *
          * @param string $key
          * @param string $cipher
+         *
          * @return bool
-         * @static 
+         * @static
          */
-        public static function supported($key, $cipher)
-        {
+        public static function supported($key, $cipher){
             return \Illuminate\Encryption\McryptEncrypter::supported($key, $cipher);
         }
         
@@ -2718,7 +2717,19 @@ namespace {
             //Method inherited from \Illuminate\Database\Connection            
             return \Illuminate\Database\MySqlConnection::table($table);
         }
-        
+
+        /**
+         * Get a new query builder instance.
+         *
+         * @return \Illuminate\Database\Query\Builder
+         * @static
+         */
+        public static function query()
+        {
+            //Method inherited from \Illuminate\Database\Connection            
+            return \Illuminate\Database\MySqlConnection::query();
+        }
+
         /**
          * Get a new raw query expression.
          *
@@ -2954,19 +2965,18 @@ namespace {
             //Method inherited from \Illuminate\Database\Connection            
             \Illuminate\Database\MySqlConnection::listen($callback);
         }
-
+        
         /**
          * Is Doctrine available?
          *
          * @return bool
          * @static
          */
-        public static function isDoctrineAvailable()
-        {
+        public static function isDoctrineAvailable(){
             //Method inherited from \Illuminate\Database\Connection            
             return \Illuminate\Database\MySqlConnection::isDoctrineAvailable();
         }
-
+        
         /**
          * Get a Doctrine Schema Column instance.
          *
@@ -3343,11 +3353,11 @@ namespace {
          *
          * @param mixed $id
          * @param array $columns
+         *
          * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|null
-         * @static 
+         * @static
          */
-        public static function find($id, $columns = array())
-        {
+        public static function find($id, $columns = array()){
             return \Illuminate\Database\Eloquent\Builder::find($id, $columns);
         }
         
@@ -3414,11 +3424,11 @@ namespace {
          * Get a single column's value from the first result of a query.
          *
          * @param string $column
-         * @return mixed
-         * @static 
+         *
+         *@return mixed
+         * @static
          */
-        public static function value($column)
-        {
+        public static function value($column){
             return \Illuminate\Database\Eloquent\Builder::value($column);
         }
         
@@ -3469,24 +3479,23 @@ namespace {
          * @param int|null $page
          * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator 
          * @throws \InvalidArgumentException
-         * @static 
+         * @static
          */
-        public static function paginate($perPage = null, $columns = array(), $pageName = 'page', $page = null)
-        {
+        public static function paginate($perPage = null, $columns = [], $pageName = 'page', $page = null){
             return \Illuminate\Database\Eloquent\Builder::paginate($perPage, $columns, $pageName, $page);
         }
         
         /**
          * Paginate the given query into a simple paginator.
          *
-         * @param int $perPage
-         * @param array $columns
+         * @param int    $perPage
+         * @param array  $columns
          * @param string $pageName
+         *
          * @return \Illuminate\Contracts\Pagination\Paginator
-         * @static 
+         * @static
          */
-        public static function simplePaginate($perPage = null, $columns = array(), $pageName = 'page')
-        {
+        public static function simplePaginate($perPage = null, $columns = [], $pageName = 'page'){
             return \Illuminate\Database\Eloquent\Builder::simplePaginate($perPage, $columns, $pageName);
         }
         
@@ -3720,8 +3729,9 @@ namespace {
         /**
          * Set the columns to be selected.
          *
-         * @param array $columns
-         * @return $this 
+         * @param array|mixed $columns
+         *
+*@return $this
          * @static 
          */
         public static function select($columns = array()){
@@ -3755,8 +3765,9 @@ namespace {
         /**
          * Add a new select column to the query.
          *
-         * @param mixed $column
-         * @return $this 
+         * @param array|mixed $column
+         *
+*@return $this
          * @static 
          */
         public static function addSelect($column){
@@ -4418,7 +4429,9 @@ namespace {
          * Execute the query as a fresh "select" statement.
          *
          * @param array $columns
-         * @return array|static[] 
+         *
+*@return array|static[]
+         * @deprecated since version 5.1. Use get instead.
          * @static 
          */
         public static function getFresh($columns = array()){
@@ -4442,16 +4455,16 @@ namespace {
          * @param string $column
          * @param string $glue
          * @return string 
-         * @static 
+         * @static
          */
-        public static function implode($column, $glue = null){
+        public static function implode($column, $glue = ''){
             return \Illuminate\Database\Query\Builder::implode($column, $glue);
         }
         
         /**
          * Determine if any rows exist for the current query.
          *
-         * @return bool 
+         * @return bool|null 
          * @static 
          */
         public static function exists(){
@@ -4512,7 +4525,20 @@ namespace {
         public static function avg($column){
             return \Illuminate\Database\Query\Builder::avg($column);
         }
-        
+
+        /**
+         * Alias for the "avg" method.
+         *
+         * @param string $column
+         *
+         * @return float|int
+         * @static
+         */
+        public static function average($column)
+        {
+            return \Illuminate\Database\Query\Builder::average($column);
+        }
+
         /**
          * Execute an aggregate function on the database.
          *
@@ -4666,6 +4692,34 @@ namespace {
          */
         public static function useWritePdo(){
             return \Illuminate\Database\Query\Builder::useWritePdo();
+        }
+
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         *
+         * @return bool
+         * @static
+         */
+        public static function hasMacro($name)
+        {
+            return \Illuminate\Database\Query\Builder::hasMacro($name);
+        }
+
+        /**
+         * Dynamically handle calls to the class.
+         *
+         * @param string $method
+         * @param array  $parameters
+         *
+         * @return mixed
+         * @throws \BadMethodCallException
+         * @static
+         */
+        public static function macroCall($method, $parameters)
+        {
+            return \Illuminate\Database\Query\Builder::macroCall($method, $parameters);
         }
         
     }
@@ -5172,7 +5226,178 @@ namespace {
         public static function hasMacro($name){
             return \Illuminate\Filesystem\Filesystem::hasMacro($name);
         }
-        
+
+    }
+
+
+    class Gate extends \Illuminate\Support\Facades\Gate
+    {
+
+        /**
+         * Determine if a given ability has been defined.
+         *
+         * @param string $ability
+         *
+         * @return bool
+         * @static
+         */
+        public static function has($ability)
+        {
+            return \Illuminate\Auth\Access\Gate::has($ability);
+        }
+
+        /**
+         * Define a new ability.
+         *
+         * @param string          $ability
+         * @param callable|string $callback
+         *
+         * @return $this
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function define($ability, $callback)
+        {
+            return \Illuminate\Auth\Access\Gate::define($ability, $callback);
+        }
+
+        /**
+         * Define a policy class for a given class type.
+         *
+         * @param string $class
+         * @param string $policy
+         *
+         * @return $this
+         * @static
+         */
+        public static function policy($class, $policy)
+        {
+            return \Illuminate\Auth\Access\Gate::policy($class, $policy);
+        }
+
+        /**
+         * Register a callback to run before all Gate checks.
+         *
+         * @param callable $callback
+         *
+         * @return $this
+         * @static
+         */
+        public static function before($callback)
+        {
+            return \Illuminate\Auth\Access\Gate::before($callback);
+        }
+
+        /**
+         * Register a callback to run after all Gate checks.
+         *
+         * @param callable $callback
+         *
+         * @return $this
+         * @static
+         */
+        public static function after($callback)
+        {
+            return \Illuminate\Auth\Access\Gate::after($callback);
+        }
+
+        /**
+         * Determine if the given ability should be granted for the current user.
+         *
+         * @param string      $ability
+         * @param array|mixed $arguments
+         *
+         * @return bool
+         * @static
+         */
+        public static function allows($ability, $arguments = [])
+        {
+            return \Illuminate\Auth\Access\Gate::allows($ability, $arguments);
+        }
+
+        /**
+         * Determine if the given ability should be denied for the current user.
+         *
+         * @param string      $ability
+         * @param array|mixed $arguments
+         *
+         * @return bool
+         * @static
+         */
+        public static function denies($ability, $arguments = [])
+        {
+            return \Illuminate\Auth\Access\Gate::denies($ability, $arguments);
+        }
+
+        /**
+         * Determine if the given ability should be granted for the current user.
+         *
+         * @param string      $ability
+         * @param array|mixed $arguments
+         *
+         * @return bool
+         * @static
+         */
+        public static function check($ability, $arguments = [])
+        {
+            return \Illuminate\Auth\Access\Gate::check($ability, $arguments);
+        }
+
+        /**
+         * Determine if the given ability should be granted for the current user.
+         *
+         * @param string      $ability
+         * @param array|mixed $arguments
+         *
+         * @return \Illuminate\Auth\Access\Response
+         * @throws \Illuminate\Auth\Access\UnauthorizedException
+         * @static
+         */
+        public static function authorize($ability, $arguments = [])
+        {
+            return \Illuminate\Auth\Access\Gate::authorize($ability, $arguments);
+        }
+
+        /**
+         * Get a policy instance for a given class.
+         *
+         * @param object|string $class
+         *
+         * @return mixed
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function getPolicyFor($class)
+        {
+            return \Illuminate\Auth\Access\Gate::getPolicyFor($class);
+        }
+
+        /**
+         * Build a policy class instance of the given type.
+         *
+         * @param object|string $class
+         *
+         * @return mixed
+         * @static
+         */
+        public static function resolvePolicy($class)
+        {
+            return \Illuminate\Auth\Access\Gate::resolvePolicy($class);
+        }
+
+        /**
+         * Get a guard instance for the given user.
+         *
+         * @param \Illuminate\Contracts\Auth\Authenticatable|mixed $user
+         *
+         * @return static
+         * @static
+         */
+        public static function forUser($user)
+        {
+            return \Illuminate\Auth\Access\Gate::forUser($user);
+        }
+
     }
 
 
@@ -5235,16 +5460,16 @@ namespace {
         /**
          * Retrieve an input item from the request.
          *
-         * @param string $key
-         * @param mixed $default
-         * @return string|array
+         * @param string            $key
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static
          */
-        public static function input($key = null, $default = null)
-        {
+        public static function input($key = null, $default = null){
             return \Illuminate\Http\Request::input($key, $default);
         }
-        
+
         /**
          * Create a new Illuminate HTTP request from server variables.
          *
@@ -5255,7 +5480,7 @@ namespace {
         {
             return \Illuminate\Http\Request::capture();
         }
-        
+
         /**
          * Return the Request instance.
          *
@@ -5266,7 +5491,7 @@ namespace {
         {
             return \Illuminate\Http\Request::instance();
         }
-        
+
         /**
          * Get the request method.
          *
@@ -5277,7 +5502,7 @@ namespace {
         {
             return \Illuminate\Http\Request::method();
         }
-        
+
         /**
          * Get the root URL for the application.
          *
@@ -5288,7 +5513,7 @@ namespace {
         {
             return \Illuminate\Http\Request::root();
         }
-        
+
         /**
          * Get the URL (no query string) for the request.
          *
@@ -5299,7 +5524,7 @@ namespace {
         {
             return \Illuminate\Http\Request::url();
         }
-        
+
         /**
          * Get the full URL for the request.
          *
@@ -5310,7 +5535,7 @@ namespace {
         {
             return \Illuminate\Http\Request::fullUrl();
         }
-        
+
         /**
          * Get the current path info for the request.
          *
@@ -5321,7 +5546,7 @@ namespace {
         {
             return \Illuminate\Http\Request::path();
         }
-        
+
         /**
          * Get the current encoded path info for the request.
          *
@@ -5332,20 +5557,21 @@ namespace {
         {
             return \Illuminate\Http\Request::decodedPath();
         }
-        
+
         /**
          * Get a segment from the URI (1 based index).
          *
-         * @param int $index
-         * @param mixed $default
-         * @return string
+         * @param int         $index
+         * @param string|null $default
+         *
+         * @return string|null
          * @static
          */
         public static function segment($index, $default = null)
         {
             return \Illuminate\Http\Request::segment($index, $default);
         }
-        
+
         /**
          * Get all of the segments for the request path.
          *
@@ -5356,19 +5582,20 @@ namespace {
         {
             return \Illuminate\Http\Request::segments();
         }
-        
+
         /**
          * Determine if the current request URI matches a pattern.
          *
          * @param mixed  string
-         * @return bool
+         *
+*@return bool
          * @static
          */
         public static function is()
         {
             return \Illuminate\Http\Request::is();
         }
-        
+
         /**
          * Determine if the request is the result of an AJAX call.
          *
@@ -5379,7 +5606,7 @@ namespace {
         {
             return \Illuminate\Http\Request::ajax();
         }
-        
+
         /**
          * Determine if the request is the result of an PJAX call.
          *
@@ -5390,7 +5617,7 @@ namespace {
         {
             return \Illuminate\Http\Request::pjax();
         }
-        
+
         /**
          * Determine if the request is over HTTPS.
          *
@@ -5401,7 +5628,7 @@ namespace {
         {
             return \Illuminate\Http\Request::secure();
         }
-        
+
         /**
          * Returns the client IP address.
          *
@@ -5412,7 +5639,7 @@ namespace {
         {
             return \Illuminate\Http\Request::ip();
         }
-        
+
         /**
          * Returns the client IP addresses.
          *
@@ -5423,31 +5650,33 @@ namespace {
         {
             return \Illuminate\Http\Request::ips();
         }
-        
+
         /**
          * Determine if the request contains a given input item key.
          *
          * @param string|array $key
-         * @return bool
+         *
+         *@return bool
          * @static
          */
         public static function exists($key)
         {
             return \Illuminate\Http\Request::exists($key);
         }
-        
+
         /**
          * Determine if the request contains a non-empty value for an input item.
          *
          * @param string|array $key
-         * @return bool
+         *
+*@return bool
          * @static
          */
         public static function has($key)
         {
             return \Illuminate\Http\Request::has($key);
         }
-        
+
         /**
          * Get all of the input and files for the request.
          *
@@ -5473,8 +5702,9 @@ namespace {
         /**
          * Get all of the input except for a specified array of items.
          *
-         * @param array $keys
-         * @return array 
+         * @param array|mixed $keys
+         *
+*@return array
          * @static 
          */
         public static function except($keys){
@@ -5484,9 +5714,10 @@ namespace {
         /**
          * Retrieve a query string item from the request.
          *
-         * @param string $key
-         * @param mixed $default
-         * @return string|array 
+         * @param string            $key
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function query($key = null, $default = null){
@@ -5507,9 +5738,10 @@ namespace {
         /**
          * Retrieve a cookie from the request.
          *
-         * @param string $key
-         * @param mixed $default
-         * @return string|array 
+         * @param string            $key
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function cookie($key = null, $default = null){
@@ -5520,8 +5752,9 @@ namespace {
          * Retrieve a file from the request.
          *
          * @param string $key
-         * @param mixed $default
-         * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array 
+         * @param mixed  $default
+         *
+         * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array|null
          * @static 
          */
         public static function file($key = null, $default = null){
@@ -5542,9 +5775,10 @@ namespace {
         /**
          * Retrieve a header from the request.
          *
-         * @param string $key
-         * @param mixed $default
-         * @return string|array 
+         * @param string            $key
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function header($key = null, $default = null){
@@ -5554,9 +5788,10 @@ namespace {
         /**
          * Retrieve a server variable from the request.
          *
-         * @param string $key
-         * @param mixed $default
-         * @return string|array 
+         * @param string            $key
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function server($key = null, $default = null){
@@ -5566,9 +5801,10 @@ namespace {
         /**
          * Retrieve an old input item.
          *
-         * @param string $key
-         * @param mixed $default
-         * @return mixed 
+         * @param string            $key
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function old($key = null, $default = null){
@@ -5590,8 +5826,9 @@ namespace {
         /**
          * Flash only some of the input to the session.
          *
-         * @param mixed  string
-         * @return void 
+         * @param array|mixed $keys
+         *
+*@return void
          * @static 
          */
         public static function flashOnly($keys){
@@ -5601,8 +5838,9 @@ namespace {
         /**
          * Flash only some of the input to the session.
          *
-         * @param mixed  string
-         * @return void 
+         * @param array|mixed $keys
+         *
+*@return void
          * @static 
          */
         public static function flashExcept($keys){
@@ -5656,11 +5894,13 @@ namespace {
         /**
          * Determine if the given content types match.
          *
+         * @param string $actual
+         * @param string $type
+         *
          * @return bool
-         * @static 
+         * @static
          */
-        public static function matchesType($actual, $type)
-        {
+        public static function matchesType($actual, $type){
             return \Illuminate\Http\Request::matchesType($actual, $type);
         }
         
@@ -5688,11 +5928,11 @@ namespace {
          * Determines whether the current requests accepts a given content type.
          *
          * @param string|array $contentTypes
+         *
          * @return bool
-         * @static 
+         * @static
          */
-        public static function accepts($contentTypes)
-        {
+        public static function accepts($contentTypes){
             return \Illuminate\Http\Request::accepts($contentTypes);
         }
         
@@ -5700,11 +5940,11 @@ namespace {
          * Return the most suitable content type from the given array based on content negotiation.
          *
          * @param string|array $contentTypes
+         *
          * @return string|null
-         * @static 
+         * @static
          */
-        public static function prefers($contentTypes)
-        {
+        public static function prefers($contentTypes){
             return \Illuminate\Http\Request::prefers($contentTypes);
         }
         
@@ -5712,10 +5952,9 @@ namespace {
          * Determines whether a request accepts JSON.
          *
          * @return bool
-         * @static 
+         * @static
          */
-        public static function acceptsJson()
-        {
+        public static function acceptsJson(){
             return \Illuminate\Http\Request::acceptsJson();
         }
         
@@ -5723,10 +5962,9 @@ namespace {
          * Determines whether a request accepts HTML.
          *
          * @return bool
-         * @static 
+         * @static
          */
-        public static function acceptsHtml()
-        {
+        public static function acceptsHtml(){
             return \Illuminate\Http\Request::acceptsHtml();
         }
         
@@ -5762,7 +6000,6 @@ namespace {
          * @param array $files The FILES parameters
          * @param array $server The SERVER parameters
          * @return \Symfony\Component\HttpFoundation\Request The duplicated request
-         * @api 
          * @static 
          */
         public static function duplicate($query = null, $request = null, $attributes = null, $cookies = null, $files = null, $server = null){
@@ -5794,11 +6031,11 @@ namespace {
          * Get the route handling the request.
          *
          * @param string|null $param
-         * @return object|string
-         * @static 
+         *
+*@return \Illuminate\Routing\Route|object|string
+         * @static
          */
-        public static function route($param = null)
-        {
+        public static function route($param = null){
             return \Illuminate\Http\Request::route($param);
         }
         
@@ -5901,7 +6138,6 @@ namespace {
          * @param array $files The FILES parameters
          * @param array $server The SERVER parameters
          * @param string|resource $content The raw body data
-         * @api 
          * @static 
          */
         public static function initialize($query = array(), $request = array(), $attributes = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
@@ -5913,7 +6149,6 @@ namespace {
          * Creates a new request with values from PHP's super globals.
          *
          * @return \Symfony\Component\HttpFoundation\Request A new request
-         * @api 
          * @static 
          */
         public static function createFromGlobals(){
@@ -5935,7 +6170,6 @@ namespace {
          * @param array $server The server parameters ($_SERVER)
          * @param string $content The raw body data
          * @return \Symfony\Component\HttpFoundation\Request A Request instance
-         * @api 
          * @static 
          */
         public static function create($uri, $method = 'GET', $parameters = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
@@ -5964,7 +6198,6 @@ namespace {
          * It overrides $_GET, $_POST, $_REQUEST, $_SERVER, $_COOKIE.
          * $_FILES is never overridden, see rfc1867
          *
-         * @api 
          * @static 
          */
         public static function overrideGlobals(){
@@ -5978,7 +6211,6 @@ namespace {
          * You should only list the reverse proxies that you manage directly.
          *
          * @param array $proxies A list of trusted proxies
-         * @api 
          * @static 
          */
         public static function setTrustedProxies($proxies){
@@ -6130,7 +6362,6 @@ namespace {
          * Gets the Session.
          *
          * @return \Symfony\Component\HttpFoundation\SessionInterface|null The session
-         * @api 
          * @static 
          */
         public static function getSession(){
@@ -6143,7 +6374,6 @@ namespace {
          * previous requests.
          *
          * @return bool 
-         * @api 
          * @static 
          */
         public static function hasPreviousSession(){
@@ -6159,7 +6389,6 @@ namespace {
          * is associated with a Session instance.
          *
          * @return bool true when the Request contains a Session object, false otherwise
-         * @api 
          * @static 
          */
         public static function hasSession(){
@@ -6171,7 +6400,6 @@ namespace {
          * Sets the Session.
          *
          * @param \Symfony\Component\HttpFoundation\SessionInterface $session The Session
-         * @api 
          * @static 
          */
         public static function setSession($session){
@@ -6213,7 +6441,6 @@ namespace {
          * @return string The client IP address
          * @see getClientIps()
          * @see http://en.wikipedia.org/wiki/X-Forwarded-For
-         * @api 
          * @static 
          */
         public static function getClientIp(){
@@ -6225,7 +6452,6 @@ namespace {
          * Returns current script name.
          *
          * @return string 
-         * @api 
          * @static 
          */
         public static function getScriptName(){
@@ -6246,7 +6472,6 @@ namespace {
          *  * http://localhost/mysite/about?var=1  returns '/about'
          *
          * @return string The raw path (i.e. not urldecoded)
-         * @api 
          * @static 
          */
         public static function getPathInfo(){
@@ -6265,7 +6490,6 @@ namespace {
          *  * http://localhost/we%20b/index.php  returns '/we%20b'
          *
          * @return string The raw path (i.e. not urldecoded)
-         * @api 
          * @static 
          */
         public static function getBasePath(){
@@ -6282,7 +6506,6 @@ namespace {
          * script filename (e.g. index.php) if one exists.
          *
          * @return string The raw URL (i.e. not urldecoded)
-         * @api 
          * @static 
          */
         public static function getBaseUrl(){
@@ -6294,7 +6517,6 @@ namespace {
          * Gets the request's scheme.
          *
          * @return string 
-         * @api 
          * @static 
          */
         public static function getScheme(){
@@ -6314,7 +6536,6 @@ namespace {
          * configure it via "setTrustedHeaderName()" with the "client-port" key.
          *
          * @return string 
-         * @api 
          * @static 
          */
         public static function getPort(){
@@ -6361,7 +6582,6 @@ namespace {
          * The port name will be appended to the host if it's non-standard.
          *
          * @return string 
-         * @api 
          * @static 
          */
         public static function getHttpHost(){
@@ -6373,7 +6593,6 @@ namespace {
          * Returns the requested URI (path and query string).
          *
          * @return string The raw URI (i.e. not URI decoded)
-         * @api 
          * @static 
          */
         public static function getRequestUri(){
@@ -6400,7 +6619,6 @@ namespace {
          *
          * @return string A normalized URI (URL) for the Request
          * @see getQueryString()
-         * @api 
          * @static 
          */
         public static function getUri(){
@@ -6413,7 +6631,6 @@ namespace {
          *
          * @param string $path A path to use instead of the current one
          * @return string The normalized URI for the path
-         * @api 
          * @static 
          */
         public static function getUriForPath($path){
@@ -6438,10 +6655,9 @@ namespace {
          *
          * @param string $path The target path
          * @return string The relative target path
-         * @static 
+         * @static
          */
-        public static function getRelativeUriForPath($path)
-        {
+        public static function getRelativeUriForPath($path){
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::getRelativeUriForPath($path);
         }
@@ -6453,7 +6669,6 @@ namespace {
          * and have consistent escaping.
          *
          * @return string|null A normalized query string for the Request
-         * @api 
          * @static 
          */
         public static function getQueryString(){
@@ -6463,8 +6678,8 @@ namespace {
         
         /**
          * Checks whether the request is secure or not.
-         * 
-         * This method can read the client port from the "X-Forwarded-Proto" header
+         *
+         * This method can read the client protocol from the "X-Forwarded-Proto" header
          * when trusted proxies were set via "setTrustedProxies()".
          * 
          * The "X-Forwarded-Proto" header must contain the protocol: "https" or "http".
@@ -6474,18 +6689,17 @@ namespace {
          * the "client-proto" key.
          *
          * @return bool 
-         * @api 
          * @static 
          */
         public static function isSecure(){
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::isSecure();
         }
-        
+
         /**
          * Returns the host name.
-         * 
-         * This method can read the client port from the "X-Forwarded-Host" header
+         *
+         * This method can read the client host name from the "X-Forwarded-Host" header
          * when trusted proxies were set via "setTrustedProxies()".
          * 
          * The "X-Forwarded-Host" header must contain the client host name.
@@ -6495,7 +6709,6 @@ namespace {
          *
          * @return string 
          * @throws \UnexpectedValueException when the host name is invalid
-         * @api 
          * @static 
          */
         public static function getHost(){
@@ -6507,7 +6720,6 @@ namespace {
          * Sets the request method.
          *
          * @param string $method
-         * @api 
          * @static 
          */
         public static function setMethod($method){
@@ -6527,7 +6739,6 @@ namespace {
          * The method is always an uppercased string.
          *
          * @return string The request method
-         * @api 
          * @see getRealMethod()
          * @static 
          */
@@ -6553,7 +6764,6 @@ namespace {
          *
          * @param string $format The format
          * @return string The associated mime type (null if not found)
-         * @api 
          * @static 
          */
         public static function getMimeType($format){
@@ -6566,7 +6776,6 @@ namespace {
          *
          * @param string $mimeType The associated mime type
          * @return string|null The format (null if not found)
-         * @api 
          * @static 
          */
         public static function getFormat($mimeType){
@@ -6579,7 +6788,6 @@ namespace {
          *
          * @param string $format The format
          * @param string|array $mimeTypes The associated mime types (the preferred one must be the first as it will be used as the content type)
-         * @api 
          * @static 
          */
         public static function setFormat($format, $mimeTypes){
@@ -6598,7 +6806,6 @@ namespace {
          *
          * @param string $default The default format
          * @return string The request format
-         * @api 
          * @static 
          */
         public static function getRequestFormat($default = 'html'){
@@ -6610,7 +6817,6 @@ namespace {
          * Sets the request format.
          *
          * @param string $format The request format.
-         * @api 
          * @static 
          */
         public static function setRequestFormat($format){
@@ -6622,7 +6828,6 @@ namespace {
          * Gets the format associated with the request.
          *
          * @return string|null The format (null if no content type is present)
-         * @api 
          * @static 
          */
         public static function getContentType(){
@@ -6634,7 +6839,6 @@ namespace {
          * Sets the default locale.
          *
          * @param string $locale
-         * @api 
          * @static 
          */
         public static function setDefaultLocale($locale){
@@ -6657,7 +6861,6 @@ namespace {
          * Sets the locale.
          *
          * @param string $locale
-         * @api 
          * @static 
          */
         public static function setLocale($locale){
@@ -6692,7 +6895,6 @@ namespace {
          * Checks whether the method is safe or not.
          *
          * @return bool 
-         * @api 
          * @static 
          */
         public static function isMethodSafe(){
@@ -6740,7 +6942,6 @@ namespace {
          *
          * @param array $locales An array of ordered available locales
          * @return string|null The preferred locale
-         * @api 
          * @static 
          */
         public static function getPreferredLanguage($locales = null){
@@ -6752,7 +6953,6 @@ namespace {
          * Gets a list of languages acceptable by the client browser.
          *
          * @return array Languages ordered in the user browser preferences
-         * @api 
          * @static 
          */
         public static function getLanguages(){
@@ -6764,7 +6964,6 @@ namespace {
          * Gets a list of charsets acceptable by the client browser.
          *
          * @return array List of charsets in preferable order
-         * @api 
          * @static 
          */
         public static function getCharsets(){
@@ -6787,7 +6986,6 @@ namespace {
          * Gets a list of content types acceptable by the client browser.
          *
          * @return array List of content types in preferable order
-         * @api 
          * @static 
          */
         public static function getAcceptableContentTypes(){
@@ -6803,7 +7001,6 @@ namespace {
          *
          * @link http://en.wikipedia.org/wiki/List_of_Ajax_frameworks#JavaScript
          * @return bool true if the request is an XMLHttpRequest, false otherwise
-         * @api 
          * @static 
          */
         public static function isXmlHttpRequest(){
@@ -6819,31 +7016,52 @@ namespace {
     }
 
 
-    class Lang extends \Illuminate\Support\Facades\Lang{
+    class Lang extends \Illuminate\Support\Facades\Lang
+    {
+
+        /**
+         * Determine if a translation exists for a given locale.
+         *
+         * @param string $key
+         * @param string $locale
+         *
+         * @return bool
+         * @static
+         */
+        public static function hasForLocale($key, $locale = null)
+        {
+            return \Illuminate\Translation\Translator::hasForLocale($key, $locale);
+        }
         
         /**
          * Determine if a translation exists.
          *
          * @param string $key
          * @param string $locale
-         * @return bool 
-         * @static 
+         * @param bool   $fallback
+         *
+         * @return bool
+         * @static
          */
-        public static function has($key, $locale = null){
-            return \Illuminate\Translation\Translator::has($key, $locale);
+        public static function has($key, $locale = null, $fallback = true)
+        {
+            return \Illuminate\Translation\Translator::has($key, $locale, $fallback);
         }
         
         /**
          * Get the translation for the given key.
          *
          * @param string $key
-         * @param array $replace
+         * @param array  $replace
          * @param string $locale
-         * @return string 
-         * @static 
+         * @param bool   $fallback
+         *
+         * @return string
+         * @static
          */
-        public static function get($key, $replace = array(), $locale = null){
-            return \Illuminate\Translation\Translator::get($key, $replace, $locale);
+        public static function get($key, $replace = [], $locale = null, $fallback = true)
+        {
+            return \Illuminate\Translation\Translator::get($key, $replace, $locale, $fallback);
         }
         
         /**
@@ -7035,111 +7253,118 @@ namespace {
          * @return void
          * @static
          */
-        public static function log($level, $message, $context = array())
-        {
+        public static function log($level, $message, $context = array()){
             \Illuminate\Log\Writer::log($level, $message, $context);
         }
-        
+
         /**
          * Adds a log record at the DEBUG level.
          *
          * @param string $message The log message
          * @param array $context The log context
+         *
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function debug($message, $context = array())
+        public static function debug($message, $context = [])
         {
             return \Monolog\Logger::debug($message, $context);
         }
-        
+
         /**
          * Adds a log record at the INFO level.
          *
          * @param string $message The log message
-         * @param array $context The log context
+         * @param array  $context The log context
+         *
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function info($message, $context = array())
+        public static function info($message, $context = [])
         {
             return \Monolog\Logger::info($message, $context);
         }
-        
+
         /**
          * Adds a log record at the NOTICE level.
          *
          * @param string $message The log message
          * @param array $context The log context
+         *
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function notice($message, $context = array())
+        public static function notice($message, $context = [])
         {
             return \Monolog\Logger::notice($message, $context);
         }
-        
+
         /**
          * Adds a log record at the WARNING level.
          *
          * @param string $message The log message
-         * @param array $context The log context
+         * @param array  $context The log context
+         *
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function warning($message, $context = array())
+        public static function warning($message, $context = [])
         {
             return \Monolog\Logger::warning($message, $context);
         }
-        
+
         /**
          * Adds a log record at the ERROR level.
          *
          * @param string $message The log message
-         * @param array $context The log context
-         * @return Boolean Whether the record has been processed
+         * @param array  $context The log context
+         *
+*@return Boolean Whether the record has been processed
          * @static
          */
-        public static function error($message, $context = array())
+        public static function error($message, $context = [])
         {
             return \Monolog\Logger::error($message, $context);
         }
-        
+
         /**
          * Adds a log record at the CRITICAL level.
          *
          * @param string $message The log message
-         * @param array $context The log context
+         * @param array  $context The log context
+         *
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function critical($message, $context = array())
+        public static function critical($message, $context = [])
         {
             return \Monolog\Logger::critical($message, $context);
         }
-        
+
         /**
          * Adds a log record at the ALERT level.
          *
          * @param string $message The log message
-         * @param array $context The log context
-         * @return Boolean Whether the record has been processed
+         * @param array  $context The log context
+         *
+*@return Boolean Whether the record has been processed
          * @static
          */
-        public static function alert($message, $context = array())
+        public static function alert($message, $context = [])
         {
             return \Monolog\Logger::alert($message, $context);
         }
-        
+
         /**
          * Adds a log record at the EMERGENCY level.
          *
          * @param string $message The log message
-         * @param array $context The log context
+         * @param array  $context The log context
+         *
          * @return Boolean Whether the record has been processed
          * @static
          */
-        public static function emergency($message, $context = array())
+        public static function emergency($message, $context = [])
         {
             return \Monolog\Logger::emergency($message, $context);
         }
@@ -7187,11 +7412,13 @@ namespace {
          *
          * @param string $name
          * @param string $level
-         * @return void 
+         *
+*@return \Psr\Log\LoggerInterface
          * @static 
          */
-        public static function useSyslog($name = 'laravel', $level = 'debug'){
-            \Illuminate\Log\Writer::useSyslog($name, $level);
+        public static function useSyslog($name = 'laravel', $level = 'debug')
+        {
+            return \Illuminate\Log\Writer::useSyslog($name, $level);
         }
         
         /**
@@ -7271,11 +7498,11 @@ namespace {
          *
          * @param string $address
          * @param string|null $name
-         * @return void
-         * @static 
+         *
+*@return void
+         * @static
          */
-        public static function alwaysTo($address, $name = null)
-        {
+        public static function alwaysTo($address, $name = null){
             \Illuminate\Mail\Mailer::alwaysTo($address, $name);
         }
         
@@ -7307,14 +7534,16 @@ namespace {
         /**
          * Send a new message using a view.
          *
-         * @param string|array $view
-         * @param array $data
+         * @param string|array    $view
+         * @param array           $data
          * @param \Closure|string $callback
-         * @return mixed 
+         *
+*@return void
          * @static 
          */
-        public static function send($view, $data, $callback){
-            return \Illuminate\Mail\Mailer::send($view, $data, $callback);
+        public static function send($view, $data, $callback)
+        {
+            \Illuminate\Mail\Mailer::send($view, $data, $callback);
         }
         
         /**
@@ -7334,28 +7563,29 @@ namespace {
         /**
          * Queue a new e-mail message for sending on the given queue.
          *
-         * @param string $queue
-         * @param string|array $view
-         * @param array $data
+         * @param string          $queue
+         * @param string|array    $view
+         * @param array           $data
          * @param \Closure|string $callback
-         * @return mixed
-         * @static 
+         *
+*@return mixed
+         * @static
          */
-        public static function onQueue($queue, $view, $data, $callback)
-        {
+        public static function onQueue($queue, $view, $data, $callback){
             return \Illuminate\Mail\Mailer::onQueue($queue, $view, $data, $callback);
         }
-
+        
         /**
          * Queue a new e-mail message for sending on the given queue.
-         *
+         * 
          * This method didn't match rest of framework's "onQueue" phrasing. Added "onQueue".
          *
          * @param string $queue
          * @param string|array $view
          * @param array $data
          * @param \Closure|string $callback
-         * @return mixed
+         *
+*@return mixed
          * @static 
          */
         public static function queueOn($queue, $view, $data, $callback){
@@ -7584,14 +7814,14 @@ namespace {
          * Register an event listener for the after job event.
          *
          * @param mixed $callback
+         *
          * @return void
          * @static
          */
-        public static function after($callback)
-        {
+        public static function after($callback){
             \Illuminate\Queue\QueueManager::after($callback);
         }
-
+        
         /**
          * Register an event listener for the daemon queue loop.
          *
@@ -7717,13 +7947,15 @@ namespace {
          * Push a new job onto the queue.
          *
          * @param string $job
-         * @param mixed $data
+         * @param mixed  $data
          * @param string $queue
-         * @return void 
+         *
+*@return mixed
          * @static 
          */
-        public static function push($job, $data = '', $queue = null){
-            \Illuminate\Queue\DatabaseQueue::push($job, $data, $queue);
+        public static function push($job, $data = '', $queue = null)
+        {
+            return \Illuminate\Queue\DatabaseQueue::push($job, $data, $queue);
         }
         
         /**
@@ -7756,31 +7988,32 @@ namespace {
         /**
          * Push an array of jobs onto the queue.
          *
-         * @param array $jobs
-         * @param mixed $data
+         * @param array  $jobs
+         * @param mixed  $data
          * @param string $queue
+         *
          * @return mixed
          * @static
          */
-        public static function bulk($jobs, $data = '', $queue = null)
-        {
+        public static function bulk($jobs, $data = '', $queue = null){
             return \Illuminate\Queue\DatabaseQueue::bulk($jobs, $data, $queue);
         }
-
+        
         /**
          * Release a reserved job back onto the queue.
          *
-         * @param string $queue
+         * @param string    $queue
          * @param \StdClass $job
-         * @param int $delay
-         * @return void
+         * @param int       $delay
+         *
+         * @return mixed
          * @static
          */
         public static function release($queue, $job, $delay)
         {
-            \Illuminate\Queue\DatabaseQueue::release($queue, $job, $delay);
+            return \Illuminate\Queue\DatabaseQueue::release($queue, $job, $delay);
         }
-
+        
         /**
          * Pop the next job off of the queue.
          *
@@ -7797,48 +8030,46 @@ namespace {
          *
          * @param string $queue
          * @param string $id
+         *
          * @return void
          * @static
          */
-        public static function deleteReserved($queue, $id)
-        {
+        public static function deleteReserved($queue, $id){
             \Illuminate\Queue\DatabaseQueue::deleteReserved($queue, $id);
         }
-
+        
         /**
          * Get the underlying database instance.
          *
          * @return \Illuminate\Database\Connection
          * @static
          */
-        public static function getDatabase()
-        {
+        public static function getDatabase(){
             return \Illuminate\Queue\DatabaseQueue::getDatabase();
         }
-
+        
         /**
          * Get the expiration time in seconds.
          *
          * @return int|null
-         * @static
+         * @static 
          */
-        public static function getExpire()
-        {
+        public static function getExpire(){
             return \Illuminate\Queue\DatabaseQueue::getExpire();
         }
-
+        
         /**
          * Set the expiration time in seconds.
          *
          * @param int|null $seconds
+         *
          * @return void
          * @static
          */
-        public static function setExpire($seconds)
-        {
+        public static function setExpire($seconds){
             \Illuminate\Queue\DatabaseQueue::setExpire($seconds);
         }
-
+        
         /**
          * Push a new job onto the queue.
          *
@@ -8149,9 +8380,10 @@ namespace {
         /**
          * Get a segment from the URI (1 based index).
          *
-         * @param int $index
-         * @param mixed $default
-         * @return string 
+         * @param int         $index
+         * @param string|null $default
+         *
+*@return string|null
          * @static 
          */
         public static function segment($index, $default = null){
@@ -8265,8 +8497,9 @@ namespace {
          * Retrieve an input item from the request.
          *
          * @param string $key
-         * @param mixed $default
-         * @return string|array 
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function input($key = null, $default = null){
@@ -8287,8 +8520,9 @@ namespace {
         /**
          * Get all of the input except for a specified array of items.
          *
-         * @param array $keys
-         * @return array 
+         * @param array|mixed $keys
+         *
+*@return array
          * @static 
          */
         public static function except($keys){
@@ -8299,8 +8533,9 @@ namespace {
          * Retrieve a query string item from the request.
          *
          * @param string $key
-         * @param mixed $default
-         * @return string|array 
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function query($key = null, $default = null){
@@ -8322,8 +8557,9 @@ namespace {
          * Retrieve a cookie from the request.
          *
          * @param string $key
-         * @param mixed $default
-         * @return string|array 
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function cookie($key = null, $default = null){
@@ -8334,8 +8570,9 @@ namespace {
          * Retrieve a file from the request.
          *
          * @param string $key
-         * @param mixed $default
-         * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array 
+         * @param mixed  $default
+         *
+         * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array|null
          * @static 
          */
         public static function file($key = null, $default = null){
@@ -8357,8 +8594,9 @@ namespace {
          * Retrieve a header from the request.
          *
          * @param string $key
-         * @param mixed $default
-         * @return string|array 
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function header($key = null, $default = null){
@@ -8369,8 +8607,9 @@ namespace {
          * Retrieve a server variable from the request.
          *
          * @param string $key
-         * @param mixed $default
-         * @return string|array 
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function server($key = null, $default = null){
@@ -8380,9 +8619,10 @@ namespace {
         /**
          * Retrieve an old input item.
          *
-         * @param string $key
-         * @param mixed $default
-         * @return mixed 
+         * @param string            $key
+         * @param string|array|null $default
+         *
+*@return string|array
          * @static 
          */
         public static function old($key = null, $default = null){
@@ -8400,22 +8640,22 @@ namespace {
         public static function flash($filter = null, $keys = array()){
             \Illuminate\Http\Request::flash($filter, $keys);
         }
-        
+
         /**
          * Flash only some of the input to the session.
          *
-         * @param mixed  string
+         * @param array|mixed $keys
          * @return void 
          * @static 
          */
         public static function flashOnly($keys){
             \Illuminate\Http\Request::flashOnly($keys);
         }
-        
+
         /**
          * Flash only some of the input to the session.
          *
-         * @param mixed  string
+         * @param array|mixed $keys
          * @return void 
          * @static 
          */
@@ -8466,15 +8706,17 @@ namespace {
         public static function json($key = null, $default = null){
             return \Illuminate\Http\Request::json($key, $default);
         }
-        
+
         /**
          * Determine if the given content types match.
+         *
+         * @param string $actual
+         * @param string $type
          *
          * @return bool
          * @static 
          */
-        public static function matchesType($actual, $type)
-        {
+        public static function matchesType($actual, $type){
             return \Illuminate\Http\Request::matchesType($actual, $type);
         }
         
@@ -8502,11 +8744,11 @@ namespace {
          * Determines whether the current requests accepts a given content type.
          *
          * @param string|array $contentTypes
+         *
          * @return bool
          * @static 
          */
-        public static function accepts($contentTypes)
-        {
+        public static function accepts($contentTypes){
             return \Illuminate\Http\Request::accepts($contentTypes);
         }
         
@@ -8514,33 +8756,31 @@ namespace {
          * Return the most suitable content type from the given array based on content negotiation.
          *
          * @param string|array $contentTypes
+         *
          * @return string|null
          * @static 
          */
-        public static function prefers($contentTypes)
-        {
+        public static function prefers($contentTypes){
             return \Illuminate\Http\Request::prefers($contentTypes);
         }
-        
+
         /**
          * Determines whether a request accepts JSON.
          *
-         * @return bool
+         * @return bool 
          * @static 
          */
-        public static function acceptsJson()
-        {
+        public static function acceptsJson(){
             return \Illuminate\Http\Request::acceptsJson();
         }
-        
+
         /**
          * Determines whether a request accepts HTML.
          *
-         * @return bool
+         * @return bool 
          * @static 
          */
-        public static function acceptsHtml()
-        {
+        public static function acceptsHtml(){
             return \Illuminate\Http\Request::acceptsHtml();
         }
         
@@ -8576,7 +8816,6 @@ namespace {
          * @param array $files The FILES parameters
          * @param array $server The SERVER parameters
          * @return \Symfony\Component\HttpFoundation\Request The duplicated request
-         * @api 
          * @static 
          */
         public static function duplicate($query = null, $request = null, $attributes = null, $cookies = null, $files = null, $server = null){
@@ -8608,11 +8847,11 @@ namespace {
          * Get the route handling the request.
          *
          * @param string|null $param
-         * @return object|string
+         *
+         * @return \Illuminate\Routing\Route|object|string
          * @static 
          */
-        public static function route($param = null)
-        {
+        public static function route($param = null){
             return \Illuminate\Http\Request::route($param);
         }
         
@@ -8715,7 +8954,6 @@ namespace {
          * @param array $files The FILES parameters
          * @param array $server The SERVER parameters
          * @param string|resource $content The raw body data
-         * @api 
          * @static 
          */
         public static function initialize($query = array(), $request = array(), $attributes = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
@@ -8727,7 +8965,6 @@ namespace {
          * Creates a new request with values from PHP's super globals.
          *
          * @return \Symfony\Component\HttpFoundation\Request A new request
-         * @api 
          * @static 
          */
         public static function createFromGlobals(){
@@ -8749,7 +8986,6 @@ namespace {
          * @param array $server The server parameters ($_SERVER)
          * @param string $content The raw body data
          * @return \Symfony\Component\HttpFoundation\Request A Request instance
-         * @api 
          * @static 
          */
         public static function create($uri, $method = 'GET', $parameters = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
@@ -8778,7 +9014,6 @@ namespace {
          * It overrides $_GET, $_POST, $_REQUEST, $_SERVER, $_COOKIE.
          * $_FILES is never overridden, see rfc1867
          *
-         * @api 
          * @static 
          */
         public static function overrideGlobals(){
@@ -8792,7 +9027,6 @@ namespace {
          * You should only list the reverse proxies that you manage directly.
          *
          * @param array $proxies A list of trusted proxies
-         * @api 
          * @static 
          */
         public static function setTrustedProxies($proxies){
@@ -8944,7 +9178,6 @@ namespace {
          * Gets the Session.
          *
          * @return \Symfony\Component\HttpFoundation\SessionInterface|null The session
-         * @api 
          * @static 
          */
         public static function getSession(){
@@ -8957,7 +9190,6 @@ namespace {
          * previous requests.
          *
          * @return bool 
-         * @api 
          * @static 
          */
         public static function hasPreviousSession(){
@@ -8973,7 +9205,6 @@ namespace {
          * is associated with a Session instance.
          *
          * @return bool true when the Request contains a Session object, false otherwise
-         * @api 
          * @static 
          */
         public static function hasSession(){
@@ -8985,7 +9216,6 @@ namespace {
          * Sets the Session.
          *
          * @param \Symfony\Component\HttpFoundation\SessionInterface $session The Session
-         * @api 
          * @static 
          */
         public static function setSession($session){
@@ -9027,7 +9257,6 @@ namespace {
          * @return string The client IP address
          * @see getClientIps()
          * @see http://en.wikipedia.org/wiki/X-Forwarded-For
-         * @api 
          * @static 
          */
         public static function getClientIp(){
@@ -9039,7 +9268,6 @@ namespace {
          * Returns current script name.
          *
          * @return string 
-         * @api 
          * @static 
          */
         public static function getScriptName(){
@@ -9060,7 +9288,6 @@ namespace {
          *  * http://localhost/mysite/about?var=1  returns '/about'
          *
          * @return string The raw path (i.e. not urldecoded)
-         * @api 
          * @static 
          */
         public static function getPathInfo(){
@@ -9079,7 +9306,6 @@ namespace {
          *  * http://localhost/we%20b/index.php  returns '/we%20b'
          *
          * @return string The raw path (i.e. not urldecoded)
-         * @api 
          * @static 
          */
         public static function getBasePath(){
@@ -9096,7 +9322,6 @@ namespace {
          * script filename (e.g. index.php) if one exists.
          *
          * @return string The raw URL (i.e. not urldecoded)
-         * @api 
          * @static 
          */
         public static function getBaseUrl(){
@@ -9108,7 +9333,6 @@ namespace {
          * Gets the request's scheme.
          *
          * @return string 
-         * @api 
          * @static 
          */
         public static function getScheme(){
@@ -9128,7 +9352,6 @@ namespace {
          * configure it via "setTrustedHeaderName()" with the "client-port" key.
          *
          * @return string 
-         * @api 
          * @static 
          */
         public static function getPort(){
@@ -9175,7 +9398,6 @@ namespace {
          * The port name will be appended to the host if it's non-standard.
          *
          * @return string 
-         * @api 
          * @static 
          */
         public static function getHttpHost(){
@@ -9187,7 +9409,6 @@ namespace {
          * Returns the requested URI (path and query string).
          *
          * @return string The raw URI (i.e. not URI decoded)
-         * @api 
          * @static 
          */
         public static function getRequestUri(){
@@ -9214,7 +9435,6 @@ namespace {
          *
          * @return string A normalized URI (URL) for the Request
          * @see getQueryString()
-         * @api 
          * @static 
          */
         public static function getUri(){
@@ -9227,7 +9447,6 @@ namespace {
          *
          * @param string $path A path to use instead of the current one
          * @return string The normalized URI for the path
-         * @api 
          * @static 
          */
         public static function getUriForPath($path){
@@ -9251,11 +9470,11 @@ namespace {
          * - "/a/x/y"       -> "../../x/y"
          *
          * @param string $path The target path
+         *
          * @return string The relative target path
          * @static 
          */
-        public static function getRelativeUriForPath($path)
-        {
+        public static function getRelativeUriForPath($path){
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::getRelativeUriForPath($path);
         }
@@ -9267,18 +9486,17 @@ namespace {
          * and have consistent escaping.
          *
          * @return string|null A normalized query string for the Request
-         * @api 
          * @static 
          */
         public static function getQueryString(){
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::getQueryString();
         }
-        
+
         /**
          * Checks whether the request is secure or not.
-         * 
-         * This method can read the client port from the "X-Forwarded-Proto" header
+         *
+         * This method can read the client protocol from the "X-Forwarded-Proto" header
          * when trusted proxies were set via "setTrustedProxies()".
          * 
          * The "X-Forwarded-Proto" header must contain the protocol: "https" or "http".
@@ -9288,18 +9506,17 @@ namespace {
          * the "client-proto" key.
          *
          * @return bool 
-         * @api 
          * @static 
          */
         public static function isSecure(){
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::isSecure();
         }
-        
+
         /**
          * Returns the host name.
-         * 
-         * This method can read the client port from the "X-Forwarded-Host" header
+         *
+         * This method can read the client host name from the "X-Forwarded-Host" header
          * when trusted proxies were set via "setTrustedProxies()".
          * 
          * The "X-Forwarded-Host" header must contain the client host name.
@@ -9309,7 +9526,6 @@ namespace {
          *
          * @return string 
          * @throws \UnexpectedValueException when the host name is invalid
-         * @api 
          * @static 
          */
         public static function getHost(){
@@ -9321,7 +9537,6 @@ namespace {
          * Sets the request method.
          *
          * @param string $method
-         * @api 
          * @static 
          */
         public static function setMethod($method){
@@ -9341,7 +9556,6 @@ namespace {
          * The method is always an uppercased string.
          *
          * @return string The request method
-         * @api 
          * @see getRealMethod()
          * @static 
          */
@@ -9367,7 +9581,6 @@ namespace {
          *
          * @param string $format The format
          * @return string The associated mime type (null if not found)
-         * @api 
          * @static 
          */
         public static function getMimeType($format){
@@ -9380,7 +9593,6 @@ namespace {
          *
          * @param string $mimeType The associated mime type
          * @return string|null The format (null if not found)
-         * @api 
          * @static 
          */
         public static function getFormat($mimeType){
@@ -9393,7 +9605,6 @@ namespace {
          *
          * @param string $format The format
          * @param string|array $mimeTypes The associated mime types (the preferred one must be the first as it will be used as the content type)
-         * @api 
          * @static 
          */
         public static function setFormat($format, $mimeTypes){
@@ -9412,7 +9623,6 @@ namespace {
          *
          * @param string $default The default format
          * @return string The request format
-         * @api 
          * @static 
          */
         public static function getRequestFormat($default = 'html'){
@@ -9424,7 +9634,6 @@ namespace {
          * Sets the request format.
          *
          * @param string $format The request format.
-         * @api 
          * @static 
          */
         public static function setRequestFormat($format){
@@ -9436,7 +9645,6 @@ namespace {
          * Gets the format associated with the request.
          *
          * @return string|null The format (null if no content type is present)
-         * @api 
          * @static 
          */
         public static function getContentType(){
@@ -9448,7 +9656,6 @@ namespace {
          * Sets the default locale.
          *
          * @param string $locale
-         * @api 
          * @static 
          */
         public static function setDefaultLocale($locale){
@@ -9471,7 +9678,6 @@ namespace {
          * Sets the locale.
          *
          * @param string $locale
-         * @api 
          * @static 
          */
         public static function setLocale($locale){
@@ -9506,7 +9712,6 @@ namespace {
          * Checks whether the method is safe or not.
          *
          * @return bool 
-         * @api 
          * @static 
          */
         public static function isMethodSafe(){
@@ -9554,7 +9759,6 @@ namespace {
          *
          * @param array $locales An array of ordered available locales
          * @return string|null The preferred locale
-         * @api 
          * @static 
          */
         public static function getPreferredLanguage($locales = null){
@@ -9566,7 +9770,6 @@ namespace {
          * Gets a list of languages acceptable by the client browser.
          *
          * @return array Languages ordered in the user browser preferences
-         * @api 
          * @static 
          */
         public static function getLanguages(){
@@ -9578,7 +9781,6 @@ namespace {
          * Gets a list of charsets acceptable by the client browser.
          *
          * @return array List of charsets in preferable order
-         * @api 
          * @static 
          */
         public static function getCharsets(){
@@ -9601,7 +9803,6 @@ namespace {
          * Gets a list of content types acceptable by the client browser.
          *
          * @return array List of content types in preferable order
-         * @api 
          * @static 
          */
         public static function getAcceptableContentTypes(){
@@ -9617,7 +9818,6 @@ namespace {
          *
          * @link http://en.wikipedia.org/wiki/List_of_Ajax_frameworks#JavaScript
          * @return bool true if the request is an XMLHttpRequest, false otherwise
-         * @api 
          * @static 
          */
         public static function isXmlHttpRequest(){
@@ -10037,12 +10237,12 @@ namespace {
         /**
          * Resolve the middleware name to a class name preserving passed parameters.
          *
-         * @param $name
+         * @param string $name
+         *
          * @return string
          * @static 
          */
-        public static function resolveMiddlewareClassName($name)
-        {
+        public static function resolveMiddlewareClassName($name){
             return \Illuminate\Routing\Router::resolveMiddlewareClassName($name);
         }
         
@@ -10147,11 +10347,12 @@ namespace {
         /**
          * Register a model binder for a wildcard.
          *
-         * @param string $key
-         * @param string $class
+         * @param string        $key
+         * @param string        $class
          * @param \Closure|null $callback
-         * @return void 
-         * @throws NotFoundHttpException
+         *
+         * @return void
+         * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
          * @static 
          */
         public static function model($key, $class, $callback = null){
@@ -10262,12 +10463,12 @@ namespace {
          * Create a response instance from the given value.
          *
          * @param \Symfony\Component\HttpFoundation\Request $request
-         * @param mixed $response
+         * @param mixed                                     $response
+         *
          * @return \Illuminate\Http\Response
          * @static 
          */
-        public static function prepareResponse($request, $response)
-        {
+        public static function prepareResponse($request, $response){
             return \Illuminate\Routing\Router::prepareResponse($request, $response);
         }
         
@@ -10690,7 +10891,6 @@ namespace {
          *
          * @return bool True if session started.
          * @throws \RuntimeException If session fails to start.
-         * @api 
          * @static 
          */
         public static function start(){
@@ -10701,7 +10901,6 @@ namespace {
          * Returns the session ID.
          *
          * @return string The session ID.
-         * @api 
          * @static 
          */
         public static function getId(){
@@ -10712,7 +10911,6 @@ namespace {
          * Sets the session ID.
          *
          * @param string $id
-         * @api 
          * @static 
          */
         public static function setId($id){
@@ -10734,7 +10932,6 @@ namespace {
          * Returns the session name.
          *
          * @return mixed The session name.
-         * @api 
          * @static 
          */
         public static function getName(){
@@ -10745,7 +10942,6 @@ namespace {
          * Sets the session name.
          *
          * @param string $name
-         * @api 
          * @static 
          */
         public static function setName($name){
@@ -10763,7 +10959,6 @@ namespace {
          *                      to expire with browser session. Time is in seconds, and is
          *                      not a Unix timestamp.
          * @return bool True if session invalidated, false if error.
-         * @api 
          * @static 
          */
         public static function invalidate($lifetime = null){
@@ -10780,7 +10975,6 @@ namespace {
          *                       to expire with browser session. Time is in seconds, and is
          *                       not a Unix timestamp.
          * @return bool True if session migrated, false if error.
-         * @api 
          * @static 
          */
         public static function migrate($destroy = false, $lifetime = null){
@@ -10826,7 +11020,6 @@ namespace {
          *
          * @param string $name The attribute name
          * @return bool true if the attribute is defined, false otherwise
-         * @api 
          * @static 
          */
         public static function has($name){
@@ -10839,7 +11032,6 @@ namespace {
          * @param string $name The attribute name
          * @param mixed $default The default value if not found.
          * @return mixed 
-         * @api 
          * @static 
          */
         public static function get($name, $default = null){
@@ -10886,7 +11078,6 @@ namespace {
          *
          * @param string $name
          * @param mixed $value
-         * @api 
          * @static 
          */
         public static function set($name, $value){
@@ -10897,8 +11088,9 @@ namespace {
          * Put a key / value pair or array of key / value pairs in the session.
          *
          * @param string|array $key
-         * @param mixed|null $value
-         * @return void 
+         * @param mixed $value
+         *
+*@return void
          * @static 
          */
         public static function put($key, $value = null){
@@ -10965,7 +11157,6 @@ namespace {
          * Returns attributes.
          *
          * @return array Attributes
-         * @api 
          * @static 
          */
         public static function all(){
@@ -10987,7 +11178,6 @@ namespace {
          *
          * @param string $name
          * @return mixed The removed value or null when it does not exist
-         * @api 
          * @static 
          */
         public static function remove($name){
@@ -11008,7 +11198,6 @@ namespace {
         /**
          * Clears all attributes.
          *
-         * @api 
          * @static 
          */
         public static function clear(){
@@ -11212,11 +11401,11 @@ namespace {
          * Create an instance of the ftp driver.
          *
          * @param array $config
+         *
          * @return \Illuminate\Contracts\Filesystem\Filesystem
          * @static 
          */
-        public static function createFtpDriver($config)
-        {
+        public static function createFtpDriver($config){
             return \Illuminate\Filesystem\FilesystemManager::createFtpDriver($config);
         }
         
@@ -11300,7 +11489,7 @@ namespace {
         }
         
         /**
-         * Generate a absolute URL to the given path.
+         * Generate an absolute URL to the given path.
          *
          * @param string $path
          * @param mixed $extra
@@ -11334,6 +11523,21 @@ namespace {
          */
         public static function asset($path, $secure = null){
             return \Illuminate\Routing\UrlGenerator::asset($path, $secure);
+        }
+
+        /**
+         * Generate a URL to an asset from a custom root domain such as CDN, etc.
+         *
+         * @param string    $root
+         * @param string    $path
+         * @param bool|null $secure
+         *
+         * @return string
+         * @static
+         */
+        public static function assetFrom($root, $path, $secure = null)
+        {
+            return \Illuminate\Routing\UrlGenerator::assetFrom($root, $path, $secure);
         }
         
         /**
@@ -11407,11 +11611,11 @@ namespace {
         public static function isValidUrl($path){
             return \Illuminate\Routing\UrlGenerator::isValidUrl($path);
         }
-        
+
         /**
          * Get the request instance.
          *
-         * @return \Symfony\Component\HttpFoundation\Request 
+         * @return \Illuminate\Http\Request 
          * @static 
          */
         public static function getRequest(){
@@ -12032,15 +12236,15 @@ namespace {
          * @return array 
          * @static 
          */
-        public static function getNames(){
+        public static function getNames()
+        {
             return \Illuminate\View\Factory::getNames();
         }
-
+        
     }
 
 
-    class Vesta extends \Mautab\Facades\VestaFacades
-    {
+    class Vesta extends \Mautab\Facades\VestaFacades{
         
         /**
          * 
@@ -12191,14 +12395,13 @@ namespace {
         public static function listDNSRecords($domain){
             return \Mautab\Services\VestaAPI\Vesta::listDNSRecords($domain);
         }
-        
+
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority)
-        {
+        public static function changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority){
             return \Mautab\Services\VestaAPI\Vesta::changeeDNSDomainRecord($v_domain, $v_record_id, $v_val, $v_priority);
         }
         
@@ -12210,14 +12413,13 @@ namespace {
         public static function removeDNSRecord($v_domain, $v_record_id){
             return \Mautab\Services\VestaAPI\Vesta::removeDNSRecord($v_domain, $v_record_id);
         }
-        
+
         /**
-         * 
          *
-         * @static 
+         *
+         * @static
          */
-        public static function addDNSRecord($v_domain, $v_rec, $v_type, $v_val, $v_priority)
-        {
+        public static function addDNSRecord($v_domain, $v_rec, $v_type, $v_val, $v_priority){
             return \Mautab\Services\VestaAPI\Vesta::addDNSRecord($v_domain, $v_rec, $v_type, $v_val, $v_priority);
         }
         
@@ -12301,14 +12503,13 @@ namespace {
         public static function restoreBackup($arg){
             return \Mautab\Services\VestaAPI\Vesta::restoreBackup($arg);
         }
-        
+
         /**
          * 
          *
          * @static 
          */
-        public static function suspendUser($username)
-        {
+        public static function suspendUser($username){
             return \Mautab\Services\VestaAPI\Vesta::suspendUser($username);
         }
 
@@ -12317,38 +12518,34 @@ namespace {
          *
          * @static 
          */
-        public static function changePackage($package)
-        {
+        public static function changePackage($package){
             return \Mautab\Services\VestaAPI\Vesta::changePackage($package);
         }
 
         /**
+         * 
          *
-         *
-         * @static
+         * @static 
          */
-        public static function listUserPackages()
-        {
+        public static function listUserPackages(){
             return \Mautab\Services\VestaAPI\Vesta::listUserPackages();
         }
 
         /**
+         * 
          *
-         *
-         * @static
+         * @static 
          */
-        public static function getValue($option)
-        {
+        public static function getValue($option){
             return \Mautab\Services\VestaAPI\Vesta::getValue($option);
         }
 
         /**
          *
          *
-         * @static
+         * @static 
          */
-        public static function changeShell($ssh = 'nologin')
-        {
+        public static function changeShell($ssh = 'nologin'){
             return \Mautab\Services\VestaAPI\Vesta::changeShell($ssh);
         }
 
@@ -12356,6 +12553,36 @@ namespace {
          *
          *
          * @static
+         */
+        public static function adminListUserAccount($user)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::adminListUserAccount($user);
+        }
+
+        /**
+         *
+         *
+         * @static
+         */
+        public static function adminListUserPackages($user)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::adminListUserPackages($user);
+        }
+
+        /**
+         *
+         *
+         * @static
+         */
+        public static function adminListUserShell($user)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::adminListUserShell($user);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
          */
         public static function listEditWebDomain($domain){
             return \Mautab\Services\VestaAPI\Vesta::listEditWebDomain($domain);
@@ -12423,143 +12650,131 @@ namespace {
         public static function deleteWebDomainAlias($domain, $alias){
             return \Mautab\Services\VestaAPI\Vesta::deleteWebDomainAlias($domain, $alias);
         }
-        
+
         /**
-         * 
          *
-         * @static 
-         */
-        public static function addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function addDomainProxy($domain, $ext)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::addDomainProxy($domain, $ext);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function deleteDomain($domain)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::deleteDomain($domain);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function changeWebDomainIp($domain, $ip)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::changeWebDomainIp($domain, $ip);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function deleteWebDomain($domain, $v_ftp_username)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::deleteWebDomain($domain, $v_ftp_username);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function changeWebDomain($domain, $v_ftp_username, $v_ftp_path)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::changeWebDomain($domain, $v_ftp_username, $v_ftp_path);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function changeFtpPassword($domain, $v_ftp_username, $v_password)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::changeFtpPassword($domain, $v_ftp_username, $v_password);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function restartDNSServer()
-        {
-            return \Mautab\Services\VestaAPI\Vesta::restartDNSServer();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function userSearch($query)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::userSearch($query);
-        }
-        
-        /**
-         * 
          *
          * @static
          */
-        public static function listStats($server)
-        {
-            return \Mautab\Services\VestaAPI\Vesta::listStats($server);
+        public static function addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path){
+            return \Mautab\Services\VestaAPI\Vesta::addFtpDomain($domain, $ftp_username, $ftp_password, $ftp_path);
         }
 
+        /**
+         *
+         *
+         * @static 
+         */
+        public static function addDomainProxy($domain, $ext){
+            return \Mautab\Services\VestaAPI\Vesta::addDomainProxy($domain, $ext);
+        }
+
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function deleteDomain($domain){
+            return \Mautab\Services\VestaAPI\Vesta::deleteDomain($domain);
+        }
+
+        /**
+         *
+         *
+         * @static 
+         */
+        public static function changeWebDomainIp($domain, $ip){
+            return \Mautab\Services\VestaAPI\Vesta::changeWebDomainIp($domain, $ip);
+        }
+
+        /**
+         *
+         *
+         * @static 
+         */
+        public static function deleteWebDomain($domain, $v_ftp_username){
+            return \Mautab\Services\VestaAPI\Vesta::deleteWebDomain($domain, $v_ftp_username);
+        }
+
+        /**
+         *
+         *
+         * @static
+         */
+        public static function changeWebDomain($domain, $v_ftp_username, $v_ftp_path){
+            return \Mautab\Services\VestaAPI\Vesta::changeWebDomain($domain, $v_ftp_username, $v_ftp_path);
+        }
+
+        /**
+         *
+         *
+         * @static
+         */
+        public static function changeFtpPassword($domain, $v_ftp_username, $v_password){
+            return \Mautab\Services\VestaAPI\Vesta::changeFtpPassword($domain, $v_ftp_username, $v_password);
+        }
+
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function restartDNSServer(){
+            return \Mautab\Services\VestaAPI\Vesta::restartDNSServer();
+        }
+
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function userSearch($query){
+            return \Mautab\Services\VestaAPI\Vesta::userSearch($query);
+        }
+
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function listStats($server){
+            return \Mautab\Services\VestaAPI\Vesta::listStats($server);
+        }
+        
         /**
          * 
          *
          * @param $server
+         *
          * @return mixed Самая бесполезная функция
          * @static 
          */
-        public static function listRRD($server)
-        {
+        public static function listRRD($server){
             return \Mautab\Services\VestaAPI\Vesta::listRRD($server);
         }
 
         /**
+         * 
          *
-         *
-         * @static
+         * @static 
          */
-        public static function listSysInfo($server)
-        {
+        public static function listSysInfo($server){
             return \Mautab\Services\VestaAPI\Vesta::listSysInfo($server);
         }
 
         /**
+         * 
          *
-         *
-         * @static
+         * @static 
          */
-        public static function listSysService($server)
-        {
+        public static function listSysService($server){
             return \Mautab\Services\VestaAPI\Vesta::listSysService($server);
         }
 
         /**
          *
          *
-         * @static
+         * @static 
          */
         public static function restartService($server, $service)
         {
@@ -12569,7 +12784,7 @@ namespace {
         /**
          *
          *
-         * @static
+         * @static 
          */
         public static function startService($server, $service)
         {
@@ -12579,7 +12794,7 @@ namespace {
         /**
          *
          *
-         * @static
+         * @static 
          */
         public static function stopService($server, $service)
         {
@@ -12587,32 +12802,119 @@ namespace {
         }
 
         /**
+         * 
          *
-         *
-         * @static
+         * @static 
          */
-        public static function listIp($server)
-        {
+        public static function listIp($server){
             return \Mautab\Services\VestaAPI\Vesta::listIp($server);
         }
 
         /**
+         * 
          *
-         *
-         * @static
+         * @static 
          */
-        public static function getIp($server, $ip)
-        {
+        public static function getIp($server, $ip){
             return \Mautab\Services\VestaAPI\Vesta::getIp($server, $ip);
         }
 
         /**
          *
          *
+         * @param \Mautab\Services\VestaAPI\User $user
+         * @param string                         $restart
+         *
+         * @return mixed
          * @static
          */
-        public static function listCron()
+        public static function rebuildWebDomains($user, $restart = 'no')
         {
+            return \Mautab\Services\VestaAPI\Vesta::rebuildWebDomains($user, $restart);
+        }
+
+        /**
+         *
+         *
+         * @param \Mautab\Services\VestaAPI\User $user
+         * @param string                         $restart
+         * @return mixed
+         * @static
+         */
+        public static function rebuildDNSDomains($user, $restart = 'no')
+        {
+            return \Mautab\Services\VestaAPI\Vesta::rebuildDNSDomains($user, $restart);
+        }
+
+        /**
+         *
+         *
+         * @param \Mautab\Services\VestaAPI\User $user
+         *
+         * @return mixed
+         * @static
+         */
+        public static function rebuildMailDomains($user)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::rebuildMailDomains($user);
+        }
+
+        /**
+         *
+         *
+         * @param \Mautab\Services\VestaAPI\User $user
+         *
+         * @return mixed
+         * @static
+         */
+        public static function rebuildDataBases($user)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::rebuildDataBases($user);
+        }
+
+        /**
+         *
+         *
+         * @param \Mautab\Services\VestaAPI\User $user
+         * @param string                         $restart
+         *
+         * @return mixed
+         * @static
+         */
+        public static function rebuildCronJobs($user, $restart = 'no')
+        {
+            return \Mautab\Services\VestaAPI\Vesta::rebuildCronJobs($user, $restart);
+        }
+
+        /**
+         *
+         *
+         * @param \Mautab\Services\VestaAPI\User $user
+         *
+         * @return mixed
+         * @static
+         */
+        public static function updateUserCounters($user)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::updateUserCounters($user);
+        }
+
+        /**
+         *
+         *
+         * @static
+         */
+        public static function updateSysVesta($server, $package)
+        {
+            return \Mautab\Services\VestaAPI\Vesta::updateSysVesta($server, $package);
+        }
+
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function listCron(){
             return \Mautab\Services\VestaAPI\Vesta::listCron();
         }
         
@@ -12625,35 +12927,33 @@ namespace {
          * @param $v_month
          * @param $v_wday
          * @param $v_cmd
+         *
          * @return mixed
          * @static 
          */
-        public static function addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
-        {
+        public static function addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd){
             return \Mautab\Services\VestaAPI\Vesta::addCron($v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd);
         }
-        
+
         /**
-         * 
+         *
          *
          * @param $v_job
-         * @return mixed
+         * @return mixed 
          * @static 
          */
-        public static function showCron($v_job)
-        {
+        public static function showCron($v_job){
             return \Mautab\Services\VestaAPI\Vesta::showCron($v_job);
         }
-        
+
         /**
-         * 
+         *
          *
          * @param $v_job
-         * @return mixed
+         * @return mixed 
          * @static 
          */
-        public static function deleteCron($v_job)
-        {
+        public static function deleteCron($v_job){
             return \Mautab\Services\VestaAPI\Vesta::deleteCron($v_job);
         }
         
@@ -12667,48 +12967,46 @@ namespace {
          * @param $v_month
          * @param $v_wday
          * @param $v_cmd
+         *
          * @return mixed
          * @static 
          */
-        public static function editCron($v_job, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd)
-        {
+        public static function editCron($v_job, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd){
             return \Mautab\Services\VestaAPI\Vesta::editCron($v_job, $v_min, $v_hour, $v_day, $v_month, $v_wday, $v_cmd);
         }
         
         /**
-         * 
+         *
          *
          * @param $src
          * @param $dst
-         * @return mixed
+         *
+*@return mixed
          * @static 
          */
-        public static function moveFile($src, $dst)
-        {
+        public static function moveFile($src, $dst){
             return \Mautab\Services\VestaAPI\Vesta::moveFile($src, $dst);
         }
-        
+
         /**
-         * 
+         *
          *
          * @param $patch
-         * @return mixed
+         * @return mixed 
          * @static 
          */
-        public static function openFile($path = '')
-        {
+        public static function openFile($path = ''){
             return \Mautab\Services\VestaAPI\Vesta::openFile($path);
         }
-        
+
         /**
-         * 
+         *
          *
          * @param $patch
-         * @return mixed
+         * @return mixed 
          * @static 
          */
-        public static function addDir($patch)
-        {
+        public static function addDir($patch){
             return \Mautab\Services\VestaAPI\Vesta::addDir($patch);
         }
         
@@ -12716,109 +13014,111 @@ namespace {
          * 
          *
          * @param $patch
-         * @return mixed
+         * @return mixed 
          * @static 
          */
         public static function addFile($patch){
             return \Mautab\Services\VestaAPI\Vesta::addFile($patch);
         }
-        
+
         /**
          * 
          *
          * @param $src_file
          * @param $permissions
+         *
          * @return mixed
          * @static 
          */
-        public static function changePermission($src_file, $permissions)
-        {
+        public static function changePermission($src_file, $permissions){
             return \Mautab\Services\VestaAPI\Vesta::changePermission($src_file, $permissions);
         }
-        
+
         /**
-         * 
+         *
          *
          * @param $src_dir
          * @param $dst_dir
-         * @return mixed
+         *
+*@return mixed
          * @static 
          */
-        public static function copyDir($src_dir, $dst_dir)
-        {
+        public static function copyDir($src_dir, $dst_dir){
             return \Mautab\Services\VestaAPI\Vesta::copyDir($src_dir, $dst_dir);
         }
-        
+
         /**
-         * 
+         *
          *
          * @param $src_dir
          * @param $dst_dir
-         * @return mixed
+         *
+*@return mixed
          * @static 
          */
         public static function copyFile($src_dir, $dst_dir)
         {
             return \Mautab\Services\VestaAPI\Vesta::copyFile($src_dir, $dst_dir);
         }
-
+        
         /**
-         *
+         * 
          *
          * @param $dst_dir
-         * @return mixed
-         * @static
+         * @return mixed 
+         * @static 
          */
         public static function deleteDir($dst_dir){
             return \Mautab\Services\VestaAPI\Vesta::deleteDir($dst_dir);
-        }
-
-        /**
-         *
-         *
-         * @param $dst_file
-         * @return mixed
-         * @static
-         */
-        public static function deleteFile($dst_file){
-            return \Mautab\Services\VestaAPI\Vesta::deleteFile($dst_file);
         }
         
         /**
          * 
          *
+         * @param $dst_file
+         * @return mixed 
+         * @static 
+         */
+        public static function deleteFile($dst_file){
+            return \Mautab\Services\VestaAPI\Vesta::deleteFile($dst_file);
+        }
+
+        /**
+         *
+         *
          * @param $src_file
          * @param $dst_dir
-         * @return mixed
+         *
+*@return mixed
          * @static 
          */
         public static function extractArchive($src_file, $dst_dir)
         {
             return \Mautab\Services\VestaAPI\Vesta::extractArchive($src_file, $dst_dir);
         }
-
+        
         /**
-         *
+         * 
          *
          * @param $path
-         * @return mixed
-         * @static
+         * @return mixed 
+         * @static 
          */
         public static function listDirectory($path = ''){
             return \Mautab\Services\VestaAPI\Vesta::listDirectory($path);
         }
-
+        
         /**
-         *
+         * 
          *
          * @param $raw
-         * @return array
-         * @static
+         * @return array 
+         * @static 
          */
         public static function parseListing($raw){
             return \Mautab\Services\VestaAPI\Vesta::parseListing($raw);
         }
-
+        
     }
 
 
@@ -12850,12 +13150,12 @@ namespace {
          *
          * @param integer $width
          * @param integer $height
-         * @param mixed $background
+         * @param mixed   $background
+         *
          * @return \Intervention\Image\Image
          * @static 
          */
-        public static function canvas($width, $height, $background = null)
-        {
+        public static function canvas($width, $height, $background = null){
             return \Intervention\Image\ImageManager::canvas($width, $height, $background);
         }
         
@@ -12864,13 +13164,13 @@ namespace {
          * (requires additional package intervention/imagecache)
          *
          * @param \Closure $callback
-         * @param integer $lifetime
-         * @param boolean $returnObj
+         * @param integer  $lifetime
+         * @param boolean  $returnObj
+         *
          * @return \Intervention\Image\Image
          * @static 
          */
-        public static function cache($callback, $lifetime = null, $returnObj = false)
-        {
+        public static function cache($callback, $lifetime = null, $returnObj = false){
             return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
         }
         
@@ -12884,7 +13184,8 @@ namespace {
          *
          * @param mixed $paths
          * @param string $class
-         * @return mixed
+         *
+*@return mixed
          * @static 
          */
         public static function path($paths, $class = 'active'){
@@ -12896,7 +13197,8 @@ namespace {
          *
          * @param mixed $routes
          * @param string $class
-         * @return mixed
+         *
+*@return mixed
          * @static 
          */
         public static function route($routes, $class = 'active'){
@@ -12910,6 +13212,7 @@ namespace {
          * @param string $identifier
          * @param string $attribute
          * @param string $class
+         *
          * @return mixed
          * @static 
          */
@@ -12917,21 +13220,20 @@ namespace {
         {
             return \Watson\Active\Active::resource($route, $identifier, $attribute, $class);
         }
-
+        
     }
 
 
-    class Flash extends \Laracasts\Flash\Flash
-    {
+    class Flash extends \Laracasts\Flash\Flash{
 
         /**
          * Flash an information message.
          *
          * @param string $message
-         * @static
+         *
+*@static
          */
-        public static function info($message)
-        {
+        public static function info($message){
             return \Laracasts\Flash\FlashNotifier::info($message);
         }
 
@@ -12939,11 +13241,11 @@ namespace {
          * Flash a success message.
          *
          * @param string $message
-         * @return $this
+         *
+*@return $this
          * @static
          */
-        public static function success($message)
-        {
+        public static function success($message){
             return \Laracasts\Flash\FlashNotifier::success($message);
         }
 
@@ -12951,11 +13253,11 @@ namespace {
          * Flash an error message.
          *
          * @param string $message
-         * @return $this
+         *
+*@return $this
          * @static
          */
-        public static function error($message)
-        {
+        public static function error($message){
             return \Laracasts\Flash\FlashNotifier::error($message);
         }
 
@@ -12963,11 +13265,11 @@ namespace {
          * Flash a warning message.
          *
          * @param string $message
-         * @return $this
+         *
+*@return $this
          * @static
          */
-        public static function warning($message)
-        {
+        public static function warning($message){
             return \Laracasts\Flash\FlashNotifier::warning($message);
         }
 
@@ -12976,11 +13278,11 @@ namespace {
          *
          * @param string $message
          * @param string $title
-         * @return $this
-         * @static
+         *
+*@return $this
+         * @static 
          */
-        public static function overlay($message, $title = 'Notice')
-        {
+        public static function overlay($message, $title = 'Notice'){
             return \Laracasts\Flash\FlashNotifier::overlay($message, $title);
         }
 
@@ -12989,11 +13291,11 @@ namespace {
          *
          * @param string $message
          * @param string $level
-         * @return $this
-         * @static
+         *
+*@return $this
+         * @static 
          */
-        public static function message($message, $level = 'info')
-        {
+        public static function message($message, $level = 'info'){
             return \Laracasts\Flash\FlashNotifier::message($message, $level);
         }
 
@@ -13003,17 +13305,15 @@ namespace {
          * @return $this
          * @static
          */
-        public static function important()
-        {
+        public static function important(){
             return \Laracasts\Flash\FlashNotifier::important();
         }
-
+        
     }
 
 
-    class User extends \Mautab\Models\User
-    {
-
+    class User extends \Mautab\Models\User{
+        
     }
 
 
@@ -13024,11 +13324,11 @@ namespace {
          * Get a remote connection instance.
          *
          * @param string|array|mixed $name
-         * @return \Collective\Remote\ConnectionInterface
-         * @static
+         *
+*@return \Collective\Remote\ConnectionInterface
+         * @static 
          */
-        public static function into($name)
-        {
+        public static function into($name){
             return \Collective\Remote\RemoteManager::into($name);
         }
 
@@ -13036,11 +13336,11 @@ namespace {
          * Get a remote connection instance.
          *
          * @param string|array $name
-         * @return \Collective\Remote\ConnectionInterface
+         *
+*@return \Collective\Remote\ConnectionInterface
          * @static
          */
-        public static function connection($name = null)
-        {
+        public static function connection($name = null){
             return \Collective\Remote\RemoteManager::connection($name);
         }
 
@@ -13048,11 +13348,11 @@ namespace {
          * Get a connection group instance by name.
          *
          * @param string $name
-         * @return \Collective\Remote\ConnectionInterface
-         * @static
+         *
+*@return \Collective\Remote\ConnectionInterface
+         * @static 
          */
-        public static function group($name)
-        {
+        public static function group($name){
             return \Collective\Remote\RemoteManager::group($name);
         }
 
@@ -13060,11 +13360,11 @@ namespace {
          * Resolve a multiple connection instance.
          *
          * @param array $names
-         * @return \Collective\Remote\MultiConnection
-         * @static
+         *
+*@return \Collective\Remote\MultiConnection
+         * @static 
          */
-        public static function multiple($names)
-        {
+        public static function multiple($names){
             return \Collective\Remote\RemoteManager::multiple($names);
         }
 
@@ -13072,8 +13372,9 @@ namespace {
          * Resolve a remote connection instance.
          *
          * @param string $name
-         * @return \Collective\Remote\Connection
-         * @static
+         *
+*@return \Collective\Remote\Connection
+         * @static 
          */
         public static function resolve($name)
         {
@@ -13083,11 +13384,10 @@ namespace {
         /**
          * Get the default connection name.
          *
-         * @return string
+         * @return string 
          * @static
          */
-        public static function getDefaultConnection()
-        {
+        public static function getDefaultConnection(){
             return \Collective\Remote\RemoteManager::getDefaultConnection();
         }
 
@@ -13095,12 +13395,2288 @@ namespace {
          * Set the default connection name.
          *
          * @param string $name
-         * @return void
+         * @return void 
          * @static
          */
         public static function setDefaultConnection($name)
         {
             \Collective\Remote\RemoteManager::setDefaultConnection($name);
+        }
+
+    }
+
+
+    class Settings extends \Mautab\Facades\SettingsFacades
+    {
+
+        /**
+         * Clear the list of booted models so they will be re-booted.
+         *
+         * @return void
+         * @static
+         */
+        public static function clearBootedModels()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::clearBootedModels();
+        }
+
+        /**
+         * Register a new global scope on the model.
+         *
+         * @param \Illuminate\Database\Eloquent\ScopeInterface $scope
+         *
+         * @return void
+         * @static
+         */
+        public static function addGlobalScope($scope)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::addGlobalScope($scope);
+        }
+
+        /**
+         * Determine if a model has a global scope.
+         *
+         * @param \Illuminate\Database\Eloquent\ScopeInterface $scope
+         *
+         * @return bool
+         * @static
+         */
+        public static function hasGlobalScope($scope)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::hasGlobalScope($scope);
+        }
+
+        /**
+         * Get a global scope registered with the model.
+         *
+         * @param \Illuminate\Database\Eloquent\ScopeInterface $scope
+         *
+         * @return \Illuminate\Database\Eloquent\ScopeInterface|null
+         * @static
+         */
+        public static function getGlobalScope($scope)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getGlobalScope($scope);
+        }
+
+        /**
+         * Get the global scopes for this class instance.
+         *
+         * @return \Illuminate\Database\Eloquent\ScopeInterface[]
+         * @static
+         */
+        public static function getGlobalScopes()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getGlobalScopes();
+        }
+
+        /**
+         * Register an observer with the Model.
+         *
+         * @param object|string $class
+         * @param int           $priority
+         *
+         * @return void
+         * @static
+         */
+        public static function observe($class, $priority = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::observe($class, $priority);
+        }
+
+        /**
+         * Fill the model with an array of attributes.
+         *
+         * @param array $attributes
+         *
+         * @return $this
+         * @throws \Illuminate\Database\Eloquent\MassAssignmentException
+         * @static
+         */
+        public static function fill($attributes)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::fill($attributes);
+        }
+
+        /**
+         * Fill the model with an array of attributes. Force mass assignment.
+         *
+         * @param array $attributes
+         *
+         * @return $this
+         * @static
+         */
+        public static function forceFill($attributes)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::forceFill($attributes);
+        }
+
+        /**
+         * Create a new instance of the given model.
+         *
+         * @param array $attributes
+         * @param bool  $exists
+         *
+         * @return static
+         * @static
+         */
+        public static function newInstance($attributes = [], $exists = false)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::newInstance($attributes, $exists);
+        }
+
+        /**
+         * Create a new model instance that is existing.
+         *
+         * @param array       $attributes
+         * @param string|null $connection
+         *
+         * @return static
+         * @static
+         */
+        public static function newFromBuilder($attributes = [], $connection = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::newFromBuilder($attributes, $connection);
+        }
+
+        /**
+         * Create a collection of models from plain arrays.
+         *
+         * @param array       $items
+         * @param string|null $connection
+         *
+         * @return \Illuminate\Database\Eloquent\Collection
+         * @static
+         */
+        public static function hydrate($items, $connection = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::hydrate($items, $connection);
+        }
+
+        /**
+         * Create a collection of models from a raw query.
+         *
+         * @param string      $query
+         * @param array       $bindings
+         * @param string|null $connection
+         *
+         * @return \Illuminate\Database\Eloquent\Collection
+         * @static
+         */
+        public static function hydrateRaw($query, $bindings = [], $connection = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::hydrateRaw($query, $bindings, $connection);
+        }
+
+        /**
+         * Save a new model and return the instance.
+         *
+         * @param array $attributes
+         *
+         * @return static
+         * @static
+         */
+        public static function create($attributes = [])
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::create($attributes);
+        }
+
+        /**
+         * Save a new model and return the instance. Allow mass-assignment.
+         *
+         * @param array $attributes
+         *
+         * @return static
+         * @static
+         */
+        public static function forceCreate($attributes)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::forceCreate($attributes);
+        }
+
+        /**
+         * Get the first record matching the attributes or create it.
+         *
+         * @param array $attributes
+         *
+         * @return static
+         * @static
+         */
+        public static function firstOrCreate($attributes)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::firstOrCreate($attributes);
+        }
+
+        /**
+         * Get the first record matching the attributes or instantiate it.
+         *
+         * @param array $attributes
+         *
+         * @return static
+         * @static
+         */
+        public static function firstOrNew($attributes)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::firstOrNew($attributes);
+        }
+
+        /**
+         * Create or update a record matching the attributes, and fill it with values.
+         *
+         * @param array $attributes
+         * @param array $values
+         *
+         * @return static
+         * @static
+         */
+        public static function updateOrCreate($attributes, $values = [])
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::updateOrCreate($attributes, $values);
+        }
+
+        /**
+         * Begin querying the model.
+         *
+         * @return \Illuminate\Database\Eloquent\Builder
+         * @static
+         */
+        public static function query()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::query();
+        }
+
+        /**
+         * Begin querying the model on a given connection.
+         *
+         * @param string|null $connection
+         *
+         * @return \Illuminate\Database\Eloquent\Builder
+         * @static
+         */
+        public static function on($connection = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::on($connection);
+        }
+
+        /**
+         * Begin querying the model on the write connection.
+         *
+         * @return \Illuminate\Database\Query\Builder
+         * @static
+         */
+        public static function onWriteConnection()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::onWriteConnection();
+        }
+
+        /**
+         * Get all of the models from the database.
+         *
+         * @param array|mixed $columns
+         *
+         * @return \Illuminate\Database\Eloquent\Collection|static[]
+         * @static
+         */
+        public static function all($columns = [])
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::all($columns);
+        }
+
+        /**
+         * Find a model by its primary key or return new static.
+         *
+         * @param mixed $id
+         * @param array $columns
+         *
+         * @return \Illuminate\Support\Collection|static
+         * @static
+         */
+        public static function findOrNew($id, $columns = [])
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::findOrNew($id, $columns);
+        }
+
+        /**
+         * Reload a fresh model instance from the database.
+         *
+         * @param array $with
+         *
+         * @return $this|null
+         * @static
+         */
+        public static function fresh($with = [])
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::fresh($with);
+        }
+
+        /**
+         * Eager load relations on the model.
+         *
+         * @param array|string $relations
+         *
+         * @return $this
+         * @static
+         */
+        public static function load($relations)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::load($relations);
+        }
+
+        /**
+         * Begin querying a model with eager loading.
+         *
+         * @param array|string $relations
+         *
+         * @return \Illuminate\Database\Eloquent\Builder|static
+         * @static
+         */
+        public static function with($relations)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::with($relations);
+        }
+
+        /**
+         * Append attributes to query when building a query.
+         *
+         * @param array|string $attributes
+         *
+         * @return $this
+         * @static
+         */
+        public static function append($attributes)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::append($attributes);
+        }
+
+        /**
+         * Define a one-to-one relationship.
+         *
+         * @param string $related
+         * @param string $foreignKey
+         * @param string $localKey
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasOne
+         * @static
+         */
+        public static function hasOne($related, $foreignKey = null, $localKey = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::hasOne($related, $foreignKey, $localKey);
+        }
+
+        /**
+         * Define a polymorphic one-to-one relationship.
+         *
+         * @param string $related
+         * @param string $name
+         * @param string $type
+         * @param string $id
+         * @param string $localKey
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+         * @static
+         */
+        public static function morphOne($related, $name, $type = null, $id = null, $localKey = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::morphOne($related, $name, $type, $id, $localKey);
+        }
+
+        /**
+         * Define an inverse one-to-one or many relationship.
+         *
+         * @param string $related
+         * @param string $foreignKey
+         * @param string $otherKey
+         * @param string $relation
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+         * @static
+         */
+        public static function belongsTo($related, $foreignKey = null, $otherKey = null, $relation = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::belongsTo($related, $foreignKey, $otherKey, $relation);
+        }
+
+        /**
+         * Define a polymorphic, inverse one-to-one or many relationship.
+         *
+         * @param string $name
+         * @param string $type
+         * @param string $id
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+         * @static
+         */
+        public static function morphTo($name = null, $type = null, $id = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::morphTo($name, $type, $id);
+        }
+
+        /**
+         * Retrieve the fully qualified class name from a slug.
+         *
+         * @param string $class
+         *
+         * @return string
+         * @static
+         */
+        public static function getActualClassNameForMorph($class)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getActualClassNameForMorph($class);
+        }
+
+        /**
+         * Define a one-to-many relationship.
+         *
+         * @param string $related
+         * @param string $foreignKey
+         * @param string $localKey
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany
+         * @static
+         */
+        public static function hasMany($related, $foreignKey = null, $localKey = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::hasMany($related, $foreignKey, $localKey);
+        }
+
+        /**
+         * Define a has-many-through relationship.
+         *
+         * @param string      $related
+         * @param string      $through
+         * @param string|null $firstKey
+         * @param string|null $secondKey
+         * @param string|null $localKey
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+         * @static
+         */
+        public static function hasManyThrough($related, $through, $firstKey = null, $secondKey = null, $localKey = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::hasManyThrough($related, $through, $firstKey, $secondKey, $localKey);
+        }
+
+        /**
+         * Define a polymorphic one-to-many relationship.
+         *
+         * @param string $related
+         * @param string $name
+         * @param string $type
+         * @param string $id
+         * @param string $localKey
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+         * @static
+         */
+        public static function morphMany($related, $name, $type = null, $id = null, $localKey = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::morphMany($related, $name, $type, $id, $localKey);
+        }
+
+        /**
+         * Define a many-to-many relationship.
+         *
+         * @param string $related
+         * @param string $table
+         * @param string $foreignKey
+         * @param string $otherKey
+         * @param string $relation
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+         * @static
+         */
+        public static function belongsToMany($related, $table = null, $foreignKey = null, $otherKey = null, $relation = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::belongsToMany($related, $table, $foreignKey, $otherKey, $relation);
+        }
+
+        /**
+         * Define a polymorphic many-to-many relationship.
+         *
+         * @param string $related
+         * @param string $name
+         * @param string $table
+         * @param string $foreignKey
+         * @param string $otherKey
+         * @param bool   $inverse
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+         * @static
+         */
+        public static function morphToMany($related, $name, $table = null, $foreignKey = null, $otherKey = null, $inverse = false)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::morphToMany($related, $name, $table, $foreignKey, $otherKey, $inverse);
+        }
+
+        /**
+         * Define a polymorphic, inverse many-to-many relationship.
+         *
+         * @param string $related
+         * @param string $name
+         * @param string $table
+         * @param string $foreignKey
+         * @param string $otherKey
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+         * @static
+         */
+        public static function morphedByMany($related, $name, $table = null, $foreignKey = null, $otherKey = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::morphedByMany($related, $name, $table, $foreignKey, $otherKey);
+        }
+
+        /**
+         * Get the joining table name for a many-to-many relation.
+         *
+         * @param string $related
+         *
+         * @return string
+         * @static
+         */
+        public static function joiningTable($related)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::joiningTable($related);
+        }
+
+        /**
+         * Destroy the models for the given IDs.
+         *
+         * @param array|int $ids
+         *
+         * @return int
+         * @static
+         */
+        public static function destroy($ids)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::destroy($ids);
+        }
+
+        /**
+         * Delete the model from the database.
+         *
+         * @return bool|null
+         * @throws \Exception
+         * @static
+         */
+        public static function delete()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::delete();
+        }
+
+        /**
+         * Force a hard delete on a soft deleted model.
+         *
+         * This method protects developers from running forceDelete when trait is missing.
+         *
+         * @return bool|null
+         * @static
+         */
+        public static function forceDelete()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::forceDelete();
+        }
+
+        /**
+         * Register a saving model event with the dispatcher.
+         *
+         * @param \Closure|string $callback
+         * @param int             $priority
+         *
+         * @return void
+         * @static
+         */
+        public static function saving($callback, $priority = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::saving($callback, $priority);
+        }
+
+        /**
+         * Register a saved model event with the dispatcher.
+         *
+         * @param \Closure|string $callback
+         * @param int             $priority
+         *
+         * @return void
+         * @static
+         */
+        public static function saved($callback, $priority = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::saved($callback, $priority);
+        }
+
+        /**
+         * Register an updating model event with the dispatcher.
+         *
+         * @param \Closure|string $callback
+         * @param int             $priority
+         *
+         * @return void
+         * @static
+         */
+        public static function updating($callback, $priority = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::updating($callback, $priority);
+        }
+
+        /**
+         * Register an updated model event with the dispatcher.
+         *
+         * @param \Closure|string $callback
+         * @param int             $priority
+         *
+         * @return void
+         * @static
+         */
+        public static function updated($callback, $priority = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::updated($callback, $priority);
+        }
+
+        /**
+         * Register a creating model event with the dispatcher.
+         *
+         * @param \Closure|string $callback
+         * @param int             $priority
+         *
+         * @return void
+         * @static
+         */
+        public static function creating($callback, $priority = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::creating($callback, $priority);
+        }
+
+        /**
+         * Register a created model event with the dispatcher.
+         *
+         * @param \Closure|string $callback
+         * @param int             $priority
+         *
+         * @return void
+         * @static
+         */
+        public static function created($callback, $priority = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::created($callback, $priority);
+        }
+
+        /**
+         * Register a deleting model event with the dispatcher.
+         *
+         * @param \Closure|string $callback
+         * @param int             $priority
+         *
+         * @return void
+         * @static
+         */
+        public static function deleting($callback, $priority = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::deleting($callback, $priority);
+        }
+
+        /**
+         * Register a deleted model event with the dispatcher.
+         *
+         * @param \Closure|string $callback
+         * @param int             $priority
+         *
+         * @return void
+         * @static
+         */
+        public static function deleted($callback, $priority = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::deleted($callback, $priority);
+        }
+
+        /**
+         * Remove all of the event listeners for the model.
+         *
+         * @return void
+         * @static
+         */
+        public static function flushEventListeners()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::flushEventListeners();
+        }
+
+        /**
+         * Get the observable event names.
+         *
+         * @return array
+         * @static
+         */
+        public static function getObservableEvents()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getObservableEvents();
+        }
+
+        /**
+         * Set the observable event names.
+         *
+         * @param array $observables
+         *
+         * @return $this
+         * @static
+         */
+        public static function setObservableEvents($observables)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setObservableEvents($observables);
+        }
+
+        /**
+         * Add an observable event name.
+         *
+         * @param array|mixed $observables
+         *
+         * @return void
+         * @static
+         */
+        public static function addObservableEvents($observables)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::addObservableEvents($observables);
+        }
+
+        /**
+         * Remove an observable event name.
+         *
+         * @param array|mixed $observables
+         *
+         * @return void
+         * @static
+         */
+        public static function removeObservableEvents($observables)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::removeObservableEvents($observables);
+        }
+
+        /**
+         * Update the model in the database.
+         *
+         * @param array $attributes
+         *
+         * @return bool|int
+         * @static
+         */
+        public static function update($attributes = [])
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::update($attributes);
+        }
+
+        /**
+         * Save the model and all of its relationships.
+         *
+         * @return bool
+         * @static
+         */
+        public static function push()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::push();
+        }
+
+        /**
+         * Save the model to the database.
+         *
+         * @param array $options
+         *
+         * @return bool
+         * @static
+         */
+        public static function save($options = [])
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::save($options);
+        }
+
+        /**
+         * Touch the owning relations of the model.
+         *
+         * @return void
+         * @static
+         */
+        public static function touchOwners()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::touchOwners();
+        }
+
+        /**
+         * Determine if the model touches a given relation.
+         *
+         * @param string $relation
+         *
+         * @return bool
+         * @static
+         */
+        public static function touches($relation)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::touches($relation);
+        }
+
+        /**
+         * Update the model's update timestamp.
+         *
+         * @return bool
+         * @static
+         */
+        public static function touch()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::touch();
+        }
+
+        /**
+         * Set the value of the "created at" attribute.
+         *
+         * @param mixed $value
+         *
+         * @return $this
+         * @static
+         */
+        public static function setCreatedAt($value)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setCreatedAt($value);
+        }
+
+        /**
+         * Set the value of the "updated at" attribute.
+         *
+         * @param mixed $value
+         *
+         * @return $this
+         * @static
+         */
+        public static function setUpdatedAt($value)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setUpdatedAt($value);
+        }
+
+        /**
+         * Get the name of the "created at" column.
+         *
+         * @return string
+         * @static
+         */
+        public static function getCreatedAtColumn()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getCreatedAtColumn();
+        }
+
+        /**
+         * Get the name of the "updated at" column.
+         *
+         * @return string
+         * @static
+         */
+        public static function getUpdatedAtColumn()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getUpdatedAtColumn();
+        }
+
+        /**
+         * Get a fresh timestamp for the model.
+         *
+         * @return \Carbon\Carbon
+         * @static
+         */
+        public static function freshTimestamp()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::freshTimestamp();
+        }
+
+        /**
+         * Get a fresh timestamp for the model.
+         *
+         * @return string
+         * @static
+         */
+        public static function freshTimestampString()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::freshTimestampString();
+        }
+
+        /**
+         * Get a new query builder for the model's table.
+         *
+         * @return \Illuminate\Database\Eloquent\Builder
+         * @static
+         */
+        public static function newQuery()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::newQuery();
+        }
+
+        /**
+         * Get a new query instance without a given scope.
+         *
+         * @param \Illuminate\Database\Eloquent\ScopeInterface $scope
+         *
+         * @return \Illuminate\Database\Eloquent\Builder
+         * @static
+         */
+        public static function newQueryWithoutScope($scope)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::newQueryWithoutScope($scope);
+        }
+
+        /**
+         * Get a new query builder that doesn't have any global scopes.
+         *
+         * @return \Illuminate\Database\Eloquent\Builder|static
+         * @static
+         */
+        public static function newQueryWithoutScopes()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::newQueryWithoutScopes();
+        }
+
+        /**
+         * Apply all of the global scopes to an Eloquent builder.
+         *
+         * @param \Illuminate\Database\Eloquent\Builder $builder
+         *
+         * @return \Illuminate\Database\Eloquent\Builder
+         * @static
+         */
+        public static function applyGlobalScopes($builder)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::applyGlobalScopes($builder);
+        }
+
+        /**
+         * Remove all of the global scopes from an Eloquent builder.
+         *
+         * @param \Illuminate\Database\Eloquent\Builder $builder
+         *
+         * @return \Illuminate\Database\Eloquent\Builder
+         * @static
+         */
+        public static function removeGlobalScopes($builder)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::removeGlobalScopes($builder);
+        }
+
+        /**
+         * Create a new Eloquent query builder for the model.
+         *
+         * @param \Illuminate\Database\Query\Builder $query
+         *
+         * @return \Illuminate\Database\Eloquent\Builder|static
+         * @static
+         */
+        public static function newEloquentBuilder($query)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::newEloquentBuilder($query);
+        }
+
+        /**
+         * Create a new Eloquent Collection instance.
+         *
+         * @param array $models
+         *
+         * @return \Illuminate\Database\Eloquent\Collection
+         * @static
+         */
+        public static function newCollection($models = [])
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::newCollection($models);
+        }
+
+        /**
+         * Create a new pivot model instance.
+         *
+         * @param \Illuminate\Database\Eloquent\Model $parent
+         * @param array                               $attributes
+         * @param string                              $table
+         * @param bool                                $exists
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\Pivot
+         * @static
+         */
+        public static function newPivot($parent, $attributes, $table, $exists)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::newPivot($parent, $attributes, $table, $exists);
+        }
+
+        /**
+         * Get the table associated with the model.
+         *
+         * @return string
+         * @static
+         */
+        public static function getTable()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getTable();
+        }
+
+        /**
+         * Set the table associated with the model.
+         *
+         * @param string $table
+         *
+         * @return $this
+         * @static
+         */
+        public static function setTable($table)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setTable($table);
+        }
+
+        /**
+         * Get the value of the model's primary key.
+         *
+         * @return mixed
+         * @static
+         */
+        public static function getKey()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getKey();
+        }
+
+        /**
+         * Get the queueable identity for the entity.
+         *
+         * @return mixed
+         * @static
+         */
+        public static function getQueueableId()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getQueueableId();
+        }
+
+        /**
+         * Get the primary key for the model.
+         *
+         * @return string
+         * @static
+         */
+        public static function getKeyName()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getKeyName();
+        }
+
+        /**
+         * Set the primary key for the model.
+         *
+         * @param string $key
+         *
+         * @return $this
+         * @static
+         */
+        public static function setKeyName($key)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setKeyName($key);
+        }
+
+        /**
+         * Get the table qualified key name.
+         *
+         * @return string
+         * @static
+         */
+        public static function getQualifiedKeyName()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getQualifiedKeyName();
+        }
+
+        /**
+         * Get the value of the model's route key.
+         *
+         * @return mixed
+         * @static
+         */
+        public static function getRouteKey()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getRouteKey();
+        }
+
+        /**
+         * Get the route key for the model.
+         *
+         * @return string
+         * @static
+         */
+        public static function getRouteKeyName()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getRouteKeyName();
+        }
+
+        /**
+         * Determine if the model uses timestamps.
+         *
+         * @return bool
+         * @static
+         */
+        public static function usesTimestamps()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::usesTimestamps();
+        }
+
+        /**
+         * Get the class name for polymorphic relations.
+         *
+         * @return string
+         * @static
+         */
+        public static function getMorphClass()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getMorphClass();
+        }
+
+        /**
+         * Get the number of models to return per page.
+         *
+         * @return int
+         * @static
+         */
+        public static function getPerPage()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getPerPage();
+        }
+
+        /**
+         * Set the number of models to return per page.
+         *
+         * @param int $perPage
+         *
+         * @return $this
+         * @static
+         */
+        public static function setPerPage($perPage)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setPerPage($perPage);
+        }
+
+        /**
+         * Get the default foreign key name for the model.
+         *
+         * @return string
+         * @static
+         */
+        public static function getForeignKey()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getForeignKey();
+        }
+
+        /**
+         * Get the hidden attributes for the model.
+         *
+         * @return array
+         * @static
+         */
+        public static function getHidden()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getHidden();
+        }
+
+        /**
+         * Set the hidden attributes for the model.
+         *
+         * @param array $hidden
+         *
+         * @return $this
+         * @static
+         */
+        public static function setHidden($hidden)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setHidden($hidden);
+        }
+
+        /**
+         * Add hidden attributes for the model.
+         *
+         * @param array|string|null $attributes
+         *
+         * @return void
+         * @static
+         */
+        public static function addHidden($attributes = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::addHidden($attributes);
+        }
+
+        /**
+         * Make the given, typically hidden, attributes visible.
+         *
+         * @param array|string $attributes
+         *
+         * @return $this
+         * @static
+         */
+        public static function withHidden($attributes)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::withHidden($attributes);
+        }
+
+        /**
+         * Get the visible attributes for the model.
+         *
+         * @return array
+         * @static
+         */
+        public static function getVisible()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getVisible();
+        }
+
+        /**
+         * Set the visible attributes for the model.
+         *
+         * @param array $visible
+         *
+         * @return $this
+         * @static
+         */
+        public static function setVisible($visible)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setVisible($visible);
+        }
+
+        /**
+         * Add visible attributes for the model.
+         *
+         * @param array|string|null $attributes
+         *
+         * @return void
+         * @static
+         */
+        public static function addVisible($attributes = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::addVisible($attributes);
+        }
+
+        /**
+         * Set the accessors to append to model arrays.
+         *
+         * @param array $appends
+         *
+         * @return $this
+         * @static
+         */
+        public static function setAppends($appends)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setAppends($appends);
+        }
+
+        /**
+         * Get the fillable attributes for the model.
+         *
+         * @return array
+         * @static
+         */
+        public static function getFillable()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getFillable();
+        }
+
+        /**
+         * Set the fillable attributes for the model.
+         *
+         * @param array $fillable
+         *
+         * @return $this
+         * @static
+         */
+        public static function fillable($fillable)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::fillable($fillable);
+        }
+
+        /**
+         * Get the guarded attributes for the model.
+         *
+         * @return array
+         * @static
+         */
+        public static function getGuarded()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getGuarded();
+        }
+
+        /**
+         * Set the guarded attributes for the model.
+         *
+         * @param array $guarded
+         *
+         * @return $this
+         * @static
+         */
+        public static function guard($guarded)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::guard($guarded);
+        }
+
+        /**
+         * Disable all mass assignable restrictions.
+         *
+         * @param bool $state
+         *
+         * @return void
+         * @static
+         */
+        public static function unguard($state = true)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::unguard($state);
+        }
+
+        /**
+         * Enable the mass assignment restrictions.
+         *
+         * @return void
+         * @static
+         */
+        public static function reguard()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::reguard();
+        }
+
+        /**
+         * Determine if current state is "unguarded".
+         *
+         * @return bool
+         * @static
+         */
+        public static function isUnguarded()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::isUnguarded();
+        }
+
+        /**
+         * Run the given callable while being unguarded.
+         *
+         * @param callable $callback
+         *
+         * @return mixed
+         * @static
+         */
+        public static function unguarded($callback)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::unguarded($callback);
+        }
+
+        /**
+         * Determine if the given attribute may be mass assigned.
+         *
+         * @param string $key
+         *
+         * @return bool
+         * @static
+         */
+        public static function isFillable($key)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::isFillable($key);
+        }
+
+        /**
+         * Determine if the given key is guarded.
+         *
+         * @param string $key
+         *
+         * @return bool
+         * @static
+         */
+        public static function isGuarded($key)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::isGuarded($key);
+        }
+
+        /**
+         * Determine if the model is totally guarded.
+         *
+         * @return bool
+         * @static
+         */
+        public static function totallyGuarded()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::totallyGuarded();
+        }
+
+        /**
+         * Get the relationships that are touched on save.
+         *
+         * @return array
+         * @static
+         */
+        public static function getTouchedRelations()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getTouchedRelations();
+        }
+
+        /**
+         * Set the relationships that are touched on save.
+         *
+         * @param array $touches
+         *
+         * @return $this
+         * @static
+         */
+        public static function setTouchedRelations($touches)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setTouchedRelations($touches);
+        }
+
+        /**
+         * Get the value indicating whether the IDs are incrementing.
+         *
+         * @return bool
+         * @static
+         */
+        public static function getIncrementing()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getIncrementing();
+        }
+
+        /**
+         * Set whether IDs are incrementing.
+         *
+         * @param bool $value
+         *
+         * @return $this
+         * @static
+         */
+        public static function setIncrementing($value)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setIncrementing($value);
+        }
+
+        /**
+         * Convert the model instance to JSON.
+         *
+         * @param int $options
+         *
+         * @return string
+         * @static
+         */
+        public static function toJson($options = 0)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::toJson($options);
+        }
+
+        /**
+         * Convert the object into something JSON serializable.
+         *
+         * @return array
+         * @static
+         */
+        public static function jsonSerialize()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::jsonSerialize();
+        }
+
+        /**
+         * Convert the model instance to an array.
+         *
+         * @return array
+         * @static
+         */
+        public static function toArray()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::toArray();
+        }
+
+        /**
+         * Convert the model's attributes to an array.
+         *
+         * @return array
+         * @static
+         */
+        public static function attributesToArray()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::attributesToArray();
+        }
+
+        /**
+         * Get the model's relationships in array form.
+         *
+         * @return array
+         * @static
+         */
+        public static function relationsToArray()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::relationsToArray();
+        }
+
+        /**
+         * Get an attribute from the model.
+         *
+         * @param string $key
+         *
+         * @return mixed
+         * @static
+         */
+        public static function getAttribute($key)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getAttribute($key);
+        }
+
+        /**
+         * Get a plain attribute (not a relationship).
+         *
+         * @param string $key
+         *
+         * @return mixed
+         * @static
+         */
+        public static function getAttributeValue($key)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getAttributeValue($key);
+        }
+
+        /**
+         * Get a relationship.
+         *
+         * @param string $key
+         *
+         * @return mixed
+         * @static
+         */
+        public static function getRelationValue($key)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getRelationValue($key);
+        }
+
+        /**
+         * Determine if a get mutator exists for an attribute.
+         *
+         * @param string $key
+         *
+         * @return bool
+         * @static
+         */
+        public static function hasGetMutator($key)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::hasGetMutator($key);
+        }
+
+        /**
+         * Set a given attribute on the model.
+         *
+         * @param string $key
+         * @param mixed  $value
+         *
+         * @return $this
+         * @static
+         */
+        public static function setAttribute($key, $value)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setAttribute($key, $value);
+        }
+
+        /**
+         * Determine if a set mutator exists for an attribute.
+         *
+         * @param string $key
+         *
+         * @return bool
+         * @static
+         */
+        public static function hasSetMutator($key)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::hasSetMutator($key);
+        }
+
+        /**
+         * Get the attributes that should be converted to dates.
+         *
+         * @return array
+         * @static
+         */
+        public static function getDates()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getDates();
+        }
+
+        /**
+         * Convert a DateTime to a storable string.
+         *
+         * @param \DateTime|int $value
+         *
+         * @return string
+         * @static
+         */
+        public static function fromDateTime($value)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::fromDateTime($value);
+        }
+
+        /**
+         * Set the date format used by the model.
+         *
+         * @param string $format
+         *
+         * @return $this
+         * @static
+         */
+        public static function setDateFormat($format)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setDateFormat($format);
+        }
+
+        /**
+         * Decode the given JSON back into an array or object.
+         *
+         * @param string $value
+         * @param bool   $asObject
+         *
+         * @return mixed
+         * @static
+         */
+        public static function fromJson($value, $asObject = false)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::fromJson($value, $asObject);
+        }
+
+        /**
+         * Clone the model into a new, non-existing instance.
+         *
+         * @param array $except
+         *
+         * @return \Illuminate\Database\Eloquent\Model
+         * @static
+         */
+        public static function replicate($except = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::replicate($except);
+        }
+
+        /**
+         * Get all of the current attributes on the model.
+         *
+         * @return array
+         * @static
+         */
+        public static function getAttributes()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getAttributes();
+        }
+
+        /**
+         * Set the array of model attributes. No checking is done.
+         *
+         * @param array $attributes
+         * @param bool  $sync
+         *
+         * @return $this
+         * @static
+         */
+        public static function setRawAttributes($attributes, $sync = false)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setRawAttributes($attributes, $sync);
+        }
+
+        /**
+         * Get the model's original attribute values.
+         *
+         * @param string $key
+         * @param mixed  $default
+         *
+         * @return array
+         * @static
+         */
+        public static function getOriginal($key = null, $default = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getOriginal($key, $default);
+        }
+
+        /**
+         * Sync the original attributes with the current.
+         *
+         * @return $this
+         * @static
+         */
+        public static function syncOriginal()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::syncOriginal();
+        }
+
+        /**
+         * Sync a single original attribute with its current value.
+         *
+         * @param string $attribute
+         *
+         * @return $this
+         * @static
+         */
+        public static function syncOriginalAttribute($attribute)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::syncOriginalAttribute($attribute);
+        }
+
+        /**
+         * Determine if the model or given attribute(s) have been modified.
+         *
+         * @param array|string|null $attributes
+         *
+         * @return bool
+         * @static
+         */
+        public static function isDirty($attributes = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::isDirty($attributes);
+        }
+
+        /**
+         * Get the attributes that have been changed since last sync.
+         *
+         * @return array
+         * @static
+         */
+        public static function getDirty()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getDirty();
+        }
+
+        /**
+         * Get all the loaded relations for the instance.
+         *
+         * @return array
+         * @static
+         */
+        public static function getRelations()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getRelations();
+        }
+
+        /**
+         * Get a specified relationship.
+         *
+         * @param string $relation
+         *
+         * @return mixed
+         * @static
+         */
+        public static function getRelation($relation)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getRelation($relation);
+        }
+
+        /**
+         * Determine if the given relation is loaded.
+         *
+         * @param string $key
+         *
+         * @return bool
+         * @static
+         */
+        public static function relationLoaded($key)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::relationLoaded($key);
+        }
+
+        /**
+         * Set the specific relationship in the model.
+         *
+         * @param string $relation
+         * @param mixed  $value
+         *
+         * @return $this
+         * @static
+         */
+        public static function setRelation($relation, $value)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setRelation($relation, $value);
+        }
+
+        /**
+         * Set the entire relations array on the model.
+         *
+         * @param array $relations
+         *
+         * @return $this
+         * @static
+         */
+        public static function setRelations($relations)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setRelations($relations);
+        }
+
+        /**
+         * Get the database connection for the model.
+         *
+         * @return \Illuminate\Database\Connection
+         * @static
+         */
+        public static function getConnection()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getConnection();
+        }
+
+        /**
+         * Get the current connection name for the model.
+         *
+         * @return string
+         * @static
+         */
+        public static function getConnectionName()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getConnectionName();
+        }
+
+        /**
+         * Set the connection associated with the model.
+         *
+         * @param string $name
+         *
+         * @return $this
+         * @static
+         */
+        public static function setConnection($name)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::setConnection($name);
+        }
+
+        /**
+         * Resolve a connection instance.
+         *
+         * @param string $connection
+         *
+         * @return \Illuminate\Database\Connection
+         * @static
+         */
+        public static function resolveConnection($connection = null)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::resolveConnection($connection);
+        }
+
+        /**
+         * Get the connection resolver instance.
+         *
+         * @return \Illuminate\Database\ConnectionResolverInterface
+         * @static
+         */
+        public static function getConnectionResolver()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getConnectionResolver();
+        }
+
+        /**
+         * Set the connection resolver instance.
+         *
+         * @param \Illuminate\Database\ConnectionResolverInterface $resolver
+         *
+         * @return void
+         * @static
+         */
+        public static function setConnectionResolver($resolver)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::setConnectionResolver($resolver);
+        }
+
+        /**
+         * Unset the connection resolver for models.
+         *
+         * @return void
+         * @static
+         */
+        public static function unsetConnectionResolver()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::unsetConnectionResolver();
+        }
+
+        /**
+         * Get the event dispatcher instance.
+         *
+         * @return \Illuminate\Contracts\Events\Dispatcher
+         * @static
+         */
+        public static function getEventDispatcher()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getEventDispatcher();
+        }
+
+        /**
+         * Set the event dispatcher instance.
+         *
+         * @param \Illuminate\Contracts\Events\Dispatcher $dispatcher
+         *
+         * @return void
+         * @static
+         */
+        public static function setEventDispatcher($dispatcher)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::setEventDispatcher($dispatcher);
+        }
+
+        /**
+         * Unset the event dispatcher for models.
+         *
+         * @return void
+         * @static
+         */
+        public static function unsetEventDispatcher()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::unsetEventDispatcher();
+        }
+
+        /**
+         * Get the mutated attributes for a given instance.
+         *
+         * @return array
+         * @static
+         */
+        public static function getMutatedAttributes()
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::getMutatedAttributes();
+        }
+
+        /**
+         * Extract and cache all the mutated attributes of a class.
+         *
+         * @param string $class
+         *
+         * @return void
+         * @static
+         */
+        public static function cacheMutatedAttributes($class)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::cacheMutatedAttributes($class);
+        }
+
+        /**
+         * Determine if the given attribute exists.
+         *
+         * @param mixed $offset
+         *
+         * @return bool
+         * @static
+         */
+        public static function offsetExists($offset)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::offsetExists($offset);
+        }
+
+        /**
+         * Get the value for a given offset.
+         *
+         * @param mixed $offset
+         *
+         * @return mixed
+         * @static
+         */
+        public static function offsetGet($offset)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            return \Mautab\Models\Setting::offsetGet($offset);
+        }
+
+        /**
+         * Set the value for a given offset.
+         *
+         * @param mixed $offset
+         * @param mixed $value
+         *
+         * @return void
+         * @static
+         */
+        public static function offsetSet($offset, $value)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::offsetSet($offset, $value);
+        }
+
+        /**
+         * Unset the value for a given offset.
+         *
+         * @param mixed $offset
+         *
+         * @return void
+         * @static
+         */
+        public static function offsetUnset($offset)
+        {
+            //Method inherited from \Illuminate\Database\Eloquent\Model            
+            \Mautab\Models\Setting::offsetUnset($offset);
+        }
+
+        /**
+         * Берет настройку по имени
+         *
+         * @param $name
+         *
+         * @return object Setting::class
+         * @static
+         */
+        public static function getName($name)
+        {
+            return \Mautab\Models\Setting::getName($name);
+        }
+
+        /**
+         * Возвращаем значения настройки по slug
+         *
+         * @param $slug
+         *
+         * @return string
+         * @static
+         */
+        public static function getValueSlug($slug)
+        {
+            return \Mautab\Models\Setting::getValueSlug($slug);
+        }
+
+        /**
+         * Берет настроку по Slug
+         *
+         * @param $slug
+         *
+         * @return object Setting:class
+         * @static
+         */
+        public static function getSlug($slug)
+        {
+            return \Mautab\Models\Setting::getSlug($slug);
+        }
+
+        /**
+         * Расшифровывает строку по Slug
+         *
+         * @param $slug
+         *
+         * @return array|mixed
+         * @static
+         */
+        public static function getSlugSerialize($slug)
+        {
+            return \Mautab\Models\Setting::getSlugSerialize($slug);
+        }
+
+        /**
+         * Расшифровывает строку по Имени
+         *
+         * @param $name
+         *
+         * @return array|mixed
+         * @static
+         */
+        public static function getNameSerialize($name)
+        {
+            return \Mautab\Models\Setting::getNameSerialize($name);
+        }
+
+        /**
+         *
+         *
+         * @param            $query
+         * @param array|null $default
+         *
+         * @return mixed
+         * @static
+         */
+        public static function scopeSortable($query, $default = null)
+        {
+            return \Mautab\Models\Setting::scopeSortable($query, $default);
+        }
+
+        /**
+         *
+         *
+         * @param array $parameters
+         *
+         * @return string
+         * @static
+         */
+        public static function link($parameters)
+        {
+            return \Mautab\Models\Setting::link($parameters);
+        }
+
+        /**
+         * Creates the search scope.
+         *
+         * @param \Illuminate\Database\Eloquent\Builder $q
+         * @param string                                $search
+         * @param float|null                            $threshold
+         *
+         * @return \Illuminate\Database\Eloquent\Builder
+         * @static
+         */
+        public static function scopeSearch($q, $search, $threshold = null, $entireText = false)
+        {
+            return \Mautab\Models\Setting::scopeSearch($q, $search, $threshold, $entireText);
+        }
+
+        /**
+         *
+         *
+         * @static
+         */
+        public static function scopeSearchRestricted($q, $search, $restriction, $threshold = null, $entireText = false)
+        {
+            return \Mautab\Models\Setting::scopeSearchRestricted($q, $search, $restriction, $threshold, $entireText);
+        }
+
+        /**
+         * Returns the table columns.
+         *
+         * @return array
+         * @static
+         */
+        public static function getTableColumns()
+        {
+            return \Mautab\Models\Setting::getTableColumns();
+        }
+
+    }
+
+
+    class Block extends \Mautab\Facades\BlockFacades
+    {
+
+        /**
+         *
+         *
+         * @static
+         */
+        public static function blockBySlug($slug = null){
+            return \Mautab\Manager\Block\BlockManager::blockBySlug($slug);
         }
         
     }

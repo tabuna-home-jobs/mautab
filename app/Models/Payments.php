@@ -24,6 +24,13 @@ use Kyslik\ColumnSortable\Sortable;
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Payments whereStatus($value)
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Payments whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Payments whereUpdatedAt($value)
+ * @property float   $sum
+ * @property integer $user_id
+ * @property string  $w1_id
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Payments whereSum($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Payments whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Payments whereW1Id($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Payments sortable($default = null)
  */
 class Payments extends Model
 {

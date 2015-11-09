@@ -15,6 +15,34 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Tariff wherePrice($value)
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Tariff whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Tariff whereUpdatedAt($value)
+ * @property integer        $WebDomains
+ * @property integer        $WebAliases
+ * @property integer        $DNSDomains
+ * @property integer        $DNSRecords
+ * @property integer        $MailDomains
+ * @property integer        $MailAccounts
+ * @property integer        $Databases
+ * @property integer        $CronJobs
+ * @property integer        $Backups
+ * @property integer        $Quota
+ * @property integer        $Bandwidth
+ * @property boolean        $SSHAccess
+ * @property boolean        $Recommended
+ * @property boolean        $Hidden
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereWebDomains($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereWebAliases($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereDNSDomains($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereDNSRecords($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereMailDomains($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereMailAccounts($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereDatabases($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereCronJobs($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereBackups($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereQuota($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereBandwidth($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereSSHAccess($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereRecommended($value)
+ * @method static \Illuminate\Database\Query\Builder|\Mautab\Models\Package whereHidden($value)
  */
 class Package extends Model
 {
