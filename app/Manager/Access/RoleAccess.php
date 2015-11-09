@@ -1,80 +1,82 @@
 <?php
 
-namespace Mautab\Manager\Access;
+    namespace Mautab\Manager\Access;
 
-trait RoleAccess
-{
-
-    /**
-     * {@inheritDoc}
-     */
-    public static function getUsersModel()
+    trait RoleAccess
     {
-        return static::$usersModel;
-    }
 
-    /**
-     * {@inheritDoc}
-     */
-    public static function setUsersModel($usersModel)
-    {
-        static::$usersModel = $usersModel;
-    }
+        /**
+         * {@inheritDoc}
+         */
+        public static function getUsersModel()
+        {
+            return static::$usersModel;
+        }
 
-    /**
-     * The Users relationship.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function users()
-    {
-        return $this->belongsToMany(static::$usersModel, 'role_users', 'role_id', 'user_id')->withTimestamps();
-    }
+        /**
+         * {@inheritDoc}
+         */
+        public static function setUsersModel($usersModel)
+        {
+            static::$usersModel = $usersModel;
+        }
 
-    /**
-     * Get mutator for the "permissions" attribute.
-     *
-     * @param  mixed $permissions
-     * @return array
-     */
-    public function getPermissionsAttribute($permissions)
-    {
-        return $permissions ? json_decode($permissions, true) : [];
-    }
+        /**
+         * The Users relationship.
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+         */
+        public function users()
+        {
+            return $this->belongsToMany(static::$usersModel, 'role_users', 'role_id', 'user_id')->withTimestamps();
+        }
 
-    /**
-     * Set mutator for the "permissions" attribute.
-     *
-     * @param  mixed $permissions
-     * @return void
-     */
-    public function setPermissionsAttribute(array $permissions)
-    {
-        $this->attributes['permissions'] = $permissions ? json_encode($permissions) : '';
-    }
+        /**
+         * Get mutator for the "permissions" attribute.
+         *
+         * @param  mixed $permissions
+         *
+         * @return array
+         */
+        public function getPermissionsAttribute($permissions)
+        {
+            return $permissions ? json_decode($permissions, true) : [];
+        }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getRoleId()
-    {
-        return $this->getKey();
-    }
+        /**
+         * Set mutator for the "permissions" attribute.
+         *
+         * @param  mixed $permissions
+         *
+         * @return void
+         */
+        public function setPermissionsAttribute(array $permissions)
+        {
+            $this->attributes['permissions'] = $permissions ? json_encode($permissions) : '';
+        }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getRoleSlug()
-    {
-        return $this->slug;
-    }
+        /**
+         * {@inheritDoc}
+         */
+        public function getRoleId()
+        {
+            return $this->getKey();
+        }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
+        /**
+         * {@inheritDoc}
+         */
+        public function getRoleSlug()
+        {
+            return $this->slug;
+        }
 
-}
+        /**
+         * {@inheritDoc}
+         */
+        public function getUsers()
+        {
+            return $this->users;
+        }
+
+    }

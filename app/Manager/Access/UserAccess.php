@@ -17,6 +17,7 @@ trait UserAccess
      * Sets the roles model.
      *
      * @param  string $rolesModel
+     *
      * @return void
      */
     public static function setRolesModel($rolesModel)
@@ -28,6 +29,7 @@ trait UserAccess
      * Get mutator for the "permissions" attribute.
      *
      * @param  mixed $permissions
+     *
      * @return array
      */
     public function getPermissionsAttribute($permissions)
@@ -39,6 +41,7 @@ trait UserAccess
      * Set mutator for the "permissions" attribute.
      *
      * @param  mixed $permissions
+     *
      * @return void
      */
     public function setPermissionsAttribute(array $permissions)

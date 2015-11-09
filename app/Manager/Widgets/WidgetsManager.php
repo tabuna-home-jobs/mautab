@@ -13,7 +13,7 @@ class WidgetsManager extends Manager
 
 
     /**
-     * @param $name
+     * @param       $name
      * @param array $attribute
      * Целью данного класа служит создани экземпляра класса и вызов нужной функции
      */
