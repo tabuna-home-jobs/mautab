@@ -1,6 +1,6 @@
 <?php
 
-    namespace Mautab\Manager\Access;
+    namespace Mautab\Services\Manager\Access;
 
     trait RoleAccess
     {

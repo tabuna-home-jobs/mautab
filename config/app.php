@@ -152,6 +152,11 @@ return [
         'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
 
 
+        /*
+         * Новые от Mautab
+         */
+        \Mautab\Providers\AdminMenuProvider::class,
+
     ],
     /*
     |--------------------------------------------------------------------------

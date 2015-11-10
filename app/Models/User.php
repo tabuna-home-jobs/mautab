@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
-use Mautab\Manager\Access\UserAccess;
+use Mautab\Services\Manager\Access\UserAccess;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 /**

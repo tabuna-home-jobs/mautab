@@ -1,6 +1,6 @@
 <?php
 
-    namespace Mautab\Manager\Setting;
+    namespace Mautab\Services\Manager\Setting;
 
     trait SettingTrait
     {

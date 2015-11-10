@@ -1,7 +1,7 @@
-<?php namespace Mautab\Manager\Block;
+<?php namespace Mautab\Services\Manager\Block;
 
-use Mautab\Manager\Manager;
 use Mautab\Models\Block;
+use Mautab\Services\Manager\Manager;
 
 class BlockManager extends Manager
 {

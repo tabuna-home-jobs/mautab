@@ -4,7 +4,7 @@ namespace Mautab\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
-use Mautab\Manager\Setting\SettingTrait;
+use Mautab\Services\Manager\Setting\SettingTrait;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 /**

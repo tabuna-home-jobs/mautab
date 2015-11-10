@@ -3,7 +3,7 @@
 namespace Mautab\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Mautab\Manager\Access\RoleAccess;
+use Mautab\Services\Manager\Access\RoleAccess;
 
 /**
  * Mautab\Models\Roles

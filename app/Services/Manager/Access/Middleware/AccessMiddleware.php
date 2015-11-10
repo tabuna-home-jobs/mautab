@@ -1,6 +1,6 @@
 <?php
 
-    namespace Mautab\Manager\Access\Middleware;
+    namespace Mautab\Services\Manager\Access\Middleware;
 
 
     use Closure;

@@ -1,7 +1,7 @@
 <?php namespace Mautab\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Mautab\Manager\Block\BlockManager;
+use Mautab\Services\Manager\Block\BlockManager;
 
 
 class BlockFacades extends Facade

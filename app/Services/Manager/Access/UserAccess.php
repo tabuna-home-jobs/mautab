@@ -1,4 +1,4 @@
-<?php namespace Mautab\Manager\Access;
+<?php namespace Mautab\Services\Manager\Access;
 
 trait UserAccess
 {

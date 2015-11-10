@@ -26,11 +26,11 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Mautab\Http\Middleware\Authenticate::class,
+        'auth'       => \Mautab\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \Mautab\Http\Middleware\RedirectIfAuthenticated::class,
-        'LoginAs' => \Mautab\Http\Middleware\LoginAsMiddleware::class,
-        'Access' => \Mautab\Manager\Access\Middleware\AccessMiddleware::class,
+        'guest'      => \Mautab\Http\Middleware\RedirectIfAuthenticated::class,
+        'LoginAs'    => \Mautab\Http\Middleware\LoginAsMiddleware::class,
+        'Access'     => \Mautab\Services\Manager\Access\Middleware\AccessMiddleware::class,
     ];
 
 }
