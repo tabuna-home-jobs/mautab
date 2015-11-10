@@ -26,7 +26,14 @@ class AdminMenu
 
     public function __construct()
     {
-        $this->top = collect();
+        $this->top = collect([
+            'Category' => [
+                'icon'   => 'fa fa-briefcase',
+                'url'    => route(''),
+                'active' => route(''),
+            ],
+        ]);
+
         $this->left = collect();
         $this->modules = collect();
     }
