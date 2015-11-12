@@ -23,7 +23,6 @@ class BlockManager extends Manager
     {
         if (!is_null($slug) && !is_null($template)) {
             $this->blockBySlug($slug);
-
             return $this->template($template);
         }
 
@@ -37,7 +36,7 @@ class BlockManager extends Manager
     public function blockBySlug($slug = null)
     {
         $this->blockQuery = Block::where('slug', $slug)
-            ->with('element.storyLang')
+            ->with('elementSort.storyLang')
             ->firstOrFail();
     }
 
@@ -63,7 +62,7 @@ class BlockManager extends Manager
     public function blockById($id = null)
     {
         $this->blockQuery = Block::find($id)
-            ->with('element.storyLang')
+            ->with('elementSort.storyLang')
             ->firstOrFail();
     }
 

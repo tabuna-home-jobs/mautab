@@ -18,8 +18,8 @@ class CreatePaymentsTable extends Migration
             $table->float('sum');
             $table->boolean('status')->nullable();
             $table->integer('user_id')->nullable();
-            $table->timestamps();
             $table->string('w1_id');
+            $table->timestamps();
         });
     }
 

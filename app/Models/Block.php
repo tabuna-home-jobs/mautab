@@ -70,6 +70,10 @@ class Block extends Model
         return $this->hasMany(static::$elementModel);
     }
 
+    public function elementSort(){
+        return $this->element()->orderBy('sort','ASC');
+    }
+
     public function story()
     {
         return $this->hasMany(static::$storyModel);
