@@ -420,3 +420,24 @@ tr.template-download a img {
 .table > tbody > tr > td, .table > tfoot > tr > td {
     vertical-align: middle;
 }
+.wrapperAdddFtp .ftp-groupz{
+    display: none;
+}
+#fadeBody {
+    display: none;
+    background: #fff;
+    opacity: 0.8;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 999999999999999999999999999999999999999999999999;
+}
+#fadeBody img{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+}
+#ifnowrapper .bg-success{
+    padding: 5px;
+    display: none;
+}

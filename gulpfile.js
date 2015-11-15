@@ -39,6 +39,7 @@ elixir(function (mix) {
  mix.copy('./vendor/bower_components/bootstrap/dist/fonts/', 'public/build/fonts');
  mix.copy('./vendor/bower_components/font-awesome/fonts/', 'public/build/fonts');
  mix.copy('./resources/assets/js/controller', 'public/build/js/controller');
+mix.copy('./resources/assets/img', 'public/build/img');
  mix.copy('./resources/assets/js/plugins', 'public/build/js/plugins');
  mix.copy('./vendor/bower_components', 'public/bower_components');
  mix.copy('./vendor/bower_components', 'public/bower_components');

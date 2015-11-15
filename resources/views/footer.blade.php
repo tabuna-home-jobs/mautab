@@ -122,6 +122,7 @@
         });
 
 
+
         //Удаление фтп
         function deleteFtp(csrf, ddom, ftpUser) {
 
@@ -135,11 +136,16 @@
                     $('#wath').addClass('load');
                 },
                 success: function (res) {
-                    alert('Удаление прошло успешно');
+
+                    $("#ifnowrapper .bg-success").css("display","block");
+                    $("#fadeBody").css('display','none');
+
                 },
                 complete: function () {
-                    $('body').removeClass('add-opacity');
-                    $('#wath').removeClass('load');
+                    //Удаляем уведомление
+                    setTimeout(function(){
+                        $("#ifnowrapper .bg-success").slideUp('slow');
+                    }, 4000);
                 },
                 error: function () {
                     alert('Ошибка при удалении');
@@ -170,9 +176,9 @@
         //Функция добавления FTP
         function clickAddFtp(elem, num) {
             //Форма нового FTP
-            var strHtml = '<div class="ftp-groupz"><div class="form-group"><label>FTP#' + num + '<a href="#" class="del-current-ftp"><small>Удалить</small></a></label>            </div><div class="form-group"><label>Аккаунт</label><div><small>Префикс {{(!is_null(Auth::User())) ? Auth::User()->nickname : '' }}_ будет автоматически добавлен к названию аккаунта</small></div><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_new]" value="1"/><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_old]" value="0"/><input type="text" name="v_ftp_user[' + num + '][v_ftp_user]" class="form-control ftp_usr" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"/></div><div class="form-group"><label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>            <input type="text" name="v_ftp_user[' + num + '][v_ftp_password]" id="ftppas" class="form-control" value=""/></div><div class="form-group"><label>Path</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_path]" class="form-control" value=""/></div>            <div class="form-group"><label>Отправить данные FTP аккаунта по адресу</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_email]" class="form-control" value=""/></div</div>';
+            var strHtml = '<div class="ftp-groupz"><div class="form-group"><label>FTP#' + num + '<a href="#" class="del-current-ftp"><small>Удалить</small></a></label>            </div><div class="form-group"><label>Аккаунт</label><div><small>Префикс {{(!is_null(Auth::User())) ? Auth::User()->nickname : '' }}_ будет автоматически добавлен к названию аккаунта</small></div><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_new]" value="1"/><input type="hidden" class="v-ftp-user-is-new" name="v_ftp_user[' + num + '][is_old]" value="0"/><input type="text" name="v_ftp_user[' + num + '][v_ftp_user]" class="form-control ftp_usr" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"/></div><div class="form-group"><label>Пароль / <a href="#" class="genPass">сгенерировать</a></label>            <input type="text" name="v_ftp_user[' + num + '][v_ftp_password]" id="ftppas" class="form-control" value=""/></div><div class="form-group"><label>Path</label><input type="text" name="v_ftp_user[' + num + '][v_ftp_path]" class="form-control" value=""/></div>';
 
-            elem.before(strHtml);
+            elem.before('<span class="wrapperAdddFtp">'+strHtml+'</span>');
         }
 
         $('body').on('click', '#addFtps', function () {
@@ -180,6 +186,7 @@
             var countElems = $(".ftp-groupz").length;
             //Добавляем новый с порядковым номером +1
             clickAddFtp($(this), countElems + 1);
+            $(".wrapperAdddFtp .ftp-groupz").slideDown('slow');
             return false;
         });
 
@@ -194,8 +201,13 @@
             var ddom = $("input[name='domain']").val();
             var ftpUser = $(".ftp_usr_namen", rapentObj).val();
 
+            $('html, body').animate({scrollTop:0}, 'slow');
+
+            //Включаем прелодер
+            $("#fadeBody").css('display','block');
 
             deleteFtp(csrf, ddom, ftpUser);
+
 
             rapentObj.empty();
             return false;

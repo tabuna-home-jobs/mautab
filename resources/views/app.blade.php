@@ -19,7 +19,9 @@
 
 
 </head>
-
+<div id="fadeBody">
+    <img src="{{asset('/build/img/728.GIF')}}">
+</div>
 
 <!-- header -->
 <header id="header" class="navbar bg-white-only">
