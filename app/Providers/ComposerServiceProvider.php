@@ -1,6 +1,7 @@
 <?php namespace Mautab\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Mautab\Http\Composers\AdminMenuComposer;
 use Mautab\Http\Composers\UserInfoComposer;
 use View;
 
@@ -16,6 +17,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         // Композер реализуется при помощи класса:
         View::composer('user.*', UserInfoComposer::class);
+        View::composer('admin.*', AdminMenuComposer::class);
     }
 
     /**

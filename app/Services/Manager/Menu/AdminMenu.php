@@ -7,21 +7,21 @@ class AdminMenu
      * Вернее меню админки
      * @var
      */
-    private $top;
+    public $top;
 
 
     /**
      * Левое меню админки
      * @var
      */
-    private $left;
+    public $left;
 
 
     /**
      * Левое меню для модулей
      * @var
      */
-    private $modules;
+    public $modules;
 
 
     public function __construct()
@@ -29,12 +29,38 @@ class AdminMenu
         $this->top = collect([
             'Category' => [
                 'icon'   => 'fa fa-briefcase',
-                'url'    => route(''),
-                'active' => route(''),
+                //  'url'    => route(''),
+                //  'active' => route(''),
             ],
         ]);
 
-        $this->left = collect();
+        $this->left = collect([
+            'Dashboard'    => [
+                'icon'   => 'fa fa-line-chart text-primary-dker',
+                'url'    => 'admin..index',
+                'active' => 'admin..index',
+            ],
+            'Пользователи' => [
+                'icon'   => 'fa fa-users',
+                'url'    => 'admin.users.index',
+                'active' => 'admin.users.*',
+            ],
+            'Меню'         => [
+                'icon'   => 'fa fa-bars',
+                'url'    => 'admin..index',
+                'active' => 'admin..index',
+            ],
+            'Контент'      => [
+                'icon'   => 'fa fa-folder-open',
+                'url'    => 'admin.post.index',
+                'active' => 'admin.post.index',
+            ],
+            'Блоки'        => [
+                'icon'   => 'fa fa-cubes',
+                'url'    => 'admin.block.index',
+                'active' => 'admin.block.index',
+            ],
+        ]);
         $this->modules = collect();
     }
 

@@ -301,45 +301,15 @@
                             <span>Главное</span>
                         </li>
 
-                        <li class="{{Active::route('admin..*')}}">
-                            <a href="{{route('admin..index')}}">
-                                <i class="fa fa-line-chart text-primary-dker"></i>
-                                <span>Dashboard</span>
+
+                        @foreach($dashboardMenu->left as $key => $item)
+                            <li class="{{Active::route($item['active'])}}">
+                                <a href="{{route($item['url'])}}">
+                                    <i class="{{$item['icon']}}"></i>
+                                    <span>{{$key}}</span>
                             </a>
                         </li>
-
-
-                        <li class="{{Active::route('admin.users.*')}}">
-                            <a href="{{route('admin.users.index')}}">
-                                <i class="fa fa-users"></i>
-                                <span>Пользователи</span>
-                            </a>
-                        </li>
-
-
-                        <li class="#">
-                            <a href="#">
-                                <i class="fa fa-bars"></i>
-                                <span>Меню</span>
-                            </a>
-                        </li>
-
-
-                        <li class="{{Active::route('admin.post.*')}}">
-                            <a href="{{route('admin.post.index')}}">
-                                <i class="fa fa-folder-open"></i>
-                                <span>Контент</span>
-                            </a>
-                        </li>
-
-
-                        <li class="{{Active::route('admin.block.*')}}">
-                            <a href="{{route('admin.block.index')}}">
-                                <i class="fa fa-cubes"></i>
-                                <span>Блоки</span>
-                            </a>
-                        </li>
-
+                        @endforeach
 
                         <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                             <span>Компоненты</span>
