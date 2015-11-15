@@ -44,13 +44,24 @@ class AdminMenuComposer
      */
     public function compose(View $view)
     {
-        $dashboardMenu = Cache::remember('dashboardMenu', 10, function () {
+        $dashboardMenu = Cache::remember('dashboardMenu-user-' . $this->guard->user()->id, 10, function () {
 
             /**
              * Тут надо перебрать всю меню на наличие прав, и удалить
              * элементы к которым их нет
              */
-            return $this->dashboardMenu;
+
+            $user = $this->guard->user();
+            $accessCollection = collect();
+
+            foreach ($this->dashboardMenu as $key => $value) {
+                $accessElement = $value->filter(function ($item) use ($user) {
+                    return $user->hasAccess($item['url']);
+                });
+                $accessCollection->put($key, $accessElement);
+            }
+
+            return $accessCollection->all();
         });
 
         $view->with('dashboardMenu', $dashboardMenu);
