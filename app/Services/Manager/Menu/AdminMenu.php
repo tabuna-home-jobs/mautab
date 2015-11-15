@@ -27,11 +27,41 @@ class AdminMenu
     public function __construct()
     {
         $this->top = collect([
-            'Category' => [
+            'Категории'   => [
                 'icon'   => 'fa fa-briefcase',
-                //  'url'    => route(''),
-                //  'active' => route(''),
+                'url'    => 'admin.category.index',
+                'active' => 'admin.category.*',
             ],
+            'Типы'        => [
+                'icon'   => 'fa fa-wrench',
+                'url'    => 'admin.type.index',
+                'active' => 'admin.type.*',
+            ],
+            'База тегов'  =>
+                [
+                    'icon'   => 'fa fa-tags',
+                    'url'    => 'admin..index',
+                    'active' => 'admin..index',
+                ],
+            'Локализация' =>
+                [
+                    'icon'   => 'fa fa-language',
+                    'url'    => 'admin.language.index',
+                    'active' => 'admin.language.*',
+                ],
+            'Роли'        =>
+                [
+                    'icon'   => 'fa fa-lock',
+                    'url'    => 'admin.roles.index',
+                    'active' => 'admin.roles.*',
+                ],
+            'Настроки'    =>
+                [
+                    'icon'   => 'fa fa-cog',
+                    'url'    => 'admin.settings.index',
+                    'active' => 'admin.settings.*',
+                ],
+
         ]);
 
         $this->left = collect([

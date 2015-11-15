@@ -191,53 +191,16 @@
             <ul class="nav navbar-nav navbar-right">
 
 
-                <li class="{{Active::route('admin.category.*')}}">
-                    <a href="{{route('admin.category.index')}}">
-                        <span class="hidden-sm hidden-md"><i class="fa fa-briefcase icon"></i></span>
-                        <span class="visible-xs-inline">Категории</span>
+                @foreach($dashboardMenu->top as $key => $item)
+
+                    <li class="{{Active::route($item['active'])}}">
+                        <a href="{{route($item['url'])}}">
+                            <span class="hidden-sm hidden-md"><i class="{{$item['icon']}}"></i></span>
+                            <span class="visible-xs-inline">{{$key}}</span>
                     </a>
                 </li>
 
-
-                <li class="{{Active::route('admin.type.*')}}">
-                    <a href="{{route('admin.type.index')}}">
-                        <span class="hidden-sm hidden-md"><i class="fa fa-wrench"></i></span>
-                        <span class="visible-xs-inline">Типы</span>
-                    </a>
-                </li>
-
-
-                <li class="#">
-                    <a href="#">
-                        <span class="hidden-sm hidden-md"><i class="fa fa-tags"></i></span>
-                        <span class="visible-xs-inline">База тегов</span>
-                    </a>
-                </li>
-
-
-                <li class="{{Active::route('admin.language.*')}}">
-                    <a href="{{route('admin.language.index')}}">
-                        <span class="hidden-sm hidden-md"><i class="fa fa-language"></i></span>
-                        <span class="visible-xs-inline">Локализация</span>
-                    </a>
-                </li>
-
-
-                <li class="{{Active::route('admin.roles.*')}}">
-                    <a href="{{route('admin.roles.index')}}">
-                        <span class="hidden-sm hidden-md"><i class="fa fa-lock"></i></span>
-                        <span class="visible-xs-inline">Роли</span>
-                    </a>
-                </li>
-
-
-                <li class="{{Active::route('admin.settings.*')}}">
-                    <a href="{{route('admin.settings.index')}}">
-                        <span class="hidden-sm hidden-md"><i class="fa fa-cog icon"></i></span>
-                        <span class="visible-xs-inline">Настроки</span>
-                    </a>
-                </li>
-
+                @endforeach
 
                 <li>
                     <a href="/auth/logout">
