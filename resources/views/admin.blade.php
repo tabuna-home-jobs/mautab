@@ -191,12 +191,12 @@
             <ul class="nav navbar-nav navbar-right">
 
 
-                @foreach($dashboardMenu->top as $key => $item)
+                @foreach($dashboardMenu['top'] as $key => $item)
 
                     <li class="{{Active::route($item['active'])}}">
                         <a href="{{route($item['url'])}}">
                             <span class="hidden-sm hidden-md"><i class="{{$item['icon']}}"></i></span>
-                            <span class="visible-xs-inline">{{$key}}</span>
+                            <span class="visible-xs-inline">{{$item['name']}}</span>
                     </a>
                 </li>
 
@@ -265,11 +265,11 @@
                         </li>
 
 
-                        @foreach($dashboardMenu->left as $key => $item)
+                        @foreach($dashboardMenu['left'] as $item)
                             <li class="{{Active::route($item['active'])}}">
                                 <a href="{{route($item['url'])}}">
                                     <i class="{{$item['icon']}}"></i>
-                                    <span>{{$key}}</span>
+                                    <span>{{$item['name']}}</span>
                             </a>
                         </li>
                         @endforeach
