@@ -63,6 +63,12 @@ class AdminMenu
                     'url'    => 'admin.settings.index',
                     'active' => 'admin.settings.*',
                 ],
+            [
+                'name'   => 'Модули',
+                'icon'   => 'fa fa-plug',
+                'url'    => 'admin.settings.index',
+                'active' => 'admin.settings.*',
+            ],
 
         ]);
 

@@ -148,14 +148,14 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
-        'Way\Generators\GeneratorsServiceProvider',
-        'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
+        Pingpong\Modules\ModulesServiceProvider::class,
 
 
         /*
          * Новые от Mautab
          */
         \Mautab\Providers\AdminMenuProvider::class,
+
 
     ],
     /*
@@ -202,19 +202,19 @@ return [
         'Schema' => Illuminate\Support\Facades\Schema::class,
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
-        'URL' => Illuminate\Support\Facades\URL::class,
+        'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class,
+        'View'      => Illuminate\Support\Facades\View::class,
         /*
          * Я добавил
          */
-        'Vesta' => Mautab\Facades\VestaFacades::class,
-        'Image' => Intervention\Image\Facades\Image::class,
-        'Active' => Watson\Active\Facades\Active::class,
-        'Flash' => Laracasts\Flash\Flash::class,
-        'User' => \Mautab\Models\User::class,
-        'SSH' => Collective\Remote\RemoteFacade::class,
-
+        'Vesta'     => Mautab\Facades\VestaFacades::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
+        'Active'    => Watson\Active\Facades\Active::class,
+        'Flash'     => Laracasts\Flash\Flash::class,
+        'User'      => \Mautab\Models\User::class,
+        'SSH'       => Collective\Remote\RemoteFacade::class,
+        'Module'    => Pingpong\Modules\Facades\Module::class,
 
         /*
          * Фасады платформы Mautab
