@@ -45,6 +45,12 @@ return [
             'driver' => 'local',
             'root' => storage_path() . '/app',
         ],
+
+        '/' => [
+            'driver' => 'local',
+            'root'   => '/',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => 'your-key',
