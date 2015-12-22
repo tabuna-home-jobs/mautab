@@ -1,4 +1,4 @@
-<?php namespace Modules\Settings\Providers;
+<?php namespace Orchid\Settings\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -18,9 +18,31 @@ class SettingsServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->registerTranslations();
 		$this->registerConfig();
-		$this->registerViews();
+		$this->registerDatabase();
+
+	}
+
+	/**
+	 * Register config.
+	 *
+	 * @return void
+	 */
+	protected function registerConfig()
+	{
+		$this->publishes([
+			__DIR__ . '/../Config/settings.php' => config_path('cache.php'),
+		]);
+		$this->mergeConfigFrom(
+			__DIR__ . '/../Config/settings.php', 'cache'
+		);
+	}
+
+	protected function registerDatabase()
+	{
+		$this->publishes([
+			__DIR__ . '/../database/migrations/' => database_path('migrations'),
+		], 'migrations');
 	}
 
 	/**
@@ -29,57 +51,8 @@ class SettingsServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register()
-	{		
+	{
 		//
-	}
-
-	/**
-	 * Register config.
-	 * 
-	 * @return void
-	 */
-	protected function registerConfig()
-	{
-		$this->publishes([
-		    __DIR__.'/../Config/config.php' => config_path('settings.php'),
-		]);
-		$this->mergeConfigFrom(
-		    __DIR__.'/../Config/config.php', 'settings'
-		);
-	}
-
-	/**
-	 * Register views.
-	 * 
-	 * @return void
-	 */
-	public function registerViews()
-	{
-		$viewPath = base_path('resources/views/modules/settings');
-
-		$sourcePath = __DIR__.'/../Resources/views';
-
-		$this->publishes([
-			$sourcePath => $viewPath
-		]);
-
-		$this->loadViewsFrom([$viewPath, $sourcePath], 'settings');
-	}
-
-	/**
-	 * Register translations.
-	 * 
-	 * @return void
-	 */
-	public function registerTranslations()
-	{
-		$langPath = base_path('resources/lang/modules/settings');
-
-		if (is_dir($langPath)) {
-			$this->loadTranslationsFrom($langPath, 'settings');
-		} else {
-			$this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'settings');
-		}
 	}
 
 	/**

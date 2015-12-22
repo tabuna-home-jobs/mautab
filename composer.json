@@ -17,7 +17,8 @@
 		"nicolaslopezj/searchable": "1.*",
 		"kalnoy/nestedset": "^3.1",
 		"pingpong/modules": "~2.1",
-		"pingpong/generators": "~2.1"
+		"pingpong/generators": "~2.1",
+		"orchid/access": "1.*"
 	},
 	"require-dev": {
       "phpunit/phpunit": "~4.0",

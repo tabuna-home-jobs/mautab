@@ -38,4 +38,10 @@ class Roles extends Model
         'permissions',
     ];
 
+    protected $casts = [
+        //   'permissions' => 'array',
+    ];
+
+
+
 }

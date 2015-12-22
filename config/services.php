@@ -37,4 +37,22 @@ return [
         'userAgent' => 'Octavian',
     ],
 
+
+    'update' => [
+        'settings' => [
+            'user' => 'theorchid',
+            'repo' => 'settings',
+        ],
+        'socket'   => [
+            'user' => 'theorchid',
+            'repo' => 'socket',
+        ],
+    ],
+
+
+
+
+
+
+
 ];

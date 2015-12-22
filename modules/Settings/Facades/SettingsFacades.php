@@ -1,4 +1,4 @@
-<?php namespace Mautab\Facades;
+<?php namespace Orchid\Settings\Facades;
 
 use Illuminate\Support\Facades\Facade;
 use Modules\Settings\Entities\Setting;

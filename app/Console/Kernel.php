@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         \Mautab\Console\Commands\Inspire::class,
         \Mautab\Console\Commands\PriceTerms::class,
         \Mautab\Console\Commands\ServiceForever::class,
+        \Mautab\Console\Commands\SelfUpdate::class,
     ];
 
     /**

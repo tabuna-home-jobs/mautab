@@ -38,6 +38,7 @@
          *
          * @return array
          */
+
         public function getPermissionsAttribute($permissions)
         {
             return $permissions ? json_decode($permissions, true) : [];
@@ -50,6 +51,7 @@
          *
          * @return void
          */
+
         public function setPermissionsAttribute(array $permissions)
         {
             $this->attributes['permissions'] = $permissions ? json_encode($permissions) : '';

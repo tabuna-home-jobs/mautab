@@ -92,18 +92,6 @@ trait UserAccess
         $this->roles()->save($Role);
     }
 
-    protected function createPermissions()
-    {
-        $userPermissions = $this->permissions;
-
-        $rolePermissions = [];
-
-        foreach ($this->roles as $role) {
-            $rolePermissions[] = $role->permissions;
-        }
-
-        return new static::$permissionsClass($userPermissions, $rolePermissions);
-    }
 
 
 }
