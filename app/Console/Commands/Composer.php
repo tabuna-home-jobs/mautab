@@ -17,7 +17,7 @@
          *
          * @var string
          */
-        protected $signature = 'mautab:composer {--option=}';
+        protected $signature = 'composer {--option=}';
         /**
          * The console command description.
          *
@@ -42,14 +42,23 @@
          */
         public function handle()
         {
+            $this->exec_enabled();
             $this->issetComposer();
             $this->runCommand();
+        }
 
+        public function exec_enabled()
+        {
+            $disabled = explode(',', ini_get('disable_functions'));
+            if (in_array('exec', $disabled)) {
+                $this->error('Composer is not run, function exec disable for PHP');
+                die;
+            }
         }
 
         private function issetComposer()
         {
-            if (Storage::disk('/')->exists('composer.phar')) {
+            if (!Storage::disk('base_path')->exists('composer.phar')) {
                 $fullRequest = new Client([
                     'stream'  => true,
                     'timeout' => 10,
@@ -58,16 +67,15 @@
                 $fullRequest = $fullRequest->get(
                     'https://getcomposer.org/installer'
                 )->getBody()->getContents();
-                Storage::disk('/')->put('composer.phar', $fullRequest);
+                Storage::disk('base_path')->put('composer.phar', $fullRequest);
                 $this->info('install path: composer.phar');
             }
         }
 
         public function runCommand()
         {
-            dd('php ' . base_path('composer.phar') . ' ' . $this->option('option'));
-
-            exec('php ' . base_path('composer.phar') . ' ' . $this->option('option'));
+            $param = escapeshellcmd($this->option('option') ?: 'update');
+            exec('php ' . base_path('composer.phar') . ' ' . $param);
         }
 
 
