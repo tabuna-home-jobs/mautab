@@ -7,7 +7,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Добавление и редактирование FTP для домена {{$domain}}</div>
             <div id="ifnowrapper">
-                <span class="bg-success">Удаление прошло успешно</span>
+                <div class="alert alert-success">Удаление прошло успешно</div>
             </div>
             <div class="panel-body">
 

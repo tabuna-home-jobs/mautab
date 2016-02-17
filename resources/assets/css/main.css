@@ -441,3 +441,6 @@ tr.template-download a img {
     padding: 5px;
     display: none;
 }
+#ifnowrapper .alert-success{
+    display: none;
+}

@@ -79,14 +79,14 @@
                 },
                 success: function (res) {
 
-                    $("#ifnowrapper .bg-success").css("display","block");
+                    $("#ifnowrapper .alert-success").css("display","block");
                     $("#fadeBody").css('display','none');
 
                 },
                 complete: function () {
                     //Удаляем уведомление
                     setTimeout(function(){
-                        $("#ifnowrapper .bg-success").slideUp('slow');
+                        $("#ifnowrapper .alert-success").slideUp('slow');
                     }, 4000);
                 },
                 error: function () {
