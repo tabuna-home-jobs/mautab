@@ -36,7 +36,8 @@ Route::group(['middleware' => ['auth', 'Access', 'LoginAs'], 'namespace' => 'Hos
 
 
 // Всё для администратора
-Route::group(['middleware' => ['auth', 'Access'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
+    // 'middleware' => ['auth', 'Access'],
+    Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::resource('/', 'HomeAdminController', ['only' => 'index']);
     Route::resource('users', UserController::class);
     Route::resource('pages', PagesController::class);

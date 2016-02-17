@@ -155,7 +155,7 @@ return [
          * Новые от Mautab
          */
         \Mautab\Providers\AdminMenuProvider::class,
-        Orchid\Access\Providers\AccessServiceProvider::class,
+        //Orchid\Access\Providers\AccessServiceProvider::class,
 
 
     ],

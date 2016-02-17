@@ -13,12 +13,12 @@
                     </h1>
 
                     <h3 class="text-muted m-t-xl l-h-1x">
-                        Mautab идеально подходит для  <span
+                        идеально подходит для  <span
                                 class="b-b b-2x">сайтов компаний и персональных страниц, а также блогов, форумов, и галерей.</span>
                     </h3>
                 </div>
                 <p class="text-center m-b-xxl wrapper">
-                    <a href="#"
+                    <a href="/auth/register"
                        target="_blank"
                        class="btn b-2x btn-lg b-black btn-default btn-rounded text-lg font-bold m-b-xxl animated fadeInUpBig">От
                         100 рублей</a>
@@ -109,7 +109,7 @@
 
 
     <div class="bg-white dker clearfix">
-        <div class="container m-t-xxl m-b-xxl padder-v">
+        <div class="container m-t-xxl padder-v">
 
             <div class="row no-gutter">
 
@@ -230,50 +230,6 @@
             </div>
 
 
-            <div class="bg-dark">
-                <div class="container">
-                    <div class="row m-t-xl m-b-xxl">
-                        <div class="col-sm-6 wrapper-xl">
-                            <h3 class="text-white font-bold m-b-lg">Responsive on all screen</h3>
-
-                            <p class="h4 l-h-1x">Angulr responsive CSS layout is built on Bootstrap Grid System,
-                                includes a responsive, mobile first fluid grid system to target a wide range of devices
-                                like desktop, tablets, smart phones etc</p>
-                        </div>
-                        <div class="col-sm-6 fadeInLeft animated" data-ride="animated" data-animation="fadeInLeft"
-                             data-delay="300">
-                            <div class="m-t-xxl text-center">
-                                <span class="text-2x text-muted"><i class="fa fa-tablet text-2x"></i></span>
-                                <span class="text-3x text-muted"><span class="text-2x"><i
-                                                class="fa fa-desktop text-2x"></i></span></span>
-                                <span class="text-3x text-muted"><i class="fa fa-server text-2x"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!--Новости -->
-
-
-            <div class="bg-white-only bg-white-only m-b-xxl padder-v">
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center  m-t-xl m-b-xl"><h2><span class="h2-hr-centr"></span><span
-                                        class="h2-span">Новости</span></h2></div>
-
-
-                        <div class="m-t-xl text-center col-xs-12">
-                            <a href="/news" class="btn btn-lg btn-white b-2x b-dark btn-rounded bg-empty m-sm">Все
-                                новости</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--end Новости -->
-
 
         </div>
 
@@ -281,9 +237,6 @@
     </div>
 
 
-
-
-    {!! Block::widget('answer','template.block.answer') !!}
 
 
 

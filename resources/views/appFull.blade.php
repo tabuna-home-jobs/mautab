@@ -23,9 +23,9 @@
 
 
 </head>
-
+<body>
 <!-- header -->
-<header id="header" class="navbar navbar-fixed-top bg-white-only padder-v" data-spy="affix" data-offset-top="1">
+<header id="header" class="navbar bg-white-only">
     <div class="container">
         <div class="navbar-header">
             <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse"
@@ -70,64 +70,6 @@
 
         <!-- footer -->
 <footer id="footer">
-    <div class="bg-white">
-        <div class="container">
-            <div class="row m-t-xl m-b-xl">
-                <div class="col-sm-3">
-                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Общая</span> информация</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Политика безопасности</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Политика конфиденциальности</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Правила пользования</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Оплата</a></li>
-                    </ul>
-                    <p class="m-b-xl">Email: <a href="mailto:support@mautab.com">support@mautab.com</a></p>
-
-                </div>
-                <div class="col-sm-3">
-                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Новости</span> Компании</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Политика безопасности</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Политика конфиденциальности</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Правила пользования</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right m-r-sm"></i>Оплата</a></li>
-                    </ul>
-
-
-                </div>
-                <div class="col-sm-3">
-                    <h4 class="text-u-c m-b-xl font-thin"><span class="b-b b-dark font-bold">Наши</span> Проекты</h4>
-
-                    <div class="m-b-xl">
-                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-google-plus"></i></a>
-                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-pinterest"></i></a>
-                    </div>
-
-
-                </div>
-                <div class="col-sm-3">
-                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Новостная</span> рассылка</h4>
-
-                    <p>Не хотите пропустить что-нибудь? Подпишитесь на нашу рассылку</p>
-
-                    <form class="form-inline m-t m-b text-center m-b-xl">
-                        <div class="aside-xl inline">
-                            <div class="input-group">
-                                <input type="text" id="address" name="address" class="form-control btn-rounded"
-                                       placeholder="Ваш Email">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default btn-rounded" type="submit">Подписаться</button>
-                    </span>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="bg-light dk">
         <div class="container">
             <div class="row padder-v m-t">

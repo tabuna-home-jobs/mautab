@@ -61,23 +61,14 @@
 
     <div class="col-md-2 col-sm-4 col-xs-6">
 
-        @if(Auth::user()->inRole('Admin'))
-            <a href="{{route('admin..index')}}"
-               class="{{Active::route('admin.*')}}">
-                <span class="fa fa-server text-success"></span>
-                <h4>Dashboard</h4>
-            </a>
-        @else
-            <a href="{{route('tikets.index')}}"
-               class="{{Active::route('tikets.*')}}">
-                <span class="fa fa-life-ring"></span>
-                <h4>{{Lang::get('menu.support')}}</h4>
-            </a>
-        @endif
+        <a href="{{route('backup.index')}}"
+           class="{{Active::route('backup.*')}}">
+            <span class="fa  fa-undo"></span>
+            <h4>{{Lang::get('menu.backup')}}</h4>
+        </a>
+
 
         <p class="menu-small"><a href="{{route('log.index')}}">{{Lang::get('menu.log')}}</a></p>
-
-        <p class="menu-small"><a href="{{route('backup.index')}}">{{Lang::get('menu.backup')}}</a></p>
     </div>
 
 </section>

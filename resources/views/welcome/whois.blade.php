@@ -39,18 +39,21 @@
                                 можно узнать, кто его владелец и как с ним связаться.
                             </p>
                         </li>
-                        <li data-ride="animated" data-animation="fadeInUp" data-delay="900" class="fadeInUp animated">
+                        <li data-ride="animated" data-animation="fadeInUp" data-delay="600" class="fadeInUp animated">
                             <i class="icon-check pull-left text-lg m-r m-t-sm"></i>
 
-                            <p class="clear m-b-lg"><strong>Grunt Task</strong>, Angulr using Grunt to automate
-                                development tasks, like compiling less to css, concatenating and minifying js files...
+                            <p class="clear m-b-lg"><strong>Введите любое имя сайта</strong>
+                                в поисковую строку, и узнаете, свободен домен или занят. Если доменное имя уже занято,
+                                можно узнать, кто его владелец и как с ним связаться.
                             </p>
                         </li>
-                        <li data-ride="animated" data-animation="fadeInUp" data-delay="1100" class="fadeInUp animated">
+                        <li data-ride="animated" data-animation="fadeInUp" data-delay="600" class="fadeInUp animated">
                             <i class="icon-check pull-left text-lg m-r m-t-sm"></i>
 
-                            <p class="clear m-b-lg"><strong>Bower Package</strong>, fetching and installing packages
-                                from all over, finding, downloading, and saving the stuff you’re looking for.</p>
+                            <p class="clear m-b-lg"><strong>Введите любое имя сайта</strong>
+                                в поисковую строку, и узнаете, свободен домен или занят. Если доменное имя уже занято,
+                                можно узнать, кто его владелец и как с ним связаться.
+                            </p>
                         </li>
                     </ul>
                 </div>

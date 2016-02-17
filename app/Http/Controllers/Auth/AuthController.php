@@ -72,6 +72,7 @@ class AuthController extends Controller
         $user->first_name = $data['firstname'];
         $user->last_name = $data['lastname'];
         $user->server = (string)Config::get('vesta.primary');
+        $user->balans = 500;
         $user->encrypt_password = Crypt::encrypt($data['password']);
 
         event(new Registration($user));
