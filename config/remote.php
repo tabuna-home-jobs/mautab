@@ -23,9 +23,9 @@ return [
     */
     'connections' => [
         'testVDS' => [
-            'host' => '193.111.141.198',
-            'username' => 'admin',
-            'password' => '03af4dE1',
+            'host' => '',
+            'username' => '',
+            'password' => '',
             //'key'       => '',
             //'keytext'   => '',
             //'keyphrase' => '',
