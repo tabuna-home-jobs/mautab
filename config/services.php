@@ -31,10 +31,10 @@ return [
         'secret' => '',
     ],
     'sms' => [
-        'login' => 'tatu',
-        'apikey' => '1271a2420038d3f7451fe0db73a1db77f8c4e37d',
-        'sender' => 'Octavian',
-        'userAgent' => 'Octavian',
+        'login' => '',
+        'apikey' => '',
+        'sender' => '',
+        'userAgent' => '',
     ],
 
 
